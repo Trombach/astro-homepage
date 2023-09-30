@@ -1,3 +1,6 @@
+/**
+ * @type {import('eslint').Linter.Config}
+ */
 module.exports = {
     extends: [
         "plugin:astro/recommended",
@@ -15,5 +18,9 @@ module.exports = {
                 extraFileExtensions: [".astro"],
             },
         },
+        {
+            files: ["*.ts", "*.tsx", "*.js", "*.mjs", "*.cjs"],
+            parse: "@typescript-eslint/parser",
+        }
     ],
 }
