@@ -1,8 +1,12 @@
 {
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
+    "verbatimModuleSyntax": true,
+    "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@shared/*": ["src/shared/*"]
     }
   }
 }
