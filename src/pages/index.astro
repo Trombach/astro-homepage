@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Graph from "src/components/Graph/Graph.svelte";
 ---
 
 <Layout title="Lukas Trombach | Software Engineer">
-  <main></main>
+  <main><Graph client:only="svelte" /></main>
 </Layout>
