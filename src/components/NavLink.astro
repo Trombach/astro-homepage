@@ -2,15 +2,15 @@
 import Link from "@components/Link.astro";
 
 interface Props {
-    title: string;
-    href: string;
+  title: string;
+  href: string;
 }
 
 const { title, href } = Astro.props;
 ---
 
 <Link
-    {title}
-    {href}
-    extraClass={["inline-block", "hover:scale-110", "tracking-wider"]}
+  {title}
+  {href}
+  extraClass={["inline-block", "hover:scale-110", "tracking-wider"]}
 />
