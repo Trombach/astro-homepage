@@ -1,9 +1,14 @@
+---
+const { class: className } = Astro.props;
+---
+
 <button
   class:list={[
     "rounded-lg border-2 border-blue",
     "px-5 py-2",
     "relative hover:before:top-0",
     "before:absolute before:bottom-0 before:left-0 before:right-0 before:top-full before:z-[-1] before:bg-blue before:transition-all before:content-['']",
+    className,
   ]}
 >
   <slot />

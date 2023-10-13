@@ -1,7 +1,8 @@
 ---
-import { Astronav, MenuItems } from "astro-navbar";
+import { Astronav, MenuIcon, MenuItems } from "astro-navbar";
 import Button from "@components/Button.astro";
 import NavLink from "./NavLink.astro";
+import MenuButton from "./MenuButton.svelte";
 
 const menuItems = [
   {
@@ -21,10 +22,17 @@ const menuItems = [
 
 <header class="justify-between p-5 lg:flex">
   <Astronav>
-    <Button>Download CV</Button>
+    <div class="hidden lg:flex"><Button>Download CV</Button></div>
+    <MenuIcon>
+      <div class="lg:hidden">
+        <MenuButton client:only="svelte" />
+      </div>
+    </MenuIcon>
 
-    <MenuItems class="hidden lg:flex">
-      <ul class="flex flex-col lg:flex-row lg:gap-10">
+    <MenuItems class="hidden animate-[slide] lg:flex lg:items-center">
+      <ul
+        class="flex animate-[slide] flex-col items-start lg:flex-row lg:gap-10"
+      >
         {
           menuItems.map(({ title, href }) => (
             <>
@@ -38,3 +46,11 @@ const menuItems = [
     </MenuItems>
   </Astronav>
 </header>
+
+<style>
+  @keyframes slide {
+    100% {
+      transform: translateX(0);
+    }
+  }
+</style>
