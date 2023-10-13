@@ -2,9 +2,9 @@
 import type { ClassList } from "@shared/types";
 
 interface Props {
-    title: string;
-    href: string;
-    extraClass?: ClassList;
+  title: string;
+  href: string;
+  extraClass?: ClassList;
 }
 
 const { title, href, extraClass } = Astro.props;
@@ -12,13 +12,13 @@ const { title, href, extraClass } = Astro.props;
 
 <!-- TODO tailwind decoration-current not working -->
 <a
-    {href}
-    class:list={[
-        "underline underline-offset-0 decoration-transparent",
-        "transition-all duration-300",
-        "hover:decoration-white hover:underline-offset-4",
-        extraClass,
-    ]}
+  {href}
+  class:list={[
+    "underline decoration-transparent underline-offset-0",
+    "transition-all duration-300",
+    "hover:decoration-white hover:underline-offset-4",
+    extraClass,
+  ]}
 >
-    {title}
+  {title}
 </a>

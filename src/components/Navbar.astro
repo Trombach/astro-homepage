@@ -4,37 +4,37 @@ import Button from "@components/Button.astro";
 import NavLink from "./NavLink.astro";
 
 const menuItems = [
-    {
-        title: "About",
-        href: "#about",
-    },
-    {
-        title: "Projects",
-        href: "#projects",
-    },
-    {
-        title: "Contact",
-        href: "#contact",
-    },
+  {
+    title: "About",
+    href: "#about",
+  },
+  {
+    title: "Projects",
+    href: "#projects",
+  },
+  {
+    title: "Contact",
+    href: "#contact",
+  },
 ] as const;
 ---
 
-<header class="lg:flex justify-between p-5">
-    <Astronav>
-        <Button>Download CV</Button>
+<header class="justify-between p-5 lg:flex">
+  <Astronav>
+    <Button>Download CV</Button>
 
-        <MenuItems class="hidden lg:flex">
-            <ul class="flex flex-col lg:flex-row lg:gap-10">
-                {
-                    menuItems.map(({ title, href }) => (
-                        <>
-                            <li>
-                                <NavLink {title} {href} />
-                            </li>
-                        </>
-                    ))
-                }
-            </ul>
-        </MenuItems>
-    </Astronav>
+    <MenuItems class="hidden lg:flex">
+      <ul class="flex flex-col lg:flex-row lg:gap-10">
+        {
+          menuItems.map(({ title, href }) => (
+            <>
+              <li>
+                <NavLink {title} {href} />
+              </li>
+            </>
+          ))
+        }
+      </ul>
+    </MenuItems>
+  </Astronav>
 </header>
