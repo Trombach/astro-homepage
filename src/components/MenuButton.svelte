@@ -1,8 +1,9 @@
 <script lang="ts">
     let showCloseIcon = false;
+    export let className: string | undefined = undefined;
 </script>
 
-<button on:click={() => (showCloseIcon = !showCloseIcon)} data-menu-button>
+<button class={className} on:click={() => (showCloseIcon = !showCloseIcon)} data-menu-button>
     <svg
         class="hamburger"
         class:close={showCloseIcon}
