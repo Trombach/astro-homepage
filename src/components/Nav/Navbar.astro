@@ -19,27 +19,28 @@ const menuItems = [
 ] as const;
 ---
 
-<header
-  class="border-b border-b-gray p-5 lg:flex lg:items-center lg:justify-between"
->
-  <div class="flex items-center justify-between">
-    <MenuButton className="lg:hidden" client:load />
-    <Button>Download CV</Button>
-  </div>
-
-  <nav
-    class="max-h-0 overflow-y-hidden transition-all duration-500 lg:max-h-max lg:flex-row lg:overflow-y-visible"
+<header class="border-b-gray w-full border-b p-5">
+  <div
+    class="mx-auto w-full max-w-screen-xl lg:flex lg:items-center lg:justify-between"
   >
-    <ul class="flex flex-col lg:flex-row lg:gap-10">
-      {
-        menuItems.map(({ title, href }) => (
-          <li class="py-2">
-            <NavLink {title} {href} />
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
+    <div class="flex items-center justify-between">
+      <MenuButton className="lg:hidden" client:load />
+      <Button>Download CV</Button>
+    </div>
+    <nav
+      class="max-h-0 overflow-y-hidden transition-all duration-500 lg:max-h-max lg:flex-row lg:overflow-y-visible"
+    >
+      <ul class="flex flex-col lg:flex-row lg:gap-10">
+        {
+          menuItems.map(({ title, href }) => (
+            <li class="py-2">
+              <NavLink {title} {href} />
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <script>
