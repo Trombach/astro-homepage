@@ -32,9 +32,9 @@ const menuItems = [
     >
       <ul class="flex flex-col lg:flex-row lg:gap-10">
         {
-          menuItems.map(({ title, href }) => (
+          menuItems.map((props) => (
             <li class="py-2">
-              <NavLink {title} {href} />
+              <NavLink {...props} />
             </li>
           ))
         }
