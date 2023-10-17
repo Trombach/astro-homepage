@@ -5,11 +5,10 @@
 
 <button class={className} on:click={() => (showCloseIcon = !showCloseIcon)} data-menu-button>
     <svg
-        class="hamburger"
+        class="hamburger fill-black dark:fill-white"
         class:close={showCloseIcon}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
-        fill="white"
     >
         <g transform={showCloseIcon ? "" : "translate(0 -5)"}>
             <rect

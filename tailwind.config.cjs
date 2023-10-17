@@ -13,6 +13,7 @@ module.exports = {
       black: "#13151a",
       white: "whitesmoke",
       blue: "#007ce0",
+      gray: "rgba(205,217,229,0.1)",
     },
     extend: {
       borderRadius: {

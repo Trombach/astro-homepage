@@ -19,7 +19,9 @@ const menuItems = [
 ] as const;
 ---
 
-<header class="p-5 lg:flex lg:items-center lg:justify-between">
+<header
+  class="border-b border-b-gray p-5 lg:flex lg:items-center lg:justify-between"
+>
   <div class="flex items-center justify-between">
     <MenuButton className="lg:hidden" client:load />
     <Button>Download CV</Button>
@@ -31,7 +33,7 @@ const menuItems = [
     <ul class="flex flex-col lg:flex-row lg:gap-10">
       {
         menuItems.map(({ title, href }) => (
-          <li>
+          <li class="py-2">
             <NavLink {title} {href} />
           </li>
         ))
