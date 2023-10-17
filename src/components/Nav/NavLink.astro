@@ -9,8 +9,4 @@ interface Props {
 const { title, href } = Astro.props;
 ---
 
-<Link
-  {title}
-  {href}
-  class="inline-block tracking-wider supports-[hover:hover]:hover:scale-110"
-/>
+<Link {title} {href} class="inline-block tracking-wider hover:scale-110" />
