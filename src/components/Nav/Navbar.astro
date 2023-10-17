@@ -6,20 +6,20 @@ import MenuButton from "@components/MenuButton.svelte";
 const menuItems = [
   {
     title: "About",
-    href: "#about",
+    href: "about",
   },
   {
     title: "Projects",
-    href: "#projects",
+    href: "projects",
   },
   {
     title: "Contact",
-    href: "#contact",
+    href: "contact",
   },
 ] as const;
 ---
 
-<header class="border-b-gray w-full border-b p-5">
+<header class="fixed w-full p-5 backdrop-blur-xl backdrop-saturate-150">
   <div
     class="mx-auto w-full max-w-screen-xl lg:flex lg:items-center lg:justify-between"
   >
