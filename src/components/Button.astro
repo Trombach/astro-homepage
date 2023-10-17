@@ -1,12 +1,11 @@
 ---
-type Props = {
-  class?: string;
-};
+type Props = astroHTML.JSX.ButtonHTMLAttributes;
 
-const { class: className }: Props = Astro.props;
+const { "class:list": className, ...buttonProps }: Props = Astro.props;
 ---
 
 <button
+  {...buttonProps}
   class:list={[
     "rounded-lg border-2 border-blue",
     "px-5 py-2",
