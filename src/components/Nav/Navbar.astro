@@ -44,12 +44,13 @@ const menuItems = [
 </header>
 
 <script>
+  // menu button
   const menuBtn = document.querySelector("[data-menu-button]");
   const nav = document.querySelector("nav");
 
   const toggleVisibility = () => {
     if (nav?.classList.contains("max-h-96")) {
-      nav?.classList.replace("max-h-96", "max-h-0");
+      nav.classList.replace("max-h-96", "max-h-0");
     } else {
       nav?.classList.replace("max-h-0", "max-h-96");
     }

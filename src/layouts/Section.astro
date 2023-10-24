@@ -1,0 +1,19 @@
+---
+import { AstroError } from "astro/errors";
+
+type Props = astroHTML.JSX.HTMLAttributes & {
+  id: string;
+};
+const { class: className, ...props } = Astro.props;
+
+if (!props.id) {
+  throw new AstroError("Missing id");
+}
+---
+
+<section
+  {...props}
+  class=`flex h-screen flex-col justify-center lg:flex-row lg:items-center ${className}`
+>
+  <slot />
+</section>
