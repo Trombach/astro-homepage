@@ -8,5 +8,8 @@ export default defineConfig({
   integrations: [tailwind(), svelte()],
   image: {
     domains: ['placehold.co']
+  },
+  prefetch: {
+    prefetchAll: true
   }
 });
