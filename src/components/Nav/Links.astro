@@ -1,0 +1,19 @@
+---
+import Button from "@components/Button.astro";
+import Download from "@components/icons/Download.astro";
+import octo from "@images/github-mark.svg";
+import octoWhite from "@images/github-mark-white.svg";
+---
+
+<div class="flex items-center gap-4">
+  <Button>
+    <div class="flex gap-2"><Download />Download CV</div>
+  </Button>
+  <a href="https://github.com/Trombach/astro-homepage">
+    <picture>
+      <source srcset={octoWhite.src} media="(prefers-color-scheme: dark)" />
+      <img src={octo.src} width="32" height="32" alt="My Github page" />
+    </picture>
+    <span class="sr-only">Github Repository</span>
+  </a>
+</div>
