@@ -2,24 +2,27 @@
 import Button from "@components/Button.astro";
 import NavLink from "./NavLink.astro";
 import MenuButton from "@components/MenuButton.svelte";
+import Home from "@components/icons/Home.astro";
 
 const menuItems = [
   {
     title: "About",
-    href: "about",
+    href: "/about",
   },
   {
     title: "Projects",
-    href: "projects",
+    href: "/projects",
   },
   {
     title: "Contact",
-    href: "contact",
+    href: "/contact",
   },
 ] as const;
 ---
 
-<header class="fixed w-full p-5 backdrop-blur-xl backdrop-saturate-150">
+<header
+  class="sticky z-50 w-full bg-background p-5 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
   <div
     class="mx-auto w-full max-w-screen-xl lg:flex lg:items-center lg:justify-between"
   >
@@ -31,6 +34,11 @@ const menuItems = [
       class="max-h-0 overflow-y-hidden transition-all duration-500 lg:max-h-max lg:flex-row lg:overflow-y-visible"
     >
       <ul class="flex flex-col lg:flex-row lg:gap-10">
+        <li class="py-2">
+          <NavLink title="Home" href="/">
+            <Home slot="icon" />
+          </NavLink>
+        </li>
         {
           menuItems.map((props) => (
             <li class="py-2">
