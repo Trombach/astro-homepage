@@ -7,9 +7,9 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   integrations: [tailwind(), svelte()],
   image: {
-    domains: ['placehold.co']
+    domains: ["placehold.co"],
   },
   prefetch: {
-    prefetchAll: true
-  }
+    prefetchAll: true,
+  },
 });
