@@ -13,7 +13,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono]
+        mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
       },
       borderRadius: {
         "4xl": "2rem",
@@ -59,5 +59,5 @@ module.exports = {
   plugins: [],
   future: {
     hoverOnlyWhenSupported: true,
-  }
+  },
 };
