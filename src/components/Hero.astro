@@ -1,19 +1,16 @@
 ---
-import { Image } from "astro:assets";
-import Section from "src/layouts/Section.astro";
+import Waves from "./Waves.astro";
 ---
 
-<Section id="hero">
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aliquid
-    consequuntur hic iure asperiores! Cumque, sint quasi. Impedit distinctio
-    accusantium quas necessitatibus minima, porro, eligendi alias iure obcaecati
-    repellat quos.
+<section
+  id="hero"
+  class="relative flex h-[calc(100vh-86px)] flex-col items-end"
+>
+  <p
+    class="absolute left-52 top-1/3 w-[600px] text-center font-mono text-5xl leading-relaxed"
+  >
+    Hi! My name is <span class="text-primary">Lukas Trombach</span> and I'm a software
+    engineer based in Auckland.
   </p>
-  <Image
-    src="https://placehold.co/600x400"
-    alt="Placeholder"
-    width={600}
-    height={400}
-  />
-</Section>
+  <Waves />
+</section>

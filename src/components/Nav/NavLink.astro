@@ -5,14 +5,14 @@ type Props = {
 };
 
 const { title, href }: Props = Astro.props;
-const path = new URL(Astro.request.url).pathname.slice(1);
+const path = new URL(Astro.request.url).pathname;
 ---
 
 <a
   {href}
   class:list={[
-    "relative inline-block h-auto tracking-wider hover:text-gray-50",
-    { "text-gray-400": path !== href },
+    "relative inline-block h-auto tracking-wider hover:text-primary",
+    { "text-muted-foreground": path !== href },
   ]}
 >
   {
@@ -26,5 +26,5 @@ const path = new URL(Astro.request.url).pathname.slice(1);
       />
     ) : null
   }
-  {title}
+  <slot name="icon">{title}</slot>
 </a>
