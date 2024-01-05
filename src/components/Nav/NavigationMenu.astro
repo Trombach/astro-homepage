@@ -1,0 +1,57 @@
+---
+import MenuButton from "@components/MenuButton.svelte";
+import Home from "@components/icons/Home.astro";
+import NavLink from "./NavLink.astro";
+
+const menuItems = [
+  {
+    title: "About",
+    href: "/about",
+  },
+  {
+    title: "Projects",
+    href: "/projects",
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+  },
+] as const;
+---
+
+<div class="flex items-center justify-between">
+  <MenuButton className="lg:hidden" client:load />
+  <nav
+    class="max-h-0 overflow-y-hidden transition-all duration-500 lg:max-h-max lg:flex-row lg:overflow-y-visible"
+  >
+    <ul class="flex flex-col lg:flex-row lg:gap-10">
+      <li class="py-2">
+        <NavLink title="Home" href="/">
+          <Home slot="icon" />
+        </NavLink>
+      </li>
+      {
+        menuItems.map((props) => (
+          <li class="py-2">
+            <NavLink {...props} />
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>
+
+<script>
+  // menu button
+  const menuBtn = document.querySelector("[data-menu-button]");
+  const nav = document.querySelector("nav");
+
+  const toggleVisibility = () => {
+    if (nav?.classList.contains("max-h-96")) {
+      nav.classList.replace("max-h-96", "max-h-0");
+    } else {
+      nav?.classList.replace("max-h-0", "max-h-96");
+    }
+  };
+  menuBtn?.addEventListener("click", toggleVisibility);
+</script>
