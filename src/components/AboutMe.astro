@@ -1,5 +1,6 @@
 ---
 import GradientBackground from "src/layouts/GradientBackground.astro";
+import H1 from "./H1.astro";
 ---
 
 <GradientBackground>
@@ -14,14 +15,7 @@ import GradientBackground from "src/layouts/GradientBackground.astro";
         "backdrop-blur supports-[backdrop-filter]:bg-background/60",
       ]}
     >
-      <h1
-        class:list={[
-          "relative w-1/3 text-nowrap p-2 text-center font-mono text-5xl text-primary",
-          "after:absolute after:bottom-2 after:left-10 after:-z-10 after:h-4 after:w-28 after:-skew-x-12 after:bg-secondary",
-        ]}
-      >
-        About Me
-      </h1>
+      <H1 title="About Me" />
       <p class="w-2/3 p-4 text-2xl">
         I'm a PhD in theoretical chemistry with an interest in all things tech.
         While working on my thesis I tought myself how to program in C++. Ever
@@ -32,9 +26,10 @@ import GradientBackground from "src/layouts/GradientBackground.astro";
     </div>
   </section>
 
-  <section id="technologies" class="min-h-screen-less-header">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, labore eum
-    magni commodi minima voluptates temporibus necessitatibus officia, quam,
-    asperiores error culpa voluptate eos! Eum quo voluptates sequi minus neque.
+  <section id="technologies" class="mx-auto min-h-[1000px] max-w-5xl">
+    <H1 title="Technologies" />
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, labore eum magni
+    commodi minima voluptates temporibus necessitatibus officia, quam, asperiores
+    error culpa voluptate eos! Eum quo voluptates sequi minus neque.
   </section>
 </GradientBackground>
