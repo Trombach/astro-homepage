@@ -1,13 +1,15 @@
 ---
 import Button from "@components/Button.astro";
-import Download from "@components/icons/Download.astro";
-import octo from "@images/github-mark.svg";
-import octoWhite from "@images/github-mark-white.svg";
+import octo from "@icons/github-mark.svg";
+import octoWhite from "@icons/github-mark-white.svg";
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="flex items-center gap-4">
   <Button>
-    <div class="flex gap-2"><Download />Download CV</div>
+    <div class="flex items-center gap-2">
+      <Icon name="download" />Download CV
+    </div>
   </Button>
   <a href="https://github.com/Trombach/astro-homepage">
     <picture>
