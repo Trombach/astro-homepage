@@ -1,28 +1,36 @@
 ---
 import GradientBackground from "src/layouts/GradientBackground.astro";
 import H1 from "./H1.astro";
+import Avatar from "./Avatar.astro";
 ---
 
 <GradientBackground>
   <section
-    id="aboutme"
+    id="about-me"
     transition:animate="slide"
     class="flex min-h-screen-less-header flex-col items-center justify-center"
   >
     <div
       class:list={[
-        "mx-auto flex max-w-screen-lg flex-col items-center justify-center rounded-xl border border-border bg-card p-2 lg:flex-row",
-        "backdrop-blur supports-[backdrop-filter]:bg-background/60",
+        "mx-auto flex max-w-screen-lg flex-col items-center justify-between lg:flex-row",
       ]}
     >
-      <H1 title="About Me" />
-      <p class="w-2/3 p-4 text-2xl">
-        I'm a PhD in theoretical chemistry with an interest in all things tech.
-        While working on my thesis I tought myself how to program in C++. Ever
-        since, I knew that I wanted to persue a career in technology and
-        software enginerring. My expertise lies in full-stack web development,
-        but I also have some experience in high-performance computing.
-      </p>
+      <div class="flex flex-col items-center">
+        <Avatar />
+        <H1 title="About Me" />
+      </div>
+      <div class="w-2/3 p-4 text-center text-xl *:mb-5">
+        <p>
+          I'm a PhD in theoretical chemistry with an interest in all things
+          tech. While working on my thesis I taught myself how to program in
+          C++. Ever since, I knew that I wanted to pursue a career in technology
+          and software engineering.
+        </p>
+        <p>
+          My expertise lies in full-stack web development, but I also have some
+          experience in high-performance computing.
+        </p>
+      </div>
     </div>
   </section>
 
