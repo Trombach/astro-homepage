@@ -18,7 +18,12 @@ module.exports = {
       borderRadius: {
         "4xl": "2rem",
       },
-
+      height: {
+        "screen-less-header": "calc(100vh - 86px)"
+      },
+      minHeight: {
+        "screen-less-header": "calc(100vh - 86px)"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
