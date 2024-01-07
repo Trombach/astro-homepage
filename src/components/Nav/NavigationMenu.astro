@@ -1,9 +1,9 @@
 ---
 import MenuButton from "@components/MenuButton.svelte";
-import Home from "@components/icons/Home.astro";
 import NavLink from "./NavLink.astro";
 
 const menuItems = [
+  { title: "Home", href: "/" },
   {
     title: "About",
     href: "/about",
@@ -24,12 +24,7 @@ const menuItems = [
   <nav
     class="max-h-0 overflow-y-hidden transition-all duration-500 lg:max-h-max lg:flex-row lg:overflow-y-visible"
   >
-    <ul class="flex flex-col lg:flex-row lg:gap-10">
-      <li class="py-2">
-        <NavLink title="Home" href="/">
-          <Home slot="icon" />
-        </NavLink>
-      </li>
+    <ul class="flex flex-col lg:flex-row lg:items-center lg:gap-10">
       {
         menuItems.map((props) => (
           <li class="py-2">
