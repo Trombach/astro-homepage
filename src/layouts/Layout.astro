@@ -76,8 +76,12 @@ const { title } = Astro.props;
           }
         }
 
+        :has(:target) {
+          @apply motion-safe:scroll-smooth;
+        }
+
         html {
-          @apply scroll-pt-[84px] bg-background leading-normal text-foreground motion-safe:scroll-smooth;
+          @apply scroll-pt-[84px] bg-background leading-normal text-foreground;
         }
 
         p {
