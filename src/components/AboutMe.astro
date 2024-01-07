@@ -2,6 +2,7 @@
 import GradientBackground from "src/layouts/GradientBackground.astro";
 import H1 from "./H1.astro";
 import Avatar from "./Avatar.astro";
+import TechGrid from "./TechGrid.astro";
 ---
 
 <GradientBackground>
@@ -34,10 +35,11 @@ import Avatar from "./Avatar.astro";
     </div>
   </section>
 
-  <section id="technologies" class="mx-auto min-h-[1000px] max-w-5xl">
+  <section id="technologies" class="mx-auto min-h-screen-less-header max-w-5xl">
     <H1 title="Technologies" />
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, labore eum magni
-    commodi minima voluptates temporibus necessitatibus officia, quam, asperiores
-    error culpa voluptate eos! Eum quo voluptates sequi minus neque.
+    <p class="mb-6 text-xl">
+      A comprehensive but incomplete list of my favourite technologies.
+    </p>
+    <TechGrid />
   </section>
 </GradientBackground>
