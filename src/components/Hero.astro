@@ -1,5 +1,8 @@
 ---
+import { getEntry } from "astro:content";
 import Waves from "./Waves.astro";
+
+const { data } = await getEntry("home", "welcome");
 ---
 
 <section
@@ -10,8 +13,9 @@ import Waves from "./Waves.astro";
     class="absolute left-52 top-1/3 w-[600px] text-center font-mono text-5xl leading-relaxed"
     transition:animate="slide"
   >
-    Hi! My name is <span class="text-primary">Lukas Trombach</span> and I'm a software
-    engineer based in Auckland.
+    {data.block1}
+    <span class="text-primary">{data.name}</span>
+    {data.block2}
   </p>
   <Waves />
 </section>
