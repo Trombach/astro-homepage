@@ -1,0 +1,31 @@
+---
+import H1 from "@components/H1.astro";
+import Avatar from "@components/Avatar.astro";
+import { getEntry } from "astro:content";
+
+const {
+  render,
+  data: { title },
+} = await getEntry("about", "about-me");
+const { Content } = await render();
+---
+
+<section
+  id="about-me"
+  transition:animate="slide"
+  class="flex min-h-screen-less-header flex-col items-center justify-center"
+>
+  <div
+    class:list={[
+      "mx-auto flex max-w-screen-lg flex-col items-center justify-between lg:flex-row",
+    ]}
+  >
+    <div class="flex flex-col items-center">
+      <Avatar />
+      <H1 {title} />
+    </div>
+    <div class="w-2/3 p-4 text-center text-xl *:mb-5">
+      <Content />
+    </div>
+  </div>
+</section>
