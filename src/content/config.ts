@@ -9,6 +9,17 @@ const homeCollection = defineCollection({
     })
 });
 
+const technologyCollection = defineCollection({
+    type: "data",
+    schema: z.object({
+        name: z.string(),
+        icon: z.custom<`logos:${string}`>((val) => typeof val === 'string' ? /logos:.*/.test(val) : false),
+        twClass: z.string().optional(),
+        sortOrder: z.number()
+    })
+})
+
 export const collections = {
-    home: homeCollection 
+    home: homeCollection ,
+    technologies: technologyCollection
 }
