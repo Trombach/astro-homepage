@@ -1,0 +1,20 @@
+---
+import H1 from "@components/H1.astro";
+import TechGrid from "@components/TechGrid.astro";
+import { getEntry } from "astro:content";
+
+const {
+  render,
+  data: { title },
+} = await getEntry("about", "tech");
+const { Content } = await render();
+---
+
+<section
+  id="technologies"
+  class="mx-auto min-h-screen-less-header max-w-5xl [&_p]:mb-6 [&_p]:text-xl"
+>
+  <H1 {title} />
+  <Content />
+  <TechGrid />
+</section>
