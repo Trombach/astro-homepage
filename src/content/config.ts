@@ -19,7 +19,15 @@ const technologyCollection = defineCollection({
     })
 })
 
+const aboutCollection = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string()
+    })
+})
+
 export const collections = {
     home: homeCollection ,
-    technologies: technologyCollection
+    technologies: technologyCollection,
+    about: aboutCollection,
 }
