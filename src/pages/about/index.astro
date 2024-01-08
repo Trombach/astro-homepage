@@ -1,24 +1,13 @@
 ---
 import Layout from "src/layouts/Layout.astro";
-import H1 from "@components/H1.astro";
-import TechGrid from "@components/TechGrid.astro";
 import GradientBackground from "src/layouts/GradientBackground.astro";
 import AboutMe from "@components/About/AboutMe.astro";
+import Tech from "@components/About/Tech.astro";
 ---
 
 <Layout title="Lukas Trombach | About">
   <GradientBackground>
     <AboutMe />
-
-    <section
-      id="technologies"
-      class="mx-auto min-h-screen-less-header max-w-5xl"
-    >
-      <H1 title="Technologies" />
-      <p class="mb-6 text-xl">
-        A comprehensive but incomplete list of my favourite technologies.
-      </p>
-      <TechGrid />
-    </section>
+    <Tech />
   </GradientBackground>
 </Layout>
