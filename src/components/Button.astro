@@ -1,5 +1,7 @@
 ---
-type Props = astroHTML.JSX.ButtonHTMLAttributes;
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"button">;
 
 const { "class:list": className, ...buttonProps }: Props = Astro.props;
 ---
