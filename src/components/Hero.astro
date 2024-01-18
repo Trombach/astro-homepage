@@ -6,13 +6,15 @@ const { data } = await getEntry("home", "welcome");
 ---
 
 <section id="hero" class="relative h-screen-less-header">
-  <div class="absolute left-0 top-0 w-full flex-col p-5 lg:top-1/3 lg:flex-row">
+  <div
+    class="absolute left-0 top-0 w-full flex-col p-5 lg:top-1/3 lg:flex-row"
+    transition:animate="slide"
+  >
     <p
       class:list={[
         "max-w-[600px] text-center font-mono leading-relaxed",
         "[font-size:clamp(theme(fontSize.2xl),-2.25rem_+_9.3333vw,theme(fontSize.5xl))]",
       ]}
-      transition:animate="slide"
     >
       {data.block1}
       <span class="text-primary">{data.name}</span>
