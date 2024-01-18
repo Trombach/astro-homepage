@@ -2,8 +2,6 @@
   import { onMount } from "svelte";
 
   let showCloseIcon = false;
-  export let className: string | undefined = undefined;
-
   let nav: HTMLElement | null;
 
   onMount(() => (nav = document.querySelector("nav")));
@@ -18,7 +16,7 @@
   };
 </script>
 
-<button class={className} on:click={toggle}>
+<button class="lg:hidden" on:click={toggle}>
   <svg
     class="hamburger fill-foreground"
     class:close={showCloseIcon}
