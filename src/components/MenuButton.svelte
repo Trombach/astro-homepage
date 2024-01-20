@@ -45,14 +45,13 @@
   </svg>
 </button>
 
-<style>
+<style lang="postcss">
   button {
-    padding: 5px;
+    @apply p-1;
   }
 
   svg.hamburger {
-    width: 25px;
-    height: 25px;
+    @apply size-8;
   }
 
   svg.hamburger g {

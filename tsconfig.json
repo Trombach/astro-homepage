@@ -10,6 +10,9 @@
       "@shared/*": ["src/shared/*"],
       "@images/*": ["src/images/*"],
       "@icons/*": ["src/icons/*"]
-    }
+    },
+    "types": [
+      "unplugin-icons/types/astro"
+    ]
   }
 }
