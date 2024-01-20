@@ -1,6 +1,0 @@
-{
-    "icon": "logos:github-icon",
-    "name": "Github",
-    "sortOrder": 8,
-    "twClass": "[&_path]:fill-foreground"
-}

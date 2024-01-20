@@ -1,21 +1,35 @@
 ---
-import { Icon } from "astro-icon/components";
-import { getCollection } from "astro:content";
-
-const technologyCollection = await getCollection("technologies");
+import AngularLogo from "~icons/logos/angular-icon";
+import TypeScriptLogo from "~icons/logos/typescript-icon";
+import JavaScriptLogo from "~icons/logos/javascript";
+import Html5Logo from "~icons/logos/html-5";
+import Css3Logo from "~icons/logos/css-3";
+import TailwindLogo from "~icons/logos/tailwindcss-icon";
+import NextJsLogo from "~icons/logos/nextjs-icon";
+import GitLogo from "~icons/logos/git-icon";
+import GithubLogo from "~icons/logos/github-icon";
+import GoLogo from "~icons/logos/go";
+import BashLogo from "~icons/logos/bash-icon";
+import RustLogo from "~icons/logos/rust";
+import AstroLogo from "~icons/logos/astro-icon";
+import NodeJsLogo from "~icons/logos/nodejs-icon";
+import SvelteLogo from "~icons/logos/svelte-icon";
 ---
 
-<div
-  class="grid grid-cols-2 gap-10 p-5 max-sm:gap-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-20"
->
-  {
-    technologyCollection
-      .sort(
-        ({ data: { sortOrder: soa } }, { data: { sortOrder: sob } }) =>
-          soa - sob,
-      )
-      .map(({ data: { name, icon, twClass } }) => (
-        <Icon {name} size={128} name={icon} class:list={["mx-auto", twClass]} />
-      ))
-  }
+<div class="grid grid-cols-3 gap-14 lg:grid-cols-5 [&>svg]:size-full">
+  <TypeScriptLogo />
+  <AngularLogo />
+  <JavaScriptLogo />
+  <Html5Logo class="fill-foreground" />
+  <Css3Logo class="fill-foreground" />
+  <TailwindLogo />
+  <NextJsLogo />
+  <GitLogo />
+  <GithubLogo class="[&_path]:fill-foreground" />
+  <GoLogo />
+  <BashLogo />
+  <RustLogo class="fill-foreground" />
+  <AstroLogo class="fill-foreground" />
+  <NodeJsLogo />
+  <SvelteLogo />
 </div>
