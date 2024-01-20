@@ -2,13 +2,14 @@
 import type { HTMLAttributes } from "astro/types";
 type Props = HTMLAttributes<"section">;
 
-const { "class:list": classList, ...props } = Astro.props;
+const { "class:list": classList, class: className, ...props } = Astro.props;
 ---
 
 <div
   class:list={[
     "flex min-h-screen-less-header flex-col items-center bg-gradient-to-tl from-primary/50 to-50% bg-cover bg-fixed bg-right-bottom",
-    { classList },
+    classList,
+    className,
   ]}
   {...props}
 >
