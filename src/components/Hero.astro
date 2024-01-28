@@ -1,16 +1,12 @@
 ---
 import Waves from "@components/Waves.astro";
 import { getEntry } from "astro:content";
-import Waves from "./Waves.astro";
 
 const { data } = await getEntry("home", "welcome");
 ---
 
 <section id="hero" class="relative h-screen-less-header">
-  <div
-    class="absolute left-0 top-0 w-full flex-col p-5 lg:top-1/3 lg:flex-row"
-    transition:animate="slide"
-  >
+  <div class="w-full flex-col p-5 lg:flex-row" transition:animate="slide">
     <p
       class:list={[
         "max-w-[600px] text-center font-mono leading-relaxed",
