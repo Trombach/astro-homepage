@@ -15,9 +15,8 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      Icons({
-        compiler: "astro",
-      }),
-    ],
-  },
+      Icons({ compiler: "svelte" }),
+      Icons({ compiler: "astro" }),
+    ]
+  }
 });
