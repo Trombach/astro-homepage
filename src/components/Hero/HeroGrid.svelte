@@ -1,18 +1,19 @@
 <script lang="ts">
+  import PlusIcon from "virtual:icons/heroicons-outline/plus";
 </script>
 
 <div class="hero-grid">
   <div id="panel-one">
     <slot name="panelOne" />
-    <button>+</button>
+    <button><PlusIcon /></button>
   </div>
   <div id="panel-two">
     <slot name="panelTwo" />
-    <button>+</button>
+    <button><PlusIcon /></button>
   </div>
   <div id="panel-three">
     <slot name="panelThree" />
-    <button>+</button>
+    <button><PlusIcon /></button>
   </div>
 </div>
 
@@ -31,6 +32,6 @@
   }
 
   .hero-grid > div[id^="panel"] > button {
-    @apply absolute bottom-0 right-0 rounded-full p-3;
+    @apply absolute bottom-0 right-0 rounded-full border border-primary p-3;
   }
 </style>
