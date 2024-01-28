@@ -16,11 +16,7 @@ export default defineConfig({
     prefetchAll: true,
   },
   vite: {
-    plugins: [
-      Icons({
-        compiler: "astro",
-      }),
-    ],
+    plugins: [Icons({ compiler: "svelte" }), Icons({ compiler: "astro" })],
   },
   output: "hybrid",
   adapter: vercel({ imageService: true, webAnalytics: { enabled: true } }),
