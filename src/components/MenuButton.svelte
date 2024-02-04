@@ -4,7 +4,7 @@
   let showCloseIcon = false;
   let nav: HTMLElement | null;
 
-  onMount(() => (nav = document.querySelector("nav")));
+  onMount(() => (nav = document.querySelector("nav#primary")));
 
   const toggle = () => {
     showCloseIcon = !showCloseIcon;
