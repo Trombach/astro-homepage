@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import { dash } from "radash";
+
+type Props = {
+  title: string;
+  description: string;
+  href: string;
+  cover?: ImageMetadata | undefined;
+  completed?: Date | undefined;
+  location: string;
+};
+
+const { href, title, description, cover } = Astro.props;
+---
+
+<li
+  class="max-w-[600px] overflow-clip rounded-xl border bg-background"
+  transition:name={`border-${dash(title)}`}
+>
+  <a {href}>
+    {
+      cover ? (
+        <Image
+          src={cover}
+          alt="hero image"
+          width={600}
+          loading="eager"
+          class="aspect-[21/9] rounded-t-xl object-cover"
+          transition:name={cover.src}
+        />
+      ) : null
+    }
+    <div class="p-3">
+      <h2 transition:name={dash(title)}>
+        {title}
+      </h2>
+      <p class="text-muted-foreground">
+        {description}
+      </p>
+    </div>
+  </a>
+</li>
