@@ -10,7 +10,7 @@ const { data } = await getEntry("home", "welcome");
     <p
       class:list={[
         "max-w-[600px] text-center font-mono leading-relaxed",
-        "[font-size:clamp(theme(fontSize.2xl),-2.25rem_+_9.3333vw,theme(fontSize.5xl))]",
+        "font-size-clamp",
       ]}
     >
       {data.block1}
