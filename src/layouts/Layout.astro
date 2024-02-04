@@ -27,6 +27,7 @@ const { title } = Astro.props;
     <main><slot /></main>
     <style is:global>
       @tailwind base;
+      @tailwind utilities;
 
       @layer base {
         :root {
@@ -82,12 +83,34 @@ const { title } = Astro.props;
           @apply scroll-pt-[84px] bg-background leading-normal text-foreground;
         }
 
+        * {
+          @apply border-border;
+        }
+
         :has(:target) {
           @apply motion-safe:scroll-smooth;
         }
 
         p {
           @apply max-w-[70ch] text-pretty;
+        }
+      }
+
+      @layer utilities {
+        .image-fade {
+          mask-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1) 0 50%,
+            rgba(0, 0, 0, 0)
+          );
+        }
+
+        .font-size-clamp {
+          font-size: clamp(
+            theme(fontSize.2xl),
+            -2.25rem + 9.3333vw,
+            theme(fontSize.5xl)
+          );
         }
       }
     </style>

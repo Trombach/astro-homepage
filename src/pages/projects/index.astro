@@ -1,0 +1,20 @@
+---
+import ProjectCard from "@components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+import GradientSection from "src/layouts/GradientBackground.astro";
+import Layout from "src/layouts/Layout.astro";
+
+const projects = await getCollection("projects");
+---
+
+<Layout title="Lukas Trombach | Projects">
+  <GradientSection>
+    <ul class="flex max-w-[77ch] flex-col gap-10">
+      {
+        projects.map(({ slug, data }) => (
+          <ProjectCard {...data} href={`/projects/${slug}`} />
+        ))
+      }
+    </ul>
+  </GradientSection>
+</Layout>
