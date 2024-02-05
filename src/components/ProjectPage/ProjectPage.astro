@@ -1,0 +1,29 @@
+---
+import Link from "@components/Link.astro";
+import LeftArrow from "~icons/heroicons/arrow-left";
+import PageBody from "./PageBody.astro";
+
+type Props = {
+  title: string;
+  description: string;
+  cover?: ImageMetadata | undefined;
+};
+
+const { title, description, cover } = Astro.props;
+---
+
+<div class="mx-auto max-w-4xl">
+  <Link
+    as="a"
+    appearance="secondary"
+    href="/projects"
+    class="group mb-3 mt-2 flex w-fit items-center gap-2 text-sm"
+  >
+    <LeftArrow class="transition-transform group-hover:-translate-x-1" />
+    <span>Back to Projects</span>
+  </Link>
+
+  <PageBody {title} {description} {cover}>
+    <slot name="content" slot="content" />
+  </PageBody>
+</div>

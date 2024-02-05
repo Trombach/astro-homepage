@@ -1,0 +1,15 @@
+---
+type Props = { tags: string[] };
+
+const { tags } = Astro.props;
+---
+
+<div class="my-3 flex flex-row gap-1">
+  {
+    tags.map((tag) => (
+      <span class="rounded-full border px-2 py-1 font-mono text-xs tracking-tighter hover:bg-accent/50">
+        {tag}
+      </span>
+    ))
+  }
+</div>
