@@ -1,13 +1,13 @@
 ---
-import Button from "@components/Button.astro";
+import Link from "@components/Link.astro";
 import IconDownload from "~icons/heroicons-outline/download";
 import GithubLogo from "~icons/logos/github-icon";
 ---
 
 <div class="flex items-center gap-4 lg:order-2">
-  <Button title="Download CV" class="flex items-center gap-2">
+  <Link title="Download CV" class="flex items-center gap-2">
     <IconDownload /><span class="hidden md:inline">Download CV</span>
-  </Button>
+  </Link>
   <a href="https://github.com/Trombach/astro-homepage" class="size-8">
     <GithubLogo class="size-full [&_path]:fill-foreground" />
     <span class="sr-only">Github Repository</span>
