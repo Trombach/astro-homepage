@@ -5,18 +5,20 @@ type Props = {
 };
 
 const { title, href }: Props = Astro.props;
-const path = new URL(Astro.request.url).pathname;
+const { pathname } = Astro.url;
+
+const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <a
   {href}
   class:list={[
     "relative inline-block h-auto tracking-wider hover:text-primary",
-    { "text-muted-foreground": path !== href },
+    { "text-muted-foreground": !isActive },
   ]}
 >
   {
-    path === href ? (
+    isActive ? (
       <span
         transition:name="active-link"
         transition:animate="slide"
