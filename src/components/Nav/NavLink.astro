@@ -18,6 +18,7 @@ const path = new URL(Astro.request.url).pathname;
   {
     path === href ? (
       <span
+        transition:name="active-link"
         transition:animate="slide"
         class:list={[
           "absolute -right-4 top-[calc(50%-(theme(spacing.2)/2))] h-2 w-2 rounded-full bg-current",
