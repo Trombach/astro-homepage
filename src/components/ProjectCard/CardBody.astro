@@ -1,0 +1,24 @@
+---
+import { dash } from "radash";
+import Tags from "./CardTags.astro";
+
+type Props = {
+  title: string;
+  description: string;
+  tags?: string[] | undefined;
+};
+
+const { title, description, tags } = Astro.props;
+---
+
+<div
+  class="rounded-b-xl p-3 transition-colors duration-300 group-hover:bg-accent/50"
+>
+  <h2 class="my-3" transition:name={dash(title)}>
+    {title}
+  </h2>
+  <p class="my-2 text-muted-foreground">
+    {description}
+  </p>
+  {tags ? <Tags {tags} /> : null}
+</div>
