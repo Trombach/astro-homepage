@@ -1,12 +1,8 @@
 ---
-import H1 from "@components/H1.astro";
-import Link from "@components/Link.astro";
+import ProjectPage from "@components/ProjectPage/ProjectPage.astro";
 import Background from "@layouts/Background.astro";
 import Layout from "@layouts/Layout.astro";
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import { dash } from "radash";
-import LeftArrow from "~icons/heroicons/arrow-left";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -24,44 +20,12 @@ const {
 } = Astro.props;
 
 const { Content } = await render();
-const dashedTitle = dash(title);
 ---
 
 <Layout {title}>
   <Background>
-    <div class="mx-auto max-w-4xl">
-      <Link
-        as="a"
-        appearance="secondary"
-        href="/projects"
-        class="group mb-3 mt-2 flex w-fit items-center gap-2 text-sm"
-      >
-        <LeftArrow class="transition-transform group-hover:-translate-x-1" />
-        <span>Back to Projects</span>
-      </Link>
-      <article
-        class="prose lg:prose-lg dark:prose-invert prose-headings:mx-5 prose-p:mx-5 mx-auto max-w-screen-lg rounded-xl border bg-background"
-        transition:name={`border-${dashedTitle}`}
-      >
-        {
-          cover ? (
-            <Image
-              src={cover}
-              alt="hero"
-              widths={[240, cover.width]}
-              sizes={`(max-width: 360px) 240px, ${cover.width}px`}
-              class="aspect-[21/9] w-full rounded-t-xl object-cover"
-              transition:name={cover.src}
-            />
-          ) : null
-        }
-
-        <H1 {title} transition:name={dashedTitle} />
-        <p class="text-muted-foreground">
-          {description}
-        </p>
-        <Content />
-      </article>
-    </div>
+    <ProjectPage {title} {description} {cover}>
+      <Content slot="content" />
+    </ProjectPage>
   </Background>
 </Layout>

@@ -16,6 +16,8 @@ const aboutCollection = defineCollection({
     })
 })
 
+const tags = ["Front-end", "Personal", "Research", "SysAdmin", "Computing"] as const;
+
 const projectsCollection = defineCollection({
     type: "content",
     schema: ({ image }) => z.object({
@@ -24,9 +26,10 @@ const projectsCollection = defineCollection({
         location: z.string(),
         image: z.string().optional(),
         completed: z.coerce.date().optional(),
-        cover: image().optional().refine((img) => img?.width && img.format === "png" ? img.width >= 1080 : true, {
-            message: "Cover image must be at least 1080 pixels wide!",
-        })
+        cover: image().optional().refine((img) => img?.width && img.format === "png" ? img.width >= 600 : true, {
+            message: "Cover image must be at least 600 pixels wide!",
+        }),
+        tags: z.array(z.enum(tags)).optional()
     })
 });
 
