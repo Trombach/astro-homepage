@@ -1,5 +1,6 @@
 ---
 import H1 from "@components/H1.astro";
+import Link from "@components/Link.astro";
 import Background from "@layouts/Background.astro";
 import Layout from "@layouts/Layout.astro";
 import { Image } from "astro:assets";
@@ -29,13 +30,15 @@ const dashedTitle = dash(title);
 <Layout {title}>
   <Background>
     <div class="mx-auto max-w-4xl">
-      <a
+      <Link
+        as="a"
+        appearance="secondary"
         href="/projects"
-        class="group mb-3 mt-2 flex w-fit items-center gap-2 rounded-full border bg-background py-2 pl-3 pr-5 text-sm"
+        class="group mb-3 mt-2 flex w-fit items-center gap-2 text-sm"
       >
         <LeftArrow class="transition-transform group-hover:-translate-x-1" />
         <span>Back to Projects</span>
-      </a>
+      </Link>
       <article
         class="prose lg:prose-lg dark:prose-invert prose-headings:mx-5 prose-p:mx-5 mx-auto max-w-screen-lg rounded-xl border bg-background"
         transition:name={`border-${dashedTitle}`}
