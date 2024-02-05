@@ -1,24 +1,33 @@
 ---
-import type { ClassList } from "@shared/types";
+import type { HTMLTag, Polymorphic } from "astro/types";
 
-interface Props {
-  title: string;
-  href: string;
-  class?: ClassList;
-}
+type PropHelper<Tag extends HTMLTag> = Polymorphic<{
+  as: Tag;
+  appearance?: "primary" | "secondary";
+}>;
 
-const { title, href, class: className } = Astro.props;
+type Props = PropHelper<"a" | "button">;
+
+const {
+  as: Tag = "button",
+  appearance = "primary",
+  "class:list": classList,
+  class: className,
+  ...props
+} = Astro.props;
 ---
 
-<!-- TODO tailwind decoration-current not working -->
-<a
-  {href}
+{/* @ts-expect-error */}
+<Tag
   class:list={[
-    "underline decoration-transparent underline-offset-0",
-    "transition-all duration-300",
-    "hover:decoration-white hover:underline-offset-4",
+    {
+      "rounded-full border-2 border-secondary px-5 py-2 transition-colors hover:border-primary hover:bg-primary/25":
+        appearance === "primary",
+    },
+    classList,
     className,
   ]}
+  {...props}
 >
-  {title}
-</a>
+  <slot />
+</Tag>
