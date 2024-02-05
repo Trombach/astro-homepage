@@ -18,10 +18,9 @@ const {
 {/* @ts-expect-error */}
 <Tag
   class:list={[
-    {
-      "rounded-full border-2 border-secondary px-5 py-2 transition-colors hover:border-primary hover:bg-primary/25":
-        appearance === "primary",
-    },
+    "rounded-full border px-5 py-2 transition-colors",
+    { "hover:border-primary hover:bg-primary/25": appearance === "primary" },
+    { "hover:bg-accent/50": appearance === "secondary" },
     classList,
     className,
   ]}
