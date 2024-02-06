@@ -3,7 +3,7 @@ import type { HTMLTag, Polymorphic } from "astro/types";
 
 type Props<Tag extends HTMLTag = "a" | "button"> = Polymorphic<{
   as: Tag;
-  appearance?: "primary" | "secondary";
+  appearance?: "primary" | "secondary" | undefined;
 }>;
 
 const {
