@@ -1,12 +1,10 @@
 ---
 import type { HTMLTag, Polymorphic } from "astro/types";
 
-type PropHelper<Tag extends HTMLTag> = Polymorphic<{
+type Props<Tag extends HTMLTag = "a" | "button"> = Polymorphic<{
   as: Tag;
   appearance?: "primary" | "secondary";
 }>;
-
-type Props = PropHelper<"a" | "button">;
 
 const {
   as: Tag = "button",
