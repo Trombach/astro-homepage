@@ -1,0 +1,24 @@
+---
+import type { TocItem } from "@utils/generateToc";
+
+type Props = {
+  toc: TocItem[];
+};
+
+const { toc } = Astro.props;
+---
+
+<ul class="mb-3 pl-7">
+  {
+    toc.map(({ slug, text, children }) => {
+      return (
+        <>
+          <li class="leading-relaxed">
+            <a href={`#${slug}`}>{text}</a>
+          </li>
+          {children.length ? <Astro.self toc={children} /> : null}
+        </>
+      );
+    })
+  }
+</ul>

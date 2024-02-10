@@ -1,0 +1,31 @@
+---
+import ProjectPage from "@components/ProjectPage/ProjectPage.astro";
+import Background from "@layouts/Background.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const {
+  entry: {
+    data: { title, description, cover },
+    render,
+  },
+} = Astro.props;
+
+const { Content } = await render();
+---
+
+<Layout {title}>
+  <Background>
+    <ProjectPage {title} {description} {cover}>
+      <Content slot="content" />
+    </ProjectPage>
+  </Background>
+</Layout>

@@ -1,0 +1,40 @@
+---
+import H1 from "@components/H1.astro";
+import { Image } from "astro:assets";
+import { dash } from "radash";
+
+type Props = {
+  title: string;
+  description: string;
+  cover?: ImageMetadata | undefined;
+};
+
+const { title, description, cover } = Astro.props;
+const dashedTitle = dash(title);
+---
+
+<article
+  class="prose mx-auto max-w-screen-lg rounded-xl border bg-background lg:prose-lg dark:prose-invert prose-headings:mx-5 prose-p:mx-5"
+  transition:name={`border-${dashedTitle}`}
+>
+  {
+    cover ? (
+      <Image
+        src={cover}
+        alt="hero"
+        widths={[240, cover.width]}
+        sizes={`(max-width: 360px) 240px, ${cover.width}px`}
+        class="aspect-[21/9] w-full rounded-t-xl object-cover"
+        transition:name={cover.src}
+      />
+    ) : null
+  }
+
+  <H1 {title} transition:name={dashedTitle} />
+
+  <p class="text-muted-foreground">
+    {description}
+  </p>
+
+  <slot name="content" />
+</article>
