@@ -16,12 +16,14 @@
 </script>
 
 <div
+  data-hero-grid
   on:transitionstart={startTransition}
   on:transitionend={endTransition}
   class="h-full gap-5 px-5 grid max-w-screen-sm lg:max-w-screen-lg lg:h-full m-auto lg:items-center"
 >
   <Panel
     title="Welcome"
+    href="/"
     number={1}
     {transitioning}
     bind:expanded={expanded[1]}
@@ -31,7 +33,8 @@
   </Panel>
 
   <Panel
-    title="About Me"
+    title="Read about Me"
+    href="/about"
     number={2}
     {transitioning}
     bind:expanded={expanded[2]}
@@ -41,8 +44,9 @@
   </Panel>
 
   <Panel
+    title="Learn about my projects"
+    href="/projects"
     number={3}
-    title="My projects"
     {transitioning}
     bind:expanded={expanded[3]}
     on:hasExpanded={toggleOthers}
@@ -51,8 +55,9 @@
   </Panel>
 
   <Panel
-    number={4}
     title="Contact Me"
+    href="/contact"
+    number={4}
     {transitioning}
     bind:expanded={expanded[4]}
     on:hasExpanded={toggleOthers}
@@ -62,7 +67,7 @@
 </div>
 
 <style global lang="postcss">
-  .grid {
+  [data-hero-grid] {
     transition: grid-template-rows 500ms ease-in-out;
     grid-template-rows: var(--template);
 
@@ -74,19 +79,19 @@
     }
   }
 
-  .grid:has(:nth-child(1):is(.expanded)) {
+  [data-hero-grid]:has(:nth-child(1):is([data-expanded="true"])) {
     --template: 8fr 1fr 1fr 1fr;
   }
 
-  .grid:has(:nth-child(2):is(.expanded)) {
+  [data-hero-grid]:has(:nth-child(2):is([data-expanded="true"])) {
     --template: 1fr 8fr 1fr 1fr;
   }
 
-  .grid:has(:nth-child(3):is(.expanded)) {
+  [data-hero-grid]:has(:nth-child(3):is([data-expanded="true"])) {
     --template: 1fr 1fr 8fr 1fr;
   }
 
-  .grid:has(:nth-child(4):is(.expanded)) {
+  [data-hero-grid]:has(:nth-child(4):is([data-expanded="true"])) {
     --template: 1fr 1fr 1fr 8fr;
   }
 </style>
