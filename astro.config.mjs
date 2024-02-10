@@ -17,6 +17,12 @@ export default defineConfig({
     plugins: [
       Icons({ compiler: "svelte" }),
       Icons({ compiler: "astro" }),
-    ]
+    ],
+    resolve: {
+      alias: [
+        { find: "icons:svelte", replacement: "~icons" },
+        { find: "icons:astro", replacement: "~icons" }
+      ]
+    }
   }
 });
