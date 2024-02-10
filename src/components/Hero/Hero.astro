@@ -7,10 +7,10 @@ const { data } = await getEntry("home", "welcome");
 ---
 
 <section id="hero" class="relative h-screen-less-header">
-  <div class="w-full flex-col p-5 lg:flex-row" transition:animate="slide"></div>
+  <!-- <div class="h-full flex-col lg:flex-row" transition:animate="slide"></div> -->
   <HeroGrid client:load>
     <p
-      slot="panelOne"
+      slot="panel-one"
       class:list={[
         "max-w-[600px] text-center font-mono leading-relaxed",
         "font-size-clamp",
@@ -20,6 +20,24 @@ const { data } = await getEntry("home", "welcome");
       <span class="text-primary">{data.name}</span>
       {data.block2}
     </p>
+
+    <Fragment slot="panel-two"
+      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam adipisci
+      itaque temporibus. Eum debitis in harum totam eos molestias delectus,
+      incidunt voluptas voluptates sequi. Totam error dolor eaque vero ullam.
+    </Fragment>
+
+    <Fragment slot="panel-three"
+      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam adipisci
+      itaque temporibus. Eum debitis in harum totam eos molestias delectus,
+      incidunt voluptas voluptates sequi. Totam error dolor eaque vero ullam.
+    </Fragment>
+
+    <Fragment slot="panel-four"
+      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam adipisci
+      itaque temporibus. Eum debitis in harum totam eos molestias delectus,
+      incidunt voluptas voluptates sequi. Totam error dolor eaque vero ullam.
+    </Fragment>
   </HeroGrid>
   <Waves />
 </section>
