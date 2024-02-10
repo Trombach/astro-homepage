@@ -19,7 +19,7 @@
   data-hero-grid
   on:transitionstart={startTransition}
   on:transitionend={endTransition}
-  class="h-full gap-5 px-5 grid max-w-screen-sm lg:max-w-screen-lg lg:h-full m-auto lg:items-center"
+  class="h-full gap-5 p-5 grid max-w-screen-sm lg:max-w-screen-xl lg:h-full m-auto lg:items-center"
 >
   <Panel
     title="Welcome"
@@ -33,7 +33,7 @@
   </Panel>
 
   <Panel
-    title="Read about Me"
+    title="Read About Me"
     href="/about"
     number={2}
     {transitioning}
@@ -44,7 +44,7 @@
   </Panel>
 
   <Panel
-    title="Learn about my projects"
+    title="Learn About My Projects"
     href="/projects"
     number={3}
     {transitioning}
@@ -68,10 +68,12 @@
 
 <style global lang="postcss">
   [data-hero-grid] {
+    --large-panel-width: 8fr;
     transition: grid-template-rows 500ms ease-in-out;
     grid-template-rows: var(--template);
 
     @media screen(lg) {
+      --large-panel-width: 12fr;
       transition: grid-template-columns 500ms ease-in-out;
 
       grid-template-rows: auto;
@@ -80,18 +82,18 @@
   }
 
   [data-hero-grid]:has(:nth-child(1):is([data-expanded="true"])) {
-    --template: 8fr 1fr 1fr 1fr;
+    --template: var(--large-panel-width) 1fr 1fr 1fr;
   }
 
   [data-hero-grid]:has(:nth-child(2):is([data-expanded="true"])) {
-    --template: 1fr 8fr 1fr 1fr;
+    --template: 1fr var(--large-panel-width) 1fr 1fr;
   }
 
   [data-hero-grid]:has(:nth-child(3):is([data-expanded="true"])) {
-    --template: 1fr 1fr 8fr 1fr;
+    --template: 1fr 1fr var(--large-panel-width) 1fr;
   }
 
   [data-hero-grid]:has(:nth-child(4):is([data-expanded="true"])) {
-    --template: 1fr 1fr 1fr 8fr;
+    --template: 1fr 1fr 1fr var(--large-panel-width);
   }
 </style>
