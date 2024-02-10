@@ -7,6 +7,7 @@
   export let number: number;
   export let transitioning: boolean;
   export let title: string;
+  export let href: string;
 
   const dispatch = createEventDispatcher<{ hasExpanded: number }>();
 
@@ -18,36 +19,47 @@
 </script>
 
 <div
-  class="panel flex items-center justify-end rounded-[50cqh] border border-border bg-card text-card-foreground backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:h-1/2 lg:flex-col lg:rounded-[50cqw]"
-  class:expanded
+  class="flex items-center justify-end rounded-[50cqh] border border-border bg-card text-card-foreground backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:h-1/2 lg:flex-col lg:rounded-[50cqw]"
+  data-panel
+  data-expanded={expanded || null}
+  class:flex-col={expanded}
 >
   {#if expanded && !transitioning}
     <div in:fade>
       <slot name="panel" />
     </div>
   {:else if !transitioning}
-    <div class="lg:[writing-mode:_vertical-rl]" in:fade>
+    <div in:fade class="lg:[writing-mode:_vertical-lr]">
       {title}
     </div>
   {/if}
 
-  <button
-    class="m-3 rounded-full border border-border bg-background p-3 whitespace-nowrap overflow-clip [transition:_max-width_1s,_min-width_1s]"
-    class:max-w-[50px]={!expanded}
-    class:max-w-80={expanded}
-    on:click={toggleExpanded}
-    disabled={expanded}
-  >
-    {#if !expanded}<PlusIcon />{:else}{title}{/if}
-  </button>
+  {#if !transitioning}
+    {#if !expanded}
+      <button
+        in:fade
+        class="m-3 rounded-full border border-border bg-background p-3"
+        on:click={toggleExpanded}
+      >
+        <PlusIcon />
+      </button>
+    {:else}
+      <a
+        in:fade
+        {href}
+        class="m-3 rounded-full border border-border bg-background p-3"
+      >
+        {title}
+      </a>{/if}
+  {/if}
 </div>
 
 <style lang="postcss">
-  .panel {
+  [data-panel] {
     transition: border-radius 250ms ease-in-out 400ms;
   }
 
-  .panel.expanded {
+  [data-panel][data-expanded="true"] {
     @apply rounded-4xl;
     transition: border-radius 250ms -250ms;
   }
