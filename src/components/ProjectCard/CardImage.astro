@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+
+type Props = { cover: ImageMetadata };
+
+const { cover } = Astro.props;
+---
+
+<div class="overflow-clip">
+  <Image
+    src={cover}
+    alt="hero image"
+    width={600}
+    loading="eager"
+    class="aspect-[21/9] transform overflow-clip rounded-t-xl object-cover object-center transition-transform duration-300 group-hover:scale-105"
+    transition:name={cover.src}
+  />
+</div>
