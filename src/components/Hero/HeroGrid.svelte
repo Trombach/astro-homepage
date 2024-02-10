@@ -1,37 +1,92 @@
 <script lang="ts">
-  import PlusIcon from "virtual:icons/heroicons-outline/plus";
+  import Panel from "./Panel.svelte";
+
+  let transitioning = false;
+
+  const expanded = { 1: true, 2: false, 3: false, 4: false };
+  const panels: (keyof typeof expanded)[] = [1, 2, 3, 4] as const;
+
+  const toggleOthers = ({ detail: expandedPanel }: CustomEvent<number>) => {
+    panels
+      .filter((panel) => panel !== expandedPanel)
+      .forEach((panel) => (expanded[panel] = false));
+  };
+  const startTransition = () => (transitioning = true);
+  const endTransition = () => (transitioning = false);
 </script>
 
-<div class="hero-grid">
-  <div id="panel-one">
-    <slot name="panelOne" />
-    <button><PlusIcon /></button>
-  </div>
-  <div id="panel-two">
-    <slot name="panelTwo" />
-    <button><PlusIcon /></button>
-  </div>
-  <div id="panel-three">
-    <slot name="panelThree" />
-    <button><PlusIcon /></button>
-  </div>
+<div
+  on:transitionstart={startTransition}
+  on:transitionend={endTransition}
+  class="h-full gap-5 px-5 grid max-w-screen-sm lg:max-w-screen-lg lg:h-full m-auto lg:items-center"
+>
+  <Panel
+    title="Welcome"
+    number={1}
+    {transitioning}
+    bind:expanded={expanded[1]}
+    on:hasExpanded={toggleOthers}
+  >
+    <slot name="panel-one" slot="panel" />
+  </Panel>
+
+  <Panel
+    title="About Me"
+    number={2}
+    {transitioning}
+    bind:expanded={expanded[2]}
+    on:hasExpanded={toggleOthers}
+  >
+    <slot name="panel-two" slot="panel" />
+  </Panel>
+
+  <Panel
+    number={3}
+    title="My projects"
+    {transitioning}
+    bind:expanded={expanded[3]}
+    on:hasExpanded={toggleOthers}
+  >
+    <slot name="panel-three" slot="panel" />
+  </Panel>
+
+  <Panel
+    number={4}
+    title="Contact Me"
+    {transitioning}
+    bind:expanded={expanded[4]}
+    on:hasExpanded={toggleOthers}
+  >
+    <slot name="panel-four" slot="panel" />
+  </Panel>
 </div>
 
-<style lang="postcss">
-  .hero-grid,
-  .hero-grid * {
-    outline: solid red 1px;
+<style global lang="postcss">
+  .grid {
+    transition: grid-template-rows 500ms ease-in-out;
+    grid-template-rows: var(--template);
+
+    @media screen(lg) {
+      transition: grid-template-columns 500ms ease-in-out;
+
+      grid-template-rows: auto;
+      grid-template-columns: var(--template);
+    }
   }
 
-  .hero-grid {
-    @apply absolute left-0 top-0 flex min-h-screen-less-header w-full flex-col p-5 lg:top-1/3 lg:grid;
+  .grid:has(:nth-child(1):is(.expanded)) {
+    --template: 8fr 1fr 1fr 1fr;
   }
 
-  .hero-grid > div[id^="panel"] {
-    @apply relative rounded-2xl bg-card text-card-foreground;
+  .grid:has(:nth-child(2):is(.expanded)) {
+    --template: 1fr 8fr 1fr 1fr;
   }
 
-  .hero-grid > div[id^="panel"] > button {
-    @apply absolute bottom-0 right-0 rounded-full border border-primary p-3;
+  .grid:has(:nth-child(3):is(.expanded)) {
+    --template: 1fr 1fr 8fr 1fr;
+  }
+
+  .grid:has(:nth-child(4):is(.expanded)) {
+    --template: 1fr 1fr 1fr 8fr;
   }
 </style>
