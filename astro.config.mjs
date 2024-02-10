@@ -17,6 +17,12 @@ export default defineConfig({
   },
   vite: {
     plugins: [Icons({ compiler: "svelte" }), Icons({ compiler: "astro" })],
+    resolve: {
+      alias: [
+        { find: "icons:svelte", replacement: "~icons" },
+        { find: "icons:astro", replacement: "~icons" },
+      ],
+    },
   },
   output: "hybrid",
   adapter: vercel({ imageService: true, webAnalytics: { enabled: true } }),
