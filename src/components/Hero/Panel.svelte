@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
   import { fade } from "svelte/transition";
-  import PlusIcon from "virtual:icons/heroicons-outline/plus";
+  import PlusIcon from "virtual:icons/heroicons/plus";
 
   export let expanded: boolean;
   export let number: number;
