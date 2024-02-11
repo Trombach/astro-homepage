@@ -16,7 +16,7 @@
     "@fontsource/inter": "^5.0.16",
     "@fontsource/jetbrains-mono": "^5.0.18",
     "@iconify-json/heroicons": "^1.1.19",
-    "astro": "^4.3.2",
+    "astro": "^4.3.5",
     "astro-lighthouse": "^0.1.3",
     "astro-toc": "^0.1.3",
     "radash": "^11.0.0",
