@@ -19,7 +19,7 @@
         svg path {
             fill: NONE;
             fill-opacity: 1;
-            stroke: #1f1f1f;
+            stroke: #dfdfdf;
             stroke-width: 10;
             stroke-linejoin: round;
             stroke-dasharray: none;
@@ -27,7 +27,7 @@
         }
 
         svg circle {
-            fill: #dfdfdf;
+            fill: #1f1f1f;
         }
     </style>
 </svg>
