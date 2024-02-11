@@ -19,7 +19,7 @@
   data-hero-grid
   on:transitionstart={startTransition}
   on:transitionend={endTransition}
-  class="h-full gap-5 p-5 grid max-w-screen-sm lg:max-w-screen-xl lg:h-full m-auto lg:items-center"
+  class="h-full gap-5 p-5 grid max-w-screen-sm lg:max-w-screen-xl m-auto lg:items-center"
 >
   <Panel
     title="Welcome"

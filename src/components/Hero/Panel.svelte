@@ -19,12 +19,15 @@
 </script>
 
 <div
-  class="flex items-center justify-end rounded-[50cqh] border border-border bg-card text-card-foreground backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:h-1/2 lg:flex-col lg:rounded-[50cqw]"
+  class="flex items-center justify-end rounded-[50cqh] border border-border bg-card text-card-foreground backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:h-2/3 lg:flex-col lg:rounded-[50cqw]"
   data-panel
   data-expanded={expanded || null}
   class:flex-col={expanded}
 >
   {#if expanded && !transitioning}
+    <h1 class="mb-auto">
+      {title}
+    </h1>
     <div in:fade>
       <slot name="panel" />
     </div>
@@ -34,23 +37,22 @@
     </div>
   {/if}
 
-  {#if !transitioning}
-    {#if !expanded}
-      <button
-        in:fade
-        class="m-3 rounded-full border border-border bg-background p-3"
-        on:click={toggleExpanded}
-      >
-        <PlusIcon />
-      </button>
-    {:else}
-      <a
-        in:fade
-        {href}
-        class="m-3 rounded-full border border-border bg-background p-3"
-      >
-        {title}
-      </a>{/if}
+  {#if !expanded && !transitioning}
+    <button
+      in:fade
+      class="m-3 rounded-full border border-border bg-background p-3"
+      on:click={toggleExpanded}
+    >
+      <PlusIcon />
+    </button>
+  {:else if !transitioning}
+    <a
+      in:fade
+      {href}
+      class="m-3 rounded-full border border-border bg-background p-3"
+    >
+      {title}
+    </a>
   {/if}
 </div>
 
