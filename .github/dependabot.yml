@@ -9,3 +9,27 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    groups:
+      astro:
+        patterns:
+          - "astro*"
+          - "@astrojs/*"
+        update-types:
+          - minor
+          - patch
+      astro-breaking:
+        patterns:
+          - "astro*"
+          - "@astrojs/*"
+        update-types:
+          - major
+      others-production:
+        dependency-type: production
+        exclude-patterns:
+          - "astro*"
+          - "@astrojs/*"
+      others-dev:
+        dependency-type: development
+        exclude-patterns:
+          - "astro*"
+          - "@astrojs/*"
