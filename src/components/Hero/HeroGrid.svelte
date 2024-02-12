@@ -1,54 +1,66 @@
+<script context="module" lang="ts">
+  const panels = [1, 2, 3, 4] as const;
+  export type PanelNumber = (typeof panels)[number];
+</script>
+
 <script lang="ts">
   import Panel from "./Panel.svelte";
 
-  let transitioning = false;
-
-  const expanded = { 1: true, 2: false, 3: false, 4: false };
-  const panels: (keyof typeof expanded)[] = [1, 2, 3, 4] as const;
-
-  const toggleOthers = ({ detail: expandedPanel }: CustomEvent<number>) => {
-    panels
-      .filter((panel) => panel !== expandedPanel)
-      .forEach((panel) => (expanded[panel] = false));
+  const panelState: { [key in PanelNumber]: boolean } = {
+    1: true,
+    2: false,
+    3: false,
+    4: false,
   };
-  const startTransition = () => (transitioning = true);
-  const endTransition = () => (transitioning = false);
+
+  let transitionDirection: "right" | "left" = "right";
+
+  const toggleOthers = ({
+    detail: currentExpanded,
+  }: CustomEvent<PanelNumber>) => {
+    const previousExpanded = Object.keys(panelState).find(
+      (key) => panelState[+key as PanelNumber] === true,
+    );
+
+    previousExpanded && +previousExpanded < currentExpanded
+      ? (transitionDirection = "right")
+      : (transitionDirection = "left");
+
+    panels
+      .filter((panel) => panel !== currentExpanded)
+      .forEach((panel) => (panelState[panel] = false));
+  };
 </script>
 
 <div
   data-hero-grid
-  on:transitionstart={startTransition}
-  on:transitionend={endTransition}
   class="h-full gap-5 p-5 grid max-w-screen-sm lg:max-w-screen-xl m-auto lg:items-center"
 >
   <Panel
     title="Welcome"
-    href="/"
     number={1}
-    {transitioning}
-    bind:expanded={expanded[1]}
+    {transitionDirection}
+    bind:expanded={panelState[1]}
     on:hasExpanded={toggleOthers}
   >
     <slot name="panel-one" slot="panel" />
   </Panel>
 
   <Panel
-    title="Read About Me"
-    href="/about"
+    title="About Me"
     number={2}
-    {transitioning}
-    bind:expanded={expanded[2]}
+    {transitionDirection}
+    bind:expanded={panelState[2]}
     on:hasExpanded={toggleOthers}
   >
     <slot name="panel-two" slot="panel" />
   </Panel>
 
   <Panel
-    title="Learn About My Projects"
-    href="/projects"
+    title="My Projects"
     number={3}
-    {transitioning}
-    bind:expanded={expanded[3]}
+    {transitionDirection}
+    bind:expanded={panelState[3]}
     on:hasExpanded={toggleOthers}
   >
     <slot name="panel-three" slot="panel" />
@@ -56,10 +68,9 @@
 
   <Panel
     title="Contact Me"
-    href="/contact"
     number={4}
-    {transitioning}
-    bind:expanded={expanded[4]}
+    {transitionDirection}
+    bind:expanded={panelState[4]}
     on:hasExpanded={toggleOthers}
   >
     <slot name="panel-four" slot="panel" />
