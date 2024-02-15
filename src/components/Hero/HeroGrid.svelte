@@ -13,19 +13,9 @@
     4: false,
   };
 
-  let transitionDirection: "right" | "left" = "right";
-
   const toggleOthers = ({
     detail: currentExpanded,
   }: CustomEvent<PanelNumber>) => {
-    const previousExpanded = Object.keys(panelState).find(
-      (key) => panelState[+key as PanelNumber] === true,
-    );
-
-    previousExpanded && +previousExpanded < currentExpanded
-      ? (transitionDirection = "right")
-      : (transitionDirection = "left");
-
     panels
       .filter((panel) => panel !== currentExpanded)
       .forEach((panel) => (panelState[panel] = false));
@@ -34,12 +24,11 @@
 
 <div
   data-hero-grid
-  class="h-full gap-5 p-5 grid max-w-screen-sm lg:max-w-screen-xl m-auto lg:items-center"
+  class="h-full w-full gap-5 p-5 grid max-w-screen-sm lg:max-w-screen-xl m-auto lg:items-center"
 >
   <Panel
     title="Welcome"
     number={1}
-    {transitionDirection}
     bind:expanded={panelState[1]}
     on:hasExpanded={toggleOthers}
   >
@@ -49,7 +38,6 @@
   <Panel
     title="About Me"
     number={2}
-    {transitionDirection}
     bind:expanded={panelState[2]}
     on:hasExpanded={toggleOthers}
   >
@@ -59,7 +47,6 @@
   <Panel
     title="My Projects"
     number={3}
-    {transitionDirection}
     bind:expanded={panelState[3]}
     on:hasExpanded={toggleOthers}
   >
@@ -69,7 +56,6 @@
   <Panel
     title="Contact Me"
     number={4}
-    {transitionDirection}
     bind:expanded={panelState[4]}
     on:hasExpanded={toggleOthers}
   >

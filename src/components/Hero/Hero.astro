@@ -1,25 +1,15 @@
 ---
-import Waves from "@components/Waves.astro";
-import { getEntry } from "astro:content";
 import HeroGrid from "./HeroGrid.svelte";
-
-const { data } = await getEntry("home", "welcome");
+import Panel1 from "./Panel1.astro";
 ---
 
-<section id="hero" class="relative h-screen-less-header">
-  <!-- <div class="h-full flex-col lg:flex-row" transition:animate="slide"></div> -->
+<section
+  transition:animate="slide"
+  id="hero"
+  class="flex h-screen-less-header w-full flex-col"
+>
   <HeroGrid client:load>
-    <p
-      slot="panel-one"
-      class:list={[
-        "max-w-[600px] text-center font-mono leading-relaxed",
-        "font-size-clamp",
-      ]}
-    >
-      {data.block1}
-      <span class="text-primary">{data.name}</span>
-      {data.block2}
-    </p>
+    <Panel1 slot="panel-one" />
 
     <div slot="panel-two">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam adipisci
@@ -39,5 +29,4 @@ const { data } = await getEntry("home", "welcome");
       incidunt voluptas voluptates sequi. Totam error dolor eaque vero ullam.
     </div>
   </HeroGrid>
-  <Waves />
 </section>
