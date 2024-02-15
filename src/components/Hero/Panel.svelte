@@ -1,15 +1,12 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  import { fly } from "svelte/transition";
+  import { fade } from "svelte/transition";
   import PlusIcon from "icons:svelte/heroicons/plus";
   import { type PanelNumber } from "./HeroGrid.svelte";
 
   export let expanded: boolean;
   export let number: PanelNumber;
   export let title: string;
-  export let transitionDirection: "left" | "right";
-
-  let direction = 1;
 
   const dispatch = createEventDispatcher<{ hasExpanded: PanelNumber }>();
 
@@ -17,21 +14,18 @@
     expanded = true;
     dispatch("hasExpanded", number);
   };
-
-  $: transitionDirection === "left" ? (direction = 1) : (direction = -1);
 </script>
 
 <div
-  class="relative rounded-[50cqh] border border-border bg-card text-card-foreground backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:h-2/3 lg:rounded-[50cqw] overflow-clip"
+  class="relative @container/panel rounded-[50cqh] border border-border bg-card text-card-foreground backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:h-2/3 lg:rounded-[50cqw] overflow-clip"
   data-panel
   data-expanded={expanded || null}
   class:flex-col={expanded}
 >
   {#key expanded}
     <div
-      in:fly={{ delay: 500, x: 300 * direction }}
-      out:fly={{ x: -300 * direction }}
-      class="absolute inset-0"
+      transition:fade
+      class="absolute left-0 top-0 h-full w-full"
       class:small-panel={!expanded}
     >
       {#if expanded}

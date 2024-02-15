@@ -25,6 +25,7 @@
     "@fontsource/inter": "^5.0.17",
     "@fontsource/jetbrains-mono": "^5.0.19",
     "@iconify-json/heroicons": "^1.1.20",
+    "@tailwindcss/container-queries": "^0.1.1",
     "@types/react": "^18.2.62",
     "@types/react-dom": "^18.2.19",
     "@vercel/analytics": "^1.2.2",
