@@ -1,7 +1,8 @@
 /* eslint-env node */
 
 const defaultTheme = require("tailwindcss/defaultTheme");
-const typography = require("@tailwindcss/typography");
+const typography = require('@tailwindcss/typography');
+const containerQueries = require('@tailwindcss/container-queries');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -64,7 +65,7 @@ module.exports = {
       },
     },
   },
-  plugins: [typography],
+  plugins: [typography, containerQueries],
   future: {
     hoverOnlyWhenSupported: true,
   },

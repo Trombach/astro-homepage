@@ -21,6 +21,7 @@
     "@fontsource/inter": "^5.0.16",
     "@fontsource/jetbrains-mono": "^5.0.18",
     "@iconify-json/heroicons": "^1.1.20",
+    "@tailwindcss/container-queries": "^0.1.1",
     "astro": "^4.4.0",
     "radash": "^11.0.0",
     "svelte": "^4.2.11",
