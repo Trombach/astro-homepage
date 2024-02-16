@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  import { fade } from "svelte/transition";
+  import { blur } from "svelte/transition";
   import PlusIcon from "icons:svelte/heroicons/plus";
   import { type PanelNumber } from "./HeroGrid.svelte";
 
@@ -24,7 +24,7 @@
 >
   {#key expanded}
     <div
-      transition:fade
+      transition:blur
       class="absolute left-0 top-0 h-full w-full"
       class:small-panel={!expanded}
     >
