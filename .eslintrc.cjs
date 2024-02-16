@@ -18,7 +18,7 @@ module.exports = {
     },
     {
       files: ["*.ts", "*.tsx", "*.js", "*.mjs", "*.cjs"],
-      parse: "@typescript-eslint/parser",
+      parser: "@typescript-eslint/parser",
     },
   ],
 };
