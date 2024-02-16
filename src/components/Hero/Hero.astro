@@ -1,6 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import HeroGrid from "./HeroGrid.svelte";
-import Panel1 from "./Panel1.astro";
+import PanelContent from "./PanelContent.astro";
+
+const entries = await getCollection("home");
 ---
 
 <section
@@ -9,24 +12,6 @@ import Panel1 from "./Panel1.astro";
   class="flex h-screen-less-header w-full flex-col"
 >
   <HeroGrid client:load>
-    <Panel1 slot="panel-one" />
-
-    <div slot="panel-two">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam adipisci
-      itaque temporibus. Eum debitis in harum totam eos molestias delectus,
-      incidunt voluptas voluptates sequi. Totam error dolor eaque vero ullam.
-    </div>
-
-    <div slot="panel-three">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam adipisci
-      itaque temporibus. Eum debitis in harum totam eos molestias delectus,
-      incidunt voluptas voluptates sequi. Totam error dolor eaque vero ullam.
-    </div>
-
-    <div slot="panel-four">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam adipisci
-      itaque temporibus. Eum debitis in harum totam eos molestias delectus,
-      incidunt voluptas voluptates sequi. Totam error dolor eaque vero ullam.
-    </div>
+    {entries.map((entry) => <PanelContent {entry} slot={entry.data.slot} />)}
   </HeroGrid>
 </section>
