@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import { type CollectionEntry } from "astro:content";
+
+type Props = {
+  entry: CollectionEntry<"home">;
+};
+
+const { entry } = Astro.props;
+const { data, render } = entry;
+const { Content } = await render();
+---
+
+<div data-panel-content class="flex h-full w-full flex-col lg:flex-row">
+  {
+    data?.image && (
+      <Image
+        src={data.image}
+        alt="me at work"
+        width="1200"
+        class="inline-block h-1/2 w-full object-cover object-center lg:h-full lg:w-1/2"
+      />
+    )
+  }
+  <div
+    data-panel-content-right={entry.slug}
+    class:list={[
+      "prose-lg flex h-1/2 w-full flex-col justify-center p-8 text-center lg:prose-2xl dark:prose-invert lg:h-full lg:w-1/2",
+    ]}
+  >
+    <Content />
+  </div>
+</div>
+
+<style>
+  [data-panel-content-right] {
+    min-width: var(--panel-content-min-width);
+  }
+</style>
+
+<script type="module">
+  setMinWidth();
+  window.addEventListener("resize", setMinWidth);
+
+  function setMinWidth() {
+    document.documentElement.style.removeProperty("--panel-content-min-width");
+
+    const panelWidth = document.querySelector(
+      "[data-panel-content-right]",
+    ).offsetWidth;
+
+    document.documentElement.style.setProperty(
+      "--panel-content-min-width",
+      `${panelWidth}px`,
+    );
+  }
+</script>
