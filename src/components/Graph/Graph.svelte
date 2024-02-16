@@ -1,4 +1,6 @@
 <script lang="ts">
+  /* global setTimeout */
+
   import { draw, fade } from "svelte/transition";
   import { inner, outer } from "./graph-paths";
   import { onMount } from "svelte";
