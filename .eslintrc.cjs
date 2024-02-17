@@ -3,7 +3,11 @@
  * @type {import('eslint').Linter.Config}
  */
 module.exports = {
-  extends: ["eslint:recommended", "plugin:astro/recommended", "plugin:svelte/recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:astro/recommended",
+    "plugin:svelte/recommended",
+  ],
   ignorePatterns: ["dist", ".vercel"],
   overrides: [
     {
@@ -29,7 +33,6 @@ module.exports = {
     {
       files: ["*.ts", "*.tsx", "*.js", "*.mjs", "*.cjs"],
       parser: "@typescript-eslint/parser",
-
     },
   ],
 };
