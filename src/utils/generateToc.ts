@@ -1,4 +1,4 @@
-import type { MarkdownHeading } from 'astro';
+import type { MarkdownHeading } from "astro";
 export interface TocItem extends MarkdownHeading {
   children: TocItem[];
 }
@@ -7,9 +7,9 @@ function diveChildren(item: TocItem, depth: number): TocItem[] {
   if (depth === 1) {
     return item.children;
   } else {
-    const nextItem = item.children[item.children.length - 1]
+    const nextItem = item.children[item.children.length - 1];
     if (!nextItem) {
-      throw new Error('Error accessing next item')
+      throw new Error("Error accessing next item");
     }
     // e.g., 2
     return diveChildren(nextItem, depth - 1);
@@ -29,7 +29,7 @@ export default function generateToc(headings: MarkdownHeading[]) {
     } else {
       const lastItemInToc = toc[toc.length - 1];
       if (!lastItemInToc) {
-        throw new Error('Error accessing last item in toc')
+        throw new Error("Error accessing last item in toc");
       }
       if (heading.depth < lastItemInToc.depth) {
         throw new Error(`Orphan heading found: ${heading.text}.`);

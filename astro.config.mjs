@@ -8,14 +8,16 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [tailwind(), svelte(), mdx()],
   image: {
-    domains: ["placehold.co"]
+    domains: ["placehold.co"],
   },
   prefetch: {
-    prefetchAll: true
+    prefetchAll: true,
   },
   vite: {
-    plugins: [Icons({
-      compiler: "astro"
-    })]
-  }
+    plugins: [
+      Icons({
+        compiler: "astro",
+      }),
+    ],
+  },
 });

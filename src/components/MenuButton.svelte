@@ -1,4 +1,6 @@
 <script lang="ts">
+  /* global HTMLElement document */
+
   import { onMount } from "svelte";
 
   let showCloseIcon = false;
