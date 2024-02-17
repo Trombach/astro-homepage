@@ -1,8 +1,8 @@
 name: Check
 
 on:
-  pull_request: 
-    branches: 
+  pull_request:
+    branches:
       - main
   push:
     branches:
