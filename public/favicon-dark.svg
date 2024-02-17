@@ -1,7 +1,7 @@
 <svg viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <circle r="150" cx="50%" cy="50%" />
 
-    <g transform="scale(0.6) translate(95 150)">
+    <g transform="scale(0.7) translate(60 120)">
         <path
             d="m 138.20133,96.169887 36.67167,-0.0021 -18.3441,45.885573 -48.88072,-28.2213 30.55424,-17.662998 18.32544,45.882238" />
         <path
@@ -19,7 +19,7 @@
         svg path {
             fill: NONE;
             fill-opacity: 1;
-            stroke: #dfdfdf;
+            stroke: hsl(210 20% 98%);
             stroke-width: 10;
             stroke-linejoin: round;
             stroke-dasharray: none;
@@ -27,7 +27,7 @@
         }
 
         svg circle {
-            fill: #1f1f1f;
+            fill: hsl(224 71.4% 4.1%);
         }
     </style>
 </svg>
