@@ -1,12 +1,13 @@
 import { z, defineCollection } from "astro:content";
 
 const homeCollection = defineCollection({
-    type: "content",
-    schema: ({ image }) => z.object({
-        title: z.string(),
-        image: image(),
-        slot: z.enum(["panel-one", "panel-two", "panel-three", "panel-four"])
-    })
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      image: image(),
+      slot: z.enum(["panel-one", "panel-two", "panel-three", "panel-four"]),
+    }),
 });
 
 const aboutCollection = defineCollection({
