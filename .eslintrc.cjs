@@ -1,8 +1,14 @@
+/* eslint-env node */
 /**
  * @type {import('eslint').Linter.Config}
  */
 module.exports = {
-  extends: ["plugin:astro/recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:astro/recommended",
+    "plugin:svelte/recommended",
+  ],
+  ignorePatterns: ["dist", ".vercel"],
   overrides: [
     {
       // Define the configuration for `.astro` file.
@@ -17,8 +23,16 @@ module.exports = {
       },
     },
     {
+      files: ["*.svelte"],
+      parser: "svelte-eslint-parser",
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".svelte"],
+      },
+    },
+    {
       files: ["*.ts", "*.tsx", "*.js", "*.mjs", "*.cjs"],
-      parse: "@typescript-eslint/parser",
+      parser: "@typescript-eslint/parser",
     },
   ],
 };

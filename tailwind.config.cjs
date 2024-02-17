@@ -1,5 +1,7 @@
+/* eslint-env node */
+
 const defaultTheme = require("tailwindcss/defaultTheme");
-const typography = require('@tailwindcss/typography');
+const typography = require("@tailwindcss/typography");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -20,10 +22,10 @@ module.exports = {
         "4xl": "2rem",
       },
       height: {
-        "screen-less-header": "calc(100vh - 86px)"
+        "screen-less-header": "calc(100vh - 86px)",
       },
       minHeight: {
-        "screen-less-header": "calc(100vh - 86px)"
+        "screen-less-header": "calc(100vh - 86px)",
       },
       colors: {
         border: "hsl(var(--border))",
