@@ -4,6 +4,8 @@
 </script>
 
 <script lang="ts">
+  /* global CustomEvent */
+
   import Panel from "./Panel.svelte";
 
   const panelState: { [key in PanelNumber]: boolean } = {
@@ -24,7 +26,7 @@
 
 <div
   data-hero-grid
-  class="h-full w-full gap-5 p-5 grid max-w-screen-sm lg:max-w-screen-xl m-auto lg:items-center"
+  class="m-auto grid h-full w-full max-w-screen-sm gap-5 p-5 lg:max-w-screen-xl lg:items-center"
 >
   <Panel
     title="Welcome"

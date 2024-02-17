@@ -17,7 +17,7 @@
 </script>
 
 <div
-  class="relative @container/panel rounded-[50cqh] border border-border bg-card text-card-foreground backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:h-2/3 lg:rounded-[50cqw] overflow-clip"
+  class="relative overflow-clip rounded-[50cqh] border border-border bg-card text-card-foreground backdrop-blur @container/panel supports-[backdrop-filter]:bg-background/60 lg:h-2/3 lg:rounded-[50cqw]"
   data-panel
   data-expanded={expanded || null}
   class:flex-col={expanded}
