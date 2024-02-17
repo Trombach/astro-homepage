@@ -9,7 +9,7 @@
   onMount(() =>
     setTimeout(() => {
       ready = true;
-    }, 1000)
+    }, 1000),
   );
 </script>
 
