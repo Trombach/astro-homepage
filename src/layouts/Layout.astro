@@ -23,24 +23,28 @@ const { title } = Astro.props;
       type="image/svg+xml"
       href="/favicon.svg"
       media="(prefers-color-scheme: light)"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon-dark.svg"
-      media="(prefers-color-scheme: dark)"
+      sizes="any"
     />
     <link
       rel="icon"
       type="image/x-icon"
       href="/favicon.icon"
       media="(prefers-color-scheme: light)"
+      sizes="16x16 32x32 48x48 128x128 256x256"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon-dark.svg"
+      media="(prefers-color-scheme: dark)"
+      sizes="any"
     />
     <link
       rel="icon"
       type="image/x-icon"
       href="/favicon-dark.icon"
       media="(prefers-color-scheme: dark)"
+      sizes="16x16 32x32 48x48 128x128 256x256"
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
