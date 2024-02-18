@@ -1,12 +1,51 @@
 ---
 import me from "@images/me.jpg";
-import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
+
+const defaultSize = 128;
+const defaultMobileSize = 96;
+
+type Props = {
+  size?: number;
+  mobileSize?: number;
+};
+
+let {
+  size = defaultSize,
+  mobileSize = size === defaultSize ? defaultMobileSize : size,
+} = Astro.props;
+
+const desktopImage = await getImage({
+  src: me,
+  width: size,
+  height: size,
+});
+
+const mobileImage = await getImage({
+  src: me,
+  width: mobileSize,
+  height: mobileSize,
+});
 ---
 
-<Image
-  src={me}
-  alt="Lukas Trombach"
-  width="256"
-  quality="max"
-  class="mb-3 h-32 w-32 rounded-full border-8 border-secondary"
-/>
+<picture transition:name="avatar">
+  <source
+    media="(max-width: 975px) and (max-height: 1000px)"
+    width={mobileSize}
+    height={mobileSize}
+    srcset={mobileImage.src}
+  />
+  <source
+    media="(min-width: 976px)"
+    width={size}
+    height={size}
+    srcset={desktopImage.src}
+  />
+  <img
+    src={desktopImage.src}
+    alt="Picture of Lukas"
+    width={size}
+    height={size}
+    class="mb-3 rounded-full border-4 border-secondary lg:border-8"
+  />
+</picture>

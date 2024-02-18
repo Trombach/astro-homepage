@@ -4,6 +4,22 @@ image: ./images/aboutme.jpeg
 slot: panel-two
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam adipisci
-itaque temporibus. Eum debitis in harum totam eos molestias delectus,
-incidunt voluptas voluptates sequi. Totam error dolor eaque vero ullam.
+import Avatar from "@components/Avatar.astro";
+import Link from "@components/Link.astro";
+import RightArrow from "icons:astro/heroicons/arrow-right";
+
+# Software Engineer & Researcher
+
+<Avatar />
+
+A science nerd with a passion for technology.
+
+<Link
+  as="a"
+  href="/about"
+  appearance="secondary"
+  class="group flex w-fit items-center gap-2 text-sm"
+>
+  <span>Learn More About Me</span>
+  <RightArrow class="transition-transform group-hover:translate-x-1" />
+</Link>
