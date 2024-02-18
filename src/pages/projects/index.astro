@@ -1,20 +1,17 @@
 ---
 import ProjectCard from "@components/ProjectCard/ProjectCard.astro";
 import { getCollection } from "astro:content";
-import Background from "src/layouts/Background.astro";
 import Layout from "src/layouts/Layout.astro";
 
 const projects = await getCollection("projects");
 ---
 
 <Layout title="Lukas Trombach | Projects">
-  <Background>
-    <ul class="flex max-w-[77ch] flex-col gap-10 px-5 py-10 lg:px-0">
-      {
-        projects.map(({ slug, data }) => (
-          <ProjectCard {...data} href={`/projects/${slug}`} />
-        ))
-      }
-    </ul>
-  </Background>
+  <ul class="flex max-w-[77ch] flex-col gap-10 px-5 py-10 lg:px-0">
+    {
+      projects.map(({ slug, data }) => (
+        <ProjectCard {...data} href={`/projects/${slug}`} />
+      ))
+    }
+  </ul>
 </Layout>

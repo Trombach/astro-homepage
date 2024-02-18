@@ -7,7 +7,8 @@ const { "class:list": classList, class: className, ...props } = Astro.props;
 
 <div
   class:list={[
-    "background flex min-h-screen-less-header animate-[moveUp_20s_linear_infinite] flex-col items-center",
+    "overflow-auto",
+    "background min-h-screen animate-[moveUp_20s_linear_infinite]",
     "bg-[length:auto,_75px_75px] bg-fixed md:bg-[length:auto,_90px_90px] lg:bg-[length:auto,_120px_120px]",
     classList,
     className,
@@ -22,6 +23,8 @@ const { "class:list": classList, class: className, ...props } = Astro.props;
 
   @layer components {
     .background {
+      scrollbar-gutter: stable;
+
       --shine-height: 100px;
       --shine-width: 200px;
       --circle-size: 2px;
