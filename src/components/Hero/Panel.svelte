@@ -36,7 +36,7 @@
         </div>
 
         <button
-          class="m-3 rounded-full border border-border bg-background p-3"
+          class="rounded-full border border-border bg-background p-3"
           on:click={toggleExpanded}
         >
           <PlusIcon />
@@ -57,6 +57,6 @@
   }
 
   .small-panel {
-    @apply flex items-center justify-end lg:flex-col;
+    @apply flex items-center space-x-3 px-3 justify-end lg:flex-col lg:space-x-0 lg:space-y-3 lg:py-3;
   }
 </style>
