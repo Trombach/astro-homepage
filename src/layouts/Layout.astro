@@ -3,6 +3,7 @@ import Navbar from "@components/Nav/Navbar.astro";
 import "@fontsource/inter";
 import "@fontsource/jetbrains-mono";
 import { ViewTransitions } from "astro:transitions";
+import Background from "./Background.astro";
 
 interface Props {
   title: string;
@@ -50,9 +51,11 @@ const { title } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="antialiased">
-    <Navbar />
-    <main><slot /></main>
+  <body class="overflow-hidden antialiased">
+    <Background>
+      <Navbar />
+      <main class="flex flex-col items-center"><slot /></main>
+    </Background>
     <style is:global>
       @tailwind base;
       @tailwind utilities;
@@ -107,7 +110,7 @@ const { title } = Astro.props;
 
         :root {
           color-scheme: dark light;
-          @apply scroll-pt-[84px] bg-background pl-[calc(100vw_-_100%)] leading-normal text-foreground;
+          @apply scroll-pt-[84px] bg-background leading-normal text-foreground;
         }
 
         * {
