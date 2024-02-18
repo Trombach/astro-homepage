@@ -22,10 +22,10 @@ module.exports = {
         "4xl": "2rem",
       },
       height: {
-        "screen-less-header": "calc(100vh - 86px)",
+        "screen-less-header": "calc(100svh - 86px)",
       },
       minHeight: {
-        "screen-less-header": "calc(100vh - 86px)",
+        "screen-less-header": "calc(100svh - 86px)",
       },
       colors: {
         border: "hsl(var(--border))",

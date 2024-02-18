@@ -1,6 +1,5 @@
 ---
 import ProjectPage from "@components/ProjectPage/ProjectPage.astro";
-import Background from "@layouts/Background.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -23,9 +22,7 @@ const { Content } = await render();
 ---
 
 <Layout {title}>
-  <Background>
-    <ProjectPage {title} {description} {cover}>
-      <Content slot="content" />
-    </ProjectPage>
-  </Background>
+  <ProjectPage {title} {description} {cover}>
+    <Content slot="content" />
+  </ProjectPage>
 </Layout>
