@@ -11,7 +11,14 @@ const { data, render } = entry;
 const { Content } = await render();
 ---
 
-<div data-panel-content class="flex h-full w-full flex-col lg:flex-row">
+<div
+  data-panel-content
+  class:list={[
+    "flex h-full w-full flex-col lg:flex-row",
+    "[&_h1]:[font-size:_clamp(theme(fontSize.2xl),min(4cqw,2cqh),theme(fontSize.5xl))]",
+    "[&_p]:text-muted-foreground [&_p]:lg:text-2xl",
+  ]}
+>
   {
     data?.image && (
       <Image
@@ -19,14 +26,14 @@ const { Content } = await render();
         alt="me at work"
         width="1200"
         loading="eager"
-        class="inline-block h-1/2 w-full object-cover object-center lg:h-full lg:w-1/2"
+        class="h-1/4 w-full object-cover object-center lg:h-full lg:w-1/2"
       />
     )
   }
   <div
     data-panel-content-right={entry.slug}
     class:list={[
-      "prose-lg flex h-1/2 w-full flex-col justify-center p-8 text-center lg:prose-2xl dark:prose-invert lg:h-full lg:w-1/2",
+      "flex w-full grow flex-col items-center justify-center space-y-5 overflow-y-auto p-8 text-center lg:h-full lg:space-y-10",
     ]}
   >
     <Content />
@@ -48,11 +55,11 @@ const { Content } = await render();
 
     const panelWidth = document.querySelector(
       "[data-panel-content-right]",
-    ).offsetWidth;
+    )?.offsetWidth;
 
     document.documentElement.style.setProperty(
       "--panel-content-min-width",
-      `${panelWidth}px`,
+      `${panelWidth || 0}px`,
     );
   }
 </script>
