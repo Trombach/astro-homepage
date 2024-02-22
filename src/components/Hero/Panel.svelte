@@ -17,7 +17,7 @@
 </script>
 
 <div
-  class="relative overflow-clip rounded-[50cqh] border border-border bg-card text-card-foreground backdrop-blur @container/panel lg:h-2/3 lg:rounded-[50cqw]"
+  class="relative overflow-clip rounded-[50cqh] border bg-card text-card-foreground backdrop-blur @container/panel lg:h-2/3 lg:rounded-[50cqw]"
   data-panel
   data-expanded={expanded || null}
   class:flex-col={expanded}
@@ -36,7 +36,7 @@
         </div>
 
         <button
-          class="rounded-full border border-border bg-background p-2 lg:p-3"
+          class="rounded-full border bg-background p-2 lg:p-3 hover:bg-accent/50"
           on:click={toggleExpanded}
         >
           <PlusIcon />
