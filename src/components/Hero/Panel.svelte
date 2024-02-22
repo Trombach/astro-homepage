@@ -57,6 +57,6 @@
   }
 
   .small-panel {
-    @apply flex items-center space-x-3 px-3 justify-end lg:flex-col lg:space-x-0 lg:space-y-3 lg:py-3;
+    @apply flex items-center justify-end space-x-3 px-3 lg:flex-col lg:space-x-0 lg:space-y-3 lg:py-3;
   }
 </style>
