@@ -26,7 +26,7 @@
 
 <div
   data-hero-grid
-  class="m-auto grid h-full w-full max-w-screen-sm gap-5 p-5 lg:max-w-screen-xl lg:items-center"
+  class="m-auto grid h-full w-full max-w-screen-sm gap-3 lg:gap-5 p-3 lg:p-5 lg:max-w-screen-xl lg:items-center"
 >
   <Panel
     title="Welcome"
@@ -67,7 +67,7 @@
 
 <style global lang="postcss">
   [data-hero-grid] {
-    --large-panel-width: 8fr;
+    --large-panel-width: 10fr;
     transition: grid-template-rows 500ms ease-in-out;
     grid-template-rows: var(--template);
 
