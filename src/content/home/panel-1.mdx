@@ -5,8 +5,12 @@ slot: panel-one
 ---
 
 import Wave from "@components/Hero/Wave.astro";
+import Link from "@components/Link.astro"
+import MailIcon from "icons:astro/heroicons/envelope"
 
 # Hi there <Wave/>
 
 My name is <span class="text-primary">Lukas</span>.
 Welcome to my homepage!
+
+<Link as="a" href="/contact" class="group mt-5 flex items-center gap-2"><span>Get In Touch</span><MailIcon class="group-hover:animate-bounce"/></Link>
