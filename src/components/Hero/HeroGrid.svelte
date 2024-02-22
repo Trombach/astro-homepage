@@ -26,7 +26,7 @@
 
 <div
   data-hero-grid
-  class="m-auto grid h-full w-full max-w-screen-sm gap-3 lg:gap-5 p-3 lg:p-5 lg:max-w-screen-xl lg:items-center"
+  class="m-auto grid h-full w-full max-w-screen-sm gap-3 p-3 lg:max-w-screen-xl lg:items-center lg:gap-5 lg:p-5"
 >
   <Panel
     title="Welcome"
