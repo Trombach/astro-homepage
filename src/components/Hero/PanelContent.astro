@@ -15,7 +15,7 @@ const { Content } = await render();
   data-panel-content
   class:list={[
     "flex h-full w-full flex-col lg:flex-row",
-    "[&_h1]:[font-size:_clamp(theme(fontSize.2xl),min(4cqw,2cqh),theme(fontSize.5xl))]",
+    "[&_h1]:text-3xl [&_h1]:md:text-4xl [&_h1]:lg:text-5xl",
     "[&_p]:text-muted-foreground [&_p]:lg:text-2xl",
   ]}
 >
@@ -26,7 +26,7 @@ const { Content } = await render();
         alt="me at work"
         width="1200"
         loading="eager"
-        class="h-1/4 w-full object-cover object-center lg:h-full lg:w-1/2"
+        class="h-1/3 w-full object-cover object-center lg:h-full lg:w-1/2"
       />
     )
   }
