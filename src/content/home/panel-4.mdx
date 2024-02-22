@@ -4,6 +4,12 @@ image: ./images/phone.jpeg
 slot: panel-four
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam adipisci
-itaque temporibus. Eum debitis in harum totam eos molestias delectus,
-incidunt voluptas voluptates sequi. Totam error dolor eaque vero ullam.
+import Link from "@components/Link.astro";
+
+# Get In Touch
+
+<div class="flex gap-3">
+  <Link as="a" appearance="secondary" href="mailto:contact@lukastrombach.dev">E-Mail</Link>
+  <Link as="a" appearance="secondary" href="https://matrix.to/#/@lukets123:matrix.org">Matrix</Link>
+  <Link as="a" appearance="secondary" href="https://www.linkedin.com/in/lukas-trombach/">LinkedIn</Link>
+</div>
