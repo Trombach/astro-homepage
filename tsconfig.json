@@ -3,7 +3,7 @@
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "verbatimModuleSyntax": true,
-    "baseUrl": ".",
+    "baseUrl": "/home/lukast/repos/homepage/astro-homepage",
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
@@ -13,6 +13,8 @@
       "@icons/*": ["src/icons/*"],
       "@utils/*": ["src/utils/*"]
     },
-    "types": ["unplugin-icons/types/astro"]
+    "types": ["unplugin-icons/types/astro"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

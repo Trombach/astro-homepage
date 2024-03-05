@@ -1,0 +1,46 @@
+---
+import H1 from "@components/H1.astro";
+import Link from "@components/Link.astro";
+import getGithubContributions from "@utils/contributionsCalendar";
+import CalendarTile from "./CalendarTile";
+
+export const prerender = false;
+
+const {
+  data: {
+    user: {
+      contributionsCollection: {
+        contributionCalendar: { totalContributions, weeks },
+      },
+    },
+  },
+} = await getGithubContributions();
+---
+
+<section
+  class="flex min-h-screen-less-header w-full flex-col items-center justify-center"
+>
+  <H1 title="Github Contributions" />
+
+  {totalContributions} contributions on Github in the last year
+
+  <div
+    class="mx-auto grid w-max grid-flow-col grid-cols-[repeat(53,_minmax(0,_1fr))] grid-rows-7 gap-[2px] overflow-x-hidden py-5"
+  >
+    {
+      weeks.map((week) =>
+        week.contributionDays.map(({ contributionCount, date }) => (
+          <CalendarTile
+            contributions={contributionCount}
+            {date}
+            client:visible
+          />
+        )),
+      )
+    }
+  </div>
+
+  <Link as="a" appearance="secondary" href="https://github.com/Trombach">
+    View my profile
+  </Link>
+</section>
