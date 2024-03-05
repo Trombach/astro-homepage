@@ -44,6 +44,10 @@ export const schema = z.object({
 });
 
 export default async function getGithubContributions() {
+  if (!import.meta.env.GH_TOKEN) {
+    throw new Error("Missing auth token.");
+  }
+
   return await fetch(schema, GH_API, {
     method: "POST",
     headers: {
@@ -53,6 +57,3 @@ export default async function getGithubContributions() {
     body: JSON.stringify({ query: QUERY, variables: { userName: USERNAME } }),
   });
 }
-export type GithubContributions = Awaited<
-  ReturnType<typeof getGithubContributions>
->;

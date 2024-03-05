@@ -1,4 +1,4 @@
-/* global URL RequestInit fetch URLSearchParams*/
+/* global URL RequestInit fetch URLSearchParams console */
 
 import type { z } from "astro/zod";
 
@@ -6,13 +6,26 @@ export default async function fetchWithSchema<S extends z.ZodTypeAny>(
   schema: S,
   input: URL | string,
   init?: RequestInit,
-): Promise<z.infer<S>> {
+): Promise<z.infer<S> | undefined> {
   if (typeof input === "string") {
     input = getURL(input);
   }
 
-  const data = await fetch(input, init);
-  return schema.parse(await data.json());
+  const response = await fetch(input, init);
+
+  if (!response.ok) {
+    throw new Error(
+      `Error fetching data from ${input}: ${response.status} ${response.statusText}`,
+    );
+  }
+
+  try {
+    const json = await response.json();
+    return schema.parse(json);
+  } catch (err) {
+    console.log(err);
+    return;
+  }
 }
 
 function getURL(url: URL | string, searchParams?: { [key: string]: string }) {
