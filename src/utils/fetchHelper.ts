@@ -2,11 +2,11 @@
 
 import type { z } from "astro/zod";
 
-export default async function fetchWithSchema<T>(
-  schema: z.ZodType<T>,
+export default async function fetchWithSchema<S extends z.ZodTypeAny>(
+  schema: S,
   input: URL | string,
   init?: RequestInit,
-) {
+): Promise<z.infer<S>> {
   if (typeof input === "string") {
     input = getURL(input);
   }
