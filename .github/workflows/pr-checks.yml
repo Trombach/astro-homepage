@@ -13,34 +13,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: "npm"
-      - run: npm ci
+          cache: "pnpm"
+      - run: pnpm install
       - name: Run checks
-        run: npm run check
+        run: pnpm check
 
   Lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: "npm"
-      - run: npm ci
+          cache: "pnpm"
+      - run: pnpm install
       - name: Run linter
-        run: npm run lint
+        run: pnpm lint
 
   Format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: "npm"
-      - run: npm ci
+          cache: "pnpm"
+      - run: pnpm install
       - name: Check formatting
-        run: npm run format:check
+        run: pnpm format:check
