@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check && svelte-check",
@@ -46,5 +47,9 @@
     "svelte-check": "^3.6.6",
     "typescript": "^5.3.3",
     "unplugin-icons": "^0.18.5"
-  }
+  },
+  "engines": {
+    "pnpm": ">= 8"
+  },
+  "packageManager": "pnpm@8"
 }
