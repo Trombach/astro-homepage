@@ -4,126 +4,134 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@astrojs/check':
-    specifier: ^0.5.6
-    version: 0.5.6(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
-  '@astrojs/mdx':
-    specifier: ^2.1.1
-    version: 2.1.1(astro@4.4.11)
-  '@astrojs/react':
-    specifier: ^3.0.10
-    version: 3.0.10(@types/react-dom@18.2.19)(@types/react@18.2.62)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.5)
-  '@astrojs/svelte':
-    specifier: ^5.2.0
-    version: 5.2.0(astro@4.4.11)(svelte@4.2.12)(typescript@5.3.3)(vite@5.1.5)
-  '@astrojs/tailwind':
-    specifier: ^5.1.0
-    version: 5.1.0(astro@4.4.11)(tailwindcss@3.4.1)
-  '@astrojs/vercel':
-    specifier: ^7.3.4
-    version: 7.3.4(astro@4.4.11)(react@18.2.0)
-  '@floating-ui/react':
-    specifier: ^0.26.9
-    version: 0.26.9(react-dom@18.2.0)(react@18.2.0)
-  '@fontsource/inter':
-    specifier: ^5.0.17
-    version: 5.0.17
-  '@fontsource/jetbrains-mono':
-    specifier: ^5.0.19
-    version: 5.0.19
-  '@iconify-json/heroicons':
-    specifier: ^1.1.20
-    version: 1.1.20
-  '@types/react':
-    specifier: ^18.2.62
-    version: 18.2.62
-  '@types/react-dom':
-    specifier: ^18.2.19
-    version: 18.2.19
-  astro:
-    specifier: ^4.4.11
-    version: 4.4.11(typescript@5.3.3)
-  clsx:
-    specifier: ^2.1.0
-    version: 2.1.0
-  radash:
-    specifier: ^12.0.0
-    version: 12.0.0
-  react:
-    specifier: ^18.2.0
-    version: 18.2.0
-  react-dom:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.2.0)
-  sharp:
-    specifier: ^0.33.2
-    version: 0.33.2
-  svelte:
-    specifier: ^4.2.12
-    version: 4.2.12
-  tailwindcss:
-    specifier: ^3.4.1
-    version: 3.4.1
+importers:
 
-devDependencies:
-  '@iconify-json/logos':
-    specifier: ^1.1.42
-    version: 1.1.42
-  '@tailwindcss/typography':
-    specifier: ^0.5.10
-    version: 0.5.10(tailwindcss@3.4.1)
-  '@typescript-eslint/eslint-plugin':
-    specifier: ^7.1.1
-    version: 7.1.1(@typescript-eslint/parser@7.1.1)(eslint@8.57.0)(typescript@5.3.3)
-  '@typescript-eslint/parser':
-    specifier: ^7.1.1
-    version: 7.1.1(eslint@8.57.0)(typescript@5.3.3)
-  eslint:
-    specifier: ^8.57.0
-    version: 8.57.0
-  eslint-plugin-astro:
-    specifier: ^0.31.4
-    version: 0.31.4(eslint@8.57.0)
-  eslint-plugin-import:
-    specifier: ^2.29.1
-    version: 2.29.1(@typescript-eslint/parser@7.1.1)(eslint@8.57.0)
-  eslint-plugin-jsx-a11y:
-    specifier: ^6.8.0
-    version: 6.8.0(eslint@8.57.0)
-  eslint-plugin-n:
-    specifier: ^16.6.2
-    version: 16.6.2(eslint@8.57.0)
-  eslint-plugin-promise:
-    specifier: ^6.1.1
-    version: 6.1.1(eslint@8.57.0)
-  eslint-plugin-svelte:
-    specifier: ^2.35.1
-    version: 2.35.1(eslint@8.57.0)(svelte@4.2.12)
-  prettier:
-    specifier: ^3.2.5
-    version: 3.2.5
-  prettier-plugin-astro:
-    specifier: ^0.13.0
-    version: 0.13.0
-  prettier-plugin-astro-organize-imports:
-    specifier: ^0.4.3
-    version: 0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.11)(prettier@3.2.5)
-  prettier-plugin-svelte:
-    specifier: ^3.2.2
-    version: 3.2.2(prettier@3.2.5)(svelte@4.2.12)
-  prettier-plugin-tailwindcss:
-    specifier: ^0.5.11
-    version: 0.5.11(prettier-plugin-astro@0.13.0)(prettier-plugin-svelte@3.2.2)(prettier@3.2.5)
-  svelte-check:
-    specifier: ^3.6.6
-    version: 3.6.6(@babel/core@7.24.0)(postcss@8.4.35)(svelte@4.2.12)
-  typescript:
-    specifier: ^5.3.3
-    version: 5.3.3
-  unplugin-icons:
-    specifier: ^0.18.5
-    version: 0.18.5
+  .:
+    dependencies:
+      '@astrojs/check':
+        specifier: ^0.5.6
+        version: 0.5.6(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
+      '@astrojs/mdx':
+        specifier: ^2.1.1
+        version: 2.1.1(astro@4.4.11)
+      '@astrojs/react':
+        specifier: ^3.0.10
+        version: 3.0.10(@types/react-dom@18.2.19)(@types/react@18.2.62)(react-dom@18.2.0)(react@18.2.0)(vite@5.1.5)
+      '@astrojs/svelte':
+        specifier: ^5.2.0
+        version: 5.2.0(astro@4.4.11)(svelte@4.2.12)(typescript@5.3.3)(vite@5.1.5)
+      '@astrojs/tailwind':
+        specifier: ^5.1.0
+        version: 5.1.0(astro@4.4.11)(tailwindcss@3.4.1)
+      '@astrojs/vercel':
+        specifier: ^7.3.4
+        version: 7.3.4(astro@4.4.11)(react@18.2.0)
+      '@floating-ui/react':
+        specifier: ^0.26.9
+        version: 0.26.9(react-dom@18.2.0)(react@18.2.0)
+      '@fontsource/inter':
+        specifier: ^5.0.17
+        version: 5.0.17
+      '@fontsource/jetbrains-mono':
+        specifier: ^5.0.19
+        version: 5.0.19
+      '@iconify-json/heroicons':
+        specifier: ^1.1.20
+        version: 1.1.20
+      '@types/react':
+        specifier: ^18.2.62
+        version: 18.2.62
+      '@types/react-dom':
+        specifier: ^18.2.19
+        version: 18.2.19
+      '@vercel/analytics':
+        specifier: ^1.2.2
+        version: 1.2.2(react@18.2.0)
+      '@vercel/speed-insights':
+        specifier: ^1.0.10
+        version: 1.0.10(react@18.2.0)(svelte@4.2.12)
+      astro:
+        specifier: ^4.4.11
+        version: 4.4.11(typescript@5.3.3)
+      clsx:
+        specifier: ^2.1.0
+        version: 2.1.0
+      radash:
+        specifier: ^12.0.0
+        version: 12.0.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      sharp:
+        specifier: ^0.33.2
+        version: 0.33.2
+      svelte:
+        specifier: ^4.2.12
+        version: 4.2.12
+      tailwindcss:
+        specifier: ^3.4.1
+        version: 3.4.1
+    devDependencies:
+      '@iconify-json/logos':
+        specifier: ^1.1.42
+        version: 1.1.42
+      '@tailwindcss/typography':
+        specifier: ^0.5.10
+        version: 0.5.10(tailwindcss@3.4.1)
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^7.1.1
+        version: 7.1.1(@typescript-eslint/parser@7.1.1)(eslint@8.57.0)(typescript@5.3.3)
+      '@typescript-eslint/parser':
+        specifier: ^7.1.1
+        version: 7.1.1(eslint@8.57.0)(typescript@5.3.3)
+      eslint:
+        specifier: ^8.57.0
+        version: 8.57.0
+      eslint-plugin-astro:
+        specifier: ^0.31.4
+        version: 0.31.4(eslint@8.57.0)
+      eslint-plugin-import:
+        specifier: ^2.29.1
+        version: 2.29.1(@typescript-eslint/parser@7.1.1)(eslint@8.57.0)
+      eslint-plugin-jsx-a11y:
+        specifier: ^6.8.0
+        version: 6.8.0(eslint@8.57.0)
+      eslint-plugin-n:
+        specifier: ^16.6.2
+        version: 16.6.2(eslint@8.57.0)
+      eslint-plugin-promise:
+        specifier: ^6.1.1
+        version: 6.1.1(eslint@8.57.0)
+      eslint-plugin-svelte:
+        specifier: ^2.35.1
+        version: 2.35.1(eslint@8.57.0)(svelte@4.2.12)
+      prettier:
+        specifier: ^3.2.5
+        version: 3.2.5
+      prettier-plugin-astro:
+        specifier: ^0.13.0
+        version: 0.13.0
+      prettier-plugin-astro-organize-imports:
+        specifier: ^0.4.3
+        version: 0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.11)(prettier@3.2.5)
+      prettier-plugin-svelte:
+        specifier: ^3.2.2
+        version: 3.2.2(prettier@3.2.5)(svelte@4.2.12)
+      prettier-plugin-tailwindcss:
+        specifier: ^0.5.11
+        version: 0.5.11(prettier-plugin-astro@0.13.0)(prettier-plugin-svelte@3.2.2)(prettier@3.2.5)
+      svelte-check:
+        specifier: ^3.6.6
+        version: 3.6.6(@babel/core@7.24.0)(postcss@8.4.35)(svelte@4.2.12)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+      unplugin-icons:
+        specifier: ^0.18.5
+        version: 0.18.5
 
 packages:
 
@@ -1739,6 +1747,34 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    dev: false
+
+  /@vercel/speed-insights@1.0.10(react@18.2.0)(svelte@4.2.12):
+    resolution: {integrity: sha512-4uzdKB0RW6Ff2FkzshzjZ+RlJfLPxgm/00i0XXgxfMPhwnnsk92YgtqsxT9OcPLdJUyVU1DqFlSWWjIQMPkh0g==}
+    requiresBuild: true
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19
+      svelte: ^4
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      svelte: 4.2.12
     dev: false
 
   /@vitejs/plugin-react@4.2.1(vite@5.1.5):
