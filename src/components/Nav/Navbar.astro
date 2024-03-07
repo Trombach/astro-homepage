@@ -1,20 +1,24 @@
 ---
 import MenuButton from "@components/MenuButton.svelte";
 import Links from "./Links.astro";
+import Loader from "./Loader.astro";
 import NavigationMenu from "./NavigationMenu.astro";
 ---
 
 <header
-  class="sticky top-0 z-50 w-full bg-background p-5 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+  class="sticky top-0 z-50 w-full bg-background px-5 py-3 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 >
   <div
-    class="mx-auto flex w-full max-w-screen-xl flex-wrap justify-between lg:flex-nowrap lg:items-center"
+    class="relative mx-auto flex w-full max-w-screen-xl flex-wrap justify-between lg:flex-nowrap lg:items-center"
   >
     <MenuButton client:load />
+
+    <Loader />
+
     <Links />
-    <hr
-      class="m-0 h-0 w-0 basis-full border-0 lg:order-3 lg:hidden lg:basis-0"
-    />
+
+    <hr class="m-0 h-0 w-0 basis-full border-0 lg:hidden lg:basis-0" />
+
     <NavigationMenu />
   </div>
 </header>

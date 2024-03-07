@@ -1,0 +1,41 @@
+<div id="loader" class="group lg:order-2">
+  <div
+    class="flex -translate-y-12 items-center justify-center space-x-2 transition-transform delay-150 group-[.loading]:translate-y-0"
+  >
+    <span class="sr-only hidden group-[.loading]:inline">Loading...</span>
+
+    <div class="relative flex">
+      <div
+        class="absolute size-full animate-ping rounded-full bg-primary opacity-75 [animation-delay:-0.3s]"
+      >
+      </div>
+      <div class="size-3 rounded-full bg-primary"></div>
+    </div>
+
+    <div class="relative flex">
+      <div
+        class="absolute size-full animate-ping rounded-full bg-primary opacity-75 [animation-delay:-0.15s]"
+      >
+      </div>
+      <div class="size-3 rounded-full bg-primary"></div>
+    </div>
+
+    <div class="relative flex">
+      <div
+        class="absolute size-full animate-ping rounded-full bg-primary opacity-75"
+      >
+      </div>
+      <div class="size-3 rounded-full bg-primary"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("astro:before-preparation", () =>
+      document.querySelector("#loader")?.classList.add("loading"),
+    );
+
+    document.addEventListener("astro:after-preparation", () =>
+      document.querySelector("#loader")?.classList.remove("loading"),
+    );
+  </script>
+</div>

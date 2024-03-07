@@ -1,0 +1,18 @@
+---
+import AboutMe from "@components/About/AboutMe.astro";
+import Calendar from "@components/About/ContributionsCalendar/Calendar.astro";
+import Tech from "@components/About/Tech.astro";
+import Layout from "src/layouts/Layout.astro";
+
+// opt in to SSR
+export const prerender = false;
+
+// set a cache control header of 1 hour https://vercel.com/docs/edge-network/caching#using-vercel-functions
+Astro.response.headers.set("Cache-Control", "public, s-maxage=3600");
+---
+
+<Layout title="Lukas Trombach | About">
+  <AboutMe />
+  <Calendar />
+  <Tech />
+</Layout>
