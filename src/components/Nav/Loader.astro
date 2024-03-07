@@ -1,6 +1,6 @@
 <div id="loader" class="group lg:order-2">
   <div
-    class="flex -translate-y-12 items-center justify-center space-x-2 transition-transform group-[.loading]:translate-y-0"
+    class="flex -translate-y-12 items-center justify-center space-x-2 transition-transform delay-150 group-[.loading]:translate-y-0"
   >
     <span class="sr-only hidden group-[.loading]:inline">Loading...</span>
 
@@ -34,8 +34,8 @@
       document.querySelector("#loader")?.classList.add("loading"),
     );
 
-    document.addEventListener("astro:after-preparation", () => {
-      document.querySelector("#loader")?.classList.remove("loading");
-    });
+    document.addEventListener("astro:after-preparation", () =>
+      document.querySelector("#loader")?.classList.remove("loading"),
+    );
   </script>
 </div>
