@@ -36,7 +36,7 @@
         </div>
 
         <button
-          class="rounded-full border bg-background p-2 lg:p-3 hover:bg-accent/50"
+          class="rounded-full border bg-background p-2 hover:bg-accent/50 lg:p-3"
           on:click={toggleExpanded}
         >
           <PlusIcon />
