@@ -2,6 +2,7 @@
 import H1 from "@components/H1.astro";
 import Link from "@components/Link.astro";
 import getGithubContributions from "@utils/contributionsCalendar";
+import ExternalLinkIcon from "icons:astro/heroicons/arrow-top-right-on-square";
 import CalendarTile from "./CalendarTile";
 
 const result = await getGithubContributions();
@@ -43,6 +44,6 @@ const weeks =
   }
 
   <Link as="a" appearance="secondary" href="https://github.com/Trombach">
-    View my profile
+    View Github profile <ExternalLinkIcon />
   </Link>
 </section>
