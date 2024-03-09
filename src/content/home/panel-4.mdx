@@ -5,25 +5,22 @@ slot: panel-four
 ---
 
 import Link from "@components/Link.astro";
+import ExternalLinkIcon from "icons:astro/heroicons/arrow-top-right-on-square";
 
 # Get In Touch
 
 <div class="flex gap-3">
-  <Link as="a" appearance="secondary" href="mailto:contact@lukastrombach.dev">
-    E-Mail
-  </Link>
+  <Link as="a" appearance="secondary" target="_blank" href="mailto:contact@lukastrombach.dev">E-Mail</Link>
   <Link
     as="a"
     appearance="secondary"
+    target="_blank"
     href="https://matrix.to/#/@lukets123:matrix.org"
-  >
-    Matrix
-  </Link>
+  >Matrix<ExternalLinkIcon /></Link>
   <Link
     as="a"
     appearance="secondary"
+    target="_blank"
     href="https://www.linkedin.com/in/lukas-trombach/"
-  >
-    LinkedIn
-  </Link>
+  >LinkedIn<ExternalLinkIcon /></Link>
 </div>
