@@ -5,10 +5,11 @@ import Icons from "unplugin-icons/vite";
 import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel/serverless";
 import react from "@astrojs/react";
+import addsToHead from "astro-adds-to-head";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), svelte(), mdx(), react()],
+  integrations: [tailwind(), svelte(), mdx(), react(), addsToHead()],
   image: {
     domains: ["placehold.co"],
   },

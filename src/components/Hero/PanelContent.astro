@@ -2,6 +2,10 @@
 import { Image } from "astro:assets";
 import { type CollectionEntry } from "astro:content";
 
+// workaround for animations from imported components to work
+// https://github.com/withastro/astro/issues/7761
+export const addToHead = true;
+
 type Props = {
   entry: CollectionEntry<"home">;
 };
@@ -9,6 +13,10 @@ type Props = {
 const { entry } = Astro.props;
 const { data, render } = entry;
 const { Content } = await render();
+
+// workaround for animations from imported components to work
+// https://github.com/withastro/astro/issues/7761
+export const addsToHead = true;
 ---
 
 <div
