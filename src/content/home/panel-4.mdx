@@ -6,11 +6,13 @@ slot: panel-four
 
 import Link from "@components/Link.astro";
 import ExternalLinkIcon from "icons:astro/heroicons/arrow-top-right-on-square";
+import MailIcon from "icons:astro/heroicons/envelope";
+
 
 # Get In Touch
 
 <div class="flex gap-3">
-  <Link as="a" appearance="secondary" target="_blank" href="mailto:contact@lukastrombach.dev">E-Mail</Link>
+  <Link as="a" appearance="secondary" target="_blank" href="mailto:contact@lukastrombach.dev">E-Mail<MailIcon /></Link>
   <Link
     as="a"
     appearance="secondary"
