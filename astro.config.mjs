@@ -5,7 +5,7 @@ import Icons from "unplugin-icons/vite";
 import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel/serverless";
 import react from "@astrojs/react";
-import addsToHead from "astro-adds-to-head";
+import addsToHead from "./adds-to-head-integration";
 
 // https://astro.build/config
 export default defineConfig({
