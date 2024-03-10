@@ -1,6 +1,41 @@
 ---
-import ContactForm from "@components/ContactForm.astro";
+import Link from "@components/Link.astro";
+import sendEmail from "@utils/contact";
 import Layout from "src/layouts/Layout.astro";
+
+export const prerender = false;
+
+let response;
+if (Astro.request.method === "POST") {
+  response = await sendEmail(Astro.request);
+}
 ---
 
-<Layout title="Lukas Trombach | Contact"><ContactForm /></Layout>
+<Layout title="Lukas Trombach | Contact"
+  >{response?.success ? "True" : "False"}
+  {response?.message}
+
+  <form method="POST">
+    <label
+      >Name<input
+        type="text"
+        name="name"
+        placeholder="Enter your name"
+        required
+      /></label
+    >
+    <label
+      >E-Mail<input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      /></label
+    >
+    <label
+      >Message<textarea name="message" placeholder="Enter your message" required
+      ></textarea></label
+    >
+    <Link type="submit">Submit</Link>
+  </form></Layout
+>
