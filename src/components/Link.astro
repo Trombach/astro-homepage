@@ -15,12 +15,16 @@ const {
 } = Astro.props;
 ---
 
-{/* @ts-expect-error */}
+{/* @ts-expect-error The polymorphic type helper behaves weirdly */}
 <Tag
   class:list={[
-    "rounded-full border px-5 py-2 transition-colors",
-    { "hover:border-primary hover:bg-primary/25": appearance === "primary" },
-    { "hover:bg-accent/50": appearance === "secondary" },
+    "rounded-full border bg-background px-5 py-2 transition-colors",
+    "flex items-center gap-2",
+    {
+      "hover:border-primary hover:bg-primary/25 active:bg-primary":
+        appearance === "primary",
+    },
+    { "hover:bg-accent/50 active:bg-accent": appearance === "secondary" },
     classList,
     className,
   ]}

@@ -1,0 +1,15 @@
+---
+title: Welcome to my Homepage
+image: ./images/me-at-work.jpeg
+slot: panel-one
+---
+
+import Wave from "@components/Hero/Wave.astro";
+import Link from "@components/Link.astro";
+import MailIcon from "icons:astro/heroicons/envelope";
+
+# Hi there <Wave/>
+
+My name is <span class="text-primary font-mono">Lukas</span>. Welcome to my homepage!
+
+<Link as="a" href="/contact" class="group mt-5">Get In Touch<MailIcon class="group-hover:animate-bounce" /></Link>

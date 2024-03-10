@@ -2,7 +2,7 @@
 /* global ImageMetadata */
 
 import Link from "@components/Link.astro";
-import LeftArrow from "~icons/heroicons/arrow-left";
+import LeftArrow from "icons:astro/heroicons/arrow-left";
 import PageBody from "./PageBody.astro";
 
 type Props = {
@@ -19,7 +19,7 @@ const { title, description, cover } = Astro.props;
     as="a"
     appearance="secondary"
     href="/projects"
-    class="group mb-3 mt-2 flex w-fit items-center gap-2 text-sm"
+    class="group mb-3 mt-2 w-fit text-sm"
   >
     <LeftArrow class="transition-transform group-hover:-translate-x-1" />
     <span>Back to Projects</span>
