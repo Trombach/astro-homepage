@@ -8,6 +8,7 @@ interface ImportMetaEnv {
   GH_TOKEN: string;
   VERCEL_ENV?: "production" | "preview" | "development";
   VERCEL_URL?: string;
+  RESEND_TOKEN?: string;
 }
 
 // eslint-disable-next-line no-redeclare, no-unused-vars
