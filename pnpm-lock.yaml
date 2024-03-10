@@ -50,9 +50,6 @@ importers:
       astro:
         specifier: ^4.4.11
         version: 4.4.11(typescript@5.3.3)
-      astro-adds-to-head:
-        specifier: ^1.0.0
-        version: 1.0.0
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
@@ -2136,10 +2133,6 @@ packages:
   /astring@1.8.6:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
     hasBin: true
-    dev: false
-
-  /astro-adds-to-head@1.0.0:
-    resolution: {integrity: sha512-fatkcTF9F6OUUPuichhRH9Ou2jfBCxR6++9zIvmCdeotpFGFx0yv71KYb4nUu+ob5yqDqSNnfkwjOIZBnXcHDg==}
     dev: false
 
   /astro-eslint-parser@0.16.3:
