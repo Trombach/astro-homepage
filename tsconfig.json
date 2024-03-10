@@ -13,7 +13,6 @@
       "@icons/*": ["src/icons/*"],
       "@utils/*": ["src/utils/*"]
     },
-    "types": ["unplugin-icons/types/astro"],
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }

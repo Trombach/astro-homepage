@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import { type CollectionEntry } from "astro:content";
+
+// workaround for animations from imported components to work
+// https://github.com/withastro/astro/issues/7761
+export const addToHead = true;
+
+type Props = {
+  entry: CollectionEntry<"home">;
+};
+
+const { entry } = Astro.props;
+const { data, render } = entry;
+const { Content } = await render();
+
+// workaround for animations from imported components to work
+// https://github.com/withastro/astro/issues/7761
+export const addsToHead = true;
+---
+
+<div
+  data-panel-content
+  class:list={[
+    "flex h-full w-full flex-col lg:flex-row",
+    "[&_h1]:text-3xl [&_h1]:md:text-4xl [&_h1]:lg:text-5xl",
+    "[&_p]:text-muted-foreground [&_p]:lg:text-2xl",
+  ]}
+>
+  {
+    data?.image && (
+      <Image
+        src={data.image}
+        alt="me at work"
+        width="1200"
+        loading="eager"
+        class="h-[29%] w-full object-cover object-center lg:h-full lg:w-1/2"
+      />
+    )
+  }
+  <div
+    data-panel-content-right={entry.slug}
+    class:list={[
+      "flex w-full grow flex-col items-center justify-center space-y-5 p-4 text-center lg:h-full lg:space-y-10 lg:p-8",
+    ]}
+  >
+    <Content />
+  </div>
+</div>
+
+<style>
+  [data-panel-content-right] {
+    min-width: var(--panel-content-min-width);
+  }
+</style>
+
+<script type="module" is:inline>
+  setMinWidth();
+  window.addEventListener("resize", setMinWidth);
+
+  function setMinWidth() {
+    document.documentElement.style.removeProperty("--panel-content-min-width");
+
+    const panelWidth = document.querySelector(
+      "[data-panel-content-right]",
+    )?.offsetWidth;
+
+    document.documentElement.style.setProperty(
+      "--panel-content-min-width",
+      `${panelWidth || 0}px`,
+    );
+  }
+</script>
