@@ -1,8 +1,8 @@
 ---
-import type { Polymorphic } from "astro/types";
+import type { HTMLTag, Polymorphic } from "astro/types";
 
-type Props = Polymorphic<{
-  as: "a" | "button";
+type Props<Tag extends HTMLTag = "a" | "button"> = Polymorphic<{
+  as: Tag;
   appearance?: "primary" | "secondary" | undefined;
 }>;
 
@@ -12,7 +12,7 @@ const {
   "class:list": classList,
   class: className,
   ...props
-}: Props = Astro.props;
+} = Astro.props;
 ---
 
 {/* @ts-expect-error The polymorphic type helper behaves weirdly */}
@@ -20,6 +20,7 @@ const {
   class:list={[
     "rounded-full border bg-background px-5 py-2 transition-colors",
     "flex items-center gap-2",
+    "disabled:pointer-events-none disabled:opacity-50",
     {
       "hover:border-primary hover:bg-primary/25 active:bg-primary":
         appearance === "primary",
