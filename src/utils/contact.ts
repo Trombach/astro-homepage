@@ -12,13 +12,17 @@ export default async function sendEmail(request: Request) {
   try {
     data = await request.formData();
   } catch (err) {
+    const message =
+      "Error reading form data: " +
+      (err instanceof TypeError
+        ? `${err.name} ${err.message}`
+        : JSON.stringify(err));
+
+    console.error(message);
+
     return {
       success: false,
-      message:
-        "Error reading form data: " +
-        (err instanceof TypeError
-          ? `${err.name} ${err.message}`
-          : JSON.stringify(err)),
+      message,
     } as const satisfies SendEmailResponse;
   }
 
@@ -27,16 +31,22 @@ export default async function sendEmail(request: Request) {
   const message = data.get("message");
 
   if (!import.meta.env.RESEND_TOKEN) {
+    const message = "Missing token";
+    console.error(message);
+
     return {
       success: false,
-      message: "Missing token",
+      message,
     } as const satisfies SendEmailResponse;
   }
 
   if (!name || !email || !message) {
+    const message = "Missing required fields";
+    console.error(message);
+
     return {
       success: false,
-      message: "Missing required fields",
+      message,
     } as const satisfies SendEmailResponse;
   }
 
@@ -62,7 +72,7 @@ export default async function sendEmail(request: Request) {
   const response = await resend.emails.send({
     from: "homepage-contact@lukastrombach.dev",
     to: ["contact@lukastrombach.dev"],
-    subject: `Contact request from ${name} <${email}>`,
+    subject: `Message from ${name} <${email}>`,
     text: message,
     tags: [{ name: "category", value: "homepage-contact" }],
   });
