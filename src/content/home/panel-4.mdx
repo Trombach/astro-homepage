@@ -4,7 +4,7 @@ image: ./images/phone.jpeg
 slot: panel-four
 ---
 
-import Link from "@components/Link.astro";
+import AppLink from "@components/AppLink.astro";
 import ExternalLinkIcon from "icons:astro/heroicons/arrow-top-right-on-square";
 import MailIcon from "icons:astro/heroicons/envelope";
 
@@ -12,17 +12,17 @@ import MailIcon from "icons:astro/heroicons/envelope";
 # Get In Touch
 
 <div class="flex gap-3">
-  <Link as="a" appearance="secondary" target="_blank" href="mailto:contact@lukastrombach.dev">E-Mail<MailIcon /></Link>
-  <Link
+  <AppLink as="a" appearance="secondary" target="_blank" href="mailto:contact@lukastrombach.dev">E-Mail<MailIcon /></AppLink>
+  <AppLink
     as="a"
     appearance="secondary"
     target="_blank"
     href="https://matrix.to/#/@lukets123:matrix.org"
-  >Matrix<ExternalLinkIcon /></Link>
-  <Link
+  >Matrix<ExternalLinkIcon /></AppLink>
+  <AppLink
     as="a"
     appearance="secondary"
     target="_blank"
     href="https://www.linkedin.com/in/lukas-trombach/"
-  >LinkedIn<ExternalLinkIcon /></Link>
+  >LinkedIn<ExternalLinkIcon /></AppLink>
 </div>
