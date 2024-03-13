@@ -103,7 +103,7 @@ const formFields = [
   const button = document.getElementById("submit-message") as HTMLButtonElement;
 
   form.addEventListener(
-    "change",
+    "input",
     () => (button.disabled = !form.checkValidity()),
   );
 </script>
