@@ -16,16 +16,15 @@ if (Astro.request.method === "POST") {
 
 type AllowedTags = "input" | "textarea";
 
-type FormFieldGeneric<Tag extends AllowedTags> = {
-  tag: Tag;
-  attributes?: HTMLAttributes<Tag>;
-};
-
 type FormFields = Array<
   { label: string } & {
-    [Key in AllowedTags]: FormFieldGeneric<Key>;
+    [Key in AllowedTags]: { tag: Key; attributes?: HTMLAttributes<Key> };
   }[AllowedTags]
 >;
+
+const emailRegExp =
+  /(([^<>\(\)\[\]\\.,;:\s@"]+(\.[^<>\(\)\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/ // eslint-disable-line no-useless-escape
+    .source;
 
 const formFields = [
   {
@@ -45,7 +44,8 @@ const formFields = [
       placeholder: "Enter your email",
       type: "email",
       name: "email",
-      required: "true",
+      required: true,
+      pattern: emailRegExp,
     },
   },
   {
@@ -104,6 +104,6 @@ const formFields = [
 
   form.addEventListener(
     "input",
-    () => (button.disabled = !form.checkValidity()),
+    () => (button.disabled = !form.checkValidity())
   );
 </script>
