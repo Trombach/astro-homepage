@@ -1,13 +1,13 @@
 ---
-import Link from "@components/Link.astro";
+import AppLink from "@components/AppLink.astro";
 import IconDownload from "icons:astro/heroicons/arrow-down-tray";
 import GithubLogo from "icons:astro/logos/github-icon";
 ---
 
 <div class="flex items-center gap-4 lg:order-3">
-  <Link title="Download CV">
+  <AppLink title="Download CV">
     <IconDownload /><span class="hidden md:inline">Download CV</span>
-  </Link>
+  </AppLink>
   <a href="https://github.com/Trombach/astro-homepage" class="size-8">
     <GithubLogo class="size-full [&_path]:fill-foreground" />
     <span class="sr-only">Github Repository</span>

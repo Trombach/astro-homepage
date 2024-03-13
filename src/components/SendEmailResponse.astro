@@ -1,0 +1,25 @@
+---
+import type sendEmail from "@utils/contact";
+
+type Props = {
+  response?: Awaited<ReturnType<typeof sendEmail>> | undefined;
+};
+
+const { response } = Astro.props;
+---
+
+{
+  response && (
+    <div
+      class:list={[
+        "rounded-xl border-2 p-6",
+        response.success && "border-green-800 text-green-800",
+        !response.success && "border-destructive text-destructive",
+      ]}
+    >
+      {response.success
+        ? "Your message has been sent!"
+        : `An error occurred: ${response.message}`}
+    </div>
+  )
+}
