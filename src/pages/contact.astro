@@ -1,6 +1,10 @@
 ---
-import Link from "@components/Link.astro";
+import AppLink from "@components/AppLink.astro";
+import H1 from "@components/H1.astro";
+import SendEmailResponse from "@components/SendEmailResponse.astro";
 import sendEmail from "@utils/contact";
+import type { HTMLAttributes } from "astro/types";
+import PaperPlane from "icons:astro/heroicons/paper-airplane";
 import Layout from "src/layouts/Layout.astro";
 
 export const prerender = false;
@@ -9,33 +13,97 @@ let response;
 if (Astro.request.method === "POST") {
   response = await sendEmail(Astro.request);
 }
+
+type AllowedTags = "input" | "textarea";
+
+type FormFieldGeneric<Tag extends AllowedTags> = {
+  tag: Tag;
+  attributes?: HTMLAttributes<Tag>;
+};
+
+type FormFields = Array<
+  { label: string } & {
+    [Key in AllowedTags]: FormFieldGeneric<Key>;
+  }[AllowedTags]
+>;
+
+const formFields = [
+  {
+    label: "Name",
+    tag: "input",
+    attributes: {
+      placeholder: "Enter your name",
+      type: "text",
+      name: "name",
+      required: true,
+    },
+  },
+  {
+    label: "Email",
+    tag: "input",
+    attributes: {
+      placeholder: "Enter your email",
+      type: "email",
+      name: "email",
+      required: "true",
+    },
+  },
+  {
+    label: "Message",
+    tag: "textarea",
+    attributes: {
+      placeholder: "Enter your message",
+      rows: 5,
+      name: "message",
+      required: true,
+    },
+  },
+] as const satisfies FormFields;
 ---
 
-<Layout title="Lukas Trombach | Contact"
-  >{response?.success ? "True" : "False"}
-  {response?.message}
+<Layout title="Lukas Trombach | Contact">
+  <section class="flex min-h-screen-less-header flex-col justify-center p-1">
+    <form
+      id="contact-form"
+      transition:name="contact-form"
+      method="POST"
+      class="mx-auto w-full space-y-12 rounded-xl border bg-background p-12 md:w-[600px] lg:max-w-screen-lg"
+    >
+      <H1 title="Send a Message" />
 
-  <form method="POST">
-    <label
-      >Name<input
-        type="text"
-        name="name"
-        placeholder="Enter your name"
-        required
-      /></label
-    >
-    <label
-      >E-Mail<input
-        type="email"
-        name="email"
-        placeholder="Enter your email"
-        required
-      /></label
-    >
-    <label
-      >Message<textarea name="message" placeholder="Enter your message" required
-      ></textarea></label
-    >
-    <Link type="submit">Submit</Link>
-  </form></Layout
->
+      <SendEmailResponse {response} />
+
+      {
+        formFields.map(({ label, tag: Tag, attributes }) => (
+          <label for="name" class="flex flex-col gap-2">
+            <span class="block text-sm font-medium leading-6">{label}</span>
+            <Tag
+              {...attributes}
+              class:list={[
+                "rounded-lg border bg-background px-3 py-2 placeholder-slate-400 shadow-sm",
+                "focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary",
+                "invalid:border-destructive invalid:text-destructive-foreground",
+                "focus:invalid:border-destructive focus:invalid:ring-destructive",
+                "invalid:placeholder-shown:border-border",
+              ]}
+            />
+          </label>
+        ))
+      }
+
+      <AppLink id="submit-message" as="button" type="submit" disabled
+        >Send <PaperPlane /></AppLink
+      >
+    </form>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const button = document.getElementById("submit-message") as HTMLButtonElement;
+
+  form.addEventListener(
+    "change",
+    () => (button.disabled = !form.checkValidity()),
+  );
+</script>

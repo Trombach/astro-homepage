@@ -4,6 +4,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const typography = require("@tailwindcss/typography");
 const containerQueries = require("@tailwindcss/container-queries");
+const forms = require("@tailwindcss/forms");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -66,7 +67,7 @@ module.exports = {
       },
     },
   },
-  plugins: [typography, containerQueries],
+  plugins: [typography, containerQueries, forms],
   future: {
     hoverOnlyWhenSupported: true,
   },
