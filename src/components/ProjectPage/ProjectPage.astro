@@ -1,7 +1,7 @@
 ---
 /* global ImageMetadata */
 
-import Link from "@components/Link.astro";
+import AppLink from "@components/AppLink.astro";
 import LeftArrow from "icons:astro/heroicons/arrow-left";
 import PageBody from "./PageBody.astro";
 
@@ -15,7 +15,7 @@ const { title, description, cover } = Astro.props;
 ---
 
 <div class="mx-auto max-w-4xl px-5">
-  <Link
+  <AppLink
     as="a"
     appearance="secondary"
     href="/projects"
@@ -23,7 +23,7 @@ const { title, description, cover } = Astro.props;
   >
     <LeftArrow class="transition-transform group-hover:-translate-x-1" />
     <span>Back to Projects</span>
-  </Link>
+  </AppLink>
 
   <PageBody {title} {description} {cover}>
     <slot name="content" slot="content" />
