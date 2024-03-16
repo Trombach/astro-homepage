@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
   const panels = [1, 2, 3, 4] as const;
+  export type PanelState = "expanded" | "start" | "end";
   export type PanelNumber = (typeof panels)[number];
 </script>
 
@@ -8,11 +9,11 @@
 
   import Panel from "./Panel.svelte";
 
-  const panelState: { [key in PanelNumber]: boolean } = {
-    1: true,
-    2: false,
-    3: false,
-    4: false,
+  const panelStates: { [key in PanelNumber]: PanelState } = {
+    1: "expanded",
+    2: "end",
+    3: "end",
+    4: "end",
   };
 
   const toggleOthers = ({
@@ -20,18 +21,20 @@
   }: CustomEvent<PanelNumber>) => {
     panels
       .filter((panel) => panel !== currentExpanded)
-      .forEach((panel) => (panelState[panel] = false));
+      .forEach(
+        (panel) =>
+          (panelStates[panel] = currentExpanded < panel ? "end" : "start"),
+      );
   };
 </script>
 
 <div
-  data-hero-grid
-  class="m-auto grid h-full w-full max-w-screen-sm gap-3 p-3 lg:max-w-screen-xl lg:items-center lg:gap-5 lg:p-5"
+  class="m-auto flex h-full w-full max-w-screen-sm basis-auto flex-col p-3 lg:max-w-screen-xl lg:flex-row lg:items-center lg:p-5"
 >
   <Panel
     title="Welcome"
     number={1}
-    bind:expanded={panelState[1]}
+    bind:state={panelStates[1]}
     on:hasExpanded={toggleOthers}
   >
     <slot name="panel-one" slot="panel" />
@@ -40,7 +43,7 @@
   <Panel
     title="About Me"
     number={2}
-    bind:expanded={panelState[2]}
+    bind:state={panelStates[2]}
     on:hasExpanded={toggleOthers}
   >
     <slot name="panel-two" slot="panel" />
@@ -49,7 +52,7 @@
   <Panel
     title="My Projects"
     number={3}
-    bind:expanded={panelState[3]}
+    bind:state={panelStates[3]}
     on:hasExpanded={toggleOthers}
   >
     <slot name="panel-three" slot="panel" />
@@ -58,41 +61,9 @@
   <Panel
     title="Contact Me"
     number={4}
-    bind:expanded={panelState[4]}
+    bind:state={panelStates[4]}
     on:hasExpanded={toggleOthers}
   >
     <slot name="panel-four" slot="panel" />
   </Panel>
 </div>
-
-<style global lang="postcss">
-  [data-hero-grid] {
-    --large-panel-width: 10fr;
-    transition: grid-template-rows 500ms ease-in-out;
-    grid-template-rows: var(--template);
-
-    @media screen(lg) {
-      --large-panel-width: 12fr;
-      transition: grid-template-columns 500ms ease-in-out;
-
-      grid-template-rows: auto;
-      grid-template-columns: var(--template);
-    }
-  }
-
-  [data-hero-grid]:has(:nth-child(1):is([data-expanded="true"])) {
-    --template: var(--large-panel-width) 1fr 1fr 1fr;
-  }
-
-  [data-hero-grid]:has(:nth-child(2):is([data-expanded="true"])) {
-    --template: 1fr var(--large-panel-width) 1fr 1fr;
-  }
-
-  [data-hero-grid]:has(:nth-child(3):is([data-expanded="true"])) {
-    --template: 1fr 1fr var(--large-panel-width) 1fr;
-  }
-
-  [data-hero-grid]:has(:nth-child(4):is([data-expanded="true"])) {
-    --template: 1fr 1fr 1fr var(--large-panel-width);
-  }
-</style>
