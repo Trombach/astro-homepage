@@ -1,27 +1,24 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
   import { blur } from "svelte/transition";
-  import { type PanelNumber, type PanelState } from "./HeroGrid.svelte";
+  import {
+    expandPanel,
+    getPanelState,
+    type PanelNumber,
+  } from "./HeroGrid.svelte";
 
-  let expanded: boolean;
-  export let state: PanelState;
   export let number: PanelNumber;
   export let title: string;
 
-  const dispatch = createEventDispatcher<{ hasExpanded: PanelNumber }>();
+  let expanded: boolean;
+  let state = getPanelState(number);
 
-  $: expanded = state === "expanded";
-
-  const toggleExpanded = () => {
-    state = "expanded";
-    dispatch("hasExpanded", number);
-  };
+  $: expanded = $state === "expanded";
 </script>
 
 <div
   class="basis-24 overflow-clip rounded-4xl border bg-card text-card-foreground @container/panel lg:h-2/3 lg:basis-32"
   data-panel
-  data-state={state}
+  data-state={$state}
 >
   {#key expanded}
     <div
@@ -34,7 +31,7 @@
       {:else}
         <button
           class="flex h-full w-full items-center justify-center px-1 text-2xl transition-colors hover:bg-accent/50 active:bg-accent"
-          on:click={toggleExpanded}
+          on:click={() => expandPanel(number)}
         >
           {title}
         </button>
