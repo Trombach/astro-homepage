@@ -38,19 +38,26 @@
 </script>
 
 <script lang="ts">
-  /* global WheelEvent */
+  /* global WheelEvent setTimeout */
 
   import Panel from "./Panel.svelte";
 
+  let canWheel = true;
+
   const handleWheelEvent = (event: WheelEvent) => {
-    if (event.deltaY > 0) {
-      if ($expandedPanel && $expandedPanel !== 4) {
-        expandPanel(($expandedPanel + 1) as PanelNumber);
+    if (canWheel) {
+      if (event.deltaY > 0) {
+        if ($expandedPanel && $expandedPanel !== 4) {
+          expandPanel(($expandedPanel + 1) as PanelNumber);
+        }
+      } else if (event.deltaY < 0) {
+        if ($expandedPanel && $expandedPanel !== 1) {
+          expandPanel(($expandedPanel - 1) as PanelNumber);
+        }
       }
-    } else if (event.deltaY < 0) {
-      if ($expandedPanel && $expandedPanel !== 1) {
-        expandPanel(($expandedPanel - 1) as PanelNumber);
-      }
+
+      canWheel = false;
+      setTimeout(() => (canWheel = true), 500);
     }
   };
 </script>
@@ -58,7 +65,7 @@
 <div
   data-hero-grid
   class="m-auto flex h-full w-full max-w-screen-sm basis-auto flex-col p-3 lg:max-w-screen-xl lg:flex-row lg:items-center lg:p-5"
-  on:wheel={handleWheelEvent}
+  on:wheel|preventDefault={handleWheelEvent}
 >
   <Panel title="Welcome" number={1}>
     <slot name="panel-one" slot="panel" />
