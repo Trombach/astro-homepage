@@ -19,10 +19,9 @@
 </script>
 
 <div
-  class="relative basis-24 overflow-clip rounded-4xl border bg-card text-card-foreground @container/panel lg:h-2/3 lg:basis-32"
+  class="basis-24 overflow-clip rounded-4xl border bg-card text-card-foreground @container/panel lg:h-2/3 lg:basis-32"
   data-panel
   data-state={state}
-  class:flex-col={expanded}
 >
   {#key expanded}
     <div
@@ -48,11 +47,14 @@
   [data-panel] {
     --perspective: 1000px;
     --angle: 45deg;
+    --translate: translate(0px);
+    --scale: scale(1);
 
     transition:
       flex-basis 500ms ease-in-out,
       transform 500ms ease-in-out;
-    transform: var(--panel-perspective) var(--panel-rotate);
+    transform: var(--translate) var(--panel-perspective) var(--panel-rotate)
+      var(--scale);
   }
 
   [data-panel][data-state="start"] {
@@ -90,14 +92,18 @@
     }
   }
 
-  [data-panel]:not([data-state="expanded"]):hover {
-    --panel-perspective: perspective(none);
-    --panel-rotate: rotateX(0deg);
-  }
-
-  @media screen(lg) {
+  @media screen and (hover: hover) {
     [data-panel]:not([data-state="expanded"]):hover {
-      --panel-rotate: rotateY(0deg);
+      --panel-perspective: perspective(none);
+      --panel-rotate: rotateX(0deg);
+      --scale: scale(1.1);
+      @apply z-10;
+    }
+
+    @media screen(lg) {
+      [data-panel]:not([data-state="expanded"]):hover {
+        --panel-rotate: rotateY(0deg);
+      }
     }
   }
 
