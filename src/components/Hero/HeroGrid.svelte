@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  const panels = [1, 2, 3, 4] as const;
+  const panels = [1, 2, 3, 4] as const satisfies number[];
   export type PanelState = "expanded" | "start" | "end";
   export type PanelNumber = (typeof panels)[number];
 </script>
