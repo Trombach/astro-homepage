@@ -1,98 +1,195 @@
 <script context="module" lang="ts">
-  const panels = [1, 2, 3, 4] as const;
+  import { derived, get, writable } from "svelte/store";
+
+  const panels = [1, 2, 3, 4] as const satisfies number[];
+  export type PanelState = "expanded" | "start" | "end";
   export type PanelNumber = (typeof panels)[number];
+  export type PanelStates = { [key in PanelNumber]: PanelState };
+
+  const defaultPanelStates = {
+    1: "expanded",
+    2: "end",
+    3: "end",
+    4: "end",
+  } as const satisfies PanelStates;
+
+  const panelStates = writable<PanelStates>(defaultPanelStates);
+
+  export const expandedPanel = derived(panelStates, ($panelStates) =>
+    panels.find((panel) => $panelStates[panel] === "expanded"),
+  );
+
+  export const getPanelState = (panelNumber: PanelNumber) =>
+    derived(panelStates, ($panelStates) => $panelStates[panelNumber]);
+
+  export const expandPanel = (expandPanel: PanelNumber) => {
+    let newPanelStates: PanelStates = { ...defaultPanelStates };
+
+    panels.forEach((panel) => {
+      if (panel !== expandPanel) {
+        newPanelStates[panel] = expandPanel < panel ? "end" : "start";
+      } else {
+        newPanelStates[panel] = "expanded";
+      }
+    });
+
+    panelStates.set(newPanelStates);
+  };
+
+  export const expandNextPanel = () => {
+    const expanded = get(expandedPanel);
+
+    if (!expanded || expanded === 4) return;
+    expandPanel((expanded + 1) as PanelNumber);
+  };
+
+  export const expandPreviousPanel = () => {
+    const expanded = get(expandedPanel);
+
+    if (!expanded || expanded === 1) return;
+    expandPanel((expanded - 1) as PanelNumber);
+  };
 </script>
 
 <script lang="ts">
-  /* global CustomEvent */
+  /* global WheelEvent CustomEvent EventTarget HTMLDivElement setTimeout window */
 
   import Panel from "./Panel.svelte";
+  import { swipe } from "svelte-gestures";
 
-  const panelState: { [key in PanelNumber]: boolean } = {
-    1: true,
-    2: false,
-    3: false,
-    4: false,
+  let heroGrid: HTMLDivElement;
+  let canWheel = true;
+  let pointerType: string;
+
+  const handleWheelEvent = (event: WheelEvent) => {
+    if (canWheel) {
+      if (event.deltaY > 0) {
+        expandNextPanel();
+      } else if (event.deltaY < 0) {
+        expandPreviousPanel();
+      }
+
+      canWheel = false;
+      setTimeout(() => (canWheel = true), 500);
+    }
   };
 
-  const toggleOthers = ({
-    detail: currentExpanded,
-  }: CustomEvent<PanelNumber>) => {
-    panels
-      .filter((panel) => panel !== currentExpanded)
-      .forEach((panel) => (panelState[panel] = false));
+  const handleSwipe = ({
+    detail: { direction },
+  }: CustomEvent<{
+    direction: "top" | "right" | "bottom" | "left";
+    target: EventTarget;
+  }>) => {
+    if (pointerType === "touch") {
+      const isRow =
+        window.getComputedStyle(heroGrid).getPropertyValue("flex-direction") ===
+        "row";
+
+      if ((direction === "left" && isRow) || direction === "top") {
+        expandNextPanel();
+      } else if ((direction === "right" && isRow) || direction === "bottom") {
+        expandPreviousPanel();
+      }
+    }
   };
 </script>
 
 <div
   data-hero-grid
-  class="m-auto grid h-full w-full max-w-screen-sm gap-3 p-3 lg:max-w-screen-xl lg:items-center lg:gap-5 lg:p-5"
+  class="m-auto flex h-full w-full max-w-screen-sm basis-auto flex-col p-3 lg:max-w-screen-xl lg:flex-row lg:items-center lg:p-5"
+  bind:this={heroGrid}
+  on:wheel|preventDefault={handleWheelEvent}
+  use:swipe
+  on:swipe={handleSwipe}
+  on:swipemove={(event) => (pointerType = event.detail.event.pointerType)}
 >
-  <Panel
-    title="Welcome"
-    number={1}
-    bind:expanded={panelState[1]}
-    on:hasExpanded={toggleOthers}
-  >
+  <Panel title="Welcome" number={1}>
     <slot name="panel-one" slot="panel" />
   </Panel>
 
-  <Panel
-    title="About Me"
-    number={2}
-    bind:expanded={panelState[2]}
-    on:hasExpanded={toggleOthers}
-  >
+  <Panel title="About Me" number={2}>
     <slot name="panel-two" slot="panel" />
   </Panel>
 
-  <Panel
-    title="My Projects"
-    number={3}
-    bind:expanded={panelState[3]}
-    on:hasExpanded={toggleOthers}
-  >
+  <Panel title="My Projects" number={3}>
     <slot name="panel-three" slot="panel" />
   </Panel>
 
-  <Panel
-    title="Contact Me"
-    number={4}
-    bind:expanded={panelState[4]}
-    on:hasExpanded={toggleOthers}
-  >
+  <Panel title="Contact Me" number={4}>
     <slot name="panel-four" slot="panel" />
   </Panel>
 </div>
 
-<style global lang="postcss">
+<style lang="postcss" global>
   [data-hero-grid] {
-    --large-panel-width: 10fr;
-    transition: grid-template-rows 500ms ease-in-out;
-    grid-template-rows: var(--template);
+    --translate-x: 0px;
+    --translate-y: 30px;
+  }
 
-    @media screen(lg) {
-      --large-panel-width: 12fr;
-      transition: grid-template-columns 500ms ease-in-out;
-
-      grid-template-rows: auto;
-      grid-template-columns: var(--template);
+  @media screen(lg) {
+    [data-hero-grid] {
+      --translate-x: 50px;
+      --translate-y: 0px;
     }
   }
 
-  [data-hero-grid]:has(:nth-child(1):is([data-expanded="true"])) {
-    --template: var(--large-panel-width) 1fr 1fr 1fr;
+  [data-hero-grid] > :nth-child(1) {
+    @apply z-[4];
   }
 
-  [data-hero-grid]:has(:nth-child(2):is([data-expanded="true"])) {
-    --template: 1fr var(--large-panel-width) 1fr 1fr;
+  [data-hero-grid] > :nth-child(2) {
+    @apply z-[3];
   }
 
-  [data-hero-grid]:has(:nth-child(3):is([data-expanded="true"])) {
-    --template: 1fr 1fr var(--large-panel-width) 1fr;
+  [data-hero-grid] > :nth-child(3) {
+    @apply z-[2];
   }
 
-  [data-hero-grid]:has(:nth-child(4):is([data-expanded="true"])) {
-    --template: 1fr 1fr 1fr var(--large-panel-width);
+  [data-hero-grid] > :nth-child(4) {
+    @apply z-[1];
+  }
+
+  [data-hero-grid] > :nth-child(1):is([data-state="start"]) {
+    @apply z-[1];
+  }
+
+  [data-hero-grid] > :nth-child(2):is([data-state="start"]) {
+    @apply z-[2];
+  }
+
+  [data-hero-grid] > :nth-child(3):is([data-state="start"]) {
+    @apply z-[3];
+  }
+
+  [data-hero-grid] > :nth-child(4):is([data-state="expanded"]) {
+    @apply z-[4];
+  }
+
+  [data-hero-grid] > :nth-child(2):is([data-state="start"]) {
+    --translate: translate(
+      calc(var(--translate-x) * -1),
+      calc(var(--translate-y) * -1)
+    );
+  }
+
+  [data-hero-grid] > :nth-child(3):is([data-state="start"]) {
+    --translate: translate(
+      calc(var(--translate-x) * -2),
+      calc(var(--translate-y) * -2)
+    );
+  }
+
+  [data-hero-grid] > :nth-child(2):is([data-state="end"]) {
+    --translate: translate(
+      calc(var(--translate-x) * 2),
+      calc(var(--translate-y) * 2)
+    );
+  }
+
+  [data-hero-grid] > :nth-child(3):is([data-state="end"]) {
+    --translate: translate(
+      calc(var(--translate-x) * 1),
+      calc(var(--translate-y) * 1)
+    );
   }
 </style>
