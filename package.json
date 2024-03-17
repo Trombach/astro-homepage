@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
+    "preinstall": "npx --yes only-allow pnpm",
     "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check && svelte-check",
@@ -36,6 +36,7 @@
     "resend": "^3.2.0",
     "sharp": "^0.33.2",
     "svelte": "^4.2.12",
+    "svelte-gestures": "^4.0.0",
     "svelte-preprocess": "^5.1.3",
     "tailwindcss": "^3.4.1"
   },
