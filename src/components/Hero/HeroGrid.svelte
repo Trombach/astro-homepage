@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import { derived, writable } from "svelte/store";
+  import { derived, get, writable } from "svelte/store";
 
   const panels = [1, 2, 3, 4] as const satisfies number[];
   export type PanelState = "expanded" | "start" | "end";
@@ -35,29 +35,58 @@
 
     panelStates.set(newPanelStates);
   };
+
+  export const expandNextPanel = () => {
+    const expanded = get(expandedPanel);
+
+    if (!expanded || expanded === 4) return;
+    expandPanel((expanded + 1) as PanelNumber);
+  };
+
+  export const expandPreviousPanel = () => {
+    const expanded = get(expandedPanel);
+
+    if (!expanded || expanded === 1) return;
+    expandPanel((expanded - 1) as PanelNumber);
+  };
 </script>
 
 <script lang="ts">
-  /* global WheelEvent setTimeout */
+  /* global WheelEvent CustomEvent EventTarget HTMLDivElement setTimeout window */
 
   import Panel from "./Panel.svelte";
+  import { swipe } from "svelte-gestures";
 
+  let heroGrid: HTMLDivElement;
   let canWheel = true;
 
   const handleWheelEvent = (event: WheelEvent) => {
     if (canWheel) {
       if (event.deltaY > 0) {
-        if ($expandedPanel && $expandedPanel !== 4) {
-          expandPanel(($expandedPanel + 1) as PanelNumber);
-        }
+        expandNextPanel();
       } else if (event.deltaY < 0) {
-        if ($expandedPanel && $expandedPanel !== 1) {
-          expandPanel(($expandedPanel - 1) as PanelNumber);
-        }
+        expandPreviousPanel();
       }
 
       canWheel = false;
       setTimeout(() => (canWheel = true), 500);
+    }
+  };
+
+  const handleSwipe = ({
+    detail: { direction },
+  }: CustomEvent<{
+    direction: "top" | "right" | "bottom" | "left";
+    target: EventTarget;
+  }>) => {
+    const isFlexRow =
+      window.getComputedStyle(heroGrid).getPropertyValue("flex-direction") ===
+      "row";
+
+    if ((direction === "left" && isFlexRow) || direction === "top") {
+      expandNextPanel();
+    } else if ((direction === "right" && isFlexRow) || direction === "bottom") {
+      expandPreviousPanel();
     }
   };
 </script>
@@ -65,7 +94,10 @@
 <div
   data-hero-grid
   class="m-auto flex h-full w-full max-w-screen-sm basis-auto flex-col p-3 lg:max-w-screen-xl lg:flex-row lg:items-center lg:p-5"
+  bind:this={heroGrid}
   on:wheel|preventDefault={handleWheelEvent}
+  use:swipe
+  on:swipe={handleSwipe}
 >
   <Panel title="Welcome" number={1}>
     <slot name="panel-one" slot="panel" />
