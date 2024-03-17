@@ -59,6 +59,7 @@
 
   let heroGrid: HTMLDivElement;
   let canWheel = true;
+  let pointerType: string;
 
   const handleWheelEvent = (event: WheelEvent) => {
     if (canWheel) {
@@ -79,14 +80,16 @@
     direction: "top" | "right" | "bottom" | "left";
     target: EventTarget;
   }>) => {
-    const isFlexRow =
-      window.getComputedStyle(heroGrid).getPropertyValue("flex-direction") ===
-      "row";
+    if (pointerType === "touch") {
+      const isRow =
+        window.getComputedStyle(heroGrid).getPropertyValue("flex-direction") ===
+        "row";
 
-    if ((direction === "left" && isFlexRow) || direction === "top") {
-      expandNextPanel();
-    } else if ((direction === "right" && isFlexRow) || direction === "bottom") {
-      expandPreviousPanel();
+      if ((direction === "left" && isRow) || direction === "top") {
+        expandNextPanel();
+      } else if ((direction === "right" && isRow) || direction === "bottom") {
+        expandPreviousPanel();
+      }
     }
   };
 </script>
@@ -98,6 +101,7 @@
   on:wheel|preventDefault={handleWheelEvent}
   use:swipe
   on:swipe={handleSwipe}
+  on:swipemove={(event) => (pointerType = event.detail.event.pointerType)}
 >
   <Panel title="Welcome" number={1}>
     <slot name="panel-one" slot="panel" />
