@@ -111,8 +111,16 @@ const { title } = Astro.props;
         }
 
         :root {
+          --header-height: 64px;
+
           color-scheme: dark light;
           @apply scroll-pt-[84px] bg-background leading-normal text-foreground;
+        }
+
+        @media screen(lg) {
+          :root {
+            --header-height: 66px;
+          }
         }
 
         * {
