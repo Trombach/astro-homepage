@@ -15,7 +15,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.8",
+    "@astrojs/check": "^0.5.9",
     "@astrojs/mdx": "^2.2.0",
     "@astrojs/react": "^3.1.0",
     "@astrojs/svelte": "^5.2.0",
@@ -28,7 +28,7 @@
     "@tailwindcss/container-queries": "^0.1.1",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
-    "astro": "^4.5.2",
+    "astro": "^4.5.5",
     "clsx": "^2.1.0",
     "radash": "^12.1.0",
     "react": "^18.2.0",
