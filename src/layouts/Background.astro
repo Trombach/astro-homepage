@@ -1,15 +1,24 @@
 ---
+import BackgroundImage from "@images/gradient.avif";
 import type { HTMLAttributes } from "astro/types";
+import { getImage } from "astro:assets";
+
 type Props = HTMLAttributes<"div">;
+
+const optimisedImage = await getImage({
+  src: BackgroundImage.src,
+  width: 1440,
+});
 
 const { "class:list": classList, class: className, ...props } = Astro.props;
 ---
 
 <div
+  style={`background-image: url(${optimisedImage.src})`}
   class:list={[
-    "overflow-auto",
-    "background h-screen w-full animate-[moveUp_20s_linear_infinite]",
-    "bg-[length:auto,_75px_75px] bg-fixed md:bg-[length:auto,_90px_90px] lg:bg-[length:auto,_120px_120px]",
+    "overflow-auto [scrollbar-gutter:stable]",
+    "h-screen w-full animate-[moveUp_20s_linear_infinite]",
+    "bg-cover bg-no-repeat",
     classList,
     className,
   ]}
@@ -17,54 +26,3 @@ const { "class:list": classList, class: className, ...props } = Astro.props;
 >
   <slot />
 </div>
-
-<style>
-  @tailwind components;
-
-  @layer components {
-    .background {
-      scrollbar-gutter: stable;
-
-      --shine-height: 100px;
-      --shine-width: 200px;
-      --circle-size: 2px;
-
-      background-position:
-        0 0,
-        center 0;
-
-      background-image: radial-gradient(
-          var(--shine-width) var(--shine-height) at 50% 100%,
-          theme(colors.secondary.DEFAULT) 20%,
-          transparent 100%
-        ),
-        radial-gradient(
-          circle,
-          theme(colors.secondary.DEFAULT) var(--circle-size),
-          transparent 0
-        );
-    }
-
-    @media screen(md) {
-      .background {
-        --shine-height: 150px;
-        --shine-width: 350px;
-      }
-    }
-
-    @media screen(lg) {
-      .background {
-        --shine-height: 200px;
-        --shine-width: 500px;
-      }
-    }
-
-    @keyframes moveUp {
-      to {
-        background-position:
-          0 0,
-          center -120px;
-      }
-    }
-  }
-</style>
