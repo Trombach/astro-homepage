@@ -1,7 +1,6 @@
 ---
 /* global ImageMetadata */
 
-import H1 from "@components/H1.astro";
 import { Image } from "astro:assets";
 import { dash } from "radash";
 
@@ -16,7 +15,7 @@ const dashedTitle = dash(title);
 ---
 
 <article
-  class="prose mx-auto max-w-screen-lg rounded-xl border bg-background lg:prose-lg dark:prose-invert prose-headings:mx-5 prose-p:mx-5"
+  class="prose mx-auto max-w-screen-lg rounded-xl border bg-background pb-5 lg:prose-lg dark:prose-invert"
   transition:name={`border-${dashedTitle}`}
 >
   {
@@ -24,19 +23,19 @@ const dashedTitle = dash(title);
       <Image
         src={cover}
         alt="hero"
-        widths={[240, cover.width]}
-        sizes={`(max-width: 360px) 240px, ${cover.width}px`}
+        widths={[240, 480, 850]}
+        sizes={`(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px`}
         class="aspect-[21/9] w-full rounded-t-xl object-cover"
         transition:name={cover.src}
       />
     ) : null
   }
 
-  <H1 {title} transition:name={dashedTitle} />
-
-  <p class="text-muted-foreground">
-    {description}
-  </p>
-
-  <slot name="content" />
+  <div class="px-5 lg:px-10">
+    <h1 {title} transition:name={dashedTitle}>{title}</h1>
+    <p class="text-muted-foreground">
+      {description}
+    </p>
+    <slot name="content" />
+  </div>
 </article>

@@ -14,12 +14,12 @@ type Props = {
 const { title, description, cover } = Astro.props;
 ---
 
-<div class="mx-auto max-w-4xl px-5">
+<div class="mx-auto mb-10 max-w-full space-y-5 px-5 pt-10 lg:max-w-4xl">
   <AppLink
     as="a"
     appearance="secondary"
     href="/projects"
-    class="group mb-3 mt-2 w-fit text-sm"
+    class="group w-fit text-sm"
   >
     <LeftArrow class="transition-transform group-hover:-translate-x-1" />
     <span>Back to Projects</span>
