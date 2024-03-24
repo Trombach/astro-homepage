@@ -10,6 +10,8 @@ interface ImportMetaEnv {
   VERCEL_ENV?: "production" | "preview" | "development";
   VERCEL_URL?: string;
   RESEND_TOKEN?: string;
+  CV_FILE_ID?: string;
+  GOOGLE_API_KEY?: string;
 }
 
 // eslint-disable-next-line no-redeclare, no-unused-vars
