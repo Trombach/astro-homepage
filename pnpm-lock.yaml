@@ -4,158 +4,156 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-importers:
+dependencies:
+  '@astrojs/check':
+    specifier: ^0.5.10
+    version: 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.3)
+  '@astrojs/mdx':
+    specifier: ^2.2.1
+    version: 2.2.1(astro@4.5.9)
+  '@astrojs/react':
+    specifier: ^3.1.0
+    version: 3.1.0(@types/react-dom@18.2.22)(@types/react@18.2.70)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.6)
+  '@astrojs/svelte':
+    specifier: ^5.2.0
+    version: 5.2.0(astro@4.5.9)(svelte@4.2.12)(typescript@5.4.3)(vite@5.2.6)
+  '@astrojs/tailwind':
+    specifier: ^5.1.0
+    version: 5.1.0(astro@4.5.9)(tailwindcss@3.4.1)
+  '@astrojs/vercel':
+    specifier: ^7.4.0
+    version: 7.4.0(astro@4.5.9)(react@18.2.0)
+  '@floating-ui/react':
+    specifier: ^0.26.9
+    version: 0.26.9(react-dom@18.2.0)(react@18.2.0)
+  '@fontsource/inter':
+    specifier: ^5.0.17
+    version: 5.0.17
+  '@fontsource/jetbrains-mono':
+    specifier: ^5.0.19
+    version: 5.0.19
+  '@iconify-json/heroicons':
+    specifier: ^1.1.20
+    version: 1.1.20
+  '@tailwindcss/container-queries':
+    specifier: ^0.1.1
+    version: 0.1.1(tailwindcss@3.4.1)
+  '@vercel/analytics':
+    specifier: ^1.2.2
+    version: 1.2.2(react@18.2.0)
+  '@vercel/speed-insights':
+    specifier: ^1.0.10
+    version: 1.0.10(react@18.2.0)(svelte@4.2.12)
+  astro:
+    specifier: ^4.5.9
+    version: 4.5.9(typescript@5.4.3)
+  clsx:
+    specifier: ^2.1.0
+    version: 2.1.0
+  google-auth-library:
+    specifier: ^9.7.0
+    version: 9.7.0
+  googleapis:
+    specifier: ^134.0.0
+    version: 134.0.0
+  radash:
+    specifier: ^12.1.0
+    version: 12.1.0
+  react:
+    specifier: ^18.2.0
+    version: 18.2.0
+  react-dom:
+    specifier: ^18.2.0
+    version: 18.2.0(react@18.2.0)
+  resend:
+    specifier: ^3.2.0
+    version: 3.2.0
+  sharp:
+    specifier: ^0.33.2
+    version: 0.33.2
+  svelte:
+    specifier: ^4.2.12
+    version: 4.2.12
+  svelte-gestures:
+    specifier: ^4.0.0
+    version: 4.0.0
+  svelte-preprocess:
+    specifier: ^5.1.3
+    version: 5.1.3(@babel/core@7.24.3)(postcss@8.4.35)(svelte@4.2.12)(typescript@5.4.3)
+  tailwindcss:
+    specifier: ^3.4.1
+    version: 3.4.1
 
-  .:
-    dependencies:
-      '@astrojs/check':
-        specifier: ^0.5.10
-        version: 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.3)
-      '@astrojs/mdx':
-        specifier: ^2.2.1
-        version: 2.2.1(astro@4.5.9)
-      '@astrojs/react':
-        specifier: ^3.1.0
-        version: 3.1.0(@types/react-dom@18.2.22)(@types/react@18.2.69)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.3)
-      '@astrojs/svelte':
-        specifier: ^5.2.0
-        version: 5.2.0(astro@4.5.9)(svelte@4.2.12)(typescript@5.4.3)(vite@5.2.3)
-      '@astrojs/tailwind':
-        specifier: ^5.1.0
-        version: 5.1.0(astro@4.5.9)(tailwindcss@3.4.1)
-      '@astrojs/vercel':
-        specifier: ^7.4.0
-        version: 7.4.0(astro@4.5.9)(react@18.2.0)
-      '@floating-ui/react':
-        specifier: ^0.26.9
-        version: 0.26.9(react-dom@18.2.0)(react@18.2.0)
-      '@fontsource/inter':
-        specifier: ^5.0.17
-        version: 5.0.17
-      '@fontsource/jetbrains-mono':
-        specifier: ^5.0.19
-        version: 5.0.19
-      '@iconify-json/heroicons':
-        specifier: ^1.1.20
-        version: 1.1.20
-      '@tailwindcss/container-queries':
-        specifier: ^0.1.1
-        version: 0.1.1(tailwindcss@3.4.1)
-      '@vercel/analytics':
-        specifier: ^1.2.2
-        version: 1.2.2(react@18.2.0)
-      '@vercel/speed-insights':
-        specifier: ^1.0.10
-        version: 1.0.10(react@18.2.0)(svelte@4.2.12)
-      astro:
-        specifier: ^4.5.9
-        version: 4.5.9(typescript@5.4.3)
-      clsx:
-        specifier: ^2.1.0
-        version: 2.1.0
-      google-auth-library:
-        specifier: ^9.7.0
-        version: 9.7.0
-      googleapis:
-        specifier: ^134.0.0
-        version: 134.0.0
-      radash:
-        specifier: ^12.1.0
-        version: 12.1.0
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      resend:
-        specifier: ^3.2.0
-        version: 3.2.0
-      sharp:
-        specifier: ^0.33.2
-        version: 0.33.2
-      svelte:
-        specifier: ^4.2.12
-        version: 4.2.12
-      svelte-gestures:
-        specifier: ^4.0.0
-        version: 4.0.0
-      svelte-preprocess:
-        specifier: ^5.1.3
-        version: 5.1.3(@babel/core@7.24.3)(postcss@8.4.35)(svelte@4.2.12)(typescript@5.4.3)
-      tailwindcss:
-        specifier: ^3.4.1
-        version: 3.4.1
-    devDependencies:
-      '@iconify-json/logos':
-        specifier: ^1.1.42
-        version: 1.1.42
-      '@tailwindcss/forms':
-        specifier: ^0.5.7
-        version: 0.5.7(tailwindcss@3.4.1)
-      '@tailwindcss/typography':
-        specifier: ^0.5.10
-        version: 0.5.10(tailwindcss@3.4.1)
-      '@types/react':
-        specifier: ^18.2.69
-        version: 18.2.69
-      '@types/react-dom':
-        specifier: ^18.2.22
-        version: 18.2.22
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^7.3.1
-        version: 7.3.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)(typescript@5.4.3)
-      '@typescript-eslint/parser':
-        specifier: ^7.3.1
-        version: 7.3.1(eslint@8.57.0)(typescript@5.4.3)
-      eslint:
-        specifier: ^8.57.0
-        version: 8.57.0
-      eslint-plugin-astro:
-        specifier: ^0.32.0
-        version: 0.32.0(eslint@8.57.0)
-      eslint-plugin-import:
-        specifier: ^2.29.1
-        version: 2.29.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)
-      eslint-plugin-jsx-a11y:
-        specifier: ^6.8.0
-        version: 6.8.0(eslint@8.57.0)
-      eslint-plugin-mdx:
-        specifier: ^3.1.5
-        version: 3.1.5(eslint@8.57.0)
-      eslint-plugin-n:
-        specifier: ^16.6.2
-        version: 16.6.2(eslint@8.57.0)
-      eslint-plugin-promise:
-        specifier: ^6.1.1
-        version: 6.1.1(eslint@8.57.0)
-      eslint-plugin-svelte:
-        specifier: ^2.35.1
-        version: 2.35.1(eslint@8.57.0)(svelte@4.2.12)
-      prettier:
-        specifier: ^3.2.5
-        version: 3.2.5
-      prettier-plugin-astro:
-        specifier: ^0.13.0
-        version: 0.13.0
-      prettier-plugin-astro-organize-imports:
-        specifier: ^0.4.3
-        version: 0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.12)(prettier@3.2.5)
-      prettier-plugin-svelte:
-        specifier: ^3.2.2
-        version: 3.2.2(prettier@3.2.5)(svelte@4.2.12)
-      prettier-plugin-tailwindcss:
-        specifier: ^0.5.12
-        version: 0.5.12(prettier-plugin-astro@0.13.0)(prettier-plugin-svelte@3.2.2)(prettier@3.2.5)
-      svelte-check:
-        specifier: ^3.6.8
-        version: 3.6.8(@babel/core@7.24.3)(postcss@8.4.35)(svelte@4.2.12)
-      typescript:
-        specifier: ^5.4.3
-        version: 5.4.3
-      unplugin-icons:
-        specifier: ^0.18.5
-        version: 0.18.5
+devDependencies:
+  '@iconify-json/logos':
+    specifier: ^1.1.42
+    version: 1.1.42
+  '@tailwindcss/forms':
+    specifier: ^0.5.7
+    version: 0.5.7(tailwindcss@3.4.1)
+  '@tailwindcss/typography':
+    specifier: ^0.5.10
+    version: 0.5.10(tailwindcss@3.4.1)
+  '@types/react':
+    specifier: ^18.2.70
+    version: 18.2.70
+  '@types/react-dom':
+    specifier: ^18.2.22
+    version: 18.2.22
+  '@typescript-eslint/eslint-plugin':
+    specifier: ^7.3.1
+    version: 7.3.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)(typescript@5.4.3)
+  '@typescript-eslint/parser':
+    specifier: ^7.3.1
+    version: 7.3.1(eslint@8.57.0)(typescript@5.4.3)
+  eslint:
+    specifier: ^8.57.0
+    version: 8.57.0
+  eslint-plugin-astro:
+    specifier: ^0.33.1
+    version: 0.33.1(eslint@8.57.0)
+  eslint-plugin-import:
+    specifier: ^2.29.1
+    version: 2.29.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)
+  eslint-plugin-jsx-a11y:
+    specifier: ^6.8.0
+    version: 6.8.0(eslint@8.57.0)
+  eslint-plugin-mdx:
+    specifier: ^3.1.5
+    version: 3.1.5(eslint@8.57.0)
+  eslint-plugin-n:
+    specifier: ^16.6.2
+    version: 16.6.2(eslint@8.57.0)
+  eslint-plugin-promise:
+    specifier: ^6.1.1
+    version: 6.1.1(eslint@8.57.0)
+  eslint-plugin-svelte:
+    specifier: ^2.35.1
+    version: 2.35.1(eslint@8.57.0)(svelte@4.2.12)
+  prettier:
+    specifier: ^3.2.5
+    version: 3.2.5
+  prettier-plugin-astro:
+    specifier: ^0.13.0
+    version: 0.13.0
+  prettier-plugin-astro-organize-imports:
+    specifier: ^0.4.3
+    version: 0.4.3(prettier-plugin-astro@0.13.0)(prettier-plugin-tailwindcss@0.5.12)(prettier@3.2.5)
+  prettier-plugin-svelte:
+    specifier: ^3.2.2
+    version: 3.2.2(prettier@3.2.5)(svelte@4.2.12)
+  prettier-plugin-tailwindcss:
+    specifier: ^0.5.12
+    version: 0.5.12(prettier-plugin-astro@0.13.0)(prettier-plugin-svelte@3.2.2)(prettier@3.2.5)
+  svelte-check:
+    specifier: ^3.6.8
+    version: 3.6.8(@babel/core@7.24.3)(postcss@8.4.35)(svelte@4.2.12)
+  typescript:
+    specifier: ^5.4.3
+    version: 5.4.3
+  unplugin-icons:
+    specifier: ^0.18.5
+    version: 0.18.5
 
 packages:
 
@@ -315,7 +313,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/react@3.1.0(@types/react-dom@18.2.22)(@types/react@18.2.69)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.3):
+  /@astrojs/react@3.1.0(@types/react-dom@18.2.22)(@types/react@18.2.70)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.6):
     resolution: {integrity: sha512-KZhZyV+sUDZEjlrmPWNiPGeYowG9uq6/aMbCgVaeKEBlWT4Kg32TNwBOhZk6AcE4LY1l3mIwt3orUGE2JV96/g==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -324,9 +322,9 @@ packages:
       react: ^17.0.2 || ^18.0.0
       react-dom: ^17.0.2 || ^18.0.0
     dependencies:
-      '@types/react': 18.2.69
+      '@types/react': 18.2.70
       '@types/react-dom': 18.2.22
-      '@vitejs/plugin-react': 4.2.1(vite@5.2.3)
+      '@vitejs/plugin-react': 4.2.1(vite@5.2.6)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       ultrahtml: 1.5.3
@@ -335,7 +333,7 @@ packages:
       - vite
     dev: false
 
-  /@astrojs/svelte@5.2.0(astro@4.5.9)(svelte@4.2.12)(typescript@5.4.3)(vite@5.2.3):
+  /@astrojs/svelte@5.2.0(astro@4.5.9)(svelte@4.2.12)(typescript@5.4.3)(vite@5.2.6):
     resolution: {integrity: sha512-GmwbXks2WMkmAfl0rlPM/2gA1RtmZzjGV2mOceV3g7QNyjIsSYBPKrlEnSFnuR+YMvlAtWdbMFBsb3gtGxnTTg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -343,7 +341,7 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.56
       typescript: ^5.3.3
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.2.3)
+      '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.2.6)
       astro: 4.5.9(typescript@5.4.3)
       svelte: 4.2.12
       svelte2tsx: 0.6.27(svelte@4.2.12)(typescript@5.4.3)
@@ -1678,7 +1676,7 @@ packages:
     resolution: {integrity: sha512-OlFvx+nyr5C8zpcMBnSGir0YPD6K11uYhouqhNmm1qLiis4GA7SsGtu07r9gKS9omks8RtQqHrJL4S+lqWK01A==}
     dev: false
 
-  /@sveltejs/vite-plugin-svelte-inspector@2.0.0(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.2.3):
+  /@sveltejs/vite-plugin-svelte-inspector@2.0.0(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.2.6):
     resolution: {integrity: sha512-gjr9ZFg1BSlIpfZ4PRewigrvYmHWbDrq2uvvPB1AmTWKuM+dI1JXQSUu2pIrYLb/QncyiIGkFDFKTwJ0XqQZZg==}
     engines: {node: ^18.0.0 || >=20}
     peerDependencies:
@@ -1686,30 +1684,30 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       vite: ^5.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.2.3)
+      '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.2.6)
       debug: 4.3.4
       svelte: 4.2.12
-      vite: 5.2.3
+      vite: 5.2.6
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@sveltejs/vite-plugin-svelte@3.0.2(svelte@4.2.12)(vite@5.2.3):
+  /@sveltejs/vite-plugin-svelte@3.0.2(svelte@4.2.12)(vite@5.2.6):
     resolution: {integrity: sha512-MpmF/cju2HqUls50WyTHQBZUV3ovV/Uk8k66AN2gwHogNAG8wnW8xtZDhzNBsFJJuvmq1qnzA5kE7YfMJNFv2Q==}
     engines: {node: ^18.0.0 || >=20}
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.0
       vite: ^5.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 2.0.0(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.2.3)
+      '@sveltejs/vite-plugin-svelte-inspector': 2.0.0(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.2.6)
       debug: 4.3.4
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.8
       svelte: 4.2.12
       svelte-hmr: 0.15.3(svelte@4.2.12)
-      vite: 5.2.3
-      vitefu: 0.2.5(vite@5.2.3)
+      vite: 5.2.6
+      vitefu: 0.2.5(vite@5.2.6)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1852,10 +1850,10 @@ packages:
   /@types/react-dom@18.2.22:
     resolution: {integrity: sha512-fHkBXPeNtfvri6gdsMYyW+dW7RXFo6Ad09nLFK0VQWR7yGLai/Cyvyj696gbwYvBnhGtevUG9cET0pmUbMtoPQ==}
     dependencies:
-      '@types/react': 18.2.69
+      '@types/react': 18.2.70
 
-  /@types/react@18.2.69:
-    resolution: {integrity: sha512-W1HOMUWY/1Yyw0ba5TkCV+oqynRjG7BnteBB+B7JmAK7iw3l2SW+VGOxL+akPweix6jk2NNJtyJKpn4TkpfK3Q==}
+  /@types/react@18.2.70:
+    resolution: {integrity: sha512-hjlM2hho2vqklPhopNkXkdkeq6Lv8WSZTpr7956zY+3WS5cfYUewtCzsJLsbW5dEv3lfSeQ4W14ZFeKC437JRQ==}
     dependencies:
       '@types/prop-types': 15.7.12
       '@types/scheduler': 0.16.8
@@ -2103,7 +2101,7 @@ packages:
       svelte: 4.2.12
     dev: false
 
-  /@vitejs/plugin-react@4.2.1(vite@5.2.3):
+  /@vitejs/plugin-react@4.2.1(vite@5.2.6):
     resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -2114,7 +2112,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.24.3)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.2.3
+      vite: 5.2.6
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3514,8 +3512,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-astro@0.32.0(eslint@8.57.0):
-    resolution: {integrity: sha512-T8Chx9yG4vrWLCMkQGEbBvUJYSwMVXbw95+EpceFue/jr8JavjYw9A6K1xUxMyycnlWOGMiK7wJ5d/hHNsKBhg==}
+  /eslint-plugin-astro@0.33.1(eslint@8.57.0):
+    resolution: {integrity: sha512-wVyxAf8Ulmljv5qJQLgspWe17LR4hLXcksIENtUlEC3W7rleBVEKXS+hIqzBfCbpkBLZpl1tsYes1AGpYHd13w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=7.0.0'
@@ -8108,6 +8106,41 @@ packages:
       fsevents: 2.3.3
     dev: false
 
+  /vite@5.2.6:
+    resolution: {integrity: sha512-FPtnxFlSIKYjZ2eosBQamz4CbyrTizbZ3hnGJlh/wMtCrlp1Hah6AzBLjGI5I2urTfNnpovpHdrL6YRuBOPnCA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': ^18.0.0 || >=20.0.0
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.20.2
+      postcss: 8.4.38
+      rollup: 4.13.0
+    optionalDependencies:
+      fsevents: 2.3.3
+    dev: false
+
   /vitefu@0.2.5(vite@5.2.3):
     resolution: {integrity: sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==}
     peerDependencies:
@@ -8117,6 +8150,17 @@ packages:
         optional: true
     dependencies:
       vite: 5.2.3
+    dev: false
+
+  /vitefu@0.2.5(vite@5.2.6):
+    resolution: {integrity: sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==}
+    peerDependencies:
+      vite: ^3.0.0 || ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      vite:
+        optional: true
+    dependencies:
+      vite: 5.2.6
     dev: false
 
   /volar-service-css@0.0.34(@volar/language-service@2.1.5):
