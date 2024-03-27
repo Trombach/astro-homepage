@@ -34,12 +34,11 @@ export const addsToHead = true;
         alt="me at work"
         width="1200"
         loading="eager"
-        class="h-[29%] w-full object-cover object-center lg:h-full lg:w-1/2"
+        class="h-1/2 w-full object-cover object-center lg:h-full lg:w-1/2"
       />
     )
   }
   <div
-    data-panel-content-right={entry.slug}
     class:list={[
       "flex w-full grow flex-col items-center justify-center space-y-5 p-4 text-center lg:h-full lg:space-y-10 lg:p-8",
     ]}
@@ -49,7 +48,7 @@ export const addsToHead = true;
 </div>
 
 <style>
-  [data-panel-content-right] {
+  [data-panel-content] {
     min-width: var(--panel-content-min-width);
   }
 </style>
@@ -62,12 +61,12 @@ export const addsToHead = true;
     document.documentElement.style.removeProperty("--panel-content-min-width");
 
     const panelWidth = document.querySelector(
-      "[data-panel-content-right]",
+      "[data-panel-content]"
     )?.offsetWidth;
 
     document.documentElement.style.setProperty(
       "--panel-content-min-width",
-      `${panelWidth || 0}px`,
+      `${panelWidth || 0}px`
     );
   }
 </script>
