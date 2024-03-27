@@ -6,6 +6,10 @@
     type PanelNumber,
   } from "./HeroGrid.svelte";
 
+  const transitionDuration = 500;
+  const transitionDelay = 100;
+  const fadeOutDuration = 250;
+
   export let number: PanelNumber;
   export let title: string;
 
@@ -16,13 +20,18 @@
 </script>
 
 <div
-  class="basis-24 overflow-clip rounded-4xl border bg-card text-card-foreground @container/panel lg:h-2/3 lg:basis-32"
   data-panel
   data-state={$state}
+  class="basis-24 overflow-clip rounded-4xl border bg-card text-card-foreground @container/panel lg:h-2/3 lg:basis-32"
+  style:--transition-duration={`${transitionDuration}ms`}
+  style:--transition-delay={`${transitionDelay}ms`}
 >
   {#key expanded}
     <div
-      transition:blur
+      out:blur={{ duration: fadeOutDuration }}
+      in:blur={{
+        delay: transitionDuration + fadeOutDuration - transitionDelay,
+      }}
       class="h-full w-full overflow-clip"
       class:small-panel={!expanded}
     >
@@ -48,8 +57,8 @@
     --scale: scale(1);
 
     transition:
-      flex-basis 500ms ease-in-out,
-      transform 500ms ease-in-out;
+      flex-basis var(--transition-duration) ease-in-out var(--transition-delay),
+      transform var(--transition-duration) ease-in-out var(--transition-delay);
     transform: var(--translate) var(--panel-perspective) var(--panel-rotate)
       var(--scale);
   }
