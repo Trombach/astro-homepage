@@ -53,21 +53,3 @@ export const addsToHead = true;
     min-width: var(--panel-content-min-width);
   }
 </style>
-
-<script type="module" is:inline>
-  setMinWidth();
-  window.addEventListener("resize", setMinWidth);
-
-  function setMinWidth() {
-    document.documentElement.style.removeProperty("--panel-content-min-width");
-
-    const panelWidth = document.querySelector(
-      "[data-panel-content]",
-    )?.offsetWidth;
-
-    document.documentElement.style.setProperty(
-      "--panel-content-min-width",
-      `${panelWidth || 0}px`,
-    );
-  }
-</script>
