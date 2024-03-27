@@ -45,6 +45,7 @@
       />
     </g>
   </svg>
+  <span class="sr-only">Menu Toggle</span>
 </button>
 
 <style lang="postcss">
