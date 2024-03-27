@@ -5,7 +5,7 @@ const homeCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      image: image(),
+      image: image().optional(),
       slot: z.enum(["panel-one", "panel-two", "panel-three", "panel-four"]),
     }),
 });
