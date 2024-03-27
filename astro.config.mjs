@@ -26,6 +26,6 @@ export default defineConfig({
     },
   },
   output: "hybrid",
-  adapter: vercel({ imageService: true, webAnalytics: { enabled: true } }),
+  adapter: vercel({ imageService: false, webAnalytics: { enabled: true } }),
   site: "https://astro-homepage-one.vercel.app",
 });

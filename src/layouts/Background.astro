@@ -6,7 +6,7 @@ import { getImage } from "astro:assets";
 type Props = HTMLAttributes<"div">;
 
 const optimisedImage = await getImage({
-  src: BackgroundImage.src,
+  src: BackgroundImage,
   width: 1440,
 });
 
