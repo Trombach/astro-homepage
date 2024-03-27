@@ -23,7 +23,7 @@
   {#key expanded}
     <div
       transition:blur
-      class="absolute left-0 top-0 h-full w-full overflow-clip"
+      class="h-full w-full overflow-clip"
       class:small-panel={!expanded}
     >
       {#if expanded}
