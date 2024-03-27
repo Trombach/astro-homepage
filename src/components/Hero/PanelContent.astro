@@ -22,7 +22,7 @@ export const addsToHead = true;
 <div
   data-panel-content
   class:list={[
-    "flex h-full w-full flex-col lg:flex-row",
+    "flex h-full w-auto flex-col lg:flex-row",
     "[&_h1]:text-3xl [&_h1]:md:text-4xl [&_h1]:lg:text-5xl",
     "[&_p]:text-muted-foreground [&_p]:lg:text-2xl",
   ]}
@@ -35,13 +35,13 @@ export const addsToHead = true;
         widths={[240, 540, 720]}
         sizes={`(max-width: 360px) 240px, (max-width: 480px) 540px, 720px`}
         loading="eager"
-        class="h-1/2 w-full object-cover object-center lg:h-full lg:w-1/2"
+        class="h-1/2 w-auto object-cover object-center lg:h-auto lg:w-1/2"
       />
     )
   }
   <div
     class:list={[
-      "flex w-full grow flex-col items-center justify-center space-y-5 p-4 text-center lg:h-full lg:space-y-10 lg:p-8",
+      "flex w-auto grow flex-col items-center justify-center space-y-5 p-4 text-center lg:h-auto lg:space-y-10 lg:p-8",
     ]}
   >
     <Content />
