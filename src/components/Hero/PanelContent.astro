@@ -62,12 +62,12 @@ export const addsToHead = true;
     document.documentElement.style.removeProperty("--panel-content-min-width");
 
     const panelWidth = document.querySelector(
-      "[data-panel-content]"
+      "[data-panel-content]",
     )?.offsetWidth;
 
     document.documentElement.style.setProperty(
       "--panel-content-min-width",
-      `${panelWidth || 0}px`
+      `${panelWidth || 0}px`,
     );
   }
 </script>
