@@ -1,16 +1,21 @@
 ---
 /* global ImageMetadata */
 
+import GithubLink from "@components/GithubLink.astro";
+import ToolIcon from "@components/ToolIcon.astro";
 import { Image } from "astro:assets";
 import { dash } from "radash";
+import type { Tool } from "src/content/config";
 
 type Props = {
   title: string;
   description: string;
+  repoLink?: string | undefined;
+  tools?: Tool[] | undefined;
   cover?: ImageMetadata | undefined;
 };
 
-const { title, description, cover } = Astro.props;
+const { title, description, repoLink, tools, cover } = Astro.props;
 const dashedTitle = dash(title);
 ---
 
@@ -22,7 +27,7 @@ const dashedTitle = dash(title);
     cover ? (
       <Image
         src={cover}
-        alt="hero"
+        alt="cover image"
         widths={[240, 480, 850]}
         sizes={`(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px`}
         class="aspect-[21/9] w-full rounded-t-xl object-cover"
@@ -31,11 +36,37 @@ const dashedTitle = dash(title);
     ) : null
   }
 
-  <div class="px-5 lg:px-10">
-    <h1 {title} transition:name={dashedTitle}>{title}</h1>
-    <p class="text-muted-foreground">
-      {description}
-    </p>
+  <div class="p-5 pb-0 lg:p-12 lg:pb-0">
+    <header>
+      <h1 {title} transition:name={dashedTitle}>{title}</h1>
+      <p
+        transition:name={`${dashedTitle}-description`}
+        class="not-prose -mt-8 mb-5 font-mono text-muted-foreground"
+      >
+        {description}
+      </p>
+    </header>
+
+    {
+      (tools || repoLink) && (
+        <div
+          class:list={[
+            "mb-10 flex items-center justify-between",
+            !tools && repoLink && "justify-end",
+          ]}
+        >
+          {tools && (
+            <div class="flex w-fit items-center gap-2 *:size-10 *:rounded-xl *:border *:p-2">
+              {tools.map((tool) => (
+                <ToolIcon {tool} />
+              ))}
+            </div>
+          )}
+          {repoLink && <GithubLink href={repoLink} />}
+        </div>
+      )
+    }
+
     <slot name="content" />
   </div>
 </article>
