@@ -1,23 +1,41 @@
 ---
+import ToolIcon from "@components/ToolIcon.astro";
 import { dash } from "radash";
+import type { Tool } from "src/content/config";
 import Tags from "./CardTags.astro";
 
 type Props = {
   title: string;
   description: string;
+  tools?: Tool[] | undefined;
   tags?: string[] | undefined;
 };
 
-const { title, description, tags } = Astro.props;
+const { title, description, tools, tags } = Astro.props;
+const dashedTitle = dash(title);
 ---
 
 <div
-  class="rounded-b-xl p-3 transition-colors duration-300 group-hover:bg-accent/50"
+  class="rounded-b-xl p-5 transition-colors duration-300 group-hover:bg-accent/50"
 >
-  <h2 class="my-3" transition:name={dash(title)}>
-    {title}
-  </h2>
-  <p class="my-2 text-muted-foreground">
+  <div class="flex items-center justify-between">
+    <h2 class="my-3 font-semibold" transition:name={dashedTitle}>
+      {title}
+    </h2>
+    {
+      tools && (
+        <div class="flex gap-2">
+          {tools.map((tool) => (
+            <ToolIcon {tool} />
+          ))}
+        </div>
+      )
+    }
+  </div>
+  <p
+    class="my-2 font-mono text-muted-foreground"
+    transition:name={`${dashedTitle}-description`}
+  >
     {description}
   </p>
   {tags ? <Tags {tags} /> : null}
