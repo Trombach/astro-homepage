@@ -2,6 +2,7 @@
 /* global ImageMetadata */
 
 import { dash } from "radash";
+import type { Tool } from "src/content/config";
 import CardBody from "./CardBody.astro";
 import CardImage from "./CardImage.astro";
 
@@ -10,12 +11,11 @@ type Props = {
   description: string;
   href: string;
   cover?: ImageMetadata | undefined;
-  // completed?: Date | undefined;
-  // location: string;
+  tools?: Tool[] | undefined;
   tags?: string[] | undefined;
 };
 
-const { href, title, description, cover, tags } = Astro.props;
+const { href, title, description, cover, tools, tags } = Astro.props;
 ---
 
 <li
@@ -24,6 +24,6 @@ const { href, title, description, cover, tags } = Astro.props;
 >
   <a {href}>
     {cover ? <CardImage {cover} /> : null}
-    <CardBody {title} {description} {tags} />
+    <CardBody {title} {description} {tools} {tags} />
   </a>
 </li>

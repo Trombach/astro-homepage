@@ -1,34 +1,13 @@
 ---
 title: My Homepage
 description: A website built with Astro and Svelte
-location: At home
+repoLink: https://github.com/Trombach/astro-homepage
 cover: ./homepage.png
 tags: ["Front-end", "Personal"]
+tools: ["astro", "svelte", "typescript", "tailwind", "vercel"]
 ---
 
-import AstroLogo from "icons:astro/logos/astro-icon";
-import SvelteLogo from "icons:astro/logos/svelte-icon";
-import TypeScriptLogo from "icons:astro/logos/typescript-icon";
-import VercelLogo from "icons:astro/logos/vercel";
-import TailwindLogo from "icons:astro/logos/tailwindcss-icon"
-import ExternalLinkIcon from "icons:astro/heroicons/arrow-top-right-on-square";
 import AppLink from "@components/AppLink.astro";
-
-<div class="flex justify-end mx-5">
-  <AppLink as="a" appearance="secondary" href="https://github.com/Trombach/astro-homepage" class="w-fit no-underline">
-    <span>View Repository</span>
-    <ExternalLinkIcon />
-  </AppLink>
-</div>
-
-## Built with
-
-<p class="flex flex-row gap-5 *:size-10">
-  <AstroLogo class="fill-foreground" />
-  <SvelteLogo />
-  <TypeScriptLogo />
-  <VercelLogo class="fill-foreground" />
-</p>
 
 ## Quick Facts
 

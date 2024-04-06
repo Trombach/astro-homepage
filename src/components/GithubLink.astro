@@ -1,0 +1,21 @@
+---
+import GithubLogo from "icons:astro/logos/github-icon";
+import AppLink from "./AppLink.astro";
+
+type Props = {
+  href: string;
+};
+
+const { href } = Astro.props;
+---
+
+<AppLink
+  as="a"
+  target="_blank"
+  appearance="secondary"
+  {href}
+  class="w-fit no-underline"
+>
+  <span class="hidden text-sm md:inline">View Repository</span>
+  <GithubLogo class="size-5 [&_path]:fill-foreground" />
+</AppLink>

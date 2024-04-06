@@ -1,0 +1,34 @@
+---
+import AstroLogo from "icons:astro/logos/astro-icon";
+import SvelteLogo from "icons:astro/logos/svelte-icon";
+import TailwindLogo from "icons:astro/logos/tailwindcss-icon";
+import TypeScriptLogo from "icons:astro/logos/typescript-icon";
+import VercelLogo from "icons:astro/logos/vercel-icon";
+import { capitalize } from "radash";
+import type { Tool } from "src/content/config";
+
+type Props = {
+  tool: Tool;
+};
+
+const { tool } = Astro.props;
+---
+
+<div title={capitalize(tool)} transition:name={`${tool}-logo`}>
+  {
+    () => {
+      switch (tool) {
+        case "astro":
+          return <AstroLogo width="100%" class="fill-foreground" />;
+        case "svelte":
+          return <SvelteLogo width="100%" />;
+        case "typescript":
+          return <TypeScriptLogo width="100%" />;
+        case "tailwind":
+          return <TailwindLogo width="100%" />;
+        case "vercel":
+          return <VercelLogo width="100%" class="fill-foreground" />;
+      }
+    }
+  }
+</div>
