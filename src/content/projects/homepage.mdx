@@ -4,58 +4,60 @@ description: A website built with Astro and Svelte
 repoLink: https://github.com/Trombach/astro-homepage
 cover: ./homepage.png
 tags: ["Front-end", "Personal"]
-tools: ["astro", "svelte", "typescript", "tailwind", "vercel"]
+tools: ["Astro", "Svelte", "Typescript", "Tailwind", "Vercel"]
 ---
 
 import AppLink from "@components/AppLink.astro";
 
+Welcome to my personal homepage! In this article you can learn a few things about how this website was built, and what
+drove my decision making.
+
 ## Quick Facts
 
-- mostly static build for easy caching and fast page load speeds
-- uses Astro's content collections and MDX for serving content
+- mostly statically built for easy caching and fast page load speeds
+- uses Astro's content collections and [MDX](https://mdxjs.com/) for content
 - takes advantage of `ViewTransitions` API for smoother page transitions
-- complex interactivity powered by Svelte components
+- interactive and animated using Svelte transitions and CSS animations
+
 
 ## Why Astro?
 
-I came across the Astro framework while investigating possible front-end frameworks for a marketing website. I was
-immediately drawn in by its simplicity and the ability to write components in different framework languages. By default
-Astro compiles everything in static HTML which can be hydrated on the client, but it can also be used for server-side
-rendering using adapters.
+Astro is an opinionated open-source framework with the goal of building fast and cachable web pages. While it can be
+used to dynamically render content server-side or client-side, its default behaviour is to render static HTML pages.
+This simplifies prioritising loading speed and makes Astro one of the most capable and fastest static-site frameworks.
 
-The flexibility and ease of use made it the perfect choice for my homepage.
+<figure>
+  <>![Lighthouse score](../../images/lighthouse.png)</>
+  <figcaption>Lighthouse score for page load of my homepage on desktop.</figcaption>
+</figure>
+
+One of the most powerful features of Astro is the ability to use components written for other front-end frameworks such
+as Svelte or Vue. This hands an unprecedented amount of flexibility to developers to mix and match framework components
+and choose whichever framework is suited best to solve a particular problem. For example, I chose Svelte because of its
+feature rich animation library, but was also able to add a single component built in React when I couldn't find a
+suitable library for Astro or Svelte.
 
 ## Why Svelte?
 
-Svelte is on of my favourite front-end frameworks to work with. Besides the fact that it is blazingly fast, it also
-comes with some great utility functions for building smooth animations, which can be seen on the <a href="/">Hero
-page</a>.
-
-Svelte also features a very powerful reactivity model that is very easy to use. While it would have been possible to
-build a reactive component with plain Astro components, Svelte brings some additional quality of life improvements to
-the table like stores. 
-
-To me Svelte and Astro are a perfect match, combining a powerful reactive framework with an easy to use static-site
-renderer.
-
-## Animations
-
-I think animations are important for websites and apps to feel natural to whoever is interacting with them. As humans we
-are used to being able to manipulate things with our actions, so if we're not able to achieve this the experience can be
-jarring. Here are some of the animations I added to make the page feel more natural.
-
-### Plain CSS
-
-### Astro [`ViewTransitions`](https://docs.astro.build/en/guides/view-transitions/)
+Svelte is one of my favourite front-end frameworks to work with. Besides the fact that it is blazingly fast, it also
+comes with some great utility functions for building smooth animations.
 
 <figure>
-  ![Astro view transition.](../../images/view-transition.webp)
-  <figcaption>An animation spanning page renders using Astro view transitions.</figcaption>
+  <video autoplay loop muted>
+    <source src="/hero-animation-short.webm" type="video/webm"></source>
+    Your browser does not suppoert videos.
+  </video>
+  <figcaption>
+    Animation on the landing page. Most animations are achieved with plain CSS transitions. The blur effect on the card 
+    content is created using Sveltes `transition` libraries. You can view this animation on the <a href="/">Hero page</a>.
+  </figcaption>
 </figure>
 
-### Svelte [`transition`](https://svelte.dev/docs/svelte-transition)
+Svelte also features a powerful reactivity model that is very easy to use. While it would have been possible to build
+reactive components with plain Astro code, Svelte brings some additional quality of life improvements to the table such
+as stores and reactive statements. 
 
-<figure>
-  ![Hero animation.](../../images/hero-transition.webp)
-  <figcaption>The card content is smoothly faded in using Svelte's `blur` transition.</figcaption>
-</figure>
+To me Svelte and Astro are a perfect match, combining a powerful reactive framework with an easy-to-use and powerful
+static-site generator.
+
+_Feel free to explore!_
