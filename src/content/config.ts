@@ -49,7 +49,7 @@ const tools = [
   "Sass",
   "AWS Lambda",
   "Contentful",
-  "elasticsearch"
+  "elasticsearch",
 ] as const;
 
 const projectsCollection = defineCollection({
