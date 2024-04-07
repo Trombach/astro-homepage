@@ -58,7 +58,10 @@ const dashedTitle = dash(title);
           {tools && (
             <div class="flex w-fit items-center gap-2 *:size-10 *:rounded-xl *:border *:p-2">
               {tools.map((tool) => (
-                <ToolIcon {tool} />
+                <ToolIcon
+                  transitionName={`${dashedTitle}-${tool}-logo`}
+                  {tool}
+                />
               ))}
             </div>
           )}
