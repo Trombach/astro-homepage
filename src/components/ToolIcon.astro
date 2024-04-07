@@ -1,33 +1,49 @@
 ---
+import AngularLogo from "icons:astro/logos/angular-icon";
 import AstroLogo from "icons:astro/logos/astro-icon";
+import AwsLambdaLogo from "icons:astro/logos/aws-lambda";
+import ContentfulLogo from "icons:astro/logos/contentful";
+import ElasticsearchLogo from "icons:astro/logos/elasticsearch";
+import SassLogo from "icons:astro/logos/sass";
 import SvelteLogo from "icons:astro/logos/svelte-icon";
 import TailwindLogo from "icons:astro/logos/tailwindcss-icon";
 import TypeScriptLogo from "icons:astro/logos/typescript-icon";
 import VercelLogo from "icons:astro/logos/vercel-icon";
-import { capitalize } from "radash";
 import type { Tool } from "src/content/config";
 
 type Props = {
   tool: Tool;
+  transitionName?: string | undefined;
 };
 
-const { tool } = Astro.props;
+const { tool, transitionName } = Astro.props;
+const width = "100%";
 ---
 
-<div title={capitalize(tool)} transition:name={`${tool}-logo`}>
+<div title={tool} transition:name={transitionName ? transitionName : ""}>
   {
     () => {
       switch (tool) {
-        case "astro":
-          return <AstroLogo width="100%" class="fill-foreground" />;
-        case "svelte":
-          return <SvelteLogo width="100%" />;
-        case "typescript":
-          return <TypeScriptLogo width="100%" />;
-        case "tailwind":
-          return <TailwindLogo width="100%" />;
-        case "vercel":
-          return <VercelLogo width="100%" class="fill-foreground" />;
+        case "Astro":
+          return <AstroLogo {width} class="fill-foreground" />;
+        case "Svelte":
+          return <SvelteLogo {width} />;
+        case "Typescript":
+          return <TypeScriptLogo {width} />;
+        case "Tailwind":
+          return <TailwindLogo {width} />;
+        case "Vercel":
+          return <VercelLogo {width} class="fill-foreground" />;
+        case "Angular":
+          return <AngularLogo {width} />;
+        case "Sass":
+          return <SassLogo {width} />;
+        case "AWS Lambda":
+          return <AwsLambdaLogo {width} />;
+        case "Contentful":
+          return <ContentfulLogo {width} />;
+        case "elasticsearch":
+          return <ElasticsearchLogo {width} />;
       }
     }
   }
