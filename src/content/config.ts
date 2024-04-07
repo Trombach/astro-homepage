@@ -39,7 +39,18 @@ const tags = [
   "Computing",
 ] as const;
 
-const tools = ["astro", "svelte", "typescript", "tailwind", "vercel"] as const;
+const tools = [
+  "Astro",
+  "Svelte",
+  "Typescript",
+  "Tailwind",
+  "Vercel",
+  "Angular",
+  "Sass",
+  "AWS Lambda",
+  "Contentful",
+  "elasticsearch"
+] as const;
 
 const projectsCollection = defineCollection({
   type: "content",
@@ -55,13 +66,13 @@ const projectsCollection = defineCollection({
           .optional()
           .refine(
             (img) =>
-              img?.width && img.format === "png" ? img.width >= 600 : true,
+              img?.width && img.format === "png" ? img.width >= 850 : true,
             {
-              message: "Cover image must be at least 600 pixels wide!",
+              message: "Cover image must be at least 850 pixels wide!",
             },
           ),
-        tags: z.array(z.enum(tags)).optional(),
-        tools: z.array(z.enum(tools)).optional(),
+        tags: z.array(z.enum(tags)).max(4).optional(),
+        tools: z.array(z.enum(tools)).max(10).optional(),
       })
       .strict(),
 });
