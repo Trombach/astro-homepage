@@ -36,6 +36,9 @@ export const addsToHead = true;
         sizes={`(max-width: 360px) 240px, (max-width: 480px) 540px, 720px`}
         loading="eager"
         class="h-1/2 w-auto object-cover object-center lg:h-auto lg:w-1/2"
+        transition:name={
+          data.imageTransitionName ? data.imageTransitionName : ""
+        }
       />
     )
   }
