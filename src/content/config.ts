@@ -6,6 +6,7 @@ const homeCollection = defineCollection({
     z.object({
       title: z.string(),
       image: image().optional(),
+      imageTransitionName: z.string().optional(),
       slot: z.enum(["panel-one", "panel-two", "panel-three", "panel-four"]),
     }),
 });
