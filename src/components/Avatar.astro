@@ -1,51 +1,22 @@
 ---
 import me from "@images/me.jpg";
-import { getImage } from "astro:assets";
-
-const defaultSize = 128;
-const defaultMobileSize = 96;
+import { Image } from "astro:assets";
 
 type Props = {
-  size?: number;
-  mobileSize?: number;
+  class?: string;
 };
 
-let {
-  size = defaultSize,
-  mobileSize = size === defaultSize ? defaultMobileSize : size,
-} = Astro.props;
-
-const desktopImage = await getImage({
-  src: me,
-  width: size,
-  height: size,
-});
-
-const mobileImage = await getImage({
-  src: me,
-  width: mobileSize,
-  height: mobileSize,
-});
+const { class: className } = Astro.props;
 ---
 
-<picture transition:name="avatar">
-  <source
-    media="(max-width: 975px) and (max-height: 1000px)"
-    width={mobileSize}
-    height={mobileSize}
-    srcset={mobileImage.src}
-  />
-  <source
-    media="(min-width: 976px)"
-    width={size}
-    height={size}
-    srcset={desktopImage.src}
-  />
-  <img
-    src={desktopImage.src}
-    alt="Picture of Lukas"
-    width={size}
-    height={size}
-    class="mb-3 rounded-full border-4 border-secondary lg:border-8"
-  />
-</picture>
+<Image
+  src={me}
+  transition:name="avatar"
+  alt="Picture of Me"
+  widths={[96, 128, 256]}
+  sizes={`(max-width: 360px) 96px, (max-width: 480px) 128px, 256px`}
+  class:list={[
+    "mb-3 rounded-full border-4 border-secondary lg:border-8",
+    className,
+  ]}
+/>
