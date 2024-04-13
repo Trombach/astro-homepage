@@ -52,6 +52,9 @@ const props = { width: "100%" } as const satisfies astroHTML.JSX.SVGAttributes;
           return <LatexLogo {...props} class="fill-foreground" />;
         case "C++":
           return <CppLogo {...props} />;
+
+        default:
+          return tool satisfies never;
       }
     }
   }
