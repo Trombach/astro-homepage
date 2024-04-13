@@ -11,11 +11,20 @@ type Props = {
   description: string;
   href: string;
   cover?: ImageMetadata | undefined;
+  coverAlt?: string | undefined;
   tools?: Tool[] | undefined;
   tags?: string[] | undefined;
 };
 
-const { href, title, description, cover, tools, tags } = Astro.props;
+const {
+  href,
+  title,
+  description,
+  cover,
+  coverAlt = "",
+  tools,
+  tags,
+} = Astro.props;
 ---
 
 <li
@@ -23,7 +32,7 @@ const { href, title, description, cover, tools, tags } = Astro.props;
   transition:name={`border-${dash(title)}`}
 >
   <a {href}>
-    {cover ? <CardImage {cover} /> : null}
+    {cover ? <CardImage {cover} {coverAlt} /> : null}
     <CardBody {title} {description} {tools} {tags} />
   </a>
 </li>

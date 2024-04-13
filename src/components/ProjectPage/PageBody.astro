@@ -13,9 +13,10 @@ type Props = {
   repoLink?: string | undefined;
   tools?: Tool[] | undefined;
   cover?: ImageMetadata | undefined;
+  coverAlt?: string | undefined;
 };
 
-const { title, description, repoLink, tools, cover } = Astro.props;
+const { title, description, repoLink, tools, cover, coverAlt } = Astro.props;
 const dashedTitle = dash(title);
 ---
 
@@ -24,16 +25,17 @@ const dashedTitle = dash(title);
   transition:name={`border-${dashedTitle}`}
 >
   {
-    cover ? (
+    cover && (
       <Image
         src={cover}
-        alt="cover image"
+        alt={coverAlt}
         widths={[240, 480, 850]}
+        loading="eager"
         sizes={`(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px`}
         class="aspect-[21/9] w-full rounded-t-xl object-cover"
         transition:name={cover.src}
       />
-    ) : null
+    )
   }
 
   <div class="p-5 pb-0 lg:p-12 lg:pb-0">
