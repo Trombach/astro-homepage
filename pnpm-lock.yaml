@@ -38,6 +38,9 @@ importers:
       '@iconify-json/heroicons':
         specifier: ^1.1.20
         version: 1.1.20
+      '@iconify-json/simple-icons':
+        specifier: ^1.1.99
+        version: 1.1.99
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
         version: 0.1.1(tailwindcss@3.4.3)
@@ -739,6 +742,9 @@ packages:
 
   '@iconify-json/logos@1.1.42':
     resolution: {integrity: sha512-/f+frtPm3m3Z30oy8Pk+QqRDkbmAiIaWGPl5CmsCXm15MVfvw9a/V/gD7WzdyuSGAZcFuQaqbHXj92y/n+2ifg==}
+
+  '@iconify-json/simple-icons@1.1.99':
+    resolution: {integrity: sha512-/csVihX/ztkl2j4Vk4JoEJv8DdQHrZafzC5QHe21Y+ztuVglvavjb4yWEn9KQHTitLH2fIMnP8+RSTxu5kdmtw==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -5103,6 +5109,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/logos@1.1.42':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/simple-icons@1.1.99':
     dependencies:
       '@iconify/types': 2.0.0
 
