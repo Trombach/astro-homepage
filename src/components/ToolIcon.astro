@@ -1,7 +1,10 @@
 ---
+/* global astroHTML */
+
 import AngularLogo from "icons:astro/logos/angular-icon";
 import AstroLogo from "icons:astro/logos/astro-icon";
 import AwsLambdaLogo from "icons:astro/logos/aws-lambda";
+import CppLogo from "icons:astro/logos/c-plusplus";
 import ContentfulLogo from "icons:astro/logos/contentful";
 import ElasticsearchLogo from "icons:astro/logos/elasticsearch";
 import SassLogo from "icons:astro/logos/sass";
@@ -9,6 +12,7 @@ import SvelteLogo from "icons:astro/logos/svelte-icon";
 import TailwindLogo from "icons:astro/logos/tailwindcss-icon";
 import TypeScriptLogo from "icons:astro/logos/typescript-icon";
 import VercelLogo from "icons:astro/logos/vercel-icon";
+import LatexLogo from "icons:astro/simple-icons/latex";
 import type { Tool } from "src/content/config";
 
 type Props = {
@@ -17,7 +21,7 @@ type Props = {
 };
 
 const { tool, transitionName } = Astro.props;
-const width = "100%";
+const props = { width: "100%" } as const satisfies astroHTML.JSX.SVGAttributes;
 ---
 
 <div title={tool} transition:name={transitionName ? transitionName : ""}>
@@ -25,25 +29,29 @@ const width = "100%";
     () => {
       switch (tool) {
         case "Astro":
-          return <AstroLogo {width} class="fill-foreground" />;
+          return <AstroLogo {...props} class="fill-foreground" />;
         case "Svelte":
-          return <SvelteLogo {width} />;
+          return <SvelteLogo {...props} />;
         case "Typescript":
-          return <TypeScriptLogo {width} />;
+          return <TypeScriptLogo {...props} />;
         case "Tailwind":
-          return <TailwindLogo {width} />;
+          return <TailwindLogo {...props} />;
         case "Vercel":
-          return <VercelLogo {width} class="fill-foreground" />;
+          return <VercelLogo {...props} class="fill-foreground" />;
         case "Angular":
-          return <AngularLogo {width} />;
+          return <AngularLogo {...props} />;
         case "Sass":
-          return <SassLogo {width} />;
+          return <SassLogo {...props} />;
         case "AWS Lambda":
-          return <AwsLambdaLogo {width} />;
+          return <AwsLambdaLogo {...props} />;
         case "Contentful":
-          return <ContentfulLogo {width} />;
+          return <ContentfulLogo {...props} />;
         case "elasticsearch":
-          return <ElasticsearchLogo {width} />;
+          return <ElasticsearchLogo {...props} />;
+        case "LaTeX":
+          return <LatexLogo {...props} class="fill-foreground" />;
+        case "C++":
+          return <CppLogo {...props} />;
       }
     }
   }
