@@ -7,7 +7,10 @@ import AwsLambdaLogo from "icons:astro/logos/aws-lambda";
 import CppLogo from "icons:astro/logos/c-plusplus";
 import ContentfulLogo from "icons:astro/logos/contentful";
 import ElasticsearchLogo from "icons:astro/logos/elasticsearch";
+import MondayLogo from "icons:astro/logos/monday-icon";
+import NextLogo from "icons:astro/logos/nextjs-icon";
 import SassLogo from "icons:astro/logos/sass";
+import SupabaseLogo from "icons:astro/logos/supabase-icon";
 import SvelteLogo from "icons:astro/logos/svelte-icon";
 import TailwindLogo from "icons:astro/logos/tailwindcss-icon";
 import TypeScriptLogo from "icons:astro/logos/typescript-icon";
@@ -28,7 +31,7 @@ const props = {
 } as const satisfies astroHTML.JSX.SVGAttributes;
 ---
 
-<div title={tool} transition:name={transitionName ? transitionName : ""}>
+<div title={tool} transition:name={transitionName || ""}>
   {
     () => {
       switch (tool) {
@@ -56,6 +59,12 @@ const props = {
           return <LatexLogo {...props} class="fill-foreground" />;
         case "C++":
           return <CppLogo {...props} />;
+        case "Next.js":
+          return <NextLogo {...props} />;
+        case "Monday.com":
+          return <MondayLogo {...props} />;
+        case "Supabase":
+          return <SupabaseLogo {...props} />;
 
         default:
           return tool satisfies never;
