@@ -21,7 +21,11 @@ type Props = {
 };
 
 const { tool, transitionName } = Astro.props;
-const props = { width: "100%" } as const satisfies astroHTML.JSX.SVGAttributes;
+const props = {
+  width: "100%",
+  height: "100%",
+  preserveAspectRatio: "xMidYMid meet",
+} as const satisfies astroHTML.JSX.SVGAttributes;
 ---
 
 <div title={tool} transition:name={transitionName ? transitionName : ""}>
