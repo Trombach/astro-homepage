@@ -52,6 +52,9 @@ const tools = [
   "elasticsearch",
   "LaTeX",
   "C++",
+  "Next.js",
+  "Supabase",
+  "Monday.com",
 ] as const;
 
 const projectsCollection = defineCollection({
