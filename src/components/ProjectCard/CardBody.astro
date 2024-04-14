@@ -24,7 +24,7 @@ const dashedTitle = dash(title);
     </h2>
     {
       tools && (
-        <div class="flex gap-2">
+        <div class="flex gap-2 *:size-5">
           {tools.map((tool) => (
             <ToolIcon transitionName={`${dashedTitle}-${tool}-logo`} {tool} />
           ))}
