@@ -1,73 +1,40 @@
 ---
-import { getEntry } from "astro:content";
-import AnimatedText from "./AnimatedText.svelte";
-import Avatar from "./Avatar.astro";
-
-const {
-  data: { person },
-} = await getEntry("about", "about-me");
-const { data } = await getEntry(person);
-
-const me = {
-  Name: data.name,
-  Age: Math.floor((Date.now() - data.birthday.getTime()) / 31_556_952_000), // age in years
-  From: data.from,
-  Location: data.currentLocation,
-  Experience: `${new Date().getFullYear() - data.industryStart} years`,
-  Education: data.education,
-} as const;
+import MeCardBack from "./MeCardBack.astro";
+import MeCardFront from "./MeCardFront.astro";
 ---
 
 <div
+  data-flip-card="false"
   class:list={[
-    "flex aspect-[1.59/1] min-h-[438px] w-[375px] max-w-screen-lg flex-col items-stretch justify-between lg:mx-auto lg:w-[750px] lg:flex-row",
-    "rounded-xl border bg-card",
+    "relative rounded-xl border bg-card transition-transform duration-1000 [transform-style:preserve-3d]",
+    "mx-auto aspect-[1/1.75] w-[350px] cursor-pointer md:aspect-[1/1.15] md:w-[550px] lg:aspect-[1.45/1] lg:w-[750px]",
   ]}
 >
-  <div class="gradient basis-1/3 rounded-xl">
-    <Avatar class="mx-auto mt-5 size-24 lg:mt-10 lg:size-32" />
-  </div>
-  <ul
-    class="table basis-2/3 px-2 py-1 [--cursor-color:theme(colors.foreground)] [--cursor-width:1px] lg:px-0 lg:py-10"
-  >
-    {
-      Object.entries(me).map(([key, value]) => (
-        <li class="table-row align-bottom">
-          <AnimatedText client:only="svelte">
-            <span
-              data-static
-              class="table-cell p-3 align-middle text-lg font-bold"
-            >
-              {key}:
-            </span>
-            <div
-              class:list={[
-                "table-cell w-4/5 align-middle",
-                "p-3 font-mono text-xl",
-              ]}
-            >
-              {value}
-            </div>
-          </AnimatedText>
-        </li>
-      ))
-    }
-  </ul>
+  <MeCardFront />
+  <MeCardBack />
 </div>
 
-<style>
-  .gradient {
-    --gradient-stop: 45%;
+<style is:global>
+  [data-card-face] {
+    position: absolute;
+    backface-visibility: hidden;
+  }
 
-    @media screen(md) {
-      --gradient-stop: 40%;
-    }
-
-    background-image: linear-gradient(
-      to bottom right,
-      theme(colors.primary.DEFAULT),
-      theme(colors.primary.DEFAULT) var(--gradient-stop),
-      transparent var(--gradient-stop)
-    );
+  [data-flip-card="true"] {
+    transform: rotateY(180deg);
   }
 </style>
+
+<script>
+  const card = document.querySelector("[data-flip-card]");
+
+  if (card instanceof HTMLElement) {
+    card.addEventListener("click", () => {
+      if (card.dataset.flipCard === "true") {
+        card.dataset.flipCard = "false";
+      } else {
+        card.dataset.flipCard = "true";
+      }
+    });
+  }
+</script>
