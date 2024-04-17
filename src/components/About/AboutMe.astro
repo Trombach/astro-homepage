@@ -1,30 +1,10 @@
 ---
-import Avatar from "@components/Avatar.astro";
-import H1 from "@components/H1.astro";
-import { getEntry } from "astro:content";
-
-const {
-  render,
-  data: { title },
-} = await getEntry("about", "about-me");
-const { Content } = await render();
+import MeCard from "./MeCard/MeCard.astro";
 ---
 
 <section
   id="about-me"
   class="flex min-h-screen-less-header flex-col items-center justify-center"
 >
-  <div
-    class:list={[
-      "mx-auto flex max-w-screen-lg flex-col items-center justify-between lg:flex-row",
-    ]}
-  >
-    <div class="flex flex-col items-center">
-      <Avatar class="size-32" />
-      <H1 {title} />
-    </div>
-    <div class="prose w-2/3 p-4 lg:prose-xl dark:prose-invert">
-      <Content />
-    </div>
-  </div>
+  <MeCard />
 </section>
