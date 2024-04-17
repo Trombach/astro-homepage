@@ -12,11 +12,9 @@ const { class: className } = Astro.props;
 <Image
   src={me}
   transition:name="avatar"
-  alt="Picture of Me"
+  alt="Lukas"
   widths={[96, 128, 256]}
+  loading="eager"
   sizes={`(max-width: 360px) 96px, (max-width: 480px) 128px, 256px`}
-  class:list={[
-    "mb-3 rounded-full border-4 border-secondary lg:border-8",
-    className,
-  ]}
+  class:list={["rounded-full border-4 border-card lg:border-8", className]}
 />
