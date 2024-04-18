@@ -12,9 +12,17 @@ const { Content } = await render();
 
 <section
   id="technologies"
-  class="mx-auto min-h-screen-less-header w-full max-w-5xl p-10 md:w-2/3 [&_p]:mb-6 [&_p]:text-xl"
+  class="flex min-h-svh w-full flex-col items-center bg-secondary p-10 supports-[backdrop-filter]:bg-secondary/50 sm:p-20"
 >
   <H1 {title} />
-  <Content class="prose lg:prose-xl dark:prose-invert" />
-  <TechGrid />
+  <div
+    class="my-auto flex w-full max-w-screen-xl flex-col items-center xl:flex-row"
+  >
+    <div
+      class="prose py-20 text-center md:prose-lg lg:prose-xl dark:prose-invert xl:px-20"
+    >
+      <Content />
+    </div>
+    <TechGrid class="my-auto w-full basis-2/3" />
+  </div>
 </section>
