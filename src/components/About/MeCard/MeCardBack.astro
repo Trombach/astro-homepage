@@ -1,0 +1,17 @@
+---
+import H1 from "@components/H1.astro";
+import { getEntry } from "astro:content";
+
+const {
+  render,
+  data: { title },
+} = await getEntry("about", "about-me");
+const { Content } = await render();
+---
+
+<div data-card-face="back" class="p-10 text-center [transform:rotateY(180deg)]">
+  <H1 {title} />
+  <div class="prose md:prose-xl dark:prose-invert">
+    <Content />
+  </div>
+</div>

@@ -1,8 +1,5 @@
 ---
-import AppLink from "@components/AppLink.astro";
-import H1 from "@components/H1.astro";
 import getGithubContributions from "@utils/contributionsCalendar";
-import ExternalLinkIcon from "icons:astro/heroicons/arrow-top-right-on-square";
 import CalendarTile from "./CalendarTile";
 
 const result = await getGithubContributions();
@@ -15,19 +12,17 @@ const weeks =
   result?.data.user.contributionsCollection.contributionCalendar.weeks;
 ---
 
-<section
-  class="flex min-h-screen-less-header w-full flex-col items-center justify-center"
->
-  <H1 title="Github Contributions" />
-
-  {
-    result !== undefined && (
-      <>
+{
+  result && (
+    <>
+      <span class="font-semibold md:text-2xl">
         {totalContributions !== undefined &&
           `${totalContributions} contribution` +
             (totalContributions === 1 ? " " : "s ") +
             "on Github in the last year"}
-        <div class="mx-auto grid w-max grid-flow-col grid-cols-[repeat(53,_minmax(0,_1fr))] grid-rows-7 gap-[2px] overflow-x-hidden py-5">
+      </span>
+      <div class="w-full overflow-x-auto p-1">
+        <div class="mx-auto grid w-max grid-flow-col grid-cols-[repeat(53,_minmax(0,_1fr))] grid-rows-7 gap-[2px]">
           {weeks &&
             weeks.map((week) =>
               week.contributionDays.map(({ contributionCount, date }) => (
@@ -39,11 +34,7 @@ const weeks =
               )),
             )}
         </div>
-      </>
-    )
-  }
-
-  <AppLink as="a" appearance="secondary" href="https://github.com/Trombach">
-    View Github profile <ExternalLinkIcon />
-  </AppLink>
-</section>
+      </div>
+    </>
+  )
+}
