@@ -1,0 +1,40 @@
+---
+import MeCardBack from "./MeCardBack.astro";
+import MeCardFront from "./MeCardFront.astro";
+---
+
+<div
+  data-flip-card="false"
+  class:list={[
+    "relative rounded-xl border bg-card transition-transform duration-1000 [transform-style:preserve-3d]",
+    "mx-auto aspect-[1/1.75] w-[350px] cursor-pointer md:aspect-[1/1.15] md:w-[550px] lg:aspect-[1.45/1] lg:w-[750px]",
+  ]}
+>
+  <MeCardFront />
+  <MeCardBack />
+</div>
+
+<style is:global>
+  [data-card-face] {
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  [data-flip-card="true"] {
+    transform: rotateY(180deg);
+  }
+</style>
+
+<script>
+  const card = document.querySelector("[data-flip-card]");
+
+  if (card instanceof HTMLElement) {
+    card.addEventListener("click", () => {
+      if (card.dataset.flipCard === "true") {
+        card.dataset.flipCard = "false";
+      } else {
+        card.dataset.flipCard = "true";
+      }
+    });
+  }
+</script>
