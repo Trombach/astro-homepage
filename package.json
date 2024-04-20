@@ -2,6 +2,10 @@
   "name": "homepage",
   "type": "module",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Trombach/astro-homepage"
+  },
   "scripts": {
     "preinstall": "npx --yes only-allow pnpm",
     "dev": "astro dev",
@@ -35,6 +39,7 @@
     "radash": "^12.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "remark-github": "^12.0.0",
     "resend": "^3.2.0",
     "sharp": "^0.33.3",
     "svelte": "^4.2.15",
