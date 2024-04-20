@@ -1,10 +1,15 @@
 ---
+import Wave from "@images/wave.svg";
+import { getImage } from "astro:assets";
 import MeCard from "./MeCard/MeCard.astro";
+
+const image = await getImage({ src: Wave });
 ---
 
 <section
   id="about-me"
-  class="flex min-h-screen-less-header w-full flex-col items-center justify-center [perspective:600px] md:[perspective:900px] lg:[perspective:1200px]"
+  style={`background-image: url(${image.src})`}
+  class="flex min-h-screen-less-header w-full flex-col items-center justify-center bg-bottom bg-no-repeat [perspective:600px] md:[perspective:900px] lg:[perspective:1200px]"
 >
   <MeCard />
 </section>
