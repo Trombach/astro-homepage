@@ -10,8 +10,8 @@ tags: ["Front-end"]
 import { Image } from "astro:assets";
 import dashboard from "@images/dashboard.png";
 
-While working at GCD in Auckland I was often tasked with improving internal processes and building tools to help us with
-it. A big point of friction at the time was recording time for tasks under SLA agreements with our clients. We used
+While working at [GCD](https://gcd.nz) I was often tasked with improving internal processes and building tools to help us with it. A big
+point of friction at the time was recording time for tasks under SLA agreements with our clients. We used
 [Monday](https://monday.com) for creating SLA tasks and [harvest](https://getharvest.com) for timing them, but those 2
 services did not integrate well with each other.
 
@@ -20,21 +20,23 @@ services and displays them in a tabular overview, similar to Monday's layout.
 
 ## Authentication
 
-Information contained on the dashboard should not be exposed to the public internet. We chose [Supabase
-Auth](https://supabase.com/docs/guides/auth) to add a Google sign-in prompt that only allows internal Google Workspace
+Information contained on the dashboard should not be exposed to the public internet. I chose [Supabase
+Auth](https://supabase.com/docs/guides/auth) to add a Google sign-in prompt that only allowed internal Google Workspace
 accounts to access the website. This approach had some clear advantages such as automatic access for everyone with a
-company account and not having to maintain a database of users. Supabase also integrates nicely with Next.js and ships
-code for use in both client and server side components.
+company account and not having to maintain a database of users. Supabase also integrates nicely with Next.js and
+provides libraries for use in both client and server side components.
 
 ## ID parsing
 
 Since there is no integration between Monday and harvest, time entries and Monday items can't be linked directly. We
 used free-form description fields in harvest to enter a Monday item ID to create a link between related entities. Before
 the dashboard existed the descriptions were parsed manually and entered into a spread sheet to add up time spent on
-individual SLA tasks. A very time consuming task that had to be carried out on a regular basis.
+individual SLA tasks. This was a very time consuming task that had to be carried out on a regular basis and was the main
+motivation for building this solution.
 
-I wanted to support the same basic system as it was simple and easy to use for our developers. To parse the Monday IDs
-from the description fields I used regular expressions to parse either entire Monday.com links or just plain Monday IDs.
+I wanted to support the same basic system of associating tasks with Monday items as it was simple and easy to use for
+our developers. To parse the Monday IDs from the description fields I used regular expressions to parse either entire
+Monday.com links or just plain Monday IDs.
 
 ```js
 // matches monday.com links, e.g. https://monday.com[...]/pulses/0123456789
@@ -53,7 +55,8 @@ while being able to associate a task in harvest with an item on a Monday board.
 React server components make building performant web pages very easy as dynamic content can be streamed using `Suspense`
 boundaries. I tried to use this concept as much as possible, while also utilising Next.js's caching capabilities. For
 example, I built an overview page that displays progress bars based on how much time of the monthly SLA budged had been
-used up. This was only possible after all timing data had been fetched from harvest and processed.
+used up. This was only possible after all timing data had been fetched from harvest and processed together with data
+from Monday, since each timing entry was costed at a different rate depending on the tasks priority level.  
 
 <figure>
   <Image alt="dashboard overview" src={dashboard} width="850" />
