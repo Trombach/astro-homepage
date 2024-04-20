@@ -65,7 +65,7 @@ export default function CalendarTile({ contributions, date }: Props) {
           contributions > 4 && contributions <= 6 && "bg-green-800",
           contributions > 6 && contributions <= 8 && "bg-green-900",
           contributions > 8 && "bg-green-950",
-          "size-3 rounded-sm transition-transform hover:scale-150 lg:size-5",
+          "size-2 rounded-sm transition-transform hover:scale-150 lg:size-3 xl:size-4",
         )}
         {...getReferenceProps()}
       ></div>

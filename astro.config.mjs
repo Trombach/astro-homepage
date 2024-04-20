@@ -6,12 +6,16 @@ import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel/serverless";
 import react from "@astrojs/react";
 import addsToHead from "./adds-to-head-integration";
+import remarkGithub from "remark-github";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), svelte(), mdx(), react(), addsToHead()],
   image: {
     domains: ["placehold.co"],
+  },
+  markdown: {
+    remarkPlugins: [remarkGithub],
   },
   prefetch: {
     prefetchAll: true,
