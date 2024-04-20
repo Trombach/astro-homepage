@@ -97,7 +97,7 @@
 <div
   data-hero-grid
   class="
-    m-auto flex h-full w-full max-w-screen-sm basis-auto flex-col p-3 lg:max-w-screen-xl lg:flex-row lg:items-center lg:p-5
+    m-auto flex h-full w-full max-w-screen-sm basis-auto flex-col p-3 md:max-w-screen-md lg:max-w-screen-xl lg:flex-row lg:items-center lg:p-5
     [&>:nth-child(1):is([data-state='start'])]:z-[1] [&>:nth-child(1)]:z-[4] [&>:nth-child(2):is([data-state='start'])]:z-[2] [&>:nth-child(2)]:z-[3]
     [&>:nth-child(3):is([data-state='start'])]:z-[3] [&>:nth-child(3)]:z-[2] [&>:nth-child(4):is([data-state='expanded'])]:z-[4] [&>:nth-child(4)]:z-[1]
   "

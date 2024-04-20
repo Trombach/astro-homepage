@@ -1,0 +1,54 @@
+---
+title: My PhD thesis
+description: From Mathematical Models to Quantum Chemistry in Cluster Science
+cover: ./title-night-graphen.tiff
+coverAlt: Cover page of first publication from my thesis
+tags: ["Research"]
+repoLink: https://github.com/Trombach/thesis
+tools: ["LaTeX", "C++"]
+---
+
+import { Image } from "astro:assets"
+import A from "@images/A.png"
+import B from "@images/B.png"
+import F from "@images/F.png"
+import ProgramFlow from "@images/program-flow.png";
+
+My PhD marked the beginning of my career as a Software Engineer. Equipped with prior knowledge in high-performance
+computing, Linux administration and bash scripting, I wrote my first program in C++. Keep reading if you're interested
+in learning about this program and other research I conducted during my PhD. You can download a copy of my thesis
+[here](https://mro.massey.ac.nz/items/f19bdbf7-899c-47c9-9b6a-56e5ee4b84eb).
+
+## SPHERES
+
+[SPHERES](https://github.com/Trombach/spheres) is a program to optimise cartesian coordinates of clusters to find their
+most favourable arrangement with respect to a given 2-body potential. Simply said, it finds the optimal arrangements of
+spherical particles for particles that only interact fairly weekly, such as in clusters of rare gas atoms. The program
+uses optimisation techniques such as gradient-descent and Newton-Raphson methods from the machine learning library
+[dlib](https://github.com/davisking/dlib).
+
+<figure class="[&_img]:w-1/3 [&_img]:inline">
+  <Image alt="optimised cluster structure" src={A} width="300" />
+  <Image alt="optimised cluster structure" src={B} width="300" />
+  <Image alt="optimised cluster structure" src={F} width="300" />
+  <figcaption>3D representations of cluster structures optimised with SPHERES.</figcaption>
+</figure>
+
+Furthermore, the program is able to determine if a set of structures represented by cartesian coordinates contains
+duplicates. For this, a variety of properties are used, such as the structures energy and moment of inertia.
+
+<figure class="w-1/2 mx-auto">
+  <Image alt="program flow" src={ProgramFlow} width="450" />
+  <figcaption>Optimisation and analysis flow in SPHERES.</figcaption>
+</figure>
+
+_... to be continued_
+
+## Publications
+
+The content of my thesis has also been published in three research papers:
+
+1. [Hollow Gold Cages and Their Topological Relationship to Dual
+Fullerenes](https://dx.doi.org/10.1002/chem.201601239)
+2. [From sticky-hard-sphere to Lennard-Jones-type clusters](https://dx.doi.org/10.1103/PhysRevE.97.043309)
+3. [Gregory-Newton problem for kissing sticky spheres](https://dx.doi.org/10.1103/PhysRevE.98.033311)

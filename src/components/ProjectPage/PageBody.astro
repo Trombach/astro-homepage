@@ -1,42 +1,77 @@
 ---
 /* global ImageMetadata */
 
-import H1 from "@components/H1.astro";
+import GithubLink from "@components/GithubLink.astro";
+import ToolIcon from "@components/ToolIcon.astro";
 import { Image } from "astro:assets";
 import { dash } from "radash";
+import type { Tool } from "src/content/config";
 
 type Props = {
   title: string;
   description: string;
+  repoLink?: string | undefined;
+  tools?: Tool[] | undefined;
   cover?: ImageMetadata | undefined;
+  coverAlt?: string | undefined;
 };
 
-const { title, description, cover } = Astro.props;
+const { title, description, repoLink, tools, cover, coverAlt } = Astro.props;
 const dashedTitle = dash(title);
 ---
 
 <article
-  class="prose mx-auto max-w-screen-lg rounded-xl border bg-background lg:prose-lg dark:prose-invert prose-headings:mx-5 prose-p:mx-5"
+  class="prose mx-auto max-w-screen-lg rounded-xl border bg-background pb-5 lg:prose-lg dark:prose-invert"
   transition:name={`border-${dashedTitle}`}
 >
   {
-    cover ? (
+    cover && (
       <Image
         src={cover}
-        alt="hero"
-        widths={[240, cover.width]}
-        sizes={`(max-width: 360px) 240px, ${cover.width}px`}
+        alt={coverAlt}
+        widths={[240, 480, 850]}
+        loading="eager"
+        sizes={`(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px`}
         class="aspect-[21/9] w-full rounded-t-xl object-cover"
         transition:name={cover.src}
       />
-    ) : null
+    )
   }
 
-  <H1 {title} transition:name={dashedTitle} />
+  <div class="p-5 pb-0 lg:p-12 lg:pb-0">
+    <header>
+      <h1 {title} transition:name={dashedTitle}>{title}</h1>
+      <p
+        transition:name={`${dashedTitle}-description`}
+        class="not-prose -mt-8 mb-5 font-mono text-muted-foreground"
+      >
+        {description}
+      </p>
+    </header>
 
-  <p class="text-muted-foreground">
-    {description}
-  </p>
+    {
+      (tools || repoLink) && (
+        <div
+          class:list={[
+            "mb-10 flex items-center justify-between",
+            !tools && repoLink && "justify-end",
+          ]}
+        >
+          {tools && (
+            <div class="flex w-fit items-center gap-2 *:size-10 *:rounded-xl *:border *:p-2">
+              {tools.map((tool) => (
+                <ToolIcon
+                  transitionName={`${dashedTitle}-${tool}-logo`}
+                  {tool}
+                />
+              ))}
+            </div>
+          )}
+          {repoLink && <GithubLink href={repoLink} />}
+        </div>
+      )
+    }
 
-  <slot name="content" />
+    <slot name="content" />
+  </div>
 </article>
