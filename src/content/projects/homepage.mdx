@@ -1,76 +1,65 @@
 ---
 title: My Homepage
-description: My personal homepage
-location: At home
-cover: ./homepage.svg
+description: A website built with Astro and Svelte
+repoLink: https://github.com/Trombach/astro-homepage
+cover: ./homepage.png
+coverAlt: Homepage on different screen sizes
 tags: ["Front-end", "Personal"]
+tools: ["Astro", "Svelte", "Typescript", "Tailwind", "Vercel"]
 ---
 
-import AstroLogo from "icons:astro/logos/astro-icon";
-import SvelteLogo from "icons:astro/logos/svelte-icon";
-import TypeScriptLogo from "icons:astro/logos/typescript-icon";
+import AppLink from "@components/AppLink.astro";
 
-## Built with
+Welcome to my personal homepage! In this article you can learn about how this website was built, and what drove my
+decision making.
 
-<p class="flex flex-row gap-2 *:size-5">
-  <AstroLogo class="fill-foreground" />
-  <SvelteLogo />
-  <TypeScriptLogo />
-</p>
+## Quick Facts
 
-## This is a test
+- mostly statically built for easy caching and fast page load speeds
+- uses Astro's [content collections](https://docs.astro.build/en/guides/content-collections/) and
+  [MDX](https://mdxjs.com/) for content
+- takes advantage of `ViewTransitions` API for smoother page transitions
+- interactive and animated using Svelte transitions and CSS animations
 
-ABcajklp;asdf
 
-## another thest
+## Why Astro?
 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure possimus ad rem
-    deserunt sed ullam! Voluptatum repellendus deserunt dolor, aspernatur adipisci
-    ullam vitae est tempore, officiis eligendi porro voluptas aliquam. Aliquam adipisci
-    quam aliquid aspernatur hic? Excepturi magnam officia fugiat asperiores quis
-    cum quos provident? Sunt obcaecati aspernatur corporis vero quibusdam possimus,
-    veritatis vel, quaerat aperiam non quod beatae culpa! Cupiditate, fuga facere!
-    Architecto non dolor doloremque delectus ea eveniet? Magnam cum incidunt sunt
-    voluptatem ut pariatur maxime vel nam, placeat dolore enim veritatis, deleniti
+Astro is an opinionated open-source framework with the goal of building fast and cachable web pages. While it can be
+used to dynamically render content server-side or client-side, its default behaviour is to render static HTML pages.
+This simplifies prioritising loading speed and makes Astro one of the most capable and fastest static-site frameworks.
 
-### nested
+<figure>
+  <>![Lighthouse score](../../images/lighthouse.png)</>
+  <figcaption>Lighthouse score for page load of my homepage on desktop.</figcaption>
+</figure>
 
-    delectus! Ut quam ex corporis! Dignissimos velit impedit obcaecati quisquam explicabo,
-    odio labore, magnam sit totam minus nihil fugit, sunt rem. Id cumque doloremque
-    laborum amet, autem accusamus mollitia architecto quidem quasi labore. Voluptatum,
-    eos! Temporibus quod molestiae at porro esse accusamus ex rerum, quibusdam illum
-    tempora asperiores dolorem ipsum fugit nihil consectetur suscipit quasi culpa
-    molestias, corrupti nemo quos reprehenderit voluptates. Tempora, sint! In! Lorem
-    ipsum dolor sit amet consectetur adipisicing elit. Iure possimus ad rem deserunt
-    sed ullam! Voluptatum repellendus deserunt dolor, aspernatur adipisci ullam vitae
-    est tempore, officiis eligendi porro voluptas aliquam. Aliquam adipisci quam
-    aliquid aspernatur hic? Excepturi magnam officia fugiat asperiores quis cum quos
-    provident? Sunt obcaecati aspernatur corporis vero quibusdam possimus, veritatis
-    vel, quaerat aperiam non quod beatae culpa! Cupiditate, fuga facere! Architecto
-    non dolor doloremque delectus ea eveniet? Magnam cum incidunt sunt voluptatem
-    ut pariatur maxime vel nam, placeat dolore enim veritatis, deleniti delectus!
-    Ut quam ex corporis! Dignissimos velit impedit obcaecati quisquam explicabo,
-    odio labore, magnam sit totam minus nihil fugit, sunt rem. Id cumque doloremque
-    laborum amet, autem accusamus mollitia architecto quidem quasi labore. Voluptatum,
-    eos! Temporibus quod molestiae at porro esse accusamus ex rerum, quibusdam illum
-    tempora asperiores dolorem ipsum fugit nihil consectetur suscipit quasi culpa
-    molestias, corrupti nemo quos reprehenderit voluptates. Tempora, sint! In! Lorem
-    ipsum dolor sit amet consectetur adipisicing elit. Iure possimus ad rem deserunt
-    sed ullam! Voluptatum repellendus deserunt dolor, aspernatur adipisci ullam vitae
-    est tempore, officiis eligendi porro voluptas aliquam. Aliquam adipisci quam
-    aliquid aspernatur hic? Excepturi magnam officia fugiat asperiores quis cum quos
-    provident? Sunt obcaecati aspernatur corporis vero quibusdam possimus, veritatis
-    vel, quaerat aperiam non quod beatae culpa! Cupiditate, fuga facere! Architecto
-    non dolor doloremque delectus ea eveniet? Magnam cum incidunt sunt voluptatem
-    ut pariatur maxime vel nam, placeat dolore enim veritatis, deleniti delectus!
-    Ut quam ex corporis! Dignissimos velit impedit obcaecati quisquam explicabo,
-    odio labore, magnam sit totam minus nihil fugit, sunt rem. Id cumque doloremque
-    laborum amet, autem accusamus mollitia architecto quidem quasi labore. Voluptatum,
-    eos! Temporibus quod molestiae at porro esse accusamus ex rerum, quibusdam illum
-    tempora asperiores dolorem ipsum fugit nihil consectetur suscipit quasi culpa
-    molestias, corrupti nemo quos reprehenderit voluptates. Tempora, sint! In! Lorem
-    ipsum dolor sit amet consectetur adipisicing elit. Iure possimus ad rem deserunt
-    sed ullam! Voluptatum repellendus deserunt dolor, aspernatur adipisci ullam vitae
-    est tempore, officiis eligendi porro voluptas aliquam. Aliquam adipisci quam
-    aliquid aspernatur hic? Excepturi magnam officia fugiat asperiores quis cum quos
-    provident? Sunt obcaecati aspernatur corporis vero quibusdam possimus, veritatis
+One of the most powerful features of Astro is the ability to use components written for other front-end frameworks such
+as Svelte or Vue. This hands an unprecedented amount of flexibility to developers to mix and match framework components
+and choose whichever framework is suited best to solve a particular problem. For example, I chose Svelte because of its
+feature rich animation library, but was also able to add a single component built in React when I couldn't find a
+suitable library for Astro or Svelte.
+
+## Why Svelte?
+
+Svelte is one of my favourite front-end frameworks to work with. Besides the fact that it is blazingly fast, it also
+comes with some great utility functions for building smooth animations.
+
+<figure>
+  <video autoplay loop muted>
+    <source src="/hero-animation-short.webm" type="video/webm"></source>
+    Your browser does not suppoert videos.
+  </video>
+  <figcaption>
+    Animation on the landing page. Most animations are achieved with plain CSS transitions. The blur effect on the card 
+    content is created using Sveltes `transition` libraries. You can view this animation on the <a href="/">Hero page</a>.
+  </figcaption>
+</figure>
+
+Svelte also features a powerful reactivity model that is very easy to use. While it would have been possible to build
+reactive components with plain Astro code, Svelte brings some additional quality of life improvements to the table such
+as stores and reactive statements. 
+
+To me Svelte and Astro are a perfect match, combining a powerful reactive framework with an easy-to-use and powerful
+static-site generator.
+
+_Feel free to explore!_

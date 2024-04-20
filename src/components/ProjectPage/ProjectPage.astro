@@ -3,29 +3,35 @@
 
 import AppLink from "@components/AppLink.astro";
 import LeftArrow from "icons:astro/heroicons/arrow-left";
+import type { Tool } from "src/content/config";
 import PageBody from "./PageBody.astro";
 
 type Props = {
   title: string;
   description: string;
+  tools?: Tool[] | undefined;
+  repoLink?: string | undefined;
   cover?: ImageMetadata | undefined;
+  coverAlt?: string | undefined;
 };
 
-const { title, description, cover } = Astro.props;
+const props = Astro.props;
 ---
 
-<div class="mx-auto max-w-4xl px-5">
+<div
+  class="mx-auto mb-3 max-w-full space-y-5 px-3 pt-3 lg:mb-5 lg:max-w-4xl lg:px-5 lg:pt-5"
+>
   <AppLink
     as="a"
     appearance="secondary"
     href="/projects"
-    class="group mb-3 mt-2 w-fit text-sm"
+    class="group w-fit text-sm"
   >
     <LeftArrow class="transition-transform group-hover:-translate-x-1" />
     <span>Back to Projects</span>
   </AppLink>
 
-  <PageBody {title} {description} {cover}>
+  <PageBody {...props}>
     <slot name="content" slot="content" />
   </PageBody>
 </div>
