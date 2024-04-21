@@ -7,10 +7,11 @@ import vercel from "@astrojs/vercel/serverless";
 import react from "@astrojs/react";
 import addsToHead from "./adds-to-head-integration";
 import remarkGithub from "remark-github";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), svelte(), mdx(), react(), addsToHead()],
+  integrations: [tailwind(), svelte(), mdx(), react(), addsToHead(), sitemap()],
   image: {
     domains: ["placehold.co"],
   },
@@ -21,15 +22,33 @@ export default defineConfig({
     prefetchAll: true,
   },
   vite: {
-    plugins: [Icons({ compiler: "svelte" }), Icons({ compiler: "astro" })],
+    plugins: [
+      Icons({
+        compiler: "svelte",
+      }),
+      Icons({
+        compiler: "astro",
+      }),
+    ],
     resolve: {
       alias: [
-        { find: "icons:svelte", replacement: "~icons" },
-        { find: "icons:astro", replacement: "~icons" },
+        {
+          find: "icons:svelte",
+          replacement: "~icons",
+        },
+        {
+          find: "icons:astro",
+          replacement: "~icons",
+        },
       ],
     },
   },
   output: "hybrid",
-  adapter: vercel({ imageService: false, webAnalytics: { enabled: true } }),
-  site: "https://astro-homepage-one.vercel.app",
+  adapter: vercel({
+    imageService: false,
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
+  site: "https://lukastrombach.dev",
 });
