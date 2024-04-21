@@ -10,11 +10,7 @@ const panel3 = await getEntry("home", "panel-3");
 const panel4 = await getEntry("home", "panel-4");
 ---
 
-<section
-  transition:animate="slide"
-  id="hero"
-  class="flex h-screen-less-header w-full flex-col"
->
+<section id="hero" class="flex h-screen-less-header w-full flex-col">
   <HeroGrid client:load>
     <PanelContent entry={panel1} slot="panel-one" />
     <PanelContent entry={panel2} slot="panel-two" />
