@@ -62,14 +62,16 @@ const formFields = [
 ---
 
 <Layout title="Lukas Trombach | Contact">
-  <section class="flex min-h-screen-less-header flex-col justify-center p-1">
+  <section
+    class="flex min-h-screen-less-header w-full flex-col justify-center p-1"
+  >
     <form
       id="contact-form"
       transition:name="contact-form"
       method="POST"
       class="mx-auto w-full space-y-12 rounded-xl border bg-background p-12 md:w-[600px] lg:max-w-screen-lg"
     >
-      <H1 title="Send a Message" />
+      <H1 title="Send Me a Message" />
 
       <SendEmailResponse {response} />
 
