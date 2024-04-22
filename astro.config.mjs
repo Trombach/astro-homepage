@@ -50,5 +50,5 @@ export default defineConfig({
       enabled: true,
     },
   }),
-  site: "https://lukastrombach.dev",
+  site: "https://www.lukastrombach.dev",
 });
