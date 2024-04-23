@@ -29,8 +29,8 @@ corepack enable
 
 All commands are run from the root of the project, from a terminal:
 
-| Command             | Action                                           |
-| :------------------ | :----------------------------------------------- |
+| Command                      | Action                                           |
+| :--------------------------- | :----------------------------------------------- |
 | `corepack pnpm install`      | Installs dependencies                            |
 | `corepack pnpm dev`          | Starts local dev server at `localhost:4321`      |
 | `corepack pnpm build`        | Build your production site to `./dist/`          |
