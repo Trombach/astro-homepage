@@ -1,56 +1,39 @@
-# Astro Starter Kit: Basics
+<!--markdownlint-disable MD033 MD041-->
 
-```sh
-npm create astro@latest -- --template basics
-```
+<div align=center>
+  <img src="public/favicon-dark.svg" alt="logo" width="250">
+</div>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+<br>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<div align=center>
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+[![Checks](https://github.com/Trombach/astro-homepage/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/Trombach/astro-homepage/actions/workflows/pr-checks.yml)
+![Staging](https://img.shields.io/github/deployments/Trombach/astro-homepage/Production?logo=vercel&label=Staging)
 
-## 🚀 Project Structure
+</div>
 
-Inside of your Astro project, you'll see the following folders and files:
+# My personal homepage
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+This is my personal homepage built with [Astro](https://astro.build), [Svelte](https://svelte.dev) and [Tailwind](https://tailwindcss.com).
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+View it [here](https://lukastrombach.dev) or read more about it [here](https://www.lukastrombach.dev/projects/homepage).
 
 ## 🧞 Commands
 
+This project uses `pnpm` and `corepack` for package management. Please install `pnpm` globally and enable corepack by running
+
+```bash
+corepack enable
+```
+
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-Test staging deployment
+| Command             | Action                                           |
+| :------------------ | :----------------------------------------------- |
+| `pnpm install`      | Installs dependencies                            |
+| `pnpm dev`          | Starts local dev server at `localhost:4321`      |
+| `pnpm build`        | Build your production site to `./dist/`          |
+| `pnpm preview`      | Preview your build locally, before deploying     |
+| `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro --help` | Get help using the Astro CLI                     |
