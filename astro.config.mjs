@@ -49,6 +49,10 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     },
+    isr: {
+      // caches all pages on first request and saves for 1 day
+      expiration: 60 * 60 * 24,
+    },
   }),
   site: "https://www.lukastrombach.dev",
 });
