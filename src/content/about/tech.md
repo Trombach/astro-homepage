@@ -7,7 +7,7 @@ Over the years I have gathered experience in a variety of technologies. My first
 school, where we learned the basics of `Delphi`.
 
 In university I wrote all of my reports and theses with `LaTeX`. This isn't something people normally consider when they
-think of programming, however it is [touring
+think of programming, however it is [Turing
 complete](https://www.overleaf.com/learn/latex/Articles/LaTeX_is_More_Powerful_than_you_Think_-_Computing_the_Fibonacci_Numbers_and_Turing_Completeness).
 It started my passion for code organisation and maintainability, something I still value a lot today.
 
