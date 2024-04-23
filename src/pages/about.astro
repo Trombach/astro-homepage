@@ -6,9 +6,6 @@ import Layout from "src/layouts/Layout.astro";
 
 // opt in to SSR
 export const prerender = false;
-
-// set a cache control header of 1 hour https://vercel.com/docs/edge-network/caching#using-vercel-functions
-Astro.response.headers.set("Cache-Control", "public, s-maxage=3600");
 ---
 
 <Layout title="About Me">
