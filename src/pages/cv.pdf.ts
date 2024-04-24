@@ -1,6 +1,8 @@
 import type { APIRoute } from "astro";
 import { google } from "googleapis";
 
+export const prerender = false;
+
 export const GET: APIRoute = async () => {
   const fileId = import.meta.env.CV_FILE_ID;
   const auth = import.meta.env.GOOGLE_API_KEY;
