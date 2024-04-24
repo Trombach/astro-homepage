@@ -100,12 +100,14 @@ const formFields = [
   </section>
 </Layout>
 
-<script>
-  const form = document.getElementById("contact-form") as HTMLFormElement;
-  const button = document.getElementById("submit-message") as HTMLButtonElement;
+<script type="module" is:inline>
+  const form = document.getElementById("contact-form");
+  const button = document.getElementById("submit-message");
 
-  form.addEventListener(
-    "input",
-    () => (button.disabled = !form.checkValidity()),
-  );
+  if (form instanceof HTMLFormElement && button instanceof HTMLButtonElement) {
+    form.addEventListener(
+      "input",
+      () => (button.disabled = !form.checkValidity()),
+    );
+  }
 </script>

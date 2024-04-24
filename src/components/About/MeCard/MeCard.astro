@@ -25,7 +25,7 @@ import MeCardFront from "./MeCardFront.astro";
   }
 </style>
 
-<script>
+<script type="module" is:inline>
   const card = document.querySelector("[data-flip-card]");
 
   if (card instanceof HTMLElement) {

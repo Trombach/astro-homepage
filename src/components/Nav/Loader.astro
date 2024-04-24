@@ -30,7 +30,7 @@
   </div>
 </div>
 
-<script>
+<script type="module" is:inline>
   document.addEventListener("astro:before-preparation", () =>
     document.querySelector("[data-loader]")?.classList.add("loading"),
   );
