@@ -15,7 +15,7 @@ importers:
         specifier: ^2.3.1
         version: 2.3.1(astro@4.7.0)
       '@astrojs/react':
-        specifier: ^3.3.0
+        specifier: ^3.3.1
         version: 3.3.1(@types/react-dom@18.3.0)(@types/react@18.3.0)(react-dom@18.3.0)(react@18.3.0)(vite@5.2.10)
       '@astrojs/sitemap':
         specifier: ^3.1.4
@@ -27,7 +27,7 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(astro@4.7.0)(tailwindcss@3.4.3)
       '@astrojs/vercel':
-        specifier: ^7.5.3
+        specifier: ^7.5.4
         version: 7.5.4(astro@4.7.0)(react@18.3.0)
       '@floating-ui/react':
         specifier: ^0.26.12
@@ -42,7 +42,7 @@ importers:
         specifier: ^1.1.20
         version: 1.1.20
       '@iconify-json/simple-icons':
-        specifier: ^1.1.99
+        specifier: ^1.1.100
         version: 1.1.100
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
@@ -54,25 +54,25 @@ importers:
         specifier: ^1.0.10
         version: 1.0.10(react@18.3.0)(svelte@4.2.15)
       astro:
-        specifier: ^4.6.2
+        specifier: ^4.7.0
         version: 4.7.0(typescript@5.4.5)
       clsx:
-        specifier: ^2.1.0
+        specifier: ^2.1.1
         version: 2.1.1
       google-auth-library:
-        specifier: ^9.8.0
+        specifier: ^9.9.0
         version: 9.9.0
       googleapis:
-        specifier: ^134.0.0
-        version: 134.0.0
+        specifier: ^135.0.0
+        version: 135.0.0
       radash:
         specifier: ^12.1.0
         version: 12.1.0
       react:
-        specifier: ^18.2.0
+        specifier: ^18.3.0
         version: 18.3.0
       react-dom:
-        specifier: ^18.2.0
+        specifier: ^18.3.0
         version: 18.3.0(react@18.3.0)
       remark-github:
         specifier: ^12.0.0
@@ -106,16 +106,16 @@ importers:
         specifier: ^0.5.12
         version: 0.5.12(tailwindcss@3.4.3)
       '@types/react':
-        specifier: ^18.2.79
+        specifier: ^18.3.0
         version: 18.3.0
       '@types/react-dom':
-        specifier: ^18.2.25
+        specifier: ^18.3.0
         version: 18.3.0
       '@typescript-eslint/eslint-plugin':
-        specifier: ^7.7.0
+        specifier: ^7.7.1
         version: 7.7.1(@typescript-eslint/parser@7.7.1)(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/parser':
-        specifier: ^7.7.0
+        specifier: ^7.7.1
         version: 7.7.1(eslint@8.57.0)(typescript@5.4.5)
       eslint:
         specifier: ^8.57.0
@@ -139,7 +139,7 @@ importers:
         specifier: ^6.1.1
         version: 6.1.1(eslint@8.57.0)
       eslint-plugin-svelte:
-        specifier: ^2.37.0
+        specifier: ^2.38.0
         version: 2.38.0(eslint@8.57.0)(svelte@4.2.15)
       prettier:
         specifier: ^3.2.5
@@ -157,7 +157,7 @@ importers:
         specifier: ^0.5.14
         version: 0.5.14(prettier-plugin-astro@0.13.0)(prettier-plugin-svelte@3.2.3)(prettier@3.2.5)
       svelte-check:
-        specifier: ^3.6.9
+        specifier: ^3.7.0
         version: 3.7.0(@babel/core@7.24.4)(postcss@8.4.38)(svelte@4.2.15)
       svelte-typewriter:
         specifier: ^3.2.3
@@ -3978,8 +3978,8 @@ packages:
       - supports-color
     dev: false
 
-  /googleapis@134.0.0:
-    resolution: {integrity: sha512-o8LhD1754W6MHWtpwAPeP1WUHgNxuMxCnLMDFlMKAA5kCMTNqX9/eaTXnkkAIv6YRfoKMQ6D1vyR6/biXuhE9g==}
+  /googleapis@135.0.0:
+    resolution: {integrity: sha512-gIbhO1ptjgg74DEO5WIiyO1l4zLL7Lssab0XoIdZ+TYArib4SwQbKObpidRBdYAixf/fmQd00JIYYx6JtpZzew==}
     engines: {node: '>=14.0.0'}
     dependencies:
       google-auth-library: 9.9.0
