@@ -21,7 +21,7 @@ View it [here](https://lukastrombach.dev) or read more about it [here](https://w
 
 ## 🧞 Commands
 
-This project uses `pnpm` and `corepack` for package management. Please install `pnpm` globally and enable corepack by running
+This project uses `pnpm` and `corepack` for package management. Please install `node` and enable corepack by running
 
 ```bash
 corepack enable
@@ -29,11 +29,11 @@ corepack enable
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                      | Action                                           |
-| :--------------------------- | :----------------------------------------------- |
-| `corepack pnpm install`      | Installs dependencies                            |
-| `corepack pnpm dev`          | Starts local dev server at `localhost:4321`      |
-| `corepack pnpm build`        | Build your production site to `./dist/`          |
-| `corepack pnpm preview`      | Preview your build locally, before deploying     |
-| `corepack pnpm astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `corepack pnpm astro --help` | Get help using the Astro CLI                     |
+| Command             | Action                                           |
+| :------------------ | :----------------------------------------------- |
+| `pnpm install`      | Installs dependencies                            |
+| `pnpm dev`          | Starts local dev server at `localhost:4321`      |
+| `pnpm build`        | Build your production site to `./dist/`          |
+| `pnpm preview`      | Preview your build locally, before deploying     |
+| `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro --help` | Get help using the Astro CLI                     |
