@@ -11,8 +11,7 @@ interface Props {
   description?: string | undefined;
 }
 
-const { title, description } = Astro.props;
-const { origin, href } = Astro.url;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,10 +20,9 @@ const { origin, href } = Astro.url;
     <meta charset="UTF-8" />
     <meta name="description" content="Lukas' Homepage" />
     <meta name="viewport" content="width=device-width" />
-    <meta property="og:image" content={`${origin}/og.png`} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={href} />
+
+    <slot name="seo" />
+
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/x-icon" href="data:;" />
     <link
