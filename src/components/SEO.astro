@@ -2,17 +2,18 @@
 type Props = {
   title: string;
   description?: string;
+  image?: string;
 };
 
-const { title, description } = Astro.props;
 const { origin, href } = Astro.url;
+const { title, description, image = `${origin}/og.png` } = Astro.props;
 ---
 
-<meta property="og:image" content={`${origin}/og.png`} />
+<meta property="og:image" content={image} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={href} />
-<meta property="twitter:image" content={`${origin}/og.png`} />
+<meta property="twitter:image" content={image} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:card" content="summary_large_image" />
