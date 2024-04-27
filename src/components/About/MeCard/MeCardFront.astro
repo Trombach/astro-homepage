@@ -23,7 +23,10 @@ const me = {
   class="flex h-full w-full flex-col items-stretch justify-between lg:flex-row"
 >
   <div class="gradient basis-1/3 rounded-xl">
-    <Avatar class="mx-auto mt-5 size-24 md:size-32 lg:mt-10" />
+    <Avatar
+      image={data.avatar}
+      class="mx-auto mt-5 size-24 md:size-32 lg:mt-10"
+    />
   </div>
   <ul
     class="table basis-2/3 px-2 py-10 [--cursor-color:theme(colors.foreground)] [--cursor-width:1px] md:p-10 lg:px-0 lg:py-20"
