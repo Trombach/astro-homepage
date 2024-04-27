@@ -1,8 +1,12 @@
 ---
 import Hero from "@components/Hero/Hero.astro";
+import SEO from "@components/SEO.astro";
 import Layout from "@layouts/Layout.astro";
+
+const title = "Lukas Trombach | Software Engineer";
 ---
 
-<Layout title="Lukas Trombach | Software Engineer">
+<Layout {title}>
+  <SEO {title} slot="seo" />
   <Hero />
 </Layout>
