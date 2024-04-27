@@ -1,5 +1,6 @@
 ---
 import Navbar from "@components/Nav/Navbar.astro";
+import SEO from "@components/SEO.astro";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
 import SpeedInsights from "@vercel/speed-insights/astro";
@@ -11,17 +12,19 @@ interface Props {
   description?: string | undefined;
 }
 
-const { title } = Astro.props;
+const { title, description = "Lukas' Homepage" } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Lukas' Homepage" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
 
-    <slot name="seo" />
+    <slot name="seo">
+      <SEO {title} {description} />
+    </slot>
 
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/x-icon" href="data:;" />
