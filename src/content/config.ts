@@ -21,14 +21,16 @@ const aboutCollection = defineCollection({
 
 const personCollection = defineCollection({
   type: "data",
-  schema: z.object({
-    name: z.string(),
-    birthday: z.date(),
-    from: z.string(),
-    industryStart: z.number(),
-    currentLocation: z.string(),
-    education: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      birthday: z.date(),
+      from: z.string(),
+      industryStart: z.number(),
+      currentLocation: z.string(),
+      education: z.string(),
+      avatar: image().optional(),
+    }),
 });
 
 const tags = [

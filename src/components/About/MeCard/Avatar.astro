@@ -1,16 +1,19 @@
 ---
-import me from "@images/me.jpg";
+/* global ImageMetadata */
+
+import DefaultImage from "@images/heroicons--user-circle.svg";
 import { Image } from "astro:assets";
 
 type Props = {
-  class?: string;
+  image?: ImageMetadata | undefined;
+  class?: string | undefined;
 };
 
-const { class: className } = Astro.props;
+const { image, class: className } = Astro.props;
 ---
 
 <Image
-  src={me}
+  src={image || DefaultImage}
   transition:name="avatar"
   alt="Lukas"
   widths={[96, 128, 256]}
