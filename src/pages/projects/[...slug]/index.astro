@@ -1,5 +1,6 @@
 ---
 import ProjectPage from "@components/ProjectPage/ProjectPage.astro";
+import SEO from "@components/SEO.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -21,7 +22,14 @@ const {
 const { Content } = await render();
 ---
 
-<Layout {title}>
+<Layout {title} description={props.description}>
+  <SEO
+    slot="seo"
+    {title}
+    description={props.description}
+    imageURL={new URL(`${Astro.url.href}/og.png`)}
+  />
+
   <ProjectPage {title} {...props}>
     <Content slot="content" />
   </ProjectPage>
