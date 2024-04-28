@@ -5,8 +5,12 @@ type Props = {
   imageURL?: URL;
 };
 
-const { href } = Astro.url;
-const { title, description, imageURL = new URL("og.png", href) } = Astro.props;
+const { origin, href } = Astro.url;
+const {
+  title,
+  description,
+  imageURL = new URL("og.png", origin),
+} = Astro.props;
 ---
 
 <meta property="og:image" content={imageURL} />
