@@ -2,6 +2,8 @@ import type { APIRoute } from "astro";
 import { getImage } from "astro:assets";
 import { getCollection, getEntry } from "astro:content";
 
+export const prerender = false;
+
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map(({ slug }) => ({
