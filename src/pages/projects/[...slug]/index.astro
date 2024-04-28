@@ -27,7 +27,7 @@ const { Content } = await render();
     slot="seo"
     {title}
     description={props.description}
-    imageURL={new URL(`${Astro.url.href}/og.png`)}
+    imageURL={new URL(`${Astro.url.href.replace(/\/?$/, "/")}og.png`)}
   />
 
   <ProjectPage {title} {...props}>
