@@ -1,0 +1,21 @@
+changelog:
+  exclude:
+    labels:
+      - release
+  categories:
+    - title: New Features ✨
+      labels:
+        - feature
+    - title: Improvements 🖌️
+      labels:
+        - optimisation
+    - title: Fixes 🐛
+      labels:
+        - hotfix
+        - fix
+    - title: Dependencies ⬆️
+      labels:
+        - dependencies
+    - title: Other
+      labels:
+        - "*"
