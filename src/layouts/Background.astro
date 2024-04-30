@@ -1,28 +1,22 @@
 ---
 import BackgroundImage from "@images/gradient.avif";
-import type { HTMLAttributes } from "astro/types";
-import { getImage } from "astro:assets";
-
-type Props = HTMLAttributes<"div">;
-
-const optimisedImage = await getImage({
-  src: BackgroundImage,
-  width: 1440,
-});
-
-const { "class:list": classList, class: className, ...props } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
 <div
-  style={`background-image: url(${optimisedImage.src})`}
   class:list={[
     "overflow-auto [scrollbar-gutter:stable]",
-    "h-screen w-full animate-[moveUp_20s_linear_infinite]",
-    "bg-cover bg-no-repeat",
-    classList,
-    className,
+    "h-screen w-full",
+    "relative",
   ]}
-  {...props}
 >
+  <Image
+    transition:persist
+    src={BackgroundImage}
+    alt="Background"
+    widths={[480, 768, 976, 1440, BackgroundImage.width]}
+    sizes={`(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 976px) 976px, (max-width: 1440px) 1440px, ${BackgroundImage.width}`}
+    class="fixed z-[-1] object-contain object-top"
+  />
   <slot />
 </div>
