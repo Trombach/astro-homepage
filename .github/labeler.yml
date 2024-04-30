@@ -12,3 +12,6 @@ hotfix:
 
 fix:
   - head-branch: "^fix/"
+
+dependencies:
+  - head-branch: "^dependencies/"
