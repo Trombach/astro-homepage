@@ -1,0 +1,14 @@
+release:
+  - head-branch: "^release/"
+
+feature:
+  - head-branch: "^feature/"
+
+optimisation:
+  - head-branch: "^optimisation/"
+
+hotfix:
+  - head-branch: "^hotfix/"
+
+fix:
+  - head-branch: "^fix/"
