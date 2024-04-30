@@ -19,6 +19,7 @@ const { image, class: className } = Astro.props;
   widths={[96, 128, 256]}
   loading="eager"
   fetchpriority="high"
+  decoding="sync"
   sizes={`(max-width: 360px) 96px, (max-width: 480px) 128px, 256px`}
   class:list={["rounded-full border-4 border-card lg:border-8", className]}
 />
