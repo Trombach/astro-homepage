@@ -1,0 +1,66 @@
+---
+import { capitalize } from "radash";
+
+type Theme = "auto" | "dark" | "light";
+
+const options = ["auto", "dark", "light"] as const satisfies Theme[];
+---
+
+<label for="theme-switcher">
+  <span class="sr-only">theme switcher</span>
+  <select
+    id="theme-switcher"
+    class="appearance-none rounded-lg border-0 bg-transparent font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-current"
+  >
+    {
+      options.map((option) => (
+        <option value={option} class="bg-background text-foreground">
+          {capitalize(option)}
+        </option>
+      ))
+    }
+  </select>
+</label>
+
+<script is:inline>
+  window.ThemeProvider.updateTheme();
+
+  document.addEventListener("astro:before-swap", (event) =>
+    window.ThemeProvider.updateTheme(event.newDocument),
+  );
+</script>
+
+<script>
+  declare global {
+    interface Window {
+      ThemeProvider: {
+        getTheme: () => "auto" | "dark" | "light";
+        setTheme: (theme: string) => void;
+        updateTheme: () => void;
+      };
+    }
+  }
+
+  function init() {
+    const select = document.querySelector("select");
+    if (select) {
+      select.value = window.ThemeProvider.getTheme();
+
+      select.addEventListener("change", () => {
+        window.ThemeProvider.setTheme(select.value);
+        window.ThemeProvider.updateTheme();
+      });
+    }
+  }
+
+  init();
+
+  document.addEventListener("astro:after-swap", init);
+
+  // react to system theme change
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (window.ThemeProvider.getTheme() === "auto") {
+      window.ThemeProvider.updateTheme();
+    }
+  });
+</script>
