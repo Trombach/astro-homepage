@@ -94,6 +94,7 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
           --input: 220 13% 91%;
           --ring: 262.1 83.3% 57.8%;
           --radius: 0.5rem;
+          color-scheme: light;
         }
 
         :root.dark {
@@ -115,12 +116,12 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
           --destructive-foreground: 210 20% 98%;
           --border: 215 27.9% 16.9%;
           --input: 215 27.9% 16.9%;
+          color-scheme: dark;
         }
 
         :root {
           --header-height: 64px;
 
-          color-scheme: dark light;
           @apply scroll-pt-[84px] bg-background leading-normal text-foreground;
         }
 
