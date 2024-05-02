@@ -21,7 +21,7 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/mdx": "^2.3.1",
-    "@astrojs/react": "^3.3.1",
+    "@astrojs/react": "^3.3.2",
     "@astrojs/sitemap": "^3.1.4",
     "@astrojs/svelte": "^5.4.0",
     "@astrojs/tailwind": "^5.1.0",
@@ -35,7 +35,7 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/og": "^0.6.2",
     "@vercel/speed-insights": "^1.0.10",
-    "astro": "^4.7.0",
+    "astro": "^4.7.1",
     "clsx": "^2.1.1",
     "google-auth-library": "^9.9.0",
     "googleapis": "^135.1.0",
