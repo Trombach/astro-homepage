@@ -55,4 +55,11 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
   init();
 
   document.addEventListener("astro:after-swap", init);
+
+  // react to system theme change
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (window.ThemeProvider.getTheme() === "auto") {
+      window.ThemeProvider.updateTheme();
+    }
+  });
 </script>
