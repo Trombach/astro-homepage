@@ -23,7 +23,12 @@ updates:
           - "@astrojs/*"
         update-types:
           - major
-      others-breaking:
+      production-breaking:
+        dependency-type: production
+        update-types:
+          - major
+      dev-breaking:
+        dependency-type: development
         update-types:
           - major
       others-production:
