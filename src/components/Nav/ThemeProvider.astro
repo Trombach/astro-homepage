@@ -1,0 +1,32 @@
+<script is:inline>
+  if (!window.ThemeProvider) {
+    window.ThemeProvider = {
+      updateTheme: (doc = document) => {
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          doc.documentElement.classList.add("dark");
+        } else {
+          doc.documentElement.classList.remove("dark");
+        }
+      },
+      getTheme: () => localStorage.getItem("theme") || "auto",
+      setTheme: (theme) => {
+        switch (theme) {
+          default:
+          case "auto":
+            localStorage.removeItem("theme");
+            break;
+          case "dark":
+            localStorage.setItem("theme", "dark");
+            break;
+          case "light":
+            localStorage.setItem("theme", "light");
+            break;
+        }
+      },
+    };
+  }
+</script>

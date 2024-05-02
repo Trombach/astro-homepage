@@ -1,5 +1,6 @@
 ---
 import Navbar from "@components/Nav/Navbar.astro";
+import ThemeProvider from "@components/Nav/ThemeProvider.astro";
 import SEO from "@components/SEO.astro";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
@@ -60,8 +61,9 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
     <SpeedInsights />
+    <ThemeProvider />
   </head>
-  <body class="overflow-hidden antialiased">
+  <body class="overflow-hidden antialiased transition-colors duration-300">
     <Background>
       <Navbar />
       <main class="flex flex-col items-center"><slot /></main>
@@ -92,36 +94,34 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
           --input: 220 13% 91%;
           --ring: 262.1 83.3% 57.8%;
           --radius: 0.5rem;
+          color-scheme: light;
         }
 
-        @media (prefers-color-scheme: dark) {
-          :root {
-            --background: 224 71.4% 4.1%;
-            --foreground: 210 20% 98%;
-            --card: 224 71.4% 4.1%;
-            --card-foreground: 210 20% 98%;
-            --popover: 224 71.4% 4.1%;
-            --popover-foreground: 210 20% 98%;
-            --primary: 263.4 70% 50.4%;
-            --primary-foreground: 210 20% 98%;
-            --secondary: 215 27.9% 16.9%;
-            --secondary-foreground: 210 20% 98%;
-            --muted: 215 27.9% 16.9%;
-            --muted-foreground: 217.9 10.6% 64.9%;
-            --accent: 215 27.9% 16.9%;
-            --accent-foreground: 210 20% 98%;
-            --destructive: 0 62.8% 30.6%;
-            --destructive-foreground: 210 20% 98%;
-            --border: 215 27.9% 16.9%;
-            --input: 215 27.9% 16.9%;
-            --ring: 263.4 70% 50.4%;
-          }
+        :root.dark {
+          --background: 224 71.4% 4.1%;
+          --foreground: 210 20% 98%;
+          --card: 224 71.4% 4.1%;
+          --card-foreground: 210 20% 98%;
+          --popover: 224 71.4% 4.1%;
+          --popover-foreground: 210 20% 98%;
+          --primary: 263.4 70% 50.4%;
+          --primary-foreground: 210 20% 98%;
+          --secondary: 215 27.9% 16.9%;
+          --secondary-foreground: 210 20% 98%;
+          --muted: 215 27.9% 16.9%;
+          --muted-foreground: 217.9 10.6% 64.9%;
+          --accent: 215 27.9% 16.9%;
+          --accent-foreground: 210 20% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 210 20% 98%;
+          --border: 215 27.9% 16.9%;
+          --input: 215 27.9% 16.9%;
+          color-scheme: dark;
         }
 
         :root {
           --header-height: 64px;
 
-          color-scheme: dark light;
           @apply scroll-pt-[84px] bg-background leading-normal text-foreground;
         }
 
