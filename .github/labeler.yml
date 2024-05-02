@@ -14,6 +14,6 @@ fix:
   - head-branch: "^fix/"
 
 dependencies:
-  - head-branch: 
-    - "^dependencies/"
-    - "^dependabot/"
+  - head-branch:
+      - "^dependencies/"
+      - "^dependabot/"
