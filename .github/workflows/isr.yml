@@ -22,4 +22,4 @@ jobs:
     steps:
       - name: Run curl
         run: |
-          curl -I --header "x-prerender-revalidate: ${{ secrets.ISR_BYPASS_TOKEN }}" ${{ format('{0}/{1}', inputs.base_url, inputs.path) }}
+          curl --header "x-prerender-revalidate: ${{ secrets.ISR_BYPASS_TOKEN }}" ${{ format('{0}/{1}', inputs.base_url, inputs.path) }}
