@@ -51,6 +51,7 @@ export default defineConfig({
     },
     isr: {
       bypassToken: import.meta.env.ISR_BYPASS_TOKEN,
+      exclude: ["/api/cron/isr"],
       // caches all pages on first request and saves for 1 day
       expiration: 60 * 60 * 24,
     },
