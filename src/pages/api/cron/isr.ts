@@ -9,9 +9,13 @@ export const GET: APIRoute = async ({ request }: APIContext) => {
 
   try {
     for (const path of ENDPOINTS) {
-      await fetch(`${new URL(request.url).origin}${path}`, {
+      console.log(`${new URL(request.url).origin}${path}`);
+
+      const response = await fetch(`${new URL(request.url).origin}${path}`, {
         headers: { "x-prerender-revalidate": bypassToken },
       });
+
+      console.log(response.status);
     }
   } catch (err) {
     return new Response("Error refreshing route", { status: 500 });
