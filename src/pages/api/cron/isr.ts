@@ -15,7 +15,9 @@ export const GET: APIRoute = async ({ request }: APIContext) => {
         headers: { "x-prerender-revalidate": bypassToken },
       });
 
-      console.log(response.status);
+      if (!response.ok) {
+        return response;
+      }
     }
   } catch (err) {
     return new Response("Error refreshing route", { status: 500 });
