@@ -12,7 +12,7 @@ export const GET: APIRoute = async ({ request }: APIContext) => {
       console.log(`${new URL(request.url).origin}${path}`);
 
       const response = await fetch(`${new URL(request.url).origin}${path}`, {
-        headers: { "x-prerender-revalidate": bypassToken },
+        headers: { "x-prerender-revalidate": bypassToken, ...request.headers },
       });
 
       if (!response.ok) {
