@@ -1,4 +1,4 @@
-name: ISR
+name: Trigger ISR
 
 on:
   workflow_dispatch:
@@ -10,6 +10,7 @@ on:
       path:
         type: choice
         default: cv.pdf
+        description: Path
         options:
           - cv.pdf
           - about
@@ -17,9 +18,8 @@ on:
 
 jobs:
   trigger_isr:
-    runs-on: ubuntu-latest
-    name: Trigger ISR revalidation for ${{ format('{0}/{1}', inputs.base_url, inputs.path) }}
-    steps:
-      - name: Run curl
-        run: |
-          curl --header "x-prerender-revalidate: ${{ secrets.ISR_BYPASS_TOKEN }}" ${{ format('{0}/{1}', inputs.base_url, inputs.path) }}
+    uses: ./.github/workflows/call.isr.yml
+    with:
+      base_url: ${{ inputs.base_url }}
+      path: ${{ inputs.path }}
+    secrets: inherit

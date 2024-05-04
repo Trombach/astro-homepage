@@ -1,0 +1,27 @@
+name: ISR
+
+on:
+  workflow_call:
+    inputs:
+      base_url:
+        type: string
+        default: https://lukastrombach.dev
+        description: Base URL
+      path:
+        type: string
+        default: cv.pdf
+        description: Path to regenerate
+        required: true
+    secrets:
+      ISR_BYPASS_TOKEN:
+        required: true
+        description: Bypass token
+
+jobs:
+  isr:
+    runs-on: ubuntu-latest
+    name: Run ISR revalidation for ${{ format('{0}/{1}', inputs.base_url, inputs.path) }}
+    steps:
+      - name: Run curl
+        run: |
+          curl --header "x-prerender-revalidate: ${{ secrets.ISR_BYPASS_TOKEN }}" ${{ format('{0}/{1}', inputs.base_url, inputs.path) }}
