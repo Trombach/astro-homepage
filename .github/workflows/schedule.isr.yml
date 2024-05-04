@@ -1,0 +1,16 @@
+name: Scheduled ISR
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+
+jobs:
+  schedule_isr:
+    strategy:
+      matrix:
+        path: [about, cv.pdf]
+    uses: ./.github/workflows/call.isr.yml
+    with:
+      base_url: https://lukastrombach.dev
+      path: ${{ matrix.path }}
+    secrets: inherit
