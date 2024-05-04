@@ -10,6 +10,7 @@
 
 [![Checks](https://github.com/Trombach/astro-homepage/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/Trombach/astro-homepage/actions/workflows/pr-checks.yml)
 ![Staging](https://img.shields.io/github/deployments/Trombach/astro-homepage/Production?logo=vercel&label=Staging)
+[![Scheduled ISR](https://github.com/Trombach/astro-homepage/actions/workflows/schedule.isr.yml/badge.svg?event=schedule)](https://github.com/Trombach/astro-homepage/actions/workflows/schedule.isr.yml)
 
 </div>
 
