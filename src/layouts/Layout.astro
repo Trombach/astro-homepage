@@ -23,6 +23,8 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
 
+    <slot name="preload" />
+
     <slot name="seo">
       <SEO {title} {description} />
     </slot>
