@@ -2,13 +2,40 @@
 import AboutMe from "@components/About/AboutMe.astro";
 import Contributions from "@components/About/Contributions.astro";
 import Tech from "@components/About/Tech.astro";
+import { getImage } from "astro:assets";
+import { getEntry } from "astro:content";
 import Layout from "src/layouts/Layout.astro";
 
 // opt in to SSR
 export const prerender = false;
+
+// workaround for getting image preload
+// Astro currently doesn't have a "preload" option in their Image component
+// RFC: https://github.com/withastro/roadmap/discussions/382
+const {
+  data: { person },
+} = await getEntry("about", "about-me");
+const {
+  data: { avatar },
+} = await getEntry(person);
+
+let src;
+if (avatar) {
+  src = (
+    await getImage({
+      src: avatar,
+      alt: "Lukas",
+      widths: [96, 128, 256],
+      sizes: `(max-width: 360px) 96px, (max-width: 480px) 128px, 256px`,
+      loading: "eager",
+    })
+  ).src;
+}
 ---
 
 <Layout title="About Me">
+  {src && <link slot="preload" as="image" href={src} />}
+
   <AboutMe />
   <Tech />
   <Contributions />
