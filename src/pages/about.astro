@@ -19,22 +19,30 @@ const {
   data: { avatar },
 } = await getEntry(person);
 
-let src;
+let img;
 if (avatar) {
-  src = (
-    await getImage({
-      src: avatar,
-      alt: "Lukas",
-      widths: [96, 128, 256],
-      sizes: `(max-width: 360px) 96px, (max-width: 480px) 128px, 256px`,
-      loading: "eager",
-    })
-  ).src;
+  img = await getImage({
+    src: avatar,
+    alt: "Lukas",
+    widths: [96, 128, 256],
+    sizes: "(max-width: 360px) 96px, (max-width: 480px) 128px, 256px",
+    loading: "eager",
+  });
 }
 ---
 
 <Layout title="About Me">
-  {src && <link slot="preload" as="image" href={src} />}
+  {
+    img && (
+      <link
+        slot="preload"
+        as="image"
+        href={img.src}
+        imagesrcset={img.srcSet.attribute}
+        imagesizes="(max-width: 360px) 96px, (max-width: 480px) 128px, 256px"
+      />
+    )
+  }
 
   <AboutMe />
   <Tech />
