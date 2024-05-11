@@ -1,0 +1,78 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { actions, isInputError } from "astro:actions";
+
+type AllowedTags = "input" | "textarea";
+
+type FormFields = Array<
+  { label: string } & {
+    [Key in AllowedTags]: { tag: Key; attributes?: HTMLAttributes<Key> };
+  }[AllowedTags]
+>;
+
+const emailRegExp =
+  /(([^<>\(\)\[\]\\.,;:\s@"]+(\.[^<>\(\)\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/ // eslint-disable-line no-useless-escape
+    .source;
+
+const formFields = [
+  {
+    label: "Name",
+    tag: "input",
+    attributes: {
+      placeholder: "Enter your name",
+      type: "text",
+      name: "name",
+      id: "form-name",
+      required: true,
+    },
+  },
+  {
+    label: "Email",
+    tag: "input",
+    attributes: {
+      placeholder: "Enter your email",
+      type: "email",
+      name: "email",
+      id: "form-email",
+      required: true,
+      pattern: emailRegExp,
+    },
+  },
+  {
+    label: "Message",
+    tag: "textarea",
+    attributes: {
+      placeholder: "Enter your message",
+      rows: 5,
+      name: "message",
+      id: "form-email",
+      required: true,
+    },
+  },
+] as const satisfies FormFields;
+
+const response = Astro.getActionResult(actions.contact);
+---
+
+{
+  formFields.map(({ label, tag: Tag, attributes }) => (
+    <label for={attributes.id} class="flex flex-col gap-2">
+      <span class="block text-sm font-medium leading-6">{label}</span>
+      <Tag
+        {...attributes}
+        class:list={[
+          "rounded-lg border bg-background px-3 py-2 placeholder-slate-400 shadow-sm",
+          "focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary",
+          "invalid:border-destructive invalid:text-destructive-foreground",
+          "focus:invalid:border-destructive focus:invalid:ring-destructive",
+          "invalid:placeholder-shown:border-border",
+        ]}
+      />
+      {response?.error &&
+        isInputError(response.error) &&
+        response.error.fields[attributes.name]?.map((error) => (
+          <p class="text-destructive">{error}</p>
+        ))}
+    </label>
+  ))
+}

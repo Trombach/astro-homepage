@@ -56,4 +56,7 @@ export default defineConfig({
     },
   }),
   site: "https://www.lukastrombach.dev",
+  experimental: {
+    actions: true,
+  },
 });
