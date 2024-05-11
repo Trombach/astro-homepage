@@ -1,11 +1,7 @@
-/* eslint-disable @typescript-eslint/triple-slash-reference */
 /// <reference path="../.astro/types.d.ts" />
 /// <reference path="../.astro/actions.d.ts" />
-/* eslint-enable @typescript-eslint/triple-slash-reference */
 /// <reference types="astro/client" />
 /// <reference types="svelte-gestures" />
-
-/* global astroHTML */
 
 interface ImportMetaEnv {
   GH_TOKEN: string;
@@ -16,7 +12,6 @@ interface ImportMetaEnv {
   GOOGLE_API_KEY?: string;
 }
 
-// eslint-disable-next-line no-redeclare, no-unused-vars
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
@@ -24,7 +19,6 @@ interface ImportMeta {
 // Workaround for icon type checking
 declare module "icons:astro/*" {
   const component: (
-    // eslint-disable-next-line no-unused-vars
     props: astroHTML.JSX.SVGAttributes,
   ) => astroHTML.JSX.Element;
   export default component;
