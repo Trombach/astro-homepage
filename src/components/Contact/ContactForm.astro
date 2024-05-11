@@ -1,0 +1,48 @@
+---
+import AppLink from "@components/AppLink.astro";
+import H1 from "@components/H1.astro";
+import SendEmailResponse from "@components/SendEmailResponse.astro";
+import { getActionProps } from "astro/actions/runtime/virtual/shared.js";
+import { actions } from "astro:actions";
+import PaperPlane from "icons:astro/heroicons/paper-airplane";
+import FormFields from "./FormFields.astro";
+---
+
+<form
+  id="contact-form"
+  transition:name="contact-form"
+  method="POST"
+  class="mx-auto w-full space-y-12 rounded-xl border bg-background p-12 md:w-[600px] lg:max-w-screen-lg"
+>
+  <input {...getActionProps(actions.contact)} />
+  <H1 title="Send Me a Message" />
+
+  <SendEmailResponse />
+
+  <FormFields />
+
+  <AppLink id="submit-message" as="button" type="submit" disabled>
+    Send <PaperPlane />
+  </AppLink>
+</form>
+
+<script>
+  import { actions } from "astro:actions";
+
+  const form = document.getElementById("contact-form");
+  const button = document.getElementById("submit-message");
+
+  if (form instanceof HTMLFormElement && button instanceof HTMLButtonElement) {
+    form.addEventListener(
+      "input",
+      () => (button.disabled = !form.checkValidity()),
+    );
+
+    form.addEventListener("submit", async (event) => {
+      if (event.target instanceof HTMLFormElement) {
+        const formData = new FormData(event.target);
+        await actions.contact(formData);
+      }
+    });
+  }
+</script>
