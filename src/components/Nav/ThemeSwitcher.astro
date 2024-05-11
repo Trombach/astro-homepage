@@ -1,16 +1,31 @@
 ---
+import DesktopIcon from "icons:astro/heroicons/computer-desktop-16-solid";
+import MoonIcon from "icons:astro/heroicons/moon-16-solid";
+import SunIcon from "icons:astro/heroicons/sun-16-solid";
 import { capitalize } from "radash";
 
-type Theme = "auto" | "dark" | "light";
+export type Theme = "auto" | "dark" | "light";
 
 const options = ["auto", "dark", "light"] as const satisfies Theme[];
 ---
 
-<label for="theme-switcher">
+<label for="theme-switcher" class="relative items-center gap-1">
   <span class="sr-only">theme switcher</span>
+  <DesktopIcon
+    id="desktop-theme-icon"
+    class="absolute left-1 top-1/2 size-5 -translate-y-1/2"
+  />
+  <SunIcon
+    id="sun-theme-icon"
+    class="absolute left-1 top-1/2 hidden size-5 -translate-y-1/2"
+  />
+  <MoonIcon
+    id="moon-theme-icon"
+    class="absolute left-1 top-1/2 hidden size-5 -translate-y-1/2"
+  />
   <select
     id="theme-switcher"
-    class="appearance-none rounded-lg border-0 bg-transparent font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-current"
+    class="appearance-none rounded-lg border-0 bg-transparent pl-7 font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-current"
   >
     {
       options.map((option) => (
