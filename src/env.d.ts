@@ -1,6 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference path="../.astro/actions.d.ts" />
+/* eslint-disable @typescript-eslint/triple-slash-reference */
 /// <reference path="../.astro/types.d.ts" />
+/// <reference path="../.astro/actions.d.ts" />
+/* eslint-enable @typescript-eslint/triple-slash-reference */
 /// <reference types="astro/client" />
 /// <reference types="svelte-gestures" />
 
