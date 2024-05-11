@@ -10,7 +10,7 @@ module.exports = {
     "plugin:astro/recommended",
     "plugin:svelte/recommended",
   ],
-  ignorePatterns: ["dist", ".vercel"],
+  ignorePatterns: ["dist", ".vercel", "*.d.ts"],
   overrides: [
     {
       // Define the configuration for `.astro` file.
