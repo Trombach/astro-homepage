@@ -1,25 +1,22 @@
 ---
-import type sendEmail from "@utils/contact";
+import { actions, isInputError } from "astro:actions";
 
-type Props = {
-  response?: Awaited<ReturnType<typeof sendEmail>> | undefined;
-};
-
-const { response } = Astro.props;
+const response = Astro.getActionResult(actions.contact);
 ---
 
 {
-  response && (
-    <div
+  response && (response.data || !isInputError(response.error)) && (
+    <p
       class:list={[
         "rounded-xl border-2 p-6",
-        response.success && "border-green-800 text-green-800",
-        !response.success && "border-destructive text-destructive",
+        response.data?.success && "border-green-800 text-green-800",
+        response.error && "border-destructive text-destructive",
       ]}
     >
-      {response.success
-        ? "Your message has been sent!"
-        : `An error occurred: ${response.message}`}
-    </div>
+      {response.data && response.data.success && "Your message has been sent!"}
+      {response.error &&
+        !isInputError(response.error) &&
+        `Error sending message: ${response.error.message}`}
+    </p>
   )
 }
