@@ -27,8 +27,6 @@ import FormFields from "./FormFields.astro";
 </form>
 
 <script>
-  import { actions } from "astro:actions";
-
   const form = document.getElementById("contact-form");
   const button = document.getElementById("submit-message");
 
@@ -37,12 +35,5 @@ import FormFields from "./FormFields.astro";
       "input",
       () => (button.disabled = !form.checkValidity()),
     );
-
-    form.addEventListener("submit", async (event) => {
-      if (event.target instanceof HTMLFormElement) {
-        const formData = new FormData(event.target);
-        await actions.contact(formData);
-      }
-    });
   }
 </script>
