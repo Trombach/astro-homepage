@@ -1,7 +1,6 @@
 /* eslint-env node */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const defaultTheme = require("tailwindcss/defaultTheme");
 const typography = require("@tailwindcss/typography");
 const containerQueries = require("@tailwindcss/container-queries");
 const forms = require("@tailwindcss/forms");
@@ -19,8 +18,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
-        mono: ["JetBrains Mono Variable", ...defaultTheme.fontFamily.mono],
+        sans: ["var(--font-inter)"],
+        mono: ["var(--font-jet)"],
       },
       borderRadius: {
         "4xl": "2rem",

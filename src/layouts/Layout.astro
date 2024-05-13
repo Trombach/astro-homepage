@@ -2,9 +2,8 @@
 import Navbar from "@components/Nav/Navbar.astro";
 import ThemeProvider from "@components/Nav/ThemeProvider.astro";
 import SEO from "@components/SEO.astro";
-import "@fontsource-variable/inter";
-import "@fontsource-variable/jetbrains-mono";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import { AstroFont } from "astro-font";
 import { ViewTransitions } from "astro:transitions";
 import Background from "./Background.astro";
 
@@ -61,6 +60,28 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <AstroFont
+      config={[
+        {
+          src: [],
+          name: "Inter",
+          preload: false,
+          display: "swap",
+          fallback: "sans-serif",
+          cssVariable: "font-inter",
+          googleFontsURL: "https://fonts.googleapis.com/css2?family=Inter:wght@100..900",
+        },
+        {
+          src: [],
+          name: "Jet",
+          preload: false,
+          display: "swap",
+          fallback: "monospace",
+          cssVariable: "font-jet",
+          googleFontsURL: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800",
+        },
+      ]}
+    />
     <ViewTransitions />
     <SpeedInsights />
     <ThemeProvider />
