@@ -3,6 +3,7 @@ import Navbar from "@components/Nav/Navbar.astro";
 import ThemeProvider from "@components/Nav/ThemeProvider.astro";
 import SEO from "@components/SEO.astro";
 import "@fontsource-variable/inter";
+import InterWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import "@fontsource-variable/jetbrains-mono";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import { ViewTransitions } from "astro:transitions";
@@ -24,6 +25,13 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <meta name="viewport" content="width=device-width" />
 
     <slot name="preload" />
+    <link
+      rel="preload"
+      as="font"
+      href={InterWoff2}
+      type="font/woff2"
+      crossorigin
+    />
 
     <slot name="seo">
       <SEO {title} {description} />
