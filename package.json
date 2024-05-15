@@ -19,7 +19,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.6.0",
+    "@astrojs/check": "^0.7.0",
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/react": "^3.3.4",
     "@astrojs/sitemap": "^3.1.4",
@@ -35,7 +35,7 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/og": "^0.6.2",
     "@vercel/speed-insights": "^1.0.10",
-    "astro": "^4.8.2",
+    "astro": "^4.8.4",
     "clsx": "^2.1.1",
     "google-auth-library": "^9.9.0",
     "googleapis": "^137.1.0",
