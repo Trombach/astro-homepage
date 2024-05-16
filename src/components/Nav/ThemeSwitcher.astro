@@ -9,7 +9,10 @@ export type Theme = "auto" | "dark" | "light";
 const options = ["auto", "dark", "light"] as const satisfies Theme[];
 ---
 
-<label for="theme-switcher" class="relative items-center gap-1">
+<label
+  for="theme-switcher"
+  class="relative items-center gap-1 py-3 lg:ml-auto lg:py-2"
+>
   <span class="sr-only">theme switcher</span>
   <DesktopIcon
     id="desktop-theme-icon"
