@@ -59,6 +59,9 @@ importers:
       astro:
         specifier: ^4.8.4
         version: 4.8.4(@types/node@20.12.7)(typescript@5.4.5)
+      astro-vtbot:
+        specifier: ^1.7.17
+        version: 1.7.17
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1670,6 +1673,9 @@ packages:
   astro-eslint-parser@1.0.2:
     resolution: {integrity: sha512-8hJaCuqxObShWl2wEsnASqh/DbQ2O+S66m0Q3ctJlzBPEQ4pfGwwama3FCjZO3GDLQsjvn1T0v93Vxyu/+5fGw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  astro-vtbot@1.7.17:
+    resolution: {integrity: sha512-DWArck5gK03xXsm7weVFYBVA09Z0WFhyOZIf/Rk/uDQPp4pqIQYadZdE9cnA7gcfyoYSNJIwexJAx7tmC8x3zg==}
 
   astro@4.8.4:
     resolution: {integrity: sha512-3UExI/Pq47tvdSmYJTDkoyuygIibO+293MBkwc5iUzK5Cu/U4H7P3LwTyP8Gp/wQX+2zBEUifEb4oNO1HfUn2g==}
@@ -6730,6 +6736,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
+
+  astro-vtbot@1.7.17: {}
 
   astro@4.8.4(@types/node@20.12.7)(typescript@5.4.5):
     dependencies:
