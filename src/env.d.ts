@@ -8,8 +8,7 @@ interface ImportMetaEnv {
   VERCEL_ENV?: "production" | "preview" | "development";
   VERCEL_URL?: string;
   RESEND_TOKEN?: string;
-  CV_FILE_ID?: string;
-  GOOGLE_API_KEY?: string;
+  CV_FILE_URL?: string;
 }
 
 interface ImportMeta {
