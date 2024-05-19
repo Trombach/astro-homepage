@@ -8,6 +8,7 @@ interface ImportMetaEnv {
   VERCEL_ENV?: "production" | "preview" | "development";
   VERCEL_URL?: string;
   RESEND_TOKEN?: string;
+  ISR_BYPASS_TOKEN?: string;
   CV_FILE_URL?: string;
 }
 
