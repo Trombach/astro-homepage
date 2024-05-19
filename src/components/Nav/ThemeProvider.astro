@@ -11,6 +11,8 @@
         } else {
           doc.documentElement.classList.remove("dark");
         }
+
+        swapThemeIcon(doc);
       },
       getTheme: () => localStorage.getItem("theme") || "auto",
       setTheme: (theme) => {
@@ -28,5 +30,21 @@
         }
       },
     };
+  }
+
+  function swapThemeIcon(doc = document) {
+    const iconMap = new Map([
+      ["auto", "desktop-theme-icon"],
+      ["dark", "moon-theme-icon"],
+      ["light", "sun-theme-icon"],
+    ]);
+
+    const theme = localStorage.getItem("theme") || "auto";
+
+    doc
+      .querySelector("[id$=-theme-icon]:not(.hidden)")
+      ?.classList.toggle("hidden");
+
+    doc.querySelector(`[id=${iconMap.get(theme)}]`)?.classList.toggle("hidden");
   }
 </script>
