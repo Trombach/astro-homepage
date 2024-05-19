@@ -36,6 +36,7 @@
     "@vercel/og": "^0.6.2",
     "@vercel/speed-insights": "^1.0.10",
     "astro": "^4.8.6",
+    "astro-vtbot": "^1.7.17",
     "clsx": "^2.1.1",
     "google-auth-library": "^9.10.0",
     "googleapis": "^137.1.0",
