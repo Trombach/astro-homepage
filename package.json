@@ -7,7 +7,6 @@
     "url": "https://github.com/Trombach/astro-homepage"
   },
   "scripts": {
-    "preinstall": "npx --yes only-allow pnpm",
     "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check && svelte-check",
