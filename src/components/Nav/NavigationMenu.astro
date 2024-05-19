@@ -1,5 +1,6 @@
 ---
 import NavLink from "./NavLink.astro";
+import ThemeSwitcher from "./ThemeSwitcher.astro";
 
 const menuItems = [
   { title: "Home", href: "/" },
@@ -13,11 +14,13 @@ const menuItems = [
   id="primary"
   class:list={[
     "max-h-0 basis-full overflow-y-hidden transition-all duration-500",
-    "lg:max-h-max lg:basis-auto lg:flex-row lg:overflow-y-visible",
-    "lg:order-1",
+    "lg:max-h-max lg:basis-auto lg:overflow-y-visible",
+    "flex flex-grow flex-col lg:order-1 lg:flex-row",
   ]}
 >
-  <menu class="flex flex-col lg:flex-row lg:items-center lg:gap-10">
+  <menu
+    class="flex flex-col border-b lg:flex-row lg:items-center lg:gap-10 lg:border-b-0"
+  >
     {
       menuItems.map((props) => (
         <li class="py-3 lg:py-2">
@@ -26,4 +29,5 @@ const menuItems = [
       ))
     }
   </menu>
+  <ThemeSwitcher />
 </nav>

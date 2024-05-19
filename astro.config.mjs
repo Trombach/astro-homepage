@@ -9,9 +9,19 @@ import addsToHead from "./adds-to-head-integration";
 import remarkGithub from "remark-github";
 import sitemap from "@astrojs/sitemap";
 
+import vtbot from "astro-vtbot";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), svelte(), mdx(), react(), addsToHead(), sitemap()],
+  integrations: [
+    tailwind(),
+    svelte(),
+    mdx(),
+    react(),
+    addsToHead(),
+    sitemap(),
+    vtbot(),
+  ],
   image: {
     domains: ["placehold.co"],
   },
