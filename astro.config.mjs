@@ -9,54 +9,50 @@ import addsToHead from "./adds-to-head-integration";
 import remarkGithub from "remark-github";
 import sitemap from "@astrojs/sitemap";
 
+import vtbot from "astro-vtbot";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), svelte(), mdx(), react(), addsToHead(), sitemap()],
+  integrations: [tailwind(), svelte(), mdx(), react(), addsToHead(), sitemap(), vtbot()],
   image: {
-    domains: ["placehold.co"],
+    domains: ["placehold.co"]
   },
   markdown: {
-    remarkPlugins: [remarkGithub],
+    remarkPlugins: [remarkGithub]
   },
   prefetch: {
-    prefetchAll: true,
+    prefetchAll: true
   },
   vite: {
-    plugins: [
-      Icons({
-        compiler: "svelte",
-      }),
-      Icons({
-        compiler: "astro",
-      }),
-    ],
+    plugins: [Icons({
+      compiler: "svelte"
+    }), Icons({
+      compiler: "astro"
+    })],
     resolve: {
-      alias: [
-        {
-          find: "icons:svelte",
-          replacement: "~icons",
-        },
-        {
-          find: "icons:astro",
-          replacement: "~icons",
-        },
-      ],
-    },
+      alias: [{
+        find: "icons:svelte",
+        replacement: "~icons"
+      }, {
+        find: "icons:astro",
+        replacement: "~icons"
+      }]
+    }
   },
   output: "hybrid",
   adapter: vercel({
     imageService: false,
     webAnalytics: {
-      enabled: true,
+      enabled: true
     },
     isr: {
       bypassToken: import.meta.env.ISR_BYPASS_TOKEN,
       // caches all pages on first request and saves for 1 day
-      expiration: 60 * 60 * 24,
-    },
+      expiration: 60 * 60 * 24
+    }
   }),
   site: "https://www.lukastrombach.dev",
   experimental: {
-    actions: true,
-  },
+    actions: true
+  }
 });
