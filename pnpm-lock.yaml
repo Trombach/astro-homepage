@@ -60,8 +60,8 @@ importers:
         specifier: ^4.8.6
         version: 4.8.6(@types/node@20.12.7)(typescript@5.4.5)
       astro-vtbot:
-        specifier: ^1.7.17
-        version: 1.7.17
+        specifier: ^1.7.18
+        version: 1.7.18
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1664,8 +1664,8 @@ packages:
     resolution: {integrity: sha512-8hJaCuqxObShWl2wEsnASqh/DbQ2O+S66m0Q3ctJlzBPEQ4pfGwwama3FCjZO3GDLQsjvn1T0v93Vxyu/+5fGw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro-vtbot@1.7.17:
-    resolution: {integrity: sha512-DWArck5gK03xXsm7weVFYBVA09Z0WFhyOZIf/Rk/uDQPp4pqIQYadZdE9cnA7gcfyoYSNJIwexJAx7tmC8x3zg==}
+  astro-vtbot@1.7.18:
+    resolution: {integrity: sha512-ktW6aCblEh4sR6HGrTAjGv6gC61TRiOls7cqFjflTcvidQ1TC6lN/KmZkkUZOry9MgyPGRrHBEwK0NXfUNh+ZQ==}
 
   astro@4.8.6:
     resolution: {integrity: sha512-psHIfK+e+bMPhRwghV9yCGH/uc1jvY4DHmDZdoEepax9yA7kzYH0wt3dpkqlcrO2zxl5jzSC3DmqZfkD6wnW9A==}
@@ -6661,7 +6661,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro-vtbot@1.7.17: {}
+  astro-vtbot@1.7.18: {}
 
   astro@4.8.6(@types/node@20.12.7)(typescript@5.4.5):
     dependencies:

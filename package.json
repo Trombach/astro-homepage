@@ -35,7 +35,7 @@
     "@vercel/og": "^0.6.2",
     "@vercel/speed-insights": "^1.0.10",
     "astro": "^4.8.6",
-    "astro-vtbot": "^1.7.17",
+    "astro-vtbot": "^1.7.18",
     "clsx": "^2.1.1",
     "radash": "^12.1.0",
     "react": "^18.3.1",
