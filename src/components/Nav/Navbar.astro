@@ -2,6 +2,7 @@
 import MenuButton from "@components/MenuButton.svelte";
 import Links from "./Links.astro";
 import NavigationMenu from "./NavigationMenu.astro";
+import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
 <header
@@ -15,6 +16,17 @@ import NavigationMenu from "./NavigationMenu.astro";
 
     <hr class="m-0 h-0 w-0 basis-full border-0 lg:hidden lg:basis-0" />
 
-    <NavigationMenu />
+    <div
+      id="menu-container"
+      class:list={[
+        "flex flex-grow flex-col justify-between lg:order-1 lg:flex-row lg:items-center",
+        "max-h-0 basis-full overflow-y-hidden transition-[max-height] duration-500",
+        "lg:max-h-max lg:basis-auto lg:overflow-y-visible",
+        "divide-y lg:divide-none",
+      ]}
+    >
+      <NavigationMenu />
+      <ThemeSwitcher transition:persist transition:animate="none" />
+    </div>
   </div>
 </header>
