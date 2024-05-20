@@ -6,10 +6,10 @@ feature:
   - head-branch: "^feature/"
 
 enhancement:
-  - head-branch: 
-     - "^optimisation/"
-     - "^improvement/"
-     - "^enhancement/"
+  - head-branch:
+      - "^optimisation/"
+      - "^improvement/"
+      - "^enhancement/"
 
 hotfix:
   - head-branch: "^hotfix/"
