@@ -1,11 +1,15 @@
 release:
   - head-branch: "^release/"
+  - head-branch: "^changeset-release/main"
 
 feature:
   - head-branch: "^feature/"
 
-optimisation:
-  - head-branch: "^optimisation/"
+enhancement:
+  - head-branch: 
+     - "^optimisation/"
+     - "^improvement/"
+     - "^enhancement/"
 
 hotfix:
   - head-branch: "^hotfix/"
