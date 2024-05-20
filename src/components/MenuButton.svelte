@@ -4,16 +4,16 @@
   import { onMount } from "svelte";
 
   let showCloseIcon = false;
-  let nav: HTMLElement | null;
+  let menu: HTMLElement | null;
 
-  onMount(() => (nav = document.querySelector("nav#primary")));
+  onMount(() => (menu = document.querySelector("#menu-container")));
 
   const toggle = () => {
     showCloseIcon = !showCloseIcon;
-    if (nav?.classList.contains("max-h-96")) {
-      nav.classList.replace("max-h-96", "max-h-0");
+    if (menu?.classList.contains("max-h-96")) {
+      menu.classList.replace("max-h-96", "max-h-0");
     } else {
-      nav?.classList.replace("max-h-0", "max-h-96");
+      menu?.classList.replace("max-h-0", "max-h-96");
     }
   };
 </script>
