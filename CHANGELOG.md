@@ -1,5 +1,13 @@
 # homepage
 
+## 1.3.2
+
+### Patch Changes
+
+- f10e75c: fix responsive background image sizing
+- efed333: improve contact form layout
+- d8297e8: fix them switcher moving across the navbar on page nav
+
 ## 1.3.1
 
 ### Patch Changes
