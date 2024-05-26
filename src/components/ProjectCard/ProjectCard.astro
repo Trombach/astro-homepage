@@ -28,11 +28,14 @@ const {
 ---
 
 <li
-  class="group max-w-[600px] overflow-clip rounded-xl border bg-card text-card-foreground"
+  class:list={[
+    "group max-w-[600px] overflow-clip rounded-xl border bg-card text-card-foreground",
+    "transition-colors duration-300 hover:bg-primary/5",
+  ]}
   transition:name={`border-${dash(title)}`}
 >
-  <a {href}>
-    {cover ? <CardImage {cover} {coverAlt} /> : null}
+  <a {href} class="flex h-full flex-col">
+    {cover && <CardImage {cover} {coverAlt} />}
     <CardBody {title} {description} {tools} {tags} />
   </a>
 </li>
