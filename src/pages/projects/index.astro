@@ -14,7 +14,7 @@ const sortOrder = [
 ---
 
 <Layout title="My Projects">
-  <ul class="flex max-w-[77ch] flex-col gap-10 px-5 py-10 lg:px-0">
+  <ul class="flex flex-col gap-10 px-5 py-10 lg:grid lg:grid-cols-2">
     {
       projects
         .sort((a, b) => sortOrder.indexOf(a.slug) - sortOrder.indexOf(b.slug))
