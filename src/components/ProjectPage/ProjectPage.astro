@@ -1,25 +1,16 @@
 ---
-/* global ImageMetadata */
-
 import AppLink from "@components/AppLink.astro";
+import type { ProjectProps } from "@shared/types";
 import LeftArrow from "icons:astro/heroicons/arrow-left";
-import type { Tool } from "src/content/config";
 import PageBody from "./PageBody.astro";
 
-type Props = {
-  title: string;
-  description: string;
-  tools?: Tool[] | undefined;
-  repoLink?: string | undefined;
-  cover?: ImageMetadata | undefined;
-  coverAlt?: string | undefined;
-};
+type Props = ProjectProps;
 
 const props = Astro.props;
 ---
 
 <div
-  class="mx-auto mb-3 max-w-full space-y-5 px-3 pt-3 lg:mb-5 lg:max-w-4xl lg:px-5 lg:pt-5"
+  class="mx-auto mb-3 max-w-full space-y-5 px-3 pt-3 lg:mb-5 lg:px-5 lg:pt-5"
 >
   <AppLink
     as="a"
