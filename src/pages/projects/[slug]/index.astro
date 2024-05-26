@@ -30,7 +30,5 @@ const { Content } = await render();
     imageURL={new URL(`${Astro.url.href.replace(/\/?$/, "/")}og.png`)}
   />
 
-  <ProjectPage {title} {...props}>
-    <Content slot="content" />
-  </ProjectPage>
+  <ProjectPage {title} {...props}><Content /></ProjectPage>
 </Layout>
