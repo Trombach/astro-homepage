@@ -14,7 +14,7 @@ const { title, headings, description, repoLink, tools, cover, coverAlt } =
 const dashedTitle = dash(title);
 ---
 
-<div class="flex max-w-screen-xl">
+<div class="flex max-w-screen-xl gap-10">
   <article
     class="prose mx-auto max-w-screen-lg rounded-xl border bg-background pb-5 lg:prose-lg dark:prose-invert"
     transition:name={`border-${dashedTitle}`}
@@ -71,7 +71,10 @@ const dashedTitle = dash(title);
     </div>
   </article>
 
-  <aside class="sticky top-[--header-height] self-start">
-    <Toc toc={generateToc(headings)} />
+  <aside class="sticky top-[calc(var(--header-height)+.5rem)] self-start">
+    <h1 class="mb-3 text-lg font-bold">On this page</h1>
+    <nav id="secondary">
+      <Toc toc={generateToc(headings)} />
+    </nav>
   </aside>
 </div>
