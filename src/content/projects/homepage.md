@@ -8,6 +8,8 @@ tags: ["Front-end", "Personal"]
 tools: ["Astro", "Svelte", "Typescript", "Tailwind", "Vercel"]
 ---
 
+<!--markdownlint-disable MD033 -->
+
 import AppLink from "@components/AppLink.astro";
 
 Welcome to my personal homepage! In this article you can learn about how this website was built, and what drove my
@@ -21,17 +23,13 @@ decision making.
 - takes advantage of `ViewTransitions` API for smoother page transitions
 - interactive and animated using Svelte transitions and CSS animations
 
-
 ## Why Astro?
 
 Astro is an opinionated open-source framework with the goal of building fast and cachable web pages. While it can be
 used to dynamically render content server-side or client-side, its default behaviour is to render static HTML pages.
 This simplifies prioritising loading speed and makes Astro one of the most capable and fastest static-site frameworks.
 
-<figure>
-  <>![Lighthouse score](../../images/lighthouse.png)</>
-  <figcaption>Lighthouse score for page load of my homepage on desktop.</figcaption>
-</figure>
+![Lighthouse score for page load of my homepage on desktop.](../../images/lighthouse.png)
 
 One of the most powerful features of Astro is the ability to use components written for other front-end frameworks such
 as Svelte or Vue. This hands an unprecedented amount of flexibility to developers to mix and match framework components
@@ -50,14 +48,14 @@ comes with some great utility functions for building smooth animations.
     Your browser does not suppoert videos.
   </video>
   <figcaption>
-    Animation on the landing page. Most animations are achieved with plain CSS transitions. The blur effect on the card 
+    Animation on the landing page. Most animations are achieved with plain CSS transitions. The blur effect on the card
     content is created using Sveltes `transition` libraries. You can view this animation on the <a href="/">Hero page</a>.
   </figcaption>
 </figure>
 
 Svelte also features a powerful reactivity model that is very easy to use. While it would have been possible to build
 reactive components with plain Astro code, Svelte brings some additional quality of life improvements to the table such
-as stores and reactive statements. 
+as stores and reactive statements.
 
 To me Svelte and Astro are a perfect match, combining a powerful reactive framework with an easy-to-use and powerful
 static-site generator.
