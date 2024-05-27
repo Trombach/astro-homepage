@@ -16,7 +16,7 @@ const dashedTitle = dash(title);
 
 <div class="flex max-w-screen-xl gap-10">
   <article
-    class="prose mx-auto max-w-screen-lg rounded-xl border bg-background pb-5 lg:prose-lg dark:prose-invert"
+    class="prose w-auto max-w-[calc(70ch+(theme(spacing.16)*2))] rounded-xl border bg-background pb-5 lg:prose-lg dark:prose-invert prose-p:text-justify"
     transition:name={`border-${dashedTitle}`}
   >
     {
@@ -33,7 +33,7 @@ const dashedTitle = dash(title);
       )
     }
 
-    <div class="p-5 pb-0 lg:p-12 lg:pb-0">
+    <div class="p-5 pb-0 lg:p-16 lg:pb-0">
       <header>
         <h1 {title} transition:name={dashedTitle}>{title}</h1>
         <p
@@ -71,7 +71,9 @@ const dashedTitle = dash(title);
     </div>
   </article>
 
-  <aside class="sticky top-[calc(var(--header-height)+.5rem)] self-start">
+  <aside
+    class="sticky top-[calc(var(--header-height)+.5rem)] min-w-[250px] grow self-start"
+  >
     <h1 class="mb-3 text-lg font-bold">On this page</h1>
     <nav id="secondary">
       <Toc toc={generateToc(headings)} />
