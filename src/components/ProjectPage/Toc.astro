@@ -8,15 +8,15 @@ type Props = {
 const { toc } = Astro.props;
 ---
 
-<menu class="mt-3 pl-5 text-sm">
+<menu class="mt-3 space-y-1 pl-5 text-sm">
   {
     toc.map(({ slug, text, children }) => {
       return (
         <>
-          <li class="leading-relaxed">
+          <li class="px-2 py-1 leading-tight">
             <a
               href={`#${slug}`}
-              class="block py-px text-muted-foreground hover:text-foreground"
+              class="inline-block text-muted-foreground hover:text-foreground"
             >
               {text}
             </a>
@@ -27,3 +27,34 @@ const { toc } = Astro.props;
     })
   }
 </menu>
+
+<script>
+  function setActiveHashLink() {
+    const tocNav = document.querySelector("nav#secondary") as HTMLElement;
+    tocNav.querySelectorAll("a").forEach((link) => {
+      if (link.hash === window.location.hash) {
+        link.setAttribute("data-current-url-heading", "");
+      } else {
+        link.removeAttribute("data-current-url-heading");
+      }
+    });
+  }
+
+  // initial
+  setActiveHashLink();
+
+  // when url hash changes
+  // use "popstate" since "hashchange" doesn't work with view transitions
+  // https://github.com/withastro/astro/issues/10249
+  window.addEventListener("popstate", setActiveHashLink);
+</script>
+
+<style>
+  a[data-current-heading] {
+    @apply text-foreground;
+  }
+
+  li:has(a[data-current-url-heading]) {
+    @apply rounded-lg border border-primary bg-primary/25;
+  }
+</style>
