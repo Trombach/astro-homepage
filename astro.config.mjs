@@ -8,6 +8,7 @@ import react from "@astrojs/react";
 import addsToHead from "./adds-to-head-integration";
 import remarkGithub from "remark-github";
 import sitemap from "@astrojs/sitemap";
+import rehypeFigure from "@microflash/rehype-figure";
 
 import vtbot from "astro-vtbot";
 
@@ -27,6 +28,7 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [remarkGithub],
+    rehypePlugins: [rehypeFigure],
   },
   prefetch: {
     prefetchAll: true,
