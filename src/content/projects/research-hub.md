@@ -1,11 +1,21 @@
 ---
 title: ResearchHub & HubGraph
 description: A content focussed website for researchers
-tags: ["Front-end"]
-tools: ["Angular", "Typescript", "Sass", "AWS Lambda", "Contentful", "elasticsearch"]
-repoLink: https://github.com/UoA-eResearch/hub-stack
-cover: ./hub-logo.png
-coverAlt: ResearchHub logo
+meta:
+  tags: ["Front-end"]
+  tools:
+    [
+      "Angular",
+      "Typescript",
+      "Sass",
+      "AWS Lambda",
+      "Contentful",
+      "elasticsearch",
+    ]
+  repoLink: https://github.com/UoA-eResearch/hub-stack
+cover:
+  image: ./hub-logo.png
+  alt: ResearchHub logo
 ---
 
 <!--markdownlint-disable MD033-->
@@ -34,7 +44,7 @@ many categories and sections the content model provided.
 I made further contributions to the search results page, for instance, I updated the result loading to use
 infinite scrolling instead of pagination using RXJS and `IntersectionObserver`.
 
-## Content Reporting & HubGraph
+## Data Analysis
 
 Contentful CMS allows content writers to create links between different pages. On the ResearchHub this is used to
 suggest other topics of interests to the visitor. This can result in a complex mesh like content structure representable
@@ -43,12 +53,16 @@ content is as fresh as possible. This problem isn't easily solvable with technol
 and updating content pages. However, a technical solution can assist content writers and managers to pinpoint areas that
 require attention.
 
+### Content Reporting
+
 To tackle these problems, I devised a [reporting
 system](https://github.com/UoA-eResearch/research-hub-contentful-reporting) that fetches every content page from
 Contentful and generates CSV files collecting information about the freshness of the content and its degree of
 connectivity. I achieved this using an AWS Lambda serverless function which periodically fetched content from Contentful
 using the GraphQL API and then uploaded the results to AWS S3 and Google Sheets. To make it easier for content managers
 to analyse and understand the data, a Google data studio dashboard was also created.
+
+### HubGraph
 
 The second function of the reporting lambda was to aid with visualising the graph structure of the content. I used the
 [force-graph](https://github.com/vasturiano/force-graph) library to visualise the data created by the reporting feature.

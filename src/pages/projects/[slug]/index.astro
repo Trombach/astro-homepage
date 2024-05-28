@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
 const {
   entry: {
-    data: { title, ...props },
+    data: { title, description, ...extraProps },
     render,
   },
 } = Astro.props;
@@ -22,15 +22,17 @@ const {
 const { Content, headings } = await render();
 ---
 
-<Layout {title} description={props.description}>
+<Layout {title} description={description}>
   <SEO
     slot="seo"
     {title}
-    description={props.description}
+    description={description}
     imageURL={new URL(`${Astro.url.href.replace(/\/?$/, "/")}og.png`)}
   />
 
-  <ProjectPage {title} {headings} {...props}><Content /></ProjectPage>
+  <ProjectPage {title} {headings} {description} {...extraProps}>
+    <Content />
+  </ProjectPage>
 </Layout>
 
 <script>
