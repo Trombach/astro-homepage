@@ -1,19 +1,21 @@
 ---
 title: Timing dashboard
 description: A timing dashboard written in Next.js
-cover: ./clock.svg
-coverAlt: Clock
-tools: ["Next.js", "Supabase", "Vercel", "Monday.com"]
-tags: ["Front-end"]
+meta:
+  tools: ["Next.js", "Supabase", "Vercel", "Monday.com"]
+  tags: ["Front-end"]
+cover: 
+  image: ./clock.svg
+  alt: Clock
 ---
 
 import { Image } from "astro:assets";
 import dashboard from "@images/dashboard.png";
 
-While working at [GCD](https://gcd.nz) I was often tasked with improving internal processes and building tools to help us with it. A big
-point of friction at the time was recording time for tasks under SLA agreements with our clients. We used
-[Monday](https://monday.com) for creating SLA tasks and [harvest](https://getharvest.com) for timing them, but those 2
-services did not integrate well with each other.
+While working at [GCD](https://gcd.nz) I was often tasked with improving internal processes and building tools to help
+us with it. A big point of friction at the time was recording time for tasks under SLA agreements with our clients. We
+used [Monday](https://monday.com) for creating SLA tasks and [harvest](https://getharvest.com) for timing them, but
+those 2 services did not integrate well with each other.
 
 To solve this problem I wrote a dashboard app in [Next.js 14](https://nextjs.org/), which combines data from both
 services and displays them in a tabular overview, similar to Monday's layout.
@@ -50,7 +52,7 @@ a line end. The second expression matches plain 10 digit numbers either surround
 start and end. Parsing the IDs in this way allowed us to retain the original functionality of the description field
 while being able to associate a task in harvest with an item on a Monday board.
 
-## React Server Components & Caching
+## React Server Components
 
 React server components make building performant web pages very easy as dynamic content can be streamed using `Suspense`
 boundaries. I tried to use this concept as much as possible, while also utilising Next.js's caching capabilities. For
@@ -64,6 +66,8 @@ from Monday, since each timing entry was costed at a different rate depending on
     Dashboard overview page. The green progress bars can only be rendered if data has been fetched and processed.
   </figcaption>
 </figure>
+
+## Data Caching
 
 With data caching and `React.cache` in Next.js it is relatively simple to fetch and calculate only once and then reuse
 the same function call at a fraction of the original cost at some point later during the server side render. Instead of

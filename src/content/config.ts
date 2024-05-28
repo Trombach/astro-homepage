@@ -65,25 +65,31 @@ const projectsCollection = defineCollection({
       .object({
         title: z.string(),
         description: z.string(),
-        repoLink: z.string().url().optional(),
-        coverAlt: z.string().optional(),
-        completed: z.coerce.date().optional(),
-        cover: image()
-          .optional()
-          .refine(
-            (img) =>
-              img?.width && img.format !== "svg" ? img.width >= 850 : true,
-            {
-              message: "Cover image must be at least 850 pixels wide!",
-            },
-          ),
-        tags: z.array(z.enum(tags)).max(4).optional(),
-        tools: z.array(z.enum(tools)).max(10).optional(),
+        meta: z
+          .object({
+            repoLink: z.string().url().optional(),
+            completed: z.coerce.date().optional(),
+            tags: z.array(z.enum(tags)).max(4).optional(),
+            tools: z.array(z.enum(tools)).max(10).optional(),
+          })
+          .optional(),
+        cover: z.object({
+          image: image()
+            .optional()
+            .refine(
+              (img) =>
+                img?.width && img.format !== "svg" ? img.width >= 850 : true,
+              {
+                message: "Cover image must be at least 850 pixels wide!",
+              },
+            ),
+          alt: z.string().optional(),
+        }),
       })
       .strict()
-      .refine(({ cover, coverAlt }) => {
-        if (cover !== undefined) {
-          return coverAlt !== undefined && coverAlt.length > 0;
+      .refine(({ cover }) => {
+        if (cover?.image !== undefined) {
+          return cover.alt !== undefined && cover.alt.length > 0;
         }
 
         return true;
