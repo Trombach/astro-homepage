@@ -9,8 +9,7 @@ import { dash } from "radash";
 
 type Props = ProjectProps;
 
-const { title, headings, description, repoLink, tools, cover, coverAlt } =
-  Astro.props;
+const { title, headings, description, meta, cover } = Astro.props;
 const dashedTitle = dash(title);
 ---
 
@@ -20,15 +19,15 @@ const dashedTitle = dash(title);
     transition:name={`border-${dashedTitle}`}
   >
     {
-      cover && (
+      cover && cover.image && cover.alt && (
         <Image
-          src={cover}
-          alt={coverAlt}
+          src={cover.image}
+          alt={cover.alt}
           widths={[240, 480, 850]}
           loading="eager"
           sizes={`(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px`}
           class="aspect-[21/9] w-full rounded-t-xl object-cover"
-          transition:name={cover.src}
+          transition:name={cover.image.src}
         />
       )
     }
@@ -45,16 +44,16 @@ const dashedTitle = dash(title);
       </header>
 
       {
-        (tools || repoLink) && (
+        (meta?.tools || meta?.repoLink) && (
           <div
             class:list={[
               "mb-10 flex items-center justify-between",
-              !tools && repoLink && "justify-end",
+              !meta.tools && meta.repoLink && "justify-end",
             ]}
           >
-            {tools && (
+            {meta.tools && (
               <div class="flex w-fit items-center gap-2 *:size-10 *:rounded-xl *:border *:p-2">
-                {tools.map((tool) => (
+                {meta.tools.map((tool) => (
                   <ToolIcon
                     transitionName={`${dashedTitle}-${tool}-logo`}
                     {tool}
@@ -62,7 +61,7 @@ const dashedTitle = dash(title);
                 ))}
               </div>
             )}
-            {repoLink && <GithubLink href={repoLink} />}
+            {meta.repoLink && <GithubLink href={meta.repoLink} />}
           </div>
         )
       }

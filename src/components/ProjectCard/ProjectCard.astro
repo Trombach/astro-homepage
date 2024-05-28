@@ -1,30 +1,14 @@
 ---
-/* global ImageMetadata */
-
+import type { CollectionEntry } from "astro:content";
 import { dash } from "radash";
-import type { Tool } from "src/content/config";
 import CardBody from "./CardBody.astro";
 import CardImage from "./CardImage.astro";
 
-type Props = {
-  title: string;
-  description: string;
+type Props = CollectionEntry<"projects">["data"] & {
   href: string;
-  cover?: ImageMetadata | undefined;
-  coverAlt?: string | undefined;
-  tools?: Tool[] | undefined;
-  tags?: string[] | undefined;
 };
 
-const {
-  href,
-  title,
-  description,
-  cover,
-  coverAlt = "",
-  tools,
-  tags,
-} = Astro.props;
+const { href, title, description, cover, meta } = Astro.props;
 ---
 
 <li
@@ -35,7 +19,11 @@ const {
   transition:name={`border-${dash(title)}`}
 >
   <a {href} class="flex h-full flex-col">
-    {cover && <CardImage {cover} {coverAlt} />}
-    <CardBody {title} {description} {tools} {tags} />
+    {
+      cover?.image && cover.alt && (
+        <CardImage image={cover.image} alt={cover.alt} />
+      )
+    }
+    <CardBody {title} {description} tools={meta?.tools} tags={meta?.tags} />
   </a>
 </li>

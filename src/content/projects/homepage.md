@@ -1,11 +1,13 @@
 ---
 title: My Homepage
 description: A website built with Astro and Svelte
-repoLink: https://github.com/Trombach/astro-homepage
-cover: ./homepage.png
-coverAlt: Homepage on different screen sizes
-tags: ["Front-end", "Personal"]
-tools: ["Astro", "Svelte", "Typescript", "Tailwind", "Vercel"]
+meta:
+  repoLink: https://github.com/Trombach/astro-homepage
+  tags: ["Front-end", "Personal"]
+  tools: ["Astro", "Svelte", "Typescript", "Tailwind", "Vercel"]
+cover:
+  image: ./homepage.png
+  alt: Homepage on different screen sizes
 ---
 
 <!--markdownlint-disable MD033 -->
