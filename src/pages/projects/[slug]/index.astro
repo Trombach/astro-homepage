@@ -32,3 +32,21 @@ const { Content, headings } = await render();
 
   <ProjectPage {title} {headings} {...props}><Content /></ProjectPage>
 </Layout>
+
+<script>
+  function scrollTo(hash: string) {
+    if (hash === "") return;
+
+    if (hash.startsWith("#")) {
+      hash = hash.replace("#", "");
+    }
+
+    document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  scrollTo(window.location.hash);
+
+  document.addEventListener("astro:page-load", () =>
+    scrollTo(window.location.hash),
+  );
+</script>
