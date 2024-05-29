@@ -12,8 +12,6 @@ cover:
 
 <!--markdownlint-disable MD033 -->
 
-import AppLink from "@components/AppLink.astro";
-
 Welcome to my personal homepage! In this article you can learn about how this website was built, and what drove my
 decision making.
 
