@@ -15,7 +15,10 @@ const dashedTitle = dash(title);
 
 <div class="flex max-w-screen-xl gap-10">
   <article
-    class="prose w-auto max-w-[calc(70ch+(theme(spacing.16)*2))] rounded-xl border bg-background pb-5 lg:prose-lg dark:prose-invert prose-p:text-justify"
+    class:list={[
+      "prose lg:prose-lg dark:prose-invert prose-p:hyphens-auto prose-p:break-words prose-p:text-justify",
+      "w-auto max-w-[calc(70ch+(theme(spacing.16)*2))] rounded-xl border bg-background pb-5 ",
+    ]}
     transition:name={`border-${dashedTitle}`}
   >
     {
