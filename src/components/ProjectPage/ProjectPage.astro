@@ -2,11 +2,12 @@
 import AppLink from "@components/AppLink.astro";
 import type { ProjectProps } from "@shared/types";
 import LeftArrow from "icons:astro/heroicons/arrow-left";
+import Aside from "./Aside.astro";
 import PageBody from "./PageBody.astro";
 
 type Props = ProjectProps;
 
-const props = Astro.props;
+const { headings, ...props } = Astro.props;
 ---
 
 <div
@@ -22,7 +23,11 @@ const props = Astro.props;
     <span>Back to Projects</span>
   </AppLink>
 
-  <PageBody {...props}>
-    <slot />
-  </PageBody>
+  <div class="flex max-w-screen-xl gap-10">
+    <PageBody {...props}>
+      <slot />
+    </PageBody>
+
+    <Aside {headings} />
+  </div>
 </div>
