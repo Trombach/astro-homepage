@@ -21,7 +21,8 @@ type Props = {
 
 <button
   popovertarget="sidenav"
-  class="fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] z-10 rounded-l-full bg-background py-2 pl-3 backdrop-blur transition-all supports-[backdrop-filter]:bg-muted/50 lg:hidden"
+  class="fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] z-10 rounded-l-full bg-background py-2 pl-3
+         backdrop-blur transition-all supports-[backdrop-filter]:bg-muted/75 lg:hidden"
 >
   <ListIcon class="size-8" />
 </button>
@@ -57,7 +58,7 @@ type Props = {
 <style>
   [popover] {
     inset: unset;
-    @apply fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] m-0 rounded-l-xl bg-muted backdrop-blur transition-transform supports-[backdrop-filter]:bg-muted/50;
+    @apply fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] m-0 rounded-l-xl bg-muted backdrop-blur transition-transform supports-[backdrop-filter]:bg-muted/75;
     transform: translateX(100%);
     transition:
       opacity 0.7s,
