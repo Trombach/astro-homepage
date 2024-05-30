@@ -1,84 +1,71 @@
 ---
 import GithubLink from "@components/GithubLink.astro";
-import Toc from "@components/Toc.astro";
 import ToolIcon from "@components/ToolIcon.astro";
 import type { ProjectProps } from "@shared/types";
-import generateToc from "@utils/generateToc";
 import { Image } from "astro:assets";
 import { dash } from "radash";
 
-type Props = ProjectProps;
+type Props = Omit<ProjectProps, "headings">;
 
-const { title, headings, description, meta, cover } = Astro.props;
+const { title, description, meta, cover } = Astro.props;
 const dashedTitle = dash(title);
 ---
 
-<div class="flex max-w-screen-xl gap-10">
-  <article
-    class:list={[
-      "prose lg:prose-lg dark:prose-invert prose-p:hyphens-auto prose-p:break-words prose-p:text-justify",
-      "w-auto max-w-[calc(70ch+(theme(spacing.16)*2))] rounded-xl border bg-background pb-5 ",
-    ]}
-    transition:name={`border-${dashedTitle}`}
-  >
+<article
+  class:list={[
+    "prose lg:prose-lg dark:prose-invert prose-p:hyphens-auto prose-p:break-words prose-p:text-justify",
+    "w-auto max-w-[calc(70ch+(theme(spacing.16)*2))] rounded-xl border bg-background pb-5 ",
+  ]}
+  transition:name={`border-${dashedTitle}`}
+>
+  {
+    cover && cover.image && cover.alt && (
+      <Image
+        src={cover.image}
+        alt={cover.alt}
+        widths={[240, 480, 850]}
+        loading="eager"
+        sizes={`(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px`}
+        class="aspect-[21/9] w-full rounded-t-xl object-cover"
+        transition:name={cover.image.src}
+      />
+    )
+  }
+
+  <div class="p-5 pb-0 lg:p-16 lg:pb-0">
+    <header>
+      <h1 {title} transition:name={dashedTitle}>{title}</h1>
+      <p
+        transition:name={`${dashedTitle}-description`}
+        class="not-prose -mt-8 mb-5 font-mono text-muted-foreground"
+      >
+        {description}
+      </p>
+    </header>
+
     {
-      cover && cover.image && cover.alt && (
-        <Image
-          src={cover.image}
-          alt={cover.alt}
-          widths={[240, 480, 850]}
-          loading="eager"
-          sizes={`(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px`}
-          class="aspect-[21/9] w-full rounded-t-xl object-cover"
-          transition:name={cover.image.src}
-        />
+      (meta?.tools || meta?.repoLink) && (
+        <div
+          class:list={[
+            "mb-10 flex items-center justify-between",
+            !meta.tools && meta.repoLink && "justify-end",
+          ]}
+        >
+          {meta.tools && (
+            <div class="flex w-fit items-center gap-2 *:size-10 *:rounded-xl *:border *:p-2">
+              {meta.tools.map((tool) => (
+                <ToolIcon
+                  transitionName={`${dashedTitle}-${tool}-logo`}
+                  {tool}
+                />
+              ))}
+            </div>
+          )}
+          {meta.repoLink && <GithubLink href={meta.repoLink} />}
+        </div>
       )
     }
 
-    <div class="p-5 pb-0 lg:p-16 lg:pb-0">
-      <header>
-        <h1 {title} transition:name={dashedTitle}>{title}</h1>
-        <p
-          transition:name={`${dashedTitle}-description`}
-          class="not-prose -mt-8 mb-5 font-mono text-muted-foreground"
-        >
-          {description}
-        </p>
-      </header>
-
-      {
-        (meta?.tools || meta?.repoLink) && (
-          <div
-            class:list={[
-              "mb-10 flex items-center justify-between",
-              !meta.tools && meta.repoLink && "justify-end",
-            ]}
-          >
-            {meta.tools && (
-              <div class="flex w-fit items-center gap-2 *:size-10 *:rounded-xl *:border *:p-2">
-                {meta.tools.map((tool) => (
-                  <ToolIcon
-                    transitionName={`${dashedTitle}-${tool}-logo`}
-                    {tool}
-                  />
-                ))}
-              </div>
-            )}
-            {meta.repoLink && <GithubLink href={meta.repoLink} />}
-          </div>
-        )
-      }
-
-      <slot />
-    </div>
-  </article>
-
-  <aside
-    class="sticky top-[calc(var(--header-height)+.5rem)] min-w-[250px] grow self-start"
-  >
-    <h1 class="mb-3 text-lg font-bold">On this page</h1>
-    <nav id="secondary">
-      <Toc toc={generateToc(headings)} />
-    </nav>
-  </aside>
-</div>
+    <slot />
+  </div>
+</article>
