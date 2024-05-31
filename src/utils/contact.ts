@@ -24,6 +24,7 @@ export default async function sendEmail({
   const response = await resend.emails.send({
     from: "homepage-contact@lukastrombach.dev",
     to: ["contact@lukastrombach.dev"],
+    reply_to: email,
     subject: `Message from ${name} <${email}>`,
     text: message,
     tags: [{ name: "category", value: "homepage-contact" }],
