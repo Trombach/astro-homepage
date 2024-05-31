@@ -14,7 +14,7 @@ meta:
     ]
   repoLink: https://github.com/UoA-eResearch/hub-stack
 cover:
-  image: ./hub-logo.png
+  image: ./images/hub-logo.png
   alt: ResearchHub logo
 ---
 
@@ -39,7 +39,7 @@ I implemented a redesign, which enabled global search from the navigation bar an
 could be shared with other people. To improve the filter UX I added a mega menu which allowed for quick filtering by the
 many categories and sections the content model provided.
 
-![ResearchHub search in navigation bar with filter mega menu.](../../images/rh-search-menu.png)
+![ResearchHub search in navigation bar with filter mega menu.](@images/rh-search-menu.png)
 
 I made further contributions to the search results page, for instance, I updated the result loading to use
 infinite scrolling instead of pagination using RXJS and `IntersectionObserver`.
@@ -69,7 +69,7 @@ The second function of the reporting lambda was to aid with visualising the grap
 This library assists in creating a force-directed graph which is a very common way of visualising arbitrary graph
 structures.
 
-![Graph visualisation of ResearchHub content.](../../images/rh-graph.png)
+![Graph visualisation of ResearchHub content.](@images/rh-graph.png)
 
 The graph is fully interactive and displays information about an articles connections and links to its Contentful pages
 for easy access to editing.

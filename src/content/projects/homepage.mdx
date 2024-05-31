@@ -1,0 +1,154 @@
+---
+title: My Homepage
+description: A website built with Astro and Svelte
+meta:
+  repoLink: https://github.com/Trombach/astro-homepage
+  tags: ["Front-end", "Personal"]
+  tools: ["Astro", "Svelte", "Typescript", "Tailwind", "Vercel"]
+cover:
+  image: ./images/homepage.png
+  alt: Homepage logo
+---
+
+import Graph from "@components/Graph/Graph.svelte";
+
+Welcome to my personal homepage! In this article you can learn about how this website was built, and what drove my
+decision making.
+
+## Quick Facts
+
+- statically built pages with some dynamic routes utilising Vercel's ISR feature
+- uses Astro's [content collections](https://docs.astro.build/en/guides/content-collections/) and
+  [MDX](https://mdxjs.com/) for content
+- takes advantage of `ViewTransitions` API for smoother page transitions
+- interactive and animated using Svelte transitions and CSS animations
+
+## The Logo
+
+The favicon image and logo originates from a figure I generated for one of my research papers during my PhD. It
+represents the connectivity graph of an [Icosahedron](https://en.wikipedia.org/wiki/Icosahedron); it could be viewed as
+a projection of a 3D Icosahedron in the 2D plane.
+
+I always liked the aesthetics of this graph and when I came across Svelte's `draw` transition I knew it was the perfect
+picture for trying it out.
+
+Since I had already generated SVG files of the graph for my PhD thesis it was relatively easy to implement this
+transition. When I created those SVGs I was obviously not thinking about their compatibility with Svelte's animation
+library so I had to make some adjustments. The program I used to generate the graph images used doubled up strokes
+instead of single ones. Next, I segmented the image into 6 distinct `path` elements, so that I could animate them
+individually.
+
+To enable the animation we only have to add `in` directives to the `path` elements and set the desired animation
+options.
+
+```svelte
+<svg>
+  ...
+  <path
+    in:draw={{ duration: 2500 }}
+    out:fade={{ duration: 500 }}
+    d="m 138.20133,96.169887 36.67167,-0.0021 -18.3441,45.885573 -48.88072,-28.2213 30.55424,-17.662998 18.32544,45.882238"
+  />
+</svg>
+```
+
+Svelte transitions get triggered when an element enters or leaves the DOM. The last remaining step is to wrap our SVG in
+a conditional statement and set the condition to `true` when the component gets mounted with `onMount()`.
+
+```svelte
+<script lang="ts">
+  import { onMount } from "svelte";
+
+  let show = false;
+  onMount(() => (show = true));
+</script>
+
+<svg>
+  {#if show}
+    <path ... />
+    ...
+  {/if}
+</svg>
+```
+
+The final transition looks like this.
+
+<figure>
+  <div class="bg-slate-50 py-5 dark:bg-slate-950">
+    <Graph client:visible />
+  </div>
+  <figcaption>
+    Graph representation of an Icosahedron. Animated using `svelte:draw`.
+  </figcaption>
+</figure>
+
+## Why Astro?
+
+### SSG by Default
+
+Astro is an opinionated open-source framework with the goal of building fast, static web pages. While it can be used to
+dynamically render content server-side or client-side, its default behaviour is to render static HTML pages.
+
+Astro also makes it very obvious which part of your code is run on the server and which part will be executed client
+side. It uses a code fence (`---`) to mark an area at the top of the `.astro` file as the _component script_. This
+section is only executed on the server and can be used to fetch remote data for the static or server-side render
+process. To run JavaScript on the client side a `<script>` tag has to be added to the markup containing the code to be
+executed.
+
+All of these features make it very easy to build highly performant content-based websites, which is reflected by the
+perfect Lighthouse score of this page.
+
+![Lighthouse score for page load of my homepage on desktop.](@images/lighthouse.png)
+
+### Astro Content Collections
+
+Astro has strong support for rendering both Markdown and MDX files. It is even possible to completely skip `.astro`
+files and just write `.md` and `.mdx` file in the pages directory to build a webpage. For more complex content
+structures Astro offers content collections, which can contain a combination of 
+
+I'm using content collections in many parts of this website, for example on the landing page and for projects. In fact,
+this article is part of a collection!
+
+### Framework Components
+
+One of the most powerful features of Astro is the ability to use components written for other front-end frameworks such
+as Svelte or Vue. This hands an unprecedented amount of flexibility to developers to mix and match framework components
+and choose whichever framework is suited best to solve a particular problem. For example, I chose Svelte because of its
+feature rich animation library, but was also able to add a single component built in React when I couldn't find a
+suitable library for Astro or Svelte.
+
+### View Transitions
+
+## Why Svelte?
+
+Svelte is one of my favourite front-end frameworks to work with. Besides the fact that it is blazingly fast, it also
+comes with some great utility functions for building smooth animations.
+
+<figure>
+  <video autoplay loop muted>
+    <source src="/hero-animation-short.webm" type="video/webm"></source>
+    Your browser does not suppoert videos.
+  </video>
+  <figcaption>
+    Animation on the landing page. Most animations are achieved with plain CSS
+    transitions. The blur effect on the card content is created using Sveltes
+    `transition` libraries. You can view this animation on the
+    <a href="/">Hero page</a>.
+  </figcaption>
+</figure>
+
+Svelte also features a powerful reactivity model that is very easy to use. While it would have been possible to build
+reactive components with plain Astro code, Svelte brings some additional quality of life improvements to the table such
+as stores and reactive statements.
+
+To me Svelte and Astro are a perfect match, combining a powerful reactive framework with an easy-to-use and powerful
+static-site generator.
+
+[_Go and explore!_](https://lukastrombach.dev)
+
+<small>
+  <a href="https://www.freepik.com/free-psd/isolated-tablet-laptop-smartphone-composition_40505824.htm#query=laptop%20phone&position=2&from_view=keyword&track=ais&uuid=ec94706f-feeb-426f-b343-2db8ed620116">
+    <>Cover image by Vectonauta</>
+  </a>
+  <>on Freepik</>
+</small>

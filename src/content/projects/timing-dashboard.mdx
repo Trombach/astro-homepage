@@ -4,8 +4,8 @@ description: A timing dashboard written in Next.js
 meta:
   tools: ["Next.js", "Supabase", "Vercel", "Monday.com"]
   tags: ["Front-end"]
-cover: 
-  image: ./clock.svg
+cover:
+  image: ./images/clock.svg
   alt: Clock
 ---
 
@@ -58,12 +58,13 @@ React server components make building performant web pages very easy as dynamic 
 boundaries. I tried to use this concept as much as possible, while also utilising Next.js's caching capabilities. For
 example, I built an overview page that displays progress bars based on how much time of the monthly SLA budged had been
 used up. This was only possible after all timing data had been fetched from harvest and processed together with data
-from Monday, since each timing entry was costed at a different rate depending on the tasks priority level.  
+from Monday, since each timing entry was costed at a different rate depending on the tasks priority level.
 
 <figure>
   <Image alt="dashboard overview" src={dashboard} width="850" />
   <figcaption>
-    Dashboard overview page. The green progress bars can only be rendered if data has been fetched and processed.
+    Dashboard overview page. The green progress bars can only be rendered if
+    data has been fetched and processed.
   </figcaption>
 </figure>
 
@@ -78,5 +79,8 @@ This made it easy to build components with a single purpose to separate concerns
 benefited greatly from utilising heavy caching strategies since it helped avoid repetition of costly API calls.
 
 <small>
-  <a href="https://www.freepik.com/free-vector/illustration-clock_2606098.htm">Cover image by rawpixel.com</a> on Freepik
+  <a href="https://www.freepik.com/free-vector/illustration-clock_2606098.htm">
+    <>Cover image by rawpixel.com</>
+  </a>
+  <> on Freepik</>
 </small>
