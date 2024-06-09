@@ -3,26 +3,27 @@ import type { TocItem } from "@utils/generateToc";
 
 type Props = {
   toc: TocItem[];
+  depth?: number;
 };
 
-const { toc } = Astro.props;
+const { toc, depth = 0 } = Astro.props;
 ---
 
-<menu class="pl-5 text-sm">
+<menu class:list={["mt-1 text-sm leading-tight", depth && "ml-2"]}>
   {
     toc.map(({ slug, text, children }) => {
       return (
-        <>
-          <li class="px-2 py-1 leading-tight">
-            <a
-              href={`#${slug}`}
-              class="inline-block text-muted-foreground hover:text-foreground"
-            >
-              {text}
-            </a>
-          </li>
-          {children.length ? <Astro.self toc={children} /> : null}
-        </>
+        <li class="py-1">
+          <a
+            href={`#${slug}`}
+            class="inline-block text-muted-foreground hover:text-foreground"
+          >
+            {text}
+          </a>
+          {children.length ? (
+            <Astro.self toc={children} depth={depth + 1} />
+          ) : null}
+        </li>
       );
     })
   }
@@ -105,7 +106,7 @@ const { toc } = Astro.props;
     @apply text-foreground;
   }
 
-  li:has(a[data-current-url-heading]) {
-    @apply rounded-lg border border-primary bg-primary/25;
+  a[data-current-url-heading] {
+    @apply underline decoration-primary decoration-dotted underline-offset-4;
   }
 </style>
