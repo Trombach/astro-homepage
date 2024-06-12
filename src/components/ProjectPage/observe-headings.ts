@@ -30,9 +30,9 @@ function setupObserver() {
       return;
     }
 
-    // get last entry an set it as active
-    const entry = entries[entries.length - 1];
-    if (entry?.isIntersecting) {
+    // get first intersecting entry an set it as active
+    const entry = entries.filter(({ isIntersecting }) => isIntersecting)[0];
+    if (entry) {
       const link = links.find((link) => link.hash === `#${entry.target.id}`);
 
       if (link) {
@@ -49,7 +49,7 @@ function setupObserver() {
           link.getBoundingClientRect().top - aside.getBoundingClientRect().top;
 
         if (indicator && top) {
-          indicator.style.top = `${top + 3}px`;
+          indicator.style.top = `${top + 4}px`;
         }
       }
       // set all other links as inactive
@@ -63,7 +63,8 @@ function setupObserver() {
 
   if (headings.length > 0) {
     const observer = new IntersectionObserver(handleIntersect, {
-      threshold: 1,
+      rootMargin: "0% 0% -85% 0%",
+      threshold: 0,
     });
     headings.forEach((heading) => observer.observe(heading));
   }
