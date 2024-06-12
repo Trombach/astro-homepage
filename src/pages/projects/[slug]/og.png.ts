@@ -17,12 +17,12 @@ export const GET: APIRoute = async ({
   const entry = await getEntry("projects", slug);
 
   // redirect if entry is undefined or doesn't have a cover image
-  if (!entry || !entry.data.cover) {
+  if (!entry || !entry.data.cover.image) {
     return redirect("/og.png", 307);
   }
 
   const image = await getImage({
-    src: entry.data.cover,
+    src: entry.data.cover.image,
     width: 1200,
     height: 630,
     format: "png",
