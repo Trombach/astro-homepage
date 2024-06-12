@@ -15,9 +15,7 @@ const { title, description, tools, tags } = Astro.props;
 const dashedTitle = dash(title);
 ---
 
-<div
-  class="rounded-b-xl p-5 transition-colors duration-300 group-hover:bg-accent/50"
->
+<div class="rounded-b-xl p-5">
   <div class="flex items-center justify-between">
     <h2 class="my-3 font-semibold" transition:name={dashedTitle}>
       {title}
@@ -38,5 +36,5 @@ const dashedTitle = dash(title);
   >
     {description}
   </p>
-  {tags ? <Tags {tags} /> : null}
+  {tags && <Tags {tags} />}
 </div>

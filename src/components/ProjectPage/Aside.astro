@@ -1,0 +1,93 @@
+---
+import generateToc from "@utils/generateToc";
+import type { MarkdownHeading } from "astro";
+import ListIcon from "icons:astro/heroicons/list-bullet";
+import Toc from "./Toc.astro";
+
+type Props = {
+  headings: MarkdownHeading[];
+};
+---
+
+<aside
+  id="sidenav"
+  class="top-[calc(var(--header-height)+.5rem)] min-w-max grow self-start lg:sticky"
+>
+  <div class="relative ml-3 border-0 border-muted py-2 pl-4 l-xl:border-l-2">
+    <span
+      id="heading-indicator"
+      class="absolute -left-[5px] top-0 hidden h-2 w-2 rounded-full bg-primary opacity-0 transition-[top_opacity] l-xl:inline"
+    ></span>
+    <h1 class="mb-3 text-lg font-bold">On this page</h1>
+    <nav id="secondary">
+      <Toc toc={generateToc(Astro.props.headings)} />
+    </nav>
+  </div>
+</aside>
+
+<button
+  popovertarget="sidenav"
+  class="fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] z-10 rounded-l-full border bg-background py-2 pl-3 text-foreground backdrop-blur transition-all supports-[backdrop-filter]:bg-background/75 l-xl:hidden"
+>
+  <ListIcon class="size-8" />
+</button>
+
+<script is:inline>
+  function init(doc = document) {
+    const mq = window.matchMedia("(min-width: 1200px)");
+
+    const togglePopoverAttr = () => {
+      const aside = doc.querySelector("aside#sidenav");
+
+      if (aside) {
+        if (!mq.matches) {
+          aside.setAttribute("popover", "auto");
+        } else {
+          aside.removeAttribute("popover");
+        }
+      }
+    };
+
+    togglePopoverAttr();
+
+    mq.addEventListener("change", togglePopoverAttr);
+  }
+
+  init();
+
+  document.addEventListener("astro:before-swap", (event) =>
+    init(event.newDocument),
+  );
+</script>
+
+<style>
+  [popover] {
+    inset: unset;
+    @apply fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] m-0 rounded-l-xl bg-background text-foreground transition-transform;
+    transform: translateX(100%);
+    transition:
+      opacity 0.7s,
+      transform 0.7s,
+      overlay 0.7s allow-discrete,
+      display 0.7s allow-discrete;
+  }
+
+  [popover]:popover-open {
+    transform: translateX(0);
+  }
+
+  @starting-style {
+    [popover]:popover-open {
+      transform: translateX(100%);
+    }
+  }
+
+  [popover] + button {
+    transform: translateX(0);
+    transition: transform 0.7s;
+  }
+
+  [popover]:popover-open + button {
+    transform: translateX(100%);
+  }
+</style>

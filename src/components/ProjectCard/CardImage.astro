@@ -3,18 +3,18 @@
 
 import { Image } from "astro:assets";
 
-type Props = { cover: ImageMetadata; coverAlt: string };
+type Props = { image: ImageMetadata; alt: string };
 
-const { cover, coverAlt } = Astro.props;
+const { image, alt } = Astro.props;
 ---
 
 <div class="overflow-clip">
   <Image
-    src={cover}
-    alt={coverAlt}
+    src={image}
+    alt={alt}
     width={600}
     loading="eager"
-    class="aspect-[21/9] transform overflow-clip rounded-t-xl object-cover object-center transition-transform duration-300 group-hover:scale-105"
-    transition:name={cover.src}
+    class="aspect-[21/9] transform overflow-clip rounded-t-xl bg-card object-cover object-center transition-transform group-hover:scale-105"
+    transition:name={image.src}
   />
 </div>

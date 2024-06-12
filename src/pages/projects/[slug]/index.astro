@@ -14,23 +14,41 @@ export async function getStaticPaths() {
 
 const {
   entry: {
-    data: { title, ...props },
+    data: { title, description, ...extraProps },
     render,
   },
 } = Astro.props;
 
-const { Content } = await render();
+const { Content, headings } = await render();
 ---
 
-<Layout {title} description={props.description}>
+<Layout {title} description={description}>
   <SEO
     slot="seo"
     {title}
-    description={props.description}
+    description={description}
     imageURL={new URL(`${Astro.url.href.replace(/\/?$/, "/")}og.png`)}
   />
 
-  <ProjectPage {title} {...props}>
-    <Content slot="content" />
+  <ProjectPage {title} {headings} {description} {...extraProps}>
+    <Content />
   </ProjectPage>
 </Layout>
+
+<script>
+  function scrollTo(hash: string) {
+    if (hash === "") return;
+
+    if (hash.startsWith("#")) {
+      hash = hash.replace("#", "");
+    }
+
+    document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  scrollTo(window.location.hash);
+
+  document.addEventListener("astro:page-load", () =>
+    scrollTo(window.location.hash),
+  );
+</script>
