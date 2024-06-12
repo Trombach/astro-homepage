@@ -13,10 +13,10 @@ type Props = {
   id="sidenav"
   class="top-[calc(var(--header-height)+.5rem)] min-w-max grow self-start lg:sticky"
 >
-  <div class="l-xl:border-l-2 relative ml-3 border-0 border-muted py-2 pl-4">
+  <div class="relative ml-3 border-0 border-muted py-2 pl-4 l-xl:border-l-2">
     <span
       id="heading-indicator"
-      class="l-xl:inline absolute -left-[5px] top-0 hidden h-2 w-2 rounded-full bg-primary opacity-0 transition-[top_opacity]"
+      class="absolute -left-[5px] top-0 hidden h-2 w-2 rounded-full bg-primary opacity-0 transition-[top_opacity] l-xl:inline"
     ></span>
     <h1 class="mb-3 text-lg font-bold">On this page</h1>
     <nav id="secondary">
@@ -27,8 +27,8 @@ type Props = {
 
 <button
   popovertarget="sidenav"
-  class="l-xl:hidden fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] z-10 rounded-l-full border bg-background
-         py-2 pl-3 text-foreground backdrop-blur transition-all supports-[backdrop-filter]:bg-background/75"
+  class="fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] z-10 rounded-l-full border bg-background py-2
+         pl-3 text-foreground backdrop-blur transition-all supports-[backdrop-filter]:bg-background/75 l-xl:hidden"
 >
   <ListIcon class="size-8" />
 </button>
