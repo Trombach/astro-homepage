@@ -11,25 +11,31 @@ type Props = {
 
 <aside
   id="sidenav"
-  class="top-[calc(var(--header-height)+.5rem)] w-[250px] grow self-start border-l border-muted pl-4 lg:sticky"
+  class="top-[calc(var(--header-height)+.5rem)] min-w-max grow self-start lg:sticky"
 >
-  <h1 class="mb-3 text-lg font-bold">On this page</h1>
-  <nav id="secondary">
-    <Toc toc={generateToc(Astro.props.headings)} />
-  </nav>
+  <div class="l-xl:border-l-2 relative ml-3 border-0 border-muted py-2 pl-4">
+    <span
+      id="heading-indicator"
+      class="l-xl:inline absolute -left-[5px] top-0 hidden h-2 w-2 rounded-full bg-primary opacity-0 transition-[top_opacity]"
+    ></span>
+    <h1 class="mb-3 text-lg font-bold">On this page</h1>
+    <nav id="secondary">
+      <Toc toc={generateToc(Astro.props.headings)} />
+    </nav>
+  </div>
 </aside>
 
 <button
   popovertarget="sidenav"
-  class="fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] z-10 rounded-l-full bg-background py-2 pl-3
-         text-muted-foreground backdrop-blur transition-all supports-[backdrop-filter]:bg-muted/75 lg:hidden"
+  class="l-xl:hidden fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] z-10 rounded-l-full border bg-background
+         py-2 pl-3 text-foreground backdrop-blur transition-all supports-[backdrop-filter]:bg-background/75"
 >
   <ListIcon class="size-8" />
 </button>
 
 <script is:inline>
   function init(doc = document) {
-    const mq = window.matchMedia("(min-width: 976px)");
+    const mq = window.matchMedia("(min-width: 1200px)");
 
     const togglePopoverAttr = () => {
       const aside = doc.querySelector("aside#sidenav");
@@ -58,7 +64,8 @@ type Props = {
 <style>
   [popover] {
     inset: unset;
-    @apply fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] m-0 rounded-l-xl bg-muted text-muted-foreground backdrop-blur transition-transform supports-[backdrop-filter]:bg-muted/75;
+    @apply fixed right-0 top-[calc(var(--header-height)+theme(spacing.2))] m-0 rounded-l-xl bg-background 
+           text-foreground transition-transform;
     transform: translateX(100%);
     transition:
       opacity 0.7s,

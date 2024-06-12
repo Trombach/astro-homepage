@@ -52,54 +52,7 @@ const { toc, depth = 0 } = Astro.props;
   window.addEventListener("popstate", setActiveHashLink);
 </script>
 
-<script>
-  function setupObserver() {
-    const articleHeadings =
-      document
-        .querySelector("article")
-        ?.querySelectorAll("h1, h2, h3, h4, h5, h6") || [];
-    const headings = Array.from(articleHeadings).filter(
-      (heading) => heading.id !== "",
-    );
-
-    // let currentLink: HTMLAnchorElement | undefined = undefined;
-
-    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-      const links = Array.from(
-        document.querySelector("nav#secondary")?.querySelectorAll("a") || [],
-      );
-
-      // console.log("current link: ", currentLink?.href);
-
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const link = links.find(
-            (link) => link.hash === `#${entry?.target.id}`,
-          );
-
-          // set active link
-          link?.setAttribute("data-current-heading", "");
-
-          // set all other links as inactive
-          links
-            .filter((link) => link.hash !== `#${entry?.target.id}`)
-            .forEach((link) => link.removeAttribute("data-current-heading"));
-        }
-      });
-    };
-
-    if (headings.length > 0) {
-      const observer = new IntersectionObserver(handleIntersect, {
-        threshold: 1,
-      });
-      headings.forEach((heading) => observer.observe(heading));
-    }
-  }
-
-  setupObserver();
-
-  document.addEventListener("astro:after-swap", setupObserver);
-</script>
+<script src="./observe-headings.ts"></script>
 
 <style>
   a[data-current-heading] {
