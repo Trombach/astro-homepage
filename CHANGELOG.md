@@ -1,5 +1,11 @@
 # homepage
 
+## 1.3.4
+
+### Patch Changes
+
+- 6af9f46: use `Image` instead of `Picture` for background
+
 ## 1.3.3
 
 ### Patch Changes
