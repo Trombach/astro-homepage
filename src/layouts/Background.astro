@@ -1,6 +1,6 @@
 ---
 import BackgroundImage from "@images/gradient.avif";
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 ---
 
 <div
@@ -10,7 +10,7 @@ import { Picture } from "astro:assets";
     "relative",
   ]}
 >
-  <Picture
+  <Image
     transition:persist="background"
     src={BackgroundImage}
     alt="Background"
