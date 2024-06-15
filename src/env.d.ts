@@ -9,7 +9,8 @@ interface ImportMetaEnv {
   VERCEL_URL?: string;
   RESEND_TOKEN?: string;
   ISR_BYPASS_TOKEN?: string;
-  CV_FILE_URL?: string;
+  VERCEL_STORAGE_URL?: string;
+  CV_FILE_NAME?: string;
 }
 
 interface ImportMeta {
