@@ -1,5 +1,6 @@
 import { z } from "astro/zod";
 import fetch from "./fetchHelper";
+import { getSecret } from "astro:env/server";
 
 const GH_API = "https://api.github.com/graphql";
 const USERNAME = "Trombach";
@@ -44,7 +45,9 @@ export const schema = z.object({
 });
 
 export default async function getGithubContributions() {
-  if (!import.meta.env.GH_TOKEN) {
+  const GH_TOKEN = getSecret("GH_TOKEN");
+
+  if (!GH_TOKEN) {
     throw new Error("Missing auth token.");
   }
 
@@ -52,7 +55,7 @@ export default async function getGithubContributions() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${import.meta.env.GH_TOKEN}`,
+      Authorization: `Bearer ${GH_TOKEN}`,
     },
     body: JSON.stringify({ query: QUERY, variables: { userName: USERNAME } }),
   });
