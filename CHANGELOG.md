@@ -1,5 +1,15 @@
 # homepage
 
+## 1.4.0
+
+### Minor Changes
+
+- 1d0ba37: migrate env variables to astro:env
+
+### Patch Changes
+
+- d116395: reconfigure CV endpoint
+
 ## 1.3.4
 
 ### Patch Changes
