@@ -1,4 +1,5 @@
 import { ActionError } from "astro:actions";
+import { getSecret } from "astro:env/server";
 import { Resend } from "resend";
 
 export default async function sendEmail({
@@ -10,7 +11,9 @@ export default async function sendEmail({
   email: string;
   message: string;
 }) {
-  if (!import.meta.env.RESEND_TOKEN) {
+  const RESEND_TOKEN = getSecret("RESEND_TOKEN");
+
+  if (!RESEND_TOKEN) {
     const message = "Missing token";
     console.error(message);
 
@@ -20,7 +23,7 @@ export default async function sendEmail({
     });
   }
 
-  const resend = new Resend(import.meta.env.RESEND_TOKEN);
+  const resend = new Resend(RESEND_TOKEN);
   const response = await resend.emails.send({
     from: "homepage-contact@lukastrombach.dev",
     to: ["contact@lukastrombach.dev"],

@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 import Icons from "unplugin-icons/vite";
@@ -70,5 +70,24 @@ export default defineConfig({
   site: "https://www.lukastrombach.dev",
   experimental: {
     actions: true,
+    env: {
+      schema: {
+        GH_TOKEN: envField.string({ context: "server", access: "secret" }),
+        PUBLIC_VERCEL_URL: envField.string({
+          context: "server",
+          access: "public",
+          optional: true,
+        }),
+        RESEND_TOKEN: envField.string({ context: "server", access: "secret" }),
+        PUBLIC_VERCEL_STORAGE_URL: envField.string({
+          context: "server",
+          access: "public",
+        }),
+        PUBLIC_CV_FILE_NAME: envField.string({
+          context: "server",
+          access: "public",
+        }),
+      },
+    },
   },
 });
