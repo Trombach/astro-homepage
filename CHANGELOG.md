@@ -1,5 +1,11 @@
 # homepage
 
+## 1.4.1
+
+### Patch Changes
+
+- 0384039: add missing rel attribute to about me image preload
+
 ## 1.4.0
 
 ### Minor Changes
