@@ -1,0 +1,16 @@
+---
+import Blobs from "@components/Background/Blobs.astro";
+---
+
+<div
+  class:list={[
+    "scroll-pt-[--header-height] overflow-auto [scrollbar-gutter:stable]",
+    "h-screen w-full",
+    "relative",
+  ]}
+>
+  <div class="fixed inset-0">
+    <Blobs />
+  </div>
+  <slot />
+</div>
