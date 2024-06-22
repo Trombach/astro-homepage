@@ -1,0 +1,12 @@
+---
+import HeroText from "./HeroText.svelte";
+import ScrollIndicator from "./ScrollIndicator.svelte";
+---
+
+<section
+  id="hero"
+  class="flex h-screen-less-header w-full flex-col items-center"
+>
+  <HeroText client:load />
+  <ScrollIndicator client:load />
+</section>
