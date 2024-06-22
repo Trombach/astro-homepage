@@ -1,6 +1,6 @@
 <span data-waving-hand>👋</span>
 
-<style>
+<style lang="postcss">
   @keyframes wave {
     0% {
       transform: rotate(0deg);

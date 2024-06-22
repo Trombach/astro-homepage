@@ -78,7 +78,7 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
   <body class="overflow-hidden antialiased">
     <Background>
       <Navbar />
-      <main class="flex flex-col items-center"><slot /></main>
+      <main class="flex w-screen flex-col items-center"><slot /></main>
     </Background>
     <style is:global>
       @tailwind base;
