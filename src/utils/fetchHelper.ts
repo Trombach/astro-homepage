@@ -33,9 +33,7 @@ function getURL(url: URL | string, searchParams?: { [key: string]: string }) {
   if (typeof url === "string" && url.startsWith("http")) {
     url = new URL(url);
   } else {
-    const base = VERCEL_URL
-      ? `https://${VERCEL_URL}`
-      : "http://localhost:4321";
+    const base = VERCEL_URL ? `https://${VERCEL_URL}` : "http://localhost:4321";
     url = new URL(url, base);
   }
 
