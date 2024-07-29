@@ -11,9 +11,6 @@ on:
 jobs:
   Typescript:
     runs-on: ubuntu-latest
-    env:
-      PUBLIC_VERCEL_STORAGE_URL: ${{ vars.PUBLIC_VERCEL_STORAGE_URL }}
-      PUBLIC_CV_FILE_NAME: ${{ vars.PUBLIC_CV_FILE_NAME }}
     steps:
       - uses: actions/checkout@v4
       - run: corepack enable
