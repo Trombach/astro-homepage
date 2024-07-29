@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { actions, isInputError } from "astro:actions";
+import { TURNSTILE_SITE_KEY } from "astro:env/client";
 
 type AllowedTags = "input" | "textarea";
 
@@ -78,3 +79,5 @@ const response = Astro.getActionResult(actions.contact);
     </label>
   ))
 }
+
+<div class="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY}></div>

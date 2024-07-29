@@ -34,6 +34,8 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
       crossorigin
     />
 
+    <slot name="head" />
+
     <slot name="seo">
       <SEO {title} {description} />
     </slot>

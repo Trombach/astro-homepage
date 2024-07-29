@@ -9,6 +9,7 @@ export const server = {
       name: z.string(),
       email: z.string().email(),
       message: z.string(),
+      "cf-turnstile-response": z.string(),
     }),
     handler: sendEmail,
   }),
