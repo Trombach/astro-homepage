@@ -1,16 +1,41 @@
+import type { ActionAPIContext } from "astro/actions/runtime/store.js";
 import { ActionError } from "astro:actions";
+import { TURNSTILE_SITEVERIFY_URL } from "astro:env/server";
 import { getSecret } from "astro:env/server";
 import { Resend } from "resend";
 
-export default async function sendEmail({
-  name,
-  email,
-  message,
-}: {
-  name: string;
-  email: string;
-  message: string;
-}) {
+export default async function sendEmail(
+  {
+    name,
+    email,
+    message,
+    "cf-turnstile-response": token,
+  }: {
+    name: string;
+    email: string;
+    message: string;
+    "cf-turnstile-response": string;
+  },
+  { clientAddress }: ActionAPIContext,
+) {
+  const verification = await fetch(TURNSTILE_SITEVERIFY_URL, {
+    body: JSON.stringify({
+      secret: getSecret("TURNSTILE_SECRET_KEY"),
+      response: token,
+      remoteip: clientAddress,
+    }),
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const outcome = await verification.json();
+
+  if (!outcome.success) {
+    throw new ActionError({ code: "TOO_MANY_REQUESTS", message: "🤖" });
+  }
+
   const RESEND_TOKEN = getSecret("RESEND_TOKEN");
 
   if (!RESEND_TOKEN) {
