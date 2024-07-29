@@ -87,6 +87,19 @@ export default defineConfig({
           context: "server",
           access: "public",
         }),
+        TURNSTILE_SITE_KEY: envField.string({
+          context: "client",
+          access: "public",
+        }),
+        TURNSTILE_SITEVERIFY_URL: envField.string({
+          context: "server",
+          access: "public",
+          url: true,
+        }),
+        TURNSTILE_SECRET_KEY: envField.string({
+          context: "server",
+          access: "secret",
+        }),
       },
     },
   },

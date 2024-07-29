@@ -11,4 +11,11 @@ export const prerender = false;
   >
     <ContactForm />
   </section>
+
+  <script
+    slot="head"
+    is:inline
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer></script>
 </Layout>
