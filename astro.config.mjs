@@ -73,17 +73,17 @@ export default defineConfig({
     env: {
       schema: {
         GH_TOKEN: envField.string({ context: "server", access: "secret" }),
-        PUBLIC_VERCEL_URL: envField.string({
+        VERCEL_URL: envField.string({
           context: "server",
           access: "public",
           optional: true,
         }),
         RESEND_TOKEN: envField.string({ context: "server", access: "secret" }),
-        PUBLIC_VERCEL_STORAGE_URL: envField.string({
+        VERCEL_STORAGE_URL: envField.string({
           context: "server",
           access: "public",
         }),
-        PUBLIC_CV_FILE_NAME: envField.string({
+        CV_FILE_NAME: envField.string({
           context: "server",
           access: "public",
         }),
