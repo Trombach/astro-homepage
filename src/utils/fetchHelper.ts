@@ -1,7 +1,7 @@
 /* global URL RequestInit fetch URLSearchParams console */
 
 import type { z } from "astro/zod";
-import { PUBLIC_VERCEL_URL } from "astro:env/server";
+import { VERCEL_URL } from "astro:env/server";
 
 export default async function fetchWithSchema<S extends z.ZodTypeAny>(
   schema: S,
@@ -33,8 +33,8 @@ function getURL(url: URL | string, searchParams?: { [key: string]: string }) {
   if (typeof url === "string" && url.startsWith("http")) {
     url = new URL(url);
   } else {
-    const base = PUBLIC_VERCEL_URL
-      ? `https://${PUBLIC_VERCEL_URL}`
+    const base = VERCEL_URL
+      ? `https://${VERCEL_URL}`
       : "http://localhost:4321";
     url = new URL(url, base);
   }
