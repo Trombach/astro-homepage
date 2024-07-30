@@ -65,6 +65,7 @@ export default defineConfig({
       bypassToken: import.meta.env.ISR_BYPASS_TOKEN,
       // caches all pages on first request and saves for 1 day
       expiration: 60 * 60 * 24,
+      exclude: ["/contact"],
     },
   }),
   site: "https://www.lukastrombach.dev",
