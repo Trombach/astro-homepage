@@ -21,7 +21,7 @@ const { Content } = await render();
     <div
       class="flex w-full flex-col items-center justify-center gap-5 md:gap-10"
     >
-      <Calendar />
+      <Calendar server:defer/>
       <AppLink as="a" appearance="primary" href="https://github.com/Trombach">
         View Github profile <ExternalLinkIcon />
       </AppLink>
