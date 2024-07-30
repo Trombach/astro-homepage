@@ -33,13 +33,22 @@ import FormFields from "./FormFields.astro";
 </form>
 
 <script>
-  const form = document.getElementById("contact-form");
-  const button = document.getElementById("submit-message");
+  function init() {
+    const form = document.getElementById("contact-form");
+    const button = document.getElementById("submit-message");
 
-  if (form instanceof HTMLFormElement && button instanceof HTMLButtonElement) {
-    form.addEventListener(
-      "input",
-      () => (button.disabled = !form.checkValidity()),
-    );
+    if (
+      form instanceof HTMLFormElement &&
+      button instanceof HTMLButtonElement
+    ) {
+      form.addEventListener(
+        "input",
+        () => (button.disabled = !form.checkValidity()),
+      );
+    }
   }
+
+  init();
+
+  document.addEventListener("astro:page-load", init);
 </script>
