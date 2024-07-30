@@ -1,0 +1,35 @@
+---
+import CalendarIcon from "icons:astro/heroicons/calendar-solid";
+
+type Props = {
+  title: string;
+  date: Date | "now";
+};
+
+const { title, date } = Astro.props;
+---
+
+<div class="flex snap-start flex-col">
+  <div class="mb-1 flex items-center">
+    <span
+      class="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground"
+    >
+      <CalendarIcon class="m-auto size-5" />
+    </span>
+    <div class="h-0.5 w-full bg-secondary"></div>
+  </div>
+  <div class="mr-32 mt-5 w-[350px] rounded-xl border bg-background p-3">
+    <h2 class="font-bold">{title}</h2>
+    <p class="italic text-muted-foreground">
+      {
+        date === "now"
+          ? "Current"
+          : new Intl.DateTimeFormat("en-GB", {
+              month: "short",
+              year: "numeric",
+            }).format(date)
+      }
+    </p>
+    <slot />
+  </div>
+</div>

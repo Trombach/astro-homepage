@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import TimelineItem from "./TimelineItem.astro";
+
+const items = (await getCollection("timeline")).sort((a, b) => {
+  if (a.data.date === "now" && b.data.date === "now")
+    throw new Error("Only one timeline item can have the `now` date");
+
+  if (a.data.date === "now") return -1;
+  if (b.data.date === "now") return 1;
+
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+---
+
+<section class="flex min-h-svh w-full flex-col">
+  <div
+    class:list={[
+      "mx-auto flex w-full max-w-screen-xl snap-x flex-col overflow-x-auto [scrollbar-width:thin] lg:flex-row",
+    ]}
+  >
+    {
+      items.map((item) => (
+        <TimelineItem title={item.data.title} date={item.data.date}>
+          {item.render().then(({ Content }) => (
+            <Content />
+          ))}
+        </TimelineItem>
+      ))
+    }
+  </div>
+</section>

@@ -96,11 +96,21 @@ const projectsCollection = defineCollection({
       }, "Cover image alt text must be provided when cover image is present."),
 });
 
+const timelineCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    date: z.union([z.date(), z.literal("now")]),
+    where: z.string(),
+  }),
+});
+
 export const collections = {
   person: personCollection,
   home: homeCollection,
   about: aboutCollection,
   projects: projectsCollection,
+  timeline: timelineCollection,
 };
 
 export type Tool = (typeof tools)[number];
