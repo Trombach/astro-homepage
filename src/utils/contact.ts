@@ -18,6 +18,8 @@ export default async function sendEmail(
   },
   { clientAddress }: ActionAPIContext,
 ) {
+  console.log("hitting contact endpoint");
+
   const verification = await fetch(TURNSTILE_SITEVERIFY_URL, {
     body: JSON.stringify({
       secret: getSecret("TURNSTILE_SECRET_KEY"),
@@ -30,11 +32,17 @@ export default async function sendEmail(
     },
   });
 
+  console.log("fetched verification");
+
   const outcome = await verification.json();
+
+  console.log("parsed json");
 
   if (!outcome.success) {
     throw new ActionError({ code: "TOO_MANY_REQUESTS", message: "🤖" });
   }
+
+  console.log("outcome success");
 
   const RESEND_TOKEN = getSecret("RESEND_TOKEN");
 
