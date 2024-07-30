@@ -70,6 +70,7 @@ export default defineConfig({
   }),
   site: "https://www.lukastrombach.dev",
   experimental: {
+    serverIslands: true,
     actions: true,
     env: {
       schema: {
