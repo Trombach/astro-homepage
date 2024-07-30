@@ -1,5 +1,15 @@
 # homepage
 
+## 1.4.1
+
+### Patch Changes
+
+- 6eef975: add turnstile verification to contact form
+- d387ac6: exclude contact page from isr
+- 669988e: reattach event listeners on page load on contact page
+- 0384039: add missing rel attribute to about me image preload
+- c1089e3: Update dependencies, tidy up env
+
 ## 1.4.0
 
 ### Minor Changes
