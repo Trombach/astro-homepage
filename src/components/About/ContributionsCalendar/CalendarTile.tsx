@@ -59,7 +59,7 @@ export default function CalendarTile({ contributions, date }: Props) {
       <div
         ref={refs.setReference}
         className={clsx(
-          contributions === 0 && "bg-slate-900",
+          contributions === 0 && "bg-slate-300 dark:bg-slate-900",
           contributions > 0 && contributions <= 2 && "bg-green-950",
           contributions > 2 && contributions <= 4 && "bg-green-900",
           contributions > 4 && contributions <= 6 && "bg-green-800",
@@ -90,5 +90,11 @@ export default function CalendarTile({ contributions, date }: Props) {
         </div>
       )}
     </>
+  );
+}
+
+export function CalendarTileSkeleton() {
+  return (
+    <div className="size-2 animate-pulse rounded-sm bg-slate-300 lg:size-3 xl:size-4 dark:bg-slate-900"></div>
   );
 }
