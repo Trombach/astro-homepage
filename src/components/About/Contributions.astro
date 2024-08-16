@@ -4,6 +4,8 @@ import H1 from "@components/H1.astro";
 import { getEntry } from "astro:content";
 import ExternalLinkIcon from "icons:astro/heroicons/arrow-top-right-on-square";
 import Calendar from "./ContributionsCalendar/Calendar.astro";
+import CalendarGrid from "./ContributionsCalendar/CalendarGrid.astro";
+import { CalendarTileSkeleton } from "./ContributionsCalendar/CalendarTile";
 
 const {
   render,
@@ -21,7 +23,18 @@ const { Content } = await render();
     <div
       class="flex w-full flex-col items-center justify-center gap-5 md:gap-10"
     >
-      <Calendar server:defer/>
+      <Calendar server:defer>
+        <Fragment slot="fallback">
+          <span class="font-semibold md:text-2xl">Loading contributions</span>
+          <CalendarGrid>
+            {
+              Array.from(Array(52 * 7).keys()).map(() => (
+                <CalendarTileSkeleton />
+              ))
+            }
+          </CalendarGrid>
+        </Fragment>
+      </Calendar>
       <AppLink as="a" appearance="primary" href="https://github.com/Trombach">
         View Github profile <ExternalLinkIcon />
       </AppLink>
