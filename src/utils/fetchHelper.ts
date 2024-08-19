@@ -7,7 +7,7 @@ export default async function fetchWithSchema<S extends z.ZodTypeAny>(
   schema: S,
   input: URL | string,
   init?: RequestInit,
-): Promise<z.infer<S> | undefined> {
+): Promise<z.infer<S> | z.ZodError> {
   if (typeof input === "string") {
     input = getURL(input);
   }
@@ -22,7 +22,14 @@ export default async function fetchWithSchema<S extends z.ZodTypeAny>(
 
   try {
     const json = await response.json();
-    return schema.parse(json);
+    const parsed = schema.safeParse(json);
+
+    if (!parsed.success) {
+      console.error(parsed.error);
+      return parsed.error;
+    }
+
+    return parsed.data;
   } catch (err) {
     console.log(err);
     return;
