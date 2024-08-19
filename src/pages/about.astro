@@ -6,9 +6,6 @@ import { getImage } from "astro:assets";
 import { getEntry } from "astro:content";
 import Layout from "src/layouts/Layout.astro";
 
-// opt in to SSR
-export const prerender = false;
-
 // workaround for getting image preload
 // Astro currently doesn't have a "preload" option in their Image component
 // RFC: https://github.com/withastro/roadmap/discussions/382
