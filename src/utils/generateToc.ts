@@ -6,21 +6,21 @@ export interface TocItem extends MarkdownHeading {
 function diveChildren(item: TocItem, depth: number): TocItem[] {
   if (depth === 1) {
     return item.children;
-  } else {
-    const nextItem = item.children[item.children.length - 1];
-    if (!nextItem) {
-      throw new Error("Error accessing next item");
-    }
-    // e.g., 2
-    return diveChildren(nextItem, depth - 1);
   }
+
+  const nextItem = item.children[item.children.length - 1];
+  if (!nextItem) {
+    throw new Error("Error accessing next item");
+  }
+  // e.g., 2
+  return diveChildren(nextItem, depth - 1);
 }
 
 export default function generateToc(headings: MarkdownHeading[]) {
-  headings = headings.filter(({ depth }) => depth > 1 && depth < 4);
+  const headingsLocal = headings.filter(({ depth }) => depth > 1 && depth < 4);
   const toc: Array<TocItem> = [];
 
-  for (const heading of headings) {
+  for (const heading of headingsLocal) {
     if (toc.length === 0) {
       toc.push({
         ...heading,

@@ -68,7 +68,7 @@ export default function CalendarTile({ contributions, date }: Props) {
           "size-2 rounded-sm transition-transform hover:scale-150 lg:size-3 xl:size-4",
         )}
         {...getReferenceProps()}
-      ></div>
+      />
       {showTooltip && (
         <div
           ref={refs.setFloating}
@@ -80,13 +80,15 @@ export default function CalendarTile({ contributions, date }: Props) {
             className="fill-accent"
             ref={arrowRef}
             context={context}
-          ></FloatingArrow>
+          />
 
-          {(contributions > 1
-            ? `${contributions} contributions`
-            : contributions === 1
-              ? `${contributions} contribution`
-              : "No contributions") + ` on ${date.toLocaleDateString()}`}
+          {`${
+            contributions > 1
+              ? `${contributions} contributions`
+              : contributions === 1
+                ? `${contributions} contribution`
+                : "No contributions"
+          } on ${date.toLocaleDateString()}`}
         </div>
       )}
     </>
@@ -95,6 +97,6 @@ export default function CalendarTile({ contributions, date }: Props) {
 
 export function CalendarTileSkeleton() {
   return (
-    <div className="size-2 animate-pulse rounded-sm bg-slate-300 lg:size-3 xl:size-4 dark:bg-slate-900"></div>
+    <div className="size-2 animate-pulse rounded-sm bg-slate-300 lg:size-3 xl:size-4 dark:bg-slate-900" />
   );
 }

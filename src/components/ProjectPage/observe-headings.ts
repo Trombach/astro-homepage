@@ -25,7 +25,9 @@ function setupObserver() {
       indicator.style.removeProperty("top");
 
       // set all links inactive
-      links.forEach((link) => link.removeAttribute(CURRENT_HEADING_ATTR));
+      for (const link of links) {
+        link.removeAttribute(CURRENT_HEADING_ATTR);
+      }
 
       return;
     }
@@ -53,11 +55,10 @@ function setupObserver() {
         }
       }
       // set all other links as inactive
-      links.forEach(
-        (link) =>
-          link.hash !== `#${entry.target.id}` &&
-          link.removeAttribute(CURRENT_HEADING_ATTR),
-      );
+      for (const link of links) {
+        link.hash !== `#${entry.target.id}` &&
+          link.removeAttribute(CURRENT_HEADING_ATTR);
+      }
     }
   };
 
@@ -66,7 +67,7 @@ function setupObserver() {
       rootMargin: "0% 0% -85% 0%",
       threshold: 0,
     });
-    headings.forEach((heading) => observer.observe(heading));
+    for (const heading of headings) observer.observe(heading);
   }
 }
 

@@ -1,5 +1,3 @@
-/* global URL RequestInit fetch URLSearchParams console */
-
 import type { z } from "astro/zod";
 import { VERCEL_URL } from "astro:env/server";
 
@@ -8,15 +6,12 @@ export default async function fetchWithSchema<S extends z.ZodTypeAny>(
   input: URL | string,
   init?: RequestInit,
 ): Promise<z.infer<S> | z.ZodError> {
-  if (typeof input === "string") {
-    input = getURL(input);
-  }
-
-  const response = await fetch(input, init);
+  const inp = typeof input === "string" ? getURL(input) : input;
+  const response = await fetch(inp, init);
 
   if (!response.ok) {
     throw new Error(
-      `Error fetching data from ${input}: ${response.status} ${response.statusText}`,
+      `Error fetching data from ${inp}: ${response.status} ${response.statusText}`,
     );
   }
 
@@ -36,13 +31,17 @@ export default async function fetchWithSchema<S extends z.ZodTypeAny>(
   }
 }
 
-function getURL(url: URL | string, searchParams?: { [key: string]: string }) {
-  if (typeof url === "string" && url.startsWith("http")) {
-    url = new URL(url);
-  } else {
-    const base = VERCEL_URL ? `https://${VERCEL_URL}` : "http://localhost:4321";
-    url = new URL(url, base);
-  }
+function getURL(
+  inputUrl: URL | string,
+  searchParams?: { [key: string]: string },
+) {
+  let url =
+    typeof inputUrl === "string" && inputUrl.startsWith("http")
+      ? new URL(inputUrl)
+      : new URL(
+          inputUrl,
+          VERCEL_URL ? `https://${VERCEL_URL}` : "http://localhost:4321",
+        );
 
   if (searchParams) {
     url = new URL(
