@@ -1,5 +1,13 @@
 # homepage
 
+## 1.5.1
+
+### Patch Changes
+
+- 03ea7e8: fix foreground text colour when form is invalid
+- d5a5fd1: fix project page layout for smaller font size
+- 4a97b24: Switch to biome.js
+
 ## 1.5.0
 
 ### Minor Changes
