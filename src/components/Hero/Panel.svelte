@@ -14,7 +14,7 @@
   export let title: string;
 
   let expanded: boolean;
-  let state = getPanelState(number);
+  const state = getPanelState(number);
 
   $: expanded = $state === "expanded";
 </script>

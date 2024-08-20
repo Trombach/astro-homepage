@@ -23,15 +23,15 @@
     derived(panelStates, ($panelStates) => $panelStates[panelNumber]);
 
   export const expandPanel = (expandPanel: PanelNumber) => {
-    let newPanelStates: PanelStates = { ...defaultPanelStates };
+    const newPanelStates: PanelStates = { ...defaultPanelStates };
 
-    panels.forEach((panel) => {
+    for (const panel of panels) {
       if (panel !== expandPanel) {
         newPanelStates[panel] = expandPanel < panel ? "end" : "start";
       } else {
         newPanelStates[panel] = "expanded";
       }
-    });
+    }
 
     panelStates.set(newPanelStates);
   };

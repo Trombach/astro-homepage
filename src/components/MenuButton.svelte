@@ -6,7 +6,9 @@
   let showCloseIcon = false;
   let menu: HTMLElement | null;
 
-  onMount(() => (menu = document.querySelector("#menu-container")));
+  onMount(() => {
+    menu = document.querySelector("#menu-container");
+  });
 
   const toggle = () => {
     showCloseIcon = !showCloseIcon;
