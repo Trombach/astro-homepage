@@ -33,7 +33,7 @@ jobs:
           cache: "pnpm"
       - run: pnpm install
       - name: Run linter
-        run: pnpm lint
+        run: pnpm lint:check
 
   Format:
     runs-on: ubuntu-latest
