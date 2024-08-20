@@ -16,10 +16,10 @@ export const GET: APIRoute = async () => {
 
   if (file.ok) {
     return new Response(await file.arrayBuffer());
-  } else {
-    return new Response("Error fetching data: ", {
-      status: 500,
-      statusText: `${file.status} ${file.statusText}`,
-    });
   }
+
+  return new Response("Error fetching data: ", {
+    status: 500,
+    statusText: `${file.status} ${file.statusText}`,
+  });
 };

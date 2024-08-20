@@ -1,22 +1,22 @@
 <script lang="ts">
-  import { blur } from "svelte/transition";
-  import {
-    expandPanel,
-    getPanelState,
-    type PanelNumber,
-  } from "./HeroGrid.svelte";
+import { blur } from "svelte/transition";
+import {
+  expandPanel,
+  getPanelState,
+  type PanelNumber,
+} from "./HeroGrid.svelte";
 
-  const transitionDuration = 500;
-  const transitionDelay = 100;
-  const fadeOutDuration = 250;
+const transitionDuration = 500;
+const transitionDelay = 100;
+const fadeOutDuration = 250;
 
-  export let number: PanelNumber;
-  export let title: string;
+export let number: PanelNumber;
+export let title: string;
 
-  let expanded: boolean;
-  let state = getPanelState(number);
+let expanded: boolean;
+const state = getPanelState(number);
 
-  $: expanded = $state === "expanded";
+$: expanded = $state === "expanded";
 </script>
 
 <div
