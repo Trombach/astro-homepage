@@ -10,22 +10,21 @@ import Layout from "src/layouts/Layout.astro";
 // Astro currently doesn't have a "preload" option in their Image component
 // RFC: https://github.com/withastro/roadmap/discussions/382
 const {
-  data: { person },
+	data: { person },
 } = await getEntry("about", "about-me");
 const {
-  data: { avatar },
+	data: { avatar },
 } = await getEntry(person);
 
-let img;
-if (avatar) {
-  img = await getImage({
-    src: avatar,
-    alt: "Lukas",
-    widths: [96, 128, 256],
-    sizes: "(max-width: 360px) 96px, (max-width: 480px) 128px, 256px",
-    loading: "eager",
-  });
-}
+const img = avatar
+	? await getImage({
+			src: avatar,
+			alt: "Lukas",
+			widths: [96, 128, 256],
+			sizes: "(max-width: 360px) 96px, (max-width: 480px) 128px, 256px",
+			loading: "eager",
+		})
+	: avatar;
 ---
 
 <Layout title="About Me">
