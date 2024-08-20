@@ -1,16 +1,14 @@
 <script lang="ts">
-  /* global setTimeout */
+import { draw, fade } from "svelte/transition";
+import { inner, outer } from "./graph-paths";
+import { onMount } from "svelte";
 
-  import { draw, fade } from "svelte/transition";
-  import { inner, outer } from "./graph-paths";
-  import { onMount } from "svelte";
-
-  let ready = false;
-  onMount(() =>
-    setTimeout(() => {
-      ready = true;
-    }, 1000),
-  );
+let ready = false;
+onMount(() =>
+  setTimeout(() => {
+    ready = true;
+  }, 1000),
+);
 </script>
 
 <div>

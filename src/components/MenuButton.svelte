@@ -1,23 +1,21 @@
 <script lang="ts">
-  /* global HTMLElement document */
+import { onMount } from "svelte";
 
-  import { onMount } from "svelte";
+let showCloseIcon = false;
+let menu: HTMLElement | null;
 
-  let showCloseIcon = false;
-  let menu: HTMLElement | null;
+onMount(() => {
+  menu = document.querySelector("#menu-container");
+});
 
-  onMount(() => {
-    menu = document.querySelector("#menu-container");
-  });
-
-  const toggle = () => {
-    showCloseIcon = !showCloseIcon;
-    if (menu?.classList.contains("max-h-96")) {
-      menu.classList.replace("max-h-96", "max-h-0");
-    } else {
-      menu?.classList.replace("max-h-0", "max-h-96");
-    }
-  };
+const toggle = () => {
+  showCloseIcon = !showCloseIcon;
+  if (menu?.classList.contains("max-h-96")) {
+    menu.classList.replace("max-h-96", "max-h-0");
+  } else {
+    menu?.classList.replace("max-h-0", "max-h-96");
+  }
+};
 </script>
 
 <button class="lg:hidden" on:click={toggle}>
