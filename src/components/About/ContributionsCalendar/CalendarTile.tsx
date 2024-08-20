@@ -82,11 +82,13 @@ export default function CalendarTile({ contributions, date }: Props) {
             context={context}
           />
 
-          {`${contributions > 1
-            ? `${contributions} contributions`
-            : contributions === 1
-              ? `${contributions} contribution`
-              : "No contributions"} on ${date.toLocaleDateString()}`}
+          {`${
+            contributions > 1
+              ? `${contributions} contributions`
+              : contributions === 1
+                ? `${contributions} contribution`
+                : "No contributions"
+          } on ${date.toLocaleDateString()}`}
         </div>
       )}
     </>
