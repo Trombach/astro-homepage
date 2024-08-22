@@ -10,19 +10,9 @@ import remarkGithub from "remark-github";
 import sitemap from "@astrojs/sitemap";
 import rehypeFigure from "@microflash/rehype-figure";
 
-import vtbot from "astro-vtbot";
-
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind(),
-    svelte(),
-    mdx(),
-    react(),
-    addsToHead(),
-    sitemap(),
-    vtbot(),
-  ],
+  integrations: [tailwind(), svelte(), mdx(), react(), addsToHead(), sitemap()],
   image: {
     domains: ["placehold.co"],
   },
