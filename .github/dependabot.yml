@@ -23,33 +23,13 @@ updates:
           - "@astrojs/*"
         update-types:
           - major
-      production-breaking:
+      production:
         dependency-type: production
         exclude-patterns:
           - "astro*"
           - "@astrojs/*"
-        update-types:
-          - major
-      dev-breaking:
+      development:
         dependency-type: development
-        exclude-patterns:
-          - "astro*"
-          - "@astrojs/*"
-        update-types:
-          - major
-      others-production:
-        dependency-type: production
-        update-types:
-          - minor
-          - patch
-        exclude-patterns:
-          - "astro*"
-          - "@astrojs/*"
-      others-dev:
-        dependency-type: development
-        update-types:
-          - minor
-          - patch
         exclude-patterns:
           - "astro*"
           - "@astrojs/*"
