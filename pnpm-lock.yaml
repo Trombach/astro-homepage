@@ -62,9 +62,6 @@ importers:
       astro:
         specifier: ^4.14.4
         version: 4.14.4(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4)
-      astro-vtbot:
-        specifier: ^1.8.7
-        version: 1.8.7
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -94,7 +91,7 @@ importers:
         version: 5.0.4
       svelte-preprocess:
         specifier: ^6.0.2
-        version: 6.0.2(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.40))(postcss@8.4.40)(svelte@4.2.18)(typescript@5.5.4)
+        version: 6.0.2(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.41))(postcss@8.4.41)(svelte@4.2.18)(typescript@5.5.4)
       tailwindcss:
         specifier: ^3.4.10
         version: 3.4.10
@@ -122,7 +119,7 @@ importers:
         version: 18.3.0
       svelte-check:
         specifier: ^3.8.5
-        version: 3.8.5(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.40))(postcss@8.4.40)(svelte@4.2.18)
+        version: 3.8.5(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.41))(postcss@8.4.41)(svelte@4.2.18)
       svelte-typewriter:
         specifier: ^3.2.3
         version: 3.2.3(svelte@4.2.18)
@@ -1128,9 +1125,6 @@ packages:
   '@vscode/l10n@0.0.18':
     resolution: {integrity: sha512-KYSIHVmslkaCDyw013pphY+d7x1qV8IZupYfeIfzNA+nsaWHbn5uPuQRvdRFsa9zFzGeudPuoGoZ1Op4jrJXIQ==}
 
-  '@vtbag/inspection-chamber@1.0.9':
-    resolution: {integrity: sha512-ahubZm5vsDeqVmeE58yMj1LV2xUBs64c53uCetTXIY6AhUmCaeMVeQvOITJ2s7Mj0wB3qY+6BnjZv+TQ+ssZoQ==}
-
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
 
@@ -1224,9 +1218,6 @@ packages:
   astring@1.8.6:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
     hasBin: true
-
-  astro-vtbot@1.8.7:
-    resolution: {integrity: sha512-w+uvUMdxFmpiWIN+IARMdwiJGQ/MJRAXVoqrkmRa2acP5kGK6QDhKKolH5JuFYbRf2yXU0Dz9r5+ti4d89qy0w==}
 
   astro@4.14.4:
     resolution: {integrity: sha512-gpHGyY9qVJg1WXD/0UFoV3cdGZifhmCkJ3fuYV1zUlh+lWbjEB7/cE+KoSvj6aXHJGyLuTbvWOoxZs2yAdnREw==}
@@ -4785,8 +4776,6 @@ snapshots:
 
   '@vscode/l10n@0.0.18': {}
 
-  '@vtbag/inspection-chamber@1.0.9': {}
-
   abbrev@1.1.1: {}
 
   abbrev@2.0.0: {}
@@ -4865,10 +4854,6 @@ snapshots:
   array-union@2.1.0: {}
 
   astring@1.8.6: {}
-
-  astro-vtbot@1.8.7:
-    dependencies:
-      '@vtbag/inspection-chamber': 1.0.9
 
   astro@4.14.4(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4):
     dependencies:
@@ -7163,14 +7148,14 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-check@3.8.5(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.40))(postcss@8.4.40)(svelte@4.2.18):
+  svelte-check@3.8.5(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.41))(postcss@8.4.41)(svelte@4.2.18):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 3.6.0
       picocolors: 1.0.1
       sade: 1.8.1
       svelte: 4.2.18
-      svelte-preprocess: 5.1.4(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.40))(postcss@8.4.40)(svelte@4.2.18)(typescript@5.5.4)
+      svelte-preprocess: 5.1.4(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.41))(postcss@8.4.41)(svelte@4.2.18)(typescript@5.5.4)
       typescript: 5.5.4
     transitivePeerDependencies:
       - '@babel/core'
@@ -7189,7 +7174,7 @@ snapshots:
     dependencies:
       svelte: 4.2.18
 
-  svelte-preprocess@5.1.4(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.40))(postcss@8.4.40)(svelte@4.2.18)(typescript@5.5.4):
+  svelte-preprocess@5.1.4(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.41))(postcss@8.4.41)(svelte@4.2.18)(typescript@5.5.4):
     dependencies:
       '@types/pug': 2.0.10
       detect-indent: 6.1.0
@@ -7199,17 +7184,17 @@ snapshots:
       svelte: 4.2.18
     optionalDependencies:
       '@babel/core': 7.25.2
-      postcss: 8.4.40
-      postcss-load-config: 4.0.2(postcss@8.4.40)
+      postcss: 8.4.41
+      postcss-load-config: 4.0.2(postcss@8.4.41)
       typescript: 5.5.4
 
-  svelte-preprocess@6.0.2(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.40))(postcss@8.4.40)(svelte@4.2.18)(typescript@5.5.4):
+  svelte-preprocess@6.0.2(@babel/core@7.25.2)(postcss-load-config@4.0.2(postcss@8.4.41))(postcss@8.4.41)(svelte@4.2.18)(typescript@5.5.4):
     dependencies:
       svelte: 4.2.18
     optionalDependencies:
       '@babel/core': 7.25.2
-      postcss: 8.4.40
-      postcss-load-config: 4.0.2(postcss@8.4.40)
+      postcss: 8.4.41
+      postcss-load-config: 4.0.2(postcss@8.4.41)
       typescript: 5.5.4
 
   svelte-typewriter@3.2.3(svelte@4.2.18):
