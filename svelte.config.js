@@ -1,5 +1,5 @@
 import { vitePreprocess } from "@astrojs/svelte";
-import sveltePreprocess from "svelte-preprocess";
+import { sveltePreprocess } from "svelte-preprocess";
 import tailwindcss from "tailwindcss";
 
 export default {
