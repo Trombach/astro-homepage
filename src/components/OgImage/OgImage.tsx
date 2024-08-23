@@ -14,12 +14,12 @@ export default function OgImage() {
         gap: ".5em",
       }}
     >
+      {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
       <svg
         viewBox="0 0 300 300"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <title>OG Image</title>
         <circle r="150" cx="50%" cy="50%" fill="hsl(224 71.4% 4.1%)" />
 
         <g transform="scale(0.7) translate(60 120)">
