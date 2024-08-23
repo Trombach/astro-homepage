@@ -57,7 +57,7 @@
     "@tailwindcss/typography": "^0.5.14",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
-    "svelte-check": "^3.8.5",
+    "svelte-check": "^3.8.6",
     "svelte-typewriter": "^3.2.3",
     "typescript": "^5.5.4",
     "unplugin-icons": "^0.19.2"
