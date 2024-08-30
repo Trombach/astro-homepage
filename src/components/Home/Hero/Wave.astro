@@ -1,6 +1,6 @@
-<span data-waving-hand>👋</span>
+<span class="inline-block origin-bottom-right motion-safe:animate-[wave_4s_ease-in-out_1s_infinite]">👋</span>
 
-<style lang="postcss">
+<style>
   @keyframes wave {
     0% {
       transform: rotate(0deg);
@@ -26,10 +26,5 @@
     100% {
       transform: rotate(0deg);
     }
-  }
-
-  [data-waving-hand] {
-    @apply motion-safe:animate-[wave_4s_ease-in-out_1s_infinite];
-    @apply inline-block origin-bottom-right;
   }
 </style>

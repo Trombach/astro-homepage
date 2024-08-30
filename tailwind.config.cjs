@@ -1,6 +1,22 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const typography = require("@tailwindcss/typography");
 const containerQueries = require("@tailwindcss/container-queries");
+const plugin = require("tailwindcss/plugin");
+
+const animationDelay = plugin(({ matchUtilities, theme }) => {
+  matchUtilities(
+    {
+      "animation-delay": (value) => {
+        return {
+          "animation-delay": value,
+        };
+      },
+    },
+    {
+      values: theme("transitionDelay"),
+    },
+  );
+});
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,6 +31,22 @@ module.exports = {
       xl: "1440px",
     },
     extend: {
+      keyframes: {
+        "slide-in-bottom": {
+          "0%": {
+            transform: "translateY(100px)",
+            opacity: 0,
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
+        },
+      },
+      animation: {
+        "slide-in":
+          "slide-in-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
+      },
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
         mono: ["JetBrains Mono Variable", ...defaultTheme.fontFamily.mono],
@@ -37,9 +69,9 @@ module.exports = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          green: "hsl(var(--primary-green))",
+          pink: "hsl(var(--primary-pink))",
         },
-        primaryGreen: "hsl(var(--primary-green))",
-        primaryPink: "hsl(var(--primary-pink))",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -67,7 +99,7 @@ module.exports = {
       },
     },
   },
-  plugins: [typography, containerQueries],
+  plugins: [typography, containerQueries, animationDelay],
   future: {
     hoverOnlyWhenSupported: true,
   },
