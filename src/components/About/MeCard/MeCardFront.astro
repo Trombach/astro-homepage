@@ -1,7 +1,8 @@
 ---
 import { getEntry } from "astro:content";
-import AnimatedText from "./AnimatedText.svelte";
 import Avatar from "./Avatar.astro";
+import AppLink from "@components/AppLink.astro";
+import PlusIcon from "icons:astro/heroicons/plus";
 
 const {
   data: { person },
@@ -18,33 +19,33 @@ const me = {
 } as const;
 ---
 
-<div
-  data-card-face="front"
-  class="flex h-full w-full flex-col items-stretch justify-between lg:flex-row"
->
-  <div class="gradient basis-1/3 rounded-xl">
-    <Avatar
-      image={data.avatar}
-      class="mx-auto mt-5 size-24 md:size-32 lg:mt-10"
-    />
+<div class="flex h-full w-full items-stretch justify-between">
+  <div class="gradient basis-1/3 rounded-xl flex flex-col items-center">
+    <Avatar image={data.avatar} class="mt-5 size-24 @lg:size-32" />
+    <div class="mx-auto mt-5 max-w-fit max-h-fit rounded-full bg-background">
+      <AppLink
+        as="a"
+        href="/lukas-trombach.vcf"
+        download="lukas-trombach.vcf"
+        class="text-center max-w-fit pl-3"
+      >
+        <PlusIcon />
+        <span>Contact</span>
+      </AppLink>
+    </div>
   </div>
-  <ul
-    class="table basis-2/3 px-2 py-10 [--cursor-color:theme(colors.foreground)] [--cursor-width:1px] md:p-10 lg:px-0 lg:py-20"
-  >
+  <ul class="table mr-10 basis-2/3 py-5 @lg:py-10">
     {
       Object.entries(me).map(([key, value]) => (
-        <li class="table-row align-bottom">
-          <AnimatedText client:only="svelte">
-            <span
-              data-static
-              class="table-cell p-3 align-middle text-lg font-bold"
-            >
-              {key}:
-            </span>
-            <div class="table-cell w-4/5 p-3 align-middle font-mono text-xl">
-              {value}
-            </div>
-          </AnimatedText>
+        <li class="table-row">
+          <span class="table-cell text-sm align-middle font-bold @lg:text-lg">
+            {key}:
+          </span>
+          <span
+            class="table-cell bg-background w-3/5 border-b border-t-0 border-x-0 border-dashed align-middle font-mono text-sm @lg:text-lg"
+          >
+            {value}
+          </span>
         </li>
       ))
     }
