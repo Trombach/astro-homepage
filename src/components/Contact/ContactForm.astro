@@ -5,6 +5,16 @@ import H1 from "@components/H1.astro";
 import { actions } from "astro:actions";
 import PaperPlane from "icons:astro/heroicons/paper-airplane";
 import FormFields from "./FormFields.astro";
+import MailIcon from "icons:astro/heroicons/envelope";
+import MatrixLogo from "icons:astro/simple-icons/matrix";
+import LinkedInLogo from "icons:astro/simple-icons/linkedin";
+import Avatar from "@components/About/MeCard/Avatar.astro";
+import { getEntry } from "astro:content";
+
+const {
+  data: { person },
+} = await getEntry("about", "about-me");
+const { data } = await getEntry(person);
 ---
 
 <form
@@ -12,9 +22,44 @@ import FormFields from "./FormFields.astro";
   transition:name="contact-form"
   method="POST"
   action={actions.contact}
-  class="mx-auto flex w-full flex-col gap-10 rounded-xl border bg-background p-6 md:w-[600px] lg:max-w-screen-lg lg:p-12"
+  class="relative mx-auto flex w-full flex-col gap-5 rounded-xl border bg-background px-6 py-3 justify-center md:w-[600px] lg:max-w-screen-lg lg:px-12 lg:py-6"
 >
-  <H1 title="Send Me a Message" />
+  <Avatar
+    image={data.avatar}
+    class="size-16 lg:size-24 absolute -right-4 lg:-right-5 -top-5 border-transparent"
+  />
+
+  <H1 title="Get in Touch" class="mb-0" />
+
+  <div class="flex items-center gap-3 justify-start">
+    <AppLink
+      as="a"
+      appearance="secondary"
+      target="_blank"
+      href=`mailto:${data.contact.email}`
+      title="Email me"
+    >
+      <MailIcon />
+    </AppLink>
+    <AppLink
+      as="a"
+      appearance="secondary"
+      target="_blank"
+      href={data.contact.matrix}
+      title="Add me on Matrix"
+    >
+      <MatrixLogo />
+    </AppLink>
+    <AppLink
+      as="a"
+      appearance="secondary"
+      target="_blank"
+      href={data.contact.linkedIn}
+      title="Connect with me on LinkedIn"
+    >
+      <LinkedInLogo />
+    </AppLink>
+  </div>
 
   <SendEmailResponse />
 
