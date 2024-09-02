@@ -1,12 +1,13 @@
 ---
+import AboutText from "./AboutText.astro";
 import MeCard from "./MeCard/MeCard.astro";
-import Wave from "./Wave.astro";
 ---
 
-<section
-  id="about-me"
-  class="flex min-h-screen-less-header w-full flex-col items-center justify-center bg-bottom bg-no-repeat [perspective:600px] md:[perspective:900px] lg:[perspective:1200px]"
->
-  <MeCard />
-  <Wave />
+<section class="bg-secondary w-full">
+  <div
+    class="[perspective:3200px] [container:me-section/size] h-svh mx-auto max-w-screen-xl flex flex-col lg:flex-row items-center"
+  >
+    <MeCard />
+    <AboutText />
+  </div>
 </section>
