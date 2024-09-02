@@ -4,7 +4,6 @@ import { dash } from "radash";
 
 type Props = HTMLAttributes<"h1"> & {
   title: string;
-  appearance?: "primary" | "secondary" | undefined;
 };
 
 const {
@@ -21,7 +20,7 @@ const {
     "relative mb-6 text-nowrap p-2 text-left font-mono",
     "after:absolute after:bottom-[20%] after:left-0 after:h-4 after:w-28 after:-skew-x-12",
     "font-size-clamp-h1",
-    "text-primary-foreground after:bg-primary",
+    "text-primary-foreground",
     classList,
     className,
   ]}
@@ -29,3 +28,25 @@ const {
 >
   <span class="relative z-10 text-foreground">{title}</span>
 </h1>
+
+<style>
+  h1 {
+    &::after {
+      background-image: linear-gradient(
+        to right,
+        theme(colors.primary.DEFAULT),
+        theme(colors.primary.DEFAULT) calc(70% - 1px),
+        transparent 70%,
+        transparent calc(74% - 1px),
+        theme(colors.primary.green) 74%,
+        theme(colors.primary.green) calc(84% - 1px),
+        transparent 84%,
+        transparent calc(86% - 1px),
+        theme(colors.primary.pink) 86%,
+        theme(colors.primary.pink) calc(87.5% - 1px),
+        transparent 87.5%,
+        transparent 100%
+      )
+    }
+  }
+</style>
