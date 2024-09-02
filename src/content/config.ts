@@ -29,6 +29,11 @@ const personCollection = defineCollection({
       currentLocation: z.string(),
       education: z.string(),
       avatar: image().optional(),
+      contact: z.object({
+        email: z.string().email(),
+        matrix: z.string().url(),
+        linkedIn: z.string().url(),
+      }),
     }),
 });
 
