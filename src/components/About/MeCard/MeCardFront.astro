@@ -20,7 +20,7 @@ const me = {
 ---
 
 <div class="flex h-full w-full items-stretch justify-between">
-  <div class="gradient basis-1/3 rounded-xl flex flex-col items-center">
+  <div class="gradient basis-1/3 rounded-l-xl flex flex-col items-center">
     <Avatar image={data.avatar} class="mt-5 size-24 @lg:size-32" />
     <div class="mx-auto mt-5 max-w-fit max-h-fit rounded-full bg-background">
       <AppLink
@@ -41,9 +41,7 @@ const me = {
           <span class="table-cell text-sm align-middle font-bold @lg:text-lg">
             {key}:
           </span>
-          <span
-            class="table-cell bg-background w-3/5 border-b border-t-0 border-x-0 border-dashed align-middle font-mono text-sm @lg:text-lg"
-          >
+          <span class="table-cell bg-background w-3/5 border-b border-t-0 border-x-0 border-dashed align-middle font-mono text-sm @lg:text-lg">
             {value}
           </span>
         </li>
@@ -54,17 +52,30 @@ const me = {
 
 <style>
   .gradient {
-    --gradient-stop: 45%;
-
-    @media screen(md) {
-      --gradient-stop: 40%;
-    }
+    --gradient-direction: 105deg;
+    --spacing-1: 2%;
+    --spacing-2: 1.5%;
+    --width-1: 6%;
+    --width-2: 1.25%;
+    --gradient-stop-1: 30%;
+    --gradient-stop-2: calc(var(--gradient-stop-1) + var(--spacing-1));
+    --gradient-stop-3: calc(var(--gradient-stop-2) + var(--width-1));
+    --gradient-stop-4: calc(var(--gradient-stop-3) + var(--spacing-2)); 
+    --gradient-stop-5: calc(var(--gradient-stop-4) + var(--width-2));
 
     background-image: linear-gradient(
-      to bottom right,
-      theme(colors.primary.DEFAULT),
-      theme(colors.primary.DEFAULT) var(--gradient-stop),
-      transparent var(--gradient-stop)
-    );
+        var(--gradient-direction),
+        theme(colors.primary.DEFAULT),
+        theme(colors.primary.DEFAULT) calc(var(--gradient-stop-1) - 1px),
+        transparent var(--gradient-stop-1),
+        transparent calc(var(--gradient-stop-2) - 1px),
+        theme(colors.primary.green) var(--gradient-stop-2),
+        theme(colors.primary.green) calc(var(--gradient-stop-3) - 1px),
+        transparent var(--gradient-stop-3),
+        transparent calc(var(--gradient-stop-4) - 1px),
+        theme(colors.primary.pink) var(--gradient-stop-4),
+        theme(colors.primary.pink) calc(var(--gradient-stop-5) - 1px),
+        transparent var(--gradient-stop-5)
+      );
   }
 </style>
