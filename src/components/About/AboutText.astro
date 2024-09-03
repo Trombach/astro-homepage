@@ -9,18 +9,9 @@ const {
 const { Content } = await render();
 ---
 
-<div data-about-me class="p-10 lg:w-1/2 w-full lg:ml-auto">
-  <H1 {title} />
-  <div class="prose md:prose-xl dark:prose-invert">
+<div class="p-10 lg:w-1/2 w-full lg:ml-auto">
+  <H1 {title} class="timeline-slide-in-bottom" />
+  <div class="prose md:prose-xl dark:prose-invert *:timeline-slide-in-bottom">
     <Content />
   </div>
 </div>
-
-<style>
-  [data-about-me] {
-    animation-timeline: view();
-    animation-range: entry 40% entry 60%;
-    animation-name: slide-in-bottom;
-    animation-fill-mode: both;
-  }
-</style>
