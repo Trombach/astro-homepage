@@ -14,11 +14,10 @@ const { href, title, description, cover, meta } = Astro.props;
 <li
   class:list={[
     "group max-w-[600px] overflow-clip rounded-xl border bg-card text-card-foreground",
-    "transition-colors duration-300 hover:bg-primary/5",
   ]}
   transition:name={`border-${dash(title)}`}
 >
-  <a {href} class="flex h-full flex-col">
+  <a {href} class="flex h-full flex-col transition-colors duration-300 hover:bg-primary/5">
     {
       cover?.image && cover.alt && (
         <CardImage image={cover.image} alt={cover.alt} />
