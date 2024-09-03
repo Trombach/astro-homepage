@@ -7,7 +7,7 @@ import MeCardFront from "./MeCardFront.astro";
   class:list={[
     "@container/me-card",
     "z-50 rounded-xl border bg-card [transform-style:preserve-3d]",
-    "w-1/2 aspect-[1.59/1] max-w-[750px]",
+    "w-3/4 lg:w-1/2 aspect-[1/1.59] lg:aspect-[1.59/1] max-w-[750px]",
   ]}
 >
   <MeCardFront />
@@ -17,6 +17,7 @@ import MeCardFront from "./MeCardFront.astro";
   [data-card] {
     animation-timeline: view();
     animation-range: entry 0% entry 90%;
+    animation-name: id-card-mobile;
     @media screen(lg) {
       animation-name: id-card;
     }
@@ -25,23 +26,31 @@ import MeCardFront from "./MeCardFront.astro";
     animation-timing-function: ease-in-out;
   }
 
-  @keyframes id-card {
-    0% {
-      transform: translateY(calc(-25cqh - 10vh)) translateX(25cqw) scale(1) rotateY(0);
-      @apply drop-shadow-none;
-    }
+    @keyframes id-card {
+      0% {
+        transform: translateY(calc(-25cqh - 10vh)) translateX(25cqw) scale(1)
+          rotateY(0);
+        @apply drop-shadow-none;
+      }
 
-    50% {
-      transform: translateY(-50cqh) translateX(0) scale(0.8) rotateY(0);
-      @apply drop-shadow-none;
-    }
+      50% {
+        transform: translateY(-50cqh) translateX(0) scale(0.8) rotateY(0);
+        @apply drop-shadow-none;
+      }
 
-    100% {
-      transform: translateY(0) translateX(0) scale(0.6) rotateY(20deg);
-      @apply drop-shadow-2xl;
+      100% {
+        transform: translateY(0) translateX(0) scale(0.6) rotateY(20deg);
+        @apply drop-shadow-2xl;
+      }
     }
-  }
 
   @keyframes id-card-mobile {
+    from {
+      transform: translateY(-10%) scale(1);
+    }
+
+    to {
+      transform: translateY(0) scale(0.8);
+    }
   }
 </style>
