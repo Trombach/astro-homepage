@@ -18,6 +18,17 @@ const animationDelay = plugin(({ matchUtilities, theme }) => {
   );
 });
 
+const timelineAnimation = plugin(({ addComponents }) => {
+  addComponents({
+    ".timeline-slide-in-bottom": {
+      "animation-timeline": "view()",
+      "animation-range": "entry 100% contain 25%",
+      "animation-name": "slide-in-bottom",
+      "animation-fill-mode": "both",
+    },
+  });
+});
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -99,7 +110,13 @@ module.exports = {
       },
     },
   },
-  plugins: [typography, containerQueries, animationDelay],
+  plugins: [
+    typography,
+    containerQueries,
+
+    animationDelay,
+    timelineAnimation,
+  ],
   future: {
     hoverOnlyWhenSupported: true,
   },
