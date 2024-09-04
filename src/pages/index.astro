@@ -1,6 +1,7 @@
 ---
 import AboutMe from "@components/About/AboutMe.astro";
 import Tech from "@components/About/Tech.astro";
+import Footer from "@components/Footer/Footer.astro";
 import Hero from "@components/Home/Hero/Hero.astro";
 import Layout from "@layouts/Layout.astro";
 ---
@@ -9,4 +10,5 @@ import Layout from "@layouts/Layout.astro";
   <Hero />
   <AboutMe />
   <Tech />
+  <Footer slot="footer" bgBlend="background"/>
 </Layout>
