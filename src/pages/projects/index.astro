@@ -1,4 +1,5 @@
 ---
+import Contributions from "@components/About/Contributions.astro";
 import Footer from "@components/Footer/Footer.astro";
 import ProjectCard from "@components/ProjectCard/ProjectCard.astro";
 import { getCollection } from "astro:content";
@@ -24,5 +25,6 @@ const sortOrder = [
         ))
     }
   </ul>
+  <Contributions />
   <Footer slot="footer" bgBlend="background" />
 </Layout>
