@@ -1,4 +1,5 @@
 ---
+import Footer from "@components/Footer/Footer.astro";
 import ProjectPage from "@components/ProjectPage/ProjectPage.astro";
 import SEO from "@components/SEO.astro";
 import Layout from "@layouts/Layout.astro";
@@ -33,6 +34,8 @@ const { Content, headings } = await render();
   <ProjectPage {title} {headings} {description} {...extraProps}>
     <Content />
   </ProjectPage>
+
+  <Footer slot="footer" bgBlend="background" />
 </Layout>
 
 <script>
