@@ -8,6 +8,7 @@ import InterWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal
 import "@fontsource-variable/jetbrains-mono";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import { ViewTransitions } from "astro:transitions";
+import Footer from "@components/Footer/Footer.astro";
 
 interface Props {
   title: string;
@@ -79,7 +80,12 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <Background>
       <Navbar />
       <main class="flex w-full flex-col items-center"><slot /></main>
+
+      <slot name="footer">
+        <Footer />
+      </slot>
     </Background>
+
     <style is:global>
       @tailwind base;
       @tailwind utilities;

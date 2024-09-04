@@ -1,0 +1,43 @@
+---
+import AstroLogo from "icons:astro/logos/astro";
+import WaveSeparator, { type Props } from "../About/WaveSeparator.astro";
+import Graph from "../Graph/Graph.svelte";
+import Copyright from "./Copyright.astro";
+
+const { bgBlend = "transparent" } = Astro.props;
+---
+
+<div class="relative">
+  <WaveSeparator {bgBlend} />
+  <footer class="bg-secondary text-secondary-foreground p-5">
+    <div class="max-w-screen-xl mx-auto flex justify-end gap-5">
+      <div
+        class="absolute flex justify-center left-[5%] lg:left-[10%] top-0 rounded-full border-4 border-secondary bg-background size-20 sm:size-28 lg:size-36 p-2 sm:p-3 lg:p-5"
+      >
+        <Graph client:visible />
+      </div>
+
+      <Copyright server:defer>
+        <a
+          id="copyright"
+          href="https://github.com/Trombach/astro-homepage/blob/main/LICENSE"
+          slot="fallback"
+        >
+          GPL-3.0 &copy; {new Date().getFullYear()}
+        </a>
+      </Copyright>
+      <a href="https://astro.build" class="flex gap-2 items-center">
+        <span>Built with </span>
+        <span>
+          <AstroLogo class="fill-foreground" />
+        </span>
+      </a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  let copyright = document.querySelector("#copyright");
+  if (copyright instanceof HTMLAnchorElement)
+    copyright.innerHTML = `${copyright.dataset.license} ${new Date().getFullYear()}`;
+</script>
