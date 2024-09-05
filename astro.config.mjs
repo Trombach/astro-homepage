@@ -54,6 +54,7 @@ export default defineConfig({
   }),
   site: "https://www.lukastrombach.dev",
   experimental: {
+    contentIntellisense: true,
     serverIslands: true,
     actions: true,
     env: {
