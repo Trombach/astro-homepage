@@ -1,5 +1,12 @@
 ---
-import MeCardFront from "./MeCardFront.astro";
+import { getEntry } from "astro:content";
+import MeCardData from "./MeCardData.astro";
+import MeCardImage from "./MeCardImage.astro";
+
+const {
+  data: { person },
+} = await getEntry("about", "about-me");
+const { data } = await getEntry(person);
 ---
 
 <div
@@ -10,7 +17,12 @@ import MeCardFront from "./MeCardFront.astro";
     "w-3/4 lg:w-1/2 aspect-[1/1.59] lg:aspect-[1.59/1] max-w-[750px]",
   ]}
 >
-  <MeCardFront />
+  <div
+    class="flex flex-col lg:flex-row h-full w-full items-stretch justify-between"
+  >
+    <MeCardImage image={data.avatar} />
+    <MeCardData {data} />
+  </div>
 </div>
 
 <style>

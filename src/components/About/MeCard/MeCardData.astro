@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  data: CollectionEntry<"person">["data"];
+};
+
+const { data } = Astro.props;
+
+const me = {
+  Name: data.name,
+  Age: Math.floor((Date.now() - data.birthday.getTime()) / 31_556_952_000), // age in years
+  From: data.from,
+  Location: data.currentLocation,
+  Experience: `${new Date().getFullYear() - data.industryStart} years`,
+  Education: data.education,
+} as const;
+---
+
+<ul class="table mx-5 md:mr-10 basis-2/3 py-5 @lg:py-10">
+  {
+    Object.entries(me).map(([key, value]) => (
+      <li class="table-row">
+        <span class="table-cell text-sm align-middle font-bold @lg:text-lg">
+          {key}:
+        </span>
+        <span class="table-cell bg-background w-3/5 border-b border-t-0 border-x-0 border-dashed align-middle font-mono text-sm @lg:text-lg">
+          {value}
+        </span>
+      </li>
+    ))
+  }
+</ul>
