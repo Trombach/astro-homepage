@@ -66,16 +66,11 @@ const me = {
 
     background-image: linear-gradient(
         var(--gradient-direction),
-        theme(colors.primary.DEFAULT),
-        theme(colors.primary.DEFAULT) calc(var(--gradient-stop-1) - 1px),
-        transparent var(--gradient-stop-1),
-        transparent calc(var(--gradient-stop-2) - 1px),
-        theme(colors.primary.green) var(--gradient-stop-2),
-        theme(colors.primary.green) calc(var(--gradient-stop-3) - 1px),
-        transparent var(--gradient-stop-3),
-        transparent calc(var(--gradient-stop-4) - 1px),
-        theme(colors.primary.pink) var(--gradient-stop-4),
-        theme(colors.primary.pink) calc(var(--gradient-stop-5) - 1px),
+        theme(colors.primary.DEFAULT) 0% calc(var(--gradient-stop-1) - 1px),
+        transparent var(--gradient-stop-1) calc(var(--gradient-stop-2) - 1px),
+        theme(colors.primary.green) var(--gradient-stop-2) calc(var(--gradient-stop-3) - 1px),
+        transparent var(--gradient-stop-3) calc(var(--gradient-stop-4) - 1px),
+        theme(colors.primary.pink) var(--gradient-stop-4) calc(var(--gradient-stop-5) - 1px),
         transparent var(--gradient-stop-5)
       );
   }
