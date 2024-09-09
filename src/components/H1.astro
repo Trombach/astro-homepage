@@ -35,18 +35,12 @@ const {
     &::after {
       background-image: linear-gradient(
         to right,
-        theme(colors.primary.DEFAULT),
-        theme(colors.primary.DEFAULT) calc(70% - 1px),
-        transparent 70%,
-        transparent calc(74% - 1px),
-        theme(colors.primary.green) 74%,
-        theme(colors.primary.green) calc(84% - 1px),
-        transparent 84%,
-        transparent calc(86% - 1px),
-        theme(colors.primary.pink) 86%,
-        theme(colors.primary.pink) calc(87.5% - 1px),
-        transparent 87.5%,
-        transparent 100%
+        theme(colors.primary.DEFAULT) 0 calc(70% - 1px),
+        transparent 70% calc(74% - 1px),
+        theme(colors.primary.green) 74% calc(84% - 1px),
+        transparent 84% calc(86% - 1px),
+        theme(colors.primary.pink) 86% calc(87.5% - 1px),
+        transparent 87.5% 100%
       )
     }
   }
