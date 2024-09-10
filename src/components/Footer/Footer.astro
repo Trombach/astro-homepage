@@ -12,6 +12,7 @@ const { bgBlend = "transparent" } = Astro.props;
   <footer class="bg-secondary text-secondary-foreground p-5">
     <div class="max-w-screen-xl mx-auto flex justify-end gap-5">
       <div
+        transition:persist="footer-logo"
         class="absolute flex justify-center left-[5%] lg:left-[10%] top-0 rounded-full border-4 border-secondary bg-background size-20 sm:size-28 lg:size-36 p-2 sm:p-3 lg:p-5"
       >
         <Graph client:visible />
