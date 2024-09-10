@@ -1,3 +1,5 @@
+// @ts-check
+
 import { defineConfig, envField } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
@@ -8,6 +10,8 @@ import react from "@astrojs/react";
 import addsToHead from "./adds-to-head-integration";
 import remarkGithub from "remark-github";
 import sitemap from "@astrojs/sitemap";
+
+// @ts-ignore
 import rehypeFigure from "@microflash/rehype-figure";
 
 // https://astro.build/config
