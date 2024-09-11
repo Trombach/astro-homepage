@@ -2,46 +2,66 @@
 import DesktopIcon from "icons:astro/heroicons/computer-desktop-16-solid";
 import MoonIcon from "icons:astro/heroicons/moon-16-solid";
 import SunIcon from "icons:astro/heroicons/sun-16-solid";
-import { capitalize } from "radash";
 
 export type Theme = "auto" | "dark" | "light";
 
 const options = ["auto", "dark", "light"] as const satisfies Theme[];
 ---
 
-<label for="theme-switcher" class="relative items-center gap-1 py-3 lg:py-2">
-  <span class="sr-only">theme switcher</span>
-  <DesktopIcon
-    id="desktop-theme-icon"
-    class="absolute left-1 top-1/2 size-5 -translate-y-1/2"
-  />
-  <SunIcon
-    id="sun-theme-icon"
-    class="absolute left-1 top-1/2 hidden size-5 -translate-y-1/2"
-  />
-  <MoonIcon
-    id="moon-theme-icon"
-    class="absolute left-1 top-1/2 hidden size-5 -translate-y-1/2"
-  />
-  <select
-    id="theme-switcher"
-    class="appearance-none rounded-lg border-0 bg-transparent pl-7 font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-current"
-  >
-    {
-      options.map((option) => (
-        <option value={option} class="bg-background text-foreground">
-          {capitalize(option)}
-        </option>
-      ))
-    }
-  </select>
-</label>
+<fieldset
+  class:list={[
+    "border border-solid flex rounded-full w-fit h-8 box-content",
+    "focus-within:outline focus-within:outline-offset-1",
+  ]}
+>
+  <legend class="sr-only">Select a theme</legend>
+  {
+    options.map((option) => (
+      <input
+        type="radio"
+        name="theme"
+        id={`${option}-theme`}
+        value={option}
+        class:list={[
+          "peer absolute outline-none m-0 p-0 appearance-none",
+          "[&_+_label]:checked:text-foreground",
+        ]}
+      />
+      <label
+        for={`${option}-theme`}
+        class:list={[
+          "h-8 w-8 flex justify-center items-center rounded-full cursor-pointer",
+          "transition-all text-muted-foreground hover:text-foreground",
+        ]}
+      >
+        <span class="sr-only">{option} theme</span>
+        {option === "auto" && (
+          <DesktopIcon id="auto-theme-icon" class="size-4" />
+        )}
+        {option === "dark" && (
+          <MoonIcon id="dark-theme-icon" class="size-4" />
+        )}
+        {option === "light" && (
+          <SunIcon id="light-theme-icon" class="size-4" />
+        )}
+      </label>
+    ))
+  }
+  <span
+    is="theme-highlight"
+    class:list={[
+      "absolute w-8 h-8 rounded-full border-2 border-primary cursor-pointer",
+      "transition-transform duration-300 ease-in-out",
+      "peer-[:nth-of-type(2)]:peer-checked:translate-x-full",
+      "peer-[:nth-of-type(3)]:peer-checked:translate-x-[200%]",
+    ]}></span>
+</fieldset>
 
 <script is:inline>
-  window.ThemeProvider.updateTheme();
+  window.ThemeProvider.initTheme();
 
   document.addEventListener("astro:before-swap", (event) =>
-    window.ThemeProvider.updateTheme(event.newDocument),
+    window.ThemeProvider.initTheme(event.newDocument),
   );
 </script>
 
@@ -49,22 +69,23 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
   declare global {
     interface Window {
       ThemeProvider: {
+        initTheme: () => void;
         getTheme: () => "auto" | "dark" | "light";
         setTheme: (theme: string) => void;
-        updateTheme: () => void;
       };
     }
   }
 
   function init() {
-    const select = document.querySelector("select");
-    if (select) {
-      select.value = window.ThemeProvider.getTheme();
-
-      select.addEventListener("change", () => {
-        window.ThemeProvider.setTheme(select.value);
-        window.ThemeProvider.updateTheme();
-      });
+    const radioButtons = document.querySelectorAll(
+      "input[type=radio][name=theme]",
+    );
+    for (const radioButton of radioButtons) {
+      if (radioButton instanceof HTMLInputElement) {
+        radioButton.addEventListener("change", () => {
+          window.ThemeProvider.setTheme(radioButton.value);
+        });
+      }
     }
   }
 
@@ -75,7 +96,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
   // react to system theme change
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
     if (window.ThemeProvider.getTheme() === "auto") {
-      window.ThemeProvider.updateTheme();
+      window.ThemeProvider.initTheme();
     }
   });
 </script>
