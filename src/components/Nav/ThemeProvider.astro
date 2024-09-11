@@ -1,50 +1,48 @@
 <script is:inline>
-  if (!window.ThemeProvider) {
-    window.ThemeProvider = {
-      updateTheme: (doc = document) => {
-        if (
-          localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          doc.documentElement.classList.add("dark");
-        } else {
-          doc.documentElement.classList.remove("dark");
-        }
+  window.ThemeProvider ??= {
+    initTheme: (doc = document) => {
+      setThemeClass(doc);
+      updateThemeSwitcher(doc);
+    },
+    getTheme: () => localStorage.getItem("theme") || "auto",
+    setTheme: (theme) => {
+      switch (theme) {
+        default:
+        case "auto":
+          localStorage.removeItem("theme");
+          break;
+        case "dark":
+          localStorage.setItem("theme", "dark");
+          break;
+        case "light":
+          localStorage.setItem("theme", "light");
+          break;
+      }
 
-        swapThemeIcon(doc);
-      },
-      getTheme: () => localStorage.getItem("theme") || "auto",
-      setTheme: (theme) => {
-        switch (theme) {
-          default:
-          case "auto":
-            localStorage.removeItem("theme");
-            break;
-          case "dark":
-            localStorage.setItem("theme", "dark");
-            break;
-          case "light":
-            localStorage.setItem("theme", "light");
-            break;
-        }
-      },
-    };
+      setThemeClass();
+    },
+  };
+
+  function prefersDarkTheme() {
+    return (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    );
   }
 
-  function swapThemeIcon(doc = document) {
-    const iconMap = new Map([
-      ["auto", "desktop-theme-icon"],
-      ["dark", "moon-theme-icon"],
-      ["light", "sun-theme-icon"],
-    ]);
-
+  function updateThemeSwitcher(doc = document) {
     const theme = localStorage.getItem("theme") || "auto";
+    const radioButton = doc.querySelector(
+      `input[type=radio][name=theme]#${theme}-theme`,
+    );
 
-    doc
-      .querySelector("[id$=-theme-icon]:not(.hidden)")
-      ?.classList.toggle("hidden");
+    if (radioButton instanceof HTMLInputElement) {
+      radioButton.checked = true;
+    }
+  }
 
-    doc.querySelector(`[id=${iconMap.get(theme)}]`)?.classList.toggle("hidden");
+  function setThemeClass(doc = document) {
+    doc.documentElement.classList.toggle("dark", prefersDarkTheme());
   }
 </script>
