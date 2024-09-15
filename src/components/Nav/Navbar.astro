@@ -6,7 +6,7 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
 <header
-  class="sticky top-0 z-50 w-full bg-background px-5 py-3 backdrop-blur supports-[backdrop-filter]:bg-background/30"
+  class="fixed top-0 z-50 w-full px-5 py-3"
 >
   <div
     class="relative mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-between lg:flex-nowrap lg:items-center"
@@ -26,10 +26,30 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
       ]}
     >
       <NavigationMenu />
-      <ThemeSwitcher
-        transition:persist="theme-switcher"
-        transition:animate="none"
-      />
+      <ThemeSwitcher />
     </div>
   </div>
 </header>
+
+<style>
+  @keyframes bg-blur {
+    10%, 100% {
+      backdrop-filter: blur(theme(blur.DEFAULT));
+      background-color: var(--header-bg-color, theme(colors.background));
+    }
+  }
+
+  :global(:root) {
+    @supports (backdrop-filter: blur(theme(blur.DEFAULT))) {
+      --header-bg-color: theme(colors.background/50%);
+    }
+  }
+
+  header {
+    animation: bg-blur linear;
+    animation-timeline: scroll();
+    animation-duration: 1ms;
+    backdrop-filter: blur(theme(blur.none));
+    background-color: theme(colors.transparent);
+  }
+</style>
