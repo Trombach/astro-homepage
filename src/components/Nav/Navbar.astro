@@ -1,18 +1,15 @@
 ---
 import MenuButton from "@components/MenuButton.svelte";
-import Links from "./Links.astro";
 import NavigationMenu from "./NavigationMenu.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
-<header
-  class="fixed top-0 z-50 w-full px-5 py-3"
->
+<header data-header="collapsed" class="group fixed top-0 z-50 w-full px-5 py-3">
   <div
     class="relative mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-between lg:flex-nowrap lg:items-center"
   >
     <MenuButton client:visible />
-    <Links />
+    <ThemeSwitcher />
 
     <hr class="m-0 h-0 w-0 basis-full border-0 lg:hidden lg:basis-0" />
 
@@ -23,17 +20,18 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
         "max-h-0 basis-full overflow-y-hidden transition-[max-height] duration-500",
         "lg:max-h-max lg:basis-auto lg:overflow-y-visible",
         "max-md:divide-y",
+        "max-h-0 group-data-[header=expanded]:max-h-96"
       ]}
     >
       <NavigationMenu />
-      <ThemeSwitcher />
     </div>
   </div>
 </header>
 
 <style>
   @keyframes bg-blur {
-    10%, 100% {
+    10%,
+    100% {
       backdrop-filter: blur(theme(blur.DEFAULT));
       background-color: var(--header-bg-color, theme(colors.background));
     }
@@ -49,7 +47,11 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
     animation: bg-blur linear;
     animation-timeline: scroll();
     animation-duration: 1ms;
-    backdrop-filter: blur(theme(blur.none));
-    background-color: theme(colors.transparent);
+    backdrop-filter: blur(theme(blur.DEFAULT));
+    background-color: var(--header-bg-color, theme(colors.transparent));
+    @media screen(lg) {
+      backdrop-filter: blur(theme(blur.none));
+      background-color: theme(colors.transparent);
+    }
   }
 </style>
