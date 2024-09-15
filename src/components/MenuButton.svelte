@@ -2,18 +2,20 @@
 import { onMount } from "svelte";
 
 let showCloseIcon = false;
-let menu: HTMLElement | null;
+let header: HTMLElement | null;
 
 onMount(() => {
-  menu = document.querySelector("#menu-container");
+  header = document.querySelector("[data-header]");
 });
 
 const toggle = () => {
   showCloseIcon = !showCloseIcon;
-  if (menu?.classList.contains("max-h-96")) {
-    menu.classList.replace("max-h-96", "max-h-0");
+  if (!header) return;
+
+  if (header.dataset.header === "collapsed") {
+    header.dataset.header = "expanded";
   } else {
-    menu?.classList.replace("max-h-0", "max-h-96");
+    header.dataset.header = "collapsed";
   }
 };
 </script>
