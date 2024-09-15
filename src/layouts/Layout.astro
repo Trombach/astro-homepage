@@ -76,10 +76,10 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <SpeedInsights />
     <ThemeProvider />
   </head>
-  <body class="overflow-hidden antialiased">
+  <body class="antialiased">
     <Background>
       <Navbar />
-      <main class="flex w-full flex-col items-center"><slot /></main>
+      <main class="flex w-full flex-col items-center mt-[--header-height]"><slot /></main>
 
       <slot name="footer">
         <Footer />
@@ -143,6 +143,8 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
           --header-height: 64px;
 
           @apply bg-background leading-normal text-foreground;
+          @apply scroll-pt-[--header-height] [scrollbar-gutter:stable];
+
         }
 
         @media screen(lg) {
