@@ -31,19 +31,19 @@ const toggle = () => {
       <rect
         class="top"
         x="10"
-        y={showCloseIcon ? 45 : 25}
+        y={showCloseIcon ? 47.5 : 25}
         width="80"
-        height="10"
-        rx="5"
+        height="5"
+        rx="2.5"
       />
-      <rect class="middle" x="10" y="50" width="80" height="10" rx="5" />
+      <rect class="middle" x="10" y="50" width="80" height="5" rx="2.5" />
       <rect
         class="bottom"
         x="10"
-        y={showCloseIcon ? 45 : 75}
+        y={showCloseIcon ? 47.5 : 75}
         width="80"
-        height="10"
-        rx="5"
+        height="5"
+        rx="2.5"
       />
     </g>
   </svg>
