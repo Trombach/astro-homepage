@@ -44,6 +44,9 @@ importers:
       '@iconify-json/simple-icons':
         specifier: ^1.1.114
         version: 1.1.114
+      '@inox-tools/content-utils':
+        specifier: ^0.7.0
+        version: 0.7.0(astro@4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4))
       '@microflash/rehype-figure':
         specifier: ^2.1.0
         version: 2.1.0
@@ -739,6 +742,19 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@inox-tools/content-utils@0.7.0':
+    resolution: {integrity: sha512-Gr8qTjA1cF/1xS/kzzCoSdzeIzVgGSe8y+oJaFWEuzNsuwaHj67Pl72BjvlWNEQ8Mu+o2WnU/Vypqj9TbxdcVQ==}
+    peerDependencies:
+      astro: ^4.12.2
+
+  '@inox-tools/modular-station@0.3.0':
+    resolution: {integrity: sha512-aRUm5afEIamsBAkAuD9u3cDsHOwojCOzUdOr7r4dSThM9cV5UkNk8pksGk7VD7OwbTysSadFvZDR6HHvTkaU1g==}
+    peerDependencies:
+      astro: ^4.12.2
+
+  '@inox-tools/utils@0.1.3':
+    resolution: {integrity: sha512-UhneOA5PwcPhvcvcH1pW9wGZXRKASD7/MWHCrE+DbSzbMhzBTeUn1rKpssys8rDF51pr3FwgLFz1Cvjj2TMIwA==}
+
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
@@ -1192,9 +1208,18 @@ packages:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
     engines: {node: '>=8'}
 
+  ast-types@0.16.1:
+    resolution: {integrity: sha512-6t10qk83GOG8p0vKmaCr8eiilZwO171AvbROMtvvNiwrTly62t+7XkA8RdIIVbpMhCASAsxgAzdRSwh6nw/5Dg==}
+    engines: {node: '>=4'}
+
   astring@1.8.6:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
     hasBin: true
+
+  astro-integration-kit@0.16.1:
+    resolution: {integrity: sha512-N/iam0PAFrRT9azYZqscP1HowQhC77Dwlp912P0/72k+kwUVgO3m73F26XXukHYoZBsrHgrUrfsWBxuCH3kEUg==}
+    peerDependencies:
+      astro: ^4.12.0
 
   astro@4.14.5:
     resolution: {integrity: sha512-sv47kPE6FnvyxxHHcCePNwTKpOMKBq0r1m6WZYg6ag9j3yF9m72ov64NFB7c+hAMDUKgsHfVdLKjOOqDC/c+fA==}
@@ -2704,6 +2729,10 @@ packages:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
 
+  recast@0.23.9:
+    resolution: {integrity: sha512-Hx/BGIbwj+Des3+xy5uAtAbdCyqK9y9wbBcDFDYanLS9JnMqf7OeF87HQwUimE87OEc72mr6tkKUKMBBL+hF9Q==}
+    engines: {node: '>= 4'}
+
   regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
 
@@ -2907,6 +2936,10 @@ packages:
 
   source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
+    engines: {node: '>=0.10.0'}
+
+  source-map@0.6.1:
+    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
   source-map@0.7.4:
@@ -3121,6 +3154,9 @@ packages:
 
   tiny-inflate@1.0.3:
     resolution: {integrity: sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw==}
+
+  tiny-invariant@1.3.3:
+    resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
 
   tinyexec@0.2.0:
     resolution: {integrity: sha512-au8dwv4xKSDR+Fw52csDo3wcDztPdne2oM1o/7LFro4h6bdFmvyUAeAfX40pwDtzHgRFqz1XWaUqgKS2G83/ig==}
@@ -4296,6 +4332,26 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
+  '@inox-tools/content-utils@0.7.0(astro@4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4))':
+    dependencies:
+      '@inox-tools/modular-station': 0.3.0(astro@4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4))
+      '@inox-tools/utils': 0.1.3
+      astro: 4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4)
+      astro-integration-kit: 0.16.1(astro@4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4))
+      debug: 4.3.6
+      estree-walker: 3.0.3
+      magic-string: 0.30.11
+    transitivePeerDependencies:
+      - supports-color
+
+  '@inox-tools/modular-station@0.3.0(astro@4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4))':
+    dependencies:
+      '@inox-tools/utils': 0.1.3
+      astro: 4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4)
+      astro-integration-kit: 0.16.1(astro@4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4))
+
+  '@inox-tools/utils@0.1.3': {}
+
   '@isaacs/cliui@8.0.2':
     dependencies:
       string-width: 5.1.2
@@ -4798,7 +4854,17 @@ snapshots:
 
   array-union@2.1.0: {}
 
+  ast-types@0.16.1:
+    dependencies:
+      tslib: 2.6.3
+
   astring@1.8.6: {}
+
+  astro-integration-kit@0.16.1(astro@4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4)):
+    dependencies:
+      astro: 4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4)
+      pathe: 1.1.2
+      recast: 0.23.9
 
   astro@4.14.5(@types/node@20.14.13)(rollup@4.21.0)(typescript@5.5.4):
     dependencies:
@@ -6695,6 +6761,14 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
+  recast@0.23.9:
+    dependencies:
+      ast-types: 0.16.1
+      esprima: 4.0.1
+      source-map: 0.6.1
+      tiny-invariant: 1.3.3
+      tslib: 2.6.3
+
   regenerator-runtime@0.14.1: {}
 
   rehype-parse@9.0.0:
@@ -6998,6 +7072,8 @@ snapshots:
 
   source-map-js@1.2.0: {}
 
+  source-map@0.6.1: {}
+
   source-map@0.7.4: {}
 
   space-separated-tokens@2.0.2: {}
@@ -7211,6 +7287,8 @@ snapshots:
       any-promise: 1.3.0
 
   tiny-inflate@1.0.3: {}
+
+  tiny-invariant@1.3.3: {}
 
   tinyexec@0.2.0: {}
 
