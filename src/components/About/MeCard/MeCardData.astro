@@ -11,7 +11,7 @@ const me = {
   Name: data.name,
   Age: Math.floor((Date.now() - data.birthday.getTime()) / 31_556_952_000), // age in years
   From: data.from,
-  Location: data.currentLocation,
+  Location: `${data.currentLocation.city}, ${data.currentLocation.countryShort} ${data.currentLocation.flag}`,
   Experience: `${new Date().getFullYear() - data.industryStart} years`,
   Education: data.education,
 } as const;
