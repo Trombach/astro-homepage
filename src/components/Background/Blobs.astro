@@ -23,7 +23,7 @@ const paths = [
 ---
 
 <svg
-  id="visual"
+  id="blob"
   viewBox="0 0 900 600"
   width="100%"
   height="100%"
@@ -31,6 +31,7 @@ const paths = [
   xmlns:xlink="http://www.w3.org/1999/xlink"
   version="1.1"
   transition:persist="svg-background"
+  class="blur-2xl"
 >
   <g transform-origin="center" transform="scale(0.8)">
     <g transform="translate(400 300)">
@@ -39,7 +40,7 @@ const paths = [
           <path
             {transform}
             style={{ "--blob-color": fill }}
-            class="fill-[--blob-color] opacity-40 blur-2xl"
+            class="fill-[--blob-color] opacity-40"
           >
             <animate
               attributeName="d"
@@ -53,3 +54,21 @@ const paths = [
     </g>
   </g>
 </svg>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes blob-fade {
+      85%,
+      100% {
+        opacity: 0;
+        scale: 3;
+      }
+    }
+
+    #blob {
+      animation: blob-fade linear both;
+      animation-timeline: view();
+      animation-range: exit;
+    }
+  }
+</style>
