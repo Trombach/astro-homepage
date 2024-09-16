@@ -14,47 +14,43 @@ import sitemap from "@astrojs/sitemap";
 // @ts-ignore
 import rehypeFigure from "@microflash/rehype-figure";
 
+import inoxToolsContentUtils from "@inox-tools/content-utils";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), svelte(), mdx(), react(), addsToHead(), sitemap()],
+  integrations: [tailwind(), svelte(), mdx(), react(), addsToHead(), sitemap(), inoxToolsContentUtils()],
   image: {
-    domains: ["placehold.co"],
+    domains: ["placehold.co"]
   },
   markdown: {
     remarkPlugins: [remarkGithub],
-    rehypePlugins: [rehypeFigure],
+    rehypePlugins: [rehypeFigure]
   },
   prefetch: {
-    prefetchAll: true,
+    prefetchAll: true
   },
   vite: {
-    plugins: [
-      Icons({
-        compiler: "svelte",
-      }),
-      Icons({
-        compiler: "astro",
-      }),
-    ],
+    plugins: [Icons({
+      compiler: "svelte"
+    }), Icons({
+      compiler: "astro"
+    })],
     resolve: {
-      alias: [
-        {
-          find: "icons:svelte",
-          replacement: "~icons",
-        },
-        {
-          find: "icons:astro",
-          replacement: "~icons",
-        },
-      ],
-    },
+      alias: [{
+        find: "icons:svelte",
+        replacement: "~icons"
+      }, {
+        find: "icons:astro",
+        replacement: "~icons"
+      }]
+    }
   },
   output: "hybrid",
   adapter: vercel({
     imageService: false,
     webAnalytics: {
-      enabled: true,
-    },
+      enabled: true
+    }
   }),
   site: "https://www.lukastrombach.dev",
   experimental: {
@@ -63,35 +59,41 @@ export default defineConfig({
     actions: true,
     env: {
       schema: {
-        GH_TOKEN: envField.string({ context: "server", access: "secret" }),
+        GH_TOKEN: envField.string({
+          context: "server",
+          access: "secret"
+        }),
         VERCEL_URL: envField.string({
           context: "server",
           access: "public",
-          optional: true,
+          optional: true
         }),
-        RESEND_TOKEN: envField.string({ context: "server", access: "secret" }),
+        RESEND_TOKEN: envField.string({
+          context: "server",
+          access: "secret"
+        }),
         VERCEL_STORAGE_URL: envField.string({
           context: "server",
-          access: "public",
+          access: "public"
         }),
         CV_FILE_NAME: envField.string({
           context: "server",
-          access: "public",
+          access: "public"
         }),
         TURNSTILE_SITE_KEY: envField.string({
           context: "client",
-          access: "public",
+          access: "public"
         }),
         TURNSTILE_SITEVERIFY_URL: envField.string({
           context: "server",
           access: "public",
-          url: true,
+          url: true
         }),
         TURNSTILE_SECRET_KEY: envField.string({
           context: "server",
-          access: "secret",
-        }),
-      },
-    },
-  },
+          access: "secret"
+        })
+      }
+    }
+  }
 });
