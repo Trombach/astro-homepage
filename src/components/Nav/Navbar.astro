@@ -20,7 +20,7 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
         "max-h-0 basis-full overflow-y-hidden transition-[max-height] duration-500",
         "lg:max-h-max lg:basis-auto lg:overflow-y-visible",
         "max-md:divide-y",
-        "max-h-0 group-data-[header=expanded]:max-h-96"
+        "max-h-0 group-data-[header=expanded]:max-h-96",
       ]}
     >
       <NavigationMenu />
@@ -44,14 +44,18 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
   }
 
   header {
-    animation: bg-blur linear;
-    animation-timeline: scroll();
-    animation-duration: 1ms;
-    backdrop-filter: blur(theme(blur.DEFAULT));
-    background-color: var(--header-bg-color, theme(colors.transparent));
-    @media screen(lg) {
-      backdrop-filter: blur(theme(blur.none));
-      background-color: theme(colors.transparent);
+    @apply bg-[--header-bg-color] backdrop-blur;
+
+    @supports (animation-timeline: scroll()) {
+      animation: bg-blur linear;
+      animation-timeline: scroll();
+      animation-duration: 1ms;
+      backdrop-filter: blur(theme(blur.DEFAULT));
+      background-color: var(--header-bg-color, theme(colors.transparent));
+      @media screen(lg) {
+        backdrop-filter: blur(theme(blur.none));
+        background-color: theme(colors.transparent);
+      }
     }
   }
 </style>
