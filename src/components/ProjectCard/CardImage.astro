@@ -12,7 +12,10 @@ const { image, alt } = Astro.props;
     alt={alt}
     width={600}
     loading="eager"
-    class="aspect-[21/9] transform overflow-clip rounded-t-xl bg-card object-cover object-center transition-transform motion-safe:group-hover:scale-105"
+    class:list={[
+      "aspect-[21/9] transform overflow-clip rounded-t-xl bg-card object-cover object-center",
+      "motion-safe:saturate-100 transition-[filter] duration-1000 motion-safe:group-hover:saturate-200",
+    ]}
     transition:name={image.src}
   />
 </div>
