@@ -20,7 +20,7 @@ const toggle = () => {
 };
 </script>
 
-<button class="lg:hidden" on:click={toggle}>
+<button class="sm:hidden" on:click={toggle}>
   <svg
     class="hamburger fill-foreground"
     class:close={showCloseIcon}
