@@ -11,14 +11,14 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
     <MenuButton client:visible />
     <ThemeSwitcher />
 
-    <hr class="m-0 h-0 w-0 basis-full border-0 lg:hidden lg:basis-0" />
+    <hr class="m-0 h-0 w-0 basis-full border-0 sm:hidden sm:basis-0" />
 
     <div
       id="menu-container"
       class:list={[
-        "flex flex-grow flex-col justify-between lg:order-1 lg:flex-row lg:items-center",
+        "flex flex-grow flex-col justify-between sm:order-1 sm:flex-row sm:items-center",
         "max-h-0 basis-full overflow-y-hidden transition-[max-height] duration-500",
-        "lg:max-h-max lg:basis-auto lg:overflow-y-visible",
+        "sm:max-h-max sm:basis-auto sm:overflow-y-visible",
         "max-md:divide-y",
         "max-h-0 group-data-[header=expanded]:max-h-96",
       ]}
