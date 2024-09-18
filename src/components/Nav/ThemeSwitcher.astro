@@ -69,7 +69,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
   declare global {
     interface Window {
       ThemeProvider: {
-        initTheme: () => void;
+        initTheme: (doc?: Document) => void;
         getTheme: () => "auto" | "dark" | "light";
         setTheme: (theme: string) => void;
       };

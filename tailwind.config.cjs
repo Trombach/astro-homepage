@@ -13,7 +13,7 @@ const animationDelay = plugin(({ matchUtilities, theme }) => {
       },
     },
     {
-      values: theme("transitionDelay"),
+      values: theme("transitionDelay") || {},
     },
   );
 });
