@@ -4,7 +4,17 @@
       setThemeClass(doc);
       updateThemeSwitcher(doc);
     },
-    getTheme: () => localStorage.getItem("theme") || "auto",
+    getTheme: () => {
+      const theme = localStorage.getItem("theme") || "auto";
+      if (theme !== "auto" && theme !== "dark" && theme !== "light") {
+        console.debug("Unknown theme value in localStorage:", theme);
+        console.debug("Resetting to 'auto'");
+        localStorage.removeItem("theme");
+        return "auto";
+      }
+
+      return theme;
+    },
     setTheme: (theme) => {
       switch (theme) {
         default:
