@@ -46,12 +46,14 @@ module.exports = {
     extend: {
       keyframes: {
         "slide-in-bottom": {
-          "0%": {
+          from: {
             transform: "translateY(100px)",
+            scale: "0.8",
             opacity: 0,
           },
-          "100%": {
+          to: {
             transform: "translateY(0)",
+            scale: "1",
             opacity: 1,
           },
         },
