@@ -21,9 +21,7 @@ const { bgBlend = "transparent" } = Astro.props;
         <Graph client:visible />
       </div>
 
-      <Copyright server:defer>
-        <Copyright slot="fallback" />
-      </Copyright>
+      <Copyright />
       <a
         href="https://astro.build"
         class="flex gap-1 items-center text-xs md:text-base"
