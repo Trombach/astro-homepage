@@ -9,24 +9,33 @@ const { data } = Astro.props;
 
 const me = {
   Name: data.name,
-  Age: Math.floor((Date.now() - data.birthday.getTime()) / 31_556_952_000), // age in years
   From: data.from,
   Location: `${data.currentLocation.city}, ${data.currentLocation.countryShort} ${data.currentLocation.flag}`,
+  Age: Math.floor((Date.now() - data.birthday.getTime()) / 31_556_952_000), // age in years
   Experience: `${new Date().getFullYear() - data.industryStart} years`,
   Education: data.education,
 } as const;
 ---
 
-<ul class="table mx-5 md:mr-10 basis-2/3 py-5 @lg:py-10">
+<ul class:list={[
+  "grid grid-cols-2 items-center content-evenly gap-x-2 @sm:gap-x-5 @md:gap-x-10 m-5 max-w-[750px] basis-2/3",
+  "[&>li]:col-span-2 [&>li:nth-child(n+2):nth-child(-n+5)]:col-span-1"
+]}>
   {
     Object.entries(me).map(([key, value]) => (
-      <li class="table-row">
-        <span class="table-cell text-sm align-middle font-bold @lg:text-lg">
-          {key}:
-        </span>
-        <span class="table-cell bg-background w-3/5 border-b border-t-0 border-x-0 border-dashed align-middle font-mono text-sm @lg:text-lg">
-          {value}
-        </span>
+      <li>
+        <label
+          for={key}
+          class="text-sm align-middle font-bold @lg:text-lg flex flex-col"
+        >
+          <span class="block text-sm font-medium leading-6">{key}</span>
+          <input
+            name={key}
+            readonly
+            {value}
+            class="rounded-lg border bg-background px-3 py-2 shadow-sm font-mono text-sm @lg:text-base"
+          />
+        </label>
       </li>
     ))
   }
