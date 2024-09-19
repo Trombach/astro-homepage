@@ -14,11 +14,11 @@ const { data } = await getEntry(person);
   class:list={[
     "@container/me-card",
     "z-50 rounded-xl border bg-card [transform-style:preserve-3d]",
-    "w-3/4 lg:w-1/2 aspect-[1/1.59] lg:aspect-[1.59/1] max-w-[750px]",
+    "w-3/4 md:w-1/2 aspect-[1/1.59] md:aspect-[1.59/1] max-w-[750px]",
   ]}
 >
   <div
-    class="flex flex-col lg:flex-row h-full w-full items-stretch justify-between"
+    class="flex flex-col sm:flex-row h-full w-full items-stretch justify-between"
   >
     <MeCardImage image={data.avatar} />
     <MeCardData {data} />
@@ -53,7 +53,7 @@ const { data } = await getEntry(person);
     }
 
     100% {
-      transform: translateY(0) translateX(0) scale(0.6) rotateY(20deg);
+      transform: translateY(0) translateX(0) scale(0.8) rotateY(20deg);
       @apply drop-shadow-2xl;
     }
   }
