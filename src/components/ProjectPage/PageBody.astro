@@ -15,8 +15,8 @@ const dashedTitle = dash(title);
   class:list={[
     "prose min-w-0 shrink lg:prose-lg dark:prose-invert prose-p:hyphens-auto prose-p:break-words prose-p:text-justify",
     "w-auto max-w-[70ch] rounded-xl border bg-background pb-5 lg:max-w-[calc(70ch+(theme(spacing.16)*2))]",
-    "prose-img:timeline-slide-in-bottom prose-img:[animation-range:entry_10%_contain_25%]",
-    "prose-video:timeline-slide-in-bottom prose-video:[animation-range:entry_10%_contain_25%]",
+    "motion-safe:prose-img:timeline-slide-in-bottom motion-safe:prose-img:[animation-range:entry_10%_contain_25%]",
+    "motion-safe:prose-video:timeline-slide-in-bottom motion-safe:prose-video:[animation-range:entry_10%_contain_25%]",
 
   ]}
   transition:name={`border-${dashedTitle}`}

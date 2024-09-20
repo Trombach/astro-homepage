@@ -21,12 +21,10 @@ const animationDelay = plugin(({ matchUtilities, theme }) => {
 const timelineAnimation = plugin(({ addComponents }) => {
   addComponents({
     ".timeline-slide-in-bottom": {
-      "@media (prefers-reduced-motion: no-preference)": {
-        "animation-timeline": "view()",
-        "animation-range": "entry 100% contain 25%",
-        "animation-name": "slide-in-bottom",
-        "animation-fill-mode": "both",
-      },
+      "animation-timeline": "view()",
+      "animation-range": "entry 100% contain 25%",
+      "animation-name": "slide-in-bottom",
+      "animation-fill-mode": "both",
     },
   });
 });

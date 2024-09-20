@@ -14,14 +14,14 @@ const { Content } = await render();
   id="technologies"
   class="flex min-h-svh w-full flex-col items-center justify-center bg-background p-10 sm:p-20"
 >
-  <H1 {title} class="timeline-slide-in-bottom" />
+  <H1 {title} class="motion-safe:timeline-slide-in-bottom" />
   <div
     class="flex w-full max-w-screen-xl flex-col items-center xl:flex-row"
   >
     <div
       class:list={[
         "prose py-20 md:prose-lg lg:prose-xl dark:prose-invert xl:px-20",
-        "*:timeline-slide-in-bottom",
+        "motion-safe:*:timeline-slide-in-bottom",
       ]}
     >
       <Content />
