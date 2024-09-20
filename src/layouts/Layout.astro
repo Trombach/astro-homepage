@@ -180,24 +180,6 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
           }
         }
       }
-
-      @layer utilities {
-        .image-fade {
-          mask-image: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 1) 0 50%,
-            rgba(0, 0, 0, 0)
-          );
-        }
-
-        .font-size-clamp-h1 {
-          font-size: clamp(
-            theme(fontSize.3xl),
-            -2.25rem + 9.3333vw,
-            theme(fontSize.5xl)
-          );
-        }
-      }
     </style>
   </body>
 </html>
