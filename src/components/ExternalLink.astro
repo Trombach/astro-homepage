@@ -1,0 +1,66 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+const FAVICON_API = new URL("https://www.google.com/s2/favicons");
+
+type Props = HTMLAttributes<"a"> & {
+  position?: "before" | "after";
+};
+
+const { href, position = "before", ...props } = Astro.props;
+
+let favicon: Buffer | undefined = undefined;
+if (
+  href &&
+  (typeof href === "string"
+    ? href.startsWith("http")
+    : href.href.startsWith("http"))
+) {
+  const url = new URL(href);
+  const searchParams = new URLSearchParams({ domain: url.hostname, sz: "64" });
+
+  try {
+    favicon = await fetch(`${FAVICON_API}?${searchParams}`).then(async (res) =>
+      Buffer.from(await res.arrayBuffer()),
+    );
+  } catch {}
+}
+
+const content = (await Astro.slots.render("default")).trim();
+const imageProps = {
+  width: 16,
+  height: 16,
+  src: `data:image/png;base64,${favicon?.toString("base64")}`,
+  alt: "favicon",
+  fetchpriority: "low",
+  loading: "lazy",
+  decoding: "async",
+} as const satisfies HTMLAttributes<"img">;
+---
+
+{
+  favicon ? (
+    <span class="whitespace-nowrap">
+      {position === "before" && (
+        <>
+          <img {...imageProps} class="w-4 inline-block my-0 mr-1" />
+          <a {href} {...props}>
+            <Fragment set:html={content} />
+          </a>
+        </>
+      )}
+      {position === "after" && (
+        <>
+          <a {href} {...props}>
+            <Fragment set:html={content} />
+          </a>
+          <img {...imageProps} class="w-4 inline-block my-0 ml-1" />
+        </>
+      )}
+    </span>
+  ) : (
+    <a {href} {...props}>
+      <Fragment set:html={content} />
+    </a>
+  )
+}

@@ -10,7 +10,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
 
 <fieldset
   class:list={[
-    "border border-solid flex rounded-full w-fit h-8 box-content",
+    "relative border border-solid flex rounded-full w-fit h-8 box-content sm:order-2",
     "focus-within:outline focus-within:outline-offset-1",
   ]}
 >
@@ -23,7 +23,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
         id={`${option}-theme`}
         value={option}
         class:list={[
-          "peer absolute outline-none m-0 p-0 appearance-none",
+          "peer fixed top-0 left-0 outline-none m-0 p-0 appearance-none",
           "[&_+_label]:checked:text-foreground",
         ]}
       />
@@ -69,7 +69,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
   declare global {
     interface Window {
       ThemeProvider: {
-        initTheme: () => void;
+        initTheme: (doc?: Document) => void;
         getTheme: () => "auto" | "dark" | "light";
         setTheme: (theme: string) => void;
       };

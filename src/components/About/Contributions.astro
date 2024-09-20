@@ -1,21 +1,14 @@
 ---
 import AppLink from "@components/AppLink.astro";
 import H1 from "@components/H1.astro";
-import { getEntry } from "astro:content";
 import ExternalLinkIcon from "icons:astro/heroicons/arrow-top-right-on-square";
 import Calendar from "./ContributionsCalendar/Calendar.astro";
 import CalendarGrid from "./ContributionsCalendar/CalendarGrid.astro";
 import { CalendarTileSkeleton } from "./ContributionsCalendar/CalendarTile";
-
-const {
-  render,
-  data: { title },
-} = await getEntry("about", "contributions");
-const { Content } = await render();
 ---
 
-<section class="flex min-h-svh w-full flex-col items-center px-5 py-10 sm:p-20">
-  <H1 {title} />
+<section class="flex bg-background w-full flex-col items-center px-5 py-10 sm:p-20">
+  <H1 title="GitHub Contributions" />
 
   <div
     class="m-auto flex w-full max-w-screen-xl flex-col items-center gap-16 md:gap-40"
@@ -38,10 +31,6 @@ const { Content } = await render();
       <AppLink as="a" appearance="primary" href="https://github.com/Trombach">
         View Github profile <ExternalLinkIcon />
       </AppLink>
-    </div>
-
-    <div class="prose text-center lg:prose-xl dark:prose-invert">
-      <Content />
     </div>
   </div>
 </section>

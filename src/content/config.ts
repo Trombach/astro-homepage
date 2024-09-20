@@ -1,15 +1,5 @@
 import { z, defineCollection, reference } from "astro:content";
 
-const homeCollection = defineCollection({
-  type: "content",
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      image: image().optional(),
-      slot: z.enum(["panel-one", "panel-two", "panel-three", "panel-four"]),
-    }),
-});
-
 const aboutCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -26,9 +16,22 @@ const personCollection = defineCollection({
       birthday: z.date(),
       from: z.string(),
       industryStart: z.number(),
-      currentLocation: z.string(),
+      currentLocation: z.object({
+        city: z.string(),
+        country: z.string(),
+        countryShort: z.string(),
+        region: z.string(),
+        zip: z.number(),
+        flag: z.string(),
+      }),
       education: z.string(),
       avatar: image().optional(),
+      contact: z.object({
+        email: z.string().email(),
+        web: z.string().url(),
+        matrix: z.string().url(),
+        linkedIn: z.string().url(),
+      }),
     }),
 });
 
@@ -98,7 +101,6 @@ const projectsCollection = defineCollection({
 
 export const collections = {
   person: personCollection,
-  home: homeCollection,
   about: aboutCollection,
   projects: projectsCollection,
 };

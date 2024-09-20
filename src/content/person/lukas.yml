@@ -2,6 +2,17 @@ name: Lukas Trombach
 birthday: 1989-12-06
 from: Berlin, D 🇩🇪
 industryStart: 2019
-currentLocation: Auckland, NZ 🇳🇿
+currentLocation: 
+  city: Kiel
+  country: Germany
+  countryShort: D
+  region: Schleswig-Holstein
+  zip: 24143
+  flag: 🇩🇪
 education: PhD in Chemistry
 avatar: ../../images/me.jpg
+contact:
+  email: contact@lukastrombach.dev
+  web: https://lukastrombach.dev
+  matrix: https://matrix.to/#/@lukets123:matrix.org
+  linkedIn: https://www.linkedin.com/in/lukas-trombach/

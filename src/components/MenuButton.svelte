@@ -2,23 +2,25 @@
 import { onMount } from "svelte";
 
 let showCloseIcon = false;
-let menu: HTMLElement | null;
+let header: HTMLElement | null;
 
 onMount(() => {
-  menu = document.querySelector("#menu-container");
+  header = document.querySelector("[data-header]");
 });
 
 const toggle = () => {
   showCloseIcon = !showCloseIcon;
-  if (menu?.classList.contains("max-h-96")) {
-    menu.classList.replace("max-h-96", "max-h-0");
+  if (!header) return;
+
+  if (header.dataset.header === "collapsed") {
+    header.dataset.header = "expanded";
   } else {
-    menu?.classList.replace("max-h-0", "max-h-96");
+    header.dataset.header = "collapsed";
   }
 };
 </script>
 
-<button class="lg:hidden" on:click={toggle}>
+<button class="sm:hidden" on:click={toggle}>
   <svg
     class="hamburger fill-foreground"
     class:close={showCloseIcon}
@@ -29,19 +31,19 @@ const toggle = () => {
       <rect
         class="top"
         x="10"
-        y={showCloseIcon ? 45 : 25}
+        y={showCloseIcon ? 47.5 : 25}
         width="80"
-        height="10"
-        rx="5"
+        height="5"
+        rx="2.5"
       />
-      <rect class="middle" x="10" y="50" width="80" height="10" rx="5" />
+      <rect class="middle" x="10" y="50" width="80" height="5" rx="2.5" />
       <rect
         class="bottom"
         x="10"
-        y={showCloseIcon ? 45 : 75}
+        y={showCloseIcon ? 47.5 : 75}
         width="80"
-        height="10"
-        rx="5"
+        height="5"
+        rx="2.5"
       />
     </g>
   </svg>

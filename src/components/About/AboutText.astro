@@ -1,0 +1,17 @@
+---
+import H1 from "@components/H1.astro";
+import { getEntry } from "astro:content";
+
+const {
+  render,
+  data: { title },
+} = await getEntry("about", "about-me");
+const { Content } = await render();
+---
+
+<div class="p-10 lg:w-1/2 lg:ml-auto">
+  <H1 {title} class="motion-safe:timeline-slide-in-bottom" />
+  <div class="prose md:prose-lg dark:prose-invert motion-safe:*:timeline-slide-in-bottom">
+    <Content />
+  </div>
+</div>

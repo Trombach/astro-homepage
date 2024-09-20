@@ -2,6 +2,7 @@
   "extends": "astro/tsconfigs/strictest",
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
+    "checkJs": true,
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {

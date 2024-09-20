@@ -23,12 +23,15 @@ const { class: className } = Astro.props;
 ---
 
 <div
+  data-tech-grid
   class:list={[
     "grid max-w-screen-md grid-cols-3 gap-14 md:grid-cols-5 [&>svg]:size-full",
+    "motion-safe:[&_svg]:timeline-slide-in-bottom",
     className,
   ]}
 >
   <TypeScriptLogo />
+  <AstroLogo class="fill-foreground" />
   <AngularLogo />
   <JavaScriptLogo />
   <Html5Logo class="fill-foreground" />
@@ -40,7 +43,6 @@ const { class: className } = Astro.props;
   <GoLogo />
   <ZshLogo class="fill-foreground" />
   <RustLogo class="fill-foreground" />
-  <AstroLogo class="fill-foreground" />
   <NodeJsLogo />
   <SvelteLogo />
 </div>

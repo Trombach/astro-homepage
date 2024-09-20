@@ -1,40 +1,70 @@
 ---
-import MeCardBack from "./MeCardBack.astro";
-import MeCardFront from "./MeCardFront.astro";
+import { getEntry } from "astro:content";
+import MeCardData from "./MeCardData.astro";
+import MeCardImage from "./MeCardImage.astro";
+
+const {
+  data: { person },
+} = await getEntry("about", "about-me");
+const { data } = await getEntry(person);
 ---
 
 <div
-  data-flip-card="false"
+  data-card
   class:list={[
-    "relative rounded-xl border bg-card transition-transform duration-1000 [transform-style:preserve-3d]",
-    "mx-auto aspect-[1/1.75] w-[350px] cursor-pointer md:aspect-[1/1.15] md:w-[550px] lg:aspect-[1.45/1] lg:w-[750px]",
+    "@container/me-card",
+    "z-50 rounded-xl border bg-card [transform-style:preserve-3d]",
+    "w-3/4 md:w-1/2 aspect-[1/1.59] md:aspect-[1.59/1] max-w-[750px]",
   ]}
 >
-  <MeCardFront />
-  <MeCardBack />
+  <div
+    class="flex flex-col sm:flex-row h-full w-full items-stretch justify-between"
+  >
+    <MeCardImage image={data.avatar} />
+    <MeCardData {data} />
+  </div>
 </div>
 
-<style is:global>
-  [data-card-face] {
-    position: absolute;
-    backface-visibility: hidden;
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    [data-card] {
+      animation-timeline: view();
+      animation-range: entry 0% entry 90%;
+      animation-name: id-card-mobile;
+      @media screen(lg) {
+        animation-name: id-card;
+      }
+      animation-fill-mode: both;
+      animation-duration: 1ms;
+      animation-timing-function: ease-in-out;
+    }
   }
 
-  [data-flip-card="true"] {
-    transform: rotateY(180deg);
+  @keyframes id-card {
+    0% {
+      transform: translateY(calc(-25cqh - 10vh)) translateX(25cqw) scale(1)
+        rotateY(0);
+      @apply drop-shadow-none;
+    }
+
+    50% {
+      transform: translateY(-40cqh) translateX(0) scale(0.8) rotateY(0);
+      @apply drop-shadow-none;
+    }
+
+    100% {
+      transform: translateY(0) translateX(0) scale(0.8) rotateY(20deg);
+      @apply drop-shadow-2xl;
+    }
+  }
+
+  @keyframes id-card-mobile {
+    from {
+      transform: translateY(-10%) scale(1);
+    }
+
+    to {
+      transform: translateY(0) scale(0.8);
+    }
   }
 </style>
-
-<script type="module" is:inline>
-  const card = document.querySelector("[data-flip-card]");
-
-  if (card instanceof HTMLElement) {
-    card.addEventListener("click", () => {
-      if (card.dataset.flipCard === "true") {
-        card.dataset.flipCard = "false";
-      } else {
-        card.dataset.flipCard = "true";
-      }
-    });
-  }
-</script>

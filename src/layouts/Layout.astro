@@ -1,4 +1,5 @@
 ---
+import Background from "@components/Background/Background.astro";
 import Navbar from "@components/Nav/Navbar.astro";
 import ThemeProvider from "@components/Nav/ThemeProvider.astro";
 import SEO from "@components/SEO.astro";
@@ -7,7 +8,7 @@ import InterWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal
 import "@fontsource-variable/jetbrains-mono";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import { ViewTransitions } from "astro:transitions";
-import Background from "./Background.astro";
+import Footer from "@components/Footer/Footer.astro";
 
 interface Props {
   title: string;
@@ -75,11 +76,18 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <SpeedInsights />
     <ThemeProvider />
   </head>
-  <body class="overflow-hidden antialiased">
+  <body class="antialiased">
     <Background>
       <Navbar />
-      <main class="flex flex-col items-center"><slot /></main>
+      <main class="flex w-full flex-col items-center mt-[--header-height]">
+        <slot />
+      </main>
+
+      <slot name="footer">
+        <Footer />
+      </slot>
     </Background>
+
     <style is:global>
       @tailwind base;
       @tailwind utilities;
@@ -94,6 +102,8 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
           --popover-foreground: 224 71.4% 4.1%;
           --primary: 262.1 83.3% 57.8%;
           --primary-foreground: 210 20% 98%;
+          --primary-green: 171 97% 64%;
+          --primary-pink: 299 100% 84%;
           --secondary: 220 14.3% 95.9%;
           --secondary-foreground: 220.9 39.3% 11%;
           --muted: 220 14.3% 95.9%;
@@ -135,6 +145,7 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
           --header-height: 64px;
 
           @apply bg-background leading-normal text-foreground;
+          @apply scroll-pt-[--header-height] [scrollbar-gutter:stable];
         }
 
         @media screen(lg) {
@@ -154,23 +165,19 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
         p {
           @apply max-w-[70ch] text-pretty;
         }
-      }
 
-      @layer utilities {
-        .image-fade {
-          mask-image: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 1) 0 50%,
-            rgba(0, 0, 0, 0)
-          );
-        }
-
-        .font-size-clamp-h1 {
-          font-size: clamp(
-            theme(fontSize.3xl),
-            -2.25rem + 9.3333vw,
-            theme(fontSize.5xl)
-          );
+        @keyframes slide-scale-in-bottom {
+          from {
+            transform: translateY(100px);
+            scale: 0.8;
+            opacity: 0;
+          }
+          ,
+          to {
+            transform: translateY(0);
+            scale: 1;
+            opacity: 1;
+          }
         }
       }
     </style>

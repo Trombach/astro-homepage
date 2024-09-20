@@ -1,35 +1,61 @@
 ---
 import MenuButton from "@components/MenuButton.svelte";
-import Links from "./Links.astro";
 import NavigationMenu from "./NavigationMenu.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
-<header
-  class="sticky top-0 z-50 w-full bg-background px-5 py-3 backdrop-blur supports-[backdrop-filter]:bg-background/30"
->
+<header data-header="collapsed" class="group fixed top-0 z-50 w-full px-5 py-3">
   <div
     class="relative mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-between lg:flex-nowrap lg:items-center"
   >
     <MenuButton client:visible />
-    <Links />
+    <ThemeSwitcher />
 
-    <hr class="m-0 h-0 w-0 basis-full border-0 lg:hidden lg:basis-0" />
+    <hr class="m-0 h-0 w-0 basis-full border-0 sm:hidden sm:basis-0" />
 
     <div
       id="menu-container"
       class:list={[
-        "flex flex-grow flex-col justify-between lg:order-1 lg:flex-row lg:items-center",
+        "flex flex-grow flex-col justify-between sm:order-1 sm:flex-row sm:items-center",
         "max-h-0 basis-full overflow-y-hidden transition-[max-height] duration-500",
-        "lg:max-h-max lg:basis-auto lg:overflow-y-visible",
+        "sm:max-h-max sm:basis-auto sm:overflow-y-visible",
         "max-md:divide-y",
+        "max-h-0 group-data-[header=expanded]:max-h-96",
       ]}
     >
       <NavigationMenu />
-      <ThemeSwitcher
-        transition:persist="theme-switcher"
-        transition:animate="none"
-      />
     </div>
   </div>
 </header>
+
+<style>
+  @keyframes bg-blur {
+    10%,
+    100% {
+      backdrop-filter: blur(theme(blur.DEFAULT));
+      background-color: var(--header-bg-color, theme(colors.background));
+    }
+  }
+
+  :global(:root) {
+    @supports (backdrop-filter: blur(theme(blur.DEFAULT))) {
+      --header-bg-color: theme(colors.background/50%);
+    }
+  }
+
+  header {
+    @apply bg-[--header-bg-color] backdrop-blur;
+
+    @supports (animation-timeline: scroll()) {
+      animation: bg-blur linear;
+      animation-timeline: scroll();
+      animation-duration: 1ms;
+      backdrop-filter: blur(theme(blur.DEFAULT));
+      background-color: var(--header-bg-color, theme(colors.transparent));
+      @media screen(lg) {
+        backdrop-filter: blur(theme(blur.none));
+        background-color: theme(colors.transparent);
+      }
+    }
+  }
+</style>
