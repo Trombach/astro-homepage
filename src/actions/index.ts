@@ -1,6 +1,6 @@
 import sendEmail from "@utils/contact";
 import { defineAction } from "astro:actions";
-import { z } from "astro:content";
+import { z } from "astro:schema";
 
 export const server = {
   contact: defineAction({
