@@ -10,8 +10,8 @@ const { Content } = await render();
 ---
 
 <div class="p-10 lg:w-1/2 lg:ml-auto">
-  <H1 {title} class="timeline-slide-in-bottom" />
-  <div class="prose md:prose-lg dark:prose-invert *:timeline-slide-in-bottom">
+  <H1 {title} class="motion-safe:timeline-slide-in-bottom" />
+  <div class="prose md:prose-lg dark:prose-invert motion-safe:*:timeline-slide-in-bottom">
     <Content />
   </div>
 </div>
