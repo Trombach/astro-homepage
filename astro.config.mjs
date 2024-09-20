@@ -70,7 +70,6 @@ export default defineConfig({
   experimental: {
     contentIntellisense: true,
     serverIslands: true,
-    actions: true,
     env: {
       schema: {
         GH_TOKEN: envField.string({
