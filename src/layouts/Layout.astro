@@ -79,7 +79,9 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
   <body class="antialiased">
     <Background>
       <Navbar />
-      <main class="flex w-full flex-col items-center mt-[--header-height]"><slot /></main>
+      <main class="flex w-full flex-col items-center mt-[--header-height]">
+        <slot />
+      </main>
 
       <slot name="footer">
         <Footer />
@@ -144,7 +146,6 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
 
           @apply bg-background leading-normal text-foreground;
           @apply scroll-pt-[--header-height] [scrollbar-gutter:stable];
-
         }
 
         @media screen(lg) {
@@ -163,6 +164,20 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
 
         p {
           @apply max-w-[70ch] text-pretty;
+        }
+
+        @keyframes slide-scale-in-bottom {
+          from {
+            transform: translateY(100px);
+            scale: 0.8;
+            opacity: 0;
+          }
+          ,
+          to {
+            transform: translateY(0);
+            scale: 1;
+            opacity: 1;
+          }
         }
       }
 

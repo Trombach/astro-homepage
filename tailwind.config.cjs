@@ -23,7 +23,7 @@ const timelineAnimation = plugin(({ addComponents }) => {
     ".timeline-slide-in-bottom": {
       "animation-timeline": "view()",
       "animation-range": "entry 100% contain 25%",
-      "animation-name": "slide-in-bottom",
+      "animation-name": "slide-scale-in-bottom",
       "animation-fill-mode": "both",
     },
   });
@@ -46,12 +46,10 @@ module.exports = {
         "slide-in-bottom": {
           from: {
             transform: "translateY(100px)",
-            scale: "0.8",
             opacity: 0,
           },
           to: {
             transform: "translateY(0)",
-            scale: "1",
             opacity: 1,
           },
         },
