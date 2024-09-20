@@ -1,0 +1,16 @@
+<a
+  id="copyright"
+  href="https://github.com/Trombach/astro-homepage/blob/main/LICENSE"
+  class="text-xs md:text-base"
+>
+  GPL-3.0 &copy; <span data-year>{new Date().getFullYear()}</span>
+</a>
+
+<script is:inline data-astro-rerun>
+  function init() {
+    const year = document.querySelector("[data-year]");
+    if (year) year.innerHTML = new Date().getFullYear().toString();
+  }
+
+  init();
+</script>

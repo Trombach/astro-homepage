@@ -1,0 +1,23 @@
+---
+title: About Me
+person: lukas
+---
+
+import AppLink from "@components/AppLink.astro";
+import IconDownload from "icons:astro/heroicons/arrow-down-tray";
+import ExternalLink from "@components/ExternalLink.astro";
+export const components = {a: ExternalLink}
+
+Former researcher of quantum chemistry with a PhD turned software engineer.
+
+Open-source enthusiast and contributor.
+
+Generalist programmer who loves to code. I mostly program in [TypeScript](https://www.typescriptlang.org/), but I am 
+also familiar with low-level languages such as [Go](https://go.dev), [Rust](https://www.rust-lang.org/) and 
+[C++](https://cplusplus.com).
+
+In my free time I like to code 🧑🏻‍💻, tinker with my NAS 🛠️, play my guitar 🎸 or go snowboarding 🏂.
+
+<AppLink as="a" href="/cv.pdf" title="Download CV" class="group w-fit not-prose text-base mx-auto">
+  <IconDownload class="group-hover:-translate-y-1 group-hover:-rotate-12 transition-transform" /><span>Download CV</span>
+</AppLink>

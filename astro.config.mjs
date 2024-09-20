@@ -1,3 +1,5 @@
+// @ts-check
+
 import { defineConfig, envField } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
@@ -8,11 +10,23 @@ import react from "@astrojs/react";
 import addsToHead from "./adds-to-head-integration";
 import remarkGithub from "remark-github";
 import sitemap from "@astrojs/sitemap";
+
+// @ts-ignore
 import rehypeFigure from "@microflash/rehype-figure";
+
+import inoxToolsContentUtils from "@inox-tools/content-utils";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), svelte(), mdx(), react(), addsToHead(), sitemap()],
+  integrations: [
+    tailwind(),
+    svelte(),
+    mdx(),
+    react(),
+    addsToHead(),
+    sitemap(),
+    inoxToolsContentUtils(),
+  ],
   image: {
     domains: ["placehold.co"],
   },
@@ -54,17 +68,24 @@ export default defineConfig({
   }),
   site: "https://www.lukastrombach.dev",
   experimental: {
+    contentIntellisense: true,
     serverIslands: true,
     actions: true,
     env: {
       schema: {
-        GH_TOKEN: envField.string({ context: "server", access: "secret" }),
+        GH_TOKEN: envField.string({
+          context: "server",
+          access: "secret",
+        }),
         VERCEL_URL: envField.string({
           context: "server",
           access: "public",
           optional: true,
         }),
-        RESEND_TOKEN: envField.string({ context: "server", access: "secret" }),
+        RESEND_TOKEN: envField.string({
+          context: "server",
+          access: "secret",
+        }),
         VERCEL_STORAGE_URL: envField.string({
           context: "server",
           access: "public",

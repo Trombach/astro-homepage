@@ -1,8 +1,14 @@
 ---
-import Hero from "@components/Hero/Hero.astro";
+import AboutMe from "@components/About/AboutMe.astro";
+import Tech from "@components/About/Tech.astro";
+import Footer from "@components/Footer/Footer.astro";
+import Hero from "@components/Home/Hero/Hero.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Lukas Trombach | Software Engineer">
   <Hero />
+  <AboutMe />
+  <Tech />
+  <Footer slot="footer" bgBlend="background"/>
 </Layout>

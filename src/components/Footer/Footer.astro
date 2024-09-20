@@ -1,0 +1,41 @@
+---
+import AstroLogo from "icons:astro/logos/astro";
+import WaveSeparator, { type Props } from "../About/WaveSeparator.astro";
+import Graph from "../Graph/Graph.svelte";
+import Copyright from "./Copyright.astro";
+import GithubLogo from "icons:astro/logos/github-icon";
+
+const { bgBlend = "transparent" } = Astro.props;
+---
+
+<div class="relative">
+  <WaveSeparator {bgBlend} />
+  <footer class="bg-secondary text-secondary-foreground p-5">
+    <div
+      class="max-w-screen-xl mx-auto flex justify-end items-center gap-3 md:gap-5"
+    >
+      <div
+        transition:persist="footer-logo"
+        class="absolute flex justify-center left-[5%] lg:left-[10%] top-0 rounded-full border-4 border-secondary bg-background size-20 sm:size-28 lg:size-36 p-2 sm:p-3 lg:p-5"
+      >
+        <Graph client:visible />
+      </div>
+
+      <Copyright />
+      <a
+        href="https://astro.build"
+        class="flex gap-1 items-center text-xs md:text-base"
+      >
+        <span>Built with </span>
+        <AstroLogo class="fill-foreground self-end" />
+      </a>
+            <a
+        href="https://github.com/Trombach/astro-homepage"
+        class="flex items-center"
+      >
+        <GithubLogo class="[&_path]:fill-foreground" />
+        <span class="sr-only">Github Repository</span>
+      </a>
+    </div>
+  </footer>
+</div>
