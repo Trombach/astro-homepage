@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/Trombach/astro-homepage"
   },
+  "browserslist": [">1%", "not dead", "last 1 years"],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
