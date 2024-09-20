@@ -1,4 +1,5 @@
-import { z, defineCollection, reference } from "astro:content";
+import { defineCollection, reference } from "astro:content";
+import { z } from "astro:schema";
 
 const aboutCollection = defineCollection({
   type: "content",

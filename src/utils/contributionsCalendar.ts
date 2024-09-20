@@ -1,4 +1,4 @@
-import { z } from "astro/zod";
+import { z } from "astro:schema";
 import fetch from "./fetchHelper";
 import { getSecret } from "astro:env/server";
 
