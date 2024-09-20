@@ -61,7 +61,7 @@ export default defineConfig({
   },
   output: "hybrid",
   adapter: vercel({
-    imageService: false,
+    imageService: true,
     webAnalytics: {
       enabled: true,
     },
