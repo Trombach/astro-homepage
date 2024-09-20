@@ -20,7 +20,6 @@ const {
     "relative mb-6 text-nowrap p-2 text-left font-mono",
     "after:absolute after:bottom-[20%] after:left-0 after:h-4 after:w-28 after:-skew-x-12",
     "motion-safe:hover:after:scale-x-150 motion-safe:after:transition-transform after:origin-left motion-safe:after:ease-[cubic-bezier(0.175,0.885,0.32,1.275)]",
-    "font-size-clamp-h1",
     "text-primary-foreground",
     classList,
     className,
@@ -32,6 +31,12 @@ const {
 
 <style>
   h1 {
+    font-size: clamp(
+      theme(fontSize.3xl),
+      -2.25rem + 9.3333vw,
+      theme(fontSize.5xl)
+    );
+
     &::after {
       background-image: linear-gradient(
         to right,
@@ -41,7 +46,7 @@ const {
         transparent 84% calc(86% - 1px),
         theme(colors.primary.pink) 86% calc(87.5% - 1px),
         transparent 87.5% 100%
-      )
+      );
     }
   }
 </style>
