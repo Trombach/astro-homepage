@@ -2,6 +2,7 @@
 import Contributions from "@components/About/Contributions.astro";
 import Footer from "@components/Footer/Footer.astro";
 import ProjectCard from "@components/ProjectCard/ProjectCard.astro";
+import SEO from "@components/SEO.astro";
 import { getCollection } from "astro:content";
 import Layout from "src/layouts/Layout.astro";
 
@@ -13,9 +14,13 @@ const sortOrder = [
   "timing-dashboard",
   "phd-thesis",
 ] as const satisfies Array<(typeof projects)[number]["slug"]>;
+
+const [title, description] = ["My Projects", "What I've been working on"];
 ---
 
-<Layout title="My Projects">
+<Layout {title} {description}>
+  <SEO slot="seo" {title} {description} imageURL={new URL("og/projects.png", Astro.url)} />
+
   <ul class="flex flex-col gap-10 px-10 py-10 lg:px-20 lg:gap-20 xl:px-40 lg:grid lg:grid-cols-2">
     {
       projects
