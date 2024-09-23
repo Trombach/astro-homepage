@@ -1,11 +1,21 @@
 ---
 import ContactForm from "@components/Contact/ContactForm.astro";
+import SEO from "@components/SEO.astro";
 import Layout from "src/layouts/Layout.astro";
 
 export const prerender = false;
+
+const [title, description] = ["Contact Me", "Get in touch"];
 ---
 
-<Layout title="Contact Me">
+<Layout {title} {description}>
+  <SEO
+    slot="seo"
+    {title}
+    {description}
+    imageURL={new URL("og/contact.png", Astro.url)}
+  />
+
   <section
     class="flex min-h-screen-less-header w-full flex-col justify-center p-3"
   >
