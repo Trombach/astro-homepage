@@ -11,10 +11,6 @@ type FormFields = Array<
   }[AllowedTags]
 >;
 
-const emailRegExp =
-  /(([^<>\(\)\[\]\\.,;:\s@"]+(\.[^<>\(\)\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/ // eslint-disable-line no-useless-escape
-    .source;
-
 const formFields = [
   {
     label: "Name",
@@ -25,7 +21,6 @@ const formFields = [
       name: "name",
       id: "form-name",
       required: true,
-      autocomplete: "on",
     },
   },
   {
@@ -37,8 +32,6 @@ const formFields = [
       name: "email",
       id: "form-email",
       required: true,
-      autocomplete: "on",
-      pattern: emailRegExp,
     },
   },
   {
@@ -50,6 +43,7 @@ const formFields = [
       name: "message",
       id: "form-message",
       required: true,
+      minlength: 10,
     },
   },
 ] as const satisfies FormFields;
@@ -62,13 +56,13 @@ const response = Astro.getActionResult(actions.contact);
     <label for={attributes.id} class="flex flex-col gap-2">
       <span class="block text-sm font-medium leading-6">{label}</span>
       <Tag
+        transition:persist
         {...attributes}
         class:list={[
           "rounded-lg border bg-background px-3 py-2 placeholder-slate-400 shadow-sm",
           "focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary",
-          "invalid:border-destructive",
-          "focus:invalid:border-destructive focus:invalid:ring-destructive",
-          "invalid:placeholder-shown:border-border",
+          "[&:user-invalid]:border-destructive",
+          "focus:[&:user-invalid]:border-destructive focus:[&:user-invalid]:ring-destructive",
         ]}
       />
       {response?.error &&
