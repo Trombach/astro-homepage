@@ -22,6 +22,7 @@ const { data } = await getEntry(person);
   transition:name="contact-form"
   method="POST"
   action={actions.contact}
+  autocomplete="on"
   class="relative mx-auto flex w-full flex-col gap-5 rounded-xl border bg-background px-6 py-3 justify-center md:w-[600px] lg:max-w-screen-lg lg:px-12 lg:py-6"
 >
   <Avatar
@@ -69,30 +70,8 @@ const { data } = await getEntry(person);
     id="submit-message"
     as="button"
     type="submit"
-    disabled
     class="self-start"
   >
     Send <PaperPlane />
   </AppLink>
 </form>
-
-<script>
-  function init() {
-    const form = document.getElementById("contact-form");
-    const button = document.getElementById("submit-message");
-
-    if (
-      form instanceof HTMLFormElement &&
-      button instanceof HTMLButtonElement
-    ) {
-      form.addEventListener(
-        "input",
-        () => (button.disabled = !form.checkValidity()),
-      );
-    }
-  }
-
-  init();
-
-  document.addEventListener("astro:page-load", init);
-</script>
