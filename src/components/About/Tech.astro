@@ -16,11 +16,11 @@ const { Content } = await render();
 >
   <H1 {title} class="motion-safe:timeline-slide-in-bottom" />
   <div
-    class="flex w-full max-w-screen-xl flex-col items-center xl:flex-row"
+    class="flex space-y-10 w-full max-w-screen-xl flex-col justify-around items-center xl:flex-row"
   >
     <div
       class:list={[
-        "prose py-20 md:prose-lg lg:prose-xl dark:prose-invert xl:px-20",
+        "prose-p:text-justify prose md:prose-lg lg:prose-xl dark:prose-invert xl:px-20",
         "motion-safe:*:timeline-slide-in-bottom",
       ]}
     >
