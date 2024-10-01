@@ -31,6 +31,7 @@
     "@floating-ui/react": "^0.26.24",
     "@fontsource-variable/inter": "^5.1.0",
     "@fontsource-variable/jetbrains-mono": "^5.1.0",
+    "@fontsource/lobster": "^5.1.0",
     "@iconify-json/heroicons": "^1.2.0",
     "@iconify-json/simple-icons": "^1.2.3",
     "@inox-tools/content-utils": "^0.7.0",

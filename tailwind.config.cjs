@@ -29,6 +29,17 @@ const timelineAnimation = plugin(({ addComponents }) => {
   });
 });
 
+const textShadow = plugin(({ matchUtilities, theme }) => {
+  matchUtilities(
+    {
+      "text-shadow": (value) => ({
+        textShadow: value,
+      }),
+    },
+    { values: theme("textShadow") || {} },
+  );
+});
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -59,8 +70,17 @@ module.exports = {
           "slide-in-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
       },
       fontFamily: {
+        display: ["Lobster", ...defaultTheme.fontFamily.sans],
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
         mono: ["JetBrains Mono Variable", ...defaultTheme.fontFamily.mono],
+      },
+      dropShadow: {
+        text: "2px 2px hsl(var(--background))",
+      },
+      textShadow: {
+        sm: "0 1px 2px var(--tw-shadow-color)",
+        DEFAULT: "0 2px 4px var(--tw-shadow-color)",
+        lg: "0 8px 16px var(--tw-shadow-color)",
       },
       borderRadius: {
         "4xl": "2rem",
@@ -113,9 +133,9 @@ module.exports = {
   plugins: [
     typography,
     containerQueries,
-
     animationDelay,
     timelineAnimation,
+    textShadow,
   ],
   future: {
     hoverOnlyWhenSupported: true,
