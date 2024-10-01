@@ -55,14 +55,14 @@
     "tailwindcss": "^3.4.12"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.2",
+    "@biomejs/biome": "1.9.3",
     "@changesets/cli": "^2.27.8",
-    "@iconify-json/logos": "^1.2.0",
+    "@iconify-json/logos": "^1.2.1",
     "@tailwindcss/typography": "^0.5.15",
-    "@types/react": "^18.3.8",
+    "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "@types/sanitize-html": "^2.13.0",
-    "svelte-check": "^4.0.2",
+    "svelte-check": "^4.0.4",
     "typescript": "^5.6.2",
     "unplugin-icons": "^0.19.3"
   },
