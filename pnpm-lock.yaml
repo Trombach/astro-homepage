@@ -38,6 +38,9 @@ importers:
       '@fontsource-variable/jetbrains-mono':
         specifier: ^5.1.0
         version: 5.1.0
+      '@fontsource/lobster':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@iconify-json/heroicons':
         specifier: ^1.2.0
         version: 1.2.0
@@ -621,6 +624,9 @@ packages:
 
   '@fontsource-variable/jetbrains-mono@5.1.0':
     resolution: {integrity: sha512-Hk2HCSep+EmX6nSPNTS3goN0V0TOigdVWcGdnxTVIZIa89HtZAe/zhzFEM1iBXrBShilPwKEdjANHa5plSi38A==}
+
+  '@fontsource/lobster@5.1.0':
+    resolution: {integrity: sha512-kEIt+NiswgZoA7loqiIXZKpO336yZjvvy3gvBj/hLYGPrZajDDGTr4bKEfsa7NmeD3cXYIO4FDiC5GfB0ONyQw==}
 
   '@iconify-json/heroicons@1.2.0':
     resolution: {integrity: sha512-EmvGN0L9EUJCmQ82rkLGZ4tkz0YGQfZV7ugKT6UvHni/bxNitQrD0gLj6NJj2W9zsSoXyNHyCX236+EJmO4pmA==}
@@ -4082,6 +4088,8 @@ snapshots:
   '@fontsource-variable/inter@5.1.0': {}
 
   '@fontsource-variable/jetbrains-mono@5.1.0': {}
+
+  '@fontsource/lobster@5.1.0': {}
 
   '@iconify-json/heroicons@1.2.0':
     dependencies:
