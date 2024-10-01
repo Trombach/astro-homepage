@@ -13,6 +13,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 <a
   {href}
   class:list={[
+    "font-display",
     "relative inline-block h-auto rounded-full py-3 tracking-wider sm:p-2",
     "group/link transition-colors duration-300 hover:bg-primary/25 hover:text-foreground",
     { "text-muted-foreground": !isActive },
