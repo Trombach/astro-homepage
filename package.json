@@ -6,7 +6,11 @@
     "type": "git",
     "url": "https://github.com/Trombach/astro-homepage"
   },
-  "browserslist": [">1%", "not dead", "last 1 years"],
+  "browserslist": [
+    ">1%",
+    "not dead",
+    "last 1 years"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -49,6 +53,7 @@
     "react-dom": "^18.3.1",
     "remark-github": "^12.0.0",
     "resend": "^4.0.0",
+    "sanitize-html": "^2.13.0",
     "sharp": "^0.33.5",
     "svelte": "^4.2.19",
     "tailwindcss": "^3.4.12"
@@ -60,6 +65,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
+    "@types/sanitize-html": "^2.13.0",
     "svelte-check": "^4.0.2",
     "typescript": "^5.6.2",
     "unplugin-icons": "^0.19.3"

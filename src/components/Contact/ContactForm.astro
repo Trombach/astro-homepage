@@ -1,7 +1,7 @@
 ---
 import AppLink from "@components/AppLink.astro";
 import SendEmailResponse from "@components/Contact/SendEmailResponse.astro";
-import H1 from "@components/H1.astro";
+import Heading from "@components/Heading.astro";
 import { actions } from "astro:actions";
 import PaperPlane from "icons:astro/heroicons/paper-airplane";
 import FormFields from "./FormFields.astro";
@@ -30,7 +30,7 @@ const { data } = await getEntry(person);
     class="size-16 lg:size-24 absolute -right-4 lg:-right-5 -top-5 border-transparent"
   />
 
-  <H1 title="Get in Touch" class="mb-0" />
+  <Heading class="mb-0">Get in Touch</Heading>
 
   <div class="flex items-center gap-3 justify-start">
     <AppLink
