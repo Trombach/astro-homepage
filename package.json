@@ -17,7 +17,8 @@
     "format:check": "biome format .",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "bump-version": "changeset version && biome format --write package.json"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
