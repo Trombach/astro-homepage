@@ -1,5 +1,5 @@
 ---
-import H1 from "@components/H1.astro";
+import Heading from "@components/Heading.astro";
 import { getEntry } from "astro:content";
 
 const {
@@ -10,7 +10,7 @@ const { Content } = await render();
 ---
 
 <div class="p-10 sm:p-20 lg:p-10 shrink-0 lg:w-1/2 lg:ml-auto">
-  <H1 {title} class="motion-safe:timeline-slide-in-bottom" />
+  <Heading class="motion-safe:timeline-slide-in-bottom">{title}</Heading>
   <div class="prose-p:text-justify prose md:prose-lg lg:prose-xl dark:prose-invert motion-safe:*:timeline-slide-in-bottom">
     <Content />
   </div>
