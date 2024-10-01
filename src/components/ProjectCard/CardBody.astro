@@ -1,6 +1,6 @@
 ---
 import ToolIcon from "@components/ToolIcon.astro";
-import { dash } from "radash";
+import { dash, title as titleCase } from "radash";
 import type { Tool } from "src/content/config";
 import Tags from "./CardTags.astro";
 
@@ -18,7 +18,7 @@ const dashedTitle = dash(title);
 <div class="rounded-b-xl p-5">
   <div class="flex items-center justify-between">
     <h2 class="my-3 font-semibold" transition:name={dashedTitle}>
-      {title}
+      {titleCase(title)}
     </h2>
     {
       tools && (

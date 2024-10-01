@@ -9,19 +9,22 @@ const {
 const { data } = await getEntry(person);
 ---
 
-<div
-  data-card
-  class:list={[
-    "@container/me-card",
-    "z-50 rounded-xl border bg-card [transform-style:preserve-3d]",
-    "w-3/4 md:w-1/2 aspect-[1/1.59] md:aspect-[1.59/1] max-w-[750px]",
-  ]}
->
+<div class="[perspective:3200px] z-10 w-full shrink-0 flex justify-center items-center lg:w-1/2 h-[calc(100svh/2)] [container:me-section/size]">
   <div
-    class="flex flex-col sm:flex-row h-full w-full items-stretch justify-between"
+    data-card
+    class:list={[
+      "@container/me-card",
+      "rounded-xl border bg-card [transform-style:preserve-3d]",
+      "w-11/12 sm:w-[clamp(450px,theme(width[11/12]),750px)] shrink-0 mx-auto sm:aspect-[1.59/1]",
+      "scale-[0.8] sm:[transform:scale(0.8)_rotateY(20deg)]"
+    ]}
   >
-    <MeCardImage image={data.avatar} />
-    <MeCardData {data} />
+    <div
+      class="flex flex-col sm:flex-row h-full w-full items-stretch justify-between"
+    >
+      <MeCardImage image={data.avatar} />
+      <MeCardData {data} />
+    </div>
   </div>
 </div>
 
@@ -42,7 +45,7 @@ const { data } = await getEntry(person);
 
   @keyframes id-card {
     0% {
-      transform: translateY(calc(-25cqh - 10vh)) translateX(25cqw) scale(1)
+      transform: translateY(calc(-25cqh - 10vh)) translateX(50cqw) scale(1)
         rotateY(0);
       @apply drop-shadow-none;
     }

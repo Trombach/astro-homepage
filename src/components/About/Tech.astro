@@ -1,6 +1,6 @@
 ---
 import TechGrid from "@components/About/TechGrid.astro";
-import H1 from "@components/H1.astro";
+import Heading from "@components/Heading.astro";
 import { getEntry } from "astro:content";
 
 const {
@@ -12,15 +12,15 @@ const { Content } = await render();
 
 <section
   id="technologies"
-  class="flex min-h-svh w-full flex-col items-center justify-center bg-background p-10 sm:p-20"
+  class="flex w-full flex-col items-center justify-center bg-background p-10 sm:p-20"
 >
-  <H1 {title} class="motion-safe:timeline-slide-in-bottom" />
+  <Heading class="motion-safe:timeline-slide-in-bottom">{title}</Heading>
   <div
-    class="flex w-full max-w-screen-xl flex-col items-center xl:flex-row"
+    class="flex space-y-10 w-full max-w-screen-xl flex-col justify-around items-center xl:flex-row"
   >
     <div
       class:list={[
-        "prose py-20 md:prose-lg lg:prose-xl dark:prose-invert xl:px-20",
+        "prose-p:text-justify prose md:prose-lg lg:prose-xl dark:prose-invert xl:px-20",
         "motion-safe:*:timeline-slide-in-bottom",
       ]}
     >
