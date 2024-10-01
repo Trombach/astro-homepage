@@ -3,7 +3,7 @@ import GithubLink from "@components/GithubLink.astro";
 import ToolIcon from "@components/ToolIcon.astro";
 import type { ProjectProps } from "@shared/types";
 import { Image } from "astro:assets";
-import { dash } from "radash";
+import { dash, title as titleCase } from "radash";
 
 type Props = Omit<ProjectProps, "headings">;
 
@@ -37,7 +37,7 @@ const dashedTitle = dash(title);
 
   <div class="p-5 pb-0 lg:p-16 lg:pb-0">
     <header>
-      <h1 {title} transition:name={dashedTitle}>{title}</h1>
+      <h1 {title} transition:name={dashedTitle}>{titleCase(title)}</h1>
       <p
         transition:name={`${dashedTitle}-description`}
         class="not-prose -mt-8 mb-5 font-mono text-muted-foreground"
