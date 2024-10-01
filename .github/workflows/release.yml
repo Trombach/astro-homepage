@@ -26,5 +26,7 @@ jobs:
       - run: pnpm i
       - name: Create Release PR
         uses: changesets/action@v1
+        with:
+          version: changeset version && pnpm biome format --write package.json
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESETS_PAT }}
