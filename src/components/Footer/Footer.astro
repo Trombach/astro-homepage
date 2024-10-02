@@ -1,22 +1,25 @@
 ---
 import AstroLogo from "icons:astro/logos/astro";
-import WaveSeparator, { type Props } from "../About/WaveSeparator.astro";
 import Graph from "../Graph/Graph.svelte";
 import Copyright from "./Copyright.astro";
 import GithubLogo from "icons:astro/logos/github-icon";
-
-const { bgBlend = "transparent" } = Astro.props;
 ---
 
-<div class="relative">
-  <WaveSeparator {bgBlend} />
-  <footer class="bg-secondary text-secondary-foreground p-5">
+<footer
+  class:list={[
+    "relative isolate flex items-end justify-end min-h-28 sm:min-h-40 text-secondary-foreground",
+    "after:[mask:linear-gradient(3deg,black_0%_calc(50%-1px),transparent_50%_100%)]",
+    "after:bg-secondary after:absolute after:inset-0 after:bottom-1/2 after:-z-10",
+    "before:bg-secondary before:absolute before:inset-0 before:top-1/2 before:-z-10", 
+  ]}
+>
+  <div class="p-5">
     <div
       class="max-w-screen-xl mx-auto flex justify-end items-center gap-3 md:gap-5"
     >
       <div
         transition:persist="footer-logo"
-        class="absolute flex justify-center left-[5%] lg:left-[10%] top-0 rounded-full border-4 border-secondary bg-background size-20 sm:size-28 lg:size-36 p-2 sm:p-3 lg:p-5"
+        class="absolute z-10 flex justify-center left-[5%] lg:left-[10%] -top-5 rounded-full border-4 border-secondary bg-background size-20 sm:size-28 lg:size-36 p-2 sm:p-3 lg:p-5"
       >
         <Graph client:visible />
       </div>
@@ -29,7 +32,7 @@ const { bgBlend = "transparent" } = Astro.props;
         <span>Built with </span>
         <AstroLogo class="fill-foreground self-end" />
       </a>
-            <a
+      <a
         href="https://github.com/Trombach/astro-homepage"
         class="flex items-center"
       >
@@ -37,5 +40,5 @@ const { bgBlend = "transparent" } = Astro.props;
         <span class="sr-only">Github Repository</span>
       </a>
     </div>
-  </footer>
-</div>
+  </div>
+</footer>
