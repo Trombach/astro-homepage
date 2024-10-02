@@ -3,7 +3,12 @@ import AboutText from "./AboutText.astro";
 import MeCard from "./MeCard/MeCard.astro";
 ---
 
-<section class="bg-secondary w-full">
+<section
+  class:list={[
+    "relative isolate w-full",
+    "after:absolute after:inset-0 after:bg-secondary after:-z-10 after:-skew-y-3",
+  ]}
+>
   <div
     class="mx-auto max-w-screen-xl flex flex-col items-center justify-center lg:flex-row"
   >
