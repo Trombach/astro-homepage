@@ -80,7 +80,10 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
   <body class="antialiased">
     <Background>
       <Navbar />
-      <main class="flex w-full flex-col items-center mt-[--header-height]">
+      <main
+        transition:name="main-content"
+        class="flex w-full flex-col items-center mt-[--header-height]"
+      >
         <slot />
       </main>
 
