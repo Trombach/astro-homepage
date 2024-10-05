@@ -29,7 +29,7 @@ const { Content, headings } = await render();
     slot="seo"
     {title}
     {description}
-    imageURL={new URL(`og/${slug}.png`, Astro.url)}
+    imageURL={new URL(`og/${slug}.png`, Astro.url.origin)}
   />
 
   <ProjectPage {title} {headings} {description} {...extraProps}>
