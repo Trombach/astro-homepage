@@ -1,0 +1,31 @@
+---
+import AppLink from "@components/AppLink.astro";
+import LeftArrow from "icons:astro/heroicons/arrow-left";
+import ListIcon from "icons:astro/heroicons/list-bullet";
+---
+
+<div
+  id="project-action-header"
+  class:list={[
+    "py-3 top-[calc(var(--header-height)-1px)] flex items-center justify-between",
+  ]}
+>
+  <AppLink
+    as="a"
+    appearance="secondary"
+    href="/projects"
+    class="group/back w-fit text-sm"
+  >
+    <LeftArrow class="transition-transform group-hover/back:-translate-x-1" />
+    <span>All Projects</span>
+  </AppLink>
+  <AppLink
+    as="button"
+    appearance="secondary"
+    popovertarget="toc-aside"
+    class="text-sm l-xl:invisible"
+  >
+    <ListIcon />
+    <span>Table of Contents</span>
+  </AppLink>
+</div>

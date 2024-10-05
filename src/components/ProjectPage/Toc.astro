@@ -16,7 +16,10 @@ const { toc, depth = 0 } = Astro.props;
         <li class="py-1">
           <a
             href={`#${slug}`}
-            class="inline-block text-muted-foreground hover:text-foreground"
+            class:list={["inline-block text-muted-foreground hover:text-foreground", 
+            "data-[current-heading]:text-foreground",
+            "data-[current-url-heading]:underline data-[current-url-heading]:decoration-primary data-[current-url-heading]:decoration-dotted data-[current-url-heading]:underline-offset-4"
+          ]}
           >
             {text}
           </a>
@@ -53,13 +56,3 @@ const { toc, depth = 0 } = Astro.props;
 </script>
 
 <script src="./observe-headings.ts"></script>
-
-<style>
-  a[data-current-heading] {
-    @apply text-foreground;
-  }
-
-  a[data-current-url-heading] {
-    @apply underline decoration-primary decoration-dotted underline-offset-4;
-  }
-</style>
