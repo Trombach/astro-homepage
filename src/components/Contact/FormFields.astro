@@ -74,4 +74,25 @@ const response = Astro.getActionResult(actions.contact);
   ))
 }
 
-<div class="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY}></div>
+<div
+  id="cf-turnstile"
+  data-sitekey={import.meta.env.DEV ? undefined : TURNSTILE_SITE_KEY}
+>
+</div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const el = document.getElementById("cf-turnstile");
+    if (!el) {
+      return;
+    }
+
+    turnstile.render(el, {
+      appearance: "interaction-only",
+      sitekey: el.dataset.sitekey || "1x00000000000000000000AA",
+      callback: (token) => {
+        console.log(`Challenge Success ${token}`);
+      },
+    });
+  });
+</script>
