@@ -1,27 +1,16 @@
 ---
-import AppLink from "@components/AppLink.astro";
 import type { ProjectProps } from "@shared/types";
-import LeftArrow from "icons:astro/heroicons/arrow-left";
 import Aside from "./Aside.astro";
 import PageBody from "./PageBody.astro";
+import ActionHeader from "./ActionHeader.astro";
 
 type Props = ProjectProps;
 
 const { headings, ...props } = Astro.props;
 ---
 
-<div
-  class="mx-auto max-w-full space-y-5 px-3 pt-3 lg:px-5 lg:pt-5"
->
-  <AppLink
-    as="a"
-    appearance="secondary"
-    href="/projects"
-    class="group w-fit text-sm"
-  >
-    <LeftArrow class="transition-transform group-hover:-translate-x-1" />
-    <span>Back to Projects</span>
-  </AppLink>
+<div class="relative mx-auto max-w-full space-y-5 px-3 pt-3 lg:px-5 lg:pt-5">
+  <ActionHeader />
 
   <div class="flex max-w-screen-xl gap-10">
     <PageBody {...props}>

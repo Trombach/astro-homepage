@@ -162,6 +162,15 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
           @apply border-border;
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          @apply text-balance;
+        }
+
         :has(:target) {
           @apply motion-safe:scroll-smooth;
         }
