@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.2
+
+### Patch Changes
+
+- ba7ca1c: fix og-image urls
+
 ## 1.6.1
 
 ### Patch Changes
