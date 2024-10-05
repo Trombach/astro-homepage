@@ -18,7 +18,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "bump-version": "changeset version && biome format --write package.json"
+    "bump-version": "changeset version && biome format --write package.json",
+    "promote-staging": "vercel promote https://astro-homepage-trombachs-projects.vercel.app"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
