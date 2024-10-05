@@ -7,7 +7,12 @@ import CalendarGrid from "./ContributionsCalendar/CalendarGrid.astro";
 import { CalendarTileSkeleton } from "./ContributionsCalendar/CalendarTile";
 ---
 
-<section class="flex bg-background w-full flex-col items-center px-5 py-10 sm:p-20">
+<section
+  class:list={[
+    "relative flex w-full flex-col items-center px-5 py-10 sm:p-20",
+    "after:absolute after:inset-0 after:bg-background after:-z-10 after:-skew-y-3",
+  ]}
+>
   <Heading>Github Contributions</Heading>
 
   <div
