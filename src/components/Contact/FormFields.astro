@@ -87,15 +87,12 @@ const response = Astro.getActionResult(actions.contact);
       return;
     }
 
-    // This runs on first page load and after every navigation.
-    turnstile.ready(() =>
-      turnstile.render(el, {
-        appearance: "interaction-only",
-        sitekey: el.dataset.sitekey || "1x00000000000000000000AA",
-        callback: (token) => {
-          console.log(`Challenge Success ${token}`);
-        },
-      }),
-    );
+    turnstile.render(el, {
+      appearance: "interaction-only",
+      sitekey: el.dataset.sitekey || "1x00000000000000000000AA",
+      callback: (token) => {
+        console.log(`Challenge Success ${token}`);
+      },
+    });
   });
 </script>
