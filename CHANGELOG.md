@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.1
+
+### Patch Changes
+
+- ddac4bb: fix vercel promotion workflow
+
 ## 1.6.0
 
 ### Minor Changes
