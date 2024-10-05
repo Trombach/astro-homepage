@@ -45,13 +45,13 @@ function setupObserver() {
         }
 
         // move indicator
-        const aside = document.getElementById("sidenav");
+        const aside = document.getElementById("toc-aside");
         const top =
           aside &&
           link.getBoundingClientRect().top - aside.getBoundingClientRect().top;
 
         if (indicator && top) {
-          indicator.style.top = `${top + 4}px`;
+          indicator.style.top = `calc(${top}px - 1rem)`;
         }
       }
       // set all other links as inactive
