@@ -13,7 +13,7 @@ const [title, description] = ["Contact Me", "Get in touch"];
     slot="seo"
     {title}
     {description}
-    imageURL={new URL("og/contact.png", Astro.url)}
+    imageURL={new URL("og/contact.png", Astro.url.origin)}
   />
 
   <section
