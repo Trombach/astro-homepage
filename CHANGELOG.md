@@ -1,5 +1,29 @@
 # homepage
 
+## 1.6.0
+
+### Minor Changes
+
+- 84bd689: Redesign of the hero page and general page layout
+- ffc39b9: Updates theme switcher to use a custom three-way switch and tidies up the `ThemeProvider` API
+
+### Patch Changes
+
+- c4264e3: remove astro-vtbot
+- c8a2f54: use plugin to declare timeline keyframes
+- d1a7839: update prod dependencies
+- de7383d: Skewed sections
+- 58022c5: Project improvements
+- 8528dde: more contact form improvements
+- 50a6a22: Hero redesign fixes and changes
+- f74fd41: fix og image title
+- d7f7ce0: add browserslist
+- f5e5740: update breaking prod dependencies
+- d7924f8: update astro
+- 15ba82c: Bump the astro group across 1 directory with 5 updates
+- de16a15: update dev dependencies
+- 97c2f0f: switch to Astro OG canvas
+
 ## 1.5.1
 
 ### Patch Changes
