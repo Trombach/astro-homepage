@@ -2,7 +2,7 @@
 /// <reference path="../.astro/types.d.ts" />
 /// <reference path="../.astro/actions.d.ts" />
 /// <reference types="astro/client" />
-/// <reference types="svelte-gestures" />
+/// <reference types="npm i @types/cloudflare-turnstile" />
 
 // Workaround for icon type checking
 declare module "icons:astro/*" {
