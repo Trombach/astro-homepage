@@ -25,7 +25,7 @@ importers:
         version: 5.7.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))(svelte@4.2.19)(typescript@5.6.2)(vite@5.4.6(@types/node@16.18.11))
       '@astrojs/tailwind':
         specifier: ^5.1.1
-        version: 5.1.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))(tailwindcss@3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
+        version: 5.1.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))(tailwindcss@3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
       '@astrojs/vercel':
         specifier: ^7.8.1
         version: 7.8.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))(react@18.3.1)
@@ -45,17 +45,17 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       '@iconify-json/simple-icons':
-        specifier: ^1.2.3
-        version: 1.2.3
+        specifier: ^1.2.5
+        version: 1.2.5
       '@inox-tools/content-utils':
-        specifier: ^0.7.0
-        version: 0.7.0(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))
+        specifier: ^0.7.1
+        version: 0.7.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))
       '@microflash/rehype-figure':
         specifier: ^2.1.1
         version: 2.1.1
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
-        version: 0.1.1(tailwindcss@3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))
+        version: 0.1.1(tailwindcss@3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))
       '@vercel/analytics':
         specifier: ^1.3.1
         version: 1.3.1(react@18.3.1)
@@ -93,8 +93,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sanitize-html:
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.13.1
+        version: 2.13.1
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -102,8 +102,8 @@ importers:
         specifier: ^4.2.19
         version: 4.2.19
       tailwindcss:
-        specifier: ^3.4.12
-        version: 3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
+        specifier: ^3.4.13
+        version: 3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.3
@@ -116,7 +116,7 @@ importers:
         version: 1.2.2
       '@tailwindcss/typography':
         specifier: ^0.5.15
-        version: 0.5.15(tailwindcss@3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))
+        version: 0.5.15(tailwindcss@3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))
       '@types/react':
         specifier: ^18.3.11
         version: 18.3.11
@@ -671,8 +671,8 @@ packages:
   '@iconify-json/logos@1.2.2':
     resolution: {integrity: sha512-Z78rxWqmAu9pBczootCg4/TjVTAqcoNdqzZ3KRD8Nof3BD1AMqyDXS7+BNBcsGMBgSkfUJYHk0iInBi6wUEvUw==}
 
-  '@iconify-json/simple-icons@1.2.3':
-    resolution: {integrity: sha512-KZpqyPkDdyAvrpMz9/FYovwFsr3xrHf9esJeBng3iqNInhuZhF33XO1k6Yf8g2p10ynUW7AYEiGJkYzDi4DENQ==}
+  '@iconify-json/simple-icons@1.2.5':
+    resolution: {integrity: sha512-ucqBlm0GSjLpGQR+b61LtmHro0xkyjWl1v23AOzLTiymHK0chx7s7aeuE2s7/5/t/BzKdDu8iYuU2drawzCIQQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -785,18 +785,18 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@inox-tools/content-utils@0.7.0':
-    resolution: {integrity: sha512-Gr8qTjA1cF/1xS/kzzCoSdzeIzVgGSe8y+oJaFWEuzNsuwaHj67Pl72BjvlWNEQ8Mu+o2WnU/Vypqj9TbxdcVQ==}
+  '@inox-tools/content-utils@0.7.1':
+    resolution: {integrity: sha512-/4iv3fAXp+JCjvWVEiymZJm86+rpC69ZIoeArHQ/5HKTIFJnWeKFRksxT6I+TkfKM4LQK3mKPoUOifEKFQv05A==}
     peerDependencies:
       astro: ^4.12.2
 
-  '@inox-tools/modular-station@0.3.0':
-    resolution: {integrity: sha512-aRUm5afEIamsBAkAuD9u3cDsHOwojCOzUdOr7r4dSThM9cV5UkNk8pksGk7VD7OwbTysSadFvZDR6HHvTkaU1g==}
+  '@inox-tools/modular-station@0.3.1':
+    resolution: {integrity: sha512-4LoUjN4LqnNkeO1CTyM07Wv4PvLggRQALzKUfRo5FF6GR0Hj+YtjkTN2gSKY3i7gkWJ8jzFQEwiDePN81J7Jhw==}
     peerDependencies:
       astro: ^4.12.2
 
-  '@inox-tools/utils@0.1.3':
-    resolution: {integrity: sha512-UhneOA5PwcPhvcvcH1pW9wGZXRKASD7/MWHCrE+DbSzbMhzBTeUn1rKpssys8rDF51pr3FwgLFz1Cvjj2TMIwA==}
+  '@inox-tools/utils@0.1.4':
+    resolution: {integrity: sha512-1ZMT8VqhJEqI532puMHLewIBDob4mZ5lj+QTnh0Bc9yyxlZ2vVOnNc5T3erOP47vjhFxL0fLX3dwz1mLu0QHQA==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -1665,15 +1665,6 @@ packages:
   debug@4.1.1:
     resolution: {integrity: sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==}
     deprecated: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
-  debug@4.3.6:
-    resolution: {integrity: sha512-O/09Bd4Z1fBrU4VzkhFqVgpPzaGbw6Sm9FEkBT1A/YBXQFGuuSxa1dN2nxgxS34JmKXqYx8CZAwEVoJFImUXIg==}
-    engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
     peerDependenciesMeta:
@@ -2800,9 +2791,6 @@ packages:
   ms@2.1.1:
     resolution: {integrity: sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==}
 
-  ms@2.1.2:
-    resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -2963,8 +2951,8 @@ packages:
     resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
     engines: {node: '>=6'}
 
-  package-json-from-dist@1.0.0:
-    resolution: {integrity: sha512-dATvCeZN/8wQsGywez1mzHtTlP22H8OEfPrVMLNr4/eGa+ijtLn/6M5f0dY8UKNrC2O9UCU6SSoG3qRKnt7STw==}
+  package-json-from-dist@1.0.1:
+    resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
   package-manager-detector@0.2.0:
     resolution: {integrity: sha512-E385OSk9qDcXhcM9LNSe4sdhx8a9mAPrZ4sMLW+tmxl5ZuGtPUcdFu+MPP2jbgiWAZ6Pfe5soGFMd+0Db5Vrog==}
@@ -3341,8 +3329,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  sanitize-html@2.13.0:
-    resolution: {integrity: sha512-Xff91Z+4Mz5QiNSLdLWwjgBDm5b1RU6xBT0+12rapjiaR7SwfRdjw8f+6Rir2MXKLrDicRFHdb51hGOAxmsUIA==}
+  sanitize-html@2.13.1:
+    resolution: {integrity: sha512-ZXtKq89oue4RP7abL9wp/9URJcqQNABB5GGJ2acW1sdO8JTVl92f4ygD7Yc9Ze09VAZhnt2zegeU0tbNsdcLYg==}
 
   sass-formatter@0.7.9:
     resolution: {integrity: sha512-CWZ8XiSim+fJVG0cFLStwDvft1VI7uvXdCNJYXhDvowiv+DsbD1nXLiQ4zrE5UBvj5DWZJ93cwN0NX5PMsr1Pw==}
@@ -3567,8 +3555,8 @@ packages:
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
 
-  tailwindcss@3.4.12:
-    resolution: {integrity: sha512-Htf/gHj2+soPb9UayUNci/Ja3d8pTmu9ONTfh4QY8r3MATTZOzmv6UYWF7ZwikEIC8okpfqmGqrmDehua8mF8w==}
+  tailwindcss@3.4.13:
+    resolution: {integrity: sha512-KqjHOJKogOUt5Bs752ykCeiwvi0fKVkr5oqsFNt/8px/tA8scFPIlkygsf6jXrfCqGHz7VflA6+yytWuM+XhFw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -4257,13 +4245,13 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))(tailwindcss@3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))':
+  '@astrojs/tailwind@5.1.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))(tailwindcss@3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))':
     dependencies:
       astro: 4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2)
       autoprefixer: 10.4.20(postcss@8.4.47)
       postcss: 8.4.47
       postcss-load-config: 4.0.2(postcss@8.4.47)(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
-      tailwindcss: 3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
+      tailwindcss: 3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
     transitivePeerDependencies:
       - ts-node
 
@@ -4778,7 +4766,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/simple-icons@1.2.3':
+  '@iconify-json/simple-icons@1.2.5':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -4871,25 +4859,25 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
-  '@inox-tools/content-utils@0.7.0(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))':
+  '@inox-tools/content-utils@0.7.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))':
     dependencies:
-      '@inox-tools/modular-station': 0.3.0(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))
-      '@inox-tools/utils': 0.1.3
+      '@inox-tools/modular-station': 0.3.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))
+      '@inox-tools/utils': 0.1.4
       astro: 4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2)
       astro-integration-kit: 0.16.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))
-      debug: 4.3.6
+      debug: 4.3.7
       estree-walker: 3.0.3
       magic-string: 0.30.11
     transitivePeerDependencies:
       - supports-color
 
-  '@inox-tools/modular-station@0.3.0(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))':
+  '@inox-tools/modular-station@0.3.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))':
     dependencies:
-      '@inox-tools/utils': 0.1.3
+      '@inox-tools/utils': 0.1.4
       astro: 4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2)
       astro-integration-kit: 0.16.1(astro@4.15.8(@types/node@16.18.11)(rollup@4.22.2)(typescript@5.6.2))
 
-  '@inox-tools/utils@0.1.3': {}
+  '@inox-tools/utils@0.1.4': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -5140,17 +5128,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))':
+  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))':
     dependencies:
-      tailwindcss: 3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
+      tailwindcss: 3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
 
-  '@tailwindcss/typography@0.5.15(tailwindcss@3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))':
+  '@tailwindcss/typography@0.5.15(tailwindcss@3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)))':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
+      tailwindcss: 3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2))
 
   '@tootallnate/once@2.0.0': {}
 
@@ -5606,7 +5594,7 @@ snapshots:
 
   ast-types@0.16.1:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.7.0
 
   astring@1.9.0: {}
 
@@ -5964,11 +5952,7 @@ snapshots:
 
   debug@4.1.1:
     dependencies:
-      ms: 2.1.3
-
-  debug@4.3.6:
-    dependencies:
-      ms: 2.1.2
+      ms: 2.1.1
 
   debug@4.3.7:
     dependencies:
@@ -6405,7 +6389,7 @@ snapshots:
       jackspeak: 3.4.3
       minimatch: 9.0.5
       minipass: 7.1.2
-      package-json-from-dist: 1.0.0
+      package-json-from-dist: 1.0.1
       path-scurry: 1.11.1
 
   glob@7.2.3:
@@ -7386,8 +7370,6 @@ snapshots:
 
   ms@2.1.1: {}
 
-  ms@2.1.2: {}
-
   ms@2.1.3: {}
 
   muggle-string@0.4.1: {}
@@ -7521,7 +7503,7 @@ snapshots:
 
   p-try@2.2.0: {}
 
-  package-json-from-dist@1.0.0: {}
+  package-json-from-dist@1.0.1: {}
 
   package-manager-detector@0.2.0: {}
 
@@ -7784,7 +7766,7 @@ snapshots:
       esprima: 4.0.1
       source-map: 0.6.1
       tiny-invariant: 1.3.3
-      tslib: 2.6.3
+      tslib: 2.7.0
 
   regenerator-runtime@0.14.1: {}
 
@@ -7968,7 +7950,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sanitize-html@2.13.0:
+  sanitize-html@2.13.1:
     dependencies:
       deepmerge: 4.3.1
       escape-string-regexp: 4.0.0
@@ -8239,7 +8221,7 @@ snapshots:
 
   tabbable@6.2.0: {}
 
-  tailwindcss@3.4.12(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)):
+  tailwindcss@3.4.13(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.6.2)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -8379,7 +8361,8 @@ snapshots:
     optionalDependencies:
       typescript: 5.6.2
 
-  tslib@2.6.3: {}
+  tslib@2.6.3:
+    optional: true
 
   tslib@2.7.0: {}
 
