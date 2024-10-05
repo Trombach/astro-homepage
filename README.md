@@ -1,7 +1,7 @@
 <!--markdownlint-disable MD033 MD041-->
 
 <div align=center>
-  <img src="https://lukastrombach.dev/og.png" alt="logo" width="500">
+  <img src="https://lukastrombach.dev/og/landing.png" alt="logo" width="500">
 </div>
 
 <br>
