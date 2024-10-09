@@ -36,8 +36,8 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0
       '@fontsource-variable/jetbrains-mono':
-        specifier: ^5.1.0
-        version: 5.1.0
+        specifier: ^5.1.1
+        version: 5.1.1
       '@fontsource/lobster':
         specifier: ^5.1.0
         version: 5.1.0
@@ -45,11 +45,11 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       '@iconify-json/simple-icons':
-        specifier: ^1.2.5
-        version: 1.2.5
+        specifier: ^1.2.6
+        version: 1.2.6
       '@inox-tools/content-utils':
-        specifier: ^0.7.1
-        version: 0.7.1(astro@4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2))
+        specifier: ^0.7.3
+        version: 0.7.3(astro@4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2))
       '@microflash/rehype-figure':
         specifier: ^2.1.1
         version: 2.1.1
@@ -662,8 +662,8 @@ packages:
   '@fontsource-variable/inter@5.1.0':
     resolution: {integrity: sha512-Wj2dUGP0vUpxRGQTXQTCNJO+aLcFcQm+gUPXfj/aS877bQkEPBPv9JvZJpwdm2vzelt8NTZ+ausKlBCJjh2XIg==}
 
-  '@fontsource-variable/jetbrains-mono@5.1.0':
-    resolution: {integrity: sha512-Hk2HCSep+EmX6nSPNTS3goN0V0TOigdVWcGdnxTVIZIa89HtZAe/zhzFEM1iBXrBShilPwKEdjANHa5plSi38A==}
+  '@fontsource-variable/jetbrains-mono@5.1.1':
+    resolution: {integrity: sha512-V+1aRFRvuZ66PpO30s8l/2aADKzpV9VRsO3kSZE+rTMvi4vab3cUcPHMN2z+wAvjkYJO71Yf+g3/Y6pSMmQpVQ==}
 
   '@fontsource/lobster@5.1.0':
     resolution: {integrity: sha512-kEIt+NiswgZoA7loqiIXZKpO336yZjvvy3gvBj/hLYGPrZajDDGTr4bKEfsa7NmeD3cXYIO4FDiC5GfB0ONyQw==}
@@ -674,8 +674,8 @@ packages:
   '@iconify-json/logos@1.2.2':
     resolution: {integrity: sha512-Z78rxWqmAu9pBczootCg4/TjVTAqcoNdqzZ3KRD8Nof3BD1AMqyDXS7+BNBcsGMBgSkfUJYHk0iInBi6wUEvUw==}
 
-  '@iconify-json/simple-icons@1.2.5':
-    resolution: {integrity: sha512-ucqBlm0GSjLpGQR+b61LtmHro0xkyjWl1v23AOzLTiymHK0chx7s7aeuE2s7/5/t/BzKdDu8iYuU2drawzCIQQ==}
+  '@iconify-json/simple-icons@1.2.6':
+    resolution: {integrity: sha512-E4asFcJ3JY/mtk6zeYCSQBBrmG4AncGo8vQ9ZO2oY8h/qA3TlGYSIoYzwRjmDKuFu30QwWJQMS43kka0JcPZUg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -788,18 +788,18 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@inox-tools/content-utils@0.7.1':
-    resolution: {integrity: sha512-/4iv3fAXp+JCjvWVEiymZJm86+rpC69ZIoeArHQ/5HKTIFJnWeKFRksxT6I+TkfKM4LQK3mKPoUOifEKFQv05A==}
+  '@inox-tools/content-utils@0.7.3':
+    resolution: {integrity: sha512-XiRsfeq686TrRive2zIqDszjAhcGSN9POHU4QgA//At+QX/uv9jlkqBqje7ZGLP01o58SeRQEatM0h/oltrnuw==}
     peerDependencies:
       astro: ^4.12.2
 
-  '@inox-tools/modular-station@0.3.1':
-    resolution: {integrity: sha512-4LoUjN4LqnNkeO1CTyM07Wv4PvLggRQALzKUfRo5FF6GR0Hj+YtjkTN2gSKY3i7gkWJ8jzFQEwiDePN81J7Jhw==}
+  '@inox-tools/modular-station@0.3.3':
+    resolution: {integrity: sha512-1I+OE1CmdQ01M7JDZwJKkygknTaSiYJTirdRKMDrRNOVXY+TEx4JqRPSmgfyB1v8ToEiHajwntHHT/e4rN8P2w==}
     peerDependencies:
       astro: ^4.12.2
 
-  '@inox-tools/utils@0.1.4':
-    resolution: {integrity: sha512-1ZMT8VqhJEqI532puMHLewIBDob4mZ5lj+QTnh0Bc9yyxlZ2vVOnNc5T3erOP47vjhFxL0fLX3dwz1mLu0QHQA==}
+  '@inox-tools/utils@0.2.0':
+    resolution: {integrity: sha512-y6NVLSfK1YziAORdNoMSh+XqkZ95CDsG8rrGx1eOu3qgV9Do7Ipf82sW1d8TvbP58vJ5SnWUEO90riMcP2YjSA==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -4776,7 +4776,7 @@ snapshots:
 
   '@fontsource-variable/inter@5.1.0': {}
 
-  '@fontsource-variable/jetbrains-mono@5.1.0': {}
+  '@fontsource-variable/jetbrains-mono@5.1.1': {}
 
   '@fontsource/lobster@5.1.0': {}
 
@@ -4788,7 +4788,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/simple-icons@1.2.5':
+  '@iconify-json/simple-icons@1.2.6':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -4881,10 +4881,10 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
-  '@inox-tools/content-utils@0.7.1(astro@4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2))':
+  '@inox-tools/content-utils@0.7.3(astro@4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2))':
     dependencies:
-      '@inox-tools/modular-station': 0.3.1(astro@4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2))
-      '@inox-tools/utils': 0.1.4
+      '@inox-tools/modular-station': 0.3.3(astro@4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2))
+      '@inox-tools/utils': 0.2.0
       astro: 4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2)
       astro-integration-kit: 0.16.1(astro@4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2))
       debug: 4.3.7
@@ -4893,13 +4893,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@inox-tools/modular-station@0.3.1(astro@4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2))':
+  '@inox-tools/modular-station@0.3.3(astro@4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2))':
     dependencies:
-      '@inox-tools/utils': 0.1.4
+      '@inox-tools/utils': 0.2.0
       astro: 4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2)
       astro-integration-kit: 0.16.1(astro@4.15.11(@types/node@16.18.11)(rollup@4.24.0)(typescript@5.6.2))
 
-  '@inox-tools/utils@0.1.4': {}
+  '@inox-tools/utils@0.2.0': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
