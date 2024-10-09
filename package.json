@@ -58,16 +58,16 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
     "@changesets/cli": "^2.27.9",
-    "@iconify-json/logos": "^1.2.2",
+    "@iconify-json/logos": "^1.2.3",
     "@tailwindcss/typography": "^0.5.15",
     "@types/cloudflare-turnstile": "^0.2.2",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@types/sanitize-html": "^2.13.0",
     "svelte-check": "^4.0.4",
-    "typescript": "^5.6.2",
+    "typescript": "^5.6.3",
     "unplugin-icons": "^0.19.3",
-    "vercel": "^37.6.1"
+    "vercel": "^37.6.3"
   },
   "engines": {
     "pnpm": ">= 9",
