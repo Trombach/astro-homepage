@@ -61,6 +61,7 @@
     "@iconify-json/logos": "^1.2.3",
     "@tailwindcss/typography": "^0.5.15",
     "@types/cloudflare-turnstile": "^0.2.2",
+    "@types/node": "^22.7.5",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@types/sanitize-html": "^2.13.0",
@@ -73,5 +74,13 @@
     "pnpm": ">= 9",
     "node": ">= 20"
   },
-  "packageManager": "pnpm@9.8.0+sha512.8e4c3550fb500e808dbc30bb0ce4dd1eb614e30b1c55245f211591ec2cdf9c611cabd34e1364b42f564bd54b3945ed0f49d61d1bbf2ec9bd74b866fcdc723276"
+  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4",
+  "pnpm": {
+    "overrides": {
+      "debug@>=4.0.0 <4.3.1": ">=4.3.1",
+      "tar@<6.2.1": ">=6.2.1",
+      "semver@>=7.0.0 <7.5.2": ">=7.5.2",
+      "path-to-regexp@>=4.0.0 <6.3.0": ">=6.3.0"
+    }
+  }
 }
