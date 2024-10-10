@@ -1,5 +1,13 @@
 # homepage
 
+## 1.6.4
+
+### Patch Changes
+
+- 01d7b3a: more ahhhhh
+- ff1979c: ahhhhhh
+- a05dc5f: wait for vercel staging deployment to finish before promoting
+
 ## 1.6.3
 
 ### Patch Changes
