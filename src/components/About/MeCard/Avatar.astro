@@ -1,9 +1,8 @@
 ---
-import DefaultImage from "@images/heroicons--user-circle.svg";
 import { Image } from "astro:assets";
 
 type Props = {
-  image?: ImageMetadata | undefined;
+  image: ImageMetadata;
   class?: string | undefined;
 };
 
@@ -11,7 +10,7 @@ const { image, class: className } = Astro.props;
 ---
 
 <Image
-  src={image || DefaultImage}
+  src={image}
   transition:name="avatar"
   alt="Lukas"
   widths={[96, 128, 256]}

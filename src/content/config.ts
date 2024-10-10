@@ -26,7 +26,7 @@ const personCollection = defineCollection({
         flag: z.string(),
       }),
       education: z.string(),
-      avatar: image().optional(),
+      avatar: image(),
       contact: z.object({
         email: z.string().email(),
         web: z.string().url(),
