@@ -29,12 +29,25 @@ jobs:
       - name: Get latest staging ID
         id: get-staging-id
         run: |
-          uid=`curl -X GET "https://api.vercel.com/v6/deployments?app=astro-homepage" \
+          response=`curl -X GET "https://api.vercel.com/v6/deployments?app=astro-homepage" \
             -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
             -H "Content-Type: application/json" \
-            | jq -r '.deployments[] | select(.meta.githubCommitSha == "${{ github.sha }}") | .uid'`
-          echo $uid
-          echo "id=$uid" >> "$GITHUB_OUTPUT"
+            | jq '.deployments[] | select(.meta.githubCommitSha == "${{ github.sha }}")'`
+
+          url=$(echo response | jq -r '.url')
+          message=$(echo response | jq -r '.meta.githubCommitMessage') 
+          echo $url
+          echo $message
+          echo "id=$url" >> "$GITHUB_OUTPUT"
+          echo "message=$message" >> "$GITHUB_OUTPUT"
+      - uses: UnlyEd/github-action-await-vercel@v2
+        if: ${{ steps.get-staging-id.outputs.id == 'Version Packages' }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        with:
+          deployment-url: ${{ steps.get-staging-id.outputs.id }}
+          timeout: 120
+          poll-interval: 5
       - name: Create Release PR
         uses: changesets/action@v1
         with:
