@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.6
+
+### Patch Changes
+
+- 47fddf2: check correct step output variable
+
 ## 1.6.5
 
 ### Patch Changes
