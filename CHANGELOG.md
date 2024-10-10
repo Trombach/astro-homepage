@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.7
+
+### Patch Changes
+
+- bae8983: mark opacity animation with `will-change`
+
 ## 1.6.6
 
 ### Patch Changes
