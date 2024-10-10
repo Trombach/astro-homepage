@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.3
+
+### Patch Changes
+
+- 83d3e0b: Revert "changes for git lfs migration"
+
 ## 1.6.2
 
 ### Patch Changes
