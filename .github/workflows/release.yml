@@ -34,8 +34,8 @@ jobs:
             -H "Content-Type: application/json" \
             | jq '.deployments[] | select(.meta.githubCommitSha == "${{ github.sha }}")'`
 
-          url=$(echo response | jq -r '.url')
-          message=$(echo response | jq -r '.meta.githubCommitMessage') 
+          url=$(jq -r '.url' <<< "$response")
+          message=$(jq -r '.meta.githubCommitMessage' <<< "$response") 
           echo $url
           echo $message
           echo "id=$url" >> "$GITHUB_OUTPUT"
