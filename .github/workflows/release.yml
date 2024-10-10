@@ -24,11 +24,22 @@ jobs:
           node-version: 20
           cache: "pnpm"
       - run: pnpm i
+      - name: Get latest staging ID
+        id: get-staging-id
+        run: |
+          uid=$(curl -X GET "https://api.vercel.com/v6/deployments?app=astro-homepage" \                                       130 ↵ ──(Thu,Oct10)─┘
+            -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            | jq '.deployments[] | select(.meta.githubCommitSha == "${{ github.sha }}") | .uid')
+          echo "id=$uid" >> "$GITHUB_OUTPUT"
       - name: Create Release PR
         uses: changesets/action@v1
         with:
           version: pnpm bump-version
-          publish: pnpm promote-staging --token=${{ secrets.VERCEL_TOKEN }}
+          publish: |
+            pnpm vercel promote ${{ steps.get-staging-id.outputs.id }} \
+              --scope=trombachs-projects \
+              --token=${{ secrets.VERCEL_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESETS_PAT }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
