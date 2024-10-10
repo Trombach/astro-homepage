@@ -27,7 +27,7 @@ jobs:
       - name: Get latest staging ID
         id: get-staging-id
         run: |
-          uid="$(curl -X GET "https://api.vercel.com/v6/deployments?app=astro-homepage" \                                       130 ↵ ──(Thu,Oct10)─┘
+          uid="$(curl -X GET "https://api.vercel.com/v6/deployments?app=astro-homepage" \
             -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
             -H "Content-Type: application/json" \
             | jq '.deployments[] | select(.meta.githubCommitSha == "${{ github.sha }}") | .uid')"
