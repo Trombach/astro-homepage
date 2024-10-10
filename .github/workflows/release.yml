@@ -41,7 +41,7 @@ jobs:
           echo "id=$url" >> "$GITHUB_OUTPUT"
           echo "message=$message" >> "$GITHUB_OUTPUT"
       - uses: UnlyEd/github-action-await-vercel@v2
-        if: ${{ contains(steps.get-staging-id.outputs.id, 'Version Packages') }}
+        if: ${{ contains(steps.get-staging-id.outputs.message, 'Version Packages') }}
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         with:
