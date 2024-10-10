@@ -27,10 +27,10 @@ jobs:
       - name: Get latest staging ID
         id: get-staging-id
         run: |
-          uid=$(curl -X GET "https://api.vercel.com/v6/deployments?app=astro-homepage" \                                       130 ↵ ──(Thu,Oct10)─┘
+          uid="$(curl -X GET "https://api.vercel.com/v6/deployments?app=astro-homepage" \                                       130 ↵ ──(Thu,Oct10)─┘
             -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
             -H "Content-Type: application/json" \
-            | jq '.deployments[] | select(.meta.githubCommitSha == "${{ github.sha }}") | .uid')
+            | jq '.deployments[] | select(.meta.githubCommitSha == "${{ github.sha }}") | .uid')"
           echo "id=$uid" >> "$GITHUB_OUTPUT"
       - name: Create Release PR
         uses: changesets/action@v1
