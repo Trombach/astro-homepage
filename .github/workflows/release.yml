@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
@@ -27,10 +29,11 @@ jobs:
       - name: Get latest staging ID
         id: get-staging-id
         run: |
-          uid="$(curl -X GET "https://api.vercel.com/v6/deployments?app=astro-homepage" \
+          uid=`curl -X GET "https://api.vercel.com/v6/deployments?app=astro-homepage" \
             -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
             -H "Content-Type: application/json" \
-            | jq '.deployments[] | select(.meta.githubCommitSha == "${{ github.sha }}") | .uid')"
+            | jq -r '.deployments[] | select(.meta.githubCommitSha == "${{ github.sha }}") | .uid'`
+          echo $uid
           echo "id=$uid" >> "$GITHUB_OUTPUT"
       - name: Create Release PR
         uses: changesets/action@v1
