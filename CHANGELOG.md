@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.5
+
+### Patch Changes
+
+- 1797ce6: use `contains` to check for production deployment
+
 ## 1.6.4
 
 ### Patch Changes
