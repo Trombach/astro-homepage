@@ -35,7 +35,7 @@ jobs:
             | jq '.deployments[] | select(.meta.githubCommitSha == "${{ github.sha }}")'`
 
           url=$(jq -r '.url' <<< "$response")
-          message=$(jq -r '.meta.githubCommitMessage' <<< "$response") 
+          message=$(jq '.meta.githubCommitMessage' <<< "$response") 
           echo $url
           echo $message
           echo "id=$url" >> "$GITHUB_OUTPUT"
