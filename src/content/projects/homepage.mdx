@@ -10,6 +10,7 @@ cover:
   alt: Homepage on different screen sizes
 ---
 
+import Graph from "@components/Graph/Graph.svelte"
 import ExternalLink from "@components/ExternalLink.astro";
 export const components = { a: ExternalLink };
 
@@ -39,6 +40,58 @@ as Svelte or Vue. This hands an unprecedented amount of flexibility to developer
 and choose whichever framework is suited best to solve a particular problem. For example, I chose Svelte because of its
 feature rich animation library, but was also able to add a single component built in React when I couldn't find a
 suitable library for Astro or Svelte.
+
+## About The Logo
+
+During my PhD, I worked a lot with graph representations of clusters. One very commonly found structural pattern is that
+of the [Icosahedron](https://en.wikipedia.org/wiki/Icosahedron), one of the five Platonic solids. The graph shown in The
+footer is nothing but a projection of this 3-dimensional structure in to the 2d plane. It allows for easy identification
+of the underlying connectivity (edges) of the vertices of the structure.
+
+This graph picture was created for my PhD thesis and I noticed fairly quickly, that it would pose as a great candidate
+for Svelte's SVG drawing library.
+
+<figure class="w-1/2 mx-auto">
+  <Graph client:visible />
+  <figcaption>The connectivity graph of the Icosahedron. Animated with `svelte:draw`.</figcaption>
+</figure>
+
+To get this working, I had to separate the individually animated path sequences and make sure that they are represented
+by a single line without any outlines. All that was left now was to use Svelte's draw function to draw in the individual
+path segments with slightly delayed timings for a more organic feel.
+
+```svelte
+<script lang="ts">
+import { draw } from "svelte/transition";
+import { onMount } from "svelte";
+
+let show = false;
+onMount(() => {
+  show = true;
+});
+</script>
+
+<svg>
+  {#if show}
+    <g>
+      <path
+        transition:draw={{ duration: 2500 }}
+        d="m 138.20133,96.169887 36.67167,-0.0021 -18.3441,45.885573 -48.88072,-28.2213 30.55424,-17.662998 18.32544,45.882238"
+      />
+      <path
+        transition:draw={{ delay: 150, duration: 2500 }}
+        d="M 174.76114,96.115464 156.42349,64.357912 205.33361,57.301583 V 113.74417 L 174.75988,96.114924 205.33234,57.303514"
+      />
+    ...
+    </g>
+  {/if}
+</svg>
+```
+
+Using the `onMount` function is necessary, because Svelte's transition directives only work when the markup gets 
+inserted into the DOM. This works well in combination with Astro's `client:visible` directive, so that the component
+starts animating when it first appears in the viewport. The full component can be found
+[here](https://github.com/Trombach/astro-homepage/blob/46c6d4e4d58af77d062f4a47c1c89290f58e59e1/src/components/Graph/Graph.svelte).
 
 ## Why Svelte?
 
