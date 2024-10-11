@@ -11,6 +11,8 @@ cover:
 
 import { Image } from "astro:assets";
 import dashboard from "@images/dashboard.png";
+import ExternalLink from "@components/ExternalLink.astro";
+export const components = { a: ExternalLink };
 
 While working at [GCD](https://gcd.nz) I was often tasked with improving internal processes and building tools to help
 us with it. A big point of friction at the time was recording time for tasks under SLA agreements with our clients. We

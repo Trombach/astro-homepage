@@ -10,7 +10,10 @@ cover:
   alt: Homepage on different screen sizes
 ---
 
-<!--markdownlint-disable MD033 -->
+import ExternalLink from "@components/ExternalLink.astro";
+export const components = { a: ExternalLink };
+
+{/* markdownlint-disable MD033 */}
 
 Welcome to my personal homepage! In this article you can learn about how this website was built, and what drove my
 decision making.
@@ -43,7 +46,7 @@ Svelte is one of my favourite front-end frameworks to work with. Besides the fac
 comes with some great utility functions for building smooth animations.
 
 <figure>
-  <video autoplay loop muted>
+  <video autoPlay loop muted>
     <source src="/hero-animation-short.webm" type="video/webm"></source>
     Your browser does not suppoert videos.
   </video>
