@@ -14,7 +14,7 @@ meta:
     ]
   repoLink: https://github.com/UoA-eResearch/hub-stack
 cover:
-  image: ./hub-logo.png
+  image: "@images/project-cover/hub-logo.png"
   alt: ResearchHub logo
 ---
 

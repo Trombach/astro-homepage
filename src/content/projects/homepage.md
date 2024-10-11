@@ -6,7 +6,7 @@ meta:
   tags: ["Front-end", "Personal"]
   tools: ["Astro", "Svelte", "Typescript", "Tailwind", "Vercel"]
 cover:
-  image: ./homepage.png
+  image: "@images/project-cover/homepage.svg"
   alt: Homepage on different screen sizes
 ---
 
