@@ -19,9 +19,9 @@ import inoxToolsContentUtils from "@inox-tools/content-utils";
 export default defineConfig({
   integrations: [
     tailwind(),
-    svelte(),
+    svelte({ include: ["**/*.svelte"] }),
     mdx(),
-    react(),
+    react({ include: ["**/*.tsx", "**/*.jsx"] }),
     sitemap(),
     inoxToolsContentUtils(),
   ],
