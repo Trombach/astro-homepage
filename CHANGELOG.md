@@ -1,5 +1,13 @@
 # homepage
 
+## 1.6.7
+
+### Patch Changes
+
+- 6bd47cc: rework projects
+- bae8983: mark opacity animation with `will-change`
+- d2ab9ce: add Github profile as link tag
+
 ## 1.6.6
 
 ### Patch Changes
