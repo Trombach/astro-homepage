@@ -21,7 +21,7 @@ decision making.
 
 ## Built For Speed
 
-Today, there are a plethora of front-end frameworks to choose from when deciding to build a personal website. While 
+Today, there is a plethora of front-end frameworks to choose from when building a personal website or blog. While 
 researching options I came across the [Astro](https://astro.build) project, which immediately resonated with my goal of
 building a lighting fast, content-driven, an mostly static website.
 
@@ -52,26 +52,26 @@ sections.
 
 :::note[Browser Support]
 The CSS feature `animation-timeline` is currently only supported in Chromium based browsers. Scroll-driven animations
-won't work in Firefox or Safari at the moment. There is a [polyfill](https://github.com/flackr/scroll-timeline) to add
+won't work in Firefox or Safari. There is a [polyfill](https://github.com/flackr/scroll-timeline) to add
 support to these browsers, but it has some limitations and I decided not to use it.
 :::
 
 There are many libraries to animate elements, when they enter the viewport. These usually rely on the 
-`IntersectionObserver`-API an therefore require client-side JavaScript to be downloaded for the animations to work. One
+`IntersectionObserver`-API and therefore require client-side JavaScript to be downloaded for the animations to work. One
 of Astro's main selling points is, that it ships _0_ JavaScript by default and it therefore felt unnatural to me, to add
 an animation library for this and lose one of the main advantages of the Astro framework.
 
 The [`animation-timeline`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline) property fills this gap 
 perfectly (although browser support is not great at the moment). It's using normal CSS `@keyframe` definitions in 
-combination with the `view()` or `scroll()` helpers and its usage should bequite familiar to people who have worked with
-CSS animations before.
+combination with the `view()` or `scroll()` helpers and its usage should be quite familiar to people who have worked 
+with CSS animations before.
 
 <video width="100%" autoplay loop muted playsinline>
   <source src="/scroll.webm" type="video/webm"></source>
   Your browser does not support videos.
 </video>
 
-The slide in animation of the text elements in the video above can be implemented with a few lines of CSS.
+The slide-in animation of the text elements in the video above can be implemented with a few lines of CSS.
 
 ```css
 .timeline-slide-in-bottom {
@@ -98,7 +98,7 @@ The slide in animation of the text elements in the video above can be implemente
 ### View transitions
 
 Astro generates multi-page applications (MPAs) by default. For each route a dedicated HTML page is generated and when
-a user navigates to a new page the browser just serves the new document. This is great for page performance, because
+a user navigates to a new page the browser just serves the new document. This is great for performance, because
 every individual page can be cached on the CDN. But it makes it more difficult to generate nice transitions between
 elements, when a new page is loaded, which is fairly easy to achieve with single-page applications (SPAs). To fill this
 feature gap, the [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API) has been
@@ -110,15 +110,15 @@ animations between elements with the same name across documents. Here is an exam
   Your browser does not support videos.
 </video>
 
-Only Chromium-based browsers support this API at the moment, however, Astro come with a polyfill to make the transitions
-work in all browsers.
+Only Chromium-based browsers support this API at the moment, however, Astro comes with a polyfill to make the 
+transitions work in all browsers.
 
 ## The Logo
 
 During my PhD, I worked a lot with graph representations of clusters. One very commonly found structural pattern is that
-of the [Icosahedron](https://en.wikipedia.org/wiki/Icosahedron), one of the five Platonic solids. The graph shown in The
-footer is nothing but a projection of this 3-dimensional structure in to the 2d plane. It allows for easy identification
-of the underlying connectivity (edges) of the vertices of the structure.
+of the [Icosahedron](https://en.wikipedia.org/wiki/Icosahedron), one of the five Platonic solids. The image shown in the
+favicon (and footer) is just a projection of this 3-dimensional structure in to the 2d plane called a graph. It allows 
+for easy identification of the underlying connectivity (edges) of the vertices of the structure.
 
 This graph picture was created for my PhD thesis and I noticed fairly quickly, that it would pose as a great candidate
 for Svelte's SVG drawing library.
