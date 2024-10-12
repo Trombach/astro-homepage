@@ -1,0 +1,167 @@
+---
+title: My Homepage
+description: A website built with Astro and Svelte
+meta:
+  repoLink: https://github.com/Trombach/astro-homepage
+  tags: ["Front-end", "Personal"]
+  tools: ["Astro", "Svelte", "Typescript", "Tailwind", "Vercel"]
+cover:
+  image: "@images/project-cover/homepage.svg"
+  alt: Homepage on different screen sizes
+---
+
+import Graph from "@components/Graph/Graph.svelte"
+import ExternalLink from "@components/ExternalLink.astro";
+export const components = { a: ExternalLink };
+
+{/* markdownlint-disable MD033 */}
+
+Welcome to my personal homepage! In this article you can learn about how this website was built, and what drove my
+decision making.
+
+## Built For Speed
+
+Today, there is a plethora of front-end frameworks to choose from when building a personal website or blog. While 
+researching options I came across the [Astro](https://astro.build) project, which immediately resonated with my goal of
+building a lighting fast, content-driven, an mostly static website.
+
+Astro is an opinionated open-source framework with the goal of building fast and cachable web pages. While it can be
+used to dynamically render content server-side or client-side, its default behaviour is to render static HTML pages.
+This simplifies prioritising loading speed and makes Astro one of the most capable and fastest static-site frameworks.
+
+![Lighthouse score for page load of my homepage on desktop.](../../images/lighthouse.png)
+
+One of the most powerful features of Astro is the ability to use components written for other front-end frameworks such
+as [Svelte](https://svelte.dev) or [Vue](https://vuejs.org). This hands an unprecedented amount of flexibility to developers to mix and match framework components
+and choose whichever framework is suited best to solve a particular problem. For example, I chose Svelte because of its
+feature rich animation library, but was also able to add a single component built in React when I couldn't find a
+suitable library for Astro or Svelte.
+
+## Animations
+
+Animations are satisfying. They present a simple way to make a static page feel more alive and organic. I've 
+experimented with various animation types on this homepage, which are explained in more detail in the following
+sections.
+
+<video width="100%" autoplay loop muted playsinline>
+  <source src="/hero.webm" type="video/webm"></source>
+  Your browser does not support videos.
+</video>
+
+### Scroll Based Animations
+
+:::note[Browser Support]
+The CSS feature `animation-timeline` is currently only supported in Chromium based browsers. Scroll-driven animations
+won't work in Firefox or Safari. There is a [polyfill](https://github.com/flackr/scroll-timeline) to add
+support to these browsers, but it has some limitations and I decided not to use it.
+:::
+
+There are many libraries to animate elements, when they enter the viewport. These usually rely on the 
+`IntersectionObserver`-API and therefore require client-side JavaScript to be downloaded for the animations to work. One
+of Astro's main selling points is, that it ships _0_ JavaScript by default and it therefore felt unnatural to me, to add
+an animation library for this and lose one of the main advantages of the Astro framework.
+
+The [`animation-timeline`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline) property fills this gap 
+perfectly (although browser support is not great at the moment). It's using normal CSS `@keyframe` definitions in 
+combination with the `view()` or `scroll()` helpers and its usage should be quite familiar to people who have worked 
+with CSS animations before.
+
+<video width="100%" autoplay loop muted playsinline>
+  <source src="/scroll.webm" type="video/webm"></source>
+  Your browser does not support videos.
+</video>
+
+The slide-in animation of the text elements in the video above can be implemented with a few lines of CSS.
+
+```css
+.timeline-slide-in-bottom {
+  animation-timeline: view();
+  animation-range: entry 100% contain 25%;
+  animation-name: slide-scale-in-bottom;
+  animation-fill-mode: both;
+}
+
+@keyframes slide-scale-in-bottom {
+  from {
+    transform: translateY(100px);
+    scale: 0.8;
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    scale: 1;
+    opacity: 1;
+  }
+}
+```
+
+### View transitions
+
+Astro generates multi-page applications (MPAs) by default. For each route a dedicated HTML page is generated and when
+a user navigates to a new page the browser just serves the new document. This is great for performance, because
+every individual page can be cached on the CDN. But it makes it more difficult to generate nice transitions between
+elements, when a new page is loaded, which is fairly easy to achieve with single-page applications (SPAs). To fill this
+feature gap, the [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API) has been
+developed, which let's the developer mark elements with a `view-transition-name` and then the browser will generate
+animations between elements with the same name across documents. Here is an example of what this looks like:
+
+<video width="100%" autoplay loop muted playsinline>
+  <source src="/vt.webm" type="video/webm"></source>
+  Your browser does not support videos.
+</video>
+
+Only Chromium-based browsers support this API at the moment, however, Astro comes with a polyfill to make the 
+transitions work in all browsers.
+
+## The Logo
+
+During my PhD, I worked a lot with graph representations of clusters. One very commonly found structural pattern is that
+of the [Icosahedron](https://en.wikipedia.org/wiki/Icosahedron), one of the five Platonic solids. The image shown in the
+favicon (and footer) is just a projection of this 3-dimensional structure in to the 2d plane called a graph. It allows 
+for easy identification of the underlying connectivity (edges) of the vertices of the structure.
+
+This graph picture was created for my PhD thesis and I noticed fairly quickly, that it would pose as a great candidate
+for Svelte's SVG drawing library.
+
+<figure>
+  <Graph client:visible class="w-full max-w-[400px] mx-auto" />
+  <figcaption>The connectivity graph of the Icosahedron. Animated with `svelte:draw`.</figcaption>
+</figure>
+
+To get this working, I had to separate the individually animated path sequences and make sure that they are represented
+by a single line without any outlines. All that was left now was to use Svelte's draw function to draw in the individual
+path segments with slightly delayed timings for a more organic feel.
+
+```svelte
+<script lang="ts">
+import { draw } from "svelte/transition";
+import { onMount } from "svelte";
+
+let show = false;
+onMount(() => {
+  show = true;
+});
+</script>
+
+<svg>
+  {#if show}
+    <g>
+      <path
+        transition:draw={{ duration: 2500 }}
+        d="m 138.20133,96.169887 36.67167,-0.0021 -18.3441,45.885573 -48.88072,-28.2213 30.55424,-17.662998 18.32544,45.882238"
+      />
+      <path
+        transition:draw={{ delay: 150, duration: 2500 }}
+        d="M 174.76114,96.115464 156.42349,64.357912 205.33361,57.301583 V 113.74417 L 174.75988,96.114924 205.33234,57.303514"
+      />
+    ...
+    </g>
+  {/if}
+</svg>
+```
+
+Using the `onMount` function is necessary, because Svelte's transition directives only work when the markup gets 
+inserted into the DOM. This works well in combination with Astro's `client:visible` directive, so that the component
+starts animating when it first appears in the viewport. The full component can be found
+[here](https://github.com/Trombach/astro-homepage/blob/46c6d4e4d58af77d062f4a47c1c89290f58e59e1/src/components/Graph/Graph.svelte).
+

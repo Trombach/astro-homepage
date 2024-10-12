@@ -23,7 +23,9 @@ if (
     favicon = await fetch(`${FAVICON_API}?${searchParams}`).then(async (res) =>
       Buffer.from(await res.arrayBuffer()),
     );
-  } catch {}
+  } catch (err) {
+    console.error(`Error fetching favicon: ${href}`, err);
+  }
 }
 
 const content = (await Astro.slots.render("default")).trim();

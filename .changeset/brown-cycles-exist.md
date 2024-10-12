@@ -1,0 +1,5 @@
+---
+"homepage": patch
+---
+
+rework projects
