@@ -17,7 +17,7 @@
     </g>
     <style>
         svg {
-            background: rgba(0, 0, 0, 0.1)
+            background: hsl(262.1 83.3% 57.8% / 20%)
         }
 
         svg path {
