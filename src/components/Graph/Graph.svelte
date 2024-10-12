@@ -5,6 +5,7 @@ import { onMount } from "svelte";
 let show = false;
 onMount(() => {
   show = true;
+  console.log($$restProps.class);
 });
 </script>
 
@@ -12,7 +13,7 @@ onMount(() => {
   viewBox="0 0 312.49279 300"
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
-  class="p-2 sm:p-3 lg:p-5"
+  class={"p-2 sm:p-3 lg:p-5 " + $$restProps.class}
 >
   {#if show}
     <g transform-origin="center" transform="translate(0 45)">
