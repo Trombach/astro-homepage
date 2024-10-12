@@ -22,7 +22,7 @@ importers:
         version: 3.1.8(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
       '@astrojs/react':
         specifier: ^3.6.2
-        version: 3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.8(@types/node@22.7.5))
+        version: 3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.8(@types/node@22.7.5))
       '@astrojs/sitemap':
         specifier: ^3.2.0
         version: 3.2.0
@@ -139,14 +139,14 @@ importers:
         specifier: ^18.3.11
         version: 18.3.11
       '@types/react-dom':
-        specifier: ^18.3.0
-        version: 18.3.0
+        specifier: ^18.3.1
+        version: 18.3.1
       '@types/sanitize-html':
         specifier: ^2.13.0
         version: 2.13.0
       svelte-check:
-        specifier: ^4.0.4
-        version: 4.0.4(svelte@4.2.19)(typescript@5.6.3)
+        specifier: ^4.0.5
+        version: 4.0.5(svelte@4.2.19)(typescript@5.6.3)
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
@@ -154,8 +154,8 @@ importers:
         specifier: ^0.19.3
         version: 0.19.3(webpack-sources@3.2.3)
       vercel:
-        specifier: ^37.7.1
-        version: 37.7.1
+        specifier: ^37.8.0
+        version: 37.8.0
 
 packages:
 
@@ -1120,8 +1120,8 @@ packages:
   '@types/prop-types@15.7.13':
     resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
 
-  '@types/react-dom@18.3.0':
-    resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
+  '@types/react-dom@18.3.1':
+    resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
 
   '@types/react@18.3.11':
     resolution: {integrity: sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==}
@@ -1152,8 +1152,8 @@ packages:
       react:
         optional: true
 
-  '@vercel/build-utils@8.4.10':
-    resolution: {integrity: sha512-NhDIvfa+HAnKyUcCAq5huAXhVjXsfXY2A50DO6IYQiPSSLz7ab7WZNfF5xWgpP3bulK6C4c7irUx3egquP2g6A==}
+  '@vercel/build-utils@8.4.11':
+    resolution: {integrity: sha512-bs6FwEhdWJ8+Wtey2jtAobgktk148Ipbc1VfTv1awUI5yEfhIGN87x20NfNsE+48vKlai/HkwHeubpMUwiS8Lw==}
 
   '@vercel/edge@1.1.2':
     resolution: {integrity: sha512-wt5SnhsMahWX8U9ZZhFUQoiXhMn/CUxA5xeMdZX1cwyOL1ZbDR3rNI8HRT9RSU73nDxeF6jlnqJyp/0Jy0VM2A==}
@@ -1168,17 +1168,17 @@ packages:
   '@vercel/gatsby-plugin-vercel-analytics@1.0.11':
     resolution: {integrity: sha512-iTEA0vY6RBPuEzkwUTVzSHDATo1aF6bdLLspI68mQ/BTbi5UQEGjpjyzdKOVcSYApDtFU6M6vypZ1t4vIEnHvw==}
 
-  '@vercel/gatsby-plugin-vercel-builder@2.0.54':
-    resolution: {integrity: sha512-dpRyxqkE7WnnhF/7IxfSZRmWYV/CfhmtwXNpd8euTT4+CGuExl+Y+paWPFqsMUh3Knm4xDZ6Ule3buWquv/P0A==}
+  '@vercel/gatsby-plugin-vercel-builder@2.0.55':
+    resolution: {integrity: sha512-nRPhe4+pBDyg3eCtaoxZP8komsIeEE3HVqkn0dznqzqYEWCRgYVuN1RcpaSzw7QhSlfau1HeYkwj110RG7gC8w==}
 
   '@vercel/go@3.2.0':
     resolution: {integrity: sha512-zUCBoh57x1OEtw+TKdRhSQciqERrpDxLlPeBOYawUCC5uKjsBjhdq0U21+NGz2LcRUaYyYYGMw6BzqVaig9u1g==}
 
-  '@vercel/hydrogen@1.0.8':
-    resolution: {integrity: sha512-ZohxOIu7McEto55q1hw1v31yBa/rjX6tWmP1DQIQKK3W5WMDCTLmAiwgGdxypowOCB0o0ZRO1ZkLAmWgAT7b+g==}
+  '@vercel/hydrogen@1.0.9':
+    resolution: {integrity: sha512-IPAVaALuGAzt2apvTtBs5tB+8zZRzn/yG3AGp8dFyCsw/v5YOuk0Q5s8Z3fayLvJbFpjrKtqRNDZzVJBBU3MrQ==}
 
-  '@vercel/next@4.3.14':
-    resolution: {integrity: sha512-reJX7kOfVFY6AWOy/rZJVLhthas+AMzxx8g82fXr43B3Yy9WGIE6sHqtovsgqG2bmU/76ijEjnuZOWDRJZt+sw==}
+  '@vercel/next@4.3.15':
+    resolution: {integrity: sha512-mg9iBmZm39CCMUfSLs4biP0NOOvUAFUqRORypMIOAe1AVhGg5aX1czTFMy9IOGAfwKlwTFTKeHDNDBi4YEWw1g==}
 
   '@vercel/nft@0.27.3':
     resolution: {integrity: sha512-oySTdDSzUAFDXpsSLk9Q943o+/Yu/+TCFxnehpFQEf/3khi2stMpTHPVNwFdvZq/Z4Ky93lE+MGHpXCRpMkSCA==}
@@ -1190,8 +1190,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  '@vercel/node@3.2.22':
-    resolution: {integrity: sha512-g6z/j2dhKQftKRXo7DKquPBztMsPjU4s43JW3ixnYE8HXLXp0wvKjV/hXuwGEHUAWU/gYpF8NVhOCNQ3Bjt5bg==}
+  '@vercel/node@3.2.23':
+    resolution: {integrity: sha512-qJmHZU3UeEoEDYHba9R7fb7EkpDF9fls2uyJTKJgUh+wH3NKWEWknrnP/Aipq/1U2e+UDtX3zVBfnbfPN0/d9A==}
 
   '@vercel/og@0.6.3':
     resolution: {integrity: sha512-aoCrC9FqkeA+WEEb9CwSmjD0rGlFeNqbUsI41JPmKWR9Hx6FFn86tvH96O5HZMF6VAXTGHxa3nPH3BokROpdgA==}
@@ -1200,11 +1200,11 @@ packages:
   '@vercel/python@4.3.1':
     resolution: {integrity: sha512-pWRApBwUsAQJS8oZ7eKMiaBGbYJO71qw2CZqDFvkTj34FNBZtNIUcWSmqGfJJY5m2pU/9wt8z1CnKIyT9dstog==}
 
-  '@vercel/redwood@2.1.7':
-    resolution: {integrity: sha512-dbBPKdU+c2xprXpB6Md+3hEQQVZVS3Lni2bodlBPOVghToPak3f1wEgjMvkMKGBrtuuQNIJS8EBGaE50HaKVFQ==}
+  '@vercel/redwood@2.1.8':
+    resolution: {integrity: sha512-qBUBqIDxPEYnxRh3tsvTaPMtBkyK/D2tt9tBugNPe0OeYnMCMXVj9SJYbxiDI2GzAEFUZn4Poh63CZtXMDb9Tg==}
 
-  '@vercel/remix-builder@2.2.11':
-    resolution: {integrity: sha512-/vufGhyx1lsWPPTipMyQq997o4QckFCv6gV1+RVwYYvJfcamdTc1PEG7DWv4wEojaxPcxxHhd7hZUzh+ofjuAQ==}
+  '@vercel/remix-builder@2.2.12':
+    resolution: {integrity: sha512-g+UCpJOh/USsqk5zbYJsgTE7RgKF/rOO64iQlhbn9SySvGOYcOR+am1V3St6prYXKOr5ogMqeN+bnwtCRTGeuQ==}
 
   '@vercel/routing-utils@3.1.0':
     resolution: {integrity: sha512-Ci5xTjVTJY/JLZXpCXpLehMft97i9fH34nu9PGav6DtwkVUF6TOPX86U0W0niQjMZ5n6/ZP0BwcJK2LOozKaGw==}
@@ -1235,8 +1235,8 @@ packages:
       vue-router:
         optional: true
 
-  '@vercel/static-build@2.5.32':
-    resolution: {integrity: sha512-nGomoI2ib98Mh0Bvj8vGtkFEZSCf6pbLncSEx/VZhlUmTiJbilySQUH6wlnIsD6GSaaqItVspL2g8jjQCTiA/g==}
+  '@vercel/static-build@2.5.33':
+    resolution: {integrity: sha512-IEsLWLW4se1yGSxReJ+YU0BNCzJcGyNp5uxBIBMsvCj9VaDwsDeky4Xv/LoXOK1uEMZ0nYwbdzfxrmti4C/sUw==}
 
   '@vercel/static-config@3.0.0':
     resolution: {integrity: sha512-2qtvcBJ1bGY0dYGYh3iM7yGKkk971FujLEDXzuW5wcZsPr1GSEjO/w2iSr3qve6nDDtBImsGoDEnus5FI4+fIw==}
@@ -3522,8 +3522,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  svelte-check@4.0.4:
-    resolution: {integrity: sha512-AcHWIPuZb1mh/jKoIrww0ebBPpAvwWd1bfXCnwC2dx4OkydNMaiG//+Xnry91RJMHFH7CiE+6Y2p332DRIaOXQ==}
+  svelte-check@4.0.5:
+    resolution: {integrity: sha512-icBTBZ3ibBaywbXUat3cK6hB5Du+Kq9Z8CRuyLmm64XIe2/r+lQcbuBx/IQgsbrC+kT2jQ0weVpZSSRIPwB6jQ==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
     peerDependencies:
@@ -3789,8 +3789,8 @@ packages:
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
 
-  vercel@37.7.1:
-    resolution: {integrity: sha512-mD2RtZu0Y9FYQXkVlOWM/H/e3aztBMwNm88IpkNcQTOzS3eH5I4L0LqlTOLwtGvC1FFcHgluTSDmepEBnLix1w==}
+  vercel@37.8.0:
+    resolution: {integrity: sha512-cnk+3Q7W+H2EDgCL43x4dcISTyNwnhg9/ERqgh3fH5Ye7iOSsaGgL028XKXMEX63MihneDSf5CYiwSeXbOt8ZA==}
     engines: {node: '>= 16'}
     hasBin: true
 
@@ -4212,10 +4212,10 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/react@3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.8(@types/node@22.7.5))':
+  '@astrojs/react@3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.8(@types/node@22.7.5))':
     dependencies:
       '@types/react': 18.3.11
-      '@types/react-dom': 18.3.0
+      '@types/react-dom': 18.3.1
       '@vitejs/plugin-react': 4.3.1(vite@5.4.8(@types/node@22.7.5))
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -5226,7 +5226,7 @@ snapshots:
 
   '@types/prop-types@15.7.13': {}
 
-  '@types/react-dom@18.3.0':
+  '@types/react-dom@18.3.1':
     dependencies:
       '@types/react': 18.3.11
 
@@ -5255,7 +5255,7 @@ snapshots:
     optionalDependencies:
       react: 18.3.1
 
-  '@vercel/build-utils@8.4.10': {}
+  '@vercel/build-utils@8.4.11': {}
 
   '@vercel/edge@1.1.2': {}
 
@@ -5291,10 +5291,10 @@ snapshots:
     dependencies:
       web-vitals: 0.2.4
 
-  '@vercel/gatsby-plugin-vercel-builder@2.0.54':
+  '@vercel/gatsby-plugin-vercel-builder@2.0.55':
     dependencies:
       '@sinclair/typebox': 0.25.24
-      '@vercel/build-utils': 8.4.10
+      '@vercel/build-utils': 8.4.11
       '@vercel/routing-utils': 3.1.0
       esbuild: 0.14.47
       etag: 1.8.1
@@ -5302,12 +5302,12 @@ snapshots:
 
   '@vercel/go@3.2.0': {}
 
-  '@vercel/hydrogen@1.0.8':
+  '@vercel/hydrogen@1.0.9':
     dependencies:
       '@vercel/static-config': 3.0.0
       ts-morph: 12.0.0
 
-  '@vercel/next@4.3.14':
+  '@vercel/next@4.3.15':
     dependencies:
       '@vercel/nft': 0.27.3
     transitivePeerDependencies:
@@ -5350,13 +5350,13 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vercel/node@3.2.22':
+  '@vercel/node@3.2.23':
     dependencies:
       '@edge-runtime/node-utils': 2.3.0
       '@edge-runtime/primitives': 4.1.0
       '@edge-runtime/vm': 3.2.0
       '@types/node': 16.18.11
-      '@vercel/build-utils': 8.4.10
+      '@vercel/build-utils': 8.4.11
       '@vercel/error-utils': 2.0.2
       '@vercel/nft': 0.27.3
       '@vercel/static-config': 3.0.0
@@ -5386,7 +5386,7 @@ snapshots:
 
   '@vercel/python@4.3.1': {}
 
-  '@vercel/redwood@2.1.7':
+  '@vercel/redwood@2.1.8':
     dependencies:
       '@vercel/nft': 0.27.3
       '@vercel/routing-utils': 3.1.0
@@ -5397,7 +5397,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vercel/remix-builder@2.2.11':
+  '@vercel/remix-builder@2.2.12':
     dependencies:
       '@vercel/error-utils': 2.0.2
       '@vercel/nft': 0.27.3
@@ -5420,10 +5420,10 @@ snapshots:
       react: 18.3.1
       svelte: 4.2.19
 
-  '@vercel/static-build@2.5.32':
+  '@vercel/static-build@2.5.33':
     dependencies:
       '@vercel/gatsby-plugin-vercel-analytics': 1.0.11
-      '@vercel/gatsby-plugin-vercel-builder': 2.0.54
+      '@vercel/gatsby-plugin-vercel-builder': 2.0.55
       '@vercel/static-config': 3.0.0
       ts-morph: 12.0.0
 
@@ -8179,7 +8179,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-check@4.0.4(svelte@4.2.19)(typescript@5.6.3):
+  svelte-check@4.0.5(svelte@4.2.19)(typescript@5.6.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.1
@@ -8489,19 +8489,19 @@ snapshots:
 
   v8-compile-cache-lib@3.0.1: {}
 
-  vercel@37.7.1:
+  vercel@37.8.0:
     dependencies:
-      '@vercel/build-utils': 8.4.10
+      '@vercel/build-utils': 8.4.11
       '@vercel/fun': 1.1.0
       '@vercel/go': 3.2.0
-      '@vercel/hydrogen': 1.0.8
-      '@vercel/next': 4.3.14
-      '@vercel/node': 3.2.22
+      '@vercel/hydrogen': 1.0.9
+      '@vercel/next': 4.3.15
+      '@vercel/node': 3.2.23
       '@vercel/python': 4.3.1
-      '@vercel/redwood': 2.1.7
-      '@vercel/remix-builder': 2.2.11
+      '@vercel/redwood': 2.1.8
+      '@vercel/remix-builder': 2.2.12
       '@vercel/ruby': 2.1.0
-      '@vercel/static-build': 2.5.32
+      '@vercel/static-build': 2.5.33
       chokidar: 3.3.1
     transitivePeerDependencies:
       - '@swc/core'
