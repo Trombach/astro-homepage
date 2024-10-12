@@ -9,10 +9,10 @@ import vercel from "@astrojs/vercel/serverless";
 import react from "@astrojs/react";
 import remarkGithub from "remark-github";
 import sitemap from "@astrojs/sitemap";
-
+import remarkDirective from "remark-directive";
+import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 // @ts-ignore
 import rehypeFigure from "@microflash/rehype-figure";
-
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 
 // https://astro.build/config
@@ -29,7 +29,7 @@ export default defineConfig({
     domains: ["placehold.co"],
   },
   markdown: {
-    remarkPlugins: [remarkGithub],
+    remarkPlugins: [remarkGithub, remarkDirective, astroStarlightRemarkAsides],
     rehypePlugins: [rehypeFigure],
   },
   prefetch: {

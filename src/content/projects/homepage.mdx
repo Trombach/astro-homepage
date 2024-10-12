@@ -39,9 +39,63 @@ suitable library for Astro or Svelte.
 
 ## Animations
 
-### View transitions
+Animations are satisfying. They present a simple way to make a static page feel more alive and organic. I've 
+experimented with various animation types on this homepage, which are explained in more detail in the following
+sections.
+
+<video width="100%" autoplay loop muted playsinline>
+  <source src="/hero.webm" type="video/webm"></source>
+  Your browser does not support videos.
+</video>
 
 ### Scroll Based Animations
+
+:::note[Browser Support]
+The CSS feature `animation-timeline` is currently only supported in Chromium based browsers. Scroll-driven animations
+won't work in Firefox or Safari at the moment. There is a [polyfill](https://github.com/flackr/scroll-timeline) to add
+support to these browsers, but it has some limitations and I decided not to use it.
+:::
+
+There are many libraries to animate elements, when they enter the viewport. These usually rely on the 
+`IntersectionObserver`-API an therefore require client-side JavaScript to be downloaded for the animations to work. One
+of Astro's main selling points is, that it ships _0_ JavaScript by default and it therefore felt unnatural to me, to add
+an animation library for this and lose one of the main advantages of the Astro framework.
+
+The [`animation-timeline`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline) property fills this gap 
+perfectly (although browser support is not great at the moment). It's using normal CSS `@keyframe` definitions in 
+combination with the `view()` or `scroll()` helpers and its usage should bequite familiar to people who have worked with
+CSS animations before.
+
+<video width="100%" autoplay loop muted playsinline>
+  <source src="/scroll.webm" type="video/webm"></source>
+  Your browser does not support videos.
+</video>
+
+The slide in animation of the text elements in the video above can be implemented with a few lines of CSS.
+
+```css
+.timeline-slide-in-bottom {
+  animation-timeline: view();
+  animation-range: entry 100% contain 25%;
+  animation-name: slide-scale-in-bottom;
+  animation-fill-mode: both;
+}
+
+@keyframes slide-scale-in-bottom {
+  from {
+    transform: translateY(100px);
+    scale: 0.8;
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    scale: 1;
+    opacity: 1;
+  }
+}
+```
+
+### View transitions
 
 ## About The Logo
 
@@ -53,8 +107,8 @@ of the underlying connectivity (edges) of the vertices of the structure.
 This graph picture was created for my PhD thesis and I noticed fairly quickly, that it would pose as a great candidate
 for Svelte's SVG drawing library.
 
-<figure class="w-1/2 mx-auto">
-  <Graph client:visible />
+<figure>
+  <Graph client:visible class="w-full max-w-[400px] mx-auto" />
   <figcaption>The connectivity graph of the Icosahedron. Animated with `svelte:draw`.</figcaption>
 </figure>
 
