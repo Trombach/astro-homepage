@@ -97,7 +97,23 @@ The slide in animation of the text elements in the video above can be implemente
 
 ### View transitions
 
-## About The Logo
+Astro generates multi-page applications (MPAs) by default. For each route a dedicated HTML page is generated and when
+a user navigates to a new page the browser just serves the new document. This is great for page performance, because
+every individual page can be cached on the CDN. But it makes it more difficult to generate nice transitions between
+elements, when a new page is loaded, which is fairly easy to achieve with single-page applications (SPAs). To fill this
+feature gap, the [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API) has been
+developed, which let's the developer mark elements with a `view-transition-name` and then the browser will generate
+animations between elements with the same name across documents. Here is an example of what this looks like:
+
+<video width="100%" autoplay loop muted playsinline>
+  <source src="/vt.webm" type="video/webm"></source>
+  Your browser does not support videos.
+</video>
+
+Only Chromium-based browsers support this API at the moment, however, Astro come with a polyfill to make the transitions
+work in all browsers.
+
+## The Logo
 
 During my PhD, I worked a lot with graph representations of clusters. One very commonly found structural pattern is that
 of the [Icosahedron](https://en.wikipedia.org/wiki/Icosahedron), one of the five Platonic solids. The graph shown in The
