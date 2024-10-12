@@ -23,8 +23,8 @@ if (
     favicon = await fetch(`${FAVICON_API}?${searchParams}`).then(async (res) =>
       Buffer.from(await res.arrayBuffer()),
     );
-  } catch {
-    console.error("Error fetching favicon");
+  } catch (err) {
+    console.error(`Error fetching favicon: ${href}`, err);
   }
 }
 
