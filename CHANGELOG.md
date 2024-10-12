@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.8
+
+### Patch Changes
+
+- 22d2dd8: add webmention link
+
 ## 1.6.7
 
 ### Patch Changes
