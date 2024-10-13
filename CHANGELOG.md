@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.9
+
+### Patch Changes
+
+- 3a8a214: Fix external link issues
+
 ## 1.6.8
 
 ### Patch Changes
