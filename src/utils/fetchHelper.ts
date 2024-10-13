@@ -1,5 +1,5 @@
-import type { z } from "astro:schema";
 import { VERCEL_URL } from "astro:env/server";
+import type { z } from "astro:schema";
 
 export default async function fetchWithSchema<S extends z.ZodTypeAny>(
   schema: S,

@@ -1,19 +1,19 @@
 // @ts-check
 
-import { defineConfig, envField } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import svelte from "@astrojs/svelte";
-import Icons from "unplugin-icons/vite";
 import mdx from "@astrojs/mdx";
-import vercel from "@astrojs/vercel/serverless";
 import react from "@astrojs/react";
-import remarkGithub from "remark-github";
 import sitemap from "@astrojs/sitemap";
-import remarkDirective from "remark-directive";
-import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
+import svelte from "@astrojs/svelte";
+import tailwind from "@astrojs/tailwind";
+import vercel from "@astrojs/vercel/serverless";
+import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-ignore
 import rehypeFigure from "@microflash/rehype-figure";
-import inoxToolsContentUtils from "@inox-tools/content-utils";
+import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
+import { defineConfig, envField } from "astro/config";
+import remarkDirective from "remark-directive";
+import remarkGithub from "remark-github";
+import Icons from "unplugin-icons/vite";
 
 // https://astro.build/config
 export default defineConfig({

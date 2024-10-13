@@ -1,6 +1,6 @@
+import { getSecret } from "astro:env/server";
 import { z } from "astro:schema";
 import fetch from "./fetchHelper";
-import { getSecret } from "astro:env/server";
 
 const GH_API = "https://api.github.com/graphql";
 const USERNAME = "Trombach";
