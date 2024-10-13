@@ -46,14 +46,14 @@ const imageProps = {
       {position === "before" && (
         <>
           <img {...imageProps} class="w-4 inline-block my-0 mr-1 not-prose" />
-          <a {href} {...props}>
+          <a {href} {...props} class="whitespace-normal">
             <Fragment set:html={content} />
           </a>
         </>
       )}
       {position === "after" && (
         <>
-          <a {href} {...props}>
+          <a {href} {...props} class="whitespace-normal">
             <Fragment set:html={content} />
           </a>
           <img {...imageProps} class="w-4 inline-block my-0 ml-1 not-prose" />
