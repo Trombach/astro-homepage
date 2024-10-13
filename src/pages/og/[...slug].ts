@@ -1,5 +1,5 @@
-import { OGImageRoute } from "astro-og-canvas";
 import { getCollection } from "astro:content";
+import { OGImageRoute } from "astro-og-canvas";
 
 const projects = await getCollection("projects");
 const pages = Object.fromEntries(

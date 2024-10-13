@@ -1,5 +1,5 @@
+import { CV_FILE_NAME, VERCEL_STORAGE_URL } from "astro:env/server";
 import type { APIRoute } from "astro";
-import { VERCEL_STORAGE_URL, CV_FILE_NAME } from "astro:env/server";
 
 export const prerender = false;
 

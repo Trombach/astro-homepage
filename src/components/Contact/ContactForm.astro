@@ -1,15 +1,15 @@
 ---
+import { actions } from "astro:actions";
+import { getEntry } from "astro:content";
+import MailIcon from "icons:astro/heroicons/envelope";
+import PaperPlane from "icons:astro/heroicons/paper-airplane";
+import LinkedInLogo from "icons:astro/simple-icons/linkedin";
+import MatrixLogo from "icons:astro/simple-icons/matrix";
+import Avatar from "@components/About/MeCard/Avatar.astro";
 import AppLink from "@components/AppLink.astro";
 import SendEmailResponse from "@components/Contact/SendEmailResponse.astro";
 import Heading from "@components/Heading.astro";
-import { actions } from "astro:actions";
-import PaperPlane from "icons:astro/heroicons/paper-airplane";
 import FormFields from "./FormFields.astro";
-import MailIcon from "icons:astro/heroicons/envelope";
-import MatrixLogo from "icons:astro/simple-icons/matrix";
-import LinkedInLogo from "icons:astro/simple-icons/linkedin";
-import Avatar from "@components/About/MeCard/Avatar.astro";
-import { getEntry } from "astro:content";
 
 const {
   data: { person },

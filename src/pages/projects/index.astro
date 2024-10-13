@@ -1,9 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import Contributions from "@components/About/Contributions.astro";
 import Footer from "@components/Footer/Footer.astro";
 import ProjectCard from "@components/ProjectCard/ProjectCard.astro";
 import SEO from "@components/SEO.astro";
-import { getCollection } from "astro:content";
 import Layout from "src/layouts/Layout.astro";
 
 const projects = await getCollection("projects");
