@@ -14,9 +14,16 @@ const response = Astro.getActionResult(actions.contact);
       ]}
     >
       {response.data && response.data.success && "Your message has been sent!"}
+
       {response.error &&
         !isInputError(response.error) &&
         `Error sending message: ${response.error.message}`}
+        
+      {response.error &&
+        isInputError(response.error) &&
+        response.error.fields["cf-turnstile-response"] &&
+        response.error.fields["cf-turnstile-response"].length > 0 &&
+        "Challenge error. Please refresh the page and try again."}
     </p>
   )
 }
