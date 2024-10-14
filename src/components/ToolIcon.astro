@@ -1,6 +1,5 @@
 ---
 import AngularLogo from "icons:astro/logos/angular-icon";
-import AstroLogo from "icons:astro/logos/astro-icon";
 import AwsLambdaLogo from "icons:astro/logos/aws-lambda";
 import CppLogo from "icons:astro/logos/c-plusplus";
 import ContentfulLogo from "icons:astro/logos/contentful";
@@ -14,12 +13,13 @@ import TailwindLogo from "icons:astro/logos/tailwindcss-icon";
 import TypeScriptLogo from "icons:astro/logos/typescript-icon";
 import VercelLogo from "icons:astro/logos/vercel-icon";
 import LatexLogo from "icons:astro/simple-icons/latex";
+import AstroLogo from "@components/AstroIcon.astro";
 import type { HTMLAttributes } from "astro/types";
 import type { Tool } from "src/content/config";
 
 type Props = {
   tool: Tool;
-  transitionName?: string | undefined;
+  transitionName: string;
 };
 
 const toolMap = {
@@ -51,6 +51,6 @@ const props = {
 } as const satisfies HTMLAttributes<"svg">;
 ---
 
-<div title={tool} transition:name={transitionName || ""}>
+<div title={tool} transition:name={transitionName}>
   <Component {...props}/>
 </div>
