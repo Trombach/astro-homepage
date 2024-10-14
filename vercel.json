@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "images": {
+    "sizes": [96, 128, 240, 256, 300, 450, 480, 600, 850]
+  }
+}
