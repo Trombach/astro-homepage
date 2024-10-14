@@ -60,11 +60,11 @@ export default function CalendarTile({ contributions, date }: Props) {
         ref={refs.setReference}
         className={clsx(
           contributions === 0 && "bg-slate-300 dark:bg-slate-900",
-          contributions > 0 && contributions <= 2 && "bg-green-950",
-          contributions > 2 && contributions <= 4 && "bg-green-900",
-          contributions > 4 && contributions <= 6 && "bg-green-800",
-          contributions > 6 && contributions <= 8 && "bg-green-600",
-          contributions > 8 && "bg-green-400",
+          contributions > 0 && contributions <= 5 && "bg-green-950",
+          contributions > 5 && contributions <= 10 && "bg-green-900",
+          contributions > 10 && contributions <= 15 && "bg-green-800",
+          contributions > 15 && contributions <= 25 && "bg-green-600",
+          contributions > 25 && "bg-green-400",
           "size-2 rounded-sm transition-transform hover:scale-150 lg:size-3 xl:size-4",
         )}
         {...getReferenceProps()}
