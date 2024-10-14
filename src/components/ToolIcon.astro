@@ -23,32 +23,39 @@ type Props = {
 };
 
 const toolMap = {
-  Astro: AstroLogo,
-  Svelte: SvelteLogo,
-  TypeScript: TypeScriptLogo,
-  Tailwind: TailwindLogo,
-  Vercel: VercelLogo,
-  Angular: AngularLogo,
-  Sass: SassLogo,
-  "AWS Lambda": AwsLambdaLogo,
-  Contentful: ContentfulLogo,
-  Elasticsearch: ElasticsearchLogo,
-  LaTeX: LatexLogo,
-  "C++": CppLogo,
-  "Next.js": NextLogo,
-  "Monday.com": MondayLogo,
-  Supabase: SupabaseLogo,
-} satisfies {
-  [key in typeof Astro.props.tool]: astroHTML.JSX.Element;
+  Astro: { Component: AstroLogo },
+  Svelte: { Component: SvelteLogo },
+  TypeScript: { Component: TypeScriptLogo },
+  Tailwind: { Component: TailwindLogo },
+  Vercel: { Component: VercelLogo, extraProps: { fill: "currentColor" } },
+  Angular: { Component: AngularLogo },
+  Sass: { Component: SassLogo },
+  "AWS Lambda": { Component: AwsLambdaLogo },
+  Contentful: { Component: ContentfulLogo },
+  Elasticsearch: { Component: ElasticsearchLogo },
+  LaTeX: { Component: LatexLogo },
+  "C++": { Component: CppLogo },
+  "Next.js": { Component: NextLogo },
+  "Monday.com": { Component: MondayLogo },
+  Supabase: { Component: SupabaseLogo },
+} as const satisfies {
+  [key in Tool]: {
+    Component: astroHTML.JSX.Element;
+    extraProps?: HTMLAttributes<"svg">;
+  };
 };
 
 const { tool, transitionName } = Astro.props;
-const Component = toolMap[tool];
+const { Component } = toolMap[tool];
 const props = {
   width: "100%",
   height: "100%",
   preserveAspectRatio: "xMidYMid meet",
 } as const satisfies HTMLAttributes<"svg">;
+
+if ("extraProps" in toolMap[tool]) {
+  Object.assign(props, toolMap[tool].extraProps);
+}
 ---
 
 <div title={tool} transition:name={transitionName}>
