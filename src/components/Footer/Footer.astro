@@ -1,5 +1,4 @@
 ---
-import AstroLogo from "icons:astro/logos/astro";
 import GithubLogo from "icons:astro/logos/github-icon";
 import Graph from "../Graph/Graph.svelte";
 import Copyright from "./Copyright.astro";
@@ -31,12 +30,21 @@ import Copyright from "./Copyright.astro";
       </a>
 
       <Copyright />
-      <a
-        href="https://astro.build"
-        class="flex gap-1 items-center text-xs md:text-base"
-      >
-        <span>Built with </span>
-        <AstroLogo class="fill-foreground self-end" />
+      <a href="https://astro.build" class="md:hidden">
+        <img
+          src="https://astro.badg.es/v2/built-with-astro/tiny.svg"
+          alt="Built with Astro"
+          width="120"
+          height="20"
+        />
+      </a>
+      <a href="https://astro.build" class="hidden md:block">
+        <img
+          src="https://astro.badg.es/v2/built-with-astro/small.svg"
+          alt="Built with Astro"
+          width="192"
+          height="32"
+        />
       </a>
       <a
         href="https://github.com/Trombach/astro-homepage"
