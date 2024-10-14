@@ -19,7 +19,7 @@ importers:
         version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.6.3)
       '@astrojs/mdx':
         specifier: ^3.1.8
-        version: 3.1.8(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
+        version: 3.1.8(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
       '@astrojs/react':
         specifier: ^3.6.2
         version: 3.6.2(@types/react-dom@18.3.1)(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.8(@types/node@22.7.5))
@@ -28,13 +28,13 @@ importers:
         version: 3.2.0
       '@astrojs/svelte':
         specifier: ^5.7.2
-        version: 5.7.2(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(svelte@4.2.19)(typescript@5.6.3)(vite@5.4.8(@types/node@22.7.5))
+        version: 5.7.2(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(svelte@4.2.19)(typescript@5.6.3)(vite@5.4.8(@types/node@22.7.5))
       '@astrojs/tailwind':
         specifier: ^5.1.2
-        version: 5.1.2(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(tailwindcss@3.4.13(ts-node@10.9.1(@types/node@22.7.5)(typescript@5.6.3)))(ts-node@10.9.1(@types/node@22.7.5)(typescript@5.6.3))
+        version: 5.1.2(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(tailwindcss@3.4.13(ts-node@10.9.1(@types/node@22.7.5)(typescript@5.6.3)))(ts-node@10.9.1(@types/node@22.7.5)(typescript@5.6.3))
       '@astrojs/vercel':
         specifier: ^7.8.1
-        version: 7.8.1(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(react@18.3.1)
+        version: 7.8.1(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(react@18.3.1)
       '@floating-ui/react':
         specifier: ^0.26.24
         version: 0.26.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -55,7 +55,7 @@ importers:
         version: 1.2.7
       '@inox-tools/content-utils':
         specifier: ^0.7.3
-        version: 0.7.3(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
+        version: 0.7.3(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
       '@microflash/rehype-figure':
         specifier: ^2.1.1
         version: 2.1.1
@@ -72,11 +72,11 @@ importers:
         specifier: ^1.0.12
         version: 1.0.12(react@18.3.1)(svelte@4.2.19)
       astro:
-        specifier: ^4.16.0
-        version: 4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
+        specifier: ^4.16.1
+        version: 4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
       astro-og-canvas:
         specifier: ^0.5.3
-        version: 0.5.3(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
+        version: 0.5.3(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
       astro-starlight-remark-asides:
         specifier: ^0.0.7
         version: 0.0.7(remark-directive@3.0.0)
@@ -1411,8 +1411,8 @@ packages:
     peerDependencies:
       remark-directive: ^3.0.0
 
-  astro@4.16.0:
-    resolution: {integrity: sha512-R5voBFy0yOg57uFnW24WV+RvqPerp9eOoDQoT0pQYqECuGuyV1PsZaSb9Nm0ec+KMLrfO9jvvESFw9LIN6XiUw==}
+  astro@4.16.1:
+    resolution: {integrity: sha512-ZeZd+L147HHgHmvoSkve7KM3EutV+hY0mOCa4PwARHEFAAh+omo4MUNoTWsFkfq7ozTgR0PCXQwslrZduoWHNg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -4188,12 +4188,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@3.1.8(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))':
+  '@astrojs/mdx@3.1.8(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))':
     dependencies:
       '@astrojs/markdown-remark': 5.3.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.12.1
-      astro: 4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
+      astro: 4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
       es-module-lexer: 1.5.4
       estree-util-visit: 2.0.0
       gray-matter: 4.0.3
@@ -4230,10 +4230,10 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/svelte@5.7.2(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(svelte@4.2.19)(typescript@5.6.3)(vite@5.4.8(@types/node@22.7.5))':
+  '@astrojs/svelte@5.7.2(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(svelte@4.2.19)(typescript@5.6.3)(vite@5.4.8(@types/node@22.7.5))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.1.2(svelte@4.2.19)(vite@5.4.8(@types/node@22.7.5))
-      astro: 4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
+      astro: 4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
       svelte: 4.2.19
       svelte2tsx: 0.7.21(svelte@4.2.19)(typescript@5.6.3)
       typescript: 5.6.3
@@ -4241,9 +4241,9 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/tailwind@5.1.2(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(tailwindcss@3.4.13(ts-node@10.9.1(@types/node@22.7.5)(typescript@5.6.3)))(ts-node@10.9.1(@types/node@22.7.5)(typescript@5.6.3))':
+  '@astrojs/tailwind@5.1.2(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(tailwindcss@3.4.13(ts-node@10.9.1(@types/node@22.7.5)(typescript@5.6.3)))(ts-node@10.9.1(@types/node@22.7.5)(typescript@5.6.3))':
     dependencies:
-      astro: 4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
+      astro: 4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
       autoprefixer: 10.4.20(postcss@8.4.47)
       postcss: 8.4.47
       postcss-load-config: 4.0.2(postcss@8.4.47)(ts-node@10.9.1(@types/node@22.7.5)(typescript@5.6.3))
@@ -4263,13 +4263,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@7.8.1(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(react@18.3.1)':
+  '@astrojs/vercel@7.8.1(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))(react@18.3.1)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@vercel/analytics': 1.3.1(react@18.3.1)
       '@vercel/edge': 1.1.2
       '@vercel/nft': 0.27.4
-      astro: 4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
+      astro: 4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
       esbuild: 0.21.5
       fast-glob: 3.3.2
       web-vitals: 3.5.2
@@ -4855,23 +4855,23 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
-  '@inox-tools/content-utils@0.7.3(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))':
+  '@inox-tools/content-utils@0.7.3(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))':
     dependencies:
-      '@inox-tools/modular-station': 0.3.3(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
+      '@inox-tools/modular-station': 0.3.3(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
       '@inox-tools/utils': 0.2.0
-      astro: 4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
-      astro-integration-kit: 0.16.1(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
+      astro: 4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
+      astro-integration-kit: 0.16.1(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
       debug: 4.3.7
       estree-walker: 3.0.3
       magic-string: 0.30.11
     transitivePeerDependencies:
       - supports-color
 
-  '@inox-tools/modular-station@0.3.3(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))':
+  '@inox-tools/modular-station@0.3.3(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))':
     dependencies:
       '@inox-tools/utils': 0.2.0
-      astro: 4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
-      astro-integration-kit: 0.16.1(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
+      astro: 4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
+      astro-integration-kit: 0.16.1(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3))
 
   '@inox-tools/utils@0.2.0': {}
 
@@ -5602,15 +5602,15 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-integration-kit@0.16.1(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)):
+  astro-integration-kit@0.16.1(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)):
     dependencies:
-      astro: 4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
+      astro: 4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
       pathe: 1.1.2
       recast: 0.23.9
 
-  astro-og-canvas@0.5.3(astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)):
+  astro-og-canvas@0.5.3(astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)):
     dependencies:
-      astro: 4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
+      astro: 4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
       canvaskit-wasm: 0.39.1
       deterministic-object-hash: 2.0.2
       entities: 4.5.0
@@ -5621,7 +5621,7 @@ snapshots:
       remark-directive: 3.0.0
       unist-util-visit: 5.0.0
 
-  astro@4.16.0(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3):
+  astro@4.16.1(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -5653,7 +5653,6 @@ snapshots:
       esbuild: 0.21.5
       estree-walker: 3.0.3
       fast-glob: 3.3.2
-      fastq: 1.17.1
       flattie: 1.1.1
       github-slugger: 2.0.0
       gray-matter: 4.0.3
@@ -5674,7 +5673,6 @@ snapshots:
       rehype: 13.0.2
       semver: 7.6.3
       shiki: 1.22.0
-      string-width: 7.2.0
       tinyexec: 0.3.0
       tsconfck: 3.1.4(typescript@5.6.3)
       unist-util-visit: 5.0.0
@@ -8289,7 +8287,7 @@ snapshots:
 
   to-vfile@8.0.0:
     dependencies:
-      vfile: 6.0.2
+      vfile: 6.0.3
 
   toidentifier@1.0.0: {}
 
