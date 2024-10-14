@@ -14,6 +14,7 @@ import TailwindLogo from "icons:astro/logos/tailwindcss-icon";
 import TypeScriptLogo from "icons:astro/logos/typescript-icon";
 import VercelLogo from "icons:astro/logos/vercel-icon";
 import LatexLogo from "icons:astro/simple-icons/latex";
+import type { HTMLAttributes } from "astro/types";
 import type { Tool } from "src/content/config";
 
 type Props = {
@@ -21,52 +22,35 @@ type Props = {
   transitionName?: string | undefined;
 };
 
+const toolMap = {
+  Astro: AstroLogo,
+  Svelte: SvelteLogo,
+  TypeScript: TypeScriptLogo,
+  Tailwind: TailwindLogo,
+  Vercel: VercelLogo,
+  Angular: AngularLogo,
+  Sass: SassLogo,
+  "AWS Lambda": AwsLambdaLogo,
+  Contentful: ContentfulLogo,
+  Elasticsearch: ElasticsearchLogo,
+  LaTeX: LatexLogo,
+  "C++": CppLogo,
+  "Next.js": NextLogo,
+  "Monday.com": MondayLogo,
+  Supabase: SupabaseLogo,
+} satisfies {
+  [key in typeof Astro.props.tool]: astroHTML.JSX.Element;
+};
+
 const { tool, transitionName } = Astro.props;
+const Component = toolMap[tool];
 const props = {
   width: "100%",
   height: "100%",
   preserveAspectRatio: "xMidYMid meet",
-} as const satisfies astroHTML.JSX.SVGAttributes;
+} as const satisfies HTMLAttributes<"svg">;
 ---
 
 <div title={tool} transition:name={transitionName || ""}>
-  {
-    () => {
-      switch (tool) {
-        case "Astro":
-          return <AstroLogo {...props} class="fill-foreground" />;
-        case "Svelte":
-          return <SvelteLogo {...props} />;
-        case "Typescript":
-          return <TypeScriptLogo {...props} />;
-        case "Tailwind":
-          return <TailwindLogo {...props} />;
-        case "Vercel":
-          return <VercelLogo {...props} class="fill-foreground" />;
-        case "Angular":
-          return <AngularLogo {...props} />;
-        case "Sass":
-          return <SassLogo {...props} />;
-        case "AWS Lambda":
-          return <AwsLambdaLogo {...props} />;
-        case "Contentful":
-          return <ContentfulLogo {...props} />;
-        case "elasticsearch":
-          return <ElasticsearchLogo {...props} />;
-        case "LaTeX":
-          return <LatexLogo {...props} class="fill-foreground" />;
-        case "C++":
-          return <CppLogo {...props} />;
-        case "Next.js":
-          return <NextLogo {...props} />;
-        case "Monday.com":
-          return <MondayLogo {...props} />;
-        case "Supabase":
-          return <SupabaseLogo {...props} />;
-
-        default:
-          return tool satisfies never;
-      }
-    }
-  }
+  <Component {...props}/>
 </div>

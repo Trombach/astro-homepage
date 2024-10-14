@@ -47,14 +47,14 @@ const tags = [
 const tools = [
   "Astro",
   "Svelte",
-  "Typescript",
+  "TypeScript",
   "Tailwind",
   "Vercel",
   "Angular",
   "Sass",
   "AWS Lambda",
   "Contentful",
-  "elasticsearch",
+  "Elasticsearch",
   "LaTeX",
   "C++",
   "Next.js",
@@ -74,7 +74,7 @@ const projectsCollection = defineCollection({
             repoLink: z.string().url().optional(),
             completed: z.coerce.date().optional(),
             tags: z.array(z.enum(tags)).max(4).optional(),
-            tools: z.array(z.enum(tools)).max(10).optional(),
+            tools: z.array(z.enum(tools)).max(6).optional(),
           })
           .optional(),
         cover: z.object({
