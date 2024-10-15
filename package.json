@@ -13,10 +13,12 @@
     "ts:check": "astro check && svelte-check",
     "format": "biome check --write .",
     "format:check": "biome check .",
+    "format:staged": "biome check --staged --error-on-warnings --no-errors-on-unmatched .",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "bump-version": "changeset version && biome format --write package.json"
+    "bump-version": "changeset version && biome format --write package.json",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -64,6 +66,7 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@types/sanitize-html": "^2.13.0",
+    "husky": "^9.1.6",
     "svelte-check": "^4.0.5",
     "typescript": "^5.6.3",
     "unplugin-icons": "^0.19.3",
