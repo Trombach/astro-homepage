@@ -1,5 +1,0 @@
----
-"homepage": patch
----
-
-Fix icons
