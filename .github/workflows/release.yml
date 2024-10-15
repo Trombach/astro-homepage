@@ -62,9 +62,11 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
       - name: Create Release
-        if: steps.create-release-pr.outputs.published
+        if: steps.create-release-pr.outputs.published == 'true'
         run: |
           tag=`echo '${{ steps.create-release-pr.outputs.publishedPackages }}' |
             jq -r '.[] | select(.name == "homepage") | .version'`
           gh release create $tag --title $tag --generate-notes --latest
+        env:
+          GH_TOKEN: ${{ github.token }}
 
