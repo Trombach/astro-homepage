@@ -1,9 +1,11 @@
 ---
+import { getImage } from "astro:assets";
 import { getCollection } from "astro:content";
 import Footer from "@components/Footer/Footer.astro";
 import ProjectPage from "@components/ProjectPage/ProjectPage.astro";
 import SEO from "@components/SEO.astro";
 import Layout from "@layouts/Layout.astro";
+import type { GetImageResult } from "astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -22,6 +24,17 @@ const {
 } = Astro.props;
 
 const { Content, headings } = await render();
+let img: GetImageResult | undefined;
+if (extraProps.cover.image) {
+  img = await getImage({
+    src: extraProps.cover.image,
+    alt: extraProps.cover.alt,
+    widths: [240, 480, 850],
+    loading: "eager",
+    sizes:
+      "(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px",
+  });
+}
 ---
 
 <Layout {title} {description}>
@@ -31,6 +44,19 @@ const { Content, headings } = await render();
     {description}
     imageURL={new URL(`og/${slug}.png`, Astro.url.origin)}
   />
+
+  {
+    img && (
+      <link
+        slot="preload"
+        rel="preload"
+        as="image"
+        href={img.src}
+        imagesrcset={img.srcSet.attribute}
+        imagesizes={img.attributes.sizes}
+      />
+    )
+  }
 
   <ProjectPage {title} {headings} {description} {...extraProps}>
     <Content />
