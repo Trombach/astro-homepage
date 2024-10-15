@@ -63,6 +63,7 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     },
+    maxDuration: 60,
   }),
   site: "https://www.lukastrombach.dev",
   experimental: {
