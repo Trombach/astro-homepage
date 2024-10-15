@@ -5,7 +5,6 @@ import { draw } from "svelte/transition";
 let show = false;
 onMount(() => {
   show = true;
-  console.log($$restProps.class);
 });
 </script>
 
