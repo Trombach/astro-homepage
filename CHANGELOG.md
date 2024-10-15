@@ -1,5 +1,20 @@
 # homepage
 
+## 1.6.10
+
+### Patch Changes
+
+- f07313a: increase range of each contributions calendar color
+- bfe2b1c: Toolicon improvements
+- 690c763: add husky and pre-commit script
+- 67ca801: improve turnstile error handling
+- 7f33c7e: fix footer link to logo section
+- fef3506: Organise imports
+- d65320f: Fix icons
+- 9ee949b: swap banner in footer
+- a39df16: increase function duration to max value fro free plans
+- 65d068a: add preload link tag for project cover images
+
 ## 1.6.9
 
 ### Patch Changes
