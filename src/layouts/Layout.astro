@@ -7,7 +7,6 @@ import "@fontsource/lobster";
 import "@fontsource-variable/inter";
 import InterWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import "@fontsource-variable/jetbrains-mono";
-import { ViewTransitions } from "astro:transitions";
 import Footer from "@components/Footer/Footer.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
 
@@ -41,8 +40,11 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
       <SEO {title} {description} />
     </slot>
 
-    <link href="https://github.com/Trombach" rel="me">
-    <link rel="webmention" href="https://webmention.io/www.lukastrombach.dev/webmention" />
+    <link href="https://github.com/Trombach" rel="me" />
+    <link
+      rel="webmention"
+      href="https://webmention.io/www.lukastrombach.dev/webmention"
+    />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/x-icon" href="data:;" />
     <link
@@ -75,7 +77,11 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <style is:inline>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
     <SpeedInsights />
     <ThemeProvider />
   </head>
