@@ -18,3 +18,9 @@ const { image, class: className } = Astro.props;
   sizes={`(max-width: 360px) 96px, (max-width: 480px) 128px, 256px`}
   class:list={["rounded-full border-4 border-card lg:border-8", className]}
 />
+
+<style is:global>
+  ::view-transition-group(avatar) {
+    z-index: 100;
+  }
+</style>
