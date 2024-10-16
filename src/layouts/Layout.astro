@@ -104,6 +104,10 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
       @tailwind base;
       @tailwind utilities;
 
+      ::view-transition-group(*) {
+        animation-duration: 500ms;
+      }
+
       @layer base {
         :root {
           --background: 0 0% 100%;
