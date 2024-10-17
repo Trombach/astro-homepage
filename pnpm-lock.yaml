@@ -74,6 +74,9 @@ importers:
       '@vercel/speed-insights':
         specifier: ^1.0.12
         version: 1.0.12(react@18.3.1)(svelte@4.2.19)
+      '@vtbag/element-crossing':
+        specifier: ^1.0.1
+        version: 1.0.1
       astro:
         specifier: ^4.16.4
         version: 4.16.4(@types/node@22.7.5)(rollup@4.24.0)(typescript@5.6.3)
@@ -1275,6 +1278,9 @@ packages:
 
   '@vscode/l10n@0.0.18':
     resolution: {integrity: sha512-KYSIHVmslkaCDyw013pphY+d7x1qV8IZupYfeIfzNA+nsaWHbn5uPuQRvdRFsa9zFzGeudPuoGoZ1Op4jrJXIQ==}
+
+  '@vtbag/element-crossing@1.0.1':
+    resolution: {integrity: sha512-UgZZOyeof2zainGD9FYjVqkwK8gvsv8ABVC5YA1iSlyt39c+2Fz7WRGBHiE/9Vqb22DpZTqF87ArHqkxG7+Y9g==}
 
   '@webgpu/types@0.1.21':
     resolution: {integrity: sha512-pUrWq3V5PiSGFLeLxoGqReTZmiiXwY3jRkIG5sLLKjyqNxrwm/04b4nw7LSmGWJcKk59XOM/YRTUwOzo4MMlow==}
@@ -5507,6 +5513,8 @@ snapshots:
       vscode-uri: 2.1.2
 
   '@vscode/l10n@0.0.18': {}
+
+  '@vtbag/element-crossing@1.0.1': {}
 
   '@webgpu/types@0.1.21': {}
 

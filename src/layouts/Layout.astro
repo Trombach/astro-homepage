@@ -8,6 +8,7 @@ import "@fontsource-variable/inter";
 import InterWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import "@fontsource-variable/jetbrains-mono";
 import Footer from "@components/Footer/Footer.astro";
+import NativeViewTransitions from "@components/ViewTransitions/NativeViewTransitions.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
@@ -77,11 +78,7 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <style is:inline>
-      @view-transition {
-        navigation: auto;
-      }
-    </style>
+    <NativeViewTransitions />
     <SpeedInsights />
     <ThemeProvider />
   </head>
