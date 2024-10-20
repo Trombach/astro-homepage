@@ -2,6 +2,12 @@
   "name": "homepage",
   "type": "module",
   "version": "1.6.12",
+  "author": {
+    "name": "Lukas Trombach",
+    "email": "contact@lukastrombach.dev",
+    "url": "https://lukastrombach.dev"
+  },
+  "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
     "url": "https://github.com/Trombach/astro-homepage"
