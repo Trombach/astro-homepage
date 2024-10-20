@@ -54,11 +54,10 @@ jobs:
         with:
           version: pnpm bump-version
           publish: |
-            echo "promoted=false" >> "$GITHUB_OUTPUT"
+            echo "promoted=false" >> "$GITHUB_OUTPUT" && \
             pnpm vercel promote ${{ steps.get-staging-id.outputs.id }} \
               --scope=trombachs-projects \
-              --token=${{ secrets.VERCEL_TOKEN }}
-
+              --token=${{ secrets.VERCEL_TOKEN }} && \
             echo "promoted=true" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESETS_PAT }}
