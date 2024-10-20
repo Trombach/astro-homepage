@@ -57,17 +57,17 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@biomejs/biome": "1.9.3",
+    "@biomejs/biome": "1.9.4",
     "@changesets/cli": "^2.27.9",
     "@types/cloudflare-turnstile": "^0.2.2",
-    "@types/node": "^22.7.5",
+    "@types/node": "^22.7.7",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@types/sanitize-html": "^2.13.0",
     "husky": "^9.1.6",
     "svelte-check": "^4.0.5",
     "typescript": "^5.6.3",
-    "vercel": "^37.8.0"
+    "vercel": "^37.11.0"
   },
   "engines": {
     "pnpm": ">= 9",
