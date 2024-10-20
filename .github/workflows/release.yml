@@ -53,16 +53,10 @@ jobs:
         uses: changesets/action@v1
         with:
           version: pnpm bump-version
-          publish: echo "promoted=false" >> "$GITHUB_OUTPUT" && url=${{ steps.get-staging-id.outputs.id }} token=${{ secrets.VERCEL_TOKEN }} pnpm promote && echo "promoted=true" >> "$GITHUB_OUTPUT"
+          publish: pnpm promote
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESETS_PAT }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      - name: Create Release
-        if: steps.create-release-pr.outputs.promoted == true
-        run: |
-          tag=`echo '${{ steps.create-release-pr.outputs.publishedPackages }}' |
-            jq -r '.[] | select(.name == "homepage") | .version'`
-          gh release create $tag --title $tag --generate-notes --latest
-        env:
-          GH_TOKEN: ${{ github.token }}
+          DEPLOYMENT_URL: ${{ steps.get-staging-id.outputs.id}}
