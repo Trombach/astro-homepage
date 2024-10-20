@@ -18,7 +18,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "bump-version": "changeset version && biome format --write package.json",
-    "promote": "vercel promote $url --scope=trombachs-projects --token=$token",
+    "promote": "vercel promote $DEPLOYMENT_URL --scope=trombachs-projects --token=$VERCEL_TOKEN",
     "prepare": "husky"
   },
   "dependencies": {
