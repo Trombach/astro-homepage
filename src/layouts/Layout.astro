@@ -9,7 +9,6 @@ import InterWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal
 import "@fontsource-variable/jetbrains-mono";
 import { ViewTransitions } from "astro:transitions";
 import Footer from "@components/Footer/Footer.astro";
-import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
   title: string;
@@ -76,7 +75,6 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
-    <SpeedInsights />
     <ThemeProvider />
   </head>
   <body class="antialiased">
