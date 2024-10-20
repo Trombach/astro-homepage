@@ -53,12 +53,7 @@ jobs:
         uses: changesets/action@v1
         with:
           version: pnpm bump-version
-          publish: |
-            echo "promoted=false" >> "$GITHUB_OUTPUT" && \
-            pnpm vercel promote ${{ steps.get-staging-id.outputs.id }} \
-              --scope=trombachs-projects \
-              --token=${{ secrets.VERCEL_TOKEN }} && \
-            echo "promoted=true" >> "$GITHUB_OUTPUT"
+          publish: echo "promoted=false" >> "$GITHUB_OUTPUT" && pnpm vercel promote ${{ steps.get-staging-id.outputs.id }} --scope=trombachs-projects --token=${{ secrets.VERCEL_TOKEN }} && echo "promoted=true" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESETS_PAT }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
