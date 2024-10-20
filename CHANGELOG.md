@@ -1,5 +1,12 @@
 # homepage
 
+## 1.6.11
+
+### Patch Changes
+
+- 1ca941b: fix CLS with turnstile widget
+- 6594b5c: switch from vercel speed insights and analytics to cloudflare
+
 ## 1.6.10
 
 ### Patch Changes
