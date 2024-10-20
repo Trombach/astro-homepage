@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.13
+
+### Patch Changes
+
+- 4fc35d3: add author and license info to package.json
+
 ## 1.6.12
 
 ### Patch Changes
