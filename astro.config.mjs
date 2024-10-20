@@ -60,9 +60,6 @@ export default defineConfig({
   output: "hybrid",
   adapter: vercel({
     imageService: false,
-    webAnalytics: {
-      enabled: true,
-    },
     maxDuration: 60,
   }),
   site: "https://www.lukastrombach.dev",
