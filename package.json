@@ -13,11 +13,12 @@
     "ts:check": "astro check && svelte-check",
     "format": "biome check --write .",
     "format:check": "biome check .",
-    "format:staged": "biome check --staged --error-on-warnings --no-errors-on-unmatched .",
+    "format:staged": "biome check --staged --error-on-warnings --no-errors-on-unmatched --write .",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "bump-version": "changeset version && biome format --write package.json",
+    "promote": "vercel promote $url --scope=trombachs-projects --token=$token",
     "prepare": "husky"
   },
   "dependencies": {
