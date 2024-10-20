@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.12
+
+### Patch Changes
+
+- 8316afa: disable vercel web analytics script injection
+
 ## 1.6.11
 
 ### Patch Changes
