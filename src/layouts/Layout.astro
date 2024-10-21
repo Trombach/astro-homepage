@@ -40,8 +40,11 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
       <SEO {title} {description} />
     </slot>
 
-    <link href="https://github.com/Trombach" rel="me">
-    <link rel="webmention" href="https://webmention.io/www.lukastrombach.dev/webmention" />
+    <link href="https://github.com/Trombach" rel="me" />
+    <link
+      rel="webmention"
+      href="https://webmention.io/www.lukastrombach.dev/webmention"
+    />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/x-icon" href="data:;" />
     <link
@@ -78,19 +81,15 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <ThemeProvider />
   </head>
   <body class="antialiased">
-    <Background>
-      <Navbar />
-      <main
-        transition:name="main-content"
-        class="flex w-full flex-col items-center mt-[--header-height]"
-      >
-        <slot />
-      </main>
-
-      <slot name="footer">
-        <Footer />
-      </slot>
-    </Background>
+    <Background />
+    <Navbar />
+    <main
+      transition:name="main-content"
+      class="flex w-full flex-col items-center mt-[--header-height]"
+    >
+      <slot />
+    </main>
+    <Footer />
 
     <style is:global>
       @tailwind base;
