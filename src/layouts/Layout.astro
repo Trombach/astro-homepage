@@ -1,14 +1,16 @@
 ---
 import Background from "@components/Background/Background.astro";
+import Footer from "@components/Footer/Footer.astro";
+import Favicon from "@components/Head/Favicon.astro";
+import Preload from "@components/Head/Preload.astro";
+import Webmentions from "@components/Head/Webmentions.astro";
 import Navbar from "@components/Nav/Navbar.astro";
 import ThemeProvider from "@components/Nav/ThemeProvider.astro";
 import SEO from "@components/SEO.astro";
-import "@fontsource/lobster";
 import "@fontsource-variable/inter";
-import InterWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import "@fontsource-variable/jetbrains-mono";
+import "@fontsource/lobster";
 import { ViewTransitions } from "astro:transitions";
-import Footer from "@components/Footer/Footer.astro";
 
 interface Props {
   title: string;
@@ -24,59 +26,19 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
 
-    <slot name="preload" />
-    <link
-      rel="preload"
-      as="font"
-      href={InterWoff2}
-      type="font/woff2"
-      crossorigin
-    />
-
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Webmentions />
+    <Favicon />
+    <Preload>
+      <slot name="preload" slot="preload" />
+    </Preload>
     <slot name="head" />
-
     <slot name="seo">
       <SEO {title} {description} />
     </slot>
-
-    <link href="https://github.com/Trombach" rel="me" />
-    <link
-      rel="webmention"
-      href="https://webmention.io/www.lukastrombach.dev/webmention"
-    />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" type="image/x-icon" href="data:;" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon.svg"
-      media="(prefers-color-scheme: light)"
-      sizes="any"
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/favicon.ico"
-      media="(prefers-color-scheme: light)"
-      sizes="16x16 32x32 48x48 128x128 256x256"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon-dark.svg"
-      media="(prefers-color-scheme: dark)"
-      sizes="any"
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/favicon-dark.ico"
-      media="(prefers-color-scheme: dark)"
-      sizes="16x16 32x32 48x48 128x128 256x256"
-    />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
     <ViewTransitions />
     <ThemeProvider />
   </head>
