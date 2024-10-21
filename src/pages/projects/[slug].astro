@@ -1,7 +1,6 @@
 ---
 import { getImage } from "astro:assets";
 import { getCollection } from "astro:content";
-import Footer from "@components/Footer/Footer.astro";
 import ProjectPage from "@components/ProjectPage/ProjectPage.astro";
 import SEO from "@components/SEO.astro";
 import Layout from "@layouts/Layout.astro";
@@ -62,7 +61,6 @@ if (extraProps.cover.image) {
     <Content />
   </ProjectPage>
 
-  <Footer slot="footer" />
 </Layout>
 
 <script>
