@@ -40,7 +40,8 @@ jobs:
           echo $message
           echo "id=$url" >> "$GITHUB_OUTPUT"
           echo "message=$message" >> "$GITHUB_OUTPUT"
-      - uses: UnlyEd/github-action-await-vercel@v2
+      - name: Wait for Vercel build
+        uses: UnlyEd/github-action-await-vercel@v2
         if: ${{ contains(steps.get-staging-id.outputs.message, 'Version Packages') }}
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -54,9 +55,19 @@ jobs:
         with:
           version: pnpm bump-version
           publish: pnpm promote
+          createGithubRelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESETS_PAT }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           DEPLOYMENT_URL: ${{ steps.get-staging-id.outputs.id}}
+      - name: Create Github release
+        if: ${{ contains(steps.get-staging-id.outputs.message, 'Version Packages') }}
+        run: |
+          tag=`jq -r .version package.json`
+          gh release create $tag --title $tag --generate-notes --latest
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          
+          
