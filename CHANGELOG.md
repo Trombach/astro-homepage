@@ -1,5 +1,11 @@
 # homepage
 
+## 1.6.14
+
+### Patch Changes
+
+- 65eab58: small tidy up
+
 ## 1.6.13
 
 ### Patch Changes
