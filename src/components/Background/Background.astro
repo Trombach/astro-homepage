@@ -2,14 +2,6 @@
 import Blobs from "@components/Background/Blobs.astro";
 ---
 
-<div
-  class:list={[
-    "h-screen w-full",
-    "relative",
-  ]}
->
-  <div class="fixed inset-0 -z-10 mx-auto max-w-screen-xl">
-    <Blobs />
-  </div>
-  <slot />
+<div class="fixed inset-0 -z-10 mx-auto max-w-screen-xl">
+  <Blobs />
 </div>
