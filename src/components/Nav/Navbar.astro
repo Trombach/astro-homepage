@@ -4,7 +4,7 @@ import NavigationMenu from "./NavigationMenu.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
-<header data-header="collapsed" class="group fixed top-0 z-50 w-full px-5 py-3">
+<header data-header="collapsed" transition:name="header" class="group fixed top-0 z-50 w-full px-5 py-3">
   <div
     class="relative mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-between lg:flex-nowrap lg:items-center"
   >
@@ -44,6 +44,10 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
   }
 
   header {
+    &::view-transition-group(header) {
+      z-index: 999;
+    }
+
     @apply bg-[--header-bg-color] backdrop-blur;
 
     @supports (animation-timeline: scroll()) {
