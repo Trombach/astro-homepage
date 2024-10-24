@@ -62,6 +62,10 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
         animation-duration: 500ms;
       }
 
+      ::view-transition-group(header) {
+        z-index: 999;
+      }
+
       @layer base {
         :root {
           --background: 0 0% 100%;
