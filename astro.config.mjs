@@ -63,6 +63,7 @@ export default defineConfig({
     maxDuration: 60,
   }),
   site: "https://www.lukastrombach.dev",
+  trailingSlash: "never",
   experimental: {
     contentIntellisense: true,
     serverIslands: true,
