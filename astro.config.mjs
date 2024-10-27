@@ -9,6 +9,7 @@ import vercel from "@astrojs/vercel/serverless";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-ignore
 import rehypeFigure from "@microflash/rehype-figure";
+import playformInline from "@playform/inline";
 import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import { defineConfig, envField } from "astro/config";
 import remarkDirective from "remark-directive";
@@ -24,6 +25,7 @@ export default defineConfig({
     react({ include: ["**/*.tsx", "**/*.jsx"] }),
     sitemap(),
     inoxToolsContentUtils(),
+    playformInline({ Logger: true }),
   ],
   image: {
     domains: ["placehold.co"],
