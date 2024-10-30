@@ -1,5 +1,12 @@
 # homepage
 
+## 1.6.15
+
+### Patch Changes
+
+- 01aa90d: improve LCP
+- bf3f786: set `trailingSlash: "never"` in astro.config
+
 ## 1.6.14
 
 ### Patch Changes
