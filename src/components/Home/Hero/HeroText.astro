@@ -31,3 +31,21 @@ import Wave from "./Wave.astro";
     Researcher
   </p>
 </div>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes hero-fade {
+      100% {
+        opacity: 0;
+        scale: 1.2;
+        transform: translateY(-100px);
+      }
+    }
+
+    h1, p {
+      animation: hero-fade linear both;
+      animation-timeline: view();
+      animation-range: exit;
+    }
+  }
+</style>
