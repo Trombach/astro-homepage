@@ -3,9 +3,19 @@ import AboutMe from "@components/About/AboutMe.astro";
 import Tech from "@components/About/Tech.astro";
 import Hero from "@components/Home/Hero/Hero.astro";
 import Layout from "@layouts/Layout.astro";
+
+import LobsterWoff2 from "@fontsource/lobster/files/lobster-latin-400-normal.woff2?url";
 ---
 
 <Layout title="Lukas Trombach | Software Engineer">
+  <link
+    slot="preload"
+    rel="preload"
+    as="font"
+    href={LobsterWoff2}
+    type="font/woff2"
+    crossorigin
+  />
   <Hero />
   <AboutMe />
   <Tech />
