@@ -1,7 +1,9 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-const typography = require("@tailwindcss/typography");
-const containerQueries = require("@tailwindcss/container-queries");
-const plugin = require("tailwindcss/plugin");
+import containerQueries from "@tailwindcss/container-queries";
+import typography from "@tailwindcss/typography";
+import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
+import type { PluginCreator } from "tailwindcss/types/config";
 
 const animationDelay = plugin(({ matchUtilities, theme }) => {
   matchUtilities(
@@ -55,8 +57,7 @@ const textShadow = plugin(({ matchUtilities, theme }) => {
   );
 });
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "selector",
   theme: {
@@ -72,11 +73,11 @@ module.exports = {
         "slide-in-bottom": {
           from: {
             transform: "translateY(100px)",
-            opacity: 0,
+            opacity: "0",
           },
           to: {
             transform: "translateY(0)",
-            opacity: 1,
+            opacity: "1",
           },
         },
       },
@@ -147,7 +148,10 @@ module.exports = {
   },
   plugins: [
     typography,
-    containerQueries,
+    containerQueries as {
+      handler: PluginCreator;
+      config?: Partial<Config>;
+    },
     animationDelay,
     timelineAnimation,
     textShadow,
@@ -155,4 +159,4 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-};
+} satisfies Config;
