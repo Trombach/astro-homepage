@@ -7,7 +7,7 @@ import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
-// @ts-ignore
+// @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
 import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import { defineConfig, envField } from "astro/config";
