@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: 20
           cache: "pnpm"
-      - name: Audit URLs using Lighthouse
+      - name: Audit URL using Lighthouse
         run: |
           pnpm add --global @lhci/cli
-          lhci autorun
+          lhci autorun --config=./lighthouserc.${{ github.event.deployment.environment }}.json
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
           LHCI_COLLECT__URL: ${{ github.event.deployment_status.environment_url }}${{ matrix.route }}
