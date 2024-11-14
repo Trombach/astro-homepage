@@ -10,6 +10,7 @@ jobs:
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         route: ["", "/projects", "/contact"]
     steps:
