@@ -1,14 +1,14 @@
 <script lang="ts">
 import { onMount } from "svelte";
 
-let showCloseIcon = false;
+let showCloseIcon = $state(false);
 let header: HTMLElement | null;
 
 onMount(() => {
   header = document.querySelector("[data-header]");
 });
 
-const toggle = () => {
+const onclick = () => {
   showCloseIcon = !showCloseIcon;
   if (!header) return;
 
@@ -20,7 +20,7 @@ const toggle = () => {
 };
 </script>
 
-<button class="sm:hidden" on:click={toggle}>
+<button class="sm:hidden" {onclick}>
   <svg
     class="hamburger fill-foreground"
     class:close={showCloseIcon}
@@ -50,7 +50,7 @@ const toggle = () => {
   <span class="sr-only">Menu Toggle</span>
 </button>
 
-<style lang="postcss">
+<style>
   button {
     @apply p-1;
   }
