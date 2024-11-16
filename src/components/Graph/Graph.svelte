@@ -2,7 +2,9 @@
 import { onMount } from "svelte";
 import { draw } from "svelte/transition";
 
-let show = false;
+const { class: className }: { class: string } = $props();
+
+let show = $state(false);
 onMount(() => {
   show = true;
 });
@@ -12,7 +14,7 @@ onMount(() => {
   viewBox="0 0 312.49279 300"
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
-  class={"p-2 sm:p-3 lg:p-5 " + $$restProps.class}
+  class={"p-2 sm:p-3 lg:p-5 " + className}
 >
   {#if show}
     <g transform-origin="center" transform="translate(0 45)">
