@@ -66,12 +66,57 @@ const { data } = await getEntry(person);
 
   <FormFields />
 
-  <AppLink
-    id="submit-message"
-    as="button"
-    type="submit"
-    class="self-start"
-  >
+  <AppLink id="submit-message" as="button" type="submit" class="self-start">
     Send <PaperPlane />
   </AppLink>
 </form>
+
+<script>
+  const turnstileScriptId = "turnstile-script";
+
+  function initWidget() {
+    const el = document.getElementById("cf-turnstile");
+    if (!el) {
+      console.error("Could not initialise turnstile widget");
+      return;
+    }
+
+    if (!el.dataset.sitekey) {
+      console.error("sitekey not set");
+      return;
+    }
+
+    turnstile.render(el, {
+      appearance: "interaction-only",
+      sitekey: el.dataset.sitekey,
+      callback: (token) => {
+        console.log(`Challenge Success ${token}`);
+      },
+    });
+  }
+
+  function init() {
+    if (document.scripts.namedItem(turnstileScriptId) === null) {
+      const form = document.getElementById("contact-form");
+      if (form instanceof HTMLFormElement) {
+        form.addEventListener(
+          "focusin",
+          () => {
+            const script = document.createElement("script");
+            script.src =
+              "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+            script.id = turnstileScriptId;
+            script.async = true;
+            script.defer = true;
+            script.onload = initWidget;
+
+            document.head.appendChild(script);
+          },
+          { once: true }
+        );
+      }
+    }
+  }
+
+  document.addEventListener("astro:page-load", init);
+</script>

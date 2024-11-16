@@ -93,11 +93,13 @@ export default defineConfig({
         TURNSTILE_SITE_KEY: envField.string({
           context: "client",
           access: "public",
+          default: "1x00000000000000000000AA",
         }),
         TURNSTILE_SITEVERIFY_URL: envField.string({
           context: "server",
           access: "public",
           url: true,
+          default: "https://challenges.cloudflare.com/turnstile/v0/siteverify",
         }),
         TURNSTILE_SECRET_KEY: envField.string({
           context: "server",
