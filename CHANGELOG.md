@@ -1,5 +1,14 @@
 # homepage
 
+## 1.6.16
+
+### Patch Changes
+
+- dd52089: improve project page lighthouse score
+- dde617a: lazy load turnstile script on form focus
+- d742aaf: add mastodon profile
+- e565347: update to svelte 5
+
 ## 1.6.15
 
 ### Patch Changes
