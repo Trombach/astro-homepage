@@ -40,7 +40,7 @@
     "@fontsource/lobster": "^5.1.0",
     "@iconify-json/heroicons": "^1.2.1",
     "@iconify-json/logos": "^1.2.3",
-    "@iconify-json/simple-icons": "^1.2.12",
+    "@iconify-json/simple-icons": "^1.2.13",
     "@inox-tools/content-utils": "^0.7.4",
     "@microflash/rehype-figure": "^2.1.1",
     "@tailwindcss/container-queries": "^0.1.1",
