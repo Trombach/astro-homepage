@@ -25,7 +25,7 @@ importers:
         version: 3.2.1
       '@astrojs/svelte':
         specifier: ^6.0.2
-        version: 6.0.2(@types/node@22.10.0)(astro@4.16.15(@types/node@22.10.0)(rollup@4.27.4)(typescript@5.7.2))(svelte@5.2.7)(typescript@5.7.2)
+        version: 6.0.2(@types/node@22.10.0)(astro@4.16.15(@types/node@22.10.0)(rollup@4.27.4)(typescript@5.7.2))(svelte@5.2.8)(typescript@5.7.2)
       '@astrojs/tailwind':
         specifier: ^5.1.2
         version: 5.1.2(astro@4.16.15(@types/node@22.10.0)(rollup@4.27.4)(typescript@5.7.2))(tailwindcss@3.4.15(ts-node@10.9.1(@types/node@22.10.0)(typescript@5.7.2)))(ts-node@10.9.1(@types/node@22.10.0)(typescript@5.7.2))
@@ -51,8 +51,8 @@ importers:
         specifier: ^1.2.3
         version: 1.2.3
       '@iconify-json/simple-icons':
-        specifier: ^1.2.12
-        version: 1.2.12
+        specifier: ^1.2.13
+        version: 1.2.13
       '@inox-tools/content-utils':
         specifier: ^0.7.4
         version: 0.7.4(astro@4.16.15(@types/node@22.10.0)(rollup@4.27.4)(typescript@5.7.2))
@@ -105,14 +105,14 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       svelte:
-        specifier: ^5.2.7
-        version: 5.2.7
+        specifier: ^5.2.8
+        version: 5.2.8
       tailwindcss:
         specifier: ^3.4.15
         version: 3.4.15(ts-node@10.9.1(@types/node@22.10.0)(typescript@5.7.2))
       unplugin-icons:
         specifier: ^0.20.1
-        version: 0.20.1(svelte@5.2.7)
+        version: 0.20.1(svelte@5.2.8)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.4
@@ -143,7 +143,7 @@ importers:
         version: 9.1.7
       svelte-check:
         specifier: ^4.1.0
-        version: 4.1.0(picomatch@4.0.2)(svelte@5.2.7)(typescript@5.7.2)
+        version: 4.1.0(picomatch@4.0.2)(svelte@5.2.8)(typescript@5.7.2)
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
@@ -675,8 +675,8 @@ packages:
   '@iconify-json/logos@1.2.3':
     resolution: {integrity: sha512-JLHS5hgZP1b55EONAWNeqBUuriRfRNKWXK4cqYx0PpVaJfIIMiiMxFfvoQiX/bkE9XgkLhcKmDUqL3LXPdXPwQ==}
 
-  '@iconify-json/simple-icons@1.2.12':
-    resolution: {integrity: sha512-lRNORrIdeLStShxAjN6FgXE1iMkaAgiAHZdP0P0GZecX91FVYW58uZnRSlXLlSx5cxMoELulkAAixybPA2g52g==}
+  '@iconify-json/simple-icons@1.2.13':
+    resolution: {integrity: sha512-rRQjMoIt/kPfaD+fnBC9YZQpso3hkn8xPeadl+YWhscJ5SVUCdB9oTeR9VIpt+/5Yi8vEkh2UOWFPq4lz3ee2A==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -2461,9 +2461,6 @@ packages:
   magic-string@0.30.12:
     resolution: {integrity: sha512-Ea8I3sQMVXr8JhN4z+H/d8zwo+tYDgHE9+5G4Wnrwhs0gaK9fXTKx0Tw5Xwsd/bCPTTZNRAdpyzvoeORe9LYpw==}
 
-  magic-string@0.30.13:
-    resolution: {integrity: sha512-8rYBO+MsWkgjDSOvLomYnzhdwEG51olQ4zL5KXnNJWV5MNmrb4rTZdrtkhxjnD/QyZUqR/Z/XDsUs/4ej2nx0g==}
-
   magic-string@0.30.14:
     resolution: {integrity: sha512-5c99P1WKTed11ZC0HMJOj6CDIue6F8ySu+bJL+85q1zBEIY8IklrJ1eiKC2NDRh3Ct3FcvmJPyQHb9erXMTJNw==}
 
@@ -3531,8 +3528,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.2.7:
-    resolution: {integrity: sha512-cEhPGuLHiH2+Z8B1FwQgiZJgA39uUmJR4516TKrM5zrp0/cuwJkfhUfcTxhAkznanAF5fXUKzvYR4o+Ksx3ZCQ==}
+  svelte@5.2.8:
+    resolution: {integrity: sha512-VU7a01XwnFi6wXVkH5QY3FYXRZWrhsWZhaE8AYU6UeYZdslE3TFgQq6+HLrbMjOLkVhdKt74NGHYbhFeErQQ6g==}
     engines: {node: '>=18'}
 
   tabbable@6.2.0:
@@ -4196,12 +4193,12 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/svelte@6.0.2(@types/node@22.10.0)(astro@4.16.15(@types/node@22.10.0)(rollup@4.27.4)(typescript@5.7.2))(svelte@5.2.7)(typescript@5.7.2)':
+  '@astrojs/svelte@6.0.2(@types/node@22.10.0)(astro@4.16.15(@types/node@22.10.0)(rollup@4.27.4)(typescript@5.7.2))(svelte@5.2.8)(typescript@5.7.2)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 4.0.1(svelte@5.2.7)(vite@5.4.11(@types/node@22.10.0))
+      '@sveltejs/vite-plugin-svelte': 4.0.1(svelte@5.2.8)(vite@5.4.11(@types/node@22.10.0))
       astro: 4.16.15(@types/node@22.10.0)(rollup@4.27.4)(typescript@5.7.2)
-      svelte: 5.2.7
-      svelte2tsx: 0.7.28(svelte@5.2.7)(typescript@5.7.2)
+      svelte: 5.2.8
+      svelte2tsx: 0.7.28(svelte@5.2.8)(typescript@5.7.2)
       typescript: 5.7.2
       vite: 5.4.11(@types/node@22.10.0)
     transitivePeerDependencies:
@@ -4722,7 +4719,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/simple-icons@1.2.12':
+  '@iconify-json/simple-icons@1.2.13':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -5069,23 +5066,23 @@ snapshots:
 
   '@sinclair/typebox@0.25.24': {}
 
-  '@sveltejs/vite-plugin-svelte-inspector@3.0.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.7)(vite@5.4.11(@types/node@22.10.0)))(svelte@5.2.7)(vite@5.4.11(@types/node@22.10.0))':
+  '@sveltejs/vite-plugin-svelte-inspector@3.0.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.8)(vite@5.4.11(@types/node@22.10.0)))(svelte@5.2.8)(vite@5.4.11(@types/node@22.10.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 4.0.1(svelte@5.2.7)(vite@5.4.11(@types/node@22.10.0))
+      '@sveltejs/vite-plugin-svelte': 4.0.1(svelte@5.2.8)(vite@5.4.11(@types/node@22.10.0))
       debug: 4.3.7
-      svelte: 5.2.7
+      svelte: 5.2.8
       vite: 5.4.11(@types/node@22.10.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.7)(vite@5.4.11(@types/node@22.10.0))':
+  '@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.8)(vite@5.4.11(@types/node@22.10.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 3.0.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.7)(vite@5.4.11(@types/node@22.10.0)))(svelte@5.2.7)(vite@5.4.11(@types/node@22.10.0))
+      '@sveltejs/vite-plugin-svelte-inspector': 3.0.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.8)(vite@5.4.11(@types/node@22.10.0)))(svelte@5.2.8)(vite@5.4.11(@types/node@22.10.0))
       debug: 4.3.7
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.14
-      svelte: 5.2.7
+      svelte: 5.2.8
       vite: 5.4.11(@types/node@22.10.0)
       vitefu: 1.0.3(vite@5.4.11(@types/node@22.10.0))
     transitivePeerDependencies:
@@ -6757,10 +6754,6 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  magic-string@0.30.13:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.0
-
   magic-string@0.30.14:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -8295,26 +8288,26 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-check@4.1.0(picomatch@4.0.2)(svelte@5.2.7)(typescript@5.7.2):
+  svelte-check@4.1.0(picomatch@4.0.2)(svelte@5.2.8)(typescript@5.7.2):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.1
       fdir: 6.4.2(picomatch@4.0.2)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.2.7
+      svelte: 5.2.8
       typescript: 5.7.2
     transitivePeerDependencies:
       - picomatch
 
-  svelte2tsx@0.7.28(svelte@5.2.7)(typescript@5.7.2):
+  svelte2tsx@0.7.28(svelte@5.2.8)(typescript@5.7.2):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.2.7
+      svelte: 5.2.8
       typescript: 5.7.2
 
-  svelte@5.2.7:
+  svelte@5.2.8:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -8327,7 +8320,7 @@ snapshots:
       esrap: 1.2.2
       is-reference: 3.0.3
       locate-character: 3.0.0
-      magic-string: 0.30.13
+      magic-string: 0.30.14
       zimmerframe: 1.1.2
 
   tabbable@6.2.0: {}
@@ -8555,7 +8548,7 @@ snapshots:
 
   unpipe@1.0.0: {}
 
-  unplugin-icons@0.20.1(svelte@5.2.7):
+  unplugin-icons@0.20.1(svelte@5.2.8):
     dependencies:
       '@antfu/install-pkg': 0.4.1
       '@antfu/utils': 0.7.10
@@ -8565,7 +8558,7 @@ snapshots:
       local-pkg: 0.5.0
       unplugin: 1.16.0
     optionalDependencies:
-      svelte: 5.2.7
+      svelte: 5.2.8
     transitivePeerDependencies:
       - supports-color
 
