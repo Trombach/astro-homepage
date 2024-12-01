@@ -1,5 +1,4 @@
 ---
-import Background from "@components/Background/Background.astro";
 import Footer from "@components/Footer/Footer.astro";
 import Favicon from "@components/Head/Favicon.astro";
 import Preload from "@components/Head/Preload.astro";
@@ -7,10 +6,11 @@ import Webmentions from "@components/Head/Webmentions.astro";
 import Navbar from "@components/Nav/Navbar.astro";
 import ThemeProvider from "@components/Nav/ThemeProvider.astro";
 import SEO from "@components/SEO.astro";
+import NativeViewTransitions from "@components/ViewTransitions/NativeViewTransitions.astro";
+
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
 import "@fontsource/lobster";
-import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -39,14 +39,13 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <slot name="seo">
       <SEO {title} {description} />
     </slot>
-    <ViewTransitions />
+    <NativeViewTransitions />
     <ThemeProvider />
   </head>
   <body class="antialiased">
-    <Background />
     <Navbar />
     <main
-      transition:name="main-content"
+      transition:name="main"
       class="flex w-full flex-col items-center mt-[--header-height]"
     >
       <slot />
@@ -56,6 +55,14 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <style is:global>
       @tailwind base;
       @tailwind utilities;
+
+      ::view-transition-group(*) {
+        animation-duration: 500ms;
+      }
+
+      ::view-transition-group(header) {
+        z-index: 999;
+      }
 
       @layer base {
         :root {
