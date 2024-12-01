@@ -12,7 +12,7 @@ const sortOrder = [
   "research-hub",
   "timing-dashboard",
   "phd-thesis",
-] as const satisfies Array<(typeof projects)[number]["slug"]>;
+];
 
 const [title, description] = ["My Projects", "What I've been working on"];
 ---
@@ -30,9 +30,9 @@ const [title, description] = ["My Projects", "What I've been working on"];
   >
     {
       projects
-        .sort((a, b) => sortOrder.indexOf(a.slug) - sortOrder.indexOf(b.slug))
-        .map(({ slug, data }) => (
-          <ProjectCard {...data} href={`/projects/${slug}`} />
+        .sort((a, b) => sortOrder.indexOf(a.id) - sortOrder.indexOf(b.id))
+        .map(({ id, data }) => (
+          <ProjectCard {...data} href={`/projects/${id}`} />
         ))
     }
   </ul>

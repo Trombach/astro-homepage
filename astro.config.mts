@@ -65,6 +65,7 @@ export default defineConfig({
   site: "https://www.lukastrombach.dev",
   trailingSlash: "never",
   experimental: {
+    contentLayer: true,
     contentIntellisense: true,
     serverIslands: true,
     env: {
