@@ -25,7 +25,7 @@ importers:
         version: 3.2.1
       '@astrojs/svelte':
         specifier: ^6.0.2
-        version: 6.0.2(@types/node@22.10.1)(astro@4.16.16(@types/node@22.10.1)(rollup@4.27.4)(typescript@5.7.2))(svelte@5.2.10)(typescript@5.7.2)
+        version: 6.0.2(@types/node@22.10.1)(astro@4.16.16(@types/node@22.10.1)(rollup@4.27.4)(typescript@5.7.2))(svelte@5.4.0)(typescript@5.7.2)
       '@astrojs/tailwind':
         specifier: ^5.1.2
         version: 5.1.2(astro@4.16.16(@types/node@22.10.1)(rollup@4.27.4)(typescript@5.7.2))(tailwindcss@3.4.15(ts-node@10.9.1(@types/node@22.10.1)(typescript@5.7.2)))(ts-node@10.9.1(@types/node@22.10.1)(typescript@5.7.2))
@@ -105,14 +105,14 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       svelte:
-        specifier: ^5.2.10
-        version: 5.2.10
+        specifier: ^5.4.0
+        version: 5.4.0
       tailwindcss:
         specifier: ^3.4.15
         version: 3.4.15(ts-node@10.9.1(@types/node@22.10.1)(typescript@5.7.2))
       unplugin-icons:
         specifier: ^0.20.2
-        version: 0.20.2(svelte@5.2.10)
+        version: 0.20.2(svelte@5.4.0)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.4
@@ -143,7 +143,7 @@ importers:
         version: 9.1.7
       svelte-check:
         specifier: ^4.1.0
-        version: 4.1.0(picomatch@4.0.2)(svelte@5.2.10)(typescript@5.7.2)
+        version: 4.1.0(picomatch@4.0.2)(svelte@5.4.0)(typescript@5.7.2)
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
@@ -1911,8 +1911,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  esrap@1.2.2:
-    resolution: {integrity: sha512-F2pSJklxx1BlQIQgooczXCPHmcWpn6EsP5oo73LQfonG9fIlIENQ8vMmfGXeojP9MrkzUNAfyU5vdFlR9shHAw==}
+  esrap@1.2.3:
+    resolution: {integrity: sha512-ZlQmCCK+n7SGoqo7DnfKaP1sJZa49P01/dXzmjCASSo04p72w8EksT2NMK8CEX8DhKsfJXANioIw8VyHNsBfvQ==}
 
   estree-util-attach-comments@3.0.0:
     resolution: {integrity: sha512-cKUwm/HUcTDsYh/9FgnuFqpfquUbwIqwKM26BVCGDPVgvaCl/nDCCjUfiLlx6lsEZ3Z4RFxNbOQ60pkaEwFxGw==}
@@ -3534,8 +3534,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.2.10:
-    resolution: {integrity: sha512-ON0OyO7vOmSjTc9mLjusu3vf1I7BvjovbiRB7j84F1WZMXV6dR+Tj4btIzxQxMHfzbGskaFmRa7qjgmBSVBnhQ==}
+  svelte@5.4.0:
+    resolution: {integrity: sha512-2I/mjD8cXDpKfdfUK+T6yo/OzugMXIm8lhyJUFM5F/gICMYnkl3C/+4cOSpia8TqpDsi6Qfm5+fdmBNMNmaf2g==}
     engines: {node: '>=18'}
 
   tabbable@6.2.0:
@@ -4204,12 +4204,12 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/svelte@6.0.2(@types/node@22.10.1)(astro@4.16.16(@types/node@22.10.1)(rollup@4.27.4)(typescript@5.7.2))(svelte@5.2.10)(typescript@5.7.2)':
+  '@astrojs/svelte@6.0.2(@types/node@22.10.1)(astro@4.16.16(@types/node@22.10.1)(rollup@4.27.4)(typescript@5.7.2))(svelte@5.4.0)(typescript@5.7.2)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 4.0.1(svelte@5.2.10)(vite@5.4.11(@types/node@22.10.1))
+      '@sveltejs/vite-plugin-svelte': 4.0.1(svelte@5.4.0)(vite@5.4.11(@types/node@22.10.1))
       astro: 4.16.16(@types/node@22.10.1)(rollup@4.27.4)(typescript@5.7.2)
-      svelte: 5.2.10
-      svelte2tsx: 0.7.28(svelte@5.2.10)(typescript@5.7.2)
+      svelte: 5.4.0
+      svelte2tsx: 0.7.28(svelte@5.4.0)(typescript@5.7.2)
       typescript: 5.7.2
       vite: 5.4.11(@types/node@22.10.1)
     transitivePeerDependencies:
@@ -5077,23 +5077,23 @@ snapshots:
 
   '@sinclair/typebox@0.25.24': {}
 
-  '@sveltejs/vite-plugin-svelte-inspector@3.0.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.10)(vite@5.4.11(@types/node@22.10.1)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.10.1))':
+  '@sveltejs/vite-plugin-svelte-inspector@3.0.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.4.0)(vite@5.4.11(@types/node@22.10.1)))(svelte@5.4.0)(vite@5.4.11(@types/node@22.10.1))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 4.0.1(svelte@5.2.10)(vite@5.4.11(@types/node@22.10.1))
+      '@sveltejs/vite-plugin-svelte': 4.0.1(svelte@5.4.0)(vite@5.4.11(@types/node@22.10.1))
       debug: 4.3.7
-      svelte: 5.2.10
+      svelte: 5.4.0
       vite: 5.4.11(@types/node@22.10.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.10)(vite@5.4.11(@types/node@22.10.1))':
+  '@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.4.0)(vite@5.4.11(@types/node@22.10.1))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 3.0.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.2.10)(vite@5.4.11(@types/node@22.10.1)))(svelte@5.2.10)(vite@5.4.11(@types/node@22.10.1))
+      '@sveltejs/vite-plugin-svelte-inspector': 3.0.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.4.0)(vite@5.4.11(@types/node@22.10.1)))(svelte@5.4.0)(vite@5.4.11(@types/node@22.10.1))
       debug: 4.3.7
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.14
-      svelte: 5.2.10
+      svelte: 5.4.0
       vite: 5.4.11(@types/node@22.10.1)
       vitefu: 1.0.4(vite@5.4.11(@types/node@22.10.1))
     transitivePeerDependencies:
@@ -6121,7 +6121,7 @@ snapshots:
 
   esprima@4.0.1: {}
 
-  esrap@1.2.2:
+  esrap@1.2.3:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
       '@types/estree': 1.0.6
@@ -8301,26 +8301,26 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-check@4.1.0(picomatch@4.0.2)(svelte@5.2.10)(typescript@5.7.2):
+  svelte-check@4.1.0(picomatch@4.0.2)(svelte@5.4.0)(typescript@5.7.2):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.1
       fdir: 6.4.2(picomatch@4.0.2)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.2.10
+      svelte: 5.4.0
       typescript: 5.7.2
     transitivePeerDependencies:
       - picomatch
 
-  svelte2tsx@0.7.28(svelte@5.2.10)(typescript@5.7.2):
+  svelte2tsx@0.7.28(svelte@5.4.0)(typescript@5.7.2):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.2.10
+      svelte: 5.4.0
       typescript: 5.7.2
 
-  svelte@5.2.10:
+  svelte@5.4.0:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -8330,7 +8330,7 @@ snapshots:
       aria-query: 5.3.2
       axobject-query: 4.1.0
       esm-env: 1.2.1
-      esrap: 1.2.2
+      esrap: 1.2.3
       is-reference: 3.0.3
       locate-character: 3.0.0
       magic-string: 0.30.14
@@ -8561,7 +8561,7 @@ snapshots:
 
   unpipe@1.0.0: {}
 
-  unplugin-icons@0.20.2(svelte@5.2.10):
+  unplugin-icons@0.20.2(svelte@5.4.0):
     dependencies:
       '@antfu/install-pkg': 0.5.0
       '@antfu/utils': 0.7.10
@@ -8571,7 +8571,7 @@ snapshots:
       local-pkg: 0.5.1
       unplugin: 1.16.0
     optionalDependencies:
-      svelte: 5.2.10
+      svelte: 5.4.0
     transitivePeerDependencies:
       - supports-color
 
