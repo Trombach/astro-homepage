@@ -1,6 +1,6 @@
 ---
 import { getImage } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import ProjectPage from "@components/ProjectPage/ProjectPage.astro";
 import SEO from "@components/SEO.astro";
 import Layout from "@layouts/Layout.astro";
@@ -9,20 +9,18 @@ import type { GetImageResult } from "astro";
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { id: entry.id },
     props: { entry },
   }));
 }
 
+const entry = Astro.props.entry;
 const {
-  entry: {
-    slug,
-    data: { title, description, ...extraProps },
-    render,
-  },
-} = Astro.props;
+  id,
+  data: { title, description, ...extraProps },
+} = entry;
 
-const { Content, headings } = await render();
+const { Content, headings } = await render(entry);
 let img: GetImageResult | undefined;
 if (extraProps.cover.image) {
   img = await getImage({
@@ -41,7 +39,7 @@ if (extraProps.cover.image) {
     slot="seo"
     {title}
     {description}
-    imageURL={new URL(`og/${slug}.png`, Astro.url.origin)}
+    imageURL={new URL(`og/${id}.png`, Astro.url.origin)}
   />
 
   {

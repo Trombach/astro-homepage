@@ -1,8 +1,5 @@
-/// <reference path="../.astro/env.d.ts" />
 /// <reference path="../.astro/types.d.ts" />
-/// <reference path="../.astro/actions.d.ts" />
-/// <reference types="astro/client" />
-/// <reference types="npm i @types/cloudflare-turnstile" />
+/// <reference types="@types/cloudflare-turnstile" />
 
 // Workaround for icon type checking
 declare module "icons:astro/*" {

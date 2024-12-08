@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import GithubLogo from "icons:astro/logos/github-icon";
 import Graph from "../Graph/Graph.svelte";
 import Copyright from "./Copyright.astro";
@@ -31,7 +32,7 @@ import Copyright from "./Copyright.astro";
 
       <Copyright />
       <a href="https://astro.build" class="md:hidden">
-        <img
+        <Image
           src="https://astro.badg.es/v2/built-with-astro/tiny.svg"
           alt="Built with Astro"
           width="120"
@@ -39,7 +40,7 @@ import Copyright from "./Copyright.astro";
         />
       </a>
       <a href="https://astro.build" class="hidden md:block">
-        <img
+        <Image
           src="https://astro.badg.es/v2/built-with-astro/small.svg"
           alt="Built with Astro"
           width="192"

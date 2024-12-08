@@ -3,6 +3,11 @@ import { getEntry } from "astro:content";
 
 export async function GET() {
   const person = await getEntry("person", "lukas");
+
+  if (!person) {
+    return new Response("Person not found", { status: 404 });
+  }
+
   const { data } = person;
   const [firstName, lastName] = data.name.split(" ");
   const { city, region, zip, country } = data.currentLocation;

@@ -3,9 +3,13 @@ import { getEntry } from "astro:content";
 import MeCardData from "./MeCardData.astro";
 import MeCardImage from "./MeCardImage.astro";
 
-const {
-  data: { person },
-} = await getEntry("about", "about-me");
+const aboutMe = await getEntry("about", "about-me");
+
+if (!aboutMe) {
+  throw new Error("About me entry not found");
+}
+
+const { person } = aboutMe.data;
 const { data } = await getEntry(person);
 ---
 
