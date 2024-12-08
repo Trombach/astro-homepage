@@ -1,5 +1,12 @@
 # homepage
 
+## 1.7.0
+
+### Minor Changes
+
+- 05956d6: Remove ViewTransitions polyfill and move to native transitions
+- 4476a30: Update to Astro 5
+
 ## 1.6.16
 
 ### Patch Changes
