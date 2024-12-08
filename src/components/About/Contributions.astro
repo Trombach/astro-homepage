@@ -4,7 +4,6 @@ import AppLink from "@components/AppLink.astro";
 import Heading from "@components/Heading.astro";
 import Calendar from "./ContributionsCalendar/Calendar.astro";
 import CalendarGrid from "./ContributionsCalendar/CalendarGrid.astro";
-import { CalendarTileSkeleton } from "./ContributionsCalendar/CalendarTile";
 ---
 
 <section
@@ -27,7 +26,7 @@ import { CalendarTileSkeleton } from "./ContributionsCalendar/CalendarTile";
           <CalendarGrid>
             {
               Array.from(Array(52 * 7).keys()).map(() => (
-                <CalendarTileSkeleton />
+                <div class="size-2 animate-pulse rounded-sm bg-slate-300 lg:size-3 xl:size-4 dark:bg-slate-900" />
               ))
             }
           </CalendarGrid>

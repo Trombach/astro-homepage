@@ -94,9 +94,3 @@ export default function CalendarTile({ contributions, date }: Props) {
     </>
   );
 }
-
-export function CalendarTileSkeleton() {
-  return (
-    <div className="size-2 animate-pulse rounded-sm bg-slate-300 lg:size-3 xl:size-4 dark:bg-slate-900" />
-  );
-}
