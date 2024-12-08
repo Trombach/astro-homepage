@@ -1,12 +1,15 @@
 ---
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 import Heading from "@components/Heading.astro";
 
-const {
-  render,
-  data: { title },
-} = await getEntry("about", "about-me");
-const { Content } = await render();
+const aboutMe = await getEntry("about", "about-me");
+
+if (!aboutMe) {
+  throw new Error("About me entry not found");
+}
+
+const { title } = aboutMe.data;
+const { Content } = await render(aboutMe);
 ---
 
 <div class="p-10 sm:p-20 lg:p-10 shrink-0 lg:w-1/2 lg:ml-auto">

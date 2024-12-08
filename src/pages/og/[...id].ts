@@ -19,7 +19,7 @@ pages.contact = {
 };
 
 export const { getStaticPaths, GET } = OGImageRoute({
-  param: "slug",
+  param: "id",
   pages,
   getImageOptions: (_path, page: (typeof pages)[number]) => {
     return {

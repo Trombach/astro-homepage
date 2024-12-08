@@ -1,13 +1,16 @@
 ---
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 import TechGrid from "@components/About/TechGrid.astro";
 import Heading from "@components/Heading.astro";
 
-const {
-  render,
-  data: { title },
-} = await getEntry("about", "tech");
-const { Content } = await render();
+const tech = await getEntry("about", "tech");
+
+if (!tech) {
+  throw new Error("Tech entry not found");
+}
+
+const { title } = tech.data;
+const { Content } = await render(tech);
 ---
 
 <section

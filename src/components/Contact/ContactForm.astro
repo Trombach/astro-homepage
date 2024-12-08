@@ -11,9 +11,13 @@ import SendEmailResponse from "@components/Contact/SendEmailResponse.astro";
 import Heading from "@components/Heading.astro";
 import FormFields from "./FormFields.astro";
 
-const {
-  data: { person },
-} = await getEntry("about", "about-me");
+const aboutMe = await getEntry("about", "about-me");
+
+if (!aboutMe) {
+  throw new Error("About me entry not found");
+}
+
+const { person } = aboutMe.data;
 const { data } = await getEntry(person);
 ---
 

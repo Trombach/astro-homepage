@@ -5,7 +5,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
@@ -57,55 +57,53 @@ export default defineConfig({
       ],
     },
   },
-  output: "hybrid",
   adapter: vercel({
     imageService: false,
     maxDuration: 60,
   }),
   site: "https://www.lukastrombach.dev",
   trailingSlash: "never",
+  env: {
+    schema: {
+      GH_TOKEN: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      VERCEL_URL: envField.string({
+        context: "server",
+        access: "public",
+        optional: true,
+      }),
+      RESEND_TOKEN: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      VERCEL_STORAGE_URL: envField.string({
+        context: "server",
+        access: "public",
+      }),
+      CV_FILE_NAME: envField.string({
+        context: "server",
+        access: "public",
+      }),
+      TURNSTILE_SITE_KEY: envField.string({
+        context: "client",
+        access: "public",
+        default: "1x00000000000000000000AA",
+      }),
+      TURNSTILE_SITEVERIFY_URL: envField.string({
+        context: "server",
+        access: "public",
+        url: true,
+        default: "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      }),
+      TURNSTILE_SECRET_KEY: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+    },
+  },
   experimental: {
     contentIntellisense: true,
-    serverIslands: true,
-    env: {
-      schema: {
-        GH_TOKEN: envField.string({
-          context: "server",
-          access: "secret",
-        }),
-        VERCEL_URL: envField.string({
-          context: "server",
-          access: "public",
-          optional: true,
-        }),
-        RESEND_TOKEN: envField.string({
-          context: "server",
-          access: "secret",
-        }),
-        VERCEL_STORAGE_URL: envField.string({
-          context: "server",
-          access: "public",
-        }),
-        CV_FILE_NAME: envField.string({
-          context: "server",
-          access: "public",
-        }),
-        TURNSTILE_SITE_KEY: envField.string({
-          context: "client",
-          access: "public",
-          default: "1x00000000000000000000AA",
-        }),
-        TURNSTILE_SITEVERIFY_URL: envField.string({
-          context: "server",
-          access: "public",
-          url: true,
-          default: "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-        }),
-        TURNSTILE_SECRET_KEY: envField.string({
-          context: "server",
-          access: "secret",
-        }),
-      },
-    },
   },
 });
