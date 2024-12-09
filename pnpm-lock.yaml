@@ -69,8 +69,8 @@ importers:
         specifier: ^5.0.3
         version: 5.0.3(@types/node@22.10.1)(jiti@1.21.6)(rollup@4.27.4)(typescript@5.7.2)(yaml@2.6.1)
       astro-og-canvas:
-        specifier: ^0.5.4
-        version: 0.5.4(astro@5.0.3(@types/node@22.10.1)(jiti@1.21.6)(rollup@4.27.4)(typescript@5.7.2)(yaml@2.6.1))
+        specifier: ^0.5.5
+        version: 0.5.5(astro@5.0.3(@types/node@22.10.1)(jiti@1.21.6)(rollup@4.27.4)(typescript@5.7.2)(yaml@2.6.1))
       astro-starlight-remark-asides:
         specifier: ^0.0.7
         version: 0.0.7(remark-directive@3.0.0)
@@ -1506,11 +1506,11 @@ packages:
     peerDependencies:
       astro: ^4.12.0 || ^5.0.0-beta
 
-  astro-og-canvas@0.5.4:
-    resolution: {integrity: sha512-bKopjX5DZ0WZH3kmUl82EVBhGzoCQwH5Ja4YdB5MO1EtWFZpWzvKWWptsOKGhjz+Kn85+gD/kgw25ebrvYufSg==}
+  astro-og-canvas@0.5.5:
+    resolution: {integrity: sha512-dbZ7voJAmvy8Zyv5zFsgENs9G4uhcCJ4nVuUPb7ymu8+Vp/jr/fdQDKPrLYUG2TSi/1HejYRnzkXcSv6ntlDTA==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
-      astro: ^3.0.0 || ^4.0.0
+      astro: ^3.0.0 || ^4.0.0 || ^5.0.0
 
   astro-starlight-remark-asides@0.0.7:
     resolution: {integrity: sha512-+VqjlOvWGi65mLwJ6r7IWdngqGHz2kNs0tkSnFgmKUGiQn4NLYkDs+UlOs/ZbhtxUti8bdFflevyZhN6TgyIYw==}
@@ -5715,7 +5715,7 @@ snapshots:
       pathe: 1.1.2
       recast: 0.23.9
 
-  astro-og-canvas@0.5.4(astro@5.0.3(@types/node@22.10.1)(jiti@1.21.6)(rollup@4.27.4)(typescript@5.7.2)(yaml@2.6.1)):
+  astro-og-canvas@0.5.5(astro@5.0.3(@types/node@22.10.1)(jiti@1.21.6)(rollup@4.27.4)(typescript@5.7.2)(yaml@2.6.1)):
     dependencies:
       astro: 5.0.3(@types/node@22.10.1)(jiti@1.21.6)(rollup@4.27.4)(typescript@5.7.2)(yaml@2.6.1)
       canvaskit-wasm: 0.39.1
