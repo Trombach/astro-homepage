@@ -57,14 +57,6 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
     ]}></span>
 </fieldset>
 
-<script is:inline>
-  window.ThemeProvider.initTheme();
-
-  document.addEventListener("astro:before-swap", (event) =>
-    window.ThemeProvider.initTheme(event.newDocument),
-  );
-</script>
-
 <script>
   declare global {
     interface Window {
@@ -90,8 +82,6 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
   }
 
   init();
-
-  document.addEventListener("astro:after-swap", init);
 
   // react to system theme change
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {

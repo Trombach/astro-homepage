@@ -52,10 +52,6 @@ type Props = {
   }
 
   init();
-
-  document.addEventListener("astro:before-swap", (event) =>
-    init(event.newDocument),
-  );
 </script>
 
 <style>
