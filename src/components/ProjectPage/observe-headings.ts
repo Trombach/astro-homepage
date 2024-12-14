@@ -72,5 +72,3 @@ function setupObserver() {
 }
 
 setupObserver();
-
-document.addEventListener("astro:after-swap", setupObserver);
