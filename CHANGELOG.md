@@ -1,5 +1,11 @@
 # homepage
 
+## 1.7.1
+
+### Patch Changes
+
+- f78f70a: remove unused lifecycle event listeners
+
 ## 1.7.0
 
 ### Minor Changes
