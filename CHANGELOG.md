@@ -1,5 +1,11 @@
 # homepage
 
+## 1.8.0
+
+### Minor Changes
+
+- a425d13: remove React
+
 ## 1.7.1
 
 ### Patch Changes
