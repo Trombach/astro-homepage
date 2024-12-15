@@ -1,7 +1,7 @@
 ---
 import getGithubContributions from "@utils/contributionsCalendar";
 import CalendarGrid from "./CalendarGrid.astro";
-import CalendarTile from "./CalendarTile";
+import CalendarTile from "./CalendarTile.astro";
 
 const result = await getGithubContributions();
 ---
@@ -21,7 +21,6 @@ const result = await getGithubContributions();
             <CalendarTile
               contributions={contributionCount}
               {date}
-              client:visible
             />
           )),
         )}

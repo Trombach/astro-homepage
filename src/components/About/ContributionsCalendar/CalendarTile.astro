@@ -1,0 +1,155 @@
+---
+import FloatingArrow from "./FloatingArrow.astro";
+
+type Props = {
+  contributions: number;
+  date: Date;
+};
+
+const { contributions, date } = Astro.props;
+const tooltipId = date.getTime();
+---
+
+<div
+  data-tooltip={tooltipId}
+  class:list={[
+    contributions === 0 && "bg-slate-300 dark:bg-slate-900",
+    contributions > 0 && contributions <= 5 && "bg-green-950",
+    contributions > 5 && contributions <= 10 && "bg-green-900",
+    contributions > 10 && contributions <= 15 && "bg-green-800",
+    contributions > 15 && contributions <= 25 && "bg-green-600",
+    contributions > 25 && "bg-green-400",
+    "size-2 rounded-sm transition-transform hover:scale-150 lg:size-3 xl:size-4",
+  ]}
+>
+</div>
+<div
+  role="tooltip"
+  data-tooltip-id={tooltipId}
+  class="hidden absolute max-content top-0 left-0 rounded-full bg-accent px-3 py-1"
+>
+  <FloatingArrow tooltipId={tooltipId} />
+  {
+    `${
+      contributions > 1
+        ? `${contributions} contributions`
+        : contributions === 1
+          ? `${contributions} contribution`
+          : "No contributions"
+    } on ${date.toLocaleDateString("en-UK")}`
+  }
+</div>
+
+<script>
+  import {
+    computePosition,
+    flip,
+    shift,
+    offset,
+    arrow,
+  } from "@floating-ui/dom";
+
+  async function init() {
+    const anchors = document.querySelectorAll("[data-tooltip]");
+
+    for (const anchor of anchors) {
+      if (!(anchor instanceof HTMLElement)) {
+        return;
+      }
+      const anchorId = anchor.dataset.tooltip;
+
+      if (!anchorId) {
+        return;
+      }
+      const tooltip = document.querySelector(`[data-tooltip-id="${anchorId}"]`);
+
+      const arrowElement = document.querySelector(
+        `[data-tooltip-arrow="${anchorId}"]`
+      );
+
+      async function update() {
+        if (
+          !(anchor instanceof HTMLElement) ||
+          !(tooltip instanceof HTMLElement)
+        ) {
+          return;
+        }
+
+        const { x, y, placement, middlewareData } = await computePosition(
+          anchor,
+          tooltip,
+          {
+            placement: "top",
+            middleware: [
+              offset(),
+              flip({ fallbackAxisSideDirection: "start" }),
+              shift(),
+              arrowElement && arrow({ element: arrowElement }),
+            ],
+          }
+        );
+        Object.assign(tooltip.style, {
+          left: `${x}px`,
+          top: `${y}px`,
+        });
+
+        if (!middlewareData.arrow || !(arrowElement instanceof HTMLElement)) {
+          return;
+        }
+
+        const key = placement.split("-")[0];
+
+        if (!key) {
+          return;
+        }
+
+        const staticSide = {
+          top: "bottom",
+          right: "left",
+          bottom: "top",
+          left: "right",
+        }[key];
+
+        if (!staticSide) {
+          return;
+        }
+
+        const { x: arrowX, y: arrowY } = middlewareData.arrow;
+
+        Object.assign(arrowElement.style, {
+          left: arrowX != null ? `${arrowX}px` : "",
+          top: arrowY != null ? `${arrowY}px` : "",
+          right: "",
+          bottom: "",
+          [staticSide]: "-4px",
+        });
+      }
+
+      function showTooltip() {
+        if (tooltip instanceof HTMLElement) {
+          tooltip.style.display = "block";
+          update();
+        }
+      }
+
+      function hideTooltip() {
+        if (tooltip instanceof HTMLElement) {
+          tooltip.style.display = "";
+        }
+      }
+
+      (
+        [
+          ["mouseenter", showTooltip],
+          ["mouseleave", hideTooltip],
+          ["focus", showTooltip],
+          ["blur", hideTooltip],
+        ] satisfies Array<[keyof HTMLElementEventMap, () => void]>
+      ).forEach(([event, listener]) => {
+        anchor.addEventListener(event, listener);
+      });
+    }
+  }
+
+  await init();
+</script>
