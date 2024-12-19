@@ -44,7 +44,7 @@
     "@microflash/rehype-figure": "^2.1.1",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.15",
-    "astro": "^5.0.5",
+    "astro": "^5.0.8",
     "astro-og-canvas": "^0.5.5",
     "astro-starlight-remark-asides": "^0.0.7",
     "canvaskit-wasm": "^0.39.1",
