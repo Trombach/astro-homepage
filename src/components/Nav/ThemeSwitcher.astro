@@ -10,7 +10,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
 
 <fieldset
   class:list={[
-    "relative border border-solid flex rounded-full w-fit h-8 box-content sm:order-2",
+    "relative isolate border border-solid flex rounded-full w-fit h-8 box-content sm:order-2",
     "focus-within:outline focus-within:outline-offset-1",
   ]}
 >
@@ -31,7 +31,8 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
         for={`${option}-theme`}
         class:list={[
           "h-8 w-8 flex justify-center items-center rounded-full cursor-pointer",
-          "transition-all text-muted-foreground hover:text-foreground",
+          "transition-all text-muted-foreground hover:text-foreground hover:bg-primary/25", 
+          "transition-colors duration-300 ease-in-out",
         ]}
       >
         <span class="sr-only">{option} theme</span>
@@ -50,10 +51,10 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
   <span
     is="theme-highlight"
     class:list={[
-      "absolute w-8 h-8 rounded-full border-2 border-primary cursor-pointer",
-      "transition-transform duration-300 ease-in-out",
-      "peer-[:nth-of-type(2)]:peer-checked:translate-x-full",
-      "peer-[:nth-of-type(3)]:peer-checked:translate-x-[200%]",
+      "absolute z-10 box-content -top-px -left-px w-8 h-8 rounded-full border hover:border-primary cursor-pointer bg-transparent",
+      "transition-all duration-300 ease-in-out hover:bg-primary/25",
+      "peer-[:nth-of-type(2)]:peer-checked:translate-x-[calc(100%-1.5px)]",
+      "peer-[:nth-of-type(3)]:peer-checked:translate-x-[calc(200%-3px)]",
     ]}></span>
 </fieldset>
 
