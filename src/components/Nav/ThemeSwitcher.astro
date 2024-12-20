@@ -57,6 +57,10 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
     ]}></span>
 </fieldset>
 
+<script is:inline>
+  window.ThemeProvider.initTheme();
+</script>
+
 <script>
   declare global {
     interface Window {
