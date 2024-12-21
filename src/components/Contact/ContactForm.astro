@@ -44,6 +44,7 @@ const { data } = await getEntry(person);
       href=`mailto:${data.contact.email}`
       title="Email me"
     >
+      <span class="sr-only">Email me</span>
       <MailIcon />
     </AppLink>
     <AppLink
@@ -53,6 +54,7 @@ const { data } = await getEntry(person);
       href={data.contact.matrix}
       title="Add me on Matrix"
     >
+      <span class="sr-only">Add me on Matrix</span>
       <MatrixLogo />
     </AppLink>
     <AppLink
@@ -62,6 +64,7 @@ const { data } = await getEntry(person);
       href={data.contact.linkedIn}
       title="Connect with me on LinkedIn"
     >
+      <span class="sr-only">Connect with me on LinkedIn</span>
       <LinkedInLogo />
     </AppLink>
   </div>
