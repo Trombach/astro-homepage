@@ -1,5 +1,12 @@
 # homepage
 
+## 1.8.1
+
+### Patch Changes
+
+- 1237faa: fix theme initialisation and change theme picker style
+- 811eff9: use Astro 5.0.5
+
 ## 1.8.0
 
 ### Minor Changes
