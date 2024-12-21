@@ -31,7 +31,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
         for={`${option}-theme`}
         class:list={[
           "h-8 w-8 flex justify-center items-center rounded-full cursor-pointer",
-          "transition-all text-muted-foreground hover:text-foreground hover:bg-primary/25", 
+          "transition-all text-muted-foreground hover:text-foreground", 
           "transition-colors duration-300 ease-in-out",
         ]}
       >
@@ -49,10 +49,10 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
     ))
   }
   <span
-    is="theme-highlight"
     class:list={[
-      "absolute z-10 box-content -top-px -left-px w-8 h-8 rounded-full border hover:border-primary cursor-pointer bg-transparent",
-      "transition-all duration-300 ease-in-out hover:bg-primary/25",
+      "absolute -z-10 box-content -top-px -left-px w-8 h-8 rounded-full border",
+      "hover:border-primary pointer-events-none bg-primary/25",
+      "transition-all duration-300 ease-in-out",
       "peer-[:nth-of-type(2)]:peer-checked:translate-x-[calc(100%-1.5px)]",
       "peer-[:nth-of-type(3)]:peer-checked:translate-x-[calc(200%-3px)]",
     ]}></span>
