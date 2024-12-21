@@ -28,10 +28,10 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.2",
+    "@astrojs/mdx": "^4.0.3",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/svelte": "^7.0.1",
-    "@astrojs/tailwind": "^5.1.3",
+    "@astrojs/svelte": "^7.0.2",
+    "@astrojs/tailwind": "^5.1.4",
     "@astrojs/vercel": "^8.0.1",
     "@floating-ui/dom": "^1.6.12",
     "@fontsource-variable/inter": "^5.1.0",
@@ -44,7 +44,7 @@
     "@microflash/rehype-figure": "^2.1.1",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.15",
-    "astro": "^5.0.5",
+    "astro": "^5.0.9",
     "astro-og-canvas": "^0.5.5",
     "astro-starlight-remark-asides": "^0.0.7",
     "canvaskit-wasm": "^0.39.1",
