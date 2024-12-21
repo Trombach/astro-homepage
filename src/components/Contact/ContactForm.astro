@@ -70,7 +70,7 @@ const { data } = await getEntry(person);
 
   <FormFields />
 
-  <AppLink id="submit-message" as="button" type="submit" class="self-start">
+  <AppLink disabled id="submit-message" as="button" type="submit" class="self-start">
     Send <PaperPlane />
   </AppLink>
 </form>
@@ -90,11 +90,16 @@ const { data } = await getEntry(person);
       return;
     }
 
+    const submitButton = document.getElementById("submit-message");
+
     turnstile.render(el, {
       appearance: "interaction-only",
       sitekey: el.dataset.sitekey,
       callback: (token) => {
-        console.log(`Challenge Success ${token}`);
+        if (submitButton instanceof HTMLButtonElement) {
+          submitButton.disabled = false;
+        }
+        console.debug(`Challenge Success ${token}`);
       },
     });
   }
