@@ -5,6 +5,7 @@ import MailIcon from "icons:astro/heroicons/envelope";
 import PaperPlane from "icons:astro/heroicons/paper-airplane";
 import LinkedInLogo from "icons:astro/simple-icons/linkedin";
 import MatrixLogo from "icons:astro/simple-icons/matrix";
+import Loading from "icons:astro/svg-spinners/3-dots-bounce";
 import Avatar from "@components/About/MeCard/Avatar.astro";
 import AppLink from "@components/AppLink.astro";
 import SendEmailResponse from "@components/Contact/SendEmailResponse.astro";
@@ -44,6 +45,7 @@ const { data } = await getEntry(person);
       href=`mailto:${data.contact.email}`
       title="Email me"
     >
+      <span class="sr-only">Email me</span>
       <MailIcon />
     </AppLink>
     <AppLink
@@ -53,6 +55,7 @@ const { data } = await getEntry(person);
       href={data.contact.matrix}
       title="Add me on Matrix"
     >
+      <span class="sr-only">Add me on Matrix</span>
       <MatrixLogo />
     </AppLink>
     <AppLink
@@ -62,6 +65,7 @@ const { data } = await getEntry(person);
       href={data.contact.linkedIn}
       title="Connect with me on LinkedIn"
     >
+      <span class="sr-only">Connect with me on LinkedIn</span>
       <LinkedInLogo />
     </AppLink>
   </div>
@@ -70,16 +74,34 @@ const { data } = await getEntry(person);
 
   <FormFields />
 
-  <AppLink id="submit-message" as="button" type="submit" class="self-start">
+  <AppLink
+    disabled
+    id="submit-message"
+    as="button"
+    type="submit"
+    class="self-start"
+  >
     Send <PaperPlane />
   </AppLink>
 </form>
+
+<template id="contact-loading-spinner">
+  <Loading />
+</template>
+
+<template id="contact-send-icon">
+  <PaperPlane />
+</template>
 
 <script>
   const turnstileScriptId = "turnstile-script";
 
   function initWidget() {
     const el = document.getElementById("cf-turnstile");
+    const submitButton = document.getElementById("submit-message");
+    const loadingTemplate = document.getElementById("contact-loading-spinner");
+    const sendIconTemplate = document.getElementById("contact-send-icon");
+
     if (!el) {
       console.error("Could not initialise turnstile widget");
       return;
@@ -90,11 +112,26 @@ const { data } = await getEntry(person);
       return;
     }
 
+    if (submitButton && loadingTemplate instanceof HTMLTemplateElement) {
+      submitButton
+        .querySelector("svg")
+        ?.replaceWith(loadingTemplate.content.cloneNode(true));
+    }
+
     turnstile.render(el, {
       appearance: "interaction-only",
       sitekey: el.dataset.sitekey,
       callback: (token) => {
-        console.log(`Challenge Success ${token}`);
+        if (
+          submitButton instanceof HTMLButtonElement &&
+          sendIconTemplate instanceof HTMLTemplateElement
+        ) {
+          submitButton.disabled = false;
+          submitButton
+            .querySelector("svg")
+            ?.replaceWith(sendIconTemplate.content.cloneNode(true));
+        }
+        console.debug(`Challenge Success ${token}`);
       },
     });
   }

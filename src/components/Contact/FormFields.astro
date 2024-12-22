@@ -73,10 +73,9 @@ const response = Astro.getActionResult(actions.contact);
     </label>
   ))
 }
-
 <div
   id="cf-turnstile"
   data-sitekey={TURNSTILE_SITE_KEY}
-  class="size-0"
->
-</div>
+  aria-hidden="true"
+  class="size-0 hidden"
+/>

@@ -2,10 +2,8 @@
 import { actions, isInputError } from "astro:actions";
 
 const response = Astro.getActionResult(actions.contact);
-console.dir(response, { depth: null });
 ---
 
-{/* TODO: Refactor this*/}
 {
   response && (response.data || !isInputError(response.error)) && (
     <p
@@ -18,18 +16,12 @@ console.dir(response, { depth: null });
       {response.data && response.data.success && "Your message has been sent!"}
 
       {response.error &&
-        !isInputError(response.error) &&
-        `Error sending message: ${response.error.message}`}
+        (isInputError(response.error)
+          /* We handle cf-turnstile-response field errors here since it's not visible in the form */
+          ? response.error.fields["cf-turnstile-response"] &&
+            response.error.fields["cf-turnstile-response"].length > 0 &&
+            "Challenge error. Please refresh the page and try again."
+          : `Error sending message: ${response.error.message}`)}
     </p>
   )
-}
-{
-  response?.error &&
-    isInputError(response.error) &&
-    response.error.fields["cf-turnstile-response"] &&
-    response.error.fields["cf-turnstile-response"].length > 0 && (
-      <p class="rounded-xl border-2 p-6 border-destructive text-destructive">
-        Challenge error. Please refresh the page and try again.
-      </p>
-    )
 }

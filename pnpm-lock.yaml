@@ -50,6 +50,9 @@ importers:
       '@iconify-json/simple-icons':
         specifier: ^1.2.16
         version: 1.2.16
+      '@iconify-json/svg-spinners':
+        specifier: ^1.2.2
+        version: 1.2.2
       '@inox-tools/content-utils':
         specifier: ^0.8.0
         version: 0.8.0(astro@5.0.5(@types/node@22.10.2)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))
@@ -710,6 +713,9 @@ packages:
 
   '@iconify-json/simple-icons@1.2.16':
     resolution: {integrity: sha512-mnQ0Ih8CDIgOqbi0qz01AJNOeFVuGFRimelg3JmJtD0y5EpZVw+enPPcpcxJKipsRZ/oqhcP3AhYkF1kM7yomg==}
+
+  '@iconify-json/svg-spinners@1.2.2':
+    resolution: {integrity: sha512-DIErwfBWWzLfmAG2oQnbUOSqZhDxlXvr8941itMCrxQoMB0Hiv8Ww6Bln/zIgxwjDvSem2dKJtap+yKKwsB/2A==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -4579,6 +4585,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/simple-icons@1.2.16':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/svg-spinners@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
 
