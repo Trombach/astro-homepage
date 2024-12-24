@@ -15,7 +15,6 @@ type Props = {
     "bg-background max-w-[500px] p-5 my-0 border rounded-xl grow self-start w-auto right-0 sticky",
     "top-[calc(var(--header-height)+var(--offset))] [--offset:theme(spacing.2)] left-2 right-2",
     "[&[popover]]:fixed [&[popover]]:[--offset:80px] [&[popover]]:shadow-md",
-    "ease-out"
   ]}
 >
   <div class="relative border-muted pl-4 border-l-2">
@@ -56,20 +55,24 @@ type Props = {
 
 <style>
   [popover] {
-    transform: perspective(800px) rotateX(90deg) scale(0.25);
+    transform: translateY(50px);
+    opacity: 0;
     transition:
-      transform 0.7s,
-      overlay 0.7s allow-discrete,
-      display 0.7s allow-discrete;
+      transform 0.5s,
+      opacity 0.5s,
+      overlay 0.5s allow-discrete,
+      display 0.5s allow-discrete;
   }
 
   [popover]:popover-open {
-    transform: perspective(800px) rotateX(0) scale(1);
+    transform: translateY(0);
+    opacity: 1;
   }
 
   @starting-style {
     [popover]:popover-open {
-      transform: perspective(800px) rotateX(90deg) scale(0.25);
+      transform: translateY(50px);
+      opacity: 0;
     }
   }
 </style>
