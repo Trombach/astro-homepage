@@ -1,5 +1,14 @@
 # homepage
 
+## 1.8.1
+
+### Patch Changes
+
+- 1237faa: fix theme initialisation and change theme picker style
+- e4030dc: simplify TOC popup animation
+- 811eff9: use Astro 5.0.5
+- 6523138: improve contact page
+
 ## 1.8.0
 
 ### Minor Changes
