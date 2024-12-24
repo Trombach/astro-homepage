@@ -33,4 +33,4 @@ jobs:
           cache: "pnpm"
       - run: pnpm install
       - name: Run biome checks
-        run: pnpm format:check
+        run: pnpm biome ci --changed --no-errors-on-unmatched --error-on-warnings
