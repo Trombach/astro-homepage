@@ -4,19 +4,20 @@ import NavigationMenu from "./NavigationMenu.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
-<header data-header="collapsed" transition:name="header" class="group fixed top-0 z-50 w-full px-5 py-3">
+<header
+  data-header="collapsed"
+  transition:name="header"
+  class="group fixed top-0 z-50 w-full px-5 py-3"
+>
   <div
-    class="relative mx-auto flex w-full max-w-screen-xl flex-wrap items-center justify-between lg:flex-nowrap lg:items-center"
+    class="relative mx-auto flex w-full max-w-screen-xl items-center justify-between"
   >
     <MenuButton client:visible />
-    <ThemeSwitcher />
-
-    <hr class="m-0 h-0 w-0 basis-full border-0 sm:hidden sm:basis-0" />
 
     <div
       id="menu-container"
       class:list={[
-        "flex flex-grow flex-col justify-between sm:order-1 sm:flex-row sm:items-center",
+        "flex flex-grow flex-col justify-between sm:flex-row sm:items-center",
         "max-h-0 basis-full overflow-y-hidden transition-[max-height] duration-500",
         "sm:max-h-max sm:basis-auto sm:overflow-y-visible",
         "max-md:divide-y",
@@ -25,6 +26,8 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
     >
       <NavigationMenu />
     </div>
+
+    <ThemeSwitcher />
   </div>
 </header>
 
