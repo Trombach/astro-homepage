@@ -23,7 +23,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     inoxToolsContentUtils(),
-    crittersRs({ pruneSource: true }),
+    crittersRs({ pruneSource: true, preload: "BodyPreload" }),
     copyFilesPlugin(),
   ],
   image: {
