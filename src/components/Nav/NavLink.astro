@@ -13,8 +13,8 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 <a
   {href}
   class:list={[
-    "font-display",
-    "relative inline-block h-auto rounded-full py-3 tracking-wider sm:p-2",
+    "font-display text-2xl sm:text-base",
+    "relative inline-block h-auto rounded-full py-3 tracking-wider p-2",
     "group/link transition-colors duration-300 hover:bg-primary/25 hover:text-foreground",
     { "text-muted-foreground": !isActive },
   ]}
@@ -25,7 +25,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
         transition:name="active-link"
         class:list={[
           "absolute -right-4 top-[calc(50%-(theme(spacing.2)/2))] h-2 w-2 rounded-full bg-foreground",
-          `transition-transform group-hover/link:scale-0`,
+          "transition-transform group-hover/link:scale-0",
           "sm:left-[calc(50%-(theme(spacing.2)/2))] sm:top-9",
         ]}
       />

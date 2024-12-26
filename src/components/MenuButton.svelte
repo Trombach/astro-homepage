@@ -6,6 +6,7 @@ let header: HTMLElement | null;
 
 onMount(() => {
   header = document.querySelector("[data-header]");
+  showCloseIcon = header?.dataset.header === "expanded";
 });
 
 const onclick = () => {
@@ -20,14 +21,17 @@ const onclick = () => {
 };
 </script>
 
-<button class="sm:hidden" {onclick}>
+<button class="p-1 sm:hidden" popovertarget="menu-container" {onclick}>
   <svg
-    class="hamburger fill-foreground"
+    class="group/hamburger fill-foreground size-8"
     class:close={showCloseIcon}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 100 100"
   >
-    <g transform={showCloseIcon ? "" : "translate(0 -5)"}>
+    <g
+      transform={showCloseIcon ? "" : "translate(0 -5)"}
+      class="transition-transform ease-in"
+    >
       <rect
         class="top"
         x="10"
@@ -35,6 +39,7 @@ const onclick = () => {
         width="80"
         height="5"
         rx="2.5"
+        transform-origin="center"
       />
       <rect class="middle" x="10" y="50" width="80" height="5" rx="2.5" />
       <rect
@@ -44,6 +49,7 @@ const onclick = () => {
         width="80"
         height="5"
         rx="2.5"
+        transform-origin="center"
       />
     </g>
   </svg>
@@ -51,42 +57,31 @@ const onclick = () => {
 </button>
 
 <style>
-  button {
-    @apply p-1;
-  }
-
-  svg.hamburger {
-    @apply size-8;
-  }
-
-  svg.hamburger g {
-    transition: transform 300ms ease-in;
-  }
-
-  svg.hamburger rect {
+  svg rect {
     transition:
-      rotate 300ms ease-in,
-      y 300ms ease-in 300ms,
-      opacity 0ms 300ms;
-    transform-origin: center;
+      rotate calc(var(--header-animation-duration) / 2) ease-in,
+      y calc(var(--header-animation-duration) / 2) ease-in
+        calc(var(--header-animation-duration) / 2),
+      opacity 0ms calc(var(--header-animation-duration) / 2);
   }
 
-  svg.hamburger.close rect {
+  svg.close rect {
     transition:
-      y 300ms ease-in,
-      rotate 300ms ease-in 300ms,
-      opacity 0ms 300ms;
+      y calc(var(--header-animation-duration) / 2) ease-in,
+      rotate calc(var(--header-animation-duration) / 2) ease-in
+        calc(var(--header-animation-duration) / 2),
+      opacity 0ms calc(var(--header-animation-duration) / 2);
   }
 
-  svg.hamburger.close rect.top {
+  svg.close rect.top {
     rotate: 45deg;
   }
 
-  svg.hamburger.close rect.middle {
+  svg.close rect.middle {
     opacity: 0;
   }
 
-  svg.hamburger.close rect.bottom {
+  svg.close rect.bottom {
     rotate: -45deg;
   }
 </style>
