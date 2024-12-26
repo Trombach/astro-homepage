@@ -22,7 +22,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     inoxToolsContentUtils(),
-    crittersRs(),
+    crittersRs({ pruneSource: true }),
   ],
   image: {
     domains: ["placehold.co"],
