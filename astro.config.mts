@@ -3,6 +3,7 @@ import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel";
+import crittersRs from "@critters-rs/astro";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
@@ -11,6 +12,7 @@ import { defineConfig, envField } from "astro/config";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
 import Icons from "unplugin-icons/vite";
+
 import copyFilesPlugin from "./copy-files.ts";
 
 // https://astro.build/config
@@ -21,6 +23,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     inoxToolsContentUtils(),
+    crittersRs(),
     copyFilesPlugin(),
   ],
   image: {
