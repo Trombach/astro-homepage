@@ -29,6 +29,9 @@ importers:
       '@astrojs/vercel':
         specifier: ^8.0.1
         version: 8.0.1(astro@5.0.5(@types/node@22.10.2)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))(react@18.3.1)(rollup@4.28.1)(svelte@5.16.0)
+      '@critters-rs/astro':
+        specifier: ^1.0.2
+        version: 1.0.2(astro@5.0.5(@types/node@22.10.2)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))
       '@floating-ui/dom':
         specifier: ^1.6.12
         version: 1.6.12
@@ -352,6 +355,44 @@ packages:
 
   '@changesets/write@0.3.2':
     resolution: {integrity: sha512-kDxDrPNpUgsjDbWBvUo27PzKX4gqeKOlhibaOXDJA6kuBisGqNHv/HwGJrAu8U/dSf8ZEFIeHIPtvSlZI1kULw==}
+
+  '@critters-rs/astro@1.0.2':
+    resolution: {integrity: sha512-PiG8WQDZPe0Y6yoZCF9ontOtxD0UOe+ju86/f6zla0M0FM3gnxYd0Tj/Sn56T2KGBT+ciiM6rH3CU+HpcyyhpQ==}
+    peerDependencies:
+      astro: ^4.15.9
+
+  '@critters-rs/critters-darwin-arm64@1.0.2':
+    resolution: {integrity: sha512-yv6JUf8xPmnuffsnbv6LSidH2sgTRHRBVj/DSlfFJP6wwqAy7/d59qkaOpjc6G4KZymAncIlRma06pFkpKI2yQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@critters-rs/critters-darwin-x64@1.0.2':
+    resolution: {integrity: sha512-g4sHfqe+g5aY85P8Mo3bvYDIExX79PUQDwE/+rysql+/HuBhXh3Pk4NqHqsMdVq5m1nlP6HPFn3SAdtlXdZqoA==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@critters-rs/critters-linux-arm64-gnu@1.0.2':
+    resolution: {integrity: sha512-XUaZ4RyA3sH4RQK1yKLAn1qmQZQwRKvKgC1iv/469a+k1IGbroxuy/9lXVZ8oTug5PJkZMUcwk2C/P4vGav81Q==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@critters-rs/critters-linux-x64-gnu@1.0.2':
+    resolution: {integrity: sha512-9zq+H3honnvBdhXnARsmh2uK6PcSwml3TrL7E2qfOJMwot/9wVkbZ1tIOU2dMGg8Q5yWYnvJd9NVPOQagVN7mA==}
+    cpu: [x64]
+    os: [linux]
+
+  '@critters-rs/critters-win32-arm64-msvc@1.0.2':
+    resolution: {integrity: sha512-6XB0zmmgUA8SF9XPNf4H+45KIAnMi/GwQAOaZuoKEcL8AAW06xnhZ5cwoZIbSbDQol0mpSYb/MpHC3nzj+Zepg==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@critters-rs/critters-win32-x64-msvc@1.0.2':
+    resolution: {integrity: sha512-SWexVHyLqOkTYjP3HwVx0THkgLrGsSIJGhaileoyGIdTc+8qHP2n/rqwPxIUytKulF6DfNf+St1ZPO7Eoh5RsA==}
+    cpu: [x64]
+    os: [win32]
+
+  '@critters-rs/critters@1.0.2':
+    resolution: {integrity: sha512-m8VX4R4SSe6+oov+5bwCXFppbm8m1tVNyNVw9tgNntOAWptLWgXkD24lzJPw/wzUaOrmlz/g/vCA5D/b7rGDKg==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -4371,6 +4412,39 @@ snapshots:
       fs-extra: 7.0.1
       human-id: 1.0.2
       prettier: 2.8.8
+
+  '@critters-rs/astro@1.0.2(astro@5.0.5(@types/node@22.10.2)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))':
+    dependencies:
+      '@critters-rs/critters': 1.0.2
+      astro: 5.0.5(@types/node@22.10.2)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1)
+      chalk: 5.3.0
+
+  '@critters-rs/critters-darwin-arm64@1.0.2':
+    optional: true
+
+  '@critters-rs/critters-darwin-x64@1.0.2':
+    optional: true
+
+  '@critters-rs/critters-linux-arm64-gnu@1.0.2':
+    optional: true
+
+  '@critters-rs/critters-linux-x64-gnu@1.0.2':
+    optional: true
+
+  '@critters-rs/critters-win32-arm64-msvc@1.0.2':
+    optional: true
+
+  '@critters-rs/critters-win32-x64-msvc@1.0.2':
+    optional: true
+
+  '@critters-rs/critters@1.0.2':
+    optionalDependencies:
+      '@critters-rs/critters-darwin-arm64': 1.0.2
+      '@critters-rs/critters-darwin-x64': 1.0.2
+      '@critters-rs/critters-linux-arm64-gnu': 1.0.2
+      '@critters-rs/critters-linux-x64-gnu': 1.0.2
+      '@critters-rs/critters-win32-arm64-msvc': 1.0.2
+      '@critters-rs/critters-win32-x64-msvc': 1.0.2
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
