@@ -12,6 +12,8 @@ import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
 import Icons from "unplugin-icons/vite";
 
+import crittersRs from "@critters-rs/astro";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -20,6 +22,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     inoxToolsContentUtils(),
+    crittersRs({ pruneSource: true, preload: "Media" }),
   ],
   image: {
     domains: ["placehold.co"],
