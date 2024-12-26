@@ -20,31 +20,38 @@ const animationDelay = plugin(({ matchUtilities, theme }) => {
   );
 });
 
-const timelineAnimation = plugin(({ addComponents, addUtilities }) => {
-  addComponents({
-    ".timeline-slide-in-bottom": {
-      "animation-timeline": "view()",
-      "animation-range": "entry 100% contain 25%",
-      "animation-name": "slide-scale-in-bottom",
-      "animation-fill-mode": "both",
-    },
-  });
+const timelineAnimation = plugin(
+  ({ addComponents, addUtilities, addVariant }) => {
+    addComponents({
+      ".timeline-slide-in-bottom": {
+        "animation-timeline": "view()",
+        "animation-range": "entry 100% contain 25%",
+        "animation-name": "slide-scale-in-bottom",
+        "animation-fill-mode": "both",
+      },
+    });
 
-  addUtilities({
-    "@keyframes slide-scale-in-bottom": {
-      from: {
-        transform: "translateY(100px)",
-        scale: "0.8",
-        opacity: "0",
+    addUtilities({
+      "@keyframes slide-scale-in-bottom": {
+        from: {
+          transform: "translateY(100px)",
+          scale: "0.8",
+          opacity: "0",
+        },
+        to: {
+          transform: "translateY(0)",
+          scale: "1",
+          opacity: "1",
+        },
       },
-      to: {
-        transform: "translateY(0)",
-        scale: "1",
-        opacity: "1",
-      },
-    },
-  });
-});
+    });
+
+    addVariant(
+      "supports-scroll-animation",
+      "@supports (animation-timeline: scroll())",
+    );
+  },
+);
 
 const textShadow = plugin(({ matchUtilities, theme }) => {
   matchUtilities(
