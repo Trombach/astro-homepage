@@ -33,14 +33,14 @@ importers:
         specifier: ^1.6.12
         version: 1.6.12
       '@fontsource-variable/inter':
-        specifier: ^5.1.0
-        version: 5.1.0
-      '@fontsource-variable/jetbrains-mono':
         specifier: ^5.1.1
         version: 5.1.1
+      '@fontsource-variable/jetbrains-mono':
+        specifier: ^5.1.2
+        version: 5.1.2
       '@fontsource/lobster':
-        specifier: ^5.1.0
-        version: 5.1.0
+        specifier: ^5.1.1
+        version: 5.1.1
       '@iconify-json/heroicons':
         specifier: ^1.2.2
         version: 1.2.2
@@ -696,14 +696,14 @@ packages:
   '@floating-ui/utils@0.2.8':
     resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
 
-  '@fontsource-variable/inter@5.1.0':
-    resolution: {integrity: sha512-Wj2dUGP0vUpxRGQTXQTCNJO+aLcFcQm+gUPXfj/aS877bQkEPBPv9JvZJpwdm2vzelt8NTZ+ausKlBCJjh2XIg==}
+  '@fontsource-variable/inter@5.1.1':
+    resolution: {integrity: sha512-OpXFTmiH6tHkYijMvQTycFKBLK4X+SRV6tet1m4YOUH7SzIIlMqDja+ocDtiCA72UthBH/vF+3ZtlMr2rN/wIw==}
 
-  '@fontsource-variable/jetbrains-mono@5.1.1':
-    resolution: {integrity: sha512-V+1aRFRvuZ66PpO30s8l/2aADKzpV9VRsO3kSZE+rTMvi4vab3cUcPHMN2z+wAvjkYJO71Yf+g3/Y6pSMmQpVQ==}
+  '@fontsource-variable/jetbrains-mono@5.1.2':
+    resolution: {integrity: sha512-syGEJ/N4FFisAXegxtbe1etYpo2T630dqCbYufPf7Dli/hMKSoSUIm3wK4q5RsGFRxWno1WecfnsgZA1jRK0EQ==}
 
-  '@fontsource/lobster@5.1.0':
-    resolution: {integrity: sha512-kEIt+NiswgZoA7loqiIXZKpO336yZjvvy3gvBj/hLYGPrZajDDGTr4bKEfsa7NmeD3cXYIO4FDiC5GfB0ONyQw==}
+  '@fontsource/lobster@5.1.1':
+    resolution: {integrity: sha512-NalmVtEQtEv80T658yl1T2CXf1+I8ypDSYz4bgxMdR9bMhVu2myguXY1exhBhPQ+iNKmxatoLuukJp/QgNaBOQ==}
 
   '@iconify-json/heroicons@1.2.2':
     resolution: {integrity: sha512-qoW4pXr5kTTL6juEjgTs83OJIwpePu7q1tdtKVEdj+i0zyyVHgg/dd9grsXJQnpTpBt6/VwNjrXBvFjRsKPENg==}
@@ -4570,11 +4570,11 @@ snapshots:
 
   '@floating-ui/utils@0.2.8': {}
 
-  '@fontsource-variable/inter@5.1.0': {}
+  '@fontsource-variable/inter@5.1.1': {}
 
-  '@fontsource-variable/jetbrains-mono@5.1.1': {}
+  '@fontsource-variable/jetbrains-mono@5.1.2': {}
 
-  '@fontsource/lobster@5.1.0': {}
+  '@fontsource/lobster@5.1.1': {}
 
   '@iconify-json/heroicons@1.2.2':
     dependencies:
