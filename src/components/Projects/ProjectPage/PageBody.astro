@@ -14,11 +14,18 @@ const dashedTitle = dash(title);
 
 <article
   class:list={[
-    "prose min-w-0 shrink lg:prose-lg dark:prose-invert prose-p:hyphens-auto prose-p:break-words prose-p:text-justify",
+    "text-lg",
     "w-auto max-w-[70ch] rounded-xl border bg-background pb-5 lg:max-w-[calc(70ch+(theme(spacing.16)*2))]",
-    "motion-safe:prose-img:timeline-slide-in-bottom motion-safe:prose-img:[animation-range:entry_10%_contain_25%]",
-    "motion-safe:prose-video:timeline-slide-in-bottom motion-safe:prose-video:[animation-range:entry_10%_contain_25%]",
-    "prose-figcaption:break-words prose-figcaption:hyphens-auto prose-figcaption:text-pretty"
+    "[&_h2]:border-b [&_h2]:pb-2 [&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:tracking-tight first:[&_h2]:mt-0",
+    "[&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:tracking-tight",
+    "[&_h4]:text-xl [&_h4]:font-semibold [&_h4]:tracking-tight",
+    "[&_a]:font-medium [&_a]:underline",
+    "[&_p]:text-justify [&_p]:leading-9 [&_p]:hyphens-auto [&_p]:break-words",
+    "[&_p>code]:rounded [&_p>code]:bg-muted [&_p>code]:px-[0.3rem] [&_p>code]:py-[0.2rem] [&_p>code]:font-mono [&_p>code]:text-sm [&_p>code]:font-semibold",
+    "[&_figcaption]:break-words [&_figcaption]:hyphens-auto [&_figcaption]:text-pretty [&_figcaption]:text-sm [&_figcaption]:text-muted-foreground [&_figcaption]:mt-4",
+    "[&_pre]:text-sm [&_pre]:leading-7 [&_pre]:py-4 [&_pre]:px-6 [&_pre]:rounded-md",
+    "motion-safe:[&_figure>img]:timeline-slide-in-bottom motion-safe:[&_figure>img]:[animation-range:entry_10%_contain_25%]",
+    "motion-safe:[&_video]:timeline-slide-in-bottom motion-safe:[&_video]:[animation-range:entry_10%_contain_25%]",
   ]}
   transition:name={`border-${dashedTitle}`}
 >
@@ -36,12 +43,18 @@ const dashedTitle = dash(title);
     )
   }
 
-  <div class="p-5 pb-0 lg:p-16 lg:pb-0">
+  <div class="p-5 pb-0 lg:p-16 lg:pb-0 [&>*:not(:first-child)]:mt-6">
     <header>
-      <h1 {title} transition:name={dashedTitle}>{titleCase(title)}</h1>
+      <h1
+        {title}
+        transition:name={dashedTitle}
+        class="mb-2 text-4xl font-extrabold tracking-tight lg:text-5xl"
+      >
+        {titleCase(title)}
+      </h1>
       <p
         transition:name={`${dashedTitle}-description`}
-        class="not-prose -mt-8 mb-5 font-mono text-muted-foreground"
+        class="font-mono text-muted-foreground"
       >
         {description}
       </p>
