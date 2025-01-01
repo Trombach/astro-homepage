@@ -14,13 +14,13 @@ const dashedTitle = dash(title);
 
 <article
   class:list={[
-    "text-lg",
+    "text-base leading-7 min-w-0",
     "w-auto max-w-[70ch] rounded-xl border bg-background pb-5 lg:max-w-[calc(70ch+(theme(spacing.16)*2))]",
     "[&_h2]:border-b [&_h2]:pb-2 [&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:tracking-tight first:[&_h2]:mt-0",
     "[&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:tracking-tight",
     "[&_h4]:text-xl [&_h4]:font-semibold [&_h4]:tracking-tight",
     "[&_a]:font-medium [&_a]:underline",
-    "[&_p]:text-justify [&_p]:leading-9 [&_p]:hyphens-auto [&_p]:break-words",
+    "[&_p]:text-justify [&_p]:hyphens-auto [&_p]:break-words",
     "[&_p>code]:rounded [&_p>code]:bg-muted [&_p>code]:px-[0.3rem] [&_p>code]:py-[0.2rem] [&_p>code]:font-mono [&_p>code]:text-sm [&_p>code]:font-semibold",
     "[&_figcaption]:break-words [&_figcaption]:hyphens-auto [&_figcaption]:text-pretty [&_figcaption]:text-sm [&_figcaption]:text-muted-foreground [&_figcaption]:mt-4",
     "[&_pre]:text-sm [&_pre]:leading-7 [&_pre]:py-4 [&_pre]:px-6 [&_pre]:rounded-md",
@@ -48,13 +48,13 @@ const dashedTitle = dash(title);
       <h1
         {title}
         transition:name={dashedTitle}
-        class="mb-2 text-4xl font-extrabold tracking-tight lg:text-5xl"
+        class="mb-2 text-3xl font-extrabold tracking-tight sm:text-5xl"
       >
         {titleCase(title)}
       </h1>
       <p
         transition:name={`${dashedTitle}-description`}
-        class="font-mono text-muted-foreground"
+        class="font-mono text-sm [&&]:text-wrap [&&]:text-left text-muted-foreground sm:text-base"
       >
         {description}
       </p>
