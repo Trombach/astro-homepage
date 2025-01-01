@@ -19,8 +19,25 @@
           "level": "warn",
           "fix": "safe",
           "options": {
-            "attributes": ["class:list"],
+            "attributes": ["class", "class:list"],
             "functions": ["clsx"]
+          }
+        },
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "paths": {
+              "buffer": "Use Uint8Array instead.",
+              "node:buffer": "Use Uint8Array instead."
+            }
+          }
+        }
+      },
+      "style": {
+        "noRestrictedGlobals": {
+          "level": "error",
+          "options": {
+            "deniedGlobals": ["Buffer"]
           }
         }
       }

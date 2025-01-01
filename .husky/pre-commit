@@ -1,1 +1,1 @@
-pnpm format:staged
+pnpm biome:staged
