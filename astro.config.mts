@@ -11,6 +11,7 @@ import { defineConfig, envField } from "astro/config";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
 import Icons from "unplugin-icons/vite";
+import copyFilesPlugin from "./copy-files.ts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,6 +21,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     inoxToolsContentUtils(),
+    copyFilesPlugin(),
   ],
   image: {
     domains: ["placehold.co"],
