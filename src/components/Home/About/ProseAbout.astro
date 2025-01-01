@@ -9,8 +9,8 @@ const { class: className } = Astro.props;
 <div
   class:list={[
     "text-lg md:text-xl",
-    "[&>a]:font-medium [&>a]:underline",
-    "[&>p]:text-justify [&>p]:leading-7 md:[&>p]:leading-9 [&>*:not(:first-child)]:mt-6",
+    "[&_a]:font-medium [&_a]:underline",
+    "[&_p]:text-justify [&_p]:leading-7 md:[&_p]:leading-9 [&>*:not(:first-child)]:mt-6",
     "motion-safe:*:timeline-slide-in-bottom",
     className,
   ]}
