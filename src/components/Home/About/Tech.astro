@@ -2,6 +2,7 @@
 import { getEntry, render } from "astro:content";
 import Heading from "@components/Heading.astro";
 import TechGrid from "@components/Home/About/TechGrid.astro";
+import ProseAbout from "./ProseAbout.astro";
 
 const tech = await getEntry("about", "tech");
 
@@ -21,14 +22,9 @@ const { Content } = await render(tech);
   <div
     class="flex space-y-10 w-full max-w-screen-xl flex-col justify-around items-center xl:flex-row"
   >
-    <div
-      class:list={[
-        "prose-p:text-justify prose md:prose-lg lg:prose-xl dark:prose-invert xl:px-20",
-        "motion-safe:*:timeline-slide-in-bottom",
-      ]}
-    >
+    <ProseAbout class="xl:px-20">
       <Content />
-    </div>
+    </ProseAbout>
     <TechGrid class="my-auto w-full basis-2/3" />
   </div>
 </section>

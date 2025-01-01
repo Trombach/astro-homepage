@@ -1,6 +1,7 @@
 ---
 import { getEntry, render } from "astro:content";
 import Heading from "@components/Heading.astro";
+import ProseAbout from "./ProseAbout.astro";
 
 const aboutMe = await getEntry("about", "about-me");
 
@@ -14,7 +15,7 @@ const { Content } = await render(aboutMe);
 
 <div class="p-10 sm:p-20 lg:p-10 shrink-0 lg:w-1/2 lg:ml-auto">
   <Heading class="motion-safe:timeline-slide-in-bottom">{title}</Heading>
-  <div class="prose-p:text-justify prose md:prose-lg lg:prose-xl dark:prose-invert motion-safe:*:timeline-slide-in-bottom">
+  <ProseAbout>
     <Content />
-  </div>
+  </ProseAbout>
 </div>

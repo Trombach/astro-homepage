@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { uint8ArrayToBase64 } from "uint8array-extras";
 
 const FAVICON_API = new URL("https://www.google.com/s2/favicons");
 
@@ -9,7 +10,7 @@ type Props = HTMLAttributes<"a"> & {
 
 const { href, position = "before", ...props } = Astro.props;
 
-let favicon: Buffer | undefined = undefined;
+let favicon: Uint8Array | undefined = undefined;
 if (
   href &&
   (typeof href === "string"
@@ -20,24 +21,26 @@ if (
   const searchParams = new URLSearchParams({ domain: url.hostname, sz: "64" });
 
   try {
-    favicon = await fetch(`${FAVICON_API}?${searchParams}`).then(async (res) =>
-      Buffer.from(await res.arrayBuffer()),
-    );
+    const response = await fetch(`${FAVICON_API}?${searchParams}`);
+    favicon = await response.bytes();
   } catch (err) {
-    console.error(`Error fetching favicon: ${href}`, err);
+    console.warn(`Error fetching favicon: ${href}`, err);
   }
 }
 
 const content = (await Astro.slots.render("default")).trim();
-const imageProps = {
-  width: 16,
-  height: 16,
-  src: `data:image/png;base64,${favicon?.toString("base64")}`,
-  alt: "favicon",
-  fetchpriority: "low",
-  loading: "lazy",
-  decoding: "async",
-} as const satisfies HTMLAttributes<"img">;
+const imageProps =
+  favicon &&
+  ({
+    width: 16,
+    height: 16,
+    src: `data:image/png;base64,${uint8ArrayToBase64(favicon)}`,
+    alt: "favicon",
+    fetchpriority: "low",
+    loading: "lazy",
+    decoding: "async",
+    "aria-hidden": true,
+  } as const satisfies HTMLAttributes<"img">);
 ---
 
 {
@@ -45,7 +48,7 @@ const imageProps = {
     <span class="whitespace-nowrap">
       {position === "before" && (
         <>
-          <img {...imageProps} class="w-4 inline-block my-0 mr-1 not-prose" />
+          <img {...imageProps} class="w-4 inline-block my-0 mr-1" />
           <a {href} {...props} class="whitespace-normal">
             <Fragment set:html={content} />
           </a>
@@ -56,7 +59,7 @@ const imageProps = {
           <a {href} {...props} class="whitespace-normal">
             <Fragment set:html={content} />
           </a>
-          <img {...imageProps} class="w-4 inline-block my-0 ml-1 not-prose" />
+          <img {...imageProps} class="w-4 inline-block my-0 ml-1" />
         </>
       )}
     </span>

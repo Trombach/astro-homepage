@@ -1,5 +1,4 @@
 import containerQueries from "@tailwindcss/container-queries";
-import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
@@ -154,7 +153,6 @@ export default {
     },
   },
   plugins: [
-    typography,
     containerQueries as {
       handler: PluginCreator;
       config?: Partial<Config>;
