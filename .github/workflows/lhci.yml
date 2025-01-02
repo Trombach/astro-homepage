@@ -34,7 +34,9 @@ jobs:
       - name: Audit URL using Lighthouse
         run: |
           pnpm add --global @lhci/cli
-          lhci autorun --config=${{ inputs.config-path }} --collect.settings.preset=${{ inputs.mode }}
+          lhci autorun --config=${{ inputs.config-path }} \
+            ${{ (inputs.mode != 'mobile' && format('--collect.settings.preset={0} \', inputs.mode)) || '\' }}
+            --upload.githubStatusContextSuffix=-${{ inputs.mode}}
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
           LHCI_COLLECT__URL: ${{ inputs.url }}
