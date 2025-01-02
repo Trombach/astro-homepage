@@ -8,9 +8,9 @@
 
 <div align=center>
 
-[![Checks](https://github.com/Trombach/astro-homepage/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/Trombach/astro-homepage/actions/workflows/pr-checks.yml)
+[![CI](https://github.com/Trombach/astro-homepage/actions/workflows/ci.yml/badge.svg)](https://github.com/Trombach/astro-homepage/actions/workflows/ci.yml)
 ![Staging](https://img.shields.io/github/deployments/Trombach/astro-homepage/Production?logo=vercel&label=Staging)
-[![Lighthouse tests](https://github.com/Trombach/astro-homepage/actions/workflows/lighthouse.yml/badge.svg?event=schedule)](https://github.com/Trombach/astro-homepage/actions/workflows/lighthouse.yml)
+[![Lighthouse Scores](https://github.com/Trombach/astro-homepage/actions/workflows/lighthouse.yml/badge.svg?event=schedule)](https://github.com/Trombach/astro-homepage/actions/workflows/lighthouse.yml)
 
 </div>
 

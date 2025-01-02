@@ -1,0 +1,17 @@
+name: Deployment CI
+
+on:
+  deployment_status:
+
+jobs:
+  Lighthouse:
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    strategy:
+      fail-fast: false
+      matrix:
+        route: ["", "/projects", "/contact"]
+    uses: ./.github/workflows/lhci.yml
+    with:
+      url: ${{ github.event.deployment_status.environment_url }}${{ matrix.route}}
+      config-path: ./lighthouserc.Preview.json
+    secrets: inherit
