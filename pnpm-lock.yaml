@@ -48,14 +48,14 @@ importers:
         specifier: ^1.2.4
         version: 1.2.4
       '@iconify-json/simple-icons':
-        specifier: ^1.2.17
-        version: 1.2.17
+        specifier: ^1.2.18
+        version: 1.2.18
       '@iconify-json/svg-spinners':
         specifier: ^1.2.2
         version: 1.2.2
       '@inox-tools/content-utils':
-        specifier: ^0.8.0
-        version: 0.8.0(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))
+        specifier: ^0.8.1
+        version: 0.8.1(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))
       '@microflash/rehype-figure':
         specifier: ^2.1.1
         version: 2.1.1
@@ -711,8 +711,8 @@ packages:
   '@iconify-json/logos@1.2.4':
     resolution: {integrity: sha512-XC4If5D/hbaZvUkTV8iaZuGlQCyG6CNOlaAaJaGa13V5QMYwYjgtKk3vPP8wz3wtTVNVEVk3LRx1fOJz+YnSMw==}
 
-  '@iconify-json/simple-icons@1.2.17':
-    resolution: {integrity: sha512-1vXbM6a6HV2rwXxu8ptD2OYhqrqX0ZZRepOg7nIjkvKlKq90Iici4X++A8h36bEVlV2wGjqx8uVYB0pwnPZVSw==}
+  '@iconify-json/simple-icons@1.2.18':
+    resolution: {integrity: sha512-ae4ig7fxNXME1wl5og7Ocp82TM4jyz6IsOyI8GrteSbvHR9gaPu2Z01Amn5V/xo1Y7A7/+EH/3Ovpy2az/gYbg==}
 
   '@iconify-json/svg-spinners@1.2.2':
     resolution: {integrity: sha512-DIErwfBWWzLfmAG2oQnbUOSqZhDxlXvr8941itMCrxQoMB0Hiv8Ww6Bln/zIgxwjDvSem2dKJtap+yKKwsB/2A==}
@@ -828,13 +828,13 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@inox-tools/content-utils@0.8.0':
-    resolution: {integrity: sha512-OU5hlUX60pKaqIgIy11fI6/OjUEcW5Ga+t5gaSKFmjb9QUFITLEc3sEZmvLe4qMGDamagYvbVt0i3BDPU7x2UA==}
+  '@inox-tools/content-utils@0.8.1':
+    resolution: {integrity: sha512-U0HurOoNSwOinuu6OqAewpZtFLBbQag4lcMtCLLsQgr4BYqzfEJ0/Lu2aBxRy5naMWhBn5UNxSnvFmUrqdbw0Q==}
     peerDependencies:
       astro: ^5
 
-  '@inox-tools/modular-station@0.4.0':
-    resolution: {integrity: sha512-wuXiCTvHdMvMfOOBvxObzNDyU6sx3bNJ6nX1V3a5rJx77IrUXHWV0XxKe7CsYsEJ4rrrvdwon3uIIyn19S0IIQ==}
+  '@inox-tools/modular-station@0.4.1':
+    resolution: {integrity: sha512-eGpRoak/LO9jIHV/VWGXTuj33Ao7sJZkpDq4ASlL9RV47DkhCfqYrFjV8AVR8847ucSHvOfOpYryqFeO8xJzlA==}
     peerDependencies:
       astro: ^5
 
@@ -1388,10 +1388,10 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro-integration-kit@0.17.0:
-    resolution: {integrity: sha512-fe31CCKmrGYn/kkBd1J4b7P02gEdMdEIFBz14zdAud+YAmJeLtZD6wmrCz3LDau+lE1oM1hQnvmZXVSM/YveKw==}
+  astro-integration-kit@0.18.0:
+    resolution: {integrity: sha512-Z0QW5IQjosuKQDEGYYkvUX6EhEtrmE4/oViqWz23QveV8U7AuyFsTdg00WRNPevWZl/5a4lLUeDpv4bCRynRRg==}
     peerDependencies:
-      astro: ^4.12.0 || ^5.0.0-beta
+      astro: ^4.12.0 || ^5.0.0
 
   astro-og-canvas@0.5.5:
     resolution: {integrity: sha512-dbZ7voJAmvy8Zyv5zFsgENs9G4uhcCJ4nVuUPb7ymu8+Vp/jr/fdQDKPrLYUG2TSi/1HejYRnzkXcSv6ntlDTA==}
@@ -2416,9 +2416,6 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
-
-  magic-string@0.30.14:
-    resolution: {integrity: sha512-5c99P1WKTed11ZC0HMJOj6CDIue6F8ySu+bJL+85q1zBEIY8IklrJ1eiKC2NDRh3Ct3FcvmJPyQHb9erXMTJNw==}
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -4570,7 +4567,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/simple-icons@1.2.17':
+  '@iconify-json/simple-icons@1.2.18':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -4668,23 +4665,23 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
-  '@inox-tools/content-utils@0.8.0(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))':
+  '@inox-tools/content-utils@0.8.1(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))':
     dependencies:
-      '@inox-tools/modular-station': 0.4.0(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))
+      '@inox-tools/modular-station': 0.4.1(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))
       '@inox-tools/utils': 0.3.0
       astro: 5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1)
-      astro-integration-kit: 0.17.0(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))
+      astro-integration-kit: 0.18.0(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))
       debug: 4.4.0
       estree-walker: 3.0.3
-      magic-string: 0.30.14
+      magic-string: 0.30.17
     transitivePeerDependencies:
       - supports-color
 
-  '@inox-tools/modular-station@0.4.0(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))':
+  '@inox-tools/modular-station@0.4.1(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))':
     dependencies:
       '@inox-tools/utils': 0.3.0
       astro: 5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1)
-      astro-integration-kit: 0.17.0(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))
+      astro-integration-kit: 0.18.0(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1))
       debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
@@ -5372,7 +5369,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-integration-kit@0.17.0(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1)):
+  astro-integration-kit@0.18.0(astro@5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1)):
     dependencies:
       astro: 5.0.5(@types/node@22.10.3)(jiti@1.21.7)(rollup@4.28.1)(typescript@5.7.2)(yaml@2.6.1)
       pathe: 1.1.2
@@ -6530,10 +6527,6 @@ snapshots:
       tslib: 2.8.1
 
   lru-cache@10.4.3: {}
-
-  magic-string@0.30.14:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.0
 
   magic-string@0.30.17:
     dependencies:
