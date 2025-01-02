@@ -9,6 +9,10 @@ on:
         required: true
         type: string
         description: Path to lhci config file
+      mode:
+        type: string
+        default: "mobile"
+        description: Run in mobile or desktop mode
     secrets:
       LHCI_GITHUB_APP_TOKEN:
         required: true
@@ -30,7 +34,7 @@ jobs:
       - name: Audit URL using Lighthouse
         run: |
           pnpm add --global @lhci/cli
-          lhci autorun --config=${{ inputs.config-path }}
+          lhci autorun --config=${{ inputs.config-path }} --collect.settings.preset=${{ inputs.mode }}
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
           LHCI_COLLECT__URL: ${{ inputs.url }}
