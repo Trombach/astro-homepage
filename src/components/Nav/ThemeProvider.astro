@@ -1,8 +1,8 @@
 <script is:inline>
   window.ThemeProvider ??= {
-    initTheme: (doc = document) => {
-      setThemeClass(doc);
-      updateThemeSwitcher(doc);
+    initTheme: () => {
+      setThemeClass();
+      updateThemeSwitcher();
     },
     getTheme: () => {
       const theme = localStorage.getItem("theme") || "auto";
@@ -41,9 +41,9 @@
     );
   }
 
-  function updateThemeSwitcher(doc = document) {
+  function updateThemeSwitcher() {
     const theme = localStorage.getItem("theme") || "auto";
-    const radioButton = doc.querySelector(
+    const radioButton = document.querySelector(
       `input[type=radio][name=theme]#${theme}-theme`
     );
 
@@ -52,7 +52,9 @@
     }
   }
 
-  function setThemeClass(doc = document) {
-    doc.documentElement.classList.toggle("dark", prefersDarkTheme());
+  function setThemeClass() {
+    document.documentElement.classList.toggle("dark", prefersDarkTheme());
   }
+
+  window.addEventListener("pagereveal", window.ThemeProvider.initTheme);
 </script>
