@@ -1,5 +1,17 @@
 # homepage
 
+## 1.8.1
+
+### Patch Changes
+
+- a83cb18: rework navigation menu
+- 1237faa: fix theme initialisation and change theme picker style
+- 6d2720c: remove tailwind prose
+- eed43b7: fix broken sitemaps on vercel
+- e4030dc: simplify TOC popup animation
+- 811eff9: use Astro 5.0.5
+- 6523138: improve contact page
+
 ## 1.8.0
 
 ### Minor Changes
