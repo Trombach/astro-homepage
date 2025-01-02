@@ -1,33 +1,18 @@
 name: Lighthouse test
 
 on:
-  deployment_status:
   schedule:
     - cron: "0 7 * * *"
   workflow_dispatch:
 
 jobs:
   run:
-    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         route: ["", "/projects", "/contact"]
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          lfs: false
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: "pnpm"
-      - name: Audit URL using Lighthouse
-        run: |
-          pnpm add --global @lhci/cli
-          lhci autorun --config=./lighthouserc.${{ github.event.deployment.environment || 'Production' }}.json
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-          LHCI_COLLECT__URL: ${{ github.event.deployment_status.environment_url || 'https://www.lukastrombach.dev' }}${{ matrix.route }}
-          LHCI_COLLECT__SETTINGS__EXTRA_HEADERS: '{"x-vercel-protection-bypass": "${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}"}'
+    uses: ./.github/workflows/lhci.yml
+    with:
+      url: https://www.lukastrombach.dev${{ matrix.route }}
+      config-path: ./lighthouserc.Production.json
+    secrets: inherit

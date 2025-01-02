@@ -1,4 +1,4 @@
-name: Check
+name: CI
 
 on:
   pull_request:
@@ -7,9 +7,11 @@ on:
   push:
     branches:
       - main
+  deployment_status:
 
 jobs:
   Typescript:
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,6 +27,7 @@ jobs:
         run: pnpm ts:check
 
   Biome:
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,3 +41,15 @@ jobs:
       - run: pnpm install
       - name: Run biome checks
         run: pnpm biome:ci
+
+  Lighthouse:
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    strategy:
+      fail-fast: false
+      matrix:
+        route: ["", "/projects", "/contact"]
+    uses: ./.github/workflows/lhci.yml
+    with:
+      url: ${{ github.event.deployment_status.environment_url }}${{ matrix.route}}
+      config-path: ./lighthouserc.Preview.json
+    secrets: inherit
