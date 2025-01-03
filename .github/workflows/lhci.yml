@@ -6,9 +6,12 @@ on:
         type: string
         description: Full URL path to check
       config-path:
-        required: true
         type: string
         description: Path to lhci config file
+      environment:
+        type: string
+        default: "preview"
+        description: Environment to run in
       mode:
         type: string
         default: "mobile"
@@ -34,9 +37,7 @@ jobs:
       - name: Audit URL using Lighthouse
         run: |
           pnpm add --global @lhci/cli
-          lhci autorun --config=${{ inputs.config-path }} \
-            ${{ (inputs.mode != 'mobile' && format('--collect.settings.preset={0} \', inputs.mode)) || '\' }}
-            --upload.githubStatusContextSuffix=-${{ inputs.mode}}
+          lhci autorun --config=${{ inputs.config-path || format('./lighthouserc.{0}-{1}.json', inputs.mode, inputs.environment) }}
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
           LHCI_COLLECT__URL: ${{ inputs.url }}

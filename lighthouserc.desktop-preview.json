@@ -2,6 +2,7 @@
   "ci": {
     "collect": {
       "settings": {
+        "preset": "desktop",
         "onlyCategories": ["performance", "accessibility", "best-practices"]
       }
     },
@@ -13,6 +14,7 @@
       }
     },
     "upload": {
+      "githubStatusContextSuffix": "-desktop",
       "target": "temporary-public-storage"
     }
   }
