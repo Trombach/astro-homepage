@@ -10,8 +10,9 @@ jobs:
       fail-fast: false
       matrix:
         route: ["", "/projects", "/contact"]
+        mode: ["mobile", "desktop"]
     uses: ./.github/workflows/lhci.yml
     with:
       url: ${{ github.event.deployment_status.environment_url }}${{ matrix.route}}
-      config-path: ./lighthouserc.Preview.json
+      mode: ${{ matrix.mode }}
     secrets: inherit
