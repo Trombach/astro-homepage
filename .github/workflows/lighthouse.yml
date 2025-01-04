@@ -15,5 +15,6 @@ jobs:
     uses: ./.github/workflows/lhci.yml
     with:
       url: https://www.lukastrombach.dev${{ matrix.route }}
+      mode: ${{ matrix.mode }}
       environment: production
     secrets: inherit
