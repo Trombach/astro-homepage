@@ -34,6 +34,16 @@ jobs:
         with:
           node-version: 22
           cache: "pnpm"
+      - name: Conditionally set environment
+        run: |
+          if [[ ${{ inputs.environment }} == "preview" ]]; then
+            echo 'LHCI_COLLECT__SETTINGS__EXTRA_HEADERS={"x-vercel-protection-bypass": "${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}"}' >> $GITHUB_ENV
+            echo 'LHCI_COLLECT__SETTINGS__ONLY_CATEGORIES=performance,accessibility,best-practices' >> $GITHUB_ENV
+          fi
+
+          if [[ ${{ inputs.mode}} == "desktop" ]]; then
+            echo "LHCI_COLLECT__SETTINGS__PRESET=desktop" >> $GITHUB_ENV
+          fi
       - name: Audit URL using Lighthouse
         run: |
           pnpm add --global @lhci/cli
@@ -41,4 +51,3 @@ jobs:
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
           LHCI_COLLECT__URL: ${{ inputs.url }}
-          LHCI_COLLECT__SETTINGS__EXTRA_HEADERS: '{"x-vercel-protection-bypass": "${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}"}'
