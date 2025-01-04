@@ -11,8 +11,10 @@ jobs:
       fail-fast: false
       matrix:
         route: ["", "/projects", "/contact"]
+        mode: ["mobile", "desktop"]
     uses: ./.github/workflows/lhci.yml
     with:
       url: https://www.lukastrombach.dev${{ matrix.route }}
-      config-path: ./lighthouserc.Production.json
+      mode: ${{ matrix.mode }}
+      environment: production
     secrets: inherit

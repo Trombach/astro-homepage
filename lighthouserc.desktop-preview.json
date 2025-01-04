@@ -8,6 +8,7 @@
       }
     },
     "upload": {
+      "githubStatusContextSuffix": "-desktop",
       "target": "temporary-public-storage"
     }
   }
