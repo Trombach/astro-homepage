@@ -71,7 +71,7 @@
     "husky": "^9.1.7",
     "svelte-check": "^4.1.1",
     "typescript": "^5.7.2",
-    "vercel": "^39.2.4"
+    "vercel": "^39.2.5"
   },
   "engines": {
     "pnpm": ">=9",
