@@ -1,19 +1,4 @@
 ---
-import AngularLogo from "icons:astro/logos/angular-icon";
-import AwsLambdaLogo from "icons:astro/logos/aws-lambda";
-import CppLogo from "icons:astro/logos/c-plusplus";
-import ContentfulLogo from "icons:astro/logos/contentful";
-import ElasticsearchLogo from "icons:astro/logos/elasticsearch";
-import MondayLogo from "icons:astro/logos/monday-icon";
-import NextLogo from "icons:astro/logos/nextjs-icon";
-import SassLogo from "icons:astro/logos/sass";
-import SupabaseLogo from "icons:astro/logos/supabase-icon";
-import SvelteLogo from "icons:astro/logos/svelte-icon";
-import TailwindLogo from "icons:astro/logos/tailwindcss-icon";
-import TypeScriptLogo from "icons:astro/logos/typescript-icon";
-import VercelLogo from "icons:astro/logos/vercel-icon";
-import LatexLogo from "icons:astro/simple-icons/latex";
-import AstroLogo from "@components/AstroIcon.astro";
 import type { HTMLAttributes } from "astro/types";
 import type { Tool } from "src/content.config";
 
@@ -23,21 +8,80 @@ type Props = {
 };
 
 const toolMap = {
-  Astro: { Component: AstroLogo },
-  Svelte: { Component: SvelteLogo },
-  TypeScript: { Component: TypeScriptLogo },
-  Tailwind: { Component: TailwindLogo },
-  Vercel: { Component: VercelLogo, extraProps: { fill: "currentColor" } },
-  Angular: { Component: AngularLogo },
-  Sass: { Component: SassLogo },
-  "AWS Lambda": { Component: AwsLambdaLogo },
-  Contentful: { Component: ContentfulLogo },
-  Elasticsearch: { Component: ElasticsearchLogo },
-  LaTeX: { Component: LatexLogo },
-  "C++": { Component: CppLogo },
-  "Next.js": { Component: NextLogo },
-  "Monday.com": { Component: MondayLogo },
-  Supabase: { Component: SupabaseLogo },
+  Astro: {
+    Component: await import("@components/AstroIcon.astro").then(
+      (m) => m.default,
+    ),
+  },
+  Svelte: {
+    Component: await import("icons:astro/logos/svelte-icon").then(
+      (m) => m.default,
+    ),
+  },
+  TypeScript: {
+    Component: await import("icons:astro/logos/typescript-icon").then(
+      (m) => m.default,
+    ),
+  },
+  Tailwind: {
+    Component: await import("icons:astro/logos/tailwindcss-icon").then(
+      (m) => m.default,
+    ),
+  },
+  Vercel: {
+    Component: await import("icons:astro/logos/vercel-icon").then(
+      (m) => m.default,
+    ),
+    extraProps: { fill: "currentColor" },
+  },
+  Angular: {
+    Component: await import("icons:astro/logos/angular-icon").then(
+      (m) => m.default,
+    ),
+  },
+  Sass: {
+    Component: await import("icons:astro/logos/sass").then((m) => m.default),
+  },
+  "AWS Lambda": {
+    Component: await import("icons:astro/logos/aws-lambda").then(
+      (m) => m.default,
+    ),
+  },
+  Contentful: {
+    Component: await import("icons:astro/logos/contentful").then(
+      (m) => m.default,
+    ),
+  },
+  Elasticsearch: {
+    Component: await import("icons:astro/logos/elasticsearch").then(
+      (m) => m.default,
+    ),
+  },
+  LaTeX: {
+    Component: await import("icons:astro/simple-icons/latex").then(
+      (m) => m.default,
+    ),
+  },
+  "C++": {
+    Component: await import("icons:astro/logos/c-plusplus").then(
+      (m) => m.default,
+    ),
+  },
+  "Next.js": {
+    Component: await import("icons:astro/logos/nextjs-icon").then(
+      (m) => m.default,
+    ),
+  },
+  "Monday.com": {
+    Component: await import("icons:astro/logos/monday-icon").then(
+      (m) => m.default,
+    ),
+  },
+  Supabase: {
+    Component: await import("icons:astro/logos/supabase-icon").then(
+      (m) => m.default,
+    ),
+  },
 } as const satisfies {
   [key in Tool]: {
     Component: astroHTML.JSX.Element;
