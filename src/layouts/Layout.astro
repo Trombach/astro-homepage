@@ -1,7 +1,6 @@
 ---
 import Footer from "@components/Footer/Footer.astro";
 import Favicon from "@components/Head/Favicon.astro";
-import Preload from "@components/Head/Preload.astro";
 import SEO from "@components/Head/SEO.astro";
 import Webmentions from "@components/Head/Webmentions.astro";
 import Navbar from "@components/Nav/Navbar.astro";
@@ -32,9 +31,7 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <Webmentions />
     <Favicon />
-    <Preload>
-      <slot name="preload" slot="preload" />
-    </Preload>
+    <slot name="preload" />
     <slot name="head" />
     <slot name="seo">
       <SEO {title} {description} />
