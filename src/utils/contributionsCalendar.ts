@@ -22,27 +22,34 @@ const QUERY = `
   }
 `;
 
-export const schema = z.object({
-  data: z.object({
-    user: z.object({
-      contributionsCollection: z.object({
-        contributionCalendar: z.object({
-          totalContributions: z.number(),
-          weeks: z.array(
-            z.object({
-              contributionDays: z.array(
-                z.object({
-                  contributionCount: z.number(),
-                  date: z.coerce.date(),
-                }),
-              ),
-            }),
-          ),
+export const schema = z
+  .object({
+    data: z.object({
+      user: z.object({
+        contributionsCollection: z.object({
+          contributionCalendar: z.object({
+            totalContributions: z.number(),
+            weeks: z.array(
+              z.object({
+                contributionDays: z.array(
+                  z.object({
+                    contributionCount: z.number(),
+                    date: z.coerce.date(),
+                  }),
+                ),
+              }),
+            ),
+          }),
         }),
       }),
     }),
-  }),
-});
+  })
+  .transform((data) => ({
+    totalContributions:
+      data.data.user.contributionsCollection.contributionCalendar
+        .totalContributions,
+    weeks: data.data.user.contributionsCollection.contributionCalendar.weeks,
+  }));
 
 export default async function getGithubContributions() {
   const GH_TOKEN = getSecret("GH_TOKEN");
@@ -64,21 +71,14 @@ export default async function getGithubContributions() {
       body: JSON.stringify({ query: QUERY, variables: { userName: USERNAME } }),
     });
 
-    if (!("data" in contributions)) {
+    if ("issues" in contributions) {
       return {
         error: contributions,
         message: "Error validation data from Github",
       };
     }
 
-    return {
-      totalContributions:
-        contributions.data.user.contributionsCollection.contributionCalendar
-          .totalContributions,
-      weeks:
-        contributions.data.user.contributionsCollection.contributionCalendar
-          .weeks,
-    };
+    return contributions;
   } catch (e) {
     console.error(e);
     return {

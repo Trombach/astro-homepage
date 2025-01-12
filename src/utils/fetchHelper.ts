@@ -15,20 +15,15 @@ export default async function fetchWithSchema<S extends z.ZodTypeAny>(
     );
   }
 
-  try {
-    const json = await response.json();
-    const parsed = schema.safeParse(json);
+  const json = await response.json();
+  const parsed = schema.safeParse(json);
 
-    if (!parsed.success) {
-      console.error(parsed.error);
-      return parsed.error;
-    }
-
-    return parsed.data;
-  } catch (err) {
-    console.log(err);
-    return;
+  if (!parsed.success) {
+    console.error(parsed.error);
+    return parsed.error;
   }
+
+  return parsed.data;
 }
 
 function getURL(

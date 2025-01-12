@@ -18,15 +18,133 @@ const result = await getGithubContributions();
       <CalendarGrid>
         {result.weeks?.map((week) =>
           week.contributionDays.map(({ contributionCount, date }) => (
-            <CalendarTile
-              contributions={contributionCount}
-              {date}
-            />
-          )),
+            <CalendarTile contributions={contributionCount} {date} />
+          ))
         )}
       </CalendarGrid>
+      <div
+        role="tooltip"
+        data-tooltip-container
+        class="hidden absolute max-content top-0 left-0 rounded-full bg-accent px-3 py-1"
+      >
+        <div data-tooltip-arrow class="absolute size-2 bg-accent rotate-45" />
+        <div data-tooltip-content-outlet></div>
+      </div>
     </>
   ) : (
     <span>{result.message}</span>
   )
 }
+
+<script>
+  import {
+    computePosition,
+    flip,
+    shift,
+    offset,
+    arrow,
+  } from "@floating-ui/dom";
+
+  async function init() {
+    const anchors = document.querySelectorAll("[data-tooltip]");
+    const tooltipElement = document.querySelector("[data-tooltip-container]");
+    const arrowElement = document.querySelector("[data-tooltip-arrow]");
+    const contentOutlet = document.querySelector(
+      "[data-tooltip-content-outlet]"
+    );
+
+    for (const anchor of anchors) {
+      if (!(anchor instanceof HTMLElement)) {
+        continue;
+      }
+
+      async function update() {
+        if (
+          !(anchor instanceof HTMLElement) ||
+          !(tooltipElement instanceof HTMLElement)
+        ) {
+          return;
+        }
+
+        if (contentOutlet instanceof Text) {
+          contentOutlet.textContent = anchor.dataset.tooltipContent ?? null;
+        }
+
+        const { x, y, placement, middlewareData } = await computePosition(
+          anchor,
+          tooltipElement,
+          {
+            placement: "top",
+            middleware: [
+              offset(),
+              flip({ fallbackAxisSideDirection: "start" }),
+              shift(),
+              arrowElement && arrow({ element: arrowElement }),
+            ],
+          }
+        );
+        Object.assign(tooltipElement.style, {
+          left: `${x}px`,
+          top: `${y}px`,
+        });
+
+        if (!middlewareData.arrow || !(arrowElement instanceof HTMLElement)) {
+          return;
+        }
+
+        const key = placement.split("-")[0];
+
+        if (!key) {
+          return;
+        }
+
+        const staticSide = {
+          top: "bottom",
+          right: "left",
+          bottom: "top",
+          left: "right",
+        }[key];
+
+        if (!staticSide) {
+          return;
+        }
+
+        const { x: arrowX, y: arrowY } = middlewareData.arrow;
+
+        Object.assign(arrowElement.style, {
+          left: arrowX != null ? `${arrowX}px` : "",
+          top: arrowY != null ? `${arrowY}px` : "",
+          right: "",
+          bottom: "",
+          [staticSide]: "-4px",
+        });
+      }
+
+      function showTooltip() {
+        if (tooltipElement instanceof HTMLElement) {
+          tooltipElement.style.display = "block";
+          update();
+        }
+      }
+
+      function hideTooltip() {
+        if (tooltipElement instanceof HTMLElement) {
+          tooltipElement.style.display = "";
+        }
+      }
+
+      (
+        [
+          ["mouseenter", showTooltip],
+          ["mouseleave", hideTooltip],
+          ["focus", showTooltip],
+          ["blur", hideTooltip],
+        ] satisfies Array<[keyof HTMLElementEventMap, () => void]>
+      ).forEach(([event, listener]) => {
+        anchor.addEventListener(event, listener);
+      });
+    }
+  }
+
+  await init();
+</script>
