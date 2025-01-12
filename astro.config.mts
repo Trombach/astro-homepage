@@ -6,11 +6,13 @@ import vercel from "@astrojs/vercel";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
+import playformInline from "@playform/inline";
 import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import { defineConfig, envField } from "astro/config";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
 import Icons from "unplugin-icons/vite";
+
 import copyFilesPlugin from "./copy-files.ts";
 
 // https://astro.build/config
@@ -21,6 +23,7 @@ export default defineConfig({
     mdx(),
     sitemap(),
     inoxToolsContentUtils(),
+    playformInline({}),
     copyFilesPlugin(),
   ],
   image: {
