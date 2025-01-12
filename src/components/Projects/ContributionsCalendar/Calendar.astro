@@ -4,6 +4,11 @@ import CalendarGrid from "./CalendarGrid.astro";
 import CalendarTile from "./CalendarTile.astro";
 
 const result = await getGithubContributions();
+
+Astro.response.headers.set(
+  "Cache-Control",
+  "max-age=0, s-maxage=86400, stale-while-revalidate=59",
+);
 ---
 
 {
