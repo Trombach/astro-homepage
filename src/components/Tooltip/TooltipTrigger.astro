@@ -1,0 +1,10 @@
+---
+import TooltipContent from "./TooltipContent.astro";
+---
+
+<div data-astro-tooltip>
+  <slot />
+  <TooltipContent>
+    <slot name="content" />
+  </TooltipContent>
+</div>

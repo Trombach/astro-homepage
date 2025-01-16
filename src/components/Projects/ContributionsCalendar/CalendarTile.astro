@@ -1,4 +1,6 @@
 ---
+import TooltipTrigger from "@components/Tooltip/TooltipTrigger.astro";
+
 type Props = {
   contributions: number;
   date: Date;
@@ -7,23 +9,26 @@ type Props = {
 const { contributions, date } = Astro.props;
 ---
 
-<div
-  data-tooltip
-  data-tooltip-content={`${
-    contributions > 1
-      ? `${contributions} contributions`
-      : contributions === 1
-        ? `${contributions} contribution`
-        : "No contributions"
-  } on ${date.toLocaleDateString("en-UK")}`}
-  class:list={[
-    contributions === 0 && "bg-slate-300 dark:bg-slate-900",
-    contributions > 0 && contributions <= 5 && "bg-green-950",
-    contributions > 5 && contributions <= 10 && "bg-green-900",
-    contributions > 10 && contributions <= 15 && "bg-green-800",
-    contributions > 15 && contributions <= 25 && "bg-green-600",
-    contributions > 25 && "bg-green-400",
-    "size-2 rounded-sm transition-transform hover:scale-150 lg:size-3 xl:size-4",
-  ]}
->
-</div>
+<TooltipTrigger>
+  <div
+    class:list={[
+      contributions === 0 && "bg-slate-300 dark:bg-slate-900",
+      contributions > 0 && contributions <= 5 && "bg-green-950",
+      contributions > 5 && contributions <= 10 && "bg-green-900",
+      contributions > 10 && contributions <= 15 && "bg-green-800",
+      contributions > 15 && contributions <= 25 && "bg-green-600",
+      contributions > 25 && "bg-green-400",
+      "size-2 rounded-sm transition-transform hover:scale-150 lg:size-3 xl:size-4",
+    ]}
+  >
+  </div>
+  <Fragment slot="content">
+    `${
+      contributions > 1
+        ? `${contributions} contributions`
+        : contributions === 1
+          ? `${contributions} contribution`
+          : "No contributions"
+    } on ${date.toLocaleDateString("en-UK")}`
+  </Fragment>
+</TooltipTrigger>
