@@ -6,6 +6,7 @@ import Webmentions from "@components/Head/Webmentions.astro";
 import Navbar from "@components/Nav/Navbar.astro";
 import ThemeProvider from "@components/Nav/ThemeProvider.astro";
 import NativeViewTransitions from "@components/ViewTransitions/NativeViewTransitions.astro";
+import lobsterWoff2 from "@fontsource/lobster/files/lobster-latin-400-normal.woff2?url";
 
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
@@ -31,6 +32,7 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <Webmentions />
     <Favicon />
+    <link rel="preload" as="font" type="font/woff2" href={lobsterWoff2} crossorigin="anonymous" />
     <slot name="preload" />
     <slot name="head" />
     <slot name="seo">
