@@ -1,5 +1,13 @@
 # homepage
 
+## 1.8.2
+
+### Patch Changes
+
+- fca28c9: use dynamic imports for icons
+- d4cd236: use pure Astro component for menu button
+- c5bccc8: add astro-critters
+
 ## 1.8.1
 
 ### Patch Changes
