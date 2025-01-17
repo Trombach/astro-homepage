@@ -1,5 +1,5 @@
 ---
-import MenuButton from "@components/MenuButton.svelte";
+import MenuButton from "@components/MenuButton.astro";
 import NavigationMenu from "./NavigationMenu.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
@@ -15,7 +15,7 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
   ]}
 >
   <div class="mx-auto flex w-full max-w-screen-xl items-center justify-between">
-    <MenuButton client:visible />
+    <MenuButton />
 
     <div class="max-sm:hidden">
       <NavigationMenu />

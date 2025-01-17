@@ -2,7 +2,6 @@ import containerQueries from "@tailwindcss/container-queries";
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
-import type { PluginCreator } from "tailwindcss/types/config";
 
 const animationDelay = plugin(({ matchUtilities, theme }) => {
   matchUtilities(
@@ -62,6 +61,19 @@ const textShadow = plugin(({ matchUtilities, theme }) => {
     { values: theme("textShadow") || {} },
   );
 });
+
+const menuButtonTransition = plugin(({ addComponents }) =>
+  addComponents({
+    ".menu-button-transition": {
+      transition:
+        "rotate calc(var(--header-animation-duration) / 2) ease-in, y calc(var(--header-animation-duration) / 2) ease-in calc(var(--header-animation-duration) / 2), opacity 0ms calc(var(--header-animation-duration) / 2);",
+    },
+    ".menu-button-transition-close": {
+      transition:
+        "y calc(var(--header-animation-duration) / 2) ease-in, rotate calc(var(--header-animation-duration) / 2) ease-in calc(var(--header-animation-duration) / 2), opacity 0ms calc(var(--header-animation-duration) / 2);",
+    },
+  }),
+);
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -153,13 +165,11 @@ export default {
     },
   },
   plugins: [
-    containerQueries as {
-      handler: PluginCreator;
-      config?: Partial<Config>;
-    },
+    containerQueries,
     animationDelay,
     timelineAnimation,
     textShadow,
+    menuButtonTransition,
   ],
   future: {
     hoverOnlyWhenSupported: true,

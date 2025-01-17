@@ -1,0 +1,61 @@
+<button id="menu-toggle" popovertarget="menu-container" class="p-1 sm:hidden">
+  <svg
+    class="fill-foreground size-8"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+  >
+    <g
+      class:list={[
+        "transition-transform ease-in",
+        "group-data-[header=collapsed]:translate-x-0 group-data-[header=collapsed]:-translate-y-[5px]",
+      ]}
+    >
+      <rect
+        class:list={[
+          "[y:25] group-data-[header=expanded]:[y:47.5] group-data-[header=expanded]:[rotate:45deg]",
+          "menu-button-transition-close group-data-[header=collapsed]:menu-button-transition",
+        ]}
+        x="10"
+        width="80"
+        height="5"
+        rx="2.5"
+        transform-origin="center"></rect>
+      <rect
+        class:list={[
+          "group-data-[header=expanded]:opacity-0",
+          "menu-button-transition-close group-data-[header=collapsed]:menu-button-transition",
+        ]}
+        x="10"
+        y="50"
+        width="80"
+        height="5"
+        rx="2.5"></rect>
+      <rect
+        class:list={[
+          "[y:75] group-data-[header=expanded]:[y:47.5] group-data-[header=expanded]:[rotate:-45deg]",
+          "menu-button-transition-close group-data-[header=collapsed]:menu-button-transition",
+        ]}
+        x="10"
+        width="80"
+        height="5"
+        rx="2.5"
+        transform-origin="center"></rect>
+    </g>
+  </svg>
+  <span class="sr-only">Menu Toggle</span>
+</button>
+
+<script>
+  const header = document.querySelector("[data-header]");
+  const button = document.querySelector("#menu-toggle");
+
+  if (header instanceof HTMLElement && button instanceof HTMLButtonElement) {
+    button.addEventListener("click", () => {
+      if (header.dataset.header === "collapsed") {
+        header.dataset.header = "expanded";
+      } else {
+        header.dataset.header = "collapsed";
+      }
+    });
+  }
+</script>
