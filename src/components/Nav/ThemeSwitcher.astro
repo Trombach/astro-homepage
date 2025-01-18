@@ -11,7 +11,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
 <fieldset
   class:list={[
     "relative isolate border border-solid flex rounded-full w-fit h-8 box-content",
-    "focus-within:outline focus-within:outline-offset-1",
+    "has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1",
   ]}
 >
   <legend class="sr-only">Select a theme</legend>

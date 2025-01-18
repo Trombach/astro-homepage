@@ -14,6 +14,7 @@ const { href, title, description, cover, meta } = Astro.props;
 <li
   class:list={[
     "group max-w-[600px] overflow-clip rounded-xl border bg-card text-card-foreground",
+    "has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1",
   ]}
   transition:name={`border-${dash(title)}`}
 >
