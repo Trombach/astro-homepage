@@ -15,7 +15,7 @@ const { title, description, tools, tags } = Astro.props;
 const dashedTitle = dash(title);
 ---
 
-<div class="rounded-b-xl p-5">
+<div class="flex flex-col flex-grow rounded-b-xl p-5">
   <div class="my-3 flex flex-wrap gap-2 items-center justify-between">
     <h2 class="font-semibold" transition:name={dashedTitle}>
       {titleCase(title)}
@@ -31,7 +31,7 @@ const dashedTitle = dash(title);
     }
   </div>
   <p
-    class="font-mono text-muted-foreground text-sm"
+    class="font-mono text-muted-foreground text-sm mb-3"
     transition:name={`${dashedTitle}-description`}
   >
     {description}
