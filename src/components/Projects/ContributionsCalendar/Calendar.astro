@@ -1,4 +1,5 @@
 ---
+import TooltipOutlet from "@components/Tooltip/TooltipOutlet.astro";
 import getGithubContributions from "@utils/contributionsCalendar";
 import CalendarGrid from "./CalendarGrid.astro";
 import CalendarTile from "./CalendarTile.astro";
@@ -22,14 +23,7 @@ const result = await getGithubContributions();
           ))
         )}
       </CalendarGrid>
-      <div
-        role="tooltip"
-        data-tooltip-container
-        class="hidden absolute max-content top-0 left-0 rounded-full bg-accent px-3 py-1"
-      >
-        <div data-tooltip-arrow class="absolute size-2 bg-accent rotate-45" />
-        <div data-tooltip-content-outlet></div>
-      </div>
+      <TooltipOutlet useArrow />
     </>
   ) : (
     <span>{result.message}</span>
@@ -47,16 +41,26 @@ const result = await getGithubContributions();
 
   async function init() {
     const anchors = document.querySelectorAll("[data-tooltip]");
-    const tooltipElement = document.querySelector("[data-tooltip-container]");
-    const arrowElement = document.querySelector("[data-tooltip-arrow]");
-    const contentOutlet = document.querySelector(
-      "[data-tooltip-content-outlet]"
-    );
 
     for (const anchor of anchors) {
       if (!(anchor instanceof HTMLElement)) {
         continue;
       }
+
+      const tooltipName = anchor.dataset.tooltip;
+
+      const tooltipElement = document.querySelector(
+        tooltipName
+          ? `[data-tooltip-container="${tooltipName}"]`
+          : "[data-tooltip-container]"
+      );
+
+      const arrowElement = tooltipElement?.querySelector(
+        "[data-tooltip-arrow]"
+      );
+      const contentOutlet = tooltipElement?.querySelector(
+        "[data-tooltip-content-outlet]"
+      );
 
       async function update() {
         if (
@@ -66,9 +70,14 @@ const result = await getGithubContributions();
           return;
         }
 
-        if (contentOutlet instanceof Text) {
-          contentOutlet.textContent = anchor.dataset.tooltipContent ?? null;
+        if (!(contentOutlet instanceof HTMLElement)) {
+          return;
         }
+
+        const template = anchor.querySelector("template");
+        contentOutlet.replaceChildren(
+          template?.content.cloneNode(true) ?? document.createTextNode("")
+        );
 
         const { x, y, placement, middlewareData } = await computePosition(
           anchor,

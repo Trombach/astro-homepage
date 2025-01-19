@@ -23,12 +23,12 @@ const { contributions, date } = Astro.props;
   >
   </div>
   <Fragment slot="content">
-    `${
+    {
       contributions > 1
         ? `${contributions} contributions`
         : contributions === 1
           ? `${contributions} contribution`
           : "No contributions"
-    } on ${date.toLocaleDateString("en-UK")}`
+    } on {date.toLocaleDateString("en-UK")}
   </Fragment>
 </TooltipTrigger>
