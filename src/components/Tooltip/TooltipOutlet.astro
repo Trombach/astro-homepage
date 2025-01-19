@@ -9,7 +9,7 @@ const { name = "", useArrow = false } = Astro.props;
 
 <div
   role="tooltip"
-  data-tooltip-container={name ?? ""}
+  data-tooltip-container={name}
   class="hidden absolute max-content top-0 left-0 rounded-full bg-accent px-3 py-1"
 >
   {
@@ -19,5 +19,5 @@ const { name = "", useArrow = false } = Astro.props;
       </slot>
     )
   }
-  <div data-tooltip-content-outlet></div>
+  <!--[tooltip content]-->
 </div>

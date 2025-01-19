@@ -58,9 +58,6 @@ const result = await getGithubContributions();
       const arrowElement = tooltipElement?.querySelector(
         "[data-tooltip-arrow]"
       );
-      const contentOutlet = tooltipElement?.querySelector(
-        "[data-tooltip-content-outlet]"
-      );
 
       async function update() {
         if (
@@ -70,12 +67,17 @@ const result = await getGithubContributions();
           return;
         }
 
-        if (!(contentOutlet instanceof HTMLElement)) {
-          return;
+        // remove old content
+        while (
+          tooltipElement.lastChild?.nodeType !== Node.COMMENT_NODE &&
+          tooltipElement.lastChild?.nodeValue !== "[tooltip content]"
+        ) {
+          tooltipElement.lastChild?.remove();
         }
 
+        const comment = tooltipElement.lastChild;
         const template = anchor.querySelector("template");
-        contentOutlet.replaceChildren(
+        comment.after(
           template?.content.cloneNode(true) ?? document.createTextNode("")
         );
 
