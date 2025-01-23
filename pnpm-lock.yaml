@@ -27,8 +27,8 @@ importers:
         specifier: ^5.1.5
         version: 5.1.5(astro@5.1.8(@types/node@22.10.7)(jiti@1.21.7)(rollup@4.31.0)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@3.4.17(ts-node@10.9.1(@types/node@22.10.7)(typescript@5.7.3)))(ts-node@10.9.1(@types/node@22.10.7)(typescript@5.7.3))
       '@astrojs/vercel':
-        specifier: ^8.0.2
-        version: 8.0.2(astro@5.1.8(@types/node@22.10.7)(jiti@1.21.7)(rollup@4.31.0)(typescript@5.7.3)(yaml@2.7.0))(react@18.3.1)(rollup@4.31.0)(svelte@5.19.1)
+        specifier: ^8.0.4
+        version: 8.0.4(astro@5.1.8(@types/node@22.10.7)(jiti@1.21.7)(rollup@4.31.0)(typescript@5.7.3)(yaml@2.7.0))(react@18.3.1)(rollup@4.31.0)(svelte@5.19.1)
       '@floating-ui/dom':
         specifier: ^1.6.13
         version: 1.6.13
@@ -219,8 +219,8 @@ packages:
     resolution: {integrity: sha512-wxhSKRfKugLwLlr4OFfcqovk+LIFtKwLyGPqMsv+9/ibqqnW3Gv7tBhtKEb0gAyUAC4G9BTVQeQahqnQAhd6IQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
 
-  '@astrojs/vercel@8.0.2':
-    resolution: {integrity: sha512-JiH9A/uSBqV/XHsfp/wghXs6yBpCNh4iQs8kNIcjKRZXLaO54+PWKar/6d69sUl+ugGXjSWhZjnB5hY4CC3tDg==}
+  '@astrojs/vercel@8.0.4':
+    resolution: {integrity: sha512-/x+bsvVgiLtIcYmlDZS23MzXkQLUdbEHh4GMJvytFNqvHPN1c2f7Dw/fY134fu7y6GP8Qi+TlegckIu5IVYg/Q==}
     peerDependencies:
       astro: ^5.0.0
 
@@ -1149,6 +1149,10 @@ packages:
   abbrev@2.0.0:
     resolution: {integrity: sha512-6/mh1E2u2YgEsCHdY0Yx5oW+61gZU+1vXaoiHHrpKeuRNNgFvS+/jrwHiQhB5apAf5oB7UB7E19ol2R2LKH8hQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+
+  abbrev@3.0.0:
+    resolution: {integrity: sha512-+/kfrslGQ7TNV2ecmQwMJj/B65g5KVq1/L3SGVZ3tCYGqlzFuFCGBZJtMP99wH3NpEUyAjn0zPdPUg0D+DwrOA==}
+    engines: {node: ^18.17.0 || >=20.5.0}
 
   acorn-import-attributes@1.9.5:
     resolution: {integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==}
@@ -2681,8 +2685,8 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     hasBin: true
 
-  nopt@8.0.0:
-    resolution: {integrity: sha512-1L/fTJ4UmV/lUxT2Uf006pfZKTvAgCF+chz+0OgBHO8u2Z67pE7AaAUUj7CJy0lXqHmymUvGFt6NE9R3HER0yw==}
+  nopt@8.1.0:
+    resolution: {integrity: sha512-ieGu42u/Qsa4TFktmaKEwM6MQH0pOWnaB3htzh0JRtx84+Mebc0cbZYN5bC+6WTZ4+77xrL9Pn5m7CV6VIkV7A==}
     engines: {node: ^18.17.0 || >=20.5.0}
     hasBin: true
 
@@ -4117,7 +4121,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@8.0.2(astro@5.1.8(@types/node@22.10.7)(jiti@1.21.7)(rollup@4.31.0)(typescript@5.7.3)(yaml@2.7.0))(react@18.3.1)(rollup@4.31.0)(svelte@5.19.1)':
+  '@astrojs/vercel@8.0.4(astro@5.1.8(@types/node@22.10.7)(jiti@1.21.7)(rollup@4.31.0)(typescript@5.7.3)(yaml@2.7.0))(react@18.3.1)(rollup@4.31.0)(svelte@5.19.1)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.2
       '@vercel/analytics': 1.4.1(react@18.3.1)(svelte@5.19.1)
@@ -4660,7 +4664,7 @@ snapshots:
       detect-libc: 2.0.3
       https-proxy-agent: 7.0.6
       node-fetch: 2.7.0
-      nopt: 8.0.0
+      nopt: 8.1.0
       semver: 7.6.3
       tar: 7.4.3
     transitivePeerDependencies:
@@ -5222,6 +5226,8 @@ snapshots:
   '@webgpu/types@0.1.21': {}
 
   abbrev@2.0.0: {}
+
+  abbrev@3.0.0: {}
 
   acorn-import-attributes@1.9.5(acorn@8.14.0):
     dependencies:
@@ -7217,9 +7223,9 @@ snapshots:
     dependencies:
       abbrev: 2.0.0
 
-  nopt@8.0.0:
+  nopt@8.1.0:
     dependencies:
-      abbrev: 2.0.0
+      abbrev: 3.0.0
 
   normalize-path@3.0.0: {}
 
