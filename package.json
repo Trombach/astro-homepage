@@ -51,6 +51,7 @@
     "astro-starlight-remark-asides": "^0.0.7",
     "canvaskit-wasm": "^0.39.1",
     "clsx": "^2.1.1",
+    "linkedom": "^0.18.6",
     "radash": "^12.1.0",
     "remark-directive": "^3.0.0",
     "remark-github": "^12.0.0",

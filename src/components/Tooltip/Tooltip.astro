@@ -1,0 +1,36 @@
+---
+import { randomBytes } from "node:crypto";
+import { parseHTML } from "linkedom";
+
+type Props = {
+  name?: string;
+};
+
+const { name = "" } = Astro.props;
+
+const contentSlot = await Astro.slots.render("content");
+const content = parseHTML(contentSlot);
+const contentIsText = content.document.children.length === 0;
+
+const { document } = parseHTML(await Astro.slots.render("default"));
+const children = document.children;
+
+children[0]?.setAttribute("data-tooltip", name);
+
+let id = "";
+if (contentIsText) {
+  children[0]?.setAttribute("data-tooltip-text", contentSlot);
+} else {
+  id = randomBytes(8).toString("hex");
+  children[0]?.setAttribute("data-tooltip-id", id);
+}
+---
+
+<Fragment set:html={document} />
+{
+  !contentIsText && (
+    <template {id}>
+      <slot name="content" />
+    </template>
+  )
+}

@@ -15,7 +15,7 @@ const { name = "", useArrow = false } = Astro.props;
   {
     useArrow && (
       <slot name="arrow">
-        <div data-tooltip-arrow class="absolute size-2 bg-accent rotate-45" />
+        <div data-tooltip-arrow class="absolute size-2 bg-inherit rotate-45" />
       </slot>
     )
   }

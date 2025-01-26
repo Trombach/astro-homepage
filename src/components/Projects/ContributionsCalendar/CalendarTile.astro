@@ -1,5 +1,5 @@
 ---
-import TooltipTrigger from "@components/Tooltip/TooltipTrigger.astro";
+import Tooltip from "@components/Tooltip/Tooltip.astro";
 
 type Props = {
   contributions: number;
@@ -9,7 +9,7 @@ type Props = {
 const { contributions, date } = Astro.props;
 ---
 
-<TooltipTrigger>
+<Tooltip>
   <div
     class:list={[
       contributions === 0 && "bg-slate-300 dark:bg-slate-900",
@@ -31,4 +31,4 @@ const { contributions, date } = Astro.props;
           : "No contributions"
     } on {date.toLocaleDateString("en-UK")}
   </Fragment>
-</TooltipTrigger>
+</Tooltip>
