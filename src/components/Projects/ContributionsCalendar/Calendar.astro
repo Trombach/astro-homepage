@@ -1,4 +1,5 @@
 ---
+import TooltipOutlet from "@components/Tooltip/TooltipOutlet.astro";
 import getGithubContributions from "@utils/contributionsCalendar";
 import CalendarGrid from "./CalendarGrid.astro";
 import CalendarTile from "./CalendarTile.astro";
@@ -18,15 +19,15 @@ const result = await getGithubContributions();
       <CalendarGrid>
         {result.weeks?.map((week) =>
           week.contributionDays.map(({ contributionCount, date }) => (
-            <CalendarTile
-              contributions={contributionCount}
-              {date}
-            />
-          )),
+            <CalendarTile contributions={contributionCount} {date} />
+          ))
         )}
       </CalendarGrid>
+      <TooltipOutlet useArrow />
     </>
   ) : (
     <span>{result.message}</span>
   )
 }
+
+<script src="./tooltip.ts"></script>
