@@ -24,10 +24,10 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
 
     <link rel="sitemap" href="/sitemap-index.xml" />
     <Webmentions />
