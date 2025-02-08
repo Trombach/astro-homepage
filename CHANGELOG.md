@@ -1,5 +1,13 @@
 # homepage
 
+## 1.8.3
+
+### Patch Changes
+
+- 7304845: Add site name for SEO
+- ce9f358: improve project card layout
+- c9e9b32: Implement tooltip more generic as POC for package
+
 ## 1.8.2
 
 ### Patch Changes
