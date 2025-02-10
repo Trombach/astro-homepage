@@ -67,7 +67,7 @@ export default defineConfig({
         context: "server",
         access: "secret",
       }),
-      VERCEL_URL: envField.string({
+      COOLIFY_FQDN: envField.string({
         context: "server",
         access: "public",
         optional: true,
@@ -83,6 +83,7 @@ export default defineConfig({
       CV_FILE_NAME: envField.string({
         context: "server",
         access: "public",
+        default: "lukastrombach-cv.pdf",
       }),
       TURNSTILE_SITE_KEY: envField.string({
         context: "client",
