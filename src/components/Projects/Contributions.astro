@@ -15,7 +15,7 @@ import CalendarGrid from "./ContributionsCalendar/CalendarGrid.astro";
   <Heading>Github Contributions</Heading>
 
   <div
-    class="m-auto flex w-full max-w-screen-xl flex-col items-center gap-16 md:gap-40"
+    class="m-auto flex w-full max-w-(--breakpoint-xl) flex-col items-center gap-16 md:gap-40"
   >
     <div
       class="flex w-full flex-col items-center justify-center gap-5 md:gap-10"
@@ -26,7 +26,7 @@ import CalendarGrid from "./ContributionsCalendar/CalendarGrid.astro";
           <CalendarGrid>
             {
               Array.from(Array(52 * 7).keys()).map(() => (
-                <div class="size-2 animate-pulse rounded-sm bg-slate-300 lg:size-3 xl:size-4 dark:bg-slate-900" />
+                <div class="size-2 animate-pulse rounded-xs bg-slate-300 lg:size-3 xl:size-4 dark:bg-slate-900" />
               ))
             }
           </CalendarGrid>

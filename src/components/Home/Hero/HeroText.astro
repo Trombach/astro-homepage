@@ -8,13 +8,13 @@ import Wave from "./Wave.astro";
 >
   <h1
     class:list={[
-      "flex items-center gap-5 [font-size:clamp(theme(fontSize.6xl),-6.875rem_+_34vw,theme(fontSize.9xl))]",
+      "flex items-center gap-5 [font-size:clamp(var(--text-6xl),-6.875rem+34vw,var(--text-9xl))]",
       "drop-shadow-text",
     ]}
   >
     <span class="font-display">
       <div
-        class="[font-size:clamp(theme(fontSize.4xl),-1.5rem_+_12vw,theme(fontSize.6xl));]"
+        class="[font-size:clamp(var(--text-4xl),-1.5rem+12vw,var(--text-6xl));]"
       >
         Hi there <Wave />
       </div>
@@ -23,7 +23,7 @@ import Wave from "./Wave.astro";
   </h1>
   <p
     class:list={[
-      "border-l-4 border-foreground pl-2 [font-size:clamp(theme(fontSize.xl),-0.3125rem_+_5vw,theme(fontSize.3xl));]",
+      "border-l-4 border-foreground pl-2 [font-size:clamp(var(--text-xl),-0.3125rem+5vw,var(--text-3xl));]",
       "drop-shadow-text"
     ]}
   >

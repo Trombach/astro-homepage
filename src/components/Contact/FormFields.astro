@@ -59,8 +59,8 @@ const response = Astro.getActionResult(actions.contact);
         transition:persist
         {...attributes}
         class:list={[
-          "rounded-lg border bg-background px-3 py-2 placeholder-slate-400 shadow-sm",
-          "focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary",
+          "rounded-lg border bg-background px-3 py-2 placeholder-slate-400 shadow-xs",
+          "focus:border-primary focus:outline-hidden focus:ring-1 focus:ring-primary",
           "[&:user-invalid]:border-destructive",
           "focus:[&:user-invalid]:border-destructive focus:[&:user-invalid]:ring-destructive",
         ]}
