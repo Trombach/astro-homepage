@@ -93,7 +93,7 @@ async function init() {
       ["mouseenter", showTooltip],
       ["mouseleave", hideTooltip],
       ["focus", showTooltip],
-      ["blur", hideTooltip],
+      ["blur-sm", hideTooltip],
     ] satisfies Array<[keyof HTMLElementEventMap, () => void]>) {
       anchor.addEventListener(event, listener);
     }

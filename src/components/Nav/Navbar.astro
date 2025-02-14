@@ -8,13 +8,15 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
   data-header="collapsed"
   transition:name="header"
   class:list={[
-    "[--header-animation-duration:600ms] group fixed top-0 z-50 w-full px-5 py-3 bg-[--header-bg-color] backdrop-blur",
+    "[--header-animation-duration:600ms] group fixed top-0 z-50 w-full px-5 py-3 bg-(--header-bg-color) backdrop-blur-sm",
     "supports-scroll-animation:animate-[bg-blur_1ms_linear] supports-scroll-animation:[animation-timeline:scroll()]",
-    "supports-scroll-animation:backdrop-blur supports-scroll-animation:bg-[--header-bg-color,theme(colors.transparent)]",
+    "supports-scroll-animation:backdrop-blur-sm supports-scroll-animation:bg-(--header-bg-color,--color-transparent)",
     "supports-scroll-animation:lg:backdrop-blur-none supports-scroll-animation:lg:bg-transparent",
   ]}
 >
-  <div class="mx-auto flex w-full max-w-screen-xl items-center justify-between">
+  <div
+    class="mx-auto flex w-full max-w-(--breakpoint-xl) items-center justify-between"
+  >
     <MenuButton />
 
     <div class="max-sm:hidden">
@@ -27,7 +29,7 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
     id="menu-container"
     class:list={[
       "sm:hidden group-data-[header=collapsed]:h-0 overflow-y-hidden",
-      "transition-[height] [interpolate-size:allow-keywords] duration-[--header-animation-duration]"
+      "transition-[height] [interpolate-size:allow-keywords] duration-(--header-animation-duration)",
     ]}
   >
     <NavigationMenu />
@@ -35,17 +37,21 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 </header>
 
 <style>
-  @keyframes bg-blur {
-    10%,
-    100% {
-      backdrop-filter: blur(theme(blur.DEFAULT));
-      background-color: var(--header-bg-color, theme(colors.background));
+  @import "tailwindcss";
+
+  @layer components {
+    @keyframes bg-blur {
+      10%,
+      100% {
+        backdrop-filter: blur(var(--blur-sm));
+        background-color: var(--header-bg-color, --color-background);
+      }
     }
   }
 
   :global(:root) {
-    @supports (backdrop-filter: blur(theme(blur.DEFAULT))) {
-      --header-bg-color: theme(colors.background/50%);
+    @supports (backdrop-filter: blur(var(--blur-sm))) {
+      --header-bg-color: var(--color-background)/50%;
     }
   }
 </style>

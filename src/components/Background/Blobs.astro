@@ -34,18 +34,18 @@ const paths = [
   class="scale-150 md:scale-125 lg:scale-100 will-change-[opacity]"
 >
   <defs>
-    <filter id="blur" x="-75" y="-75" width="150" height="150">
+    <filter id="blur-sm" x="-75" y="-75" width="150" height="150">
       <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
     </filter>
   </defs>
-  <g transform-origin="center" transform="scale(0.8)" filter="url(#blur)">
+  <g transform-origin="center" transform="scale(0.8)" filter="url(#blur-sm)">
     <g transform="translate(400 300)">
       {
         paths.map(({ transform, fill }) => (
           <path
             {transform}
             style={{ "--blob-color": fill }}
-            class="fill-[--blob-color] opacity-40"
+            class="fill-(--blob-color) opacity-40"
           >
             <animate
               attributeName="d"
