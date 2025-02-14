@@ -51,6 +51,7 @@
     "@tailwindcss/container-queries": "^0.1.1",
     "astro": "^5.17.2",
     "astro-og-canvas": "^0.10.1",
+    "@tailwindcss/vite": "^4.0.6",
     "astro-starlight-remark-asides": "^0.0.7",
     "beasties": "^0.4.1",
     "canvaskit-wasm": "^0.40.0",
