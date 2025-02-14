@@ -45,12 +45,12 @@ const { image } = Astro.props;
 
     background-image: linear-gradient(
       var(--gradient-direction),
-      theme(colors.primary.DEFAULT) 0% calc(var(--gradient-stop-1) - 1px),
+      var(--color-primary) 0% calc(var(--gradient-stop-1) - 1px),
       transparent var(--gradient-stop-1) calc(var(--gradient-stop-2) - 1px),
-      theme(colors.primary.green) var(--gradient-stop-2)
+      var(--color-primary-green) var(--gradient-stop-2)
         calc(var(--gradient-stop-3) - 1px),
       transparent var(--gradient-stop-3) calc(var(--gradient-stop-4) - 1px),
-      theme(colors.primary.pink) var(--gradient-stop-4)
+      var(--color-primary-pink) var(--gradient-stop-4)
         calc(var(--gradient-stop-5) - 1px),
       transparent var(--gradient-stop-5)
     );

@@ -11,7 +11,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
 <fieldset
   class:list={[
     "relative isolate border border-solid flex rounded-full w-fit h-8 box-content",
-    "has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1",
+    "has-focus-visible:outline has-focus-visible:outline-offset-1",
   ]}
 >
   <legend class="sr-only">Select a theme</legend>
@@ -23,8 +23,8 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
         id={`${option}-theme`}
         value={option}
         class:list={[
-          "peer fixed top-0 left-0 outline-none m-0 p-0 appearance-none",
-          "[&_+_label]:checked:text-foreground",
+          "peer fixed top-0 left-0 outline-hidden m-0 p-0 appearance-none",
+          "checked:[&+label]:text-foreground",
         ]}
       />
       <label
@@ -53,8 +53,8 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
       "absolute -z-10 box-content -top-px -left-px w-8 h-8 rounded-full border",
       "hover:border-primary pointer-events-none bg-primary/25",
       "transition-all duration-300 ease-in-out",
-      "peer-[:nth-of-type(2)]:peer-checked:translate-x-[calc(100%-1.5px)]",
-      "peer-[:nth-of-type(3)]:peer-checked:translate-x-[calc(200%-3px)]",
+      "peer-checked:peer-nth-of-type-2:translate-x-[calc(100%-1.5px)]",
+      "peer-checked:peer-nth-of-type-3:translate-x-[calc(200%-3px)]",
     ]}></span>
 </fieldset>
 

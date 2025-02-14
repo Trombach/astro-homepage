@@ -46,7 +46,9 @@ onMount(() => {
   {/if}
 </svg>
 
-<style lang="postcss">
+<style>
+  @reference "../../styles/global.css";
+
   svg path {
     fill: none;
     fill-opacity: 1;
@@ -54,6 +56,8 @@ onMount(() => {
     stroke-dasharray: none;
     stroke-opacity: 1;
     width: 1;
-    @apply stroke-foreground stroke-2;
+    stroke: hsl(var(--foreground));
+    stroke-width: var(--space(2));
+
   }
 </style>
