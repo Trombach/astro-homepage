@@ -28,7 +28,7 @@ const { data } = await getEntry(person);
   method="POST"
   action={actions.contact}
   autocomplete="on"
-  class="relative mx-auto flex w-full flex-col gap-5 rounded-xl border bg-background px-6 py-3 justify-center md:w-[600px] lg:max-w-screen-lg lg:px-12 lg:py-6"
+  class="relative mx-auto flex w-full flex-col gap-5 rounded-xl border bg-background px-6 py-3 justify-center md:w-[600px] lg:max-w-(--breakpoint-lg) lg:px-12 lg:py-6"
 >
   <Avatar
     image={data.avatar}

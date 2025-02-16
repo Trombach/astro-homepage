@@ -15,13 +15,13 @@ const dashedTitle = dash(title);
 <article
   class:list={[
     "text-base leading-7 min-w-0",
-    "w-auto max-w-[70ch] rounded-xl border bg-background pb-5 lg:max-w-[calc(70ch+(theme(spacing.16)*2))]",
-    "[&_h2]:border-b [&_h2]:pb-2 [&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:tracking-tight first:[&_h2]:mt-0",
+    "w-auto max-w-[70ch] rounded-xl border bg-background pb-5 lg:max-w-[calc(70ch+(--spacing(16)*2))]",
+    "[&_h2]:border-b [&_h2]:pb-2 [&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:first:mt-0",
     "[&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:tracking-tight",
     "[&_h4]:text-xl [&_h4]:font-semibold [&_h4]:tracking-tight",
     "[&_a]:font-medium [&_a]:underline",
     "[&_p]:text-justify [&_p]:hyphens-auto [&_p]:break-words",
-    "[&_p>code]:rounded [&_p>code]:bg-muted [&_p>code]:px-[0.3rem] [&_p>code]:py-[0.2rem] [&_p>code]:font-mono [&_p>code]:text-sm [&_p>code]:font-semibold",
+    "[&_p>code]:rounded-sm [&_p>code]:bg-muted [&_p>code]:px-[0.3rem] [&_p>code]:py-[0.2rem] [&_p>code]:font-mono [&_p>code]:text-sm [&_p>code]:font-semibold",
     "[&_figcaption]:break-words [&_figcaption]:hyphens-auto [&_figcaption]:text-pretty [&_figcaption]:text-sm [&_figcaption]:text-muted-foreground [&_figcaption]:mt-4",
     "[&_pre]:text-sm [&_pre]:leading-7 [&_pre]:py-4 [&_pre]:px-6 [&_pre]:rounded-md",
     "motion-safe:[&_figure>img]:timeline-slide-in-bottom motion-safe:[&_figure>img]:[animation-range:entry_10%_contain_25%]",
@@ -37,7 +37,7 @@ const dashedTitle = dash(title);
         widths={[240, 480, 850]}
         loading="eager"
         sizes={`(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px`}
-        class="aspect-[21/9] w-full rounded-t-xl object-cover"
+        class="aspect-21/9 w-full rounded-t-xl object-cover"
         transition:name={cover.image?.src}
       />
     )

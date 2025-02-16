@@ -13,18 +13,23 @@ const { person } = aboutMe.data;
 const { data } = await getEntry(person);
 ---
 
-<div class="[perspective:3200px] z-10 w-full shrink-0 flex justify-center items-center lg:w-1/2 h-[calc(100svh/2)] [container:me-section/size]">
+<div
+  class="perspective-distant z-10 w-full shrink-0 flex justify-center items-center lg:w-1/2 h-[calc(100svh/2)] [container:me-section/size]"
+>
   <div
     data-card
     class:list={[
       "@container/me-card",
-      "rounded-xl border bg-card [transform-style:preserve-3d]",
-      "w-11/12 sm:w-[clamp(450px,theme(width[11/12]),750px)] shrink-0 mx-auto sm:aspect-[1.59/1]",
-      "scale-[0.8] sm:[transform:scale(0.8)_rotateY(20deg)]"
+      "rounded-xl border bg-card transform-3d",
+      "w-11/12 sm:w-[clamp(450px,calc(11/12*100vw),750px)] shrink-0 mx-auto sm:aspect-[1.59/1]",
+      "scale-80 sm:transform-[scale(0.8)_rotateY(20deg)]",
+      "[--card-animation-name:id-card-mobile] lg:[--card-animation-name:id-card]",
+      "[--scale:0.8] lg:[--scale:0.9] l-xl:[--scale:1]",
+      "drop-shadow-2xl"
     ]}
   >
     <div
-      class="flex flex-col sm:flex-row h-full w-full items-stretch justify-between"
+      class="flex flex-col sm:flex-row h-full w-[100cqw] items-stretch justify-between"
     >
       <MeCardImage image={data.avatar} />
       <MeCardData {data} />
@@ -33,45 +38,41 @@ const { data } = await getEntry(person);
 </div>
 
 <style>
-  @media (prefers-reduced-motion: no-preference) {
-    [data-card] {
-      animation-timeline: view();
-      animation-range: entry 0% entry 90%;
-      animation-name: id-card-mobile;
-      @media screen(lg) {
-        animation-name: id-card;
+  @layer components {
+    @media (prefers-reduced-motion: no-preference) {
+      [data-card] {
+        animation-timeline: view();
+        animation-range: entry 0% entry 90%;
+        animation-name: var(--card-animation-name);
+        animation-fill-mode: both;
+        animation-duration: 1ms;
+        animation-timing-function: ease-in-out;
       }
-      animation-fill-mode: both;
-      animation-duration: 1ms;
-      animation-timing-function: ease-in-out;
-    }
-  }
-
-  @keyframes id-card {
-    0% {
-      transform: translateY(calc(-25cqh - 10vh)) translateX(50cqw) scale(1)
-        rotateY(0);
-      @apply drop-shadow-none;
     }
 
-    50% {
-      transform: translateY(-40cqh) translateX(0) scale(0.8) rotateY(0);
-      @apply drop-shadow-none;
+    @keyframes id-card {
+      0% {
+        transform: translateY(calc(-25cqh - 10vh)) translateX(60cqw) scale(1)
+          rotateY(0);
+      }
+
+      50% {
+        transform: translateY(-40cqh) translateX(0) scale(var(--scale)) rotateY(0);
+      }
+
+      100% {
+        transform: translateY(0) translateX(0) scale(var(--scale)) rotateY(10deg);
+      }
     }
 
-    100% {
-      transform: translateY(0) translateX(0) scale(0.8) rotateY(20deg);
-      @apply drop-shadow-2xl;
-    }
-  }
+    @keyframes id-card-mobile {
+      from {
+        transform: translateY(-10%) scale(1);
+      }
 
-  @keyframes id-card-mobile {
-    from {
-      transform: translateY(-10%) scale(1);
-    }
-
-    to {
-      transform: translateY(0) scale(0.8);
+      to {
+        transform: translateY(0) scale(0.8);
+      }
     }
   }
 </style>
