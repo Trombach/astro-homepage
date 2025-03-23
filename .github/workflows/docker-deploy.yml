@@ -1,0 +1,83 @@
+name: Build Static Image and Deploy
+on:
+  workflow_call:
+    inputs:
+      tag:
+        description: "Tag for the Docker image"
+        type: string
+        default: latest
+      env:
+        description: "Github environment variables"
+        type: string
+    secrets:
+      VERCEL_STORAGE_URL:
+        description: "URL for Vercel storage"
+        required: true
+      TURNSTILE_SECRET_KEY:
+        description: "Secret key for Turnstile"
+        required: true
+      TURNSTILE_SITEVERIFY_URL:
+        description: "URL for Turnstile site verification"
+        required: true
+      TURNSTILE_SITE_KEY:
+        description: "Site key for Turnstile"
+        required: true
+      RESEND_TOKEN:
+        description: "Token for Resend"
+        required: true
+      BLOB_READ_WRITE_TOKEN:
+        description: "Token for Blob read/write"
+        required: true
+      GH_TOKEN:
+        description: "Token for GitHub"
+        required: true
+      COOLIFY_WEBHOOK:
+        description: "Webhook for Coolify"
+        required: true
+      COOLIFY_TOKEN:
+        description: "Token for Coolify"
+        required: true
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: "trombach/astro-homepage"
+
+jobs:
+  amd64:
+    environment:
+      name: ${{ inputs.env }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Login to ghcr.io
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Build image and push to registry
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
+          secrets: |
+            VERCEL_STORAGE_URL=${{ secrets.VERCEL_STORAGE_URL }}
+            TURNSTILE_SECRET_KEY=${{ secrets.TURNSTILE_SECRET_KEY }}
+            TURNSTILE_SITEVERIFY_URL=${{ secrets.TURNSTILE_SITEVERIFY_URL }}
+            TURNSTILE_SITE_KEY=${{ secrets.TURNSTILE_SITE_KEY }}
+            RESEND_TOKEN=${{ secrets.RESEND_TOKEN }}
+            BLOB_READ_WRITE_TOKEN=${{ secrets.BLOB_READ_WRITE_TOKEN }}
+            GH_TOKEN=${{ secrets.GH_TOKEN }}
+      - name: Deploy to Coolify
+        run: |
+          curl --request GET '${{ secrets.COOLIFY_WEBHOOK }}${{ inputs.tag }}' --header 'Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}'

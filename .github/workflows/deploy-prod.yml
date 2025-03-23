@@ -1,0 +1,19 @@
+name: Production Deployment
+
+on:
+  push:
+    branches:
+      - coolify
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run:
+    permissions:
+      contents: read
+      packages: write
+    uses: ./.github/workflows/docker-deploy.yml
+    with:
+      env: Production
+    secrets: inherit
