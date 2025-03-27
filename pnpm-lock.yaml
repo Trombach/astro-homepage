@@ -22,13 +22,13 @@ importers:
         version: 3.3.0
       '@astrojs/svelte':
         specifier: ^7.0.8
-        version: 7.0.8(@types/node@22.13.14)(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.25.2)(typescript@5.8.2)(yaml@2.7.0)
+        version: 7.0.8(@types/node@22.13.14)(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.25.3)(typescript@5.8.2)(yaml@2.7.0)
       '@astrojs/tailwind':
         specifier: ^6.0.2
         version: 6.0.2(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))(tailwindcss@3.4.17(ts-node@10.9.1(@types/node@22.13.14)(typescript@5.8.2)))(ts-node@10.9.1(@types/node@22.13.14)(typescript@5.8.2))
       '@astrojs/vercel':
         specifier: ^8.1.3
-        version: 8.1.3(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))(react@18.3.1)(rollup@4.37.0)(svelte@5.25.2)
+        version: 8.1.3(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))(react@18.3.1)(rollup@4.37.0)(svelte@5.25.3)
       '@floating-ui/dom':
         specifier: ^1.6.13
         version: 1.6.13
@@ -93,8 +93,8 @@ importers:
         specifier: ^12.0.0
         version: 12.0.0
       resend:
-        specifier: ^4.1.2
-        version: 4.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^4.2.0
+        version: 4.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sanitize-html:
         specifier: ^2.15.0
         version: 2.15.0
@@ -102,8 +102,8 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       svelte:
-        specifier: ^5.25.2
-        version: 5.25.2
+        specifier: ^5.25.3
+        version: 5.25.3
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17(ts-node@10.9.1(@types/node@22.13.14)(typescript@5.8.2))
@@ -112,11 +112,11 @@ importers:
         version: 1.4.0
       unplugin-icons:
         specifier: ^22.1.0
-        version: 22.1.0(svelte@5.25.2)
+        version: 22.1.0(svelte@5.25.3)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.4
-        version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.8.2)
+        version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.4.2)(typescript@5.8.2)
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
@@ -137,7 +137,7 @@ importers:
         version: 9.1.7
       svelte-check:
         specifier: ^4.1.5
-        version: 4.1.5(picomatch@4.0.2)(svelte@5.25.2)(typescript@5.8.2)
+        version: 4.1.5(picomatch@4.0.2)(svelte@5.25.3)(typescript@5.8.2)
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -773,9 +773,6 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@one-ini/wasm@0.1.1':
-    resolution: {integrity: sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==}
-
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
 
@@ -789,8 +786,8 @@ packages:
   '@playform/pipe@0.1.2':
     resolution: {integrity: sha512-fMZyPQXweet44Apz5F+9kAjrmy9RbMX7ajZJmw40lWarWI380D/b0bnJOvOmmZztx3pJZxbBMht2QLd8AG4V2w==}
 
-  '@react-email/render@1.0.1':
-    resolution: {integrity: sha512-W3gTrcmLOVYnG80QuUp22ReIT/xfLsVJ+n7ghSlG2BITB8evNABn1AO2rGQoXuK84zKtDAlxCdm3hRyIpZdGSA==}
+  '@react-email/render@1.0.5':
+    resolution: {integrity: sha512-CA69HYXPk21HhtAXATIr+9JJwpDNmAFCvdMUjWmeoD1+KhJ9NAxusMRxKNeibdZdslmq3edaeOKGbdQ9qjK8LQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^18.0 || ^19.0 || ^19.0.0-rc
@@ -1461,10 +1458,6 @@ packages:
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
 
-  commander@10.0.1:
-    resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
-    engines: {node: '>=14'}
-
   commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
     engines: {node: '>= 6'}
@@ -1477,9 +1470,6 @@ packages:
 
   confbox@0.1.8:
     resolution: {integrity: sha512-RMtmw0iFkeR4YV+fUOSucriAQNb9g8zFR52MWCtl+cCZOFRNL6zeB395vPzFhEjjn4fMxXudmELnl/KF/WrK6w==}
-
-  config-chain@1.1.13:
-    resolution: {integrity: sha512-qj+f8APARXHrM0hraqXYb2/bOVSV4PvJQlNZ/DVj0QrmNM2q2euizkeuVckQ57J+W0mRH6Hvi+k50M4Jul2VRQ==}
 
   consola@3.4.2:
     resolution: {integrity: sha512-5IKcdX0nnYavi6G7TtOhwkYzyjfJlatbjMjuLSfE2kYT5pMDOilZ4OvMhi637CcDICTmz3wARPoyhqyX1Y+XvA==}
@@ -1637,11 +1627,6 @@ packages:
   edge-runtime@2.5.9:
     resolution: {integrity: sha512-pk+k0oK0PVXdlT4oRp4lwh+unuKB7Ng4iZ2HB+EZ7QCEQizX360Rp/F4aRpgpRgdP2ufB35N+1KppHmYjqIGSg==}
     engines: {node: '>=16'}
-    hasBin: true
-
-  editorconfig@1.0.4:
-    resolution: {integrity: sha512-L9Qe08KWTlqYMVvMcTIvMAdl1cDUubzRNYL+WfA4bLDMHe4nemKkpmYzkznE1FwLKu0EEmy6obgQKzMJrg4x9Q==}
-    engines: {node: '>=14'}
     hasBin: true
 
   electron-to-chromium@1.5.124:
@@ -2125,9 +2110,6 @@ packages:
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
 
-  ini@1.3.8:
-    resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
-
   inline-style-parser@0.2.4:
     resolution: {integrity: sha512-0aO8FkhNZlj/ZIbNi7Lxxr12obT7cL1moPfE4tg1LkX7LlLfC6DeX4l2ZEud1ukP9jNQyNnfzQVqwbwmAATY4Q==}
 
@@ -2221,15 +2203,6 @@ packages:
 
   jose@5.9.6:
     resolution: {integrity: sha512-AMlnetc9+CV9asI19zHmrgS/WYsWUwCn2R7RzlbJWD7F9eWYUTGyBmU9o6PxngtLGOiDGPRu+Uc4fhKzbpteZQ==}
-
-  js-beautify@1.15.3:
-    resolution: {integrity: sha512-rKKGuyTxGNlyN4EQKWzNndzXpi0bOl8Gl8YQAW1as/oMz0XhD6sHJO1hTvoBDOSzKuJb9WkwoAb34FfdkKMv2A==}
-    engines: {node: '>=14'}
-    hasBin: true
-
-  js-cookie@3.0.5:
-    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
-    engines: {node: '>=14'}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -2517,10 +2490,6 @@ packages:
 
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
-
-  minimatch@9.0.1:
-    resolution: {integrity: sha512-0jWhJpD/MdhPXwPuiRkCbfYfSKp2qnn2eOc279qI7f+osl/l+prKSrvhg157zSYvx/1nmgn2NqdT6k2Z7zSH9w==}
-    engines: {node: '>=16 || 14 >=14.17'}
 
   minimatch@9.0.5:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
@@ -2900,8 +2869,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.3.3:
-    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+  prettier@3.4.2:
+    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2925,9 +2894,6 @@ packages:
 
   property-information@7.0.0:
     resolution: {integrity: sha512-7D/qOz/+Y4X/rzSB6jKxKUsQnphO046ei8qxG59mtM3RG3DHgTK81HrxrmoDVINJb8NKT5ZsRbwHvQ6B68Iyhg==}
-
-  proto-list@1.2.4:
-    resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -3063,8 +3029,8 @@ packages:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
 
-  resend@4.1.2:
-    resolution: {integrity: sha512-km0btrAj/BqIaRlS+SoLNMaCAUUWEgcEvZpycfVvoXEwAHCxU+vp/ikxPgKRkyKyiR2iDcdUq5uIBTDK9oSSSQ==}
+  resend@4.2.0:
+    resolution: {integrity: sha512-s6ogU+BBYH1H6Zl926cpddtLRAJWeFv5cIKcuHLWk1QYhFTbpFJlhqx31pnN2f0CB075KFSrc1Xf6HG690wzuw==}
     engines: {node: '>=18'}
 
   resolve-from@5.0.0:
@@ -3293,8 +3259,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.25.2:
-    resolution: {integrity: sha512-IxmBz4x15+bNbowhygUlwoVgqMLfEIDtyjUFDfOwb1f+7Fe5qeLfwGJHMql7QUSJBqNtXcOCPsZDDmuieZcpfA==}
+  svelte@5.25.3:
+    resolution: {integrity: sha512-J9rcZ/xVJonAoESqVGHHZhrNdVbrCfkdB41BP6eiwHMoFShD9it3yZXApVYMHdGfCshBsZCKsajwJeBbS/M1zg==}
     engines: {node: '>=18'}
 
   tailwindcss@3.4.17:
@@ -3930,9 +3896,9 @@ snapshots:
 
   '@antfu/utils@8.1.1': {}
 
-  '@astrojs/check@0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.8.2)':
+  '@astrojs/check@0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.4.2)(typescript@5.8.2)':
     dependencies:
-      '@astrojs/language-server': 2.15.0(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.8.2)
+      '@astrojs/language-server': 2.15.0(prettier-plugin-astro@0.14.1)(prettier@3.4.2)(typescript@5.8.2)
       chokidar: 4.0.1
       kleur: 4.1.5
       typescript: 5.8.2
@@ -3947,7 +3913,7 @@ snapshots:
 
   '@astrojs/internal-helpers@0.6.1': {}
 
-  '@astrojs/language-server@2.15.0(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.8.2)':
+  '@astrojs/language-server@2.15.0(prettier-plugin-astro@0.14.1)(prettier@3.4.2)(typescript@5.8.2)':
     dependencies:
       '@astrojs/compiler': 2.10.4
       '@astrojs/yaml2ts': 0.2.1
@@ -3961,14 +3927,14 @@ snapshots:
       volar-service-css: 0.0.61(@volar/language-service@2.4.5)
       volar-service-emmet: 0.0.61(@volar/language-service@2.4.5)
       volar-service-html: 0.0.61(@volar/language-service@2.4.5)
-      volar-service-prettier: 0.0.61(@volar/language-service@2.4.5)(prettier@3.3.3)
+      volar-service-prettier: 0.0.61(@volar/language-service@2.4.5)(prettier@3.4.2)
       volar-service-typescript: 0.0.61(@volar/language-service@2.4.5)
       volar-service-typescript-twoslash-queries: 0.0.61(@volar/language-service@2.4.5)
       volar-service-yaml: 0.0.61(@volar/language-service@2.4.5)
       vscode-html-languageservice: 5.3.1
       vscode-uri: 3.0.8
     optionalDependencies:
-      prettier: 3.3.3
+      prettier: 3.4.2
       prettier-plugin-astro: 0.14.1
     transitivePeerDependencies:
       - typescript
@@ -4028,12 +3994,12 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.24.2
 
-  '@astrojs/svelte@7.0.8(@types/node@22.13.14)(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.25.2)(typescript@5.8.2)(yaml@2.7.0)':
+  '@astrojs/svelte@7.0.8(@types/node@22.13.14)(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.25.3)(typescript@5.8.2)(yaml@2.7.0)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.25.2)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))
+      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.25.3)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))
       astro: 5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0)
-      svelte: 5.25.2
-      svelte2tsx: 0.7.35(svelte@5.25.2)(typescript@5.8.2)
+      svelte: 5.25.3
+      svelte2tsx: 0.7.35(svelte@5.25.3)(typescript@5.8.2)
       typescript: 5.8.2
       vite: 6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0)
     transitivePeerDependencies:
@@ -4072,10 +4038,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@8.1.3(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))(react@18.3.1)(rollup@4.37.0)(svelte@5.25.2)':
+  '@astrojs/vercel@8.1.3(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))(react@18.3.1)(rollup@4.37.0)(svelte@5.25.3)':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
-      '@vercel/analytics': 1.5.0(react@18.3.1)(svelte@5.25.2)
+      '@vercel/analytics': 1.5.0(react@18.3.1)(svelte@5.25.3)
       '@vercel/edge': 1.2.1
       '@vercel/nft': 0.29.2(rollup@4.37.0)
       '@vercel/routing-utils': 5.0.4
@@ -4673,8 +4639,6 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.18.0
 
-  '@one-ini/wasm@0.1.1': {}
-
   '@oslojs/encoding@1.1.0': {}
 
   '@pkgjs/parseargs@0.11.0':
@@ -4726,10 +4690,10 @@ snapshots:
       deepmerge-ts: 7.1.3
       fast-glob: 3.3.3
 
-  '@react-email/render@1.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@react-email/render@1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       html-to-text: 9.0.5
-      js-beautify: 1.15.3
+      prettier: 3.4.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-promise-suspense: 0.3.4
@@ -4846,23 +4810,23 @@ snapshots:
     dependencies:
       acorn: 8.14.1
 
-  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.25.2)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.25.2)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))':
+  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.25.3)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.25.3)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.25.2)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))
+      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.25.3)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))
       debug: 4.4.0
-      svelte: 5.25.2
+      svelte: 5.25.3
       vite: 6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.25.2)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))':
+  '@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.25.3)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.25.2)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.25.2)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))
+      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.25.3)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.25.3)(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))
       debug: 4.4.0
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.17
-      svelte: 5.25.2
+      svelte: 5.25.3
       vite: 6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0)
       vitefu: 1.0.6(vite@6.2.3(@types/node@22.13.14)(jiti@1.21.7)(yaml@2.7.0))
     transitivePeerDependencies:
@@ -4949,10 +4913,10 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vercel/analytics@1.5.0(react@18.3.1)(svelte@5.25.2)':
+  '@vercel/analytics@1.5.0(react@18.3.1)(svelte@5.25.3)':
     optionalDependencies:
       react: 18.3.1
-      svelte: 5.25.2
+      svelte: 5.25.3
 
   '@vercel/build-utils@10.5.1': {}
 
@@ -5549,8 +5513,6 @@ snapshots:
 
   comma-separated-tokens@2.0.3: {}
 
-  commander@10.0.1: {}
-
   commander@4.1.1: {}
 
   common-ancestor-path@1.0.1: {}
@@ -5558,11 +5520,6 @@ snapshots:
   concat-map@0.0.1: {}
 
   confbox@0.1.8: {}
-
-  config-chain@1.1.13:
-    dependencies:
-      ini: 1.3.8
-      proto-list: 1.2.4
 
   consola@3.4.2: {}
 
@@ -5699,13 +5656,6 @@ snapshots:
       pretty-ms: 7.0.1
       signal-exit: 4.0.2
       time-span: 4.0.0
-
-  editorconfig@1.0.4:
-    dependencies:
-      '@one-ini/wasm': 0.1.1
-      commander: 10.0.1
-      minimatch: 9.0.1
-      semver: 7.7.1
 
   electron-to-chromium@1.5.124: {}
 
@@ -6293,8 +6243,6 @@ snapshots:
 
   inherits@2.0.4: {}
 
-  ini@1.3.8: {}
-
   inline-style-parser@0.2.4: {}
 
   iron-webcrypto@1.2.1: {}
@@ -6342,7 +6290,7 @@ snapshots:
 
   is-reference@3.0.3:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
 
   is-subdir@1.2.0:
     dependencies:
@@ -6367,16 +6315,6 @@ snapshots:
   jiti@1.21.7: {}
 
   jose@5.9.6: {}
-
-  js-beautify@1.15.3:
-    dependencies:
-      config-chain: 1.1.13
-      editorconfig: 1.0.4
-      glob: 10.4.5
-      js-cookie: 3.0.5
-      nopt: 8.1.0
-
-  js-cookie@3.0.5: {}
 
   js-tokens@4.0.0: {}
 
@@ -6961,10 +6899,6 @@ snapshots:
     dependencies:
       brace-expansion: 1.1.11
 
-  minimatch@9.0.1:
-    dependencies:
-      brace-expansion: 2.0.1
-
   minimatch@9.0.5:
     dependencies:
       brace-expansion: 2.0.1
@@ -7285,7 +7219,7 @@ snapshots:
   prettier-plugin-astro@0.14.1:
     dependencies:
       '@astrojs/compiler': 2.11.0
-      prettier: 3.3.3
+      prettier: 3.4.2
       sass-formatter: 0.7.9
     optional: true
 
@@ -7294,8 +7228,7 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.3.3:
-    optional: true
+  prettier@3.4.2: {}
 
   pretty-ms@7.0.1:
     dependencies:
@@ -7313,8 +7246,6 @@ snapshots:
   property-information@6.5.0: {}
 
   property-information@7.0.0: {}
-
-  proto-list@1.2.4: {}
 
   punycode@2.3.1: {}
 
@@ -7523,9 +7454,9 @@ snapshots:
 
   require-from-string@2.0.2: {}
 
-  resend@4.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  resend@4.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@react-email/render': 1.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-email/render': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - react
       - react-dom
@@ -7801,31 +7732,31 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-check@4.1.5(picomatch@4.0.2)(svelte@5.25.2)(typescript@5.8.2):
+  svelte-check@4.1.5(picomatch@4.0.2)(svelte@5.25.3)(typescript@5.8.2):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.3
       fdir: 6.4.3(picomatch@4.0.2)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.25.2
+      svelte: 5.25.3
       typescript: 5.8.2
     transitivePeerDependencies:
       - picomatch
 
-  svelte2tsx@0.7.35(svelte@5.25.2)(typescript@5.8.2):
+  svelte2tsx@0.7.35(svelte@5.25.3)(typescript@5.8.2):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.25.2
+      svelte: 5.25.3
       typescript: 5.8.2
 
-  svelte@5.25.2:
+  svelte@5.25.3:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0
       '@sveltejs/acorn-typescript': 1.0.5(acorn@8.14.1)
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       acorn: 8.14.1
       aria-query: 5.3.2
       axobject-query: 4.1.0
@@ -8080,7 +8011,7 @@ snapshots:
 
   unpipe@1.0.0: {}
 
-  unplugin-icons@22.1.0(svelte@5.25.2):
+  unplugin-icons@22.1.0(svelte@5.25.3):
     dependencies:
       '@antfu/install-pkg': 1.0.0
       '@iconify/utils': 2.3.0
@@ -8088,7 +8019,7 @@ snapshots:
       local-pkg: 1.0.0
       unplugin: 2.2.0
     optionalDependencies:
-      svelte: 5.25.2
+      svelte: 5.25.3
     transitivePeerDependencies:
       - supports-color
 
@@ -8207,12 +8138,12 @@ snapshots:
     optionalDependencies:
       '@volar/language-service': 2.4.5
 
-  volar-service-prettier@0.0.61(@volar/language-service@2.4.5)(prettier@3.3.3):
+  volar-service-prettier@0.0.61(@volar/language-service@2.4.5)(prettier@3.4.2):
     dependencies:
       vscode-uri: 3.0.8
     optionalDependencies:
       '@volar/language-service': 2.4.5
-      prettier: 3.3.3
+      prettier: 3.4.2
 
   volar-service-typescript-twoslash-queries@0.0.61(@volar/language-service@2.4.5):
     dependencies:
