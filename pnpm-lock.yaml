@@ -54,8 +54,8 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2
       '@inox-tools/content-utils':
-        specifier: ^0.9.1
-        version: 0.9.1(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))
+        specifier: ^0.9.2
+        version: 0.9.2(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))
       '@microflash/rehype-figure':
         specifier: ^2.1.3
         version: 2.1.3
@@ -613,8 +613,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@inox-tools/content-utils@0.9.1':
-    resolution: {integrity: sha512-jyMxPcHunlx6jXHruN8NtUw5bE9GulNoaD/9vBqfR11135bBn83Ka2WtDFIlAOXSk/q/5wW3ZSAMEi0xoO2yXQ==}
+  '@inox-tools/content-utils@0.9.2':
+    resolution: {integrity: sha512-1orapNkWthpJnBRTSIQzRgE2NRavFlsssYJ6WDX/oHkpkixh9QiRyXWWVrEYsPLLQ58b9ms07V+vhftF1VYuGg==}
     peerDependencies:
       astro: ^5
 
@@ -3436,7 +3436,7 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
-  '@inox-tools/content-utils@0.9.1(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))':
+  '@inox-tools/content-utils@0.9.2(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))':
     dependencies:
       '@inox-tools/modular-station': 0.4.2(astro@5.5.5(@types/node@22.13.14)(jiti@1.21.7)(rollup@4.37.0)(typescript@5.8.2)(yaml@2.7.0))
       '@inox-tools/utils': 0.3.1
