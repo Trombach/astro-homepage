@@ -1,4 +1,4 @@
-import { VERCEL_URL } from "astro:env/server";
+import { COOLIFY_FQDN } from "astro:env/server";
 import type { z } from "astro:schema";
 
 export default async function fetchWithSchema<S extends z.ZodTypeAny>(
@@ -35,7 +35,7 @@ function getURL(
       ? new URL(inputUrl)
       : new URL(
           inputUrl,
-          VERCEL_URL ? `https://${VERCEL_URL}` : "http://localhost:4321",
+          COOLIFY_FQDN ? `https://${COOLIFY_FQDN}` : "http://localhost:4321",
         );
 
   if (searchParams) {
