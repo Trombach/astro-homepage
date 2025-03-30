@@ -24,9 +24,9 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
       <span
         transition:name="active-link"
         class:list={[
-          "absolute -right-4 top-[calc(50%-(theme(spacing.2)/2))] h-2 w-2 rounded-full bg-foreground",
+          "absolute -right-4 top-[calc(50%-(--spacing(2)/2))] h-2 w-2 rounded-full bg-foreground",
           "transition-transform group-hover/link:scale-0",
-          "sm:left-[calc(50%-(theme(spacing.2)/2))] sm:top-9",
+          "sm:left-[calc(50%-(--spacing(2)/2))] sm:top-9",
         ]}
       />
     )

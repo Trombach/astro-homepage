@@ -7,6 +7,7 @@ import Navbar from "@components/Nav/Navbar.astro";
 import ThemeProvider from "@components/Nav/ThemeProvider.astro";
 import NativeViewTransitions from "@components/ViewTransitions/NativeViewTransitions.astro";
 import lobsterWoff2 from "@fontsource/lobster/files/lobster-latin-400-normal.woff2?url";
+import "../../src/styles/global.css";
 
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
@@ -21,7 +22,14 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class:list={[
+    "bg-background leading-normal text-foreground scroll-pt-(--header-height) [scrollbar-gutter:stable]",
+    "[--header-height:64px] lg:[--header-height:80px]",
+    "has-target:motion-safe:scroll-smooth",
+  ]}
+>
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
@@ -32,7 +40,13 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <Webmentions />
     <Favicon />
-    <link rel="preload" as="font" type="font/woff2" href={lobsterWoff2} crossorigin="anonymous" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={lobsterWoff2}
+      crossorigin="anonymous"
+    />
     <slot name="preload" />
     <slot name="head" />
     <slot name="seo">
@@ -45,107 +59,10 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <Navbar />
     <main
       transition:name="main"
-      class="flex w-full flex-col items-center mt-[--header-height]"
+      class="flex w-full flex-col items-center mt-(--header-height)"
     >
       <slot />
     </main>
     <Footer />
-
-    <style is:global>
-      @tailwind base;
-      @tailwind utilities;
-
-      ::view-transition-group(*) {
-        animation-duration: 500ms;
-      }
-
-      ::view-transition-group(header) {
-        z-index: 999;
-      }
-
-      @layer base {
-        :root {
-          --background: 0 0% 100%;
-          --foreground: 224 71.4% 4.1%;
-          --card: 0 0% 100%;
-          --card-foreground: 224 71.4% 4.1%;
-          --popover: 0 0% 100%;
-          --popover-foreground: 224 71.4% 4.1%;
-          --primary: 262.1 83.3% 57.8%;
-          --primary-foreground: 210 20% 98%;
-          --primary-green: 171 97% 64%;
-          --primary-pink: 299 100% 84%;
-          --secondary: 220 14.3% 95.9%;
-          --secondary-foreground: 220.9 39.3% 11%;
-          --muted: 220 14.3% 95.9%;
-          --muted-foreground: 220 8.9% 46.1%;
-          --accent: 220 14.3% 95.9%;
-          --accent-foreground: 220.9 39.3% 11%;
-          --destructive: 0 84.2% 60.2%;
-          --destructive-foreground: 210 20% 98%;
-          --border: 220 13% 91%;
-          --input: 220 13% 91%;
-          --ring: 262.1 83.3% 57.8%;
-          --radius: 0.5rem;
-          color-scheme: light;
-        }
-
-        :root.dark {
-          --background: 224 71.4% 4.1%;
-          --foreground: 210 20% 98%;
-          --card: 224 71.4% 4.1%;
-          --card-foreground: 210 20% 98%;
-          --popover: 224 71.4% 4.1%;
-          --popover-foreground: 210 20% 98%;
-          --primary: 263.4 70% 50.4%;
-          --primary-foreground: 210 20% 98%;
-          --secondary: 215 27.9% 16.9%;
-          --secondary-foreground: 210 20% 98%;
-          --muted: 215 27.9% 16.9%;
-          --muted-foreground: 217.9 10.6% 64.9%;
-          --accent: 215 27.9% 16.9%;
-          --accent-foreground: 210 20% 98%;
-          --destructive: 0 62.8% 30.6%;
-          --destructive-foreground: 210 20% 98%;
-          --border: 215 27.9% 16.9%;
-          --input: 215 27.9% 16.9%;
-          color-scheme: dark;
-        }
-
-        :root {
-          --header-height: 64px;
-
-          @apply bg-background leading-normal text-foreground;
-          @apply scroll-pt-[--header-height] [scrollbar-gutter:stable];
-        }
-
-        @media screen(lg) {
-          :root {
-            --header-height: 80px;
-          }
-        }
-
-        * {
-          @apply border-border;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-          @apply text-balance;
-        }
-
-        :has(:target) {
-          @apply motion-safe:scroll-smooth;
-        }
-
-        p {
-          @apply max-w-[70ch] text-pretty;
-        }
-      }
-    </style>
   </body>
 </html>
