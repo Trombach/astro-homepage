@@ -12,11 +12,7 @@
     "type": "git",
     "url": "https://github.com/Trombach/astro-homepage"
   },
-  "browserslist": [
-    ">1%",
-    "not dead",
-    "last 1 years"
-  ],
+  "browserslist": [">1%", "not dead", "last 1 years"],
   "scripts": {
     "dev": "astro dev",
     "start": "HOST=0.0.0.0 node dist/server/entry.mjs",
