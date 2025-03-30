@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "start": "HOST=0.0.0.0 node dist/server/entry.mjs",
     "ts:check": "astro check && svelte-check",
     "biome:write": "biome check --write .",
     "biome:check": "biome check .",
