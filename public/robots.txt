@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /cdn-cgi/
-
-Sitemap: https://www.lukastrombach.dev/sitemap-index.xml
