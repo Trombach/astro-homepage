@@ -31,7 +31,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
         for={`${option}-theme`}
         class:list={[
           "h-8 w-8 flex justify-center items-center rounded-full cursor-pointer",
-          "transition-all text-muted-foreground hover:text-foreground", 
+          "transition-all text-muted-foreground hover:text-foreground",
           "transition-colors duration-300 ease-in-out",
         ]}
       >
@@ -57,10 +57,6 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
       "peer-[:nth-of-type(3)]:peer-checked:translate-x-[calc(200%-3px)]",
     ]}></span>
 </fieldset>
-
-<script is:inline>
-  window.ThemeProvider.initTheme();
-</script>
 
 <script>
   declare global {

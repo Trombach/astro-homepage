@@ -44,7 +44,7 @@
   function updateThemeSwitcher(doc = document) {
     const theme = localStorage.getItem("theme") || "auto";
     const radioButton = doc.querySelector(
-      `input[type=radio][name=theme]#${theme}-theme`
+      `input[type=radio][name=theme]#${theme}-theme`,
     );
 
     if (radioButton instanceof HTMLInputElement) {
@@ -55,4 +55,6 @@
   function setThemeClass(doc = document) {
     doc.documentElement.classList.toggle("dark", prefersDarkTheme());
   }
+
+  window.ThemeProvider.initTheme();
 </script>
