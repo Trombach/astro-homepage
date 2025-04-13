@@ -63,6 +63,11 @@ export default defineConfig({
   trailingSlash: "never",
   env: {
     schema: {
+      IS_PREVIEW: envField.boolean({
+        context: "server",
+        access: "public",
+        default: true,
+      }),
       GH_TOKEN: envField.string({
         context: "server",
         access: "secret",

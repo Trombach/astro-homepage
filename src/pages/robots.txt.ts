@@ -1,11 +1,11 @@
-import { COOLIFY_FQDN } from "astro:env/server";
+import { IS_PREVIEW } from "astro:env/server";
 
 export async function GET() {
   const headers = {
     "Content-Type": "text/plain",
   };
 
-  if (!COOLIFY_FQDN?.includes("preview")) {
+  if (!IS_PREVIEW) {
     return new Response(
       `User-agent: *
 Allow: /
