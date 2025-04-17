@@ -25,7 +25,7 @@ importers:
         version: 3.3.0
       '@astrojs/svelte':
         specifier: ^7.0.10
-        version: 7.0.10(@types/node@22.14.1)(astro@5.7.1(@types/node@22.14.1)(jiti@1.21.7)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.26.3)(typescript@5.8.3)(yaml@2.7.0)
+        version: 7.0.10(@types/node@22.14.1)(astro@5.7.1(@types/node@22.14.1)(jiti@1.21.7)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.27.1)(typescript@5.8.3)(yaml@2.7.0)
       '@astrojs/tailwind':
         specifier: ^6.0.2
         version: 6.0.2(astro@5.7.1(@types/node@22.14.1)(jiti@1.21.7)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.0))(tailwindcss@3.4.17(ts-node@10.9.1(@types/node@22.14.1)(typescript@5.8.3)))(ts-node@10.9.1(@types/node@22.14.1)(typescript@5.8.3))
@@ -93,17 +93,17 @@ importers:
         specifier: ^12.0.0
         version: 12.0.0
       resend:
-        specifier: ^4.2.0
-        version: 4.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^4.3.0
+        version: 4.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sanitize-html:
-        specifier: ^2.15.0
-        version: 2.15.0
+        specifier: ^2.16.0
+        version: 2.16.0
       sharp:
         specifier: ^0.34.1
         version: 0.34.1
       svelte:
-        specifier: ^5.26.3
-        version: 5.26.3
+        specifier: ^5.27.1
+        version: 5.27.1
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17(ts-node@10.9.1(@types/node@22.14.1)(typescript@5.8.3))
@@ -112,11 +112,11 @@ importers:
         version: 1.4.0
       unplugin-icons:
         specifier: ^22.1.0
-        version: 22.1.0(svelte@5.26.3)
+        version: 22.1.0(svelte@5.27.1)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.4
-        version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.4.2)(typescript@5.8.3)
+        version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.5.3)(typescript@5.8.3)
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
@@ -134,7 +134,7 @@ importers:
         version: 9.1.7
       svelte-check:
         specifier: ^4.1.6
-        version: 4.1.6(picomatch@4.0.2)(svelte@5.26.3)(typescript@5.8.3)
+        version: 4.1.6(picomatch@4.0.2)(svelte@5.27.1)(typescript@5.8.3)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -795,8 +795,8 @@ packages:
   '@playform/pipe@0.1.3':
     resolution: {integrity: sha512-cjRcaj6b8XZMS+N51In78EuD9e0x0M3gYxi2g+qUGk1iya2uxcS+aSrXxfBUZueOjxADQwpyS4zLEhlbHCGcDA==}
 
-  '@react-email/render@1.0.5':
-    resolution: {integrity: sha512-CA69HYXPk21HhtAXATIr+9JJwpDNmAFCvdMUjWmeoD1+KhJ9NAxusMRxKNeibdZdslmq3edaeOKGbdQ9qjK8LQ==}
+  '@react-email/render@1.0.6':
+    resolution: {integrity: sha512-zNueW5Wn/4jNC1c5LFgXzbUdv5Lhms+FWjOvWAhal7gx5YVf0q6dPJ0dnR70+ifo59gcMLwCZEaTS9EEuUhKvQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^18.0 || ^19.0 || ^19.0.0-rc
@@ -2290,8 +2290,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.4.2:
-    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2432,8 +2432,8 @@ packages:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
 
-  resend@4.2.0:
-    resolution: {integrity: sha512-s6ogU+BBYH1H6Zl926cpddtLRAJWeFv5cIKcuHLWk1QYhFTbpFJlhqx31pnN2f0CB075KFSrc1Xf6HG690wzuw==}
+  resend@4.3.0:
+    resolution: {integrity: sha512-4OBHeusMVSl0vcba2J3AaGzdZ1SXAAhX/Wkcwobe16AHmlW9h3li8wG62Fhvlsc61e+wlQoxcwJZP6WrBTbghQ==}
     engines: {node: '>=18'}
 
   resolve@1.22.10:
@@ -2475,8 +2475,8 @@ packages:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
 
-  sanitize-html@2.15.0:
-    resolution: {integrity: sha512-wIjst57vJGpLyBP8ioUbg6ThwJie5SuSIjHxJg53v5Fg+kUK+AXlb7bK3RNXpp315MvwM+0OBGCV6h5pPHsVhA==}
+  sanitize-html@2.16.0:
+    resolution: {integrity: sha512-0s4caLuHHaZFVxFTG74oW91+j6vW7gKbGD6CD2+miP73CE6z6YtOBN0ArtLd2UGyi4IC7K47v3ENUbQX4jV3Mg==}
 
   sass-formatter@0.7.9:
     resolution: {integrity: sha512-CWZ8XiSim+fJVG0cFLStwDvft1VI7uvXdCNJYXhDvowiv+DsbD1nXLiQ4zrE5UBvj5DWZJ93cwN0NX5PMsr1Pw==}
@@ -2620,8 +2620,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.26.3:
-    resolution: {integrity: sha512-SgDfx70CmW8Rev9XRu5sN/3Paa/mSh3DGxDDEgtecdjbhLrmgK18McanP+gNE8HYGm8tXiXZN3Fn31NcqBML+Q==}
+  svelte@5.27.1:
+    resolution: {integrity: sha512-DxbUsdR1MZcnEgvJEbQ9IiaqAAIXT3lv7JhkW8K5AJO08+gxnRnoNrYJUCAdR3PCt+oODGOldmYDnqoLsNlvpQ==}
     engines: {node: '>=18'}
 
   tailwindcss@3.4.17:
@@ -3170,9 +3170,9 @@ snapshots:
 
   '@antfu/utils@8.1.1': {}
 
-  '@astrojs/check@0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.4.2)(typescript@5.8.3)':
+  '@astrojs/check@0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.5.3)(typescript@5.8.3)':
     dependencies:
-      '@astrojs/language-server': 2.15.0(prettier-plugin-astro@0.14.1)(prettier@3.4.2)(typescript@5.8.3)
+      '@astrojs/language-server': 2.15.0(prettier-plugin-astro@0.14.1)(prettier@3.5.3)(typescript@5.8.3)
       chokidar: 4.0.1
       kleur: 4.1.5
       typescript: 5.8.3
@@ -3185,7 +3185,7 @@ snapshots:
 
   '@astrojs/internal-helpers@0.6.1': {}
 
-  '@astrojs/language-server@2.15.0(prettier-plugin-astro@0.14.1)(prettier@3.4.2)(typescript@5.8.3)':
+  '@astrojs/language-server@2.15.0(prettier-plugin-astro@0.14.1)(prettier@3.5.3)(typescript@5.8.3)':
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/yaml2ts': 0.2.1
@@ -3199,14 +3199,14 @@ snapshots:
       volar-service-css: 0.0.61(@volar/language-service@2.4.5)
       volar-service-emmet: 0.0.61(@volar/language-service@2.4.5)
       volar-service-html: 0.0.61(@volar/language-service@2.4.5)
-      volar-service-prettier: 0.0.61(@volar/language-service@2.4.5)(prettier@3.4.2)
+      volar-service-prettier: 0.0.61(@volar/language-service@2.4.5)(prettier@3.5.3)
       volar-service-typescript: 0.0.61(@volar/language-service@2.4.5)
       volar-service-typescript-twoslash-queries: 0.0.61(@volar/language-service@2.4.5)
       volar-service-yaml: 0.0.61(@volar/language-service@2.4.5)
       vscode-html-languageservice: 5.3.1
       vscode-uri: 3.0.8
     optionalDependencies:
-      prettier: 3.4.2
+      prettier: 3.5.3
       prettier-plugin-astro: 0.14.1
     transitivePeerDependencies:
       - typescript
@@ -3275,12 +3275,12 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.24.2
 
-  '@astrojs/svelte@7.0.10(@types/node@22.14.1)(astro@5.7.1(@types/node@22.14.1)(jiti@1.21.7)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.26.3)(typescript@5.8.3)(yaml@2.7.0)':
+  '@astrojs/svelte@7.0.10(@types/node@22.14.1)(astro@5.7.1(@types/node@22.14.1)(jiti@1.21.7)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.27.1)(typescript@5.8.3)(yaml@2.7.0)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.26.3)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))
+      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.27.1)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))
       astro: 5.7.1(@types/node@22.14.1)(jiti@1.21.7)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.0)
-      svelte: 5.26.3
-      svelte2tsx: 0.7.36(svelte@5.26.3)(typescript@5.8.3)
+      svelte: 5.27.1
+      svelte2tsx: 0.7.36(svelte@5.27.1)(typescript@5.8.3)
       typescript: 5.8.3
       vite: 6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0)
     transitivePeerDependencies:
@@ -3850,10 +3850,10 @@ snapshots:
       deepmerge-ts: 7.1.5
       fast-glob: 3.3.3
 
-  '@react-email/render@1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@react-email/render@1.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       html-to-text: 9.0.5
-      prettier: 3.4.2
+      prettier: 3.5.3
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-promise-suspense: 0.3.4
@@ -3968,23 +3968,23 @@ snapshots:
     dependencies:
       acorn: 8.14.1
 
-  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.26.3)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.26.3)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))':
+  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.27.1)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.27.1)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.26.3)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))
+      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.27.1)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))
       debug: 4.4.0
-      svelte: 5.26.3
+      svelte: 5.27.1
       vite: 6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.26.3)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))':
+  '@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.27.1)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.26.3)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.26.3)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))
+      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.27.1)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.27.1)(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))
       debug: 4.4.0
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.17
-      svelte: 5.26.3
+      svelte: 5.27.1
       vite: 6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0)
       vitefu: 1.0.6(vite@6.3.0(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.0))
     transitivePeerDependencies:
@@ -5808,14 +5808,14 @@ snapshots:
   prettier-plugin-astro@0.14.1:
     dependencies:
       '@astrojs/compiler': 2.11.0
-      prettier: 3.4.2
+      prettier: 3.5.3
       sass-formatter: 0.7.9
     optional: true
 
   prettier@2.8.7:
     optional: true
 
-  prettier@3.4.2: {}
+  prettier@3.5.3: {}
 
   prismjs@1.30.0: {}
 
@@ -6019,9 +6019,9 @@ snapshots:
 
   require-from-string@2.0.2: {}
 
-  resend@4.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  resend@4.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@react-email/render': 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-email/render': 1.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - react
       - react-dom
@@ -6098,7 +6098,7 @@ snapshots:
     dependencies:
       mri: 1.2.0
 
-  sanitize-html@2.15.0:
+  sanitize-html@2.16.0:
     dependencies:
       deepmerge: 4.3.1
       escape-string-regexp: 4.0.0
@@ -6300,26 +6300,26 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-check@4.1.6(picomatch@4.0.2)(svelte@5.26.3)(typescript@5.8.3):
+  svelte-check@4.1.6(picomatch@4.0.2)(svelte@5.27.1)(typescript@5.8.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.3
       fdir: 6.4.3(picomatch@4.0.2)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.26.3
+      svelte: 5.27.1
       typescript: 5.8.3
     transitivePeerDependencies:
       - picomatch
 
-  svelte2tsx@0.7.36(svelte@5.26.3)(typescript@5.8.3):
+  svelte2tsx@0.7.36(svelte@5.27.1)(typescript@5.8.3):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.26.3
+      svelte: 5.27.1
       typescript: 5.8.3
 
-  svelte@5.26.3:
+  svelte@5.27.1:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -6526,7 +6526,7 @@ snapshots:
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
 
-  unplugin-icons@22.1.0(svelte@5.26.3):
+  unplugin-icons@22.1.0(svelte@5.27.1):
     dependencies:
       '@antfu/install-pkg': 1.0.0
       '@iconify/utils': 2.3.0
@@ -6534,7 +6534,7 @@ snapshots:
       local-pkg: 1.0.0
       unplugin: 2.2.0
     optionalDependencies:
-      svelte: 5.26.3
+      svelte: 5.27.1
     transitivePeerDependencies:
       - supports-color
 
@@ -6629,12 +6629,12 @@ snapshots:
     optionalDependencies:
       '@volar/language-service': 2.4.5
 
-  volar-service-prettier@0.0.61(@volar/language-service@2.4.5)(prettier@3.4.2):
+  volar-service-prettier@0.0.61(@volar/language-service@2.4.5)(prettier@3.5.3):
     dependencies:
       vscode-uri: 3.0.8
     optionalDependencies:
       '@volar/language-service': 2.4.5
-      prettier: 3.4.2
+      prettier: 3.5.3
 
   volar-service-typescript-twoslash-queries@0.0.61(@volar/language-service@2.4.5):
     dependencies:
