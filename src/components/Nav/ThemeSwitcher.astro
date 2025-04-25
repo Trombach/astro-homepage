@@ -2,8 +2,7 @@
 import DesktopIcon from "icons:astro/heroicons/computer-desktop-16-solid";
 import MoonIcon from "icons:astro/heroicons/moon-16-solid";
 import SunIcon from "icons:astro/heroicons/sun-16-solid";
-
-export type Theme = "auto" | "dark" | "light";
+import type { Theme } from "./themeSwitcher";
 
 const options = ["auto", "dark", "light"] as const satisfies Theme[];
 ---
@@ -55,21 +54,41 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
       "transition-all duration-300 ease-in-out",
       "peer-[:nth-of-type(2)]:peer-checked:translate-x-[calc(100%-1.5px)]",
       "peer-[:nth-of-type(3)]:peer-checked:translate-x-[calc(200%-3px)]",
-    ]}></span>
+    ]}
+  />
 </fieldset>
 
+<script is:inline>
+  window.ThemeProvider.updateThemeSwitcher(window.ThemeProvider.getTheme());
+</script>
+
 <script>
+  import type {Theme} from "./themeSwitcher"
+  
   declare global {
     interface Window {
       ThemeProvider: {
         initTheme: (doc?: Document) => void;
-        getTheme: () => "auto" | "dark" | "light";
+        getTheme: () => Theme;
         setTheme: (theme: string) => void;
+        updateThemeSwitcher: (theme: Theme) => void;
       };
     }
   }
 
   function init() {
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.type !== "attributes" && mutation.attributeName !== "data-theme") {
+          continue
+        }
+
+        window.ThemeProvider.updateThemeSwitcher(window.ThemeProvider.getTheme());
+      }
+    });
+
+    observer.observe(document.documentElement, {attributeFilter: ["data-theme"]});
+
     const radioButtons = document.querySelectorAll(
       "input[type=radio][name=theme]",
     );
