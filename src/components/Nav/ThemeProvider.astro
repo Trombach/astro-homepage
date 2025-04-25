@@ -1,8 +1,7 @@
 <script is:inline>
   window.ThemeProvider ??= {
     initTheme: (doc = document) => {
-      setThemeClass(doc);
-      updateThemeSwitcher(doc);
+      setThemeAttributes(doc);
     },
     getTheme: () => {
       const theme = localStorage.getItem("theme") || "auto";
@@ -29,8 +28,17 @@
           break;
       }
 
-      setThemeClass();
+      setThemeAttributes();
     },
+    updateThemeSwitcher: (theme) =>  {
+      const radioButton = document.querySelector(
+        `input[type=radio][name=theme]#${theme}-theme`,
+      );
+
+      if (radioButton instanceof HTMLInputElement) {
+        radioButton.checked = true;
+      }
+    }
   };
 
   function prefersDarkTheme() {
@@ -41,18 +49,8 @@
     );
   }
 
-  function updateThemeSwitcher(doc = document) {
-    const theme = localStorage.getItem("theme") || "auto";
-    const radioButton = doc.querySelector(
-      `input[type=radio][name=theme]#${theme}-theme`,
-    );
 
-    if (radioButton instanceof HTMLInputElement) {
-      radioButton.checked = true;
-    }
-  }
-
-  function setThemeClass(doc = document) {
+  function setThemeAttributes(doc = document) {
     doc.documentElement.classList.toggle("dark", prefersDarkTheme());
   }
 
