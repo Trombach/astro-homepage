@@ -12,7 +12,11 @@
     "type": "git",
     "url": "https://github.com/Trombach/astro-homepage"
   },
-  "browserslist": [">1%", "not dead", "last 1 years"],
+  "browserslist": [
+    ">1%",
+    "not dead",
+    "last 1 years"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "HOST=0.0.0.0 node dist/server/entry.mjs",
@@ -43,12 +47,13 @@
     "@iconify-json/simple-icons": "^1.2.40",
     "@iconify-json/svg-spinners": "^1.2.2",
     "@inox-tools/content-utils": "^0.10.2",
+    "@inox-tools/astro-when": "^1.1.0",
     "@microflash/rehype-figure": "^2.1.4",
-    "@playform/inline": "^0.1.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "astro": "^5.10.1",
     "astro-og-canvas": "^0.7.0",
     "astro-starlight-remark-asides": "^0.0.7",
+    "beasties": "^0.3.4",
     "canvaskit-wasm": "^0.40.0",
     "clsx": "^2.1.1",
     "linkedom": "^0.18.11",
