@@ -1,18 +1,17 @@
 import mdx from "@astrojs/mdx";
+import node from "@astrojs/node";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
-import playformInline from "@playform/inline";
 import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import { defineConfig, envField } from "astro/config";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
 import Icons from "unplugin-icons/vite";
-
-import node from "@astrojs/node";
+import { beasties } from "vite-plugin-beasties";
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,7 +21,6 @@ export default defineConfig({
     mdx(),
     sitemap(),
     inoxToolsContentUtils(),
-    playformInline({}),
   ],
   image: {
     domains: ["placehold.co"],
@@ -41,6 +39,13 @@ export default defineConfig({
       }),
       Icons({
         compiler: "astro",
+      }),
+      beasties({
+        options: {
+          pruneSource: true,
+          inlineFonts: true,
+          allowRules: [".mt-[--header-height]", ".h-screen-less-header"],
+        },
       }),
     ],
     resolve: {
