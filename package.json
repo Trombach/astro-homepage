@@ -34,7 +34,7 @@
     "@astrojs/svelte": "^7.0.13",
     "@astrojs/tailwind": "^6.0.2",
     "@astrojs/node": "^9.2.1",
-    "@floating-ui/dom": "^1.6.13",
+    "@floating-ui/dom": "^1.7.0",
     "@fontsource-variable/inter": "^5.2.5",
     "@fontsource-variable/jetbrains-mono": "^5.2.5",
     "@fontsource/lobster": "^5.2.5",
