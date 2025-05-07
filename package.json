@@ -46,7 +46,7 @@
     "@microflash/rehype-figure": "^2.1.4",
     "@playform/inline": "^0.1.2",
     "@tailwindcss/container-queries": "^0.1.1",
-    "astro": "^5.7.10",
+    "astro": "^5.7.11",
     "astro-og-canvas": "^0.7.0",
     "astro-starlight-remark-asides": "^0.0.7",
     "canvaskit-wasm": "^0.40.0",
