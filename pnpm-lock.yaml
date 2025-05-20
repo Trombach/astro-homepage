@@ -71,6 +71,9 @@ importers:
       astro-starlight-remark-asides:
         specifier: ^0.0.7
         version: 0.0.7(remark-directive@4.0.0)
+      beasties:
+        specifier: ^0.3.3
+        version: 0.3.3
       canvaskit-wasm:
         specifier: ^0.40.0
         version: 0.40.0
@@ -135,9 +138,6 @@ importers:
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
-      vite-plugin-beasties:
-        specifier: ^0.3.3
-        version: 0.3.3
 
 packages:
 
@@ -2883,10 +2883,6 @@ packages:
 
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
-
-  vite-plugin-beasties@0.3.3:
-    resolution: {integrity: sha512-szpI75hOrHrVpqbhr7zJRjCAq1CgLeZ+kq/yw9aH78MKc1ftwk19Fog8v4lUKzf61S+J/U0rJecqlmYbbs06SA==}
-    engines: {node: '>=14.0.0'}
 
   vite@6.3.4:
     resolution: {integrity: sha512-BiReIiMS2fyFqbqNT/Qqt4CVITDU9M9vE+DKcVAsB+ZV0wvTKd+3hMbkpxz1b+NmEDMegpVbisKiAZOnvO92Sw==}
@@ -6527,10 +6523,6 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
-
-  vite-plugin-beasties@0.3.3:
-    dependencies:
-      beasties: 0.3.3
 
   vite@6.3.4(@types/node@22.15.3)(jiti@1.21.7)(yaml@2.7.0):
     dependencies:

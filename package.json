@@ -48,6 +48,7 @@
     "astro": "^5.7.10",
     "astro-og-canvas": "^0.7.0",
     "astro-starlight-remark-asides": "^0.0.7",
+    "beasties": "^0.3.3",
     "canvaskit-wasm": "^0.40.0",
     "clsx": "^2.1.1",
     "linkedom": "^0.18.10",
@@ -70,8 +71,7 @@
     "@types/sanitize-html": "^2.15.0",
     "husky": "^9.1.7",
     "svelte-check": "^4.1.6",
-    "typescript": "^5.8.3",
-    "vite-plugin-beasties": "^0.3.3"
+    "typescript": "^5.8.3"
   },
   "engines": {
     "pnpm": ">=9",

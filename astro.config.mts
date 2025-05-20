@@ -11,7 +11,7 @@ import { defineConfig, envField } from "astro/config";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
 import Icons from "unplugin-icons/vite";
-import { beasties } from "vite-plugin-beasties";
+import beasties from "./beasties-integration";
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,6 +21,13 @@ export default defineConfig({
     mdx(),
     sitemap(),
     inoxToolsContentUtils(),
+    beasties({
+      beasties: {
+        pruneSource: true,
+        inlineFonts: true,
+        allowRules: [":root.dark"],
+      },
+    }),
   ],
   image: {
     domains: ["placehold.co"],
@@ -39,13 +46,6 @@ export default defineConfig({
       }),
       Icons({
         compiler: "astro",
-      }),
-      beasties({
-        options: {
-          pruneSource: true,
-          inlineFonts: true,
-          allowRules: [".mt-[--header-height]", ".h-screen-less-header"],
-        },
       }),
     ],
     resolve: {
