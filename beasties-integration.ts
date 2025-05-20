@@ -15,17 +15,17 @@ export default (options?: AstroBeastiesOptions): AstroIntegration => {
     name: "astro-beasties",
     hooks: {
       "astro:build:done": async ({ dir, logger: l }) => {
-        const logger = l.fork("beasties");
+        const logger = l.fork("astro-beasties");
 
         const dist = fileURLToPath(dir);
         const beasties = new Beasties({
           path: dist,
           logger,
-          pruneSource: false,
           ...options?.beasties,
+          pruneSource: false,
         });
 
-        logger.info("Inlining critical css");
+        logger.info("🦔 Inlining critical css for static files");
 
         let n = 0;
         try {
@@ -40,6 +40,8 @@ export default (options?: AstroBeastiesOptions): AstroIntegration => {
 
             const filePath = path.join(entry.parentPath, entry.name);
             const fileContent = await readFile(filePath, "utf-8");
+
+            logger.info(`▶ Inlining ${path.relative(dist, filePath)}`);
 
             const inlined = await beasties.process(fileContent);
             await writeFile(filePath, inlined);

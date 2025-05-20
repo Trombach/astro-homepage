@@ -3,6 +3,7 @@ import node from "@astrojs/node";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
+import inoxToolswhen from "@inox-tools/astro-when";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
@@ -11,7 +12,8 @@ import { defineConfig, envField } from "astro/config";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
 import Icons from "unplugin-icons/vite";
-import beasties from "./beasties-integration";
+// import beasties from "./beasties-integration";
+// import beastiesOptions from "./src/shared/beasties-options";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,14 +22,11 @@ export default defineConfig({
     svelte({ include: ["**/*.svelte"] }),
     mdx(),
     sitemap(),
+    // beasties({
+    //   beasties: beastiesOptions,
+    // }),
     inoxToolsContentUtils(),
-    beasties({
-      beasties: {
-        pruneSource: true,
-        inlineFonts: true,
-        allowRules: [":root.dark"],
-      },
-    }),
+    inoxToolswhen(),
   ],
   image: {
     domains: ["placehold.co"],
