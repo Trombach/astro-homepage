@@ -3,6 +3,7 @@ import node from "@astrojs/node";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
+import inoxToolswhen from "@inox-tools/astro-when";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
@@ -20,14 +21,15 @@ export default defineConfig({
     svelte({ include: ["**/*.svelte"] }),
     mdx(),
     sitemap(),
-    inoxToolsContentUtils(),
     beasties({
       beasties: {
-        pruneSource: true,
         inlineFonts: true,
+        // @ts-expect-error pending package PR
         allowRules: [":root.dark"],
       },
     }),
+    inoxToolsContentUtils(),
+    inoxToolswhen(),
   ],
   image: {
     domains: ["placehold.co"],
