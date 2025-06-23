@@ -4,6 +4,7 @@ import { beastiesSSR as beasties } from "@shared/beasties";
 import type { MiddlewareHandler } from "astro";
 
 const beastiesMiddleware = defineMiddleware(async (_context, next) => {
+  console.log("running middleware");
   const response = await next();
   const html = await response.text();
 

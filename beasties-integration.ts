@@ -10,6 +10,12 @@ export default (): AstroIntegration => {
   return {
     name: "astro-beasties",
     hooks: {
+      "astro:config:setup": ({ addMiddleware }) => {
+        return addMiddleware({
+          order: "post",
+          entrypoint: new URL("./beasties-middleware", import.meta.url),
+        });
+      },
       "astro:build:done": async ({ dir, logger: l }) => {
         const logger = l.fork("astro-beasties");
 
