@@ -65,12 +65,12 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.0.5",
     "@types/cloudflare-turnstile": "^0.2.2",
-    "@types/node": "^22.15.18",
+    "@types/node": "^24.0.3",
     "@types/sanitize-html": "^2.16.0",
     "husky": "^9.1.7",
-    "svelte-check": "^4.2.1",
+    "svelte-check": "^4.2.2",
     "typescript": "^5.8.3"
   },
   "engines": {
