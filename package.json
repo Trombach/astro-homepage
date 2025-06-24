@@ -30,17 +30,17 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
+    "@astrojs/node": "^9.2.2",
     "@astrojs/sitemap": "^3.4.1",
     "@astrojs/svelte": "^7.1.0",
     "@astrojs/tailwind": "^6.0.2",
-    "@astrojs/node": "^9.2.2",
     "@floating-ui/dom": "^1.7.1",
     "@fontsource-variable/inter": "^5.2.6",
     "@fontsource-variable/jetbrains-mono": "^5.2.6",
     "@fontsource/lobster": "^5.2.6",
     "@iconify-json/heroicons": "^1.2.2",
     "@iconify-json/logos": "^1.2.4",
-    "@iconify-json/simple-icons": "^1.2.39",
+    "@iconify-json/simple-icons": "^1.2.40",
     "@iconify-json/svg-spinners": "^1.2.2",
     "@inox-tools/content-utils": "^0.10.2",
     "@microflash/rehype-figure": "^2.1.4",
@@ -58,7 +58,7 @@
     "resend": "^4.6.0",
     "sanitize-html": "^2.17.0",
     "sharp": "^0.34.2",
-    "svelte": "^5.34.5",
+    "svelte": "^5.34.7",
     "tailwindcss": "^3.4.17",
     "uint8array-extras": "^1.4.0",
     "unplugin-icons": "^22.1.0"
@@ -67,17 +67,17 @@
     "@astrojs/check": "^0.9.4",
     "@biomejs/biome": "1.9.4",
     "@types/cloudflare-turnstile": "^0.2.2",
-    "@types/node": "^22.15.18",
+    "@types/node": "^24.0.4",
     "@types/sanitize-html": "^2.16.0",
     "husky": "^9.1.7",
-    "svelte-check": "^4.2.1",
+    "svelte-check": "^4.2.2",
     "typescript": "^5.8.3"
   },
   "engines": {
     "pnpm": ">=9",
     "node": ">=20 <23"
   },
-  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c",
+  "packageManager": "pnpm@10.12.3+sha512.467df2c586056165580ad6dfb54ceaad94c5a30f80893ebdec5a44c5aa73c205ae4a5bb9d5ed6bb84ea7c249ece786642bbb49d06a307df218d03da41c317417",
   "pnpm": {
     "overrides": {
       "debug@>=4.0.0 <4.3.1": ">=4.3.1",
