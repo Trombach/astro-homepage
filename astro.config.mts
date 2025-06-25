@@ -1,18 +1,18 @@
 import mdx from "@astrojs/mdx";
+import node from "@astrojs/node";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
+import inoxToolswhen from "@inox-tools/astro-when";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
-import playformInline from "@playform/inline";
 import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import { defineConfig, envField } from "astro/config";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
 import Icons from "unplugin-icons/vite";
-
-import node from "@astrojs/node";
+import beasties from "./beasties-integration";
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,8 +21,9 @@ export default defineConfig({
     svelte({ include: ["**/*.svelte"] }),
     mdx(),
     sitemap(),
+    beasties(),
     inoxToolsContentUtils(),
-    playformInline({}),
+    inoxToolswhen(),
   ],
   image: {
     domains: ["placehold.co"],
