@@ -7,8 +7,8 @@ import inoxToolswhen from "@inox-tools/astro-when";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
-import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import { defineConfig, envField } from "astro/config";
+import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
 import Icons from "unplugin-icons/vite";

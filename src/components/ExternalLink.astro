@@ -10,7 +10,7 @@ type Props = HTMLAttributes<"a"> & {
 
 const { href, position = "before", ...props } = Astro.props;
 
-let favicon: Uint8Array | undefined = undefined;
+let favicon: Uint8Array | undefined;
 if (
   href &&
   (typeof href === "string"
