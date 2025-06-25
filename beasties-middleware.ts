@@ -4,13 +4,21 @@ import { beastiesSSR as beasties } from "@shared/beasties";
 import type { MiddlewareHandler } from "astro";
 
 const beastiesMiddleware = defineMiddleware(async (_context, next) => {
-  console.log("running middleware");
   const response = await next();
+
+  if (!response.headers.get("Content-Type")?.includes("text/html")) {
+    return response;
+  }
+
   const html = await response.text();
 
   const inlined = await beasties.process(html);
 
-  return new Response(inlined, { status: 200, headers: response.headers });
+  return new Response(inlined, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: response.headers,
+  });
 });
 
 const middlewares: Record<When, MiddlewareHandler> = {

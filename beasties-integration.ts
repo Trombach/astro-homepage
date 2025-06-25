@@ -56,9 +56,9 @@ export default (): AstroIntegration => {
             n++;
           }
         } catch (e) {
-          if (e instanceof Error) {
-            logger.error(`❌ Error inlining critical css: ${e.message}`);
-          }
+          logger.error(
+            `❌ Error inlining critical css: ${e instanceof Error ? e.message : String(e)}`,
+          );
         }
 
         logger.info(`✅ Inlined critical css for ${n} pages`);
