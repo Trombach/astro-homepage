@@ -1,5 +1,5 @@
-import { getLatestCommitDate } from "@it-astro:content/git";
 import { getEntry } from "astro:content";
+import { getLatestCommitDate } from "@it-astro:content/git";
 
 export async function GET() {
   const person = await getEntry("person", "lukas");

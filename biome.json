@@ -1,15 +1,30 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.2/schema.json",
-  "files": { "ignore": ["dist", ".vercel", "*.d.ts"] },
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+  "files": { "includes": ["**", "!**/dist", "!**/*.d.ts"] },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "defaultBranch": "main",
     "useIgnoreFile": true
   },
+  "overrides": [
+    {
+      "includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    }
+  ],
   "linter": {
     "enabled": true,
     "rules": {
@@ -22,7 +37,25 @@
             "attributes": ["class", "class:list"],
             "functions": ["clsx"]
           }
+        }
+      },
+      "style": {
+        "noRestrictedGlobals": {
+          "level": "error",
+          "options": {
+            "deniedGlobals": { "Buffer": "TODO: Add a custom message here." }
+          }
         },
+        "noParameterAssign": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error",
         "noRestrictedImports": {
           "level": "error",
           "options": {
@@ -30,14 +63,6 @@
               "buffer": "Use Uint8Array instead.",
               "node:buffer": "Use Uint8Array instead."
             }
-          }
-        }
-      },
-      "style": {
-        "noRestrictedGlobals": {
-          "level": "error",
-          "options": {
-            "deniedGlobals": ["Buffer"]
           }
         }
       }

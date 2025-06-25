@@ -1,6 +1,6 @@
+import { outDir } from "astro:config/server";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { outDir } from "astro:config/server";
 import type { Options as BeastiesOptions } from "beasties";
 import Beasties from "beasties";
 

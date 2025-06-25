@@ -1,5 +1,5 @@
-import { When, whenAmI } from "@it-astro:when";
 import { defineMiddleware } from "astro:middleware";
+import { When, whenAmI } from "@it-astro:when";
 import { beastiesSSR as beasties } from "@shared/beasties";
 import type { MiddlewareHandler } from "astro";
 

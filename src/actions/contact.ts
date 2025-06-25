@@ -3,7 +3,7 @@ import {
   ActionError,
   defineAction,
 } from "astro:actions";
-import { TURNSTILE_SITEVERIFY_URL, getSecret } from "astro:env/server";
+import { getSecret, TURNSTILE_SITEVERIFY_URL } from "astro:env/server";
 import { z } from "astro:schema";
 import { Resend } from "resend";
 
