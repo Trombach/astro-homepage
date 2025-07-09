@@ -25,7 +25,7 @@ importers:
         version: 3.4.1
       '@astrojs/svelte':
         specifier: ^7.1.0
-        version: 7.1.0(@types/node@24.0.10)(astro@5.11.0(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.35.4)(typescript@5.8.3)(yaml@2.7.0)
+        version: 7.1.0(@types/node@24.0.10)(astro@5.11.0(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.35.5)(typescript@5.8.3)(yaml@2.7.0)
       '@astrojs/tailwind':
         specifier: ^6.0.2
         version: 6.0.2(astro@5.11.0(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.7.0))(tailwindcss@3.4.17(ts-node@10.9.1(@types/node@24.0.10)(typescript@5.8.3)))(ts-node@10.9.1(@types/node@24.0.10)(typescript@5.8.3))
@@ -105,8 +105,8 @@ importers:
         specifier: ^0.34.2
         version: 0.34.2
       svelte:
-        specifier: ^5.35.4
-        version: 5.35.4
+        specifier: ^5.35.5
+        version: 5.35.5
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17(ts-node@10.9.1(@types/node@24.0.10)(typescript@5.8.3))
@@ -115,7 +115,7 @@ importers:
         version: 1.4.0
       unplugin-icons:
         specifier: ^22.1.0
-        version: 22.1.0(svelte@5.35.4)
+        version: 22.1.0(svelte@5.35.5)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.4
@@ -137,7 +137,7 @@ importers:
         version: 9.1.7
       svelte-check:
         specifier: ^4.2.2
-        version: 4.2.2(picomatch@4.0.2)(svelte@5.35.4)(typescript@5.8.3)
+        version: 4.2.2(picomatch@4.0.2)(svelte@5.35.5)(typescript@5.8.3)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -2647,8 +2647,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.35.4:
-    resolution: {integrity: sha512-NUUD+GcV/uvLBANoFwPNtnlkJM77PEkYYH6TChRZnGI1a5UHc9k2Glq7jxGtClfVz2ZhEvpg+c4yS577qM1c6g==}
+  svelte@5.35.5:
+    resolution: {integrity: sha512-KuRvI82rhh0RMz1EKsUJD96gZyHJ+h2+8zrwO8iqE/p/CmcNKvIItDUAeUePhuCDgtegDJmF8IKThbHIfmTgTA==}
     engines: {node: '>=18'}
 
   tailwindcss@3.4.17:
@@ -3302,12 +3302,12 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.25.63
 
-  '@astrojs/svelte@7.1.0(@types/node@24.0.10)(astro@5.11.0(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.35.4)(typescript@5.8.3)(yaml@2.7.0)':
+  '@astrojs/svelte@7.1.0(@types/node@24.0.10)(astro@5.11.0(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.7.0))(jiti@1.21.7)(svelte@5.35.5)(typescript@5.8.3)(yaml@2.7.0)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.1.0(svelte@5.35.4)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))
+      '@sveltejs/vite-plugin-svelte': 5.1.0(svelte@5.35.5)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))
       astro: 5.11.0(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.7.0)
-      svelte: 5.35.4
-      svelte2tsx: 0.7.39(svelte@5.35.4)(typescript@5.8.3)
+      svelte: 5.35.5
+      svelte2tsx: 0.7.39(svelte@5.35.5)(typescript@5.8.3)
       typescript: 5.8.3
       vite: 6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0)
     transitivePeerDependencies:
@@ -3956,23 +3956,23 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.1.0(svelte@5.35.4)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.35.4)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))':
+  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.1.0(svelte@5.35.5)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.35.5)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.1.0(svelte@5.35.4)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))
+      '@sveltejs/vite-plugin-svelte': 5.1.0(svelte@5.35.5)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))
       debug: 4.4.1
-      svelte: 5.35.4
+      svelte: 5.35.5
       vite: 6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@5.1.0(svelte@5.35.4)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))':
+  '@sveltejs/vite-plugin-svelte@5.1.0(svelte@5.35.5)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.1.0(svelte@5.35.4)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.35.4)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))
+      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.1.0(svelte@5.35.5)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0)))(svelte@5.35.5)(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))
       debug: 4.4.1
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.17
-      svelte: 5.35.4
+      svelte: 5.35.5
       vite: 6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0)
       vitefu: 1.1.0(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.7.0))
     transitivePeerDependencies:
@@ -6314,26 +6314,26 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-check@4.2.2(picomatch@4.0.2)(svelte@5.35.4)(typescript@5.8.3):
+  svelte-check@4.2.2(picomatch@4.0.2)(svelte@5.35.5)(typescript@5.8.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.3
       fdir: 6.4.6(picomatch@4.0.2)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.35.4
+      svelte: 5.35.5
       typescript: 5.8.3
     transitivePeerDependencies:
       - picomatch
 
-  svelte2tsx@0.7.39(svelte@5.35.4)(typescript@5.8.3):
+  svelte2tsx@0.7.39(svelte@5.35.5)(typescript@5.8.3):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.35.4
+      svelte: 5.35.5
       typescript: 5.8.3
 
-  svelte@5.35.4:
+  svelte@5.35.5:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.4
@@ -6539,7 +6539,7 @@ snapshots:
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
 
-  unplugin-icons@22.1.0(svelte@5.35.4):
+  unplugin-icons@22.1.0(svelte@5.35.5):
     dependencies:
       '@antfu/install-pkg': 1.0.0
       '@iconify/utils': 2.3.0
@@ -6547,7 +6547,7 @@ snapshots:
       local-pkg: 1.0.0
       unplugin: 2.2.0
     optionalDependencies:
-      svelte: 5.35.4
+      svelte: 5.35.5
     transitivePeerDependencies:
       - supports-color
 
