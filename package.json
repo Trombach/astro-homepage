@@ -60,10 +60,10 @@
     "radash": "^12.1.1",
     "remark-directive": "^4.0.0",
     "remark-github": "^12.0.0",
-    "resend": "^4.6.0",
+    "resend": "^4.7.0",
     "sanitize-html": "^2.17.0",
     "sharp": "^0.34.3",
-    "svelte": "^5.35.7",
+    "svelte": "^5.36.7",
     "tailwindcss": "^3.4.17",
     "uint8array-extras": "^1.4.0",
     "unplugin-icons": "^22.1.0"
