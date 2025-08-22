@@ -38,7 +38,7 @@
     "@astrojs/sitemap": "^3.5.0",
     "@astrojs/svelte": "^7.1.0",
     "@astrojs/tailwind": "^6.0.2",
-    "@floating-ui/dom": "^1.7.3",
+    "@floating-ui/dom": "^1.7.4",
     "@fontsource-variable/inter": "^5.2.6",
     "@fontsource-variable/jetbrains-mono": "^5.2.6",
     "@fontsource/lobster": "^5.2.6",
@@ -56,7 +56,7 @@
     "beasties": "^0.3.5",
     "canvaskit-wasm": "^0.40.0",
     "clsx": "^2.1.1",
-    "linkedom": "^0.18.11",
+    "linkedom": "^0.18.12",
     "radash": "^12.1.1",
     "remark-directive": "^4.0.0",
     "remark-github": "^12.0.0",
@@ -65,7 +65,7 @@
     "sharp": "^0.34.3",
     "svelte": "^5.38.2",
     "tailwindcss": "^3.4.17",
-    "uint8array-extras": "^1.4.1",
+    "uint8array-extras": "^1.5.0",
     "unplugin-icons": "^22.2.0"
   },
   "devDependencies": {
