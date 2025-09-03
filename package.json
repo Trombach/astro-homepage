@@ -50,7 +50,7 @@
     "@inox-tools/content-utils": "^0.11.1",
     "@microflash/rehype-figure": "^2.1.4",
     "@tailwindcss/container-queries": "^0.1.1",
-    "astro": "^5.13.4",
+    "astro": "^5.13.5",
     "astro-og-canvas": "^0.7.0",
     "astro-starlight-remark-asides": "^0.0.7",
     "beasties": "^0.3.5",
