@@ -33,8 +33,8 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.5",
-    "@astrojs/node": "^9.4.3",
+    "@astrojs/mdx": "^4.3.6",
+    "@astrojs/node": "^9.4.4",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/svelte": "^7.1.1",
     "@astrojs/tailwind": "^6.0.2",
@@ -50,7 +50,7 @@
     "@inox-tools/content-utils": "^0.12.0",
     "@microflash/rehype-figure": "^2.1.4",
     "@tailwindcss/container-queries": "^0.1.1",
-    "astro": "^5.13.8",
+    "astro": "^5.13.10",
     "astro-og-canvas": "^0.7.0",
     "astro-starlight-remark-asides": "^0.0.7",
     "beasties": "^0.3.5",
