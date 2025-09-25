@@ -75,7 +75,7 @@
     "@types/node": "^24.5.2",
     "@types/sanitize-html": "^2.16.0",
     "husky": "^9.1.7",
-    "svelte-check": "^4.3.1",
+    "svelte-check": "^4.3.2",
     "typescript": "^5.9.2"
   },
   "engines": {
