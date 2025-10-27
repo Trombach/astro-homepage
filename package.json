@@ -70,13 +70,13 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.5",
-    "@biomejs/biome": "2.2.4",
+    "@biomejs/biome": "2.3.1",
     "@types/cloudflare-turnstile": "^0.2.2",
-    "@types/node": "^24.5.2",
+    "@types/node": "^24.9.1",
     "@types/sanitize-html": "^2.16.0",
     "husky": "^9.1.7",
-    "svelte-check": "^4.3.1",
-    "typescript": "^5.9.2"
+    "svelte-check": "^4.3.3",
+    "typescript": "^5.9.3"
   },
   "engines": {
     "pnpm": ">=9",
