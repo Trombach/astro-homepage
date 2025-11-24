@@ -12,7 +12,7 @@ jobs:
   Typescript:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           lfs: false
       - uses: pnpm/action-setup@v4
@@ -27,7 +27,7 @@ jobs:
   Biome:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           lfs: false
       - uses: pnpm/action-setup@v4
