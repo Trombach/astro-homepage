@@ -74,7 +74,7 @@ export default async function getGithubContributions() {
     if ("issues" in contributions) {
       return {
         error: contributions,
-        message: "Error validation data from Github",
+        message: "Error validating data from Github",
       };
     }
 
