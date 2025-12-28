@@ -1,4 +1,3 @@
-import { COOLIFY_FQDN } from "astro:env/server";
 import type { z } from "astro:schema";
 
 export default async function fetchWithSchema<S extends z.ZodTypeAny>(
@@ -6,12 +5,11 @@ export default async function fetchWithSchema<S extends z.ZodTypeAny>(
   input: URL | string,
   init?: RequestInit,
 ): Promise<z.infer<S> | z.ZodError> {
-  const inp = typeof input === "string" ? getURL(input) : input;
-  const response = await fetch(inp, init);
+  const response = await fetch(input, init);
 
   if (!response.ok) {
     throw new Error(
-      `Error fetching data from ${inp}: ${response.status} ${response.statusText}`,
+      `Error fetching data from ${input}: ${response.status} ${response.statusText}`,
     );
   }
 
@@ -24,25 +22,4 @@ export default async function fetchWithSchema<S extends z.ZodTypeAny>(
   }
 
   return parsed.data;
-}
-
-function getURL(
-  inputUrl: URL | string,
-  searchParams?: { [key: string]: string },
-) {
-  let url =
-    typeof inputUrl === "string" && inputUrl.startsWith("http")
-      ? new URL(inputUrl)
-      : new URL(
-          inputUrl,
-          COOLIFY_FQDN ? `https://${COOLIFY_FQDN}` : "http://localhost:4321",
-        );
-
-  if (searchParams) {
-    url = new URL(
-      `${url.origin}${url.pathname}${new URLSearchParams({ ...url.searchParams, ...searchParams })}`,
-    );
-  }
-
-  return url;
 }

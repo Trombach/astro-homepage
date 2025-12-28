@@ -73,11 +73,6 @@ export default defineConfig({
         context: "server",
         access: "secret",
       }),
-      COOLIFY_FQDN: envField.string({
-        context: "server",
-        access: "public",
-        optional: true,
-      }),
       RESEND_TOKEN: envField.string({
         context: "server",
         access: "secret",
