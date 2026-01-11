@@ -2,7 +2,6 @@
 # Stage 1: Builder
 # ==============================================================================
 FROM node:25-alpine AS builder
-
 WORKDIR /app
 
 # Copy package files first for better layer caching
@@ -37,7 +36,6 @@ RUN pnpm build
 # Stage 2: Production
 # ==============================================================================
 FROM node:25-alpine AS production
-
 WORKDIR /app
 
 # Install corepack for pnpm support
@@ -67,7 +65,7 @@ ENV VERCEL_STORAGE_URL=$VERCEL_STORAGE_URL \
   IS_PREVIEW=$IS_PREVIEW \
   GH_TOKEN=$GH_TOKEN \
   HOST=0.0.0.0 \
-  PORT=8080
+  PORT=4321
 
 # Set ownership of app directory to non-root user
 RUN chown -R nodejs:nodejs /app
@@ -76,11 +74,11 @@ RUN chown -R nodejs:nodejs /app
 USER nodejs
 
 # Expose the port
-EXPOSE 8080
+EXPOSE 4321
 
 # Health check for container orchestration
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s \
-  CMD node -e "require('http').get('http://localhost:8080/', (r) => { process.exit(r.statusCode === 200 ? 0 : 1) })" || exit 1
+  CMD node -e "require('http').get('http://localhost:4321/', (r) => { process.exit(r.statusCode === 200 ? 0 : 1) })" || exit 1
 
 # Start the application
 CMD ["node", "./dist/server/entry.mjs"]
