@@ -56,6 +56,7 @@ jobs:
             TURNSTILE_SITE_KEY=${{ vars.TURNSTILE_SITE_KEY }}
             IS_PREVIEW=${{ vars.IS_PREVIEW }}
             GH_TOKEN=${{ secrets.GH_TOKEN }}
+            RESEND_TOKEN=${{ secrets.RESEND_TOKEN }}
 
   deploy:
     needs: build-and-push
