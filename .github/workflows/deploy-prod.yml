@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build and Deploy
 
 on:
   push:
@@ -9,9 +9,13 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  # Kubero deployment settings
+  K8S_NAMESPACE: homepage-production
+  K8S_DEPLOYMENT: www-kuberoapp-web
 
 jobs:
   build-and-push:
+    environment: production
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -45,8 +49,35 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            VERCEL_STORAGE_URL=${{ env.VERCEL_STORAGE_URL }}
-            CV_FILE_NAME=${{ env.CV_FILE_NAME }}
-            TURNSTILE_SITE_KEY=${{ env.TURNSTILE_SITE_KEY }}
-            IS_PREVIEW=false
+            VERCEL_STORAGE_URL=${{ vars.VERCEL_STORAGE_URL }}
+            CV_FILE_NAME=${{ vars.CV_FILE_NAME }}
+            TURNSTILE_SITE_KEY=${{ vars.TURNSTILE_SITE_KEY }}
+            IS_PREVIEW=${{ vars.IS_PREVIEW }}
             GH_TOKEN=${{ secrets.GH_TOKEN }}
+
+  deploy:
+    needs: build-and-push
+    environment: production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'latest'
+
+      - name: Configure kubeconfig
+        run: |
+          mkdir -p $HOME/.kube
+          echo "${{ secrets.KUBECONFIG_DATA }}" | base64 -d > $HOME/.kube/config
+          chmod 600 $HOME/.kube/config
+
+      - name: Restart deployment to pull new image
+        run: |
+          kubectl rollout restart deployment/${{ env.K8S_DEPLOYMENT }} -n ${{ env.K8S_NAMESPACE }}
+          kubectl rollout status deployment/${{ env.K8S_DEPLOYMENT }} -n ${{ env.K8S_NAMESPACE }} --timeout=300s
