@@ -1,43 +1,52 @@
-name: Build Static Image and Deploy
+name: Build and Push Docker Image
+
 on:
   push:
-    tags:
-      - "[0-9]+.[0-9]+.[0-9]+"
+    branches:
+      - main
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: "trombach/astro-homepage"
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  amd64:
-    environment:
-      name: Production
-      url: https://lukastrombach.dev
+  build-and-push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
+
     steps:
-      - uses: actions/checkout@v6
-        with:
-          lfs: true
-      - name: Login to ghcr.io
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to Container Registry
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Set Docker tag
-        id: date
-        run: echo "DATE_STAMP=$(date +%s)" > "$GITHUB_ENV"
-      - name: Build and push docker images
-        uses: iloveitaly/github-action-nixpacks@main
-        with:
-          push: true
-          context: .
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest,${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}
-          env: VERCEL_STORAGE_URL=${{ secrets.VERCEL_STORAGE_URL }},TURNSTILE_SECRET_KEY=${{ secrets.TURNSTILE_SECRET_KEY }},TURNSTILE_SITEVERIFY_URL=${{ secrets.TURNSTILE_SITEVERIFY_URL }},TURNSTILE_SITE_KEY=${{ secrets.TURNSTILE_SITE_KEY }},RESEND_TOKEN=${{ secrets.RESEND_TOKEN }},BLOB_READ_WRITE_TOKEN=${{ secrets.BLOB_READ_WRITE_TOKEN }},GH_TOKEN=${{ secrets.GH_TOKEN }},IS_PREVIEW=${{ secrets.IS_PREVIEW }}
 
-      - name: Deploy to Coolify
-        run: |
-          curl --request GET '${{ secrets.COOLIFY_WEBHOOK }}${{ inputs.tag }}' --header 'Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}'
+      - name: Extract metadata (tags, labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,prefix=
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            VERCEL_STORAGE_URL=${{ env.VERCEL_STORAGE_URL }}
+            CV_FILE_NAME=${{ env.CV_FILE_NAME }}
+            TURNSTILE_SITE_KEY=${{ env.TURNSTILE_SITE_KEY }}
+            IS_PREVIEW=false
+            GH_TOKEN=${{ secrets.GH_TOKEN }}
