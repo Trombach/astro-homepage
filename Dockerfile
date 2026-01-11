@@ -8,9 +8,9 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 # Install corepack and pnpm, then install dependencies
-RUN npm install -g corepack@latest && \
-  corepack enable && \
-  pnpm install --frozen-lockfile
+RUN npm install -g corepack@latest --force && \
+    corepack enable && \
+    pnpm install --frozen-lockfile
 
 # Copy source code
 COPY . .
@@ -39,7 +39,7 @@ FROM node:25-alpine AS production
 WORKDIR /app
 
 # Install corepack for pnpm support
-RUN npm install -g corepack@latest && corepack enable
+RUN npm install -g corepack@latest --force && corepack enable
 
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \
