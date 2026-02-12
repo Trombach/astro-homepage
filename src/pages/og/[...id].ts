@@ -18,7 +18,7 @@ pages.contact = {
   description: "contact@lukastrombach.dev",
 };
 
-export const { getStaticPaths, GET } = OGImageRoute({
+const { getStaticPaths, GET } = await OGImageRoute({
   param: "id",
   pages,
   getImageOptions: (_path, page: (typeof pages)[number]) => {
@@ -43,3 +43,5 @@ export const { getStaticPaths, GET } = OGImageRoute({
     };
   },
 });
+
+export { getStaticPaths, GET };
