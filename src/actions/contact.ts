@@ -3,9 +3,19 @@ import {
   ActionError,
   defineAction,
 } from "astro:actions";
-import { getSecret, TURNSTILE_SITEVERIFY_URL } from "astro:env/server";
+import {
+  RESEND_TOKEN,
+  TURNSTILE_SECRET_KEY,
+  TURNSTILE_SITEVERIFY_URL,
+} from "astro:env/server";
 import { z } from "astro:schema";
 import { Resend } from "resend";
+
+type TurnstileVerificationBody = {
+  secret: string;
+  response: string;
+  remoteip: string;
+};
 
 export const contact = defineAction({
   accept: "form",
@@ -35,17 +45,13 @@ export const contact = defineAction({
   ) => {
     let outcome: { success: boolean };
 
-    const secret =
-      getSecret("TURNSTILE_SECRET_KEY") ||
-      (import.meta.env.DEV ? "1x0000000000000000000000000000000AA" : "");
-
     try {
       const verification = await fetch(TURNSTILE_SITEVERIFY_URL, {
         body: JSON.stringify({
-          secret,
+          secret: TURNSTILE_SECRET_KEY,
           response: token,
           remoteip: clientAddress,
-        }),
+        } satisfies TurnstileVerificationBody),
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,8 +70,6 @@ export const contact = defineAction({
     if (!outcome.success) {
       throw new ActionError({ code: "TOO_MANY_REQUESTS", message: "🤖" });
     }
-
-    const RESEND_TOKEN = getSecret("RESEND_TOKEN");
 
     if (!RESEND_TOKEN) {
       const message = "Missing token";

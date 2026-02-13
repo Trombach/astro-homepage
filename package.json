@@ -29,7 +29,6 @@
     "preview": "astro preview",
     "astro": "astro",
     "bump-version": "changeset version && biome format --write package.json",
-    "promote": "vercel promote $DEPLOYMENT_URL --scope=trombachs-projects --token=$VERCEL_TOKEN",
     "prepare": "husky"
   },
   "dependencies": {
@@ -57,6 +56,7 @@
     "canvaskit-wasm": "^0.40.0",
     "clsx": "^2.1.1",
     "linkedom": "^0.18.12",
+    "minio": "^8.0.6",
     "radash": "^12.1.1",
     "remark-directive": "^4.0.0",
     "remark-github": "^12.0.0",

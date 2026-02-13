@@ -1,25 +1,50 @@
-import { CV_FILE_NAME, VERCEL_STORAGE_URL } from "astro:env/server";
+import {
+  CV_FILE_NAME,
+  RUSTFS_ACCESS_KEY,
+  RUSTFS_BUCKET_NAME,
+  RUSTFS_ENDPOINT,
+  RUSTFS_SECRET_KEY,
+} from "astro:env/server";
 import type { APIRoute } from "astro";
+import { Client } from "minio";
 
 export const prerender = false;
 
+const minio = new Client({
+  endPoint: RUSTFS_ENDPOINT,
+  port: 443,
+  accessKey: RUSTFS_ACCESS_KEY,
+  secretKey: RUSTFS_SECRET_KEY,
+  pathStyle: true,
+});
+
 export const GET: APIRoute = async () => {
-  if (!VERCEL_STORAGE_URL) {
-    return new Response("Vercel storage URL not set", { status: 500 });
+  try {
+    const response = await minio.getObject(RUSTFS_BUCKET_NAME, CV_FILE_NAME);
+
+    const stream = new ReadableStream({
+      async start(controller) {
+        try {
+          for await (const chunk of response) {
+            controller.enqueue(chunk);
+          }
+          controller.close();
+        } catch (e) {
+          controller.error(e);
+        }
+      },
+    });
+
+    return new Response(stream, {
+      status: 200,
+      headers: {
+        "Content-Type": "application/pdf",
+        "Content-Disposition": `inline; filename="${CV_FILE_NAME}"`,
+      },
+    });
+  } catch (e) {
+    return new Response(`Error fetching data: ${e}`, {
+      status: 500,
+    });
   }
-
-  if (!CV_FILE_NAME) {
-    return new Response("Missing CV file name", { status: 500 });
-  }
-
-  const file = await fetch(new URL(CV_FILE_NAME, VERCEL_STORAGE_URL));
-
-  if (file.ok) {
-    return new Response(await file.arrayBuffer());
-  }
-
-  return new Response("Error fetching data: ", {
-    status: 500,
-    statusText: `${file.status} ${file.statusText}`,
-  });
 };
