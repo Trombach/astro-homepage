@@ -1,4 +1,4 @@
-import { getSecret } from "astro:env/server";
+import { GH_TOKEN } from "astro:env/server";
 import { z } from "astro:schema";
 import fetch from "./fetchHelper";
 
@@ -52,8 +52,6 @@ export const schema = z
   }));
 
 export default async function getGithubContributions() {
-  const GH_TOKEN = getSecret("GH_TOKEN");
-
   if (!GH_TOKEN) {
     return {
       error: new Error("Missing auth token"),

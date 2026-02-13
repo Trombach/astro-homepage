@@ -1,9 +1,9 @@
 import {
   CV_FILE_NAME,
-  getSecret,
   RUSTFS_ACCESS_KEY,
   RUSTFS_BUCKET_NAME,
   RUSTFS_ENDPOINT,
+  RUSTFS_SECRET_KEY,
 } from "astro:env/server";
 import type { APIRoute } from "astro";
 import { Client } from "minio";
@@ -14,7 +14,7 @@ const minio = new Client({
   endPoint: RUSTFS_ENDPOINT,
   port: 443,
   accessKey: RUSTFS_ACCESS_KEY,
-  secretKey: getSecret("RUSTFS_SECRET_KEY") ?? "",
+  secretKey: RUSTFS_SECRET_KEY,
   pathStyle: true,
 });
 
@@ -31,7 +31,13 @@ export const GET: APIRoute = async () => {
       },
     });
 
-    return new Response(stream, { status: 200 });
+    return new Response(stream, {
+      status: 200,
+      headers: {
+        "Content-Type": "application/pdf",
+        "Content-Disposition": `inline; filename="${CV_FILE_NAME}"`,
+      },
+    });
   } catch (e) {
     return new Response(`Error fetching data: ${e}`, {
       status: 500,

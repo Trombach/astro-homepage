@@ -115,6 +115,7 @@ export default defineConfig({
       TURNSTILE_SECRET_KEY: envField.string({
         context: "server",
         access: "secret",
+        default: "1x0000000000000000000000000000000AA",
       }),
     },
   },
