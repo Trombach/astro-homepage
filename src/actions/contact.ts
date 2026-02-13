@@ -11,6 +11,12 @@ import {
 import { z } from "astro:schema";
 import { Resend } from "resend";
 
+type TurnstileVerificationBody = {
+  secret: string;
+  response: string;
+  remoteip: string;
+};
+
 export const contact = defineAction({
   accept: "form",
   input: z.object({
@@ -42,10 +48,10 @@ export const contact = defineAction({
     try {
       const verification = await fetch(TURNSTILE_SITEVERIFY_URL, {
         body: JSON.stringify({
-          TURNSTILE_SECRET_KEY,
+          secret: TURNSTILE_SECRET_KEY,
           response: token,
           remoteip: clientAddress,
-        }),
+        } satisfies TurnstileVerificationBody),
         method: "POST",
         headers: {
           "Content-Type": "application/json",
