@@ -77,9 +77,24 @@ export default defineConfig({
         context: "server",
         access: "secret",
       }),
-      VERCEL_STORAGE_URL: envField.string({
+      RUSTFS_ENDPOINT: envField.string({
         context: "server",
         access: "public",
+        default: "homepage-rustfs.lukastrombach.dev",
+      }),
+      RUSTFS_ACCESS_KEY: envField.string({
+        context: "server",
+        access: "public",
+        default: "rustfsadmin",
+      }),
+      RUSTFS_SECRET_KEY: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      RUSTFS_BUCKET_NAME: envField.string({
+        context: "server",
+        access: "public",
+        default: "default",
       }),
       CV_FILE_NAME: envField.string({
         context: "server",
