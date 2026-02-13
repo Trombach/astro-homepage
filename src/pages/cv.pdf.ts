@@ -24,10 +24,14 @@ export const GET: APIRoute = async () => {
 
     const stream = new ReadableStream({
       async start(controller) {
-        for await (const chunk of response) {
-          controller.enqueue(chunk);
+        try {
+          for await (const chunk of response) {
+            controller.enqueue(chunk);
+          }
+          controller.close();
+        } catch (e) {
+          controller.error(e);
         }
-        controller.close();
       },
     });
 
