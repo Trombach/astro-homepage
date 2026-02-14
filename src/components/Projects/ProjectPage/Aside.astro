@@ -9,70 +9,70 @@ type Props = {
 ---
 
 <aside
-  id="toc-aside"
-  popover="auto"
-  class:list={[
-    "bg-background max-w-[500px] p-5 my-0 border rounded-xl grow self-start w-auto right-0 sticky",
-    "top-[calc(var(--header-height)+var(--offset))] [--offset:--spacing(2)] left-2 right-2",
-    "[&[popover]]:fixed [&[popover]]:[--offset:80px] [&[popover]]:shadow-md",
-  ]}
+    id="toc-aside"
+    popover="auto"
+    class:list={[
+        "bg-background max-w-125 p-5 my-0 border rounded-xl grow self-start w-auto right-0 sticky",
+        "top-[calc(var(--header-height)+var(--offset))] [--offset:--spacing(2)] left-2 right-2",
+        "[[popover]]:fixed [[popover]]:[--offset:80px] [[popover]]:shadow-md",
+    ]}
 >
-  <div class="relative border-muted pl-4 border-l-2">
-    <span
-      id="heading-indicator"
-      class="absolute -left-[5px] top-0 h-2 w-2 rounded-full bg-primary opacity-0 transition-[top_opacity]"
-    ></span>
-    <h1 class="mb-3 text-lg font-bold">On this page</h1>
-    <nav id="secondary">
-      <Toc toc={generateToc(Astro.props.headings)} />
-    </nav>
-  </div>
+    <div class="relative border-muted pl-4 border-l-2">
+        <span
+            id="heading-indicator"
+            class="absolute -left-1.25 top-0 h-2 w-2 rounded-full bg-primary opacity-0 transition-[top_opacity]"
+        ></span>
+        <h1 class="mb-3 text-lg font-bold">On this page</h1>
+        <nav id="secondary">
+            <Toc toc={generateToc(Astro.props.headings)} />
+        </nav>
+    </div>
 </aside>
 
 <script is:inline>
-  function init(doc = document) {
-    const mq = window.matchMedia("(min-width: 1200px)");
+    function init(doc = document) {
+        const mq = window.matchMedia("(min-width: 1200px)");
 
-    const togglePopoverAttr = () => {
-      const aside = doc.querySelector("aside#toc-aside");
+        const togglePopoverAttr = () => {
+            const aside = doc.querySelector("aside#toc-aside");
 
-      if (aside) {
-        if (!mq.matches) {
-          aside.setAttribute("popover", "auto");
-        } else {
-          aside.removeAttribute("popover");
-        }
-      }
-    };
+            if (aside) {
+                if (!mq.matches) {
+                    aside.setAttribute("popover", "auto");
+                } else {
+                    aside.removeAttribute("popover");
+                }
+            }
+        };
 
-    togglePopoverAttr();
+        togglePopoverAttr();
 
-    mq.addEventListener("change", togglePopoverAttr);
-  }
+        mq.addEventListener("change", togglePopoverAttr);
+    }
 
-  init();
+    init();
 </script>
 
 <style>
-  [popover] {
-    transform: translateY(50px);
-    opacity: 0;
-    transition:
-      transform 0.5s,
-      opacity 0.5s,
-      overlay 0.5s allow-discrete,
-      display 0.5s allow-discrete;
-  }
-
-  [popover]:popover-open {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  @starting-style {
-    [popover]:popover-open {
-      transform: translateY(50px);
-      opacity: 0;
+    [popover] {
+        transform: translateY(50px);
+        opacity: 0;
+        transition:
+            transform 0.5s,
+            opacity 0.5s,
+            overlay 0.5s allow-discrete,
+            display 0.5s allow-discrete;
     }
-  }
+
+    [popover]:popover-open {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    @starting-style {
+        [popover]:popover-open {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+    }
 </style>
