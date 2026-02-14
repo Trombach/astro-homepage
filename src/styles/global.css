@@ -27,12 +27,15 @@
 }
 
 @theme {
-  --font-display: "Lobster", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo,
-    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-display:
+    "Lobster", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    "Inter Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 @theme inline {
@@ -161,18 +164,22 @@
   }
 }
 
-@custom-variant supports-scroll-animation (@supports (animation-timeline: scroll()));
+@custom-variant supports-scroll-animation (@supports (
+    animation-timeline: scroll()
+  ));
 
 @utility menu-button-transition {
-  transition: rotate calc(var(--header-animation-duration) / 2) ease-in, y
-    calc(var(--header-animation-duration) / 2) ease-in
-    calc(var(--header-animation-duration) / 2), opacity 0ms
-    calc(var(--header-animation-duration) / 2);
+  transition:
+    rotate calc(var(--header-animation-duration) / 2) ease-in,
+    y calc(var(--header-animation-duration) / 2) ease-in
+    calc(var(--header-animation-duration) / 2),
+    opacity 0ms calc(var(--header-animation-duration) / 2);
 }
 
 @utility menu-button-transition-close {
-  transition: y calc(var(--header-animation-duration) / 2) ease-in, rotate
-    calc(var(--header-animation-duration) / 2) ease-in
-    calc(var(--header-animation-duration) / 2), opacity 0ms
-    calc(var(--header-animation-duration) / 2);
+  transition:
+    y calc(var(--header-animation-duration) / 2) ease-in,
+    rotate calc(var(--header-animation-duration) / 2) ease-in
+    calc(var(--header-animation-duration) / 2),
+    opacity 0ms calc(var(--header-animation-duration) / 2);
 }
