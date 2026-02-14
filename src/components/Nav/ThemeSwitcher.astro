@@ -10,7 +10,10 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
 <fieldset
   class:list={[
     "relative isolate border border-solid flex rounded-full w-fit h-8 box-content",
-    "has-[:focus-visible]:outline has-[:focus-visible]:outline-offset-1",
+    "has-focus-visible:outline has-focus-visible:outline-offset-1",
+    "has-[#auto-theme:checked]:[&>span]:translate-x-0",
+    "has-[#dark-theme:checked]:[&>span]:translate-x-full",
+    "has-[#light-theme:checked]:[&>span]:translate-x-[200%]",
   ]}
 >
   <legend class="sr-only">Select a theme</legend>
@@ -22,8 +25,8 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
         id={`${option}-theme`}
         value={option}
         class:list={[
-          "peer fixed top-0 left-0 outline-none m-0 p-0 appearance-none",
-          "[&_+_label]:checked:text-foreground",
+          "fixed top-0 left-0 outline-hidden m-0 p-0 appearance-none",
+          "checked:[&+label]:text-foreground",
         ]}
       />
       <label
@@ -49,13 +52,10 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
   }
   <span
     class:list={[
-      "absolute -z-10 box-content -top-px -left-px w-8 h-8 rounded-full border",
+      "absolute -z-10 box-border  w-8 h-8 rounded-full",
       "hover:border-primary pointer-events-none bg-primary/25",
       "transition-all duration-300 ease-in-out",
-      "peer-[:nth-of-type(2)]:peer-checked:translate-x-[calc(100%-1.5px)]",
-      "peer-[:nth-of-type(3)]:peer-checked:translate-x-[calc(200%-3px)]",
-    ]}
-  />
+    ]}></span>
 </fieldset>
 
 <script is:inline>
@@ -64,7 +64,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
 
 <script>
   import type {Theme} from "./themeSwitcher"
-  
+
   declare global {
     interface Window {
       ThemeProvider: {

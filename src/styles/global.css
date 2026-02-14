@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-l-xl: 1200px;
+  --breakpoint-xl: 1440px;
+}
+
+@theme {
+  --animate-slide-in: slide-in-bottom 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+
+  @keyframes slide-in-bottom {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@theme {
+  --font-display:
+    "Lobster", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    "Inter Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@theme inline {
+  --drop-shadow-text: 2px 2px hsl(var(--background));
+}
+
+@theme {
+  --radius-4xl: 2rem;
+}
+
+@theme inline {
+  --spacing-screen-less-header: calc(100svh - var(--header-height));
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --primary-green: 171 97% 64%;
+    --primary-pink: 299 100% 84%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.5rem;
+    color-scheme: light;
+
+    * {
+      border-color: var(--color-border);
+    }
+
+    p {
+      max-width: 70ch;
+      text-wrap: pretty;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-wrap: balance;
+    }
+
+    @variant dark {
+      --background: 224 71.4% 4.1%;
+      --foreground: 210 20% 98%;
+      --card: 224 71.4% 4.1%;
+      --card-foreground: 210 20% 98%;
+      --popover: 224 71.4% 4.1%;
+      --popover-foreground: 210 20% 98%;
+      --primary: 263.4 70% 50.4%;
+      --primary-foreground: 210 20% 98%;
+      --secondary: 215 27.9% 16.9%;
+      --secondary-foreground: 210 20% 98%;
+      --muted: 215 27.9% 16.9%;
+      --muted-foreground: 217.9 10.6% 64.9%;
+      --accent: 215 27.9% 16.9%;
+      --accent-foreground: 210 20% 98%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 20% 98%;
+      --border: 215 27.9% 16.9%;
+      --input: 215 27.9% 16.9%;
+      color-scheme: dark;
+    }
+  }
+}
+
+@theme inline {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-green: hsl(var(--primary-green));
+  --color-primary-pink: hsl(var(--primary-pink));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+}
+
+@utility timeline-slide-in-bottom {
+  animation-timeline: view();
+  animation-range: entry 100% contain 25%;
+  animation-name: slide-scale-in-bottom;
+  animation-fill-mode: both;
+}
+
+@theme {
+  @keyframes slide-scale-in-bottom {
+    from {
+      transform: translateY(100px);
+      scale: 0.8;
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      scale: 1;
+      opacity: 1;
+    }
+  }
+}
+
+@custom-variant supports-scroll-animation (@supports (
+    animation-timeline: scroll()
+  ));
+
+@utility menu-button-transition {
+  transition:
+    rotate calc(var(--header-animation-duration) / 2) ease-in,
+    y calc(var(--header-animation-duration) / 2) ease-in
+    calc(var(--header-animation-duration) / 2),
+    opacity 0ms calc(var(--header-animation-duration) / 2);
+}
+
+@utility menu-button-transition-close {
+  transition:
+    y calc(var(--header-animation-duration) / 2) ease-in,
+    rotate calc(var(--header-animation-duration) / 2) ease-in
+    calc(var(--header-animation-duration) / 2),
+    opacity 0ms calc(var(--header-animation-duration) / 2);
+}

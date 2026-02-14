@@ -2,11 +2,11 @@ import mdx from "@astrojs/mdx";
 import node from "@astrojs/node";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
-import tailwind from "@astrojs/tailwind";
 import inoxToolswhen from "@inox-tools/astro-when";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
+import tailwind from "@tailwindcss/vite";
 import { defineConfig, envField } from "astro/config";
 import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import remarkDirective from "remark-directive";
@@ -17,7 +17,6 @@ import beasties from "./beasties-integration";
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    tailwind(),
     svelte({ include: ["**/*.svelte"] }),
     mdx(),
     sitemap(),
@@ -37,6 +36,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [
+      tailwind(),
       Icons({
         compiler: "svelte",
       }),
