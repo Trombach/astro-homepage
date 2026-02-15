@@ -16,16 +16,15 @@
     },
     setTheme: (theme) => {
       switch (theme) {
-        default:
-        case "auto":
-          localStorage.removeItem("theme");
-          break;
         case "dark":
           localStorage.setItem("theme", "dark");
           break;
         case "light":
           localStorage.setItem("theme", "light");
           break;
+        default:
+            localStorage.removeItem("theme");
+            break;
       }
 
       setThemeAttributes();
