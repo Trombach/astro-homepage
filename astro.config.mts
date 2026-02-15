@@ -34,6 +34,9 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
+  security: {
+    checkOrigin: false,
+  },
   vite: {
     plugins: [
       tailwind(),
