@@ -28,7 +28,6 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "bump-version": "changeset version && biome format --write package.json",
     "prepare": "husky"
   },
   "dependencies": {
