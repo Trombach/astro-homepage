@@ -13,6 +13,9 @@
       "tailwindDirectives": true
     }
   },
+  "html": {
+    "experimentalFullSupportEnabled": true
+  },
   "linter": {
     "enabled": true,
     "rules": {

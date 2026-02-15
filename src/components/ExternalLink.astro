@@ -1,4 +1,5 @@
 ---
+
 import type { HTMLAttributes } from "astro/types";
 import { uint8ArrayToBase64 } from "uint8array-extras";
 
@@ -48,8 +49,8 @@ const imageProps =
     <span class="whitespace-nowrap">
       {position === "before" && (
         <>
-          <img {...imageProps} class="w-4 inline-block my-0 mr-1" />
-          <a {href} {...props} class="whitespace-normal">
+          <img aria-label={`favicon for ${href}`} {...imageProps} class="w-4 inline-block my-0 mr-1" />
+          <a {href} {...props}  class="whitespace-normal">
             <Fragment set:html={content} />
           </a>
         </>

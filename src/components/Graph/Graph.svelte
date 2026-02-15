@@ -1,13 +1,13 @@
 <script lang="ts">
-import { onMount } from "svelte";
-import { draw } from "svelte/transition";
+    import { onMount } from "svelte";
+    import { draw } from "svelte/transition";
 
-const { class: className }: { class?: string } = $props();
+    const { class: className }: { class?: string } = $props();
 
-let show = $state(false);
-onMount(() => {
-  show = true;
-});
+    let show = $state(false);
+    onMount(() => {
+        show = true;
+    });
 </script>
 
 <svg
@@ -17,6 +17,7 @@ onMount(() => {
     class={"p-2 sm:p-3 lg:p-5 [&_path]:fill-none [&_path]:stroke-foreground [&_path]:stroke-2" +
         (className ?? "")}
 >
+    <title>Logo</title>
     {#if show}
         <g transform-origin="center" transform="translate(0 45)">
             <path
