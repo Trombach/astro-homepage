@@ -1,5 +1,4 @@
 ---
-
 import type { CollectionEntry } from "astro:content";
 import { dash } from "radash";
 import CardBody from "./CardBody.astro";
@@ -14,7 +13,7 @@ const { href, title, description, cover, meta } = Astro.props;
 
 <li
   class:list={[
-    "group max-w-[600px] overflow-clip rounded-xl border bg-card text-card-foreground",
+    "group max-w-150 overflow-clip rounded-xl border bg-card text-card-foreground",
     "has-focus-visible:outline has-focus-visible:outline-offset-1",
   ]}
   transition:name={`border-${dash(title)}`}
