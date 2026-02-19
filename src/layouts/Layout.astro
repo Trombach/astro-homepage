@@ -1,11 +1,10 @@
 ---
-
 import Footer from "@components/Footer/Footer.astro";
 import Favicon from "@components/Head/Favicon.astro";
-import type SEO from "@components/Head/SEO.astro";
-import type Webmentions from "@components/Head/Webmentions.astro";
+import SEO from "@components/Head/SEO.astro";
+import Webmentions from "@components/Head/Webmentions.astro";
 import Navbar from "@components/Nav/Navbar.astro";
-import type ThemeProvider from "@components/Nav/ThemeProvider.astro";
+import ThemeProvider from "@components/Nav/ThemeProvider.astro";
 import NativeViewTransitions from "@components/ViewTransitions/NativeViewTransitions.astro";
 import lobsterWoff2 from "@fontsource/lobster/files/lobster-latin-400-normal.woff2?url";
 import "../../src/styles/global.css";
@@ -22,7 +21,6 @@ interface Props {
 const { title, description = "Lukas' Homepage" } = Astro.props;
 ---
 
-<!doctype html>
 <html
   lang="en"
   class:list={[
