@@ -1,16 +1,17 @@
 <script lang="ts">
-import { onMount } from "svelte";
-import { draw } from "svelte/transition";
+    import { onMount } from "svelte";
+    import { draw } from "svelte/transition";
 
-const { class: className }: { class?: string } = $props();
+    const { class: className }: { class?: string } = $props();
 
-let show = $state(false);
-onMount(() => {
-  show = true;
-});
+    let show = $state(false);
+    onMount(() => {
+        show = true;
+    });
 </script>
 
 <svg
+    role="presentation"
     viewBox="0 0 312.49279 300"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
