@@ -30,6 +30,7 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
   ]}
 >
   <head>
+    <ThemeProvider />
     <meta charset="UTF-8" />
     <title>{title}</title>
     <meta name="description" content={description} />
