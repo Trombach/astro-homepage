@@ -14,3 +14,9 @@ declare module "icons:svelte/*" {
   import type { SvelteHTMLElements } from "svelte/elements";
   export default class extends SvelteComponent<SvelteHTMLElements["svg"]> {}
 }
+
+declare namespace App {
+  interface Locals {
+    prefersColorScheme: "dark" | "light"
+  }
+}
