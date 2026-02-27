@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
-    "@astrojs/node": "^9.5.3",
+    "@astrojs/node": "^9.5.4",
     "@astrojs/sitemap": "^3.7.0",
     "@astrojs/svelte": "^7.2.5",
     "@floating-ui/dom": "^1.7.5",
