@@ -1,20 +1,21 @@
 ---
 import { getImage } from "astro:assets";
-import { getCollection, render } from "astro:content";
+import { getEntry, render } from "astro:content";
 import SEO from "@components/Head/SEO.astro";
 import ProjectPage from "@components/Projects/ProjectPage/ProjectPage.astro";
 import Layout from "@layouts/Layout.astro";
 import type { GetImageResult } from "astro";
 
-export async function getStaticPaths() {
-  const projects = await getCollection("projects");
-  return projects.map((entry) => ({
-    params: { id: entry.id },
-    props: { entry },
-  }));
+if (!Astro.params.id) {
+  throw new Error("id undefined");
 }
 
-const entry = Astro.props.entry;
+const entry = await getEntry("projects", Astro.params.id);
+
+if (!entry) {
+  throw new Error(`entry with id ${Astro.params.id} not found`);
+}
+
 const {
   id,
   data: { title, description, ...extraProps },
