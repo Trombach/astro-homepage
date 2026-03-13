@@ -38,6 +38,9 @@ export default defineConfig({
     checkOrigin: false,
   },
   vite: {
+    server: {
+      allowedHosts: ["amina-unregardant-nonreproductively.ngrok-free.dev"],
+    },
     plugins: [
       tailwind(),
       Icons({
@@ -63,6 +66,7 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
+  output: "server",
   site: "https://www.lukastrombach.dev",
   trailingSlash: "never",
   env: {
