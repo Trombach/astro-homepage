@@ -68,7 +68,7 @@
     "unplugin-icons": "^23.0.1"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.7",
+    "@astrojs/check": "^0.9.8",
     "@biomejs/biome": "2.4.6",
     "@types/cloudflare-turnstile": "^0.2.2",
     "@types/node": "^25.4.0",
