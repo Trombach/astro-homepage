@@ -57,11 +57,11 @@ importers:
         specifier: ^1.2.4
         version: 1.2.4
       '@inox-tools/astro-when':
-        specifier: ^1.4.0
-        version: 1.4.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
+        specifier: ^2.0.0
+        version: 2.0.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
       '@inox-tools/content-utils':
-        specifier: ^0.13.1
-        version: 0.13.1(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
+        specifier: ^0.14.0
+        version: 0.14.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
       '@microflash/rehype-figure':
         specifier: ^2.1.4
         version: 2.1.4
@@ -816,20 +816,20 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@inox-tools/astro-when@1.4.0':
-    resolution: {integrity: sha512-uKir+i1QU8+dsHSO3c7GQytubHA7d2/RsKCmKPEU6AQrWaWeN/ulRz31g/5k9LyvX+cmsVW5Ra6CBElMR58HWA==}
+  '@inox-tools/astro-when@2.0.0':
+    resolution: {integrity: sha512-d0SZGR/3how5RJqm2gSsPuoEaTDcSUoWN1EK/iWTK1yfcODhNkChFna/jtvwMoYcx4SYkN9aT37nm0mo+DBHVw==}
     peerDependencies:
-      astro: ^5
+      astro: ^6
 
-  '@inox-tools/content-utils@0.13.1':
-    resolution: {integrity: sha512-sgPmDWlJuDUd911jKmAvK/tzrA7f+y1tcm2ZN+GvJHC17MKd+vRMx3g3BDvbP2yFzIHVjVxLas223dWh9tvdNQ==}
+  '@inox-tools/content-utils@0.14.0':
+    resolution: {integrity: sha512-OldYs9g3a2CraEBwrmqYcvZcQ41xdey53DEgu1O937gPko0mtZn5PQtpoj593QwSfc/ryld5HSt2bkvO4/gKVA==}
     peerDependencies:
-      astro: ^5
+      astro: ^6
 
-  '@inox-tools/modular-station@0.8.1':
-    resolution: {integrity: sha512-ikRu3RwD1516PM+gx+qui8h84fpMMgg7sXcij9fBjPQ+9e33u3xQHthf1l5/bY/b98dYfPL3QKDXqzqEjWsc1w==}
+  '@inox-tools/modular-station@0.9.0':
+    resolution: {integrity: sha512-TpbY4g3rbzDZfra6uopXYwvzYSkfXOeL/okmx9sdZCGACWGa4026pIyNgAEV5cwcAxFpiFbQ5Db6wegH+HSVlA==}
     peerDependencies:
-      astro: ^5
+      astro: ^6
 
   '@inox-tools/utils@1.1.1':
     resolution: {integrity: sha512-EwbddV6XBPbLmPOJm1GisFPKzuF2o58o0YPufnYYLwjYeoIldCpm875hHKGtHjnpUQSgZJ3z/WFREr7FX+PqTg==}
@@ -1308,10 +1308,10 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro-integration-kit@0.19.1:
-    resolution: {integrity: sha512-0MORMlwJXM3d2RlYoFMKpdBTEOqFEZ7rY5TnQssLsUTfaZgF4XkNJW0mNsDiOdM9LgDn9Px2dZtz8NbuUW75nw==}
+  astro-integration-kit@0.20.0:
+    resolution: {integrity: sha512-VQQs7hS9M3XrJtxSLHVDhvHzgqwZuhot3sMoYImBJSvL7fMnleSVgkZhoEeRJd1+Qh96eb469nRnn5mdjIJJMQ==}
     peerDependencies:
-      astro: ^4.14.0 || ^5.0.0
+      astro: ^4.14.0 || ^5.0.0 || ^6.0.0
 
   astro-og-canvas@0.10.1:
     resolution: {integrity: sha512-cUjsWIOkDBi9Bfkgta1Cr45m2UnTX/jW+tK406SVcD1idhqIHrGD+M5qtwGcJ6OanHeWSgyHGmzQuzELGAwPKg==}
@@ -1529,9 +1529,6 @@ packages:
   deterministic-object-hash@2.0.2:
     resolution: {integrity: sha512-KxektNH63SrbfUyDiwXqRb1rLwKt33AmMv+5Nhsw1kqZ13SJBRTgZHtGbE+hH3a1mVW1cz+4pqSWVPAtLVXTzQ==}
     engines: {node: '>=18'}
-
-  devalue@5.6.3:
-    resolution: {integrity: sha512-nc7XjUU/2Lb+SvEFVGcWLiKkzfw8+qHI7zn8WYXKkLMgfGSHbgCEaR6bJpev8Cm6Rmrb19Gfd/tZvGqx9is3wg==}
 
   devalue@5.6.4:
     resolution: {integrity: sha512-Gp6rDldRsFh/7XuouDbxMH3Mx8GMCcgzIb1pDTvNyn8pZGQ22u+Wa+lGV9dQCltFQ7uVw0MhRyb8XDskNFOReA==}
@@ -2297,9 +2294,6 @@ packages:
 
   path-browserify@1.0.1:
     resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
-
-  pathe@1.1.2:
-    resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
 
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
@@ -3659,33 +3653,33 @@ snapshots:
   '@img/sharp-win32-x64@0.34.5':
     optional: true
 
-  '@inox-tools/astro-when@1.4.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))':
+  '@inox-tools/astro-when@2.0.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))':
     dependencies:
       astro: 5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2)
-      astro-integration-kit: 0.19.1(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
+      astro-integration-kit: 0.20.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
       debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
-  '@inox-tools/content-utils@0.13.1(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))':
+  '@inox-tools/content-utils@0.14.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))':
     dependencies:
-      '@inox-tools/modular-station': 0.8.1(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
+      '@inox-tools/modular-station': 0.9.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
       '@inox-tools/utils': 1.1.1
       astro: 5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2)
-      astro-integration-kit: 0.19.1(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
+      astro-integration-kit: 0.20.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
       debug: 4.4.3
-      devalue: 5.6.3
+      devalue: 5.6.4
       estree-walker: 3.0.3
       magic-string: 0.30.21
     transitivePeerDependencies:
       - nanostores
       - supports-color
 
-  '@inox-tools/modular-station@0.8.1(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))':
+  '@inox-tools/modular-station@0.9.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))':
     dependencies:
       '@inox-tools/utils': 1.1.1
       astro: 5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2)
-      astro-integration-kit: 0.19.1(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
+      astro-integration-kit: 0.20.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2))
       debug: 4.4.3
     transitivePeerDependencies:
       - nanostores
@@ -4132,10 +4126,10 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-integration-kit@0.19.1(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2)):
+  astro-integration-kit@0.20.0(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2)):
     dependencies:
       astro: 5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2)
-      pathe: 1.1.2
+      pathe: 2.0.3
 
   astro-og-canvas@0.10.1(astro@5.18.1(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.0)(typescript@5.9.3)(yaml@2.8.2)):
     dependencies:
@@ -4426,8 +4420,6 @@ snapshots:
   deterministic-object-hash@2.0.2:
     dependencies:
       base-64: 1.0.0
-
-  devalue@5.6.3: {}
 
   devalue@5.6.4: {}
 
@@ -5607,8 +5599,6 @@ snapshots:
     optional: true
 
   path-browserify@1.0.1: {}
-
-  pathe@1.1.2: {}
 
   pathe@2.0.3: {}
 
