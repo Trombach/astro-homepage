@@ -17,6 +17,6 @@ declare module "icons:svelte/*" {
 
 declare namespace App {
   interface Locals {
-    prefersColorScheme: "dark" | "light"
+    prefersColorScheme: "dark" | "light" | null
   }
 }

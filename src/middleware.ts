@@ -22,7 +22,7 @@ const handleClientHints = defineMiddleware(
     if (!locals.prefersColorScheme) {
       locals.prefersColorScheme = request.headers.get(
         clientHintPrefersColorScheme,
-      ) as "dark" | "light";
+      ) as "dark" | "light" | null;
     }
 
     return await next();
