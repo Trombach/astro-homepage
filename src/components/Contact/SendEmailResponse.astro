@@ -1,5 +1,4 @@
 ---
-
 import { actions, isInputError } from "astro:actions";
 
 const response = Astro.getActionResult(actions.contact);
@@ -14,7 +13,7 @@ const response = Astro.getActionResult(actions.contact);
         response.error && "border-destructive text-destructive",
       ]}
     >
-      {response.data && response.data.success && "Your message has been sent!"}
+      {response.data?.success && "Your message has been sent!"}
 
       {response.error &&
         (isInputError(response.error)
