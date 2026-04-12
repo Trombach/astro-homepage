@@ -63,12 +63,12 @@ if (extraProps.cover.image) {
 
 <script>
   function scrollTo(hash: string) {
-    if (hash === "") return;
+      if (hash === "") return;
 
-    document.getElementById(
-      hash.startsWith("#") ? hash.replace("#", ""): hash
-    )?.scrollIntoView({ behavior: "smooth" });
-  }
+      document.getElementById(
+        hash.startsWith("#") ? hash.replace("#", ""): hash
+      )?.scrollIntoView({ behavior: "smooth" });
+    }
 
-  scrollTo(window.location.hash);
+    scrollTo(window.location.hash);
 </script>

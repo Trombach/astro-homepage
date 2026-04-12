@@ -1,57 +1,57 @@
 <script is:inline>
   window.ThemeProvider ??= {
-    initTheme: (doc = document) => {
-      setThemeAttributes(doc);
-    },
-    getTheme: () => {
-      const theme = localStorage.getItem("theme") || "auto";
-      if (theme !== "auto" && theme !== "dark" && theme !== "light") {
-        console.debug("Unknown theme value in localStorage:", theme);
-        console.debug("Resetting to 'auto'");
-        localStorage.removeItem("theme");
-        return "auto";
-      }
+      initTheme: (doc = document) => {
+        setThemeAttributes(doc);
+      },
+      getTheme: () => {
+        const theme = localStorage.getItem("theme") || "auto";
+        if (theme !== "auto" && theme !== "dark" && theme !== "light") {
+          console.debug("Unknown theme value in localStorage:", theme);
+          console.debug("Resetting to 'auto'");
+          localStorage.removeItem("theme");
+          return "auto";
+        }
 
-      return theme;
-    },
-    setTheme: (theme) => {
-      switch (theme) {
-        case "dark":
-          localStorage.setItem("theme", "dark");
-          break;
-        case "light":
-          localStorage.setItem("theme", "light");
-          break;
-        default:
-            localStorage.removeItem("theme");
+        return theme;
+      },
+      setTheme: (theme) => {
+        switch (theme) {
+          case "dark":
+            localStorage.setItem("theme", "dark");
             break;
-      }
+          case "light":
+            localStorage.setItem("theme", "light");
+            break;
+          default:
+              localStorage.removeItem("theme");
+              break;
+        }
 
-      setThemeAttributes();
-    },
-    updateThemeSwitcher: (theme) =>  {
-      const radioButton = document.querySelector(
-        `input[type=radio][name=theme]#${theme}-theme`,
+        setThemeAttributes();
+      },
+      updateThemeSwitcher: (theme) =>  {
+        const radioButton = document.querySelector(
+          `input[type=radio][name=theme]#${theme}-theme`,
+        );
+
+        if (radioButton instanceof HTMLInputElement) {
+          radioButton.checked = true;
+        }
+      }
+    };
+
+    function prefersDarkTheme() {
+      return (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
       );
-
-      if (radioButton instanceof HTMLInputElement) {
-        radioButton.checked = true;
-      }
     }
-  };
-
-  function prefersDarkTheme() {
-    return (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    );
-  }
 
 
-  function setThemeAttributes(doc = document) {
-    doc.documentElement.classList.toggle("dark", prefersDarkTheme());
-  }
+    function setThemeAttributes(doc = document) {
+      doc.documentElement.classList.toggle("dark", prefersDarkTheme());
+    }
 
-  window.ThemeProvider.initTheme();
+    window.ThemeProvider.initTheme();
 </script>

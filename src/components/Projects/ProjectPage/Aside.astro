@@ -31,48 +31,48 @@ type Props = {
 
 <script is:inline>
     function init(doc = document) {
-        const mq = window.matchMedia("(min-width: 1200px)");
+            const mq = window.matchMedia("(min-width: 1200px)");
 
-        const togglePopoverAttr = () => {
-            const aside = doc.querySelector("aside#toc-aside");
+            const togglePopoverAttr = () => {
+                const aside = doc.querySelector("aside#toc-aside");
 
-            if (aside) {
-                if (!mq.matches) {
-                    aside.setAttribute("popover", "auto");
-                } else {
-                    aside.removeAttribute("popover");
+                if (aside) {
+                    if (!mq.matches) {
+                        aside.setAttribute("popover", "auto");
+                    } else {
+                        aside.removeAttribute("popover");
+                    }
                 }
-            }
-        };
+            };
 
-        togglePopoverAttr();
+            togglePopoverAttr();
 
-        mq.addEventListener("change", togglePopoverAttr);
-    }
+            mq.addEventListener("change", togglePopoverAttr);
+        }
 
-    init();
+        init();
 </script>
 
 <style>
     [popover] {
-        transform: translateY(50px);
-        opacity: 0;
-        transition:
-            transform 0.5s,
-            opacity 0.5s,
-            overlay 0.5s allow-discrete,
-            display 0.5s allow-discrete;
-    }
-
-    [popover]:popover-open {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    @starting-style {
-        [popover]:popover-open {
             transform: translateY(50px);
             opacity: 0;
+            transition:
+                transform 0.5s,
+                opacity 0.5s,
+                overlay 0.5s allow-discrete,
+                display 0.5s allow-discrete;
         }
-    }
+
+        [popover]:popover-open {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @starting-style {
+            [popover]:popover-open {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+        }
 </style>

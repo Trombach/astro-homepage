@@ -63,17 +63,17 @@ const paths = [
 
 <style>
   @media (prefers-reduced-motion: no-preference) {
-    @keyframes blob-fade {
-      85%,
-      100% {
-        opacity: 0;
+      @keyframes blob-fade {
+        85%,
+        100% {
+          opacity: 0;
+        }
+      }
+
+      #blob {
+        animation: blob-fade linear both;
+        animation-timeline: view();
+        animation-range: exit;
       }
     }
-
-    #blob {
-      animation: blob-fade linear both;
-      animation-timeline: view();
-      animation-range: exit;
-    }
-  }
 </style>

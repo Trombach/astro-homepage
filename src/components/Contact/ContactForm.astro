@@ -96,68 +96,68 @@ const { data } = await getEntry(person);
 <script>
   const turnstileScriptId = "turnstile-script";
 
-  function initWidget() {
-    const el = document.getElementById("cf-turnstile");
-    const submitButton = document.getElementById("submit-message");
-    const loadingTemplate = document.getElementById("contact-loading-spinner");
-    const sendIconTemplate = document.getElementById("contact-send-icon");
+    function initWidget() {
+      const el = document.getElementById("cf-turnstile");
+      const submitButton = document.getElementById("submit-message");
+      const loadingTemplate = document.getElementById("contact-loading-spinner");
+      const sendIconTemplate = document.getElementById("contact-send-icon");
 
-    if (!el) {
-      console.error("Could not initialise turnstile widget");
-      return;
+      if (!el) {
+        console.error("Could not initialise turnstile widget");
+        return;
+      }
+
+      if (!el.dataset.sitekey) {
+        console.error("sitekey not set");
+        return;
+      }
+
+      if (submitButton && loadingTemplate instanceof HTMLTemplateElement) {
+        submitButton
+          .querySelector("svg")
+          ?.replaceWith(loadingTemplate.content.cloneNode(true));
+      }
+
+      turnstile.render(el, {
+        appearance: "interaction-only",
+        sitekey: el.dataset.sitekey,
+        callback: (token) => {
+          if (
+            submitButton instanceof HTMLButtonElement &&
+            sendIconTemplate instanceof HTMLTemplateElement
+          ) {
+            submitButton.disabled = false;
+            submitButton
+              .querySelector("svg")
+              ?.replaceWith(sendIconTemplate.content.cloneNode(true));
+          }
+          console.debug(`Challenge Success ${token}`);
+        },
+      });
     }
 
-    if (!el.dataset.sitekey) {
-      console.error("sitekey not set");
-      return;
-    }
+    function init() {
+      if (document.scripts.namedItem(turnstileScriptId) === null) {
+        const form = document.getElementById("contact-form");
+        if (form instanceof HTMLFormElement) {
+          form.addEventListener(
+            "focusin",
+            () => {
+              const script = document.createElement("script");
+              script.src =
+                "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+              script.id = turnstileScriptId;
+              script.async = true;
+              script.defer = true;
+              script.onload = initWidget;
 
-    if (submitButton && loadingTemplate instanceof HTMLTemplateElement) {
-      submitButton
-        .querySelector("svg")
-        ?.replaceWith(loadingTemplate.content.cloneNode(true));
-    }
-
-    turnstile.render(el, {
-      appearance: "interaction-only",
-      sitekey: el.dataset.sitekey,
-      callback: (token) => {
-        if (
-          submitButton instanceof HTMLButtonElement &&
-          sendIconTemplate instanceof HTMLTemplateElement
-        ) {
-          submitButton.disabled = false;
-          submitButton
-            .querySelector("svg")
-            ?.replaceWith(sendIconTemplate.content.cloneNode(true));
+              document.head.appendChild(script);
+            },
+            { once: true }
+          );
         }
-        console.debug(`Challenge Success ${token}`);
-      },
-    });
-  }
-
-  function init() {
-    if (document.scripts.namedItem(turnstileScriptId) === null) {
-      const form = document.getElementById("contact-form");
-      if (form instanceof HTMLFormElement) {
-        form.addEventListener(
-          "focusin",
-          () => {
-            const script = document.createElement("script");
-            script.src =
-              "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-            script.id = turnstileScriptId;
-            script.async = true;
-            script.defer = true;
-            script.onload = initWidget;
-
-            document.head.appendChild(script);
-          },
-          { once: true }
-        );
       }
     }
-  }
 
-  init();
+    init();
 </script>

@@ -40,42 +40,42 @@ const { data } = await getEntry(person);
 
 <style>
     @layer components {
-        @media (prefers-reduced-motion: no-preference) {
-            [data-card] {
-                animation-timeline: view();
-                animation-range: entry 0% entry 90%;
-                animation-name: var(--card-animation-name);
-                animation-fill-mode: both;
-                animation-duration: 1ms;
-                animation-timing-function: ease-in-out;
+            @media (prefers-reduced-motion: no-preference) {
+                [data-card] {
+                    animation-timeline: view();
+                    animation-range: entry 0% entry 90%;
+                    animation-name: var(--card-animation-name);
+                    animation-fill-mode: both;
+                    animation-duration: 1ms;
+                    animation-timing-function: ease-in-out;
+                }
+            }
+
+            @keyframes id-card {
+                0% {
+                    transform: translateY(calc(-25cqh - 10vh)) translateX(60cqw)
+                        scale(1) rotateY(0);
+                }
+
+                50% {
+                    transform: translateY(-40cqh) translateX(0) scale(var(--scale))
+                        rotateY(0);
+                }
+
+                100% {
+                    transform: translateY(0) translateX(0) scale(var(--scale))
+                        rotateY(10deg);
+                }
+            }
+
+            @keyframes id-card-mobile {
+                from {
+                    transform: translateY(-10%) scale(1);
+                }
+
+                to {
+                    transform: translateY(0) scale(0.8);
+                }
             }
         }
-
-        @keyframes id-card {
-            0% {
-                transform: translateY(calc(-25cqh - 10vh)) translateX(60cqw)
-                    scale(1) rotateY(0);
-            }
-
-            50% {
-                transform: translateY(-40cqh) translateX(0) scale(var(--scale))
-                    rotateY(0);
-            }
-
-            100% {
-                transform: translateY(0) translateX(0) scale(var(--scale))
-                    rotateY(10deg);
-            }
-        }
-
-        @keyframes id-card-mobile {
-            from {
-                transform: translateY(-10%) scale(1);
-            }
-
-            to {
-                transform: translateY(0) scale(0.8);
-            }
-        }
-    }
 </style>

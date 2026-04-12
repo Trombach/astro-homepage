@@ -45,24 +45,24 @@ const title = sanitizeHtml(await Astro.slots.render("default"), {
 <style>
     @reference "tailwindcss";
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-size: clamp(var(--text-3xl), -2.25rem + 9.3333vw, var(--text-5xl));
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: clamp(var(--text-3xl), -2.25rem + 9.3333vw, var(--text-5xl));
 
-        &::after {
-            background-image: linear-gradient(
-                to right,
-                var(--color-primary) 0 calc(70% - 1px),
-                transparent 70% calc(74% - 1px),
-                var(--color-primary-green) 74% calc(84% - 1px),
-                transparent 84% calc(86% - 1px),
-                var(--color-primary-pink) 86% calc(87.5% - 1px),
-                transparent 87.5% 100%
-            );
+            &::after {
+                background-image: linear-gradient(
+                    to right,
+                    var(--color-primary) 0 calc(70% - 1px),
+                    transparent 70% calc(74% - 1px),
+                    var(--color-primary-green) 74% calc(84% - 1px),
+                    transparent 84% calc(86% - 1px),
+                    var(--color-primary-pink) 86% calc(87.5% - 1px),
+                    transparent 87.5% 100%
+                );
+            }
         }
-    }
 </style>

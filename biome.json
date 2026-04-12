@@ -20,6 +20,14 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "suspicious": {
+        "noDuplicateProperties": {
+          "level": "off"
+        },
+        "noDuplicateCustomProperties": {
+          "level": "off"
+        }
+      },
       "nursery": {
         "useSortedClasses": {
           "level": "warn",
