@@ -48,8 +48,8 @@ const imageProps =
     <span class="whitespace-nowrap">
       {position === "before" && (
         <>
-          <img {...imageProps} class="w-4 inline-block my-0 mr-1" />
-          <a {href} {...props} class="whitespace-normal">
+          <img aria-label={`favicon for ${href}`} {...imageProps} class="w-4 inline-block my-0 mr-1" />
+          <a {href} {...props}  class="whitespace-normal">
             <Fragment set:html={content} />
           </a>
         </>
@@ -59,7 +59,7 @@ const imageProps =
           <a {href} {...props} class="whitespace-normal">
             <Fragment set:html={content} />
           </a>
-          <img {...imageProps} class="w-4 inline-block my-0 ml-1" />
+          <img aria-label={`favicon for ${href}`} {...imageProps} class="w-4 inline-block my-0 ml-1" />
         </>
       )}
     </span>

@@ -33,26 +33,26 @@ const { image } = Astro.props;
 
 <style>
   .gradient {
-    --spacing-1: 2%;
-    --spacing-2: 1.5%;
-    --width-1: 6%;
-    --width-2: 1.25%;
-    --gradient-stop-1: 30%;
-    --gradient-stop-2: calc(var(--gradient-stop-1) + var(--spacing-1));
-    --gradient-stop-3: calc(var(--gradient-stop-2) + var(--width-1));
-    --gradient-stop-4: calc(var(--gradient-stop-3) + var(--spacing-2));
-    --gradient-stop-5: calc(var(--gradient-stop-4) + var(--width-2));
+      --spacing-1: 2%;
+      --spacing-2: 1.5%;
+      --width-1: 6%;
+      --width-2: 1.25%;
+      --gradient-stop-1: 30%;
+      --gradient-stop-2: calc(var(--gradient-stop-1) + var(--spacing-1));
+      --gradient-stop-3: calc(var(--gradient-stop-2) + var(--width-1));
+      --gradient-stop-4: calc(var(--gradient-stop-3) + var(--spacing-2));
+      --gradient-stop-5: calc(var(--gradient-stop-4) + var(--width-2));
 
-    background-image: linear-gradient(
-      var(--gradient-direction),
-      var(--color-primary) 0% calc(var(--gradient-stop-1) - 1px),
-      transparent var(--gradient-stop-1) calc(var(--gradient-stop-2) - 1px),
-      var(--color-primary-green) var(--gradient-stop-2)
-        calc(var(--gradient-stop-3) - 1px),
-      transparent var(--gradient-stop-3) calc(var(--gradient-stop-4) - 1px),
-      var(--color-primary-pink) var(--gradient-stop-4)
-        calc(var(--gradient-stop-5) - 1px),
-      transparent var(--gradient-stop-5)
-    );
-  }
+      background-image: linear-gradient(
+        var(--gradient-direction),
+        var(--color-primary) 0% calc(var(--gradient-stop-1) - 1px),
+        transparent var(--gradient-stop-1) calc(var(--gradient-stop-2) - 1px),
+        var(--color-primary-green) var(--gradient-stop-2)
+          calc(var(--gradient-stop-3) - 1px),
+        transparent var(--gradient-stop-3) calc(var(--gradient-stop-4) - 1px),
+        var(--color-primary-pink) var(--gradient-stop-4)
+          calc(var(--gradient-stop-5) - 1px),
+        transparent var(--gradient-stop-5)
+      );
+    }
 </style>

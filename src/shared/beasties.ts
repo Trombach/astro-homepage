@@ -17,7 +17,7 @@ const beastiesSSR = new Beasties({
   ...options,
 });
 
-export { options, beastiesSSR };
+export { beastiesSSR, options };
 export default new Beasties({
   path: path.join(fileURLToPath(outDir), "client"),
   ...options,

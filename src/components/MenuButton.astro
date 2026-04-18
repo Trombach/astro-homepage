@@ -1,5 +1,6 @@
-<button id="menu-toggle" popovertarget="menu-container" class="p-1 sm:hidden">
+<button type="button" id="menu-toggle" popovertarget="menu-container" class="p-1 sm:hidden">
   <svg
+    role="presentation"
     class="fill-foreground size-8"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 100 100"
@@ -47,15 +48,15 @@
 
 <script>
   const header = document.querySelector("[data-header]");
-  const button = document.querySelector("#menu-toggle");
+    const button = document.querySelector("#menu-toggle");
 
-  if (header instanceof HTMLElement && button instanceof HTMLButtonElement) {
-    button.addEventListener("click", () => {
-      if (header.dataset.header === "collapsed") {
-        header.dataset.header = "expanded";
-      } else {
-        header.dataset.header = "collapsed";
-      }
-    });
-  }
+    if (header instanceof HTMLElement && button instanceof HTMLButtonElement) {
+      button.addEventListener("click", () => {
+        if (header.dataset.header === "collapsed") {
+          header.dataset.header = "expanded";
+        } else {
+          header.dataset.header = "collapsed";
+        }
+      });
+    }
 </script>

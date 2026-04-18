@@ -29,8 +29,7 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
           "checked:[&+label]:text-foreground",
         ]}
       />
-      <label
-        for={`${option}-theme`}
+      <label for={`${option}-theme`}
         class:list={[
           "h-8 w-8 flex justify-center items-center rounded-full cursor-pointer",
           "transition-all text-muted-foreground hover:text-foreground",
@@ -65,48 +64,48 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
 <script>
   import type {Theme} from "./themeSwitcher"
 
-  declare global {
-    interface Window {
-      ThemeProvider: {
-        initTheme: (doc?: Document) => void;
-        getTheme: () => Theme;
-        setTheme: (theme: string) => void;
-        updateThemeSwitcher: (theme: Theme) => void;
-      };
+    declare global {
+      interface Window {
+        ThemeProvider: {
+          initTheme: (doc?: Document) => void;
+          getTheme: () => Theme;
+          setTheme: (theme: string) => void;
+          updateThemeSwitcher: (theme: Theme) => void;
+        };
+      }
     }
-  }
 
-  function init() {
-    const observer = new MutationObserver((mutations) => {
-      for (const mutation of mutations) {
-        if (mutation.type !== "attributes" && mutation.attributeName !== "data-theme") {
-          continue
+    function init() {
+      const observer = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+          if (mutation.type !== "attributes" && mutation.attributeName !== "data-theme") {
+            continue
+          }
+
+          window.ThemeProvider.updateThemeSwitcher(window.ThemeProvider.getTheme());
         }
+      });
 
-        window.ThemeProvider.updateThemeSwitcher(window.ThemeProvider.getTheme());
+      observer.observe(document.documentElement, {attributeFilter: ["data-theme"]});
+
+      const radioButtons = document.querySelectorAll(
+        "input[type=radio][name=theme]",
+      );
+      for (const radioButton of radioButtons) {
+        if (radioButton instanceof HTMLInputElement) {
+          radioButton.addEventListener("change", () => {
+            window.ThemeProvider.setTheme(radioButton.value);
+          });
+        }
+      }
+    }
+
+    init();
+
+    // react to system theme change
+    matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+      if (window.ThemeProvider.getTheme() === "auto") {
+        window.ThemeProvider.initTheme();
       }
     });
-
-    observer.observe(document.documentElement, {attributeFilter: ["data-theme"]});
-
-    const radioButtons = document.querySelectorAll(
-      "input[type=radio][name=theme]",
-    );
-    for (const radioButton of radioButtons) {
-      if (radioButton instanceof HTMLInputElement) {
-        radioButton.addEventListener("change", () => {
-          window.ThemeProvider.setTheme(radioButton.value);
-        });
-      }
-    }
-  }
-
-  init();
-
-  // react to system theme change
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-    if (window.ThemeProvider.getTheme() === "auto") {
-      window.ThemeProvider.initTheme();
-    }
-  });
 </script>
