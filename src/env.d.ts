@@ -14,7 +14,3 @@ declare module "icons:svelte/*" {
   import type { SvelteHTMLElements } from "svelte/elements";
   export default class extends SvelteComponent<SvelteHTMLElements["svg"]> {}
 }
-
-declare module "@fontsource-variable/inter" { }
-declare module "@fontsource-variable/jetbrains-mono" { }
-declare module "@fontsource/lobster" { }

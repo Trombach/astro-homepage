@@ -7,7 +7,7 @@ import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
 import tailwind from "@tailwindcss/vite";
-import { defineConfig, envField } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
 import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
@@ -27,6 +27,25 @@ export default defineConfig({
   image: {
     domains: ["placehold.co"],
   },
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Inter",
+      cssVariable: "--font-inter",
+      weights: ["100 900"],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "JetBrains Mono",
+      cssVariable: "--font-jetbrains-mono",
+      weights: ["100 800"],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "Lobster",
+      cssVariable: "--font-lobster",
+    },
+  ],
   markdown: {
     remarkPlugins: [remarkGithub, remarkDirective, astroStarlightRemarkAsides],
     rehypePlugins: [rehypeFigure],
