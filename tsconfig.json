@@ -11,7 +11,8 @@
       "@shared/*": ["./src/shared/*"],
       "@images/*": ["./src/images/*"],
       "@icons/*": ["./src/icons/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@src/*": ["./src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

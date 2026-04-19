@@ -1,4 +1,4 @@
-import type { z } from "astro:schema";
+import type { z } from "astro/zod";
 
 export default async function fetchWithSchema<S extends z.ZodTypeAny>(
   schema: S,

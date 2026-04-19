@@ -32,10 +32,10 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.14",
-    "@astrojs/node": "^9.5.5",
+    "@astrojs/mdx": "^5.0.3",
+    "@astrojs/node": "^10.0.5",
     "@astrojs/sitemap": "^3.7.2",
-    "@astrojs/svelte": "^7.2.5",
+    "@astrojs/svelte": "^8.0.5",
     "@floating-ui/dom": "^1.7.6",
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
@@ -48,7 +48,7 @@
     "@inox-tools/content-utils": "^0.14.0",
     "@microflash/rehype-figure": "^2.1.4",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "^5.18.1",
+    "astro": "^6.1.8",
     "astro-og-canvas": "^0.11.0",
     "astro-starlight-remark-asides": "^0.0.7",
     "beasties": "^0.4.2",

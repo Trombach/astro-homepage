@@ -1,5 +1,5 @@
 import { GH_TOKEN } from "astro:env/server";
-import { z } from "astro:schema";
+import { z } from "astro/zod";
 import fetch from "./fetchHelper";
 
 const GH_API = "https://api.github.com/graphql";
