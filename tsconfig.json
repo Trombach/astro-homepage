@@ -4,15 +4,14 @@
   "compilerOptions": {
     "checkJs": true,
     "verbatimModuleSyntax": true,
-    "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
-      "@shared/*": ["src/shared/*"],
-      "@images/*": ["src/images/*"],
-      "@icons/*": ["src/icons/*"],
-      "@utils/*": ["src/utils/*"]
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@images/*": ["./src/images/*"],
+      "@icons/*": ["./src/icons/*"],
+      "@utils/*": ["./src/utils/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
