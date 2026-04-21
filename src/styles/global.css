@@ -26,7 +26,7 @@
   }
 }
 
-@theme {
+@theme inline {
   --font-display: var(--font-lobster);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
