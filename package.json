@@ -46,7 +46,7 @@
     "@microflash/rehype-figure": "^2.1.4",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.8",
-    "astro-og-canvas": "^0.11.0",
+    "astro-og-canvas": "^0.11.1",
     "astro-starlight-remark-asides": "^0.0.7",
     "beasties": "^0.4.2",
     "canvaskit-wasm": "^0.41.1",
