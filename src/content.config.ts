@@ -1,6 +1,6 @@
 import { defineCollection, reference } from "astro:content";
-import { z } from "astro:schema";
 import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const aboutCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/data/about" }),
@@ -29,10 +29,10 @@ const personCollection = defineCollection({
       education: z.string(),
       avatar: image(),
       contact: z.object({
-        email: z.string().email(),
-        web: z.string().url(),
-        matrix: z.string().url(),
-        linkedIn: z.string().url(),
+        email: z.email(),
+        web: z.url(),
+        matrix: z.url(),
+        linkedIn: z.url(),
       }),
     }),
 });
@@ -72,7 +72,7 @@ const projectsCollection = defineCollection({
         description: z.string(),
         meta: z
           .object({
-            repoLink: z.string().url().optional(),
+            repoLink: z.url().optional(),
             completed: z.coerce.date().optional(),
             tags: z.array(z.enum(tags)).max(4).optional(),
             tools: z.array(z.enum(tools)).max(6).optional(),

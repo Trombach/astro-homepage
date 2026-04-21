@@ -8,7 +8,7 @@ import {
   TURNSTILE_SECRET_KEY,
   TURNSTILE_SITEVERIFY_URL,
 } from "astro:env/server";
-import { z } from "astro:schema";
+import { z } from "astro/zod";
 import { Resend } from "resend";
 
 type TurnstileVerificationBody = {
@@ -21,9 +21,7 @@ export const contact = defineAction({
   accept: "form",
   input: z.object({
     name: z.string({ message: "Name is required" }),
-    email: z
-      .string({ message: "Email is required" })
-      .email({ message: "Invalid email" }),
+    email: z.email({ message: "Invalid email" }),
     message: z
       .string({ message: "Message is required" })
       .min(10, { message: "Message must be at least 10 characters long" }),

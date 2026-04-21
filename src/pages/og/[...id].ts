@@ -44,4 +44,4 @@ const { getStaticPaths, GET } = await OGImageRoute({
   },
 });
 
-export { getStaticPaths, GET };
+export { GET, getStaticPaths };
