@@ -35,7 +35,7 @@
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/node": "^10.0.6",
     "@astrojs/sitemap": "^3.7.2",
-    "@astrojs/svelte": "^8.0.5",
+    "@astrojs/svelte": "^8.1.0",
     "@floating-ui/dom": "^1.7.6",
     "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/logos": "^1.2.11",
@@ -45,7 +45,7 @@
     "@inox-tools/content-utils": "^0.14.0",
     "@microflash/rehype-figure": "^2.1.4",
     "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.1.9",
+    "astro": "^6.2.1",
     "astro-og-canvas": "^0.11.1",
     "astro-starlight-remark-asides": "^0.0.7",
     "beasties": "^0.4.2",
@@ -65,7 +65,7 @@
     "unplugin-icons": "^23.0.1"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.8",
+    "@astrojs/check": "^0.9.9",
     "@biomejs/biome": "2.4.12",
     "@types/cloudflare-turnstile": "^0.2.2",
     "@types/node": "^25.6.0",
