@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",
-    "@astrojs/node": "^10.0.6",
+    "@astrojs/node": "^10.1.0",
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/svelte": "^8.1.0",
     "@floating-ui/dom": "^1.7.6",
@@ -45,7 +45,7 @@
     "@inox-tools/content-utils": "^0.14.0",
     "@microflash/rehype-figure": "^2.1.4",
     "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.2.1",
+    "astro": "^6.3.0",
     "astro-og-canvas": "^0.11.1",
     "astro-starlight-remark-asides": "^0.0.7",
     "beasties": "^0.4.2",
