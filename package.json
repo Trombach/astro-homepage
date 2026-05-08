@@ -68,10 +68,10 @@
     "@astrojs/check": "^0.9.9",
     "@biomejs/biome": "2.4.14",
     "@types/cloudflare-turnstile": "^0.2.2",
-    "@types/node": "^25.6.0",
+    "@types/node": "^25.6.2",
     "@types/sanitize-html": "^2.16.1",
     "husky": "^9.1.7",
-    "svelte-check": "^4.4.7",
+    "svelte-check": "^4.4.8",
     "typescript": "^6.0.3"
   },
   "engines": {
