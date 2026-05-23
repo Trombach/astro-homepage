@@ -24,6 +24,6 @@
       "matchDepTypes": ["dev"],
       "matchPackagePatterns": ["!^astro", "!^@astrojs/"],
       "groupName": "development"
-    },
+    }
   ]
 }
