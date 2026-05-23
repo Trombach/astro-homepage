@@ -25,9 +25,5 @@
       "matchPackagePatterns": ["!^astro", "!^@astrojs/"],
       "groupName": "development"
     },
-    {
-      "matchManagers": ["github-actions"],
-      "groupName": "github-actions"
-    }
   ]
 }
