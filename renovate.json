@@ -1,3 +1,33 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["^astro", "^@astrojs/"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "astro"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["^astro", "^@astrojs/"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "astro-breaking"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["production"],
+      "matchPackagePatterns": ["!^astro", "!^@astrojs/"],
+      "groupName": "production"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["dev"],
+      "matchPackagePatterns": ["!^astro", "!^@astrojs/"],
+      "groupName": "development"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions"
+    }
+  ]
 }
