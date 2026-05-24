@@ -47,3 +47,8 @@ jobs:
           token: ${{ forgejo.token }}
           release-notes-assistant: true
           skip-assets: true
+      # since dokploy doesn't allow deployment on tag for gitea we trigger the deployment manually for now
+      - name: Deploy prod
+        shell: bash
+        run: |
+          curl -X POST ${{ secrets.DOKPLOY_WEBHOOK }}
