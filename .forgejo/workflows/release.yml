@@ -25,7 +25,7 @@ jobs:
             git tag ${{ inputs.version }}
             git push origin ${{ inputs.version }}
           else
-            echo "Tag ${{ inputs.version }} already exists, skipping creation"
+            exit 1
           fi
           echo "tag=${{ inputs.version }}" >> $FORGEJO_OUTPUT
 
@@ -44,5 +44,5 @@ jobs:
           tag: ${{ needs.tag.outputs.tag }}
           url: https://codeberg.org
           verbose: true # for debugging
-          token: ${{forgejo.token}}
+          token: ${{ forgejo.token }}
           release-notes-assistant: true
