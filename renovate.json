@@ -3,6 +3,16 @@
   "packageRules": [
     {
       "matchManagers": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "groupName": "production"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "development"
+    },
+    {
+      "matchManagers": ["npm"],
       "matchPackageNames": ["^astro", "^@astrojs/"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "astro"
@@ -12,18 +22,6 @@
       "matchPackageNames": ["^astro", "^@astrojs/"],
       "matchUpdateTypes": ["major"],
       "groupName": "astro-breaking"
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["dependencies"],
-      "excludePackageNames": ["^astro", "^@astrojs/"],
-      "groupName": "production"
-    },
-    {
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["devDependencies"],
-      "excludePackageNames": ["^astro", "^@astrojs/"],
-      "groupName": "development"
     }
   ]
 }
