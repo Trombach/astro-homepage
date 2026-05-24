@@ -8,17 +8,37 @@ on:
         description: Version in format x.x.x
 
 jobs:
+  tag:
+    name: Create tag
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tag
+        shell: bash
+        id: tag
+
+        run: |
+          set -x
+          echo "Creating tag ${{ inputs.tag }} at ${{ forgejo.ref_name }} (${{ forgejo.sha }})"
+          git tag ${{ inputs.version }}
+          git push origin ${{ inputs.version }}
+          echo "tag=${{ inputs.version }}" >> $FORGEJO_OUTPUT
+
   release:
     name: Create release
     runs-on: ubuntu-latest
+    needs: [tag]
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: refs/tags/${{ inputs.version }}
+          ref: refs/tags/${{ needs.tag.outputs.tag }}
       - name: Create release notes
         uses: actions/forgejo-release@v2
         with:
           direction: upload
+          tag: ${{ needs.tag.outputs.tag }}
           url: https://codeberg.org
           verbose: true # for debugging
           release-notes-assistant: true
