@@ -51,4 +51,4 @@ jobs:
       - name: Deploy prod
         shell: bash
         run: |
-          curl -X POST ${{ secrets.DOKPLOY_WEBHOOK }}
+          curl -X POST -H "Content-Type: application/json" --data '${{ forgejo.event }}' ${{ secrets.DOKPLOY_WEBHOOK }}
