@@ -18,12 +18,15 @@ jobs:
       - name: Tag
         shell: bash
         id: tag
-
         run: |
           set -x
-          echo "Creating tag ${{ inputs.tag }} at ${{ forgejo.ref_name }} (${{ forgejo.sha }})"
-          git tag ${{ inputs.version }}
-          git push origin ${{ inputs.version }}
+          if ! git ls-remote --exit-code origin refs/tags/${{ inputs.version }} >/dev/null; then
+            echo "Creating tag ${{ inputs.tag }} at ${{ forgejo.ref_name }} (${{ forgejo.sha }})"
+            git tag ${{ inputs.version }}
+            git push origin ${{ inputs.version }}
+          else
+            echo "Tag ${{ inputs.version }} already exists, skipping creation"
+          fi
           echo "tag=${{ inputs.version }}" >> $FORGEJO_OUTPUT
 
   release:
@@ -41,4 +44,5 @@ jobs:
           tag: ${{ needs.tag.outputs.tag }}
           url: https://codeberg.org
           verbose: true # for debugging
+          token: ${{forgejo.token}}
           release-notes-assistant: true
