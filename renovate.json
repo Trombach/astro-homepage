@@ -15,13 +15,13 @@
     },
     {
       "matchManagers": ["npm"],
-      "matchDepTypes": ["production"],
+      "matchDepTypes": ["dependencies"],
       "matchPackagePatterns": ["!^astro", "!^@astrojs/"],
       "groupName": "production"
     },
     {
       "matchManagers": ["npm"],
-      "matchDepTypes": ["dev"],
+      "matchDepTypes": ["devDependencies"],
       "matchPackagePatterns": ["!^astro", "!^@astrojs/"],
       "groupName": "development"
     }
