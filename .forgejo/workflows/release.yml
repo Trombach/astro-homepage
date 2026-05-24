@@ -46,3 +46,4 @@ jobs:
           verbose: true # for debugging
           token: ${{ forgejo.token }}
           release-notes-assistant: true
+          skip-assets: true
