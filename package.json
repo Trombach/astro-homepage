@@ -66,7 +66,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
-    "@biomejs/biome": "2.4.14",
+    "@biomejs/biome": "2.4.15",
     "@types/cloudflare-turnstile": "^0.2.2",
     "@types/node": "^25.6.0",
     "@types/sanitize-html": "^2.16.1",
