@@ -8,8 +8,8 @@
 
 <div align=center>
 
-[![CI](https://github.com/Trombach/astro-homepage/actions/workflows/ci.yml/badge.svg)](https://github.com/Trombach/astro-homepage/actions/workflows/ci.yml)
-[![Lighthouse Scores](https://github.com/Trombach/astro-homepage/actions/workflows/lighthouse.yml/badge.svg?event=schedule)](https://github.com/Trombach/astro-homepage/actions/workflows/lighthouse.yml)
+[![CI](https://codeberg.org/Trombach/astro-homepage/badges/workflows/ci.yml/badge.svg?branch=main)](https://codeberg.org/Trombach/astro-homepage/badges/workflows/ci.yml/badge.svg?branch=main)
+[![Lighthouse Scores](https://codeberg.org/Trombach/astro-homepage/badges/workflows/lighthouse.yml/badge.svg?event=schedule)](https://codeberg.org/Trombach/astro-homepage/badges/workflows/lighthouse.yml/badge.svg?event=schedule)
 
 </div>
 

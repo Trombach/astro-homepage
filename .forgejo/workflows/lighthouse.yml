@@ -12,7 +12,7 @@ jobs:
       matrix:
         route: ["", "/projects", "/contact"]
         mode: ["mobile", "desktop"]
-    uses: ./.github/workflows/lhci.yml
+    uses: ./.forgejo/workflows/lhci.yml
     with:
       url: https://www.lukastrombach.dev${{ matrix.route }}
       mode: ${{ matrix.mode }}
