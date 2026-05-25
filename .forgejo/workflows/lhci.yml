@@ -24,11 +24,6 @@ jobs:
       - uses: actions/checkout@v6
         with:
           lfs: false
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          cache: "pnpm"
       - name: Conditionally set environment
         run: |
           if [[ ${{ inputs.environment }} == "preview" ]]; then
@@ -40,7 +35,6 @@ jobs:
           fi
       - name: Audit URL using Lighthouse
         run: |
-          pnpm add --global @lhci/cli
           lhci autorun --config=${{ inputs.config-path || format('./lighthouserc.{0}-{1}.json', inputs.mode, inputs.environment) }}
         env:
           LHCI_COLLECT__URL: ${{ inputs.url }}
