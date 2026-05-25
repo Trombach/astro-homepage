@@ -52,4 +52,4 @@ jobs:
         shell: bash
         run: |
           set -x
-          curl -X POST -H "Content-Type: application/json" --data '${{ forgejo.event }}' ${{ secrets.DOKPLOY_WEBHOOK }}
+          curl -X POST -H "Content-Type: application/json" --data '${{ toJSON(forgejo.event) }}' ${{ secrets.DOKPLOY_WEBHOOK }}
