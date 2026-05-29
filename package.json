@@ -32,7 +32,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/mdx": "^6.0.0",
     "@astrojs/node": "^10.0.6",
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/svelte": "^8.1.0",
