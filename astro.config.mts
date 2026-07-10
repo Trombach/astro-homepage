@@ -1,8 +1,9 @@
+import { unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import node from "@astrojs/node";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
-import inoxToolswhen from "@inox-tools/astro-when";
+import inoxToolsWhen from "@inox-tools/astro-when";
 import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
@@ -22,7 +23,7 @@ export default defineConfig({
     sitemap(),
     beasties(),
     inoxToolsContentUtils(),
-    inoxToolswhen(),
+    inoxToolsWhen(),
   ],
   image: {
     domains: ["placehold.co"],
@@ -47,14 +48,20 @@ export default defineConfig({
     },
   ],
   markdown: {
-    remarkPlugins: [remarkGithub, remarkDirective, astroStarlightRemarkAsides],
-    rehypePlugins: [rehypeFigure],
+    processor: unified({
+      remarkPlugins: [
+        remarkGithub,
+        remarkDirective,
+        astroStarlightRemarkAsides,
+      ],
+      rehypePlugins: [rehypeFigure],
+    }),
   },
   prefetch: {
     prefetchAll: true,
   },
   security: {
-    checkOrigin: false,
+    checkOrigin: false, // TODO: figure out how to enable this again
   },
   vite: {
     plugins: [

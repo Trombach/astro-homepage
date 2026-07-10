@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.15/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": { "includes": ["**", "!**/dist", "!**/*.d.ts"] },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "vcs": {
@@ -33,7 +33,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "nursery": {
         "useSortedClasses": {
           "level": "warn",
@@ -43,6 +43,10 @@
             "functions": ["clsx"]
           }
         }
+      },
+      "suspicious": {
+        "noDuplicateCustomProperties": "off",
+        "noDuplicateProperties": "off"
       },
       "style": {
         "noRestrictedGlobals": {

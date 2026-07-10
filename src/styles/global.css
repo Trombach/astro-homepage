@@ -158,9 +158,9 @@
   }
 }
 
-@custom-variant supports-scroll-animation (@supports (
-    animation-timeline: scroll()
-  ));
+@custom-variant supports-scroll-animation (
+  @supports (animation-timeline: scroll())
+);
 
 @utility menu-button-transition {
   transition:
