@@ -44,10 +44,6 @@
           }
         }
       },
-      "suspicious": {
-        "noDuplicateCustomProperties": "off",
-        "noDuplicateProperties": "off"
-      },
       "style": {
         "noRestrictedGlobals": {
           "level": "error",

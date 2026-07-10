@@ -89,6 +89,7 @@
     }
 
     @variant dark {
+      /* biome-ignore lint/suspicious/noDuplicateCustomProperties: ok for dark theme override */
       --background: 224 71.4% 4.1%;
       --foreground: 210 20% 98%;
       --card: 224 71.4% 4.1%;
@@ -107,6 +108,7 @@
       --destructive-foreground: 210 20% 98%;
       --border: 215 27.9% 16.9%;
       --input: 215 27.9% 16.9%;
+      /* biome-ignore lint/suspicious/noDuplicateProperties: ok for dark theme override */
       color-scheme: dark;
     }
   }
