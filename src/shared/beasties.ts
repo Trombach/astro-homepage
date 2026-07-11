@@ -7,7 +7,7 @@ import Beasties from "beasties";
 const options = {
   pruneSource: false,
   inlineFonts: true,
-  allowRules: [":root.dark"],
+  allowRules: [":root:where(.dark,.dark *)"],
   mergeStylesheets: false,
   reduceInlineStyles: false,
 } as const satisfies BeastiesOptions;

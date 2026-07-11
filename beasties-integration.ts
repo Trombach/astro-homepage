@@ -26,7 +26,7 @@ export default (): AstroIntegration => {
           ...{
             pruneSource: false,
             inlineFonts: true,
-            allowRules: [":root.dark"],
+            allowRules: [":root:where(.dark,.dark *)"],
             mergeStylesheets: false,
             reduceInlineStyles: false,
           },
