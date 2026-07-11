@@ -88,6 +88,9 @@ export default defineConfig({
   }),
   site: "https://www.lukastrombach.dev",
   trailingSlash: "never",
+  security: {
+    allowedDomains: [{ hostname: "**.lukastrombach.dev", protocol: "https" }],
+  },
   env: {
     schema: {
       IS_PREVIEW: envField.boolean({
