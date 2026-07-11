@@ -21,7 +21,7 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
 <html
   lang="en"
   class:list={[
-    "bg-background leading-normal text-foreground scroll-pt-(--header-height) [scrollbar-gutter:stable]",
+    "leading-normal scroll-pt-(--header-height) scrollbar-gutter-stable",
     "[--header-height:64px] lg:[--header-height:80px]",
     "has-target:motion-safe:scroll-smooth",
   ]}
@@ -47,7 +47,7 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     </slot>
     <NativeViewTransitions />
   </head>
-  <body class="antialiased">
+  <body class="antialiased bg-background text-foreground">
     <Navbar />
     <main
       transition:name="main"
