@@ -60,9 +60,6 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
-  security: {
-    checkOrigin: false, // TODO: figure out how to enable this again
-  },
   vite: {
     plugins: [
       tailwind(),
