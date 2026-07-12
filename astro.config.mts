@@ -8,7 +8,12 @@ import inoxToolsContentUtils from "@inox-tools/content-utils";
 // @ts-expect-error
 import rehypeFigure from "@microflash/rehype-figure";
 import tailwind from "@tailwindcss/vite";
-import { defineConfig, envField, fontProviders } from "astro/config";
+import {
+  defineConfig,
+  envField,
+  fontProviders,
+  memoryCache,
+} from "astro/config";
 import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
@@ -86,6 +91,9 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
+  cache: {
+    provider: memoryCache(),
+  },
   site: "https://www.lukastrombach.dev",
   trailingSlash: "never",
   security: {

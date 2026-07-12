@@ -5,6 +5,10 @@ import CalendarGrid from "./CalendarGrid.astro";
 import CalendarTile from "./CalendarTile.astro";
 
 const result = await getGithubContributions();
+
+if (Astro.cache.enabled) {
+  Astro.cache.set({ maxAge: 86400, swr: 60, tags: ["github-contributions"] });
+}
 ---
 
 {
