@@ -1,6 +1,7 @@
 {
   "languages": {
     "Astro": {
+      "format_on_save": "on",
       "formatter": { "language_server": { "name": "biome" } },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
@@ -8,6 +9,7 @@
       }
     },
     "JavaScript": {
+      "format_on_save": "on",
       "formatter": { "language_server": { "name": "biome" } },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
@@ -15,6 +17,7 @@
       }
     },
     "TypeScript": {
+      "format_on_save": "on",
       "formatter": { "language_server": { "name": "biome" } },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
@@ -22,6 +25,7 @@
       }
     },
     "TSX": {
+      "format_on_save": "on",
       "formatter": { "language_server": { "name": "biome" } },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
@@ -29,6 +33,7 @@
       }
     },
     "JSON": {
+      "format_on_save": "on",
       "formatter": { "language_server": { "name": "biome" } },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
@@ -36,6 +41,7 @@
       }
     },
     "JSONC": {
+      "format_on_save": "on",
       "formatter": { "language_server": { "name": "biome" } },
       "code_actions_on_format": {
         "source.fixAll.biome": true,
