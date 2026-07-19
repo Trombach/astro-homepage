@@ -3,19 +3,9 @@ import {
   ActionError,
   defineAction,
 } from "astro:actions";
-import {
-  RESEND_TOKEN,
-  TURNSTILE_SECRET_KEY,
-  TURNSTILE_SITEVERIFY_URL,
-} from "astro:env/server";
+import { RESEND_TOKEN } from "astro:env/server";
 import { z } from "astro/zod";
 import { Resend } from "resend";
-
-type TurnstileVerificationBody = {
-  secret: string;
-  response: string;
-  remoteip: string;
-};
 
 export const contact = defineAction({
   accept: "form",
@@ -25,47 +15,9 @@ export const contact = defineAction({
     message: z
       .string({ message: "Message is required" })
       .min(10, { message: "Message must be at least 10 characters long" }),
-    "cf-turnstile-response": z.string(),
   }),
-  handler: async (
-    {
-      name,
-      email,
-      message,
-      "cf-turnstile-response": token,
-    }: {
-      name: string;
-      email: string;
-      message: string;
-      "cf-turnstile-response": string;
-    },
-    { clientAddress }: ActionAPIContext,
-  ) => {
-    let outcome: { success: boolean };
-
-    try {
-      const verification = await fetch(TURNSTILE_SITEVERIFY_URL, {
-        body: JSON.stringify({
-          secret: TURNSTILE_SECRET_KEY,
-          response: token,
-          remoteip: clientAddress,
-        } satisfies TurnstileVerificationBody),
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      outcome = await verification.json();
-    } catch (err) {
-      console.error(err);
-      throw new ActionError({
-        code: "INTERNAL_SERVER_ERROR",
-        message: "Something went wrong",
-      });
-    }
-
-    if (!outcome.success) {
+  handler: async (payload, context: ActionAPIContext) => {
+    if (!context.locals.altcha.verified) {
       throw new ActionError({ code: "TOO_MANY_REQUESTS", message: "🤖" });
     }
 
@@ -83,9 +35,9 @@ export const contact = defineAction({
     const response = await resend.emails.send({
       from: "homepage-contact@lukastrombach.dev",
       to: ["contact@lukastrombach.dev"],
-      replyTo: email,
-      subject: `Message from ${name} <${email}>`,
-      text: message,
+      replyTo: payload.email,
+      subject: `Message from ${payload.name} <${payload.email}>`,
+      text: payload.message,
       tags: [{ name: "category", value: "homepage-contact" }],
     });
 

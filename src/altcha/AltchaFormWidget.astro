@@ -1,0 +1,29 @@
+---
+import { config } from "virtual:astro-altcha-config";
+import type { WidgetAttributes } from "altcha/types";
+
+type Props = {
+  /** when the altcha widget should be initialised
+   *
+   * `onfocus` - when the form is first focused
+   * `onload` - when the page first loads
+   */
+  strategy?: "onfocus" | "onload";
+  /* enable debug mode for altcha widget */
+  debug?: boolean;
+} & WidgetAttributes;
+
+const {
+  name = config.name,
+  challenge = config.challengePath,
+  strategy = "onfocus",
+  debug = false,
+  ...rest
+} = Astro.props;
+---
+
+<altcha-widget {name} {challenge} {...rest}></altcha-widget>
+
+<script is:inline id="altcha-data" type="application/json" set:html={JSON.stringify({name, strategy, challengePath: config.challengePath, debug})} />
+
+<script src="./altcha-form-widget-script.ts" />
