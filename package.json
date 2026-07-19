@@ -41,7 +41,7 @@
     "@iconify-json/logos": "^1.2.11",
     "@iconify-json/simple-icons": "^1.2.80",
     "@iconify-json/svg-spinners": "^1.2.4",
-    "@inox-tools/astro-when": "^2.0.0",
+    "@inox-tools/astro-when": "^3.0.0",
     "@inox-tools/content-utils": "^0.15.0",
     "@microflash/rehype-figure": "^2.1.4",
     "@tailwindcss/vite": "^4.2.4",

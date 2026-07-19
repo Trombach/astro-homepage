@@ -36,8 +36,8 @@ importers:
         specifier: ^1.2.4
         version: 1.2.4
       '@inox-tools/astro-when':
-        specifier: ^2.0.0
-        version: 2.1.0(astro@7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
+        specifier: ^3.0.0
+        version: 3.0.0(astro@7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
       '@inox-tools/content-utils':
         specifier: ^0.15.0
         version: 0.15.0(astro@7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
@@ -780,10 +780,10 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@inox-tools/astro-when@2.1.0':
-    resolution: {integrity: sha512-7ZvKAirn6wKKnFWJWgVMO0gANLx0VyTHGkBKJrpBCrY+B3kB3pd/UUv8MxRRaw6YYAENVFojlTHn+kix9+jH5Q==}
+  '@inox-tools/astro-when@3.0.0':
+    resolution: {integrity: sha512-SK7KLsQGu9rkcMUy4ob5US6jgUTlxSYGRvJgHI/f/PpWcLCaoZaLET8Sl3V3skvQ7mMxW8ZDsPmhU7fpqz+lCA==}
     peerDependencies:
-      astro: ^6
+      astro: ^7
 
   '@inox-tools/content-utils@0.15.0':
     resolution: {integrity: sha512-ofDqpIMoFs5Cs6sfs35Kj9DvRdq8IJMpuE20MVV+ofRJcM7d/hCa/tmUzzbEAZiJ/yrpSvzPL1BBZwaMvMNU1Q==}
@@ -3717,7 +3717,7 @@ snapshots:
   '@img/sharp-win32-x64@0.35.3':
     optional: true
 
-  '@inox-tools/astro-when@2.1.0(astro@7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
+  '@inox-tools/astro-when@3.0.0(astro@7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
     dependencies:
       astro: 7.0.9(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
       debug: 4.4.3
