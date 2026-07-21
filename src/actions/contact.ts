@@ -17,6 +17,10 @@ export const contact = defineAction({
       .min(10, { message: "Message must be at least 10 characters long" }),
   }),
   handler: async (payload, context: ActionAPIContext) => {
+    if (!context.locals.altcha) {
+      throw new ActionError({ code: "INTERNAL_SERVER_ERROR" });
+    }
+
     if (!context.locals.altcha.verified) {
       throw new ActionError({ code: "TOO_MANY_REQUESTS", message: "🤖" });
     }

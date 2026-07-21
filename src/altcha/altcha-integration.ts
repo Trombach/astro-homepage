@@ -42,7 +42,7 @@ export default (options: AstroAltchaConfig = {}): AstroIntegration => {
           filename: "astro-altcha-locals.d.ts",
           content: `declare namespace App {
   interface Locals {
-    altcha: import("altcha/types").VerifySolutionResult
+    altcha: import("altcha/types").VerifySolutionResult | null;
   }
 }
 `,
