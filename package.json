@@ -45,7 +45,7 @@
     "@inox-tools/content-utils": "^0.15.0",
     "@microflash/rehype-figure": "^2.1.4",
     "@tailwindcss/vite": "^4.2.4",
-    "astro": "^7.0.7",
+    "astro": "^7.1.0",
     "astro-og-canvas": "^0.13.0",
     "astro-starlight-remark-asides": "^0.0.7",
     "beasties": "^0.4.2",
