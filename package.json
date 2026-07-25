@@ -69,7 +69,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/markdown-remark": "^7.2.1",
-    "@biomejs/biome": "2.5.4",
+    "@biomejs/biome": "2.5.5",
     "@types/node": "^25.6.0",
     "@types/sanitize-html": "^2.16.1",
     "husky": "^9.1.7",
