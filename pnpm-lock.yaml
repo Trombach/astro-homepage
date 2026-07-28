@@ -10,16 +10,16 @@ importers:
     dependencies:
       '@astrojs/mdx':
         specifier: ^7.0.2
-        version: 7.0.3(@astrojs/markdown-satteri@0.3.4)(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
+        version: 7.0.4(@astrojs/markdown-satteri@0.3.4)(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
       '@astrojs/node':
         specifier: ^11.0.2
-        version: 11.0.2(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
+        version: 11.0.2(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
       '@astrojs/sitemap':
         specifier: ^3.7.3
         version: 3.7.3
       '@astrojs/svelte':
         specifier: ^9.0.1
-        version: 9.0.1(@types/node@25.9.5)(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))(esbuild@0.28.1)(jiti@2.7.0)(svelte@5.56.7)(typescript@6.0.3)(yaml@2.8.4)
+        version: 9.0.1(@types/node@25.9.5)(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))(esbuild@0.28.1)(jiti@2.7.0)(svelte@5.56.8)(typescript@6.0.3)(yaml@2.8.4)
       '@floating-ui/dom':
         specifier: ^1.7.6
         version: 1.8.0
@@ -31,16 +31,16 @@ importers:
         version: 1.2.11
       '@iconify-json/simple-icons':
         specifier: ^1.2.80
-        version: 1.2.91
+        version: 1.2.92
       '@iconify-json/svg-spinners':
         specifier: ^1.2.4
         version: 1.2.4
       '@inox-tools/astro-when':
         specifier: ^3.0.0
-        version: 3.0.0(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
+        version: 3.0.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
       '@inox-tools/content-utils':
         specifier: ^0.16.0
-        version: 0.16.0(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
+        version: 0.16.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
       '@microflash/rehype-figure':
         specifier: ^2.1.4
         version: 2.1.4
@@ -52,13 +52,13 @@ importers:
         version: 3.2.1
       altcha-lib:
         specifier: ^2.2.0
-        version: 2.3.1
+        version: 2.3.2
       astro:
         specifier: ^7.0.7
-        version: 7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
+        version: 7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
       astro-og-canvas:
         specifier: ^0.13.0
-        version: 0.13.0(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
+        version: 0.13.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
       astro-starlight-remark-asides:
         specifier: ^0.0.7
         version: 0.0.7(remark-directive@4.0.0)
@@ -97,7 +97,7 @@ importers:
         version: 0.35.3(@types/node@25.9.5)
       svelte:
         specifier: ^5.55.5
-        version: 5.56.7
+        version: 5.56.8
       tailwindcss:
         specifier: ^4.1.18
         version: 4.3.3
@@ -106,7 +106,7 @@ importers:
         version: 1.5.0
       unplugin-icons:
         specifier: ^23.0.1
-        version: 23.0.1(svelte@5.56.7)
+        version: 23.0.1(svelte@5.56.8)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.9
@@ -128,7 +128,7 @@ importers:
         version: 9.1.7
       svelte-check:
         specifier: ^4.4.7
-        version: 4.7.3(picomatch@4.0.5)(svelte@5.56.7)(typescript@6.0.3)
+        version: 4.7.3(picomatch@4.0.5)(svelte@5.56.8)(typescript@6.0.3)
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -233,8 +233,8 @@ packages:
   '@astrojs/markdown-satteri@0.3.4':
     resolution: {integrity: sha512-6Lvt/bQZEBW+zzdhPblvfZEy5PGEYJaUsUqaCgwHeRPxZJL1gc9I+DRLKWJjjYTWDzVUTzXlMq4WwSK+X34CVw==}
 
-  '@astrojs/mdx@7.0.3':
-    resolution: {integrity: sha512-RxyIwU0uFam5ftwqKOjpIdhnFxZ/kEikeimLyQy3eGXbHT8WgRGzzesOIHVU8+m9TY8ag5WVOyvV24/GyqPdPQ==}
+  '@astrojs/mdx@7.0.4':
+    resolution: {integrity: sha512-fH4ouVZCgmLOH5z+GYnJMDOSUohn9U2W3p79Ck7PDK3EdGpe/crZAtT6Sp1ziEurj5NSQh7TxP8MSR4NOcC6fQ==}
     engines: {node: '>=22.12.0'}
     peerDependencies:
       '@astrojs/markdown-satteri': ^0.3.1
@@ -609,8 +609,8 @@ packages:
   '@iconify-json/logos@1.2.11':
     resolution: {integrity: sha512-fOo4pGEatuyuCFNL+cwquYMa2Im0oJHRHV7lt/Qqs5Ode/lPImHCQcfTtPzZj7qYMPb/h8YHN3TG54uEowrjNQ==}
 
-  '@iconify-json/simple-icons@1.2.91':
-    resolution: {integrity: sha512-plQJHZxzpkIXaeYjJF0Sc9nkzYF32EDX9olx7j1hcKYFaiTrQXbcngZmvzuV0pG6uZPU3ZuA/GIsgxSHOm6jrQ==}
+  '@iconify-json/simple-icons@1.2.92':
+    resolution: {integrity: sha512-hR0ozxR97t1dzWw+esoxFijZ15gagt7EIgF3CNifu2yICXhS7gnun4Y+j+odJQtNSl7wvqMdoLbViIShwe/fdw==}
 
   '@iconify-json/svg-spinners@1.2.4':
     resolution: {integrity: sha512-ayn0pogFPwJA1WFZpDnoq9/hjDxN+keeCMyThaX4d3gSJ3y0mdKUxIA/b1YXWGtY9wVtZmxwcvOIeEieG4+JNg==}
@@ -1361,8 +1361,8 @@ packages:
   ajv@8.20.0:
     resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
 
-  altcha-lib@2.3.1:
-    resolution: {integrity: sha512-y/CaimfC2UX37CRNfeBJHpDRID3BuOIvQoaqkzkUxigwWw9cLUNtdbGlZPlSA6QKqlZYdJuvK3UrOkXtFWG5tw==}
+  altcha-lib@2.3.2:
+    resolution: {integrity: sha512-puJp4aPn/kK2t5Z3dQkbFTmPusaYPkdlrXB4feWZzdNIiC3sPndKMlcjQFUU3a+sVlUt6DJhfWK2+HiwDBbW1Q==}
     hasBin: true
     peerDependencies:
       '@fastify/cookie': ^11.0.0
@@ -1456,8 +1456,8 @@ packages:
     peerDependencies:
       remark-directive: ^3.0.0
 
-  astro@7.1.3:
-    resolution: {integrity: sha512-4dhPyAAXthf3xLEYnG8SeL7yr/nTPPABfY7e9YF0yuO+vK9Xp+8Q5j4xzsmL3GueukQv4oNwGNTBepLOiDGeJA==}
+  astro@7.1.4:
+    resolution: {integrity: sha512-e0gkBReJECAZuuTgpEB5JMUc6J4mM6boD6wuVE1pBf/fMywG47f8qm9XQoA6kZB1RWHiHmUlLuQ2jd9Q5+72HQ==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     peerDependencies:
@@ -2130,6 +2130,9 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
+  magic-string@1.1.0:
+    resolution: {integrity: sha512-kS3VHe0nEPST2saQV4Rbkchcd3UBRkVTQHo1D3h/ZTwFDhai/mfKkmtPAtD129EOI7K3HlHIsFOt0WrI2/oU9g==}
+
   magicast@0.5.3:
     resolution: {integrity: sha512-pVKE4UdSQ7DvHzivsCIFx2BJn1mHG6KsyrFcaxFx6tONdneEuThrDx0Cj3AMg58KyN4pzYT+LHOotxDQDjNvkw==}
 
@@ -2400,12 +2403,12 @@ packages:
   oniguruma-to-es@4.3.6:
     resolution: {integrity: sha512-csuQ9x3Yr0cEIs/Zgx/OEt9iBw9vqIunAPQkx19R/fiMq2oGVTgcMqO/V3Ybqefr1TBvosI6jU539ksaBULJyA==}
 
-  p-limit@7.3.0:
-    resolution: {integrity: sha512-7cIXg/Z0M5WZRblrsOla88S4wAK+zOQQWeBYfV3qJuJXMr+LnbYjaadrFaS0JILfEDPVqHyKnZ1Z/1d6J9VVUw==}
+  p-limit@7.3.1:
+    resolution: {integrity: sha512-0trZaiG7Y7kN/Egy9a8j47t9osC0Tch4PaIWd9yGF6bvmlk7muExRvGNYb8sXBwEKMoNKsbNN9P8EefuQekE4Q==}
     engines: {node: '>=20'}
 
-  p-queue@9.3.1:
-    resolution: {integrity: sha512-POWdiIPmsUPGwb4FeQ4OBg46aqmcInSWe45CKDsGHiOBiVQM9chqfQTuqhuTzcg2Vz9faTI65at0KkVyVEiCHw==}
+  p-queue@9.3.3:
+    resolution: {integrity: sha512-NXAOdnEe5FsZJfT4oK84lE1Y5cFFdWlRuOo5tww8DyNMxyRXwn39fIkUtNLKppcPC+UYU/bXujNCUGDv01y7CA==}
     engines: {node: '>=20'}
 
   p-timeout@7.0.1:
@@ -2414,6 +2417,9 @@ packages:
 
   package-manager-detector@1.7.0:
     resolution: {integrity: sha512-xg1eHpwYL/D/HEdWw2goFZP6vV0FH7W+PZ5rFkGjdIDLtxq7EkzBUeT3m+lndYCt8wKbmofUu1MUdMCXkCk9ZQ==}
+
+  package-manager-detector@1.8.0:
+    resolution: {integrity: sha512-yQA4H19AmPEoMUeavPMDIe1higySl/gH/yaQrkT/s07Qp+7pp2hYz30N3z2l5BkjVkF9Ow6o0wjJamm2y7Sn0A==}
 
   parse-entities@4.0.2:
     resolution: {integrity: sha512-GG2AQYWoLgL877gQIKeRPGO1xF9+eG1ujIb5soS5gPvLQ1y2o8FL90w2QWNdf9I361Mpp7726c+lj3U0qK1uGw==}
@@ -2575,6 +2581,10 @@ packages:
     resolution: {integrity: sha512-ILTWeOriIluwEvPjv67v7Blgrcx+LZOkAUVtKI3putuhlZm84FnqDORNXPPm+HY3NdZOMhyDwZ1E+eZB/Df5dA==}
     engines: {node: '>=16.0.0'}
 
+  remark-smartypants@3.0.3:
+    resolution: {integrity: sha512-gCaK+ndZ0hYezlqFegHFCVh2CQemsi0Npdh1qVM9bxlUFknjkbP6VmojWhddOCrbK0PbbacmYLWfTULRiT1eWA==}
+    engines: {node: '>=16.0.0'}
+
   remark-stringify@11.0.0:
     resolution: {integrity: sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==}
 
@@ -2648,6 +2658,10 @@ packages:
     resolution: {integrity: sha512-6R3J5M4AcbtLUdZmRv2SygeVaM7IhrLXu9BmnOGmmACak8fiUtOsYNWUS4uK7upbmHIBbLBeFeI//477BKLBzA==}
     engines: {node: '>=11.0.0'}
 
+  sax@1.6.1:
+    resolution: {integrity: sha512-42tBVwLWnaQvW5zc4HbZrTuWccECCZfBi92FDuwtqxasH+JbPB3/FOKb1m222K42R4WxuxzzMsTswfzgtSu64Q==}
+    engines: {node: '>=11.0.0'}
+
   scule@1.3.0:
     resolution: {integrity: sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==}
 
@@ -2693,6 +2707,10 @@ packages:
 
   smol-toml@1.7.0:
     resolution: {integrity: sha512-aqVvWoyO21L23mb+drl4RmMXbf6N7FdHjAhTRA9ZBL7apWBgfWC16KjrASI+1p9GAroljyMHj6fK67i0UiTNvQ==}
+    engines: {node: '>= 18'}
+
+  smol-toml@1.7.1:
+    resolution: {integrity: sha512-PPlsspAZ4jbMBu5DMFhfUGDQLu/vrL4SyBROVS37x8ynnVmFIs1VPBz1Co8Xks3TvpIaZXmU85y4DrQ+UyVFoQ==}
     engines: {node: '>= 18'}
 
   source-map-js@1.2.1:
@@ -2767,8 +2785,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0 || ^6.0.0
 
-  svelte@5.56.7:
-    resolution: {integrity: sha512-5qERUZX80oQj6XrDMUmD2Uhd/cIpCPDWWKBK3ZHmyRUC9apPyamWM8xMo31mbWsIQxwG2hVoSnOJ/EcnhVkkzQ==}
+  svelte@5.56.8:
+    resolution: {integrity: sha512-PY8LOw7xP6c8IOiVqdo0sbbZVYhXRSfklOQLAUyGBKqjTX0wx/z4l/9J+PmBpmlLnxzEb1NqltxQ5/wZme/Cmg==}
     engines: {node: '>=18'}
 
   svgo@4.0.2:
@@ -3374,20 +3392,20 @@ snapshots:
       hast-util-from-html: 2.0.3
       satteri: 0.9.5
 
-  '@astrojs/mdx@7.0.3(@astrojs/markdown-satteri@0.3.4)(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
+  '@astrojs/mdx@7.0.4(@astrojs/markdown-satteri@0.3.4)(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
     dependencies:
       '@astrojs/internal-helpers': 0.10.1
       '@astrojs/markdown-remark': 7.2.1
       '@mdx-js/mdx': 3.1.1
       acorn: 8.17.0
-      astro: 7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
+      astro: 7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
       es-module-lexer: 2.3.1
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
       piccolore: 0.1.3
       rehype-raw: 7.0.0
       remark-gfm: 4.0.1
-      remark-smartypants: 3.0.2
+      remark-smartypants: 3.0.3
       source-map: 0.7.6
       unist-util-visit: 5.1.0
       vfile: 6.0.3
@@ -3396,10 +3414,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/node@11.0.2(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
+  '@astrojs/node@11.0.2(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
     dependencies:
       '@astrojs/internal-helpers': 0.10.1
-      astro: 7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
+      astro: 7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
       send: 1.2.1
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -3415,12 +3433,12 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 4.4.3
 
-  '@astrojs/svelte@9.0.1(@types/node@25.9.5)(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))(esbuild@0.28.1)(jiti@2.7.0)(svelte@5.56.7)(typescript@6.0.3)(yaml@2.8.4)':
+  '@astrojs/svelte@9.0.1(@types/node@25.9.5)(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))(esbuild@0.28.1)(jiti@2.7.0)(svelte@5.56.8)(typescript@6.0.3)(yaml@2.8.4)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 7.2.0(svelte@5.56.7)(vite@8.1.4(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.8.4))
-      astro: 7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
-      svelte: 5.56.7
-      svelte2tsx: 0.7.55(svelte@5.56.7)(typescript@6.0.3)
+      '@sveltejs/vite-plugin-svelte': 7.2.0(svelte@5.56.8)(vite@8.1.4(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.8.4))
+      astro: 7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
+      svelte: 5.56.8
+      svelte2tsx: 0.7.55(svelte@5.56.8)(typescript@6.0.3)
       typescript: 6.0.3
       vite: 8.1.4(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.8.4)
       vitefu: 1.1.3(vite@8.1.4(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.8.4))
@@ -3443,7 +3461,7 @@ snapshots:
       ci-info: 4.4.0
       dset: 3.1.4
       is-docker: 4.0.0
-      package-manager-detector: 1.7.0
+      package-manager-detector: 1.8.0
 
   '@astrojs/yaml2ts@0.2.3':
     dependencies:
@@ -3685,7 +3703,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/simple-icons@1.2.91':
+  '@iconify-json/simple-icons@1.2.92':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -3807,18 +3825,18 @@ snapshots:
   '@img/sharp-win32-x64@0.35.3':
     optional: true
 
-  '@inox-tools/astro-when@3.0.0(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
+  '@inox-tools/astro-when@3.0.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
     dependencies:
-      astro: 7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
+      astro: 7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
       debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
-  '@inox-tools/content-utils@0.16.0(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
+  '@inox-tools/content-utils@0.16.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
     dependencies:
-      '@inox-tools/modular-station': 0.11.0(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
+      '@inox-tools/modular-station': 0.11.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))
       '@inox-tools/utils': 1.1.1
-      astro: 7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
+      astro: 7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
       debug: 4.4.3
       devalue: 5.8.1
       estree-walker: 3.0.3
@@ -3827,10 +3845,10 @@ snapshots:
       - nanostores
       - supports-color
 
-  '@inox-tools/modular-station@0.11.0(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
+  '@inox-tools/modular-station@0.11.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4))':
     dependencies:
       '@inox-tools/utils': 1.1.1
-      astro: 7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
+      astro: 7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
       debug: 4.4.3
     transitivePeerDependencies:
       - nanostores
@@ -4132,12 +4150,12 @@ snapshots:
 
   '@sveltejs/load-config@0.2.0': {}
 
-  '@sveltejs/vite-plugin-svelte@7.2.0(svelte@5.56.7)(vite@8.1.4(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.8.4))':
+  '@sveltejs/vite-plugin-svelte@7.2.0(svelte@5.56.8)(vite@8.1.4(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.8.4))':
     dependencies:
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.4
-      svelte: 5.56.7
+      svelte: 5.56.8
       vite: 8.1.4(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.8.4)
       vitefu: 1.1.3(vite@8.1.4(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.8.4))
 
@@ -4337,7 +4355,7 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  altcha-lib@2.3.1: {}
+  altcha-lib@2.3.2: {}
 
   altcha@3.2.1:
     dependencies:
@@ -4370,9 +4388,9 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-og-canvas@0.13.0(astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)):
+  astro-og-canvas@0.13.0(astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)):
     dependencies:
-      astro: 7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
+      astro: 7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4)
       canvaskit-wasm: 0.41.1
       deterministic-object-hash: 2.0.2
       entities: 8.0.0
@@ -4383,7 +4401,7 @@ snapshots:
       remark-directive: 4.0.0
       unist-util-visit: 5.1.0
 
-  astro@7.1.3(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4):
+  astro@7.1.4(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@25.9.5)(jiti@2.7.0)(rollup@4.61.1)(yaml@2.8.4):
     dependencies:
       '@astrojs/compiler-rs': 0.3.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)
       '@astrojs/internal-helpers': 0.10.1
@@ -4413,19 +4431,19 @@ snapshots:
       http-cache-semantics: 4.2.0
       js-yaml: 4.3.0
       jsonc-parser: 3.3.1
-      magic-string: 0.30.21
+      magic-string: 1.1.0
       magicast: 0.5.3
       mrmime: 2.0.1
       neotraverse: 1.0.1
       obug: 2.1.4
-      p-limit: 7.3.0
-      p-queue: 9.3.1
-      package-manager-detector: 1.7.0
+      p-limit: 7.3.1
+      p-queue: 9.3.3
+      package-manager-detector: 1.8.0
       piccolore: 0.1.3
       picomatch: 4.0.5
       semver: 7.8.5
       shiki: 4.3.1
-      smol-toml: 1.7.0
+      smol-toml: 1.7.1
       svgo: 4.0.2
       tinyclip: 0.1.15
       tinyexec: 1.2.4
@@ -5174,6 +5192,10 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  magic-string@1.1.0:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.5
+
   magicast@0.5.3:
     dependencies:
       '@babel/parser': 7.29.7
@@ -5751,11 +5773,11 @@ snapshots:
       regex: 6.1.0
       regex-recursion: 6.0.2
 
-  p-limit@7.3.0:
+  p-limit@7.3.1:
     dependencies:
       yocto-queue: 1.2.2
 
-  p-queue@9.3.1:
+  p-queue@9.3.3:
     dependencies:
       eventemitter3: 5.0.4
       p-timeout: 7.0.1
@@ -5763,6 +5785,8 @@ snapshots:
   p-timeout@7.0.1: {}
 
   package-manager-detector@1.7.0: {}
+
+  package-manager-detector@1.8.0: {}
 
   parse-entities@4.0.2:
     dependencies:
@@ -5983,6 +6007,13 @@ snapshots:
       unified: 11.0.5
       unist-util-visit: 5.1.0
 
+  remark-smartypants@3.0.3:
+    dependencies:
+      retext: 9.0.0
+      retext-smartypants: 6.2.0
+      unified: 11.0.5
+      unist-util-visit: 5.1.0
+
   remark-stringify@11.0.0:
     dependencies:
       '@types/mdast': 4.0.4
@@ -6119,6 +6150,8 @@ snapshots:
 
   sax@1.6.0: {}
 
+  sax@1.6.1: {}
+
   scule@1.3.0: {}
 
   semver@7.8.5: {}
@@ -6209,6 +6242,8 @@ snapshots:
 
   smol-toml@1.7.0: {}
 
+  smol-toml@1.7.1: {}
+
   source-map-js@1.2.1: {}
 
   source-map@0.7.6: {}
@@ -6263,7 +6298,7 @@ snapshots:
     dependencies:
       inline-style-parser: 0.2.7
 
-  svelte-check@4.7.3(picomatch@4.0.5)(svelte@5.56.7)(typescript@6.0.3):
+  svelte-check@4.7.3(picomatch@4.0.5)(svelte@5.56.8)(typescript@6.0.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@sveltejs/load-config': 0.2.0
@@ -6271,19 +6306,19 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.5)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.56.7
+      svelte: 5.56.8
       typescript: 6.0.3
     transitivePeerDependencies:
       - picomatch
 
-  svelte2tsx@0.7.55(svelte@5.56.7)(typescript@6.0.3):
+  svelte2tsx@0.7.55(svelte@5.56.8)(typescript@6.0.3):
     dependencies:
       dedent-js: 1.0.1
       scule: 1.3.0
-      svelte: 5.56.7
+      svelte: 5.56.8
       typescript: 6.0.3
 
-  svelte@5.56.7:
+  svelte@5.56.8:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -6312,7 +6347,7 @@ snapshots:
       css-what: 6.2.2
       csso: 5.0.5
       picocolors: 1.1.1
-      sax: 1.6.0
+      sax: 1.6.1
 
   tailwindcss@4.3.3: {}
 
@@ -6436,7 +6471,7 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  unplugin-icons@23.0.1(svelte@5.56.7):
+  unplugin-icons@23.0.1(svelte@5.56.8):
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@iconify/utils': 3.1.0
@@ -6444,7 +6479,7 @@ snapshots:
       obug: 2.1.1
       unplugin: 2.3.11
     optionalDependencies:
-      svelte: 5.56.7
+      svelte: 5.56.8
 
   unplugin@2.3.11:
     dependencies:
