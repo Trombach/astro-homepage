@@ -8,6 +8,7 @@ import Navbar from "@components/Nav/Navbar.astro";
 import ThemeProvider from "@components/Nav/ThemeProvider.astro";
 import NativeViewTransitions from "@components/ViewTransitions/NativeViewTransitions.astro";
 import "../../src/styles/global.css";
+import type { $brand } from "astro:schema";
 
 interface Props {
   title: string;
@@ -39,7 +40,7 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <Webmentions />
     <Favicon />
     <Font cssVariable="--font-lobster" preload />
-    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-inter" preload={[{style: "normal"}]} />
     <Font cssVariable="--font-jetbrains-mono" />
     <slot name="preload" />
     <slot name="head" />
