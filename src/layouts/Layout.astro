@@ -39,8 +39,8 @@ const { title, description = "Lukas' Homepage" } = Astro.props;
     <Webmentions />
     <Favicon />
     <Font cssVariable="--font-lobster" preload />
-    <Font cssVariable="--font-inter"/>
-    <Font cssVariable="--font-jetbrains-mono"/>
+    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-jetbrains-mono" />
     <slot name="preload" />
     <slot name="head" />
     <slot name="seo">
