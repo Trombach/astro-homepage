@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ci-${{ forgejo.ref }}
+
 jobs:
   Typescript:
     runs-on: ubuntu-latest
