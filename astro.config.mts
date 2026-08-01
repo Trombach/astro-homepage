@@ -119,7 +119,7 @@ export default defineConfig({
       RUSTFS_ENDPOINT: envField.string({
         context: "server",
         access: "public",
-        default: "homepage-rustfs.lukastrombach.dev",
+        default: "s3.lukastrombach.dev",
       }),
       RUSTFS_ACCESS_KEY: envField.string({
         context: "server",
