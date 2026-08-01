@@ -30,6 +30,7 @@ export const GET: APIRoute = async () => {
           }
           controller.close();
         } catch (e) {
+          console.log(e);
           controller.error(e);
         }
       },
@@ -43,6 +44,7 @@ export const GET: APIRoute = async () => {
       },
     });
   } catch (e) {
+    console.error(e);
     return new Response(`Error fetching data: ${e}`, {
       status: 500,
     });
