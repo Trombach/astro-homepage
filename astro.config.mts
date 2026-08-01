@@ -26,7 +26,9 @@ export default defineConfig({
   integrations: [
     svelte({ include: ["**/*.svelte"] }),
     mdx(),
-    sitemap(),
+    sitemap({
+      customPages: ["https://www.lukastrombach.dev/cv.dev"],
+    }),
     beasties(),
     inoxToolsContentUtils(),
     inoxToolsWhen(),
