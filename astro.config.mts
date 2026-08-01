@@ -27,7 +27,7 @@ export default defineConfig({
     svelte({ include: ["**/*.svelte"] }),
     mdx(),
     sitemap({
-      customPages: ["https://www.lukastrombach.dev/cv.dev"],
+      customPages: ["https://www.lukastrombach.dev/cv.pdf"],
     }),
     beasties(),
     inoxToolsContentUtils(),
