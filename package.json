@@ -50,7 +50,7 @@
     "astro-og-canvas": "^0.13.0",
     "astro-starlight-remark-asides": "^0.0.7",
     "beasties": "^0.4.2",
-    "canvaskit-wasm": "^0.41.1",
+    "canvaskit-wasm": "^0.42.0",
     "clsx": "^2.1.1",
     "linkedom": "^0.18.12",
     "minio": "^8.0.7",
