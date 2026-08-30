@@ -41,8 +41,7 @@ const imageProps =
   } as const satisfies HTMLAttributes<"img">);
 ---
 
-{
-  favicon ? (
+{favicon ? (
     <span class="whitespace-nowrap">
       {position === "before" && (
         <>
@@ -65,5 +64,4 @@ const imageProps =
     <a {href} {...props}>
       <Fragment set:html={content} />
     </a>
-  )
-}
+  )}

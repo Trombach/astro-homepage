@@ -12,12 +12,10 @@ const { name = "", useArrow = false } = Astro.props;
   data-tooltip-container={name}
   class="hidden absolute max-content top-0 left-0 rounded-full bg-accent px-3 py-1"
 >
-  {
-    useArrow && (
+  {useArrow && (
       <slot name="arrow">
         <div data-tooltip-arrow class="absolute size-2 rotate-45 bg-inherit" />
       </slot>
-    )
-  }
+    )}
   <!--[tooltip content]-->
 </div>

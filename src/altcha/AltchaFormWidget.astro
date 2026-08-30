@@ -24,6 +24,11 @@ const {
 
 <altcha-widget {name} {challenge} {...rest}></altcha-widget>
 
-<script is:inline id="altcha-data" type="application/json" set:html={JSON.stringify({name, strategy, challengePath: config.challengePath, debug})} />
+<script
+  is:inline
+  id="altcha-data"
+  type="application/json"
+  set:html={JSON.stringify({name, strategy, challengePath: config.challengePath, debug})}
+/>
 
 <script src="./altcha-form-widget-script.ts" />

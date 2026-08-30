@@ -19,8 +19,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
     { "text-muted-foreground": !isActive },
   ]}
 >
-  {
-    isActive && (
+  {isActive && (
       <span
         transition:name="active-link"
         class:list={[
@@ -29,7 +28,6 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
           "sm:left-[calc(50%-(--spacing(2)/2))] sm:top-9",
         ]}
       />
-    )
-  }
+    )}
   <slot name="icon">{title}</slot>
 </a>

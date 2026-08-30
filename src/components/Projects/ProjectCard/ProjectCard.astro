@@ -22,11 +22,9 @@ const { href, title, description, cover, meta } = Astro.props;
     {href}
     class="flex h-full flex-col transition-colors duration-300 hover:bg-primary/5"
   >
-    {
-      cover?.image && cover.alt && (
+    {cover?.image && cover.alt && (
         <CardImage image={cover.image} alt={cover.alt} />
-      )
-    }
+      )}
     <CardBody {title} {description} tools={meta?.tools} tags={meta?.tags} />
   </a>
 </li>

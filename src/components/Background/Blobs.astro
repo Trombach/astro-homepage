@@ -41,8 +41,7 @@ const paths = [
   </defs>
   <g transform-origin="center" transform="scale(0.8)" filter="url(#blur-sm)">
     <g transform="translate(400 300)">
-      {
-        paths.map(({ transform, fill }) => (
+      {paths.map(({ transform, fill }) => (
           <path
             {transform}
             style={{ "--blob-color": fill }}
@@ -55,25 +54,24 @@ const paths = [
               values={PATH_VALUES}
             />
           </path>
-        ))
-      }
+        ))}
     </g>
   </g>
 </svg>
 
 <style>
-  @media (prefers-reduced-motion: no-preference) {
-    @keyframes blob-fade {
-      85%,
-      100% {
-        opacity: 0;
-      }
-    }
-
-    #blob {
-      animation: blob-fade linear both;
-      animation-timeline: view();
-      animation-range: exit;
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes blob-fade {
+    85%,
+    100% {
+      opacity: 0;
     }
   }
+
+  #blob {
+    animation: blob-fade linear both;
+    animation-timeline: view();
+    animation-range: exit;
+  }
+}
 </style>

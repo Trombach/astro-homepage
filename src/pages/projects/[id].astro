@@ -42,8 +42,7 @@ if (extraProps.cover.image) {
     imageURL={new URL(`og/${id}.webp`, Astro.url.origin)}
   />
 
-  {
-    img && (
+  {img && (
       <link
         slot="preload"
         rel="preload"
@@ -52,23 +51,21 @@ if (extraProps.cover.image) {
         imagesrcset={img.srcSet.attribute}
         imagesizes={img.attributes.sizes}
       />
-    )
-  }
+    )}
 
   <ProjectPage {title} {headings} {description} {...extraProps}>
     <Content />
   </ProjectPage>
-
 </Layout>
 
 <script>
-  function scrollTo(hash: string) {
-    if (hash === "") return;
+function scrollTo(hash: string) {
+  if (hash === "") return;
 
-    document.getElementById(
-      hash.startsWith("#") ? hash.replace("#", ""): hash
-    )?.scrollIntoView({ behavior: "smooth" });
-  }
+  document
+    .getElementById(hash.startsWith("#") ? hash.replace("#", "") : hash)
+    ?.scrollIntoView({ behavior: "smooth" });
+}
 
-  scrollTo(window.location.hash);
+scrollTo(window.location.hash);
 </script>

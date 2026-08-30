@@ -10,8 +10,7 @@ const { toc, depth = 0 } = Astro.props;
 ---
 
 <menu class:list={["mt-1 text-sm leading-tight", depth && "ml-2"]}>
-  {
-    toc.map(({ slug, text, children }) => (
+  {toc.map(({ slug, text, children }) => (
       <li class="py-1">
         <a
           href={`#${slug}`}
@@ -27,31 +26,30 @@ const { toc, depth = 0 } = Astro.props;
           <Astro.self toc={children} depth={depth + 1} />
         ) : null}
       </li>
-    ))
-  }
+    ))}
 </menu>
 
 <script>
-  function setActiveHashLink() {
-    document
-      .querySelector("nav#secondary")
-      ?.querySelectorAll("a")
-      .forEach((link) => {
-        if (link.hash === window.location.hash) {
-          link.setAttribute("data-current-url-heading", "");
-        } else {
-          link.removeAttribute("data-current-url-heading");
-        }
-      });
-  }
+function setActiveHashLink() {
+  document
+    .querySelector("nav#secondary")
+    ?.querySelectorAll("a")
+    .forEach((link) => {
+      if (link.hash === window.location.hash) {
+        link.setAttribute("data-current-url-heading", "");
+      } else {
+        link.removeAttribute("data-current-url-heading");
+      }
+    });
+}
 
-  // initial
-  setActiveHashLink();
+// initial
+setActiveHashLink();
 
-  // when url hash changes
-  // use "popstate" since "hashchange" doesn't work with view transitions
-  // https://github.com/withastro/astro/issues/10249
-  window.addEventListener("popstate", setActiveHashLink);
+// when url hash changes
+// use "popstate" since "hashchange" doesn't work with view transitions
+// https://github.com/withastro/astro/issues/10249
+window.addEventListener("popstate", setActiveHashLink);
 </script>
 
 <script src="./observe-headings.ts"></script>

@@ -17,12 +17,13 @@ const me = {
 } as const;
 ---
 
-<ul class:list={[
+<ul
+  class:list={[
   "grid grid-cols-2 items-center content-evenly gap-x-2 @sm:gap-x-5 @md:gap-x-10 m-5 max-w-187.5 basis-2/3",
   "[&>li]:col-span-2 [&>li:nth-child(n+2):nth-child(-n+5)]:col-span-1"
-]}>
-  {
-    Object.entries(me).map(([key, value]) => (
+]}
+>
+  {Object.entries(me).map(([key, value]) => (
       <li>
         <label
           for={key}
@@ -37,6 +38,5 @@ const me = {
           />
         </label>
       </li>
-    ))
-  }
+    ))}
 </ul>

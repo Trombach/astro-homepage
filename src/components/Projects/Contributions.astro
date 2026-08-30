@@ -24,11 +24,9 @@ import CalendarGrid from "./ContributionsCalendar/CalendarGrid.astro";
         <Fragment slot="fallback">
           <span class="font-semibold md:text-2xl">Loading contributions</span>
           <CalendarGrid>
-            {
-              Array.from(Array(52 * 7).keys()).map(() => (
+            {Array.from(Array(52 * 7).keys()).map(() => (
                 <div class="size-2 animate-pulse rounded-xs bg-slate-300 lg:size-3 xl:size-4 dark:bg-slate-900" />
-              ))
-            }
+              ))}
           </CalendarGrid>
         </Fragment>
       </Calendar>

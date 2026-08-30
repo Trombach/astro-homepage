@@ -4,8 +4,7 @@ import { actions } from "astro:actions";
 const response = Astro.getActionResult(actions.contact);
 ---
 
-{
-  response && (response.data || response.error) && (
+{response && (response.data || response.error) && (
     <p
       class:list={[
         "rounded-xl border-2 p-6",
@@ -17,5 +16,4 @@ const response = Astro.getActionResult(actions.contact);
 
       {response.error && `Error sending message: ${response.error.message}`}
     </p>
-  )
-}
+  )}

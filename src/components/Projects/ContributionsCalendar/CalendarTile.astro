@@ -20,15 +20,13 @@ const { contributions, date } = Astro.props;
       contributions > 25 && "bg-green-400",
       "size-2 rounded-xs transition-transform hover:scale-150 lg:size-3 xl:size-4",
     ]}
-  >
-  </div>
+  ></div>
   <Fragment slot="content">
-    {
-      contributions > 1
+    {contributions > 1
         ? `${contributions} contributions`
         : contributions === 1
           ? `${contributions} contribution`
-          : "No contributions"
-    } on {date.toLocaleDateString("en-UK")}
+          : "No contributions"}
+    on {date.toLocaleDateString("en-UK")}
   </Fragment>
 </Tooltip>

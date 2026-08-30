@@ -28,13 +28,11 @@ const [title, description] = ["My Projects", "What I've been working on"];
   <ul
     class="flex flex-col gap-10 px-10 py-10 lg:px-20 lg:gap-20 xl:px-40 lg:grid lg:grid-cols-2"
   >
-    {
-      projects
+    {projects
         .sort((a, b) => sortOrder.indexOf(a.id) - sortOrder.indexOf(b.id))
         .map(({ id, data }) => (
           <ProjectCard {...data} href={`/projects/${id}`} />
-        ))
-    }
+        ))}
   </ul>
   <Contributions />
 </Layout>

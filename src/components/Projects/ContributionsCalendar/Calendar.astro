@@ -11,8 +11,7 @@ if (Astro.cache.enabled) {
 }
 ---
 
-{
-  "totalContributions" in result ? (
+{"totalContributions" in result ? (
     <>
       <span class="font-semibold md:text-2xl">
         {result.totalContributions !== undefined &&
@@ -31,7 +30,6 @@ if (Astro.cache.enabled) {
     </>
   ) : (
     <span>{result.message}</span>
-  )
-}
+  )}
 
 <script src="./tooltip.ts"></script>

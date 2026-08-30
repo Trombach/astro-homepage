@@ -97,31 +97,31 @@ const { data } = await getEntry(person);
 </template>
 
 <script>
-  import {getWidget} from "@src/altcha/utils";
+import { getWidget } from "@src/altcha/utils";
 
-  const loadingTemplate = document.getElementById("contact-loading-spinner");
-  const sendIconTemplate = document.getElementById("contact-send-icon");
-  const submitButton = document.getElementById("submit-message");
-  const altchaWidget = getWidget();
+const loadingTemplate = document.getElementById("contact-loading-spinner");
+const sendIconTemplate = document.getElementById("contact-send-icon");
+const submitButton = document.getElementById("submit-message");
+const altchaWidget = getWidget();
 
-  altchaWidget.addEventListener('before-load', () => {
-    if (submitButton && loadingTemplate instanceof HTMLTemplateElement) {
-      submitButton
-        .querySelector("svg")
-        ?.replaceWith(loadingTemplate.content.cloneNode(true));
-    }
-  });
+altchaWidget.addEventListener("before-load", () => {
+  if (submitButton && loadingTemplate instanceof HTMLTemplateElement) {
+    submitButton
+      .querySelector("svg")
+      ?.replaceWith(loadingTemplate.content.cloneNode(true));
+  }
+});
 
-  altchaWidget.addEventListener("verified", () => {
-    if (
-      (submitButton instanceof HTMLButtonElement ||
-        submitButton instanceof HTMLInputElement) &&
-      sendIconTemplate instanceof HTMLTemplateElement
-    ) {
-      submitButton.disabled = false;
-      submitButton
-        .querySelector("svg")
-        ?.replaceWith(sendIconTemplate.content.cloneNode(true));
-    }
-  });
+altchaWidget.addEventListener("verified", () => {
+  if (
+    (submitButton instanceof HTMLButtonElement ||
+      submitButton instanceof HTMLInputElement) &&
+    sendIconTemplate instanceof HTMLTemplateElement
+  ) {
+    submitButton.disabled = false;
+    submitButton
+      .querySelector("svg")
+      ?.replaceWith(sendIconTemplate.content.cloneNode(true));
+  }
+});
 </script>
