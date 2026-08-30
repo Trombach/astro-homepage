@@ -53,7 +53,7 @@ const response = Astro.getActionResult(actions.contact);
 {
   formFields.map(({ label, tag: Tag, attributes }) => (
     <label for={attributes.id} class="flex flex-col gap-2">
-      <span class="block text-sm font-medium leading-6">{label}</span>
+      <span class="block font-medium text-sm leading-6">{label}</span>
       <Tag
         transition:persist
         {...attributes}

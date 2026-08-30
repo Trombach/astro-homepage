@@ -35,11 +35,9 @@ const imageProps =
     width: 16,
     height: 16,
     src: `data:image/png;base64,${uint8ArrayToBase64(favicon)}`,
-    alt: "favicon",
     fetchpriority: "low",
     loading: "lazy",
     decoding: "async",
-    "aria-hidden": true,
   } as const satisfies HTMLAttributes<"img">);
 ---
 
@@ -48,7 +46,7 @@ const imageProps =
     <span class="whitespace-nowrap">
       {position === "before" && (
         <>
-          <img {...imageProps} class="w-4 inline-block my-0 mr-1" />
+          <img aria-hidden {...imageProps} class="my-0 ml-1 inline-block w-4" />
           <a {href} {...props} class="whitespace-normal">
             <Fragment set:html={content} />
           </a>
@@ -59,7 +57,7 @@ const imageProps =
           <a {href} {...props} class="whitespace-normal">
             <Fragment set:html={content} />
           </a>
-          <img {...imageProps} class="w-4 inline-block my-0 ml-1" />
+          <img aria-hidden {...imageProps} class="my-0 ml-1 inline-block w-4" />
         </>
       )}
     </span>

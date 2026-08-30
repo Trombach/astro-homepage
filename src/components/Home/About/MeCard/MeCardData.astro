@@ -26,14 +26,14 @@ const me = {
       <li>
         <label
           for={key}
-          class="text-sm align-middle font-bold @lg:text-lg flex flex-col"
+          class="flex flex-col align-middle font-bold @lg:text-lg text-sm"
         >
-          <span class="block text-sm font-medium leading-6">{key}</span>
+          <span class="block font-medium text-sm leading-6">{key}</span>
           <input
             name={key}
             readonly
             {value}
-            class="rounded-lg border bg-background px-3 py-2 shadow-xs font-mono text-sm @lg:text-base"
+            class="rounded-lg border bg-background px-3 py-2 font-mono @lg:text-base text-sm shadow-xs"
           />
         </label>
       </li>
