@@ -1,6 +1,6 @@
 import type { z } from "astro/zod";
 
-export default async function fetchWithSchema<S extends z.ZodTypeAny>(
+export default async function fetchWithSchema<S extends z.ZodType>(
   schema: S,
   input: URL | string,
   init?: RequestInit,
