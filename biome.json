@@ -19,6 +19,9 @@
       "enabled": true
     }
   },
+  "javascript": {
+    "experimentalEmbeddedSnippetsEnabled": true
+  },
   "linter": {
     "enabled": true,
     "rules": {

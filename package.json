@@ -71,6 +71,8 @@
     "@biomejs/biome": "2.5.12",
     "@types/node": "^25.6.0",
     "@types/sanitize-html": "^2.16.1",
+    "graphql": "^17.0.2",
+    "graphql-tag": "^2.12.7",
     "husky": "^9.1.7",
     "svelte-check": "^4.4.7",
     "typescript": "^6.0.3"

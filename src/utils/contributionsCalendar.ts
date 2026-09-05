@@ -1,12 +1,14 @@
 import { GH_TOKEN } from "astro:env/server";
 import { z } from "astro/zod";
+import { print } from "graphql";
+import gql from "graphql-tag";
 import fetch from "./fetchHelper";
 
 const GH_API = "https://api.github.com/graphql";
 const USERNAME = "Trombach";
-const QUERY = `
-  query($userName:String!) {
-    user(login: $userName){
+const QUERY = gql`
+  query GithubContributions($userName: String!) {
+    user(login: $userName) {
       contributionsCollection {
         contributionCalendar {
           totalContributions
@@ -66,7 +68,10 @@ export default async function getGithubContributions() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${GH_TOKEN}`,
       },
-      body: JSON.stringify({ query: QUERY, variables: { userName: USERNAME } }),
+      body: JSON.stringify({
+        query: print(QUERY),
+        variables: { userName: USERNAME },
+      }),
     });
 
     if ("issues" in contributions) {
