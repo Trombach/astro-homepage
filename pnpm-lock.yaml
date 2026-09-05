@@ -64,7 +64,7 @@ importers:
         version: 0.0.7(remark-directive@4.0.0)
       beasties:
         specifier: ^0.5.0
-        version: 0.5.3
+        version: 0.5.4
       canvaskit-wasm:
         specifier: ^0.42.0
         version: 0.42.0
@@ -1334,8 +1334,8 @@ packages:
   base-64@1.0.0:
     resolution: {integrity: sha512-kwDPIFCGx0NZHog36dj+tHiwP4QMzsZ3AgMViUBKI0+V5n4U0ufTCUMhnQ04diaRI8EX/QcPfql7zlhZ7j4zgg==}
 
-  beasties@0.5.3:
-    resolution: {integrity: sha512-9di0U5+RQ5C4cCDbrfZGE78tnSYxpXlOughS2ei4g2q6L5OswNqlm17HFWHqszjAsQzBEuQQ6sqykWfiTpV43g==}
+  beasties@0.5.4:
+    resolution: {integrity: sha512-8/lOOjT+PElYCnaUbmhgd3Uad5R1VTQ4Wg0k4rK8bX04m5WEqHNmnlLy3Q/lJ7dk25XA+72gayzc/skTfKKpcA==}
     engines: {node: '>=20.19.0'}
 
   block-stream2@2.1.0:
@@ -4264,7 +4264,7 @@ snapshots:
 
   base-64@1.0.0: {}
 
-  beasties@0.5.3:
+  beasties@0.5.4:
     dependencies:
       css-select: 7.0.0
       css-what: 8.0.0
