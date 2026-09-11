@@ -68,7 +68,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/markdown-remark": "^7.2.1",
-    "@biomejs/biome": "2.5.12",
+    "@biomejs/biome": "2.5.13",
     "@types/node": "^26.4.1",
     "@types/sanitize-html": "^2.16.1",
     "graphql": "^17.0.2",
