@@ -75,7 +75,7 @@
     "graphql-tag": "^2.12.7",
     "husky": "^9.1.7",
     "svelte-check": "^4.4.7",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.0"
   },
   "engines": {
     "pnpm": ">=9",
