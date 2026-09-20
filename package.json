@@ -78,7 +78,7 @@
     "typescript": "^6.0.3"
   },
   "engines": {
-    "pnpm": ">=9",
+    "pnpm": ">=12",
     "node": ">=24 <25"
   },
   "packageManager": "pnpm@12.4.2"
