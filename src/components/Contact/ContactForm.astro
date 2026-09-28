@@ -10,7 +10,7 @@ import AppLink from "@components/AppLink.astro";
 import SendEmailResponse from "@components/Contact/SendEmailResponse.astro";
 import Heading from "@components/Heading.astro";
 import Avatar from "@components/Home/About/MeCard/Avatar.astro";
-import AltchaFormWidget from "@src/altcha/AltchaFormWidget.astro";
+import { AltchaForm } from "astro-altcha/components";
 import FormFields from "./FormFields.astro";
 
 const aboutMe = await getEntry("about", "about-me");
@@ -23,7 +23,13 @@ const { person } = aboutMe.data;
 const { data } = await getEntry(person);
 ---
 
-<form
+<AltchaForm
+  widget={{
+    hydrationStrategy: "onfocus",
+    auto: "onload",
+    display: "invisible",
+    debug: true,
+  }}
   id="contact-form"
   transition:name="contact-form"
   method="POST"
@@ -84,9 +90,7 @@ const { data } = await getEntry(person);
   >
     Send <PaperPlane />
   </AppLink>
-
-  <AltchaFormWidget strategy="onfocus" auto="onload" display="invisible" />
-</form>
+</AltchaForm>
 
 <template id="contact-loading-spinner">
   <Loading />
@@ -97,31 +101,32 @@ const { data } = await getEntry(person);
 </template>
 
 <script>
-import { getWidget } from "@src/altcha/utils";
-
 const loadingTemplate = document.getElementById("contact-loading-spinner");
 const sendIconTemplate = document.getElementById("contact-send-icon");
 const submitButton = document.getElementById("submit-message");
-const altchaWidget = getWidget();
 
-altchaWidget.addEventListener("before-load", () => {
+const form = document.querySelector("form");
+if (!form) {
+  throw new Error("Form not found");
+}
+
+form.addEventListener("astro-altcha:init", (event) => {
   if (submitButton && loadingTemplate instanceof HTMLTemplateElement) {
     submitButton
       .querySelector("svg")
       ?.replaceWith(loadingTemplate.content.cloneNode(true));
   }
-});
-
-altchaWidget.addEventListener("verified", () => {
-  if (
-    (submitButton instanceof HTMLButtonElement ||
-      submitButton instanceof HTMLInputElement) &&
-    sendIconTemplate instanceof HTMLTemplateElement
-  ) {
-    submitButton.disabled = false;
-    submitButton
-      .querySelector("svg")
-      ?.replaceWith(sendIconTemplate.content.cloneNode(true));
-  }
+  event.detail.widget.addEventListener("verified", () => {
+    if (
+      (submitButton instanceof HTMLButtonElement ||
+        submitButton instanceof HTMLInputElement) &&
+      sendIconTemplate instanceof HTMLTemplateElement
+    ) {
+      submitButton.disabled = false;
+      submitButton
+        .querySelector("svg")
+        ?.replaceWith(sendIconTemplate.content.cloneNode(true));
+    }
+  });
 });
 </script>

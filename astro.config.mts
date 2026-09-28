@@ -14,11 +14,11 @@ import {
   fontProviders,
   memoryCache,
 } from "astro/config";
+import altcha from "astro-altcha";
 import astroStarlightRemarkAsides from "astro-starlight-remark-asides";
 import remarkDirective from "remark-directive";
 import remarkGithub from "remark-github";
 import Icons from "unplugin-icons/vite";
-import altcha from "./src/altcha/altcha-integration";
 import beasties from "./src/beasties/beasties-integration";
 
 // https://astro.build/config

@@ -205,15 +205,12 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.2.4
         version: 4.3.3(vite@8.1.5(@types/node@26.4.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
-      altcha:
-        specifier: ^3.2.0
-        version: 3.2.2
-      altcha-lib:
-        specifier: ^2.2.0
-        version: 2.4.0
       astro:
         specifier: ^7.0.7
         version: 7.3.1(@astrojs/markdown-remark@7.3.0)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.4.1)(jiti@2.7.0)(yaml@2.9.0)
+      astro-altcha:
+        specifier: ^0.1.2
+        version: 0.1.2(astro@7.3.1(@astrojs/markdown-remark@7.3.0)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.4.1)(jiti@2.7.0)(yaml@2.9.0))
       astro-og-canvas:
         specifier: ^0.13.0
         version: 0.13.1(astro@7.3.1(@astrojs/markdown-remark@7.3.0)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.4.1)(jiti@2.7.0)(yaml@2.9.0))
@@ -1375,17 +1372,17 @@ packages:
   ajv@8.20.0:
     resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
 
-  altcha-lib@2.4.0:
-    resolution: {integrity: sha512-QGQPZ3vrL2bZ7rEt9UJs39WSK/LbEanq0jEfwbG6+2wU9wQ2Hzr1hGEs4yPjLew1yNWlkRzY2vsF8N7UM6knWQ==}
+  altcha-lib@2.5.0:
+    resolution: {integrity: sha512-MiqlwnImoooVTmFzZ8odhpqtCsSl7M/6cmgaX42Tkuvd41e5IVveg6hiw/e9rXSb6dm1RvniPmeURwO64wWTuQ==}
     hasBin: true
     peerDependencies:
       '@fastify/cookie': ^11.0.0
       '@fastify/cors': ^11.0.0
-      '@fastify/formbody': ^8.0.0
-      '@nestjs/common': ^10.0.0 || ^11.0.0
-      '@nestjs/core': ^10.0.0 || ^11.0.0
-      '@nestjs/platform-express': ^10.0.0 || ^11.0.0
-      '@nestjs/platform-fastify': ^10.0.0 || ^11.0.0
+      '@fastify/formbody': ^8.0.0 || ^9.0.0
+      '@nestjs/common': ^10.0.0 || ^11.0.0 || ^12.0.0
+      '@nestjs/core': ^10.0.0 || ^11.0.0 || ^12.0.0
+      '@nestjs/platform-express': ^10.0.0 || ^11.0.0 || ^12.0.0
+      '@nestjs/platform-fastify': ^10.0.0 || ^11.0.0 || ^12.0.0
       '@sveltejs/kit': ^2.0.0
       cookie-parser: ^1.0.0
       cors: ^2.0.0
@@ -1423,8 +1420,8 @@ packages:
       hono:
         optional: true
 
-  altcha@3.2.2:
-    resolution: {integrity: sha512-yNITQaRSkRe0u/hMxdzoXFFqxqn9iDt1rJ0reREU3D3uDD3w1oFz6v5C2PMww2XnGThtYUwe8MW+PxsiBglNqw==}
+  altcha@3.2.3:
+    resolution: {integrity: sha512-yBHJIOoGZyU4/ap3AnlL2kChEVw40QP142BtxYZN5dCjAeBlaScuAEWxmrLDVQjlRBplayapUIvARs0eG48OVw==}
 
   am-i-vibing@0.4.0:
     resolution: {integrity: sha512-MxT4XZL7pzLHpuvhDKdMaQHMGGkJDLluKBLsbstn+8wv9sWcFT6h+0ve9qkml95amVTZtZV83gQe2hY+ojgHLg==}
@@ -1462,6 +1459,11 @@ packages:
   astring@1.9.0:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
+
+  astro-altcha@0.1.2:
+    resolution: {integrity: sha512-6gQ42ujSXVedUZqmlEJvLEu7MGNyA3q6I4NnzYxTW0v3zpkLECam4zeoOURpB0ZnH18VSC6tPErQ3IUw28WiWg==}
+    peerDependencies:
+      astro: ^6.0.0
 
   astro-og-canvas@0.13.1:
     resolution: {integrity: sha512-YrsWTht6TwNWpP/GHZeQS9sUtxsyf5XeycFEekX0NMyljOVr93MfWcTkNw7GnFD862j4JdekiVGdn/xJ6+8C/g==}
@@ -4286,9 +4288,9 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  altcha-lib@2.4.0: {}
+  altcha-lib@2.5.0: {}
 
-  altcha@3.2.2:
+  altcha@3.2.3:
     dependencies:
       hash-wasm: 4.12.0
 
@@ -4316,6 +4318,28 @@ snapshots:
   array-iterate@2.0.1: {}
 
   astring@1.9.0: {}
+
+  astro-altcha@0.1.2(astro@7.3.1(@astrojs/markdown-remark@7.3.0)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.4.1)(jiti@2.7.0)(yaml@2.9.0)):
+    dependencies:
+      altcha: 3.2.3
+      altcha-lib: 2.5.0
+      astro: 7.3.1(@astrojs/markdown-remark@7.3.0)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.4.1)(jiti@2.7.0)(yaml@2.9.0)
+      uint8array-extras: 1.5.0
+    transitivePeerDependencies:
+      - '@fastify/cookie'
+      - '@fastify/cors'
+      - '@fastify/formbody'
+      - '@nestjs/common'
+      - '@nestjs/core'
+      - '@nestjs/platform-express'
+      - '@nestjs/platform-fastify'
+      - '@sveltejs/kit'
+      - cookie-parser
+      - cors
+      - express
+      - fastify
+      - h3
+      - hono
 
   astro-og-canvas@0.13.1(astro@7.3.1(@astrojs/markdown-remark@7.3.0)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.4.1)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
