@@ -12,24 +12,24 @@ if (Astro.cache.enabled) {
 ---
 
 {"totalContributions" in result ? (
-    <>
-      <span class="font-semibold md:text-2xl">
-        {result.totalContributions !== undefined &&
-          `${result.totalContributions} contribution` +
-            (result.totalContributions === 1 ? " " : "s ") +
-            "on Github in the last year"}
-      </span>
-      <CalendarGrid>
-        {result.weeks?.map((week) =>
-          week.contributionDays.map(({ contributionCount, date }) => (
-            <CalendarTile contributions={contributionCount} {date} />
-          ))
-        )}
-      </CalendarGrid>
-      <TooltipOutlet useArrow />
-    </>
-  ) : (
-    <span>{result.message}</span>
-  )}
+  <>
+    <span class="font-semibold md:text-2xl">
+      {result.totalContributions !== undefined &&
+        `${result.totalContributions} contribution` +
+          (result.totalContributions === 1 ? " " : "s ") +
+          "on Github in the last year"}
+    </span>
+    <CalendarGrid>
+      {result.weeks?.map((week) =>
+        week.contributionDays.map(({ contributionCount, date }) => (
+          <CalendarTile contributions={contributionCount} {date} />
+        )),
+      )}
+    </CalendarGrid>
+    <TooltipOutlet useArrow />
+  </>
+) : (
+  <span>{result.message}</span>
+)}
 
 <script src="./tooltip.ts"></script>

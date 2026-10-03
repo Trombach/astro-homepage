@@ -24,15 +24,15 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
         id={`${option}-theme`}
         value={option}
         class:list={[
-          "fixed top-0 left-0 outline-hidden m-0 p-0 appearance-none",
+          "fixed top-0 left-0 m-0 appearance-none p-0 outline-hidden",
           "checked:[&+label]:text-foreground",
         ]}
       />
       <label
         for={`${option}-theme`}
         class:list={[
-          "h-8 w-8 flex justify-center items-center rounded-full cursor-pointer",
-          "transition-all text-muted-foreground hover:text-foreground",
+          "flex h-8 w-8 cursor-pointer items-center justify-center rounded-full",
+          "text-muted-foreground transition-all hover:text-foreground",
           "transition-colors duration-300 ease-in-out",
         ]}
       >
@@ -40,14 +40,10 @@ const options = ["auto", "dark", "light"] as const satisfies Theme[];
         {option === "auto" && (
           <DesktopIcon id="auto-theme-icon" class="size-4" />
         )}
-        {option === "dark" && (
-          <MoonIcon id="dark-theme-icon" class="size-4" />
-        )}
-        {option === "light" && (
-          <SunIcon id="light-theme-icon" class="size-4" />
-        )}
+        {option === "dark" && <MoonIcon id="dark-theme-icon" class="size-4" />}
+        {option === "light" && <SunIcon id="light-theme-icon" class="size-4" />}
       </label>
-    ))}
+  ))}
   <span
     class:list={[
       "absolute -z-10 box-border  w-8 h-8 rounded-full",

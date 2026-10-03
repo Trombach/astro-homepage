@@ -21,12 +21,12 @@ const dashedTitle = dash(title);
       {titleCase(title)}
     </h2>
     {tools && (
-        <div class="flex gap-2 *:size-5">
-          {tools.map((tool) => (
-            <ToolIcon transitionName={`${dashedTitle}-${tool}-logo`} {tool} />
-          ))}
-        </div>
-      )}
+      <div class="flex gap-2 *:size-5">
+        {tools.map((tool) => (
+          <ToolIcon transitionName={`${dashedTitle}-${tool}-logo`} {tool} />
+        ))}
+      </div>
+    )}
   </div>
   <p
     class="font-mono text-muted-foreground text-sm mb-3"

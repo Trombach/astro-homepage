@@ -43,15 +43,15 @@ if (extraProps.cover.image) {
   />
 
   {img && (
-      <link
-        slot="preload"
-        rel="preload"
-        as="image"
-        href={img.src}
-        imagesrcset={img.srcSet.attribute}
-        imagesizes={img.attributes.sizes}
-      />
-    )}
+    <link
+      slot="preload"
+      rel="preload"
+      as="image"
+      href={img.src}
+      imagesrcset={img.srcSet.attribute}
+      imagesizes={img.attributes.sizes}
+    />
+  )}
 
   <ProjectPage {title} {headings} {description} {...extraProps}>
     <Content />

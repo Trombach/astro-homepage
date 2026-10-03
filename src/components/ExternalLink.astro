@@ -42,26 +42,26 @@ const imageProps =
 ---
 
 {favicon ? (
-    <span class="whitespace-nowrap">
-      {position === "before" && (
-        <>
-          <img aria-hidden {...imageProps} class="my-0 ml-1 inline-block w-4" />
-          <a {href} {...props} class="whitespace-normal">
-            <Fragment set:html={content} />
-          </a>
-        </>
-      )}
-      {position === "after" && (
-        <>
-          <a {href} {...props} class="whitespace-normal">
-            <Fragment set:html={content} />
-          </a>
-          <img aria-hidden {...imageProps} class="my-0 ml-1 inline-block w-4" />
-        </>
-      )}
-    </span>
-  ) : (
-    <a {href} {...props}>
-      <Fragment set:html={content} />
-    </a>
-  )}
+  <span class="whitespace-nowrap">
+    {position === "before" && (
+      <>
+        <img aria-hidden {...imageProps} class="my-0 ml-1 inline-block w-4" />
+        <a {href} {...props} class="whitespace-normal">
+          <Fragment set:html={content} />
+        </a>
+      </>
+    )}
+    {position === "after" && (
+      <>
+        <a {href} {...props} class="whitespace-normal">
+          <Fragment set:html={content} />
+        </a>
+        <img aria-hidden {...imageProps} class="my-0 ml-1 inline-block w-4" />
+      </>
+    )}
+  </span>
+) : (
+  <a {href} {...props}>
+    <Fragment set:html={content} />
+  </a>
+)}

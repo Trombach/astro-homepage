@@ -108,7 +108,6 @@
       --destructive-foreground: 210 20% 98%;
       --border: 215 27.9% 16.9%;
       --input: 215 27.9% 16.9%;
-      /* biome-ignore lint/suspicious/noDuplicateProperties: ok for dark theme override */
       color-scheme: dark;
     }
   }

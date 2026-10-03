@@ -30,16 +30,16 @@ const dashedTitle = dash(title);
   transition:name={`border-${dashedTitle}`}
 >
   {cover?.image && cover.alt && (
-      <Image
-        src={cover.image}
-        alt={cover.alt}
-        widths={[240, 480, 850]}
-        loading="eager"
-        sizes="(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px"
-        class="aspect-21/9 w-full rounded-t-xl object-cover"
-        transition:name={cover.image?.src}
-      />
-    )}
+    <Image
+      src={cover.image}
+      alt={cover.alt}
+      widths={[240, 480, 850]}
+      loading="eager"
+      sizes="(max-width: 360px) 240px, (max-width: 480px) 480px, (min-width: 850px) 850px"
+      class="aspect-21/9 w-full rounded-t-xl object-cover"
+      transition:name={cover.image?.src}
+    />
+  )}
 
   <div class="p-5 pb-0 lg:p-16 lg:pb-0 [&>*:not(:first-child)]:mt-6">
     <header>
@@ -59,25 +59,22 @@ const dashedTitle = dash(title);
     </header>
 
     {(meta?.tools || meta?.repoLink) && (
-        <div
-          class:list={[
-            "mb-10 flex items-center justify-between",
-            !meta.tools && meta.repoLink && "justify-end",
-          ]}
-        >
-          {meta.tools && (
-            <div class="flex w-fit items-center gap-2 *:size-7 *:rounded-xl *:border *:p-1 sm:*:size-10 sm:*:p-2">
-              {meta.tools.map((tool) => (
-                <ToolIcon
-                  transitionName={`${dashedTitle}-${tool}-logo`}
-                  {tool}
-                />
-              ))}
-            </div>
-          )}
-          {meta.repoLink && <GithubLink href={meta.repoLink} />}
-        </div>
-      )}
+      <div
+        class:list={[
+          "mb-10 flex items-center justify-between",
+          !meta.tools && meta.repoLink && "justify-end",
+        ]}
+      >
+        {meta.tools && (
+          <div class="flex w-fit items-center gap-2 *:size-7 *:rounded-xl *:border *:p-1 sm:*:size-10 sm:*:p-2">
+            {meta.tools.map((tool) => (
+              <ToolIcon transitionName={`${dashedTitle}-${tool}-logo`} {tool} />
+            ))}
+          </div>
+        )}
+        {meta.repoLink && <GithubLink href={meta.repoLink} />}
+      </div>
+    )}
 
     <slot />
   </div>

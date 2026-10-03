@@ -5,15 +5,15 @@ const response = Astro.getActionResult(actions.contact);
 ---
 
 {response && (response.data || response.error) && (
-    <p
-      class:list={[
-        "rounded-xl border-2 p-6",
-        response.data?.success && "border-green-800 text-green-800",
-        response.error && "border-destructive text-destructive",
-      ]}
-    >
-      {response.data?.success && "Your message has been sent!"}
+  <p
+    class:list={[
+      "rounded-xl border-2 p-6",
+      response.data?.success && "border-green-800 text-green-800",
+      response.error && "border-destructive text-destructive",
+    ]}
+  >
+    {response.data?.success && "Your message has been sent!"}
 
-      {response.error && `Error sending message: ${response.error.message}`}
-    </p>
-  )}
+    {response.error && `Error sending message: ${response.error.message}`}
+  </p>
+)}
