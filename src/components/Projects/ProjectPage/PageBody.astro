@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import GithubLink from "@components/GithubLink.astro";
+import RepoLink from "@components/RepoLink.astro";
 import ToolIcon from "@components/ToolIcon.astro";
 import type { ProjectProps } from "@shared/types";
 import { dash, title as titleCase } from "radash";
@@ -72,7 +72,7 @@ const dashedTitle = dash(title);
             ))}
           </div>
         )}
-        {meta.repoLink && <GithubLink href={meta.repoLink} />}
+        {meta.repoLink && <RepoLink href={meta.repoLink} />}
       </div>
     )}
 

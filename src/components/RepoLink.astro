@@ -1,0 +1,44 @@
+---
+import GithubLogo from "icons:astro/logos/github-icon";
+import CodebergLogo from "icons:astro/simple-icons/codeberg";
+import AppLink from "./AppLink.astro";
+
+type Props = {
+  href: string;
+};
+
+const { href } = Astro.props;
+
+const url = new URL(href);
+const pathname = url.pathname.replace(/^\//, "");
+
+let forgeName: "github" | "codeberg";
+switch (url.hostname) {
+  case "github.com":
+    forgeName = "github";
+    break;
+  case "codeberg.org":
+    forgeName = "codeberg";
+    break;
+  default:
+    throw new Error(
+      `Unsupported link ${href}, only github and codeberg are supported`,
+    );
+}
+---
+
+<AppLink
+  as="a"
+  target="_blank"
+  appearance="secondary"
+  {href}
+  class="w-fit no-underline md:pl-1 md:pr-4 pt-1 pb-1"
+>
+  {forgeName === "github" && (
+    <GithubLogo class="size-9 [&_path]:fill-foreground" />
+  )}
+  {forgeName === "codeberg" && <CodebergLogo class="size-9" />}
+  <span class="hidden font-mono text-sm md:inline leading-none translate-y-px">
+    {pathname}
+  </span>
+</AppLink>
